@@ -8,6 +8,7 @@ insert into Employee (IdEmployee ,EmployeeName, EmployeeSurname, ZipCode, City, 
 		(3, 'Witold', 'Wiœniewski', '03-444', 'Otwock', 'G³ówna', '23A', '5', '555 555 444', '33112244560'),
 		(4, 'Szymon', 'Wójcik', '40-404', 'Wroc³aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
 		(5, 'Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
+		('Witold', 'Wiï¿½niewski', '03-444', 'Otwock', 'Gï¿½ï¿½wna', '23A', '5', '555 555 444', '33112244560'),
 
 
 insert into Position (IdPosition, Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
