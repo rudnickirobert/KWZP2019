@@ -1,157 +1,157 @@
 use RoofingCompany;
 
 --HR
-insert into Employee (IdEmployee ,EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
+insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
 	values
-		(1, 'Andrzej', 'Kowalski', '01-493', 'Warszawa', 'Niepodleg³oœci', '105', '102', '589 603 804', '78121611920'),
-		(2, 'Stefan', 'Nowak', '04-905', 'Warszawa', 'Powstañców', '10', '20', '607 894 489', '66123111809'),
-		(3, 'Witold', 'Wiœniewski', '03-444', 'Otwock', 'G³ówna', '23A', '5', '555 555 444', '33112244560'),
-		(4, 'Szymon', 'Wójcik', '40-404', 'Wroc³aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
-		(5, 'Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
+		('Andrzej', 'Kowalski', '01-493', 'Warszawa', 'Niepodleg³oœci', '105', '102', '589 603 804', '78121611920'),
+		('Stefan', 'Nowak', '04-905', 'Warszawa', 'Powstañców', '10', '20', '607 894 489', '66123111809'),
+		('Witold', 'Wiœniewski', '03-444', 'Otwock', 'G³ówna', '23A', '5', '555 555 444', '33112244560'),
+		('Szymon', 'Wójcik', '40-404', 'Wroc³aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
+		('Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
 
 
-insert into Position (IdPosition, Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
+insert into Position (Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
 	values
-		(1, 'Kierownik', 2, 2),
-		(2, 'Ksiêgowy', 3, 99),
-		(3, 'Pracownik produkcji', 1, 1),
-		(4, 'Konserwator', 1, 1),
-		(5, 'Dyrektor', 4, 5);
+		('Kierownik', 2, 2),
+		('Ksiêgowy', 3, 99),
+		('Pracownik produkcji', 1, 1),
+		('Konserwator', 1, 1),
+		('Dyrektor', 4, 5);
 
 
-insert into Contract( IdContract, StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTestDate, WorkplaceTrainingDate)
+insert into Contract(StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTestDate, WorkplaceTrainingDate)
 	values
-		(1, '2010-04-10', '2012-04-12', 5000, 1, 1, '2010-04-09', '2010-04-10'),
-		(2, '2010-04-10', '2012-04-12', 4000, 2, 2, '2010-04-09', '2010-04-10'),
-		(3, '2010-04-10', '2012-04-12', 2000, 3, 3, '2010-04-09', '2010-04-10'),
-		(4, '2010-04-10', '2012-04-12', 3000, 4, 4, '2010-04-09', '2010-04-10'),
-		(5, '2010-04-10', '2012-04-12', 6000, 5, 5, '2010-04-09', '2010-04-10');
+		('2010-04-10', '2012-04-12', 5000, 1, 1, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 4000, 2, 2, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 2000, 3, 3, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 3000, 4, 4, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 6000, 5, 5, '2010-04-09', '2010-04-10');
 
-insert into SkillsForMachine(IdSkill, IdMachine, IdPosition)
+insert into SkillsForMachine(IdMachine, IdPosition)
 	values
-		(1, 1, 3),
-		(2, 2, 3),
-		(3, 3, 3),
-		(4, 4, 3),
-		(5, 5, 3);
+		(1, 3),
+		(2, 3),
+		(3, 3),
+		(4, 3),
+		(5, 3);
 
-Insert into AbsenceType(IdAbsenceType, AbscenceReason, Multiplier)
+Insert into AbsenceType(AbscenceReason, Multiplier)
 	values 
-		(1, 'Urlop p³atny', 1),
-		(2, 'Urlop bezp³atny', 0),
-		(3, 'Na ¿¹danie', 0),
-		(4, 'Nieusprawiedliwiona', 0),
-		(5, 'L4', 0.75);
+		('Urlop p³atny', 1),
+		('Urlop bezp³atny', 0),
+		('Na ¿¹danie', 0),
+		('Nieusprawiedliwiona', 0),
+		('L4', 0.75);
 
-insert into Absence(IdAbsence, IdAbsenceType, IdEmployee, StartOfAbsence, EndOfAbsence)
+insert into Absence(IdAbsenceType, IdEmployee, StartOfAbsence, EndOfAbsence)
 	values
-		(1, 1, 1, '2012-02-10', '2012-02-24'),
-		(2, 2, 2, '2013-06-01', '2013-06-04'),
-		(3, 3, 3, '2014-07-21', '2014-07-21'),
-		(4, 4, 4, '2015-03-02', '2015-03-02'),
-		(5, 5, 5, '2016-08-15', '2016-08-23');
+		(1, 1, '2012-02-10', '2012-02-24'),
+		(2, 2, '2013-06-01', '2013-06-04'),
+		(3, 3, '2014-07-21', '2014-07-21'),
+		(4, 4, '2015-03-02', '2015-03-02'),
+		(5, 5, '2016-08-15', '2016-08-23');
 
-insert into Payment(IdPayment, Bonus, IdEmployee, Date, Sum)
+insert into Payment(Bonus, IdEmployee, Date, Sum)
 	values
-		(1, DEFAULT, 1, '2010-03-01', 3500),
-		(2, 300, 2, '2010-03-01', 3000),
-		(3, 100, 3, '2010-03-01', 3000),
-		(4, 500, 4, '2010-03-01', 3000),
-		(5, 250, 5, '2010-03-01', 3000);
+		(DEFAULT, 1, '2010-03-01', 3500),
+		(300, 2, '2010-03-01', 3000),
+		(100, 3, '2010-03-01', 3000),
+		(500, 4, '2010-03-01', 3000),
+		(250, 5, '2010-03-01', 3000);
 
-INSERT INTO Department(IdDepartment,DepartmentName)
+INSERT INTO Department(DepartmentName)
 	values
-		(1,'Produkcja'),
-		(2,'Utrzymanie ruchu'),
-		(3,'HR i Finanse'),
-		(4,'Logistyka'),
-		(5,'Kontrola jakoœci');
+		('Produkcja'),
+		('Utrzymanie ruchu'),
+		('HR i Finanse'),
+		('Logistyka'),
+		('Kontrola jakoœci');
 
-insert into Staff(IdStaff, IdDeparment, IdPosition, Number, DateFrom)
+insert into Staff(IdDeparment, IdPosition, Number, DateFrom)
 	values 
-		(1, 1, 3, 10, '2019-04-04'),
-		(2, 1, 3, 10, '2019-04-04'),
-		(3, 1, 3, 10, '2019-04-04'),
-		(4, 1, 3, 10, '2019-04-04'),
-		(5, 1, 3, 10, '2019-04-04');
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04');
 
-INSERT INTO Contractor(IdContractor,ContractorName,Phone,Email,City,PostalCode,Street,HouseNumber,ApartmentNumber,NIP,KRS)
+INSERT INTO Contractor(ContractorName,Phone,Email,City,PostalCode,Street,HouseNumber,ApartmentNumber,NIP,KRS)
 	values
-		(1,'PGNiG',520325652,'pgnigo@o2.pl','Warszawa',00537,'ul.Krucza','14','6',525008028,0000059492),
-		(2,'Energa',652232522,'energa.sa@energa.pl','Gdañsk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
-		(3,'MPWiK',224455000,'dok@mpwik.com.pl','Warszawa',02015,'pl. Starynkiewicza','5','',5250005662,0000146138),
-		(4,'T-Mobile',602913000,'pr@t-mobile.pl','Warszawa',02674,'ul. Marynarska','12','',5261040567,0000391193),
-		(5,'T-Mobile',222200000,'nc+@canal+.pl','£ódŸ',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
+		('PGNiG',520325652,'pgnigo@o2.pl','Warszawa',00537,'ul.Krucza','14','6',525008028,0000059492),
+		('Energa',652232522,'energa.sa@energa.pl','Gdañsk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
+		('MPWiK',224455000,'dok@mpwik.com.pl','Warszawa',02015,'pl. Starynkiewicza','5','',5250005662,0000146138),
+		('T-Mobile',602913000,'pr@t-mobile.pl','Warszawa',02674,'ul. Marynarska','12','',5261040567,0000391193),
+		('T-Mobile',222200000,'nc+@canal+.pl','£ódŸ',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
 		;
 
-INSERT INTO InvoiceType(IdInvoiceType,Type)
+INSERT INTO InvoiceType(Type)
 	values
-		(1,'Energia elektryczna'),
-		(2,'Wodoci¹gi'), 
-		(3,'Œmieci'),
-		(4,'Artyku³y biurowe'),
-		(5,'Inwestycje');
+		('Energia elektryczna'),
+		('Wodoci¹gi'), 
+		('Œmieci'),
+		('Artyku³y biurowe'),
+		('Inwestycje');
 
 
-INSERT INTO Invoice(IdInvoice,IdContractor,IdInvoiceType,Date,Sum)
+INSERT INTO Invoice(IdContractor,IdInvoiceType,Date,Sum)
 	values
-		(1,1,2,'2019-02-10',550.45),
-		(2,3,3,'2019-03-10',1250),
-		(3,2,4,'2019-04-05',5504),
-		(4,5,2,'2019-02-22',1550.15),
-		(5,4,5,'2019-02-22',50);
+		(1,2,'2019-02-10',550.45),
+		(3,3,'2019-03-10',1250),
+		(2,4,'2019-04-05',5504),
+		(5,2,'2019-02-22',1550.15),
+		(4,5,'2019-02-22',50);
 
-INSERT INTO Expense(IdExpense,IdDepartment,IdInvoice)
+INSERT INTO Expense(IdDepartment,IdInvoice)
 	values
-		(1,1,1),
-		(2,3,3),
-		(3,2,5),
-		(4,1,2),
-		(5,5,4);
+		(1,1),
+		(3,3),
+		(2,5),
+		(1,2),
+		(5,4);
 
-insert into Allocation(IdAllocation, IdEmployee, IdDepartment, StartDate, EndDate)
+insert into Allocation(IdEmployee, IdDepartment, StartDate, EndDate)
 	Values
-		(1, 1, 1, '2011-10-11', NULL),
-		(2, 2, 2, '2011-10-11', NULL),
-		(3, 3, 3, '2011-10-11', NULL),
-		(4, 4, 4, '2011-10-11', NULL),
-		(5, 5, 5, '2011-10-11', NULL);
+		(1, 1, '2011-10-11', NULL),
+		(2, 2, '2011-10-11', NULL),
+		(3, 3, '2011-10-11', NULL),
+		(4, 4, '2011-10-11', NULL),
+		(5, 5, '2011-10-11', NULL);
 
-insert into MedicalExamination(IdMedicalExamination, IdEmployee, Date)
+insert into MedicalExamination(IdEmployee, Date)
 	values 
-		(1, 1, '2012-05-06'),
-		(2, 2, '2012-07-04'),
-		(3, 3, '2012-06-16'),
-		(4, 4, '2012-04-16'),
-		(5, 5, '2012-04-16');
+		(1, '2012-05-06'),
+		(2, '2012-07-04'),
+		(3, '2012-06-16'),
+		(4, '2012-04-16'),
+		(5, '2012-04-16');
 
-insert into EducationLevel(IdEducationLevel, EducationLevel, Degree, DegreeShort)
+insert into EducationLevel(EducationLevel, Degree, DegreeShort)
 	values 
-		(1, 'Podstawowe', Null, null),
-		(2, 'Gimnazjalne', Null, null),
-		(3, 'Ponadgimnazjalne', Null, null),
-		(4, 'Policealne', Null, null),
-		(5, 'Studium', Null, null),
-		(6, 'Wy¿sze I stopnia techniczne', 'in¿ynier', 'in¿'),
-		(7, 'Wy¿sze I stopnia', 'licencjat', null);
+		('Podstawowe', Null, null),
+		('Gimnazjalne', Null, null),
+		('Ponadgimnazjalne', Null, null),
+		('Policealne', Null, null),
+		('Studium', Null, null),
+		('Wy¿sze I stopnia techniczne', 'in¿ynier', 'in¿'),
+		('Wy¿sze I stopnia', 'licencjat', null);
 
 
-insert into Training(IdTraining, IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
+insert into Training(IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
 	values 
-		(1, 1, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 600),
-		(2, 2, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1000),
-		(3, 3, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 400),
-		(4, 4, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 500),
-		(5, 5, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1500);
+		(1, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 600),
+		(2, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1000),
+		(3, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 400),
+		(4, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 500),
+		(5, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1500);
 		
 
-insert into Education(IdEducation, IdEmployee, IdEducationLevel, GraduationDate)
+insert into Education(IdEmployee, IdEducationLevel, GraduationDate)
 	values
-		(1, 1, 5, '2009-06-06'), 
-		(2, 2, 6, '2009-06-06'), 
-		(3, 3, 4, '2009-06-06'), 
-		(4, 4, 3, '2009-06-06'), 
-		(5, 5, 2, '2009-06-06');
+		(1, 5, '2009-06-06'), 
+		(2, 6, '2009-06-06'), 
+		(3, 4, '2009-06-06'), 
+		(4, 3, '2009-06-06'), 
+		(5, 2, '2009-06-06');
 
 --Quality control
 

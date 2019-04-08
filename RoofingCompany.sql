@@ -2,7 +2,7 @@ use master;
 
 drop database RoofingCompany;
 create database RoofingCompany;
-
+go
 use RoofingCompany;
 
 create table Accident(
