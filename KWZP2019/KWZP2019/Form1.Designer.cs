@@ -43,6 +43,7 @@
             this.btnSales.TabIndex = 0;
             this.btnSales.Text = "Dział handlowy";
             this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnProduction
             // 

@@ -219,6 +219,12 @@
     <Compile Include="SafetyTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SalesDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesDepartment.Designer.cs">
+      <DependentUpon>SalesDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="SemiFinished.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -264,6 +270,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SalesDepartment.resx">
+      <DependentUpon>SalesDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

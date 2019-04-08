@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class startForm : Form
+    public partial class SalesDepartment : Form
     {
         RoofingCompanyEntities db;
 
-        public startForm()
+        public SalesDepartment(RoofingCompanyEntities dbt)
         {
+            this.db = dbt;
             InitializeComponent();
-            db = new RoofingCompanyEntities();
         }
 
-        private void btnSales_Click(object sender, EventArgs e)
+        private void SalesDepartment_Load(object sender, EventArgs e)
         {
-            SalesDepartment salesDepartmentForm= new SalesDepartment(db);
-            salesDepartmentForm.Show();
+
         }
     }
 }
