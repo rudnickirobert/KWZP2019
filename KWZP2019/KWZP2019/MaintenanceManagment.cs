@@ -13,9 +13,9 @@ namespace KWZP2019
     public partial class MaintenanceManagment : Form
     {
         RoofingCompanyEntities db;
-        public MaintenanceManagment(RoofingCompanyEntities dbt)
+        public MaintenanceManagment(RoofingCompanyEntities db)
         {
-            this.db = dbt;
+            this.db = db;
             InitializeComponent();
         }
     }
