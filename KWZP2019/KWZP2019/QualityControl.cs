@@ -18,12 +18,6 @@ namespace KWZP2019
         {
             db = dbQC;
             InitializeComponent();
-            var record = db.Accidents.Where(acc => acc.IdAccident >= 1).ToList();
-            for(int i = 0; i < record.Count(); i++)
-            {
-                label1.Text += record[i].AccidentDate.ToString();
-                label1.Text += "\n";
-            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -42,6 +36,12 @@ namespace KWZP2019
                 timer1.Stop();
                 Application.Exit();
             }
+        }
+
+        private void btnEntranceControl_Click(object sender, EventArgs e)
+        {
+            EntranceControlForm ec = new EntranceControlForm(db);
+            ec.Show();
         }
     }
 }

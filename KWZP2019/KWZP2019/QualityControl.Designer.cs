@@ -33,13 +33,14 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnEntranceControl = new System.Windows.Forms.Button();
+            this.btnOutControl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(220, 225);
+            this.label1.Location = new System.Drawing.Point(413, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(292, 33);
             this.label1.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExit.Font = new System.Drawing.Font("Century", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnExit.Location = new System.Drawing.Point(741, 9);
             this.btnExit.Margin = new System.Windows.Forms.Padding(0);
             this.btnExit.Name = "btnExit";
@@ -70,18 +71,35 @@
             this.btnEntranceControl.FlatAppearance.BorderSize = 0;
             this.btnEntranceControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntranceControl.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEntranceControl.Location = new System.Drawing.Point(52, 90);
+            this.btnEntranceControl.Location = new System.Drawing.Point(32, 74);
             this.btnEntranceControl.Margin = new System.Windows.Forms.Padding(0);
             this.btnEntranceControl.Name = "btnEntranceControl";
             this.btnEntranceControl.Size = new System.Drawing.Size(200, 50);
             this.btnEntranceControl.TabIndex = 2;
             this.btnEntranceControl.Text = "Kontrola Wejściowa";
             this.btnEntranceControl.UseVisualStyleBackColor = false;
+            this.btnEntranceControl.Click += new System.EventHandler(this.btnEntranceControl_Click);
+            // 
+            // btnOutControl
+            // 
+            this.btnOutControl.AutoSize = true;
+            this.btnOutControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(178)))));
+            this.btnOutControl.FlatAppearance.BorderSize = 0;
+            this.btnOutControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOutControl.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOutControl.Location = new System.Drawing.Point(32, 156);
+            this.btnOutControl.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOutControl.Name = "btnOutControl";
+            this.btnOutControl.Size = new System.Drawing.Size(200, 50);
+            this.btnOutControl.TabIndex = 2;
+            this.btnOutControl.Text = "Kontrola Wyjściowa";
+            this.btnOutControl.UseVisualStyleBackColor = false;
             // 
             // QualityControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.btnOutControl);
             this.Controls.Add(this.btnEntranceControl);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
@@ -100,5 +118,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnEntranceControl;
+        private System.Windows.Forms.Button btnOutControl;
     }
 }

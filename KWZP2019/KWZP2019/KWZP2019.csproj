@@ -94,6 +94,12 @@
     <Compile Include="EntranceControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntranceControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntranceControlForm.Designer.cs">
+      <DependentUpon>EntranceControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
