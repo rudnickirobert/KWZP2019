@@ -25,5 +25,23 @@ namespace KWZP2019
                 label1.Text += "\n";
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                timer1.Stop();
+                Application.Exit();
+            }
+        }
     }
 }
