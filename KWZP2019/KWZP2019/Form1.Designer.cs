@@ -70,6 +70,7 @@
             this.btnQA.TabIndex = 3;
             this.btnQA.Text = "Kontrola jakości";
             this.btnQA.UseVisualStyleBackColor = true;
+            this.btnQA.Click += new System.EventHandler(this.btnQA_Click);
             // 
             // btnMaintenance
             // 

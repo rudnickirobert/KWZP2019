@@ -10,20 +10,18 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class startForm : Form
+    public partial class QualityControl : Form
     {
-        RoofingCompanyEntities db;
-
-        public startForm()
+        public QualityControl()
         {
             InitializeComponent();
-            db = new RoofingCompanyEntities();
         }
 
-        private void btnQA_Click(object sender, EventArgs e)
+        public QualityControl(RoofingCompanyEntities db)
         {
-            QualityControl QC = new QualityControl(db);
-            QC.Show();
+            InitializeComponent();
+            var record = db.Accidents.Where(acc => acc.IdAccident == 1);
+            label1.Text = record.ToString();
         }
     }
 }
