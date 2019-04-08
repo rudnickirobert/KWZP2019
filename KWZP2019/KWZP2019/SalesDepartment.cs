@@ -14,15 +14,11 @@ namespace KWZP2019
     {
         RoofingCompanyEntities db;
 
-        public SalesDepartment(RoofingCompanyEntities dbt)
+        public SalesDepartment(RoofingCompanyEntities db)
         {
-            this.db = dbt;
+            this.db = db;
             InitializeComponent();
         }
-
-        private void SalesDepartment_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+        
 }
