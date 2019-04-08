@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class startForm : Form
     {
-        RoofingCompanyEntities db;
+      private RoofingCompanyEntities db;
 
         public startForm()
         {
@@ -22,8 +22,8 @@ namespace KWZP2019
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            SalesDepartment salesDepartmentForm= new SalesDepartment(db);
-            salesDepartmentForm.Show();
+            SalesDepartmentForm salesDepartment = new SalesDepartmentForm(db);
+            salesDepartment.Show();
         }
     }
 }
