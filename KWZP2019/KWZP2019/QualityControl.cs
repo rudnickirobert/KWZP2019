@@ -12,15 +12,13 @@ namespace KWZP2019
 {
     public partial class QualityControl : Form
     {
-        public QualityControl()
-        {
-            InitializeComponent();
-        }
+        RoofingCompanyEntities _db;
 
         public QualityControl(RoofingCompanyEntities db)
         {
+            _db = db;
             InitializeComponent();
-            var record = db.Accidents.Where(acc => acc.IdAccident == 1);
+            var record = _db.Accidents.Where(acc => acc.IdAccident == 1);
             label1.Text = record.ToString();
         }
     }
