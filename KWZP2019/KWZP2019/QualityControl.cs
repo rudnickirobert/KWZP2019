@@ -12,14 +12,18 @@ namespace KWZP2019
 {
     public partial class QualityControl : Form
     {
-        RoofingCompanyEntities _db;
+        RoofingCompanyEntities db;
 
-        public QualityControl(RoofingCompanyEntities db)
+        public QualityControl(RoofingCompanyEntities dbQC)
         {
-            _db = db;
+            db = dbQC;
             InitializeComponent();
-            var record = _db.Accidents.Where(acc => acc.IdAccident == 1);
-            label1.Text = record.ToString();
+            var record = db.Accidents.Where(acc => acc.IdAccident >= 1).ToList();
+            for(int i = 0; i < record.Count(); i++)
+            {
+                label1.Text += record[i].AccidentDate.ToString();
+                label1.Text += "\n";
+            }
         }
     }
 }
