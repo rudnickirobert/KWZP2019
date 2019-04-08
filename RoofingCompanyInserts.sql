@@ -162,12 +162,6 @@ insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription)
 insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('4', '4', '2019-03-12 13:35:00', 'Uraz rêki na skutek w³o¿enia jej do maszyny');
 insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('5', '5', '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej pó³ki magazynowej');
 
---EntranceControl
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '1', '1', '2019-01-02 08:03:36', '1', 'Rozerwana folia ochronna','2');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '2', '1', '2019-01-02 08:07:36', '1', 'Brak wad','1');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '1', '2019-01-02 08:13:36', '1', 'Brak wad','3');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '4', '1', '2019-01-02 08:20:36', '1', 'Brak wad','1');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '5', '1', '2019-01-02 08:25:36', '0', 'Z³y kolor','2');
 
 --FEMAnalysis
 insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('1', '2', ' ', 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy');
@@ -192,12 +186,7 @@ Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
 Select '5', '2', BulkColumn, 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
 
---OutControl
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '3', '2019-01-02 15:28:36', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '3', '2019-01-03 14:55:17', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '2019-01-04 15:23:55', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '3', '2019-01-07 16:05:45', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '3', '2019-01-08 15:42:22', '0', 'Nierówne t³oczenie', '10');
+
 
 --SafetyControl
 insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('1', 'Dêbek Jaros³aw 423452', '1', '2019-01-07 10:20:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
@@ -226,12 +215,7 @@ insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Co
 insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('5', 'B125#1', '1.25', '1000', '1400', 'br¹z', 'C, Fe, Cu');
 
 
---TechnicalProductData
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('1', '', '800', '50', '5000', '40');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('2', '', '800', '55', '5000', '45');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('3', '', '800', '48', '5000', '38');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('4', '', '800', '55', '5000', '35');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('5', '', '800', '57', '5000', '40');
+
 
 /*Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
 Select '1', BulkColumn, '800', '50', '5000', '40'
@@ -258,6 +242,26 @@ insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, Input
 insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('4', '1', 'W10#1B', '4', '2019-01-07 11:00:00');
 insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('5', '1', 'B125#1B', '5', '2019-01-07 11:10:00');
 
+--TechnicalProductData
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('1', '', '800', '50', '5000', '40');
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('2', '', '800', '55', '5000', '45');
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('3', '', '800', '48', '5000', '38');
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('4', '', '800', '55', '5000', '35');
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('5', '', '800', '57', '5000', '40');
+
+--EntranceControl
+insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '1', '1', '2019-01-02 08:03:36', '1', 'Rozerwana folia ochronna','2');
+insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '2', '1', '2019-01-02 08:07:36', '1', 'Brak wad','1');
+insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '1', '2019-01-02 08:13:36', '1', 'Brak wad','3');
+insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '4', '1', '2019-01-02 08:20:36', '1', 'Brak wad','1');
+insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '5', '1', '2019-01-02 08:25:36', '0', 'Z³y kolor','2');
+
+--OutControl
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '3', '2019-01-02 15:28:36', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '3', '2019-01-03 14:55:17', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '2019-01-04 15:23:55', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '3', '2019-01-07 16:05:45', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '3', '2019-01-08 15:42:22', '0', 'Nierówne t³oczenie', '10');
 --UR
 
 insert into Unit values (1, 'Szt');
@@ -427,3 +431,4 @@ insert into OutsourcingCommitment values('1', '2019-03-12', '4000');
 insert into OutsourcingCommitment values('2', '2019-04-02', '3500');
 insert into OutsourcingCommitment values('2', '2019-03-31', '5000');
 insert into OutsourcingCommitment values('3', '2019-11-30', '');
+
