@@ -190,8 +190,44 @@
     <Compile Include="Product.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Production.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production.Designer.cs">
+      <DependentUpon>Production.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionFailures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionFailures.Designer.cs">
+      <DependentUpon>ProductionFailures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionPlanned.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionPlanned.Designer.cs">
+      <DependentUpon>ProductionPlanned.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionProce.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionProcess.Designer.cs">
+      <DependentUpon>ProductionProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionProducts.Designer.cs">
+      <DependentUpon>ProductionProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionTechnology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionTechnology.Designer.cs">
+      <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -254,6 +290,24 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production.resx">
+      <DependentUpon>Production.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionFailures.resx">
+      <DependentUpon>ProductionFailures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionPlanned.resx">
+      <DependentUpon>ProductionPlanned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionProcess.resx">
+      <DependentUpon>ProductionProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionProducts.resx">
+      <DependentUpon>ProductionProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionTechnology.resx">
+      <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

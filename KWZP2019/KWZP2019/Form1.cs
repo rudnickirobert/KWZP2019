@@ -16,5 +16,11 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
+
+        private void btnProduction_Click(object sender, EventArgs e)
+        {
+            Production formProduction = new Production();
+            formProduction.Show();
+        }
     }
 }

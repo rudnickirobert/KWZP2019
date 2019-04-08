@@ -52,6 +52,7 @@
             this.btnProduction.TabIndex = 1;
             this.btnProduction.Text = "Produkcja";
             this.btnProduction.UseVisualStyleBackColor = true;
+            this.btnProduction.Click += new System.EventHandler(this.btnProduction_Click);
             // 
             // btnHR
             // 
@@ -84,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 364);
+            this.ClientSize = new System.Drawing.Size(439, 364);
             this.Controls.Add(this.btnMaintenance);
             this.Controls.Add(this.btnQA);
             this.Controls.Add(this.btnHR);
