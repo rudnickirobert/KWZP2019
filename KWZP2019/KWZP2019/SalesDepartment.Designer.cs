@@ -34,7 +34,7 @@
             // 
             this.ClientSize = new System.Drawing.Size(413, 261);
             this.Name = "SalesDepartment";
-            this.Load += new System.EventHandler(this.SalesDepartment_Load);
+        
             this.ResumeLayout(false);
 
         }
