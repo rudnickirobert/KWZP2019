@@ -22,7 +22,7 @@ namespace KWZP2019
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            SalesDepartmentForm salesDepartment = new SalesDepartmentForm(db);
+            SalesDepartment salesDepartment = new SalesDepartment(db);
             salesDepartment.Show();
         }
     }
