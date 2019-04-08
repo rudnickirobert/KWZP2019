@@ -19,5 +19,11 @@ namespace KWZP2019
             InitializeComponent();
             db = new RoofingCompanyEntities();
         }
+
+        private void btnMaintenance_Click(object sender, EventArgs e)
+        {
+            var mm = new MaintenanceManagment(db);
+            mm.Show();
+        }
     }
 }

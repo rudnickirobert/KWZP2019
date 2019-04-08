@@ -37,59 +37,66 @@
             // 
             // btnSales
             // 
-            this.btnSales.Location = new System.Drawing.Point(12, 12);
+            this.btnSales.Location = new System.Drawing.Point(16, 15);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(418, 62);
+            this.btnSales.Size = new System.Drawing.Size(557, 76);
             this.btnSales.TabIndex = 0;
             this.btnSales.Text = "Dział handlowy";
             this.btnSales.UseVisualStyleBackColor = true;
             // 
             // btnProduction
             // 
-            this.btnProduction.Location = new System.Drawing.Point(12, 80);
+            this.btnProduction.Location = new System.Drawing.Point(16, 98);
+            this.btnProduction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProduction.Name = "btnProduction";
-            this.btnProduction.Size = new System.Drawing.Size(418, 62);
+            this.btnProduction.Size = new System.Drawing.Size(557, 76);
             this.btnProduction.TabIndex = 1;
             this.btnProduction.Text = "Produkcja";
             this.btnProduction.UseVisualStyleBackColor = true;
             // 
             // btnHR
             // 
-            this.btnHR.Location = new System.Drawing.Point(12, 148);
+            this.btnHR.Location = new System.Drawing.Point(16, 182);
+            this.btnHR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHR.Name = "btnHR";
-            this.btnHR.Size = new System.Drawing.Size(418, 62);
+            this.btnHR.Size = new System.Drawing.Size(557, 76);
             this.btnHR.TabIndex = 2;
             this.btnHR.Text = "Kadry i finanse";
             this.btnHR.UseVisualStyleBackColor = true;
             // 
             // btnQA
             // 
-            this.btnQA.Location = new System.Drawing.Point(12, 216);
+            this.btnQA.Location = new System.Drawing.Point(16, 266);
+            this.btnQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQA.Name = "btnQA";
-            this.btnQA.Size = new System.Drawing.Size(418, 62);
+            this.btnQA.Size = new System.Drawing.Size(557, 76);
             this.btnQA.TabIndex = 3;
             this.btnQA.Text = "Kontrola jakości";
             this.btnQA.UseVisualStyleBackColor = true;
             // 
             // btnMaintenance
             // 
-            this.btnMaintenance.Location = new System.Drawing.Point(12, 284);
+            this.btnMaintenance.Location = new System.Drawing.Point(16, 350);
+            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMaintenance.Name = "btnMaintenance";
-            this.btnMaintenance.Size = new System.Drawing.Size(418, 62);
+            this.btnMaintenance.Size = new System.Drawing.Size(557, 76);
             this.btnMaintenance.TabIndex = 4;
             this.btnMaintenance.Text = "Utrzymanie ruchu";
             this.btnMaintenance.UseVisualStyleBackColor = true;
+            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
             // 
             // startForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 364);
+            this.ClientSize = new System.Drawing.Size(593, 448);
             this.Controls.Add(this.btnMaintenance);
             this.Controls.Add(this.btnQA);
             this.Controls.Add(this.btnHR);
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnSales);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "startForm";
             this.Text = "Formularz startowy";
             this.ResumeLayout(false);
