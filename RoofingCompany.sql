@@ -535,12 +535,11 @@ ALTER TABLE OutsourcingCommitment ADD CONSTRAINT OutsourcingCommitmentOutsourcin
 --planned_production FOREING KEYS--------
 ALTER TABLE PlannedProduction ADD CONSTRAINT FkOrderDetail
 FOREIGN KEY (IdDetail) REFERENCES OrderDetail(IdDetail)
-/*
-Do poprawy
+
 -- planned_prod_empl_det FOREING KEYS--------
 ALTER TABLE PlannedProductionEmployeeDetails ADD CONSTRAINT FKPlannedProductionEmployeeDetailsAllocation
-FOREIGN KEY (IdEmployee) REFERENCES Allocation(IdEmployee)
-*/
+FOREIGN KEY (IdEmployee) REFERENCES Allocation(IdAllocation)
+
 ALTER TABLE PlannedProductionEmployeeDetails ADD CONSTRAINT FKPlannedProductionEmployeeDetailsPlannedProduction
 FOREIGN KEY (IdProces) REFERENCES PlannedProduction(IdPlan)
 
