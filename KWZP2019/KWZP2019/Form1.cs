@@ -22,8 +22,8 @@ namespace KWZP2019
 
         private void btnMaintenance_Click(object sender, EventArgs e)
         {
-            var mm = new MaintenanceManagment(db);
-            mm.Show();
+            MaintenanceManagment maintenance_managment = new MaintenanceManagment(db);
+            maintenance_managment.Show();
         }
     }
 }
