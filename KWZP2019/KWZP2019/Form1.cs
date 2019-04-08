@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class startForm : Form
     {
-        RoofingCompanyEntities db;
+      private RoofingCompanyEntities db;
 
         public startForm()
         {
