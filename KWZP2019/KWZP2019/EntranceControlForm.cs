@@ -13,32 +13,32 @@ namespace KWZP2019
     public partial class EntranceControlForm : Form
     {
         RoofingCompanyEntities db;
-        startForm sf;
-        QualityControl qc;
+        startForm startForm;
+        QualityControl qualityControlForm;
 
-        public EntranceControlForm(RoofingCompanyEntities db, startForm sf, QualityControl qc)
+        public EntranceControlForm(RoofingCompanyEntities db, startForm startForm, QualityControl qualityControlForm)
         {
             this.db = db;
-            this.sf = sf;
-            this.qc = qc;
+            this.startForm = startForm;
+            this.qualityControlForm = qualityControlForm;
             InitializeComponent();
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
-            this.sf.Show();
+            this.startForm.Show();
             this.Hide();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.qc.Show();
+            this.qualityControlForm.Show();
             this.Hide();
         }
 
         private void EntranceControlForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.sf.Show();
+            this.startForm.Show();
         }
     }
 }
