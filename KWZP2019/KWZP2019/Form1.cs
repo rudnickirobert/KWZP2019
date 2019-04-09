@@ -22,9 +22,9 @@ namespace KWZP2019
 
         private void btnQA_Click(object sender, EventArgs e)
         {
-            QualityControl qc = new QualityControl(db);
-            this.Hide();
+            QualityControl qc = new QualityControl(db, this);
             qc.Show();
+            this.Hide();
         }
     }
 }

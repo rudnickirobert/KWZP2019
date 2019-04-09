@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class EntranceControlForm
+    partial class OutControlForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.btnReturnMain.FlatAppearance.BorderSize = 0;
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturnMain.Location = new System.Drawing.Point(960, 32);
+            this.btnReturnMain.Location = new System.Drawing.Point(813, 103);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(200, 50);
             this.btnReturnMain.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.btnReturn.FlatAppearance.BorderSize = 0;
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturn.Location = new System.Drawing.Point(960, 109);
+            this.btnReturn.Location = new System.Drawing.Point(813, 177);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(200, 50);
             this.btnReturn.TabIndex = 0;
@@ -60,17 +60,17 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // EntranceControlForm
+            // OutControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
-            this.Name = "EntranceControlForm";
+            this.Name = "OutControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EntranceControlForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
+            this.Text = "OutControlForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OutControlForm_FormClosed);
             this.ResumeLayout(false);
 
         }

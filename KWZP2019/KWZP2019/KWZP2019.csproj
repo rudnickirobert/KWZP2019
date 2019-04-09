@@ -154,6 +154,12 @@
     <Compile Include="OutControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OutControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutControlForm.Designer.cs">
+      <DependentUpon>OutControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Outsourcing.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -264,8 +270,14 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EntranceControlForm.resx">
+      <DependentUpon>EntranceControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutControlForm.resx">
+      <DependentUpon>OutControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -298,7 +310,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="RoofingCompanyModel.Context.tt">

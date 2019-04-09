@@ -13,35 +13,38 @@ namespace KWZP2019
     public partial class QualityControl : Form
     {
         RoofingCompanyEntities db;
+        startForm sf;
 
-        public QualityControl(RoofingCompanyEntities dbQC)
+        public QualityControl(RoofingCompanyEntities db, startForm sf)
         {
-            db = dbQC;
+            this.db = db;
+            this.sf = sf;
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity > 0)
-            {
-                this.Opacity -= 0.1;
-            }
-            else
-            {
-                timer1.Stop();
-                Application.Exit();
-            }
         }
 
         private void btnEntranceControl_Click(object sender, EventArgs e)
         {
-            EntranceControlForm ec = new EntranceControlForm(db);
+            EntranceControlForm ec = new EntranceControlForm(db, sf, this);
+            this.Hide();
             ec.Show();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.sf.Show();
+            this.Hide();
+        }
+
+        private void btnOutControl_Click(object sender, EventArgs e)
+        {
+            OutControlForm oc = new OutControlForm(db, sf, this);
+            oc.Show();
+            this.Hide();
+        }
+
+        private void QualityControl_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.sf.Show();
         }
     }
 }

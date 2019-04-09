@@ -92,6 +92,7 @@
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnSales);
             this.Name = "startForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formularz startowy";
             this.ResumeLayout(false);
 
