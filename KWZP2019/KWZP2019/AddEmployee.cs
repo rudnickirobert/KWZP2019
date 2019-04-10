@@ -49,7 +49,7 @@ namespace KWZP2019
         {
             if (tbFirstName.Text.Trim() == "" || tbLastName.Text.Trim() == "")
             {
-                MessageBox.Show("First Name and Last Name are required");
+                MessageBox.Show("Imię i nazwisko są wymagane");
             }
             Employee newEmployee = new Employee();
             newEmployee.EmployeeName = tbFirstName.Text.Trim();
@@ -68,7 +68,7 @@ namespace KWZP2019
                 //newContract.EndDate = dateTimePickerEndDate.Value();
             }
             //newContract.StartDate = DateTime.Now();
-            newContract.EndDate = DateTime.Now.AddMonths(int.Parse(tbContractLenght.Text));
+            //newContract.EndDate = DateTime.Now.AddMonths(int.Parse(tbContractLenght.Text));
             /*db.Employee.Add(newEmployee);
             db.SaveChanges();
             Clear();
