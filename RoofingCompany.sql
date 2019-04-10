@@ -352,7 +352,7 @@ Street nvarchar(50) null,
 HouseNumber nvarchar(50) null,
 ApartmentNum nvarchar(50) null,
 PhoneNumber nvarchar(50) null,
-PESEL bigint
+PESEL bigint,
 );
 
 create table Position(
