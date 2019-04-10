@@ -1,206 +1,210 @@
 use RoofingCompany;
 
 --HR
-insert into Employee (IdEmployee ,EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
+insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
 	values
-		(1, 'Andrzej', 'Kowalski', '01-493', 'Warszawa', 'Niepodleg³oœci', '105', '102', '589 603 804', '78121611920'),
-		(2, 'Stefan', 'Nowak', '04-905', 'Warszawa', 'Powstañców', '10', '20', '607 894 489', '66123111809'),
-		(3, 'Witold', 'Wiœniewski', '03-444', 'Otwock', 'G³ówna', '23A', '5', '555 555 444', '33112244560'),
-		(4, 'Szymon', 'Wójcik', '40-404', 'Wroc³aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
-		(5, 'Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
+		('Andrzej', 'Kowalski', '01-493', 'Warszawa', 'Niepodleg³oœci', '105', '102', '589 603 804', '78121611920'),
+		('Stefan', 'Nowak', '04-905', 'Warszawa', 'Powstañców', '10', '20', '607 894 489', '66123111809'),
+		('Witold', 'Wiœniewski', '03-444', 'Otwock', 'G³ówna', '23A', '5', '555 555 444', '33112244560'),
+		('Szymon', 'Wójcik', '40-404', 'Wroc³aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
+		('Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
 
 
-insert into Position (IdPosition, Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
+insert into Position (Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
 	values
-		(1, 'Kierownik', 2, 2),
-		(2, 'Ksiêgowy', 3, 99),
-		(3, 'Pracownik produkcji', 1, 1),
-		(4, 'Konserwator', 1, 1),
-		(5, 'Dyrektor', 4, 5);
+		('Kierownik', 2, 2),
+		('Ksiêgowy', 3, 99),
+		('Pracownik produkcji', 1, 1),
+		('Konserwator', 1, 1),
+		('Dyrektor', 4, 5);
 
 
-insert into Contract( IdContract, StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTestDate, WorkplaceTrainingDate)
+insert into Contract(StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTestDate, WorkplaceTrainingDate)
 	values
-		(1, '2010-04-10', '2012-04-12', 5000, 1, 1, '2010-04-09', '2010-04-10'),
-		(2, '2010-04-10', '2012-04-12', 4000, 2, 2, '2010-04-09', '2010-04-10'),
-		(3, '2010-04-10', '2012-04-12', 2000, 3, 3, '2010-04-09', '2010-04-10'),
-		(4, '2010-04-10', '2012-04-12', 3000, 4, 4, '2010-04-09', '2010-04-10'),
-		(5, '2010-04-10', '2012-04-12', 6000, 5, 5, '2010-04-09', '2010-04-10');
+		('2010-04-10', '2012-04-12', 5000, 1, 1, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 4000, 2, 2, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 2000, 3, 3, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 3000, 4, 4, '2010-04-09', '2010-04-10'),
+		('2010-04-10', '2012-04-12', 6000, 5, 5, '2010-04-09', '2010-04-10');
 
-insert into SkillsForMachine(IdSkill, IdMachine, IdPosition)
+insert into SkillsForMachine(IdMachine, IdPosition)
 	values
-		(1, 1, 3),
-		(2, 2, 3),
-		(3, 3, 3),
-		(4, 4, 3),
-		(5, 5, 3);
+		(1, 3),
+		(2, 3),
+		(3, 3),
+		(4, 3),
+		(5, 3);
 
-Insert into AbsenceType(IdAbsenceType, AbscenceReason, Multiplier)
+Insert into AbsenceType(AbscenceReason, Multiplier)
 	values 
-		(1, 'Urlop p³atny', 1),
-		(2, 'Urlop bezp³atny', 0),
-		(3, 'Na ¿¹danie', 0),
-		(4, 'Nieusprawiedliwiona', 0),
-		(5, 'L4', 0.75);
+		('Urlop p³atny', 1),
+		('Urlop bezp³atny', 0),
+		('Na ¿¹danie', 0),
+		('Nieusprawiedliwiona', 0),
+		('L4', 0.75);
 
-insert into Absence(IdAbsence, IdAbsenceType, IdEmployee, StartOfAbsence, EndOfAbsence)
+insert into Absence(IdAbsenceType, IdEmployee, StartOfAbsence, EndOfAbsence)
 	values
-		(1, 1, 1, '2012-02-10', '2012-02-24'),
-		(2, 2, 2, '2013-06-01', '2013-06-04'),
-		(3, 3, 3, '2014-07-21', '2014-07-21'),
-		(4, 4, 4, '2015-03-02', '2015-03-02'),
-		(5, 5, 5, '2016-08-15', '2016-08-23');
+		(1, 1, '2012-02-10', '2012-02-24'),
+		(2, 2, '2013-06-01', '2013-06-04'),
+		(3, 3, '2014-07-21', '2014-07-21'),
+		(4, 4, '2015-03-02', '2015-03-02'),
+		(5, 5, '2016-08-15', '2016-08-23');
 
-insert into Payment(IdPayment, Bonus, IdEmployee, Date, Sum)
+insert into Payment(Bonus, IdEmployee, Date, Sum)
 	values
-		(1, DEFAULT, 1, '2010-03-01', 3500),
-		(2, 300, 2, '2010-03-01', 3000),
-		(3, 100, 3, '2010-03-01', 3000),
-		(4, 500, 4, '2010-03-01', 3000),
-		(5, 250, 5, '2010-03-01', 3000);
+		(DEFAULT, 1, '2010-03-01', 3500),
+		(300, 2, '2010-03-01', 3000),
+		(100, 3, '2010-03-01', 3000),
+		(500, 4, '2010-03-01', 3000),
+		(250, 5, '2010-03-01', 3000);
 
-INSERT INTO Department(IdDepartment,DepartmentName)
+INSERT INTO Department(DepartmentName)
 	values
-		(1,'Produkcja'),
-		(2,'Utrzymanie ruchu'),
-		(3,'HR i Finanse'),
-		(4,'Logistyka'),
-		(5,'Kontrola jakoœci');
+		('Produkcja'),
+		('Utrzymanie ruchu'),
+		('HR i Finanse'),
+		('Logistyka'),
+		('Kontrola jakoœci');
 
-insert into Staff(IdStaff, IdDeparment, IdPosition, Number, DateFrom)
+insert into Staff(IdDeparment, IdPosition, Number, DateFrom)
 	values 
-		(1, 1, 3, 10, '2019-04-04'),
-		(2, 1, 3, 10, '2019-04-04'),
-		(3, 1, 3, 10, '2019-04-04'),
-		(4, 1, 3, 10, '2019-04-04'),
-		(5, 1, 3, 10, '2019-04-04');
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04'),
+		(1, 3, 10, '2019-04-04');
 
-INSERT INTO Contractor(IdContractor,ContractorName,Phone,Email,City,PostalCode,Street,HouseNumber,ApartmentNumber,NIP,KRS)
+INSERT INTO Contractor(ContractorName,Phone,Email,City,PostalCode,Street,HouseNumber,ApartmentNumber,NIP,KRS)
 	values
-		(1,'PGNiG',520325652,'pgnigo@o2.pl','Warszawa',00537,'ul.Krucza','14','6',525008028,0000059492),
-		(2,'Energa',652232522,'energa.sa@energa.pl','Gdañsk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
-		(3,'MPWiK',224455000,'dok@mpwik.com.pl','Warszawa',02015,'pl. Starynkiewicza','5','',5250005662,0000146138),
-		(4,'T-Mobile',602913000,'pr@t-mobile.pl','Warszawa',02674,'ul. Marynarska','12','',5261040567,0000391193),
-		(5,'T-Mobile',222200000,'nc+@canal+.pl','£ódŸ',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
+		('PGNiG',520325652,'pgnigo@o2.pl','Warszawa',00537,'ul.Krucza','14','6',525008028,0000059492),
+		('Energa',652232522,'energa.sa@energa.pl','Gdañsk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
+		('MPWiK',224455000,'dok@mpwik.com.pl','Warszawa',02015,'pl. Starynkiewicza','5','',5250005662,0000146138),
+		('T-Mobile',602913000,'pr@t-mobile.pl','Warszawa',02674,'ul. Marynarska','12','',5261040567,0000391193),
+		('T-Mobile',222200000,'nc+@canal+.pl','£ódŸ',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
 		;
 
-INSERT INTO InvoiceType(IdInvoiceType,Type)
+INSERT INTO InvoiceType(Type)
 	values
-		(1,'Energia elektryczna'),
-		(2,'Wodoci¹gi'), 
-		(3,'Œmieci'),
-		(4,'Artyku³y biurowe'),
-		(5,'Inwestycje');
+		('Energia elektryczna'),
+		('Wodoci¹gi'), 
+		('Œmieci'),
+		('Artyku³y biurowe'),
+		('Inwestycje');
 
 
-INSERT INTO Invoice(IdInvoice,IdContractor,IdInvoiceType,Date,Sum)
+INSERT INTO Invoice(IdContractor,IdInvoiceType,Date,Sum)
 	values
-		(1,1,2,'2019-02-10',550.45),
-		(2,3,3,'2019-03-10',1250),
-		(3,2,4,'2019-04-05',5504),
-		(4,5,2,'2019-02-22',1550.15),
-		(5,4,5,'2019-02-22',50);
+		(1,2,'2019-02-10',550.45),
+		(3,3,'2019-03-10',1250),
+		(2,4,'2019-04-05',5504),
+		(5,2,'2019-02-22',1550.15),
+		(4,5,'2019-02-22',50);
 
-INSERT INTO Expense(IdExpense,IdDepartment,IdInvoice)
+INSERT INTO Expense(IdDepartment,IdInvoice)
 	values
-		(1,1,1),
-		(2,3,3),
-		(3,2,5),
-		(4,1,2),
-		(5,5,4);
+		(1,1),
+		(3,3),
+		(2,5),
+		(1,2),
+		(5,4);
 
-insert into Allocation(IdAllocation, IdEmployee, IdDepartment, StartDate, EndDate)
+insert into Allocation(IdEmployee, IdDepartment, StartDate, EndDate)
 	Values
-		(1, 1, 1, '2011-10-11', NULL),
-		(2, 2, 2, '2011-10-11', NULL),
-		(3, 3, 3, '2011-10-11', NULL),
-		(4, 4, 4, '2011-10-11', NULL),
-		(5, 5, 5, '2011-10-11', NULL);
+		(1, 1, '2011-10-11', NULL),
+		(2, 2, '2011-10-11', NULL),
+		(3, 3, '2011-10-11', NULL),
+		(4, 4, '2011-10-11', NULL),
+		(5, 5, '2011-10-11', NULL);
 
-insert into MedicalExamination(IdMedicalExamination, IdEmployee, Date)
+insert into MedicalExamination(IdEmployee, Date)
 	values 
-		(1, 1, '2012-05-06'),
-		(2, 2, '2012-07-04'),
-		(3, 3, '2012-06-16'),
-		(4, 4, '2012-04-16'),
-		(5, 5, '2012-04-16');
+		(1, '2012-05-06'),
+		(2, '2012-07-04'),
+		(3, '2012-06-16'),
+		(4, '2012-04-16'),
+		(5, '2012-04-16');
 
-insert into EducationLevel(IdEducationLevel, EducationLevel, Degree, DegreeShort)
+insert into EducationLevel(EducationLevel, Degree, DegreeShort)
 	values 
-		(1, 'Podstawowe', Null, null),
-		(2, 'Gimnazjalne', Null, null),
-		(3, 'Ponadgimnazjalne', Null, null),
-		(4, 'Policealne', Null, null),
-		(5, 'Studium', Null, null),
-		(6, 'Wy¿sze I stopnia techniczne', 'in¿ynier', 'in¿'),
-		(7, 'Wy¿sze I stopnia', 'licencjat', null);
+		('Podstawowe', Null, null),
+		('Gimnazjalne', Null, null),
+		('Ponadgimnazjalne', Null, null),
+		('Policealne', Null, null),
+		('Studium', Null, null),
+		('Wy¿sze I stopnia techniczne', 'in¿ynier', 'in¿'),
+		('Wy¿sze I stopnia', 'licencjat', null);
 
 
-insert into Training(IdTraining, IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
+insert into Training(IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
 	values 
-		(1, 1, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 600),
-		(2, 2, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1000),
-		(3, 3, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 400),
-		(4, 4, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 500),
-		(5, 5, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1500);
+		(1, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 600),
+		(2, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1000),
+		(3, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 400),
+		(4, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 500),
+		(5, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1500);
 		
 
-insert into Education(IdEducation, IdEmployee, IdEducationLevel, GraduationDate)
+insert into Education(IdEmployee, IdEducationLevel, GraduationDate)
 	values
-		(1, 1, 5, '2009-06-06'), 
-		(2, 2, 6, '2009-06-06'), 
-		(3, 3, 4, '2009-06-06'), 
-		(4, 4, 3, '2009-06-06'), 
-		(5, 5, 2, '2009-06-06');
+		(1, 5, '2009-06-06'), 
+		(2, 6, '2009-06-06'), 
+		(3, 4, '2009-06-06'), 
+		(4, 3, '2009-06-06'), 
+		(5, 2, '2009-06-06');
 
 --Quality control
 
 --Accident
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('1', '1', '2019-01-07 09:30:00', 'Skaleczenie d³oni arkuszem blachy');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('2', '2', '2019-02-01 10:15:00', 'Potkniêcie o niezabezpieczony kabel, uraz kostki');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('3', '3', '2019-03-11 11:25:00', 'Skaleczenie d³oni podczas rozwijania blachy');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('4', '4', '2019-03-12 13:35:00', 'Uraz rêki na skutek w³o¿enia jej do maszyny');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('5', '5', '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej pó³ki magazynowej');
+insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
+		(1, '2019-01-07 09:30:00', 'Skaleczenie d³oni arkuszem blachy'),
+		(2, '2019-02-01 10:15:00', 'Potkniêcie o niezabezpieczony kabel, uraz kostki'),
+		(3, '2019-03-11 11:25:00', 'Skaleczenie d³oni podczas rozwijania blachy'),
+		(4, '2019-03-12 13:35:00', 'Uraz rêki na skutek w³o¿enia jej do maszyny'),
+		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej pó³ki magazynowej');
 
 
 --FEMAnalysis
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('1', '2', ' ', 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('2', '2', ' ', 'Wzór nr 2, nowatorskie t³oczenia');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('3', '2', ' ', 'Wzór nr 3, test blachy od nowego producenta');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('4', '2', ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej wiêŸby');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('5', '2', ' ', 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie');
+insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
+		(2, ' ', 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy'),
+		(2, ' ', 'Wzór nr 2, nowatorskie t³oczenia'),
+		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta'),
+		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej wiêŸby'),
+		(2, ' ', 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie');
 
-/*Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '1', '2', BulkColumn, 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy'
+/*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '2', '2', BulkColumn, 'Wzór nr 2, nowatorskie t³oczenia'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select , '2', BulkColumn, 'Wzór nr 2, nowatorskie t³oczenia'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '3', '2', BulkColumn, 'Wzór nr 3, test blachy od nowego producenta'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wzór nr 3, test blachy od nowego producenta'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '4', '2', BulkColumn, 'Wzór nr 4, wersja ekonomiczna dla lekkiej wiêŸby'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wzór nr 4, wersja ekonomiczna dla lekkiej wiêŸby'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '5', '2', BulkColumn, 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
 
 
 
 --SafetyControl
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('1', 'Dêbek Jaros³aw 423452', '1', '2019-01-07 10:20:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('2', 'Dêbek Jaros³aw 423452', '2', '2019-01-07 10:30:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('3', 'Dêbek Jaros³aw 423452', '3', '2019-01-07 10:40:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('4', 'Dêbek Jaros³aw 423452', '4', '2019-01-07 10:50:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('5', 'Dêbek Jaros³aw 423452', '5', '2019-01-07 11:00:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
+insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
+		('Dêbek Jaros³aw 423452', 1, '2019-01-07 10:20:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dêbek Jaros³aw 423452', 2, '2019-01-07 10:30:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dêbek Jaros³aw 423452', 3, '2019-01-07 10:40:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dêbek Jaros³aw 423452', 4, '2019-01-07 10:50:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dêbek Jaros³aw 423452', 5, '2019-01-07 11:00:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
 
 --SafetyTraining
-insert into SafetyTraining (IdEmployee, TrainingDate) values('1', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('2', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('3', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('4', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('5', '2019-01-02 08:00:00');
+insert into SafetyTraining (IdEmployee, TrainingDate) values
+		(1, '2019-01-02 08:00:00'),
+		(2, '2019-01-02 08:00:00'),
+		(3, '2019-01-02 08:00:00'),
+		(4, '2019-01-02 08:00:00'),
+		(5, '2019-01-02 08:00:00');
 
 --SemiFinished
 /*gruboœci blachy u Pruszyñskiego: 0,5; 0,7, 1; 1,25
@@ -208,13 +212,37 @@ kolory G - grafit, C - ceg³a, W - wiœnia, B - br¹z, X - czerñ
 po # numer rolki
 jednostki: mm, kg
 przyk³adowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('1', 'C05#1', '0.5', '1000', '580', 'ceg³a', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('2', 'G05#1', '0.5', '1000', '580', 'grafit', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('3', 'C07#1', '0.7', '1000', '750', 'ceg³a', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('4', 'W10#1', '1.0', '1000', '950', 'wiœnia', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('5', 'B125#1', '1.25', '1000', '1400', 'br¹z', 'C, Fe, Cu');
+insert into SemiFinished (SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values
+		('C05#1', 0.5, 1000, 580, 'ceg³a', 'C, Fe, Ni, Cr'),
+		('G05#1', 0.5, 1000, 580, 'grafit', 'C, Fe, Ni, Cr'),
+		('C07#1', 0.7, 1000, 750, 'ceg³a', 'C, Fe, Ni, Cr'),
+		('W10#1', 1.0, 1000, 950, 'wiœnia', 'C, Fe, Ni, Cr'),
+		('B125#1', 1.25, 1000, 1400, 'br¹z', 'C, Fe, Ni, Cr');
 
+insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
+	Values
+		('Trapez maly', 3, 0.9),
+		('Trapez duzy', 2, 0.8),
+		('Plaski', 5, 1),
+		('Dachowka', 3, 1),
+		('Falisty', 2.5, 1);
 
+--Product
+/*TD - trapez du¿y, TM - trapez ma³y P - p³aski, D - dachówka, F - falisty*/
+insert into Product (IdSemiFinished, ProductCode, IdTechnology, InputDate) values
+		(1, 'C05#1D', 4, '2019-01-07 10:30:00'),
+		(2, 'G05#1D', 4, '2019-01-07 10:40:00'),
+		(3, 'C07#1D', 4, '2019-01-07 10:50:00'),
+		(4, 'W10#1D', 4, '2019-01-07 11:00:00'),
+		(5, 'B125#1D', 4, '2019-01-07 11:10:00');
+
+--TechnicalProductData
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values
+		(1, '', 800, 50, 5000, 40),
+		(2, '', 800, 55, 5000, 45),
+		(3, '', 800, 48, 5000, 38),
+		(4, '', 800, 55, 5000, 35),
+		(5, '', 800, 57, 5000, 40);
 
 
 /*Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
@@ -224,44 +252,15 @@ Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Len
 Select '2', BulkColumn, '800', '55', '5000', '45'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
 Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '3', BulkColumn, '800', '48', '5000', '38'
+Select '3' BulkColumn, '800', '48', '5000', '38'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
 Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '4', BulkColumn, '800', '55', '5000', '35'
+Select '4' BulkColumn, '800', '55', '5000', '35'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
 Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '5', BulkColumn, '800', '57', '5000', '40'
+Select '5' BulkColumn, '800', '57', '5000', '40'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
 
-
---Product
-/*T - trapezowa, B - blachodachówka*/
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('1', '1', 'C05#1B', '1', '2019-01-07 10:30:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('2', '1', 'G05#1B', '2', '2019-01-07 10:40:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('3', '1', 'C07#1B', '3', '2019-01-07 10:50:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('4', '1', 'W10#1B', '4', '2019-01-07 11:00:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('5', '1', 'B125#1B', '5', '2019-01-07 11:10:00');
-
---TechnicalProductData
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('1', '', '800', '50', '5000', '40');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('2', '', '800', '55', '5000', '45');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('3', '', '800', '48', '5000', '38');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('4', '', '800', '55', '5000', '35');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('5', '', '800', '57', '5000', '40');
-
---EntranceControl
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '1', '1', '2019-01-02 08:03:36', '1', 'Rozerwana folia ochronna','2');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '2', '1', '2019-01-02 08:07:36', '1', 'Brak wad','1');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '1', '2019-01-02 08:13:36', '1', 'Brak wad','3');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '4', '1', '2019-01-02 08:20:36', '1', 'Brak wad','1');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '5', '1', '2019-01-02 08:25:36', '0', 'Z³y kolor','2');
-
---OutControl
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '3', '2019-01-02 15:28:36', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '3', '2019-01-03 14:55:17', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '2019-01-04 15:23:55', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '3', '2019-01-07 16:05:45', '1', 'Wszystkie zmierzone parametry prawid³owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '3', '2019-01-08 15:42:22', '0', 'Nierówne t³oczenie', '10');
 --UR
 
 insert into Unit values (1, 'Szt');
@@ -339,8 +338,6 @@ insert into PartOrderDetail values (3, 3, 3, 13);
 insert into PartOrderDetail values (4, 4, 4, 100);
 insert into PartOrderDetail values (5, 5, 5, 32);
 
-insert into FailureMaintenance values (1, 1, 2);
-
 insert into Realization values (1, 1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
 insert into Realization values (2, 1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
 insert into Realization values (3, 2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
@@ -413,6 +410,14 @@ insert into SfOrderDetail values('3', '1', '2700');
 insert into SfOrderDetail values('4', '2', '1450');
 insert into SfOrderDetail values('5', '3', '705');
 
+--EntranceControl
+insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
+		(1, 1, '2019-01-02 08:03:36', 1, 'Rozerwana folia ochronna', 2),
+		(2, 1, '2019-01-02 08:07:36', 1, 'Brak wad', 1),
+		(3, 1, '2019-01-02 08:13:36', 1, 'Brak wad', 3),
+		(4, 1, '2019-01-02 08:20:36', 1, 'Brak wad', 1),
+		(6, 1, '2019-01-02 08:25:36', 0, 'Z³y kolor', 2);
+
 insert into OutsourcingType values('Gosp. odpadami');
 insert into OutsourcingType values('Transport do klienta');
 insert into OutsourcingType values('Reklama');
@@ -432,3 +437,46 @@ insert into OutsourcingCommitment values('2', '2019-04-02', '3500');
 insert into OutsourcingCommitment values('2', '2019-03-31', '5000');
 insert into OutsourcingCommitment values('3', '2019-11-30', '');
 
+--production
+
+ insert into PlannedProduction (IdDetail, IdMachine, PlannedStartd,PlannedEndd,Inproduction)
+ values 
+	('1', '1', '2019-07-31','2019-02-15','0'),
+	('2', '2', '2019-07-31','2019-03-30','0'),
+	('3', '3', '2019-07-31','2019-03-30','1'),
+	('4', '4', '2019-07-31','2019-04-30','1'),
+	('5', '5', '2019-07-31','2019-05-30','1');
+
+insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, EndDate)
+ values
+	('1','1', '2019-01-27', '2019-02-15'),
+	('2','2', '2019-02-15', '2019-03-27'),
+	('3','3', '2019-03-27', '2019-04-27'),
+	('4','4', '2019-04-27', '2019-05-27'),
+	('5','5', '2019-05-27', '2019-06-27');
+
+ insert into ProductionProces(IdPlan, StartDate, EndDate)
+ values  
+	('1', '2019-03-23','2019-04-23'),
+	('2', '2019-04-23','2019-05-23'),
+	('3', '2019-05-23','2019-06-23'),
+	('4', '2019-06-23','2019-07-23'),
+	('5', '2019-08-23','2019-09-23');
+
+ insert into Failure(IdProces, Specification, FailureDate)
+ values 
+	('1','wybuch³o','2019-02-23'),
+	('2','pali siê','2019-03-23'),
+	('3','stuka','2019-04-23'),
+	('4','ale urwa³','2019-05-23'),
+	('5','nie dziala','2019-06-23');
+
+insert into FailureMaintenance values (1, 1, 2);
+
+ --OutControl
+insert into OutControl (IdProces, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
+(1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
+(2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
+(3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
+(4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
+(5, 3, '2019-01-08 15:42:22', 0, 'Nierówne t³oczenie', 10);
