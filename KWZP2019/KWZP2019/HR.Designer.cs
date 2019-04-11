@@ -88,7 +88,6 @@
             this.Warnings.Name = "Warnings";
             this.Warnings.Size = new System.Drawing.Size(212, 52);
             this.Warnings.TabIndex = 3;
-            this.Warnings.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnDetails
             // 

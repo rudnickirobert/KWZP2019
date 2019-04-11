@@ -20,11 +20,6 @@ namespace KWZP2019
             db = new RoofingCompanyEntities();
         }
 
-        private void startForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHR_Click(object sender, EventArgs e)
         {
             FinancesAndHR finanseIHR = new FinancesAndHR();

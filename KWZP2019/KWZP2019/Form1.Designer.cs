@@ -99,7 +99,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "startForm";
             this.Text = "Formularz startowy";
-            this.Load += new System.EventHandler(this.startForm_Load);
             this.ResumeLayout(false);
 
         }

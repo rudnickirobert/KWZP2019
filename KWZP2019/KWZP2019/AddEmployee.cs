@@ -15,37 +15,36 @@ namespace KWZP2019
         public AddEmployee()
         {
             InitializeComponent();
-            Clear();
+            clear();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        
+        void clear()
         {
-
+            tbFirstName.Text =
+            tbLastName.Text = 
+            tbZipCode.Text =
+            tbCity.Text =
+            tbStreet.Text =
+            tbHouseNumber.Text =
+            tbApartmentNumber.Text =
+            tbPhoneNumber.Text =
+            tbPESEL.Text =
+            tbContractLenght.Text = "";
         }
 
-        private void AddEmployee_Load(object sender, EventArgs e)
-        {
-
-        }
-        //Function which clears all text boxes
-        void Clear()
-        {
-            tbFirstName.Text = tbLastName.Text = tbZipCode.Text = tbCity.Text
-                = tbStreet.Text = tbHouseNumber.Text = tbApartmentNumber.Text
-                = tbPhoneNumber.Text = tbPESEL.Text = tbContractLenght.Text = "";
-        }
-        //button which closes Add Employee form
-        private void btCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
-        //button which clears text boxes, using function Clear()
-        private void btClear_Click(object sender, EventArgs e)
+        
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            Clear();
+            clear();
         }
+
         //button which adds values from text boxes to database
-        private void btAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (tbFirstName.Text.Trim() == "" || tbLastName.Text.Trim() == "")
             {
@@ -71,14 +70,9 @@ namespace KWZP2019
             //newContract.EndDate = DateTime.Now.AddMonths(int.Parse(tbContractLenght.Text));
             /*db.Employee.Add(newEmployee);
             db.SaveChanges();
-            Clear();
+            clear();
             MessageBox.Show("Employee has been added correctly");*/
             
-        }
-
-        private void lblContractLenght_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -46,18 +46,18 @@
             this.tbApartmentNumber = new System.Windows.Forms.TextBox();
             this.tbPhoneNumber = new System.Windows.Forms.TextBox();
             this.tbPESEL = new System.Windows.Forms.TextBox();
-            this.btAdd = new System.Windows.Forms.Button();
-            this.btClear = new System.Windows.Forms.Button();
-            this.btCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.tabControlContractLenght = new System.Windows.Forms.TabControl();
             this.ContractLenght = new System.Windows.Forms.TabPage();
-            this.Dates = new System.Windows.Forms.TabPage();
-            this.tbContractLenght = new System.Windows.Forms.TextBox();
             this.lblContractLenght = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
-            this.lblEndDate = new System.Windows.Forms.Label();
+            this.tbContractLenght = new System.Windows.Forms.TextBox();
+            this.Dates = new System.Windows.Forms.TabPage();
             this.dateTimePickerEndDate = new System.Windows.Forms.DateTimePicker();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
+            this.lblStartDate = new System.Windows.Forms.Label();
             this.tabControlContractLenght.SuspendLayout();
             this.ContractLenght.SuspendLayout();
             this.Dates.SuspendLayout();
@@ -107,7 +107,6 @@
             this.lblHouseNumber.Size = new System.Drawing.Size(91, 17);
             this.lblHouseNumber.TabIndex = 3;
             this.lblHouseNumber.Text = "Numer Domu";
-            this.lblHouseNumber.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblStreet
             // 
@@ -208,36 +207,36 @@
             this.tbPESEL.Size = new System.Drawing.Size(183, 22);
             this.tbPESEL.TabIndex = 15;
             // 
-            // btAdd
+            // btnAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(603, 358);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(155, 57);
-            this.btAdd.TabIndex = 16;
-            this.btAdd.Text = "Dodaj";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            this.btnAdd.Location = new System.Drawing.Point(603, 358);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(155, 57);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "Dodaj";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btClear
+            // btnClear
             // 
-            this.btClear.Location = new System.Drawing.Point(602, 296);
-            this.btClear.Name = "btClear";
-            this.btClear.Size = new System.Drawing.Size(156, 57);
-            this.btClear.TabIndex = 17;
-            this.btClear.Text = "Wyczysc";
-            this.btClear.UseVisualStyleBackColor = true;
-            this.btClear.Click += new System.EventHandler(this.btClear_Click);
+            this.btnClear.Location = new System.Drawing.Point(602, 296);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(156, 57);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "Wyczysc";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btCancel
+            // btnCancel
             // 
-            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btCancel.Location = new System.Drawing.Point(603, 233);
-            this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(155, 57);
-            this.btCancel.TabIndex = 18;
-            this.btCancel.Text = "Wyjdz";
-            this.btCancel.UseVisualStyleBackColor = true;
-            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(603, 233);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(155, 57);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Wyjdz";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // tabControlContractLenght
             // 
@@ -261,6 +260,22 @@
             this.ContractLenght.TabIndex = 0;
             this.ContractLenght.Text = "Długość Umowy";
             // 
+            // lblContractLenght
+            // 
+            this.lblContractLenght.AutoSize = true;
+            this.lblContractLenght.Location = new System.Drawing.Point(15, 31);
+            this.lblContractLenght.Name = "lblContractLenght";
+            this.lblContractLenght.Size = new System.Drawing.Size(108, 17);
+            this.lblContractLenght.TabIndex = 1;
+            this.lblContractLenght.Text = "Dlugosc Umowy";
+            // 
+            // tbContractLenght
+            // 
+            this.tbContractLenght.Location = new System.Drawing.Point(15, 62);
+            this.tbContractLenght.Name = "tbContractLenght";
+            this.tbContractLenght.Size = new System.Drawing.Size(194, 22);
+            this.tbContractLenght.TabIndex = 0;
+            // 
             // Dates
             // 
             this.Dates.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -275,40 +290,14 @@
             this.Dates.TabIndex = 1;
             this.Dates.Text = "Daty Od i Do";
             // 
-            // tbContractLenght
+            // dateTimePickerEndDate
             // 
-            this.tbContractLenght.Location = new System.Drawing.Point(15, 62);
-            this.tbContractLenght.Name = "tbContractLenght";
-            this.tbContractLenght.Size = new System.Drawing.Size(194, 22);
-            this.tbContractLenght.TabIndex = 0;
-            // 
-            // lblContractLenght
-            // 
-            this.lblContractLenght.AutoSize = true;
-            this.lblContractLenght.Location = new System.Drawing.Point(15, 31);
-            this.lblContractLenght.Name = "lblContractLenght";
-            this.lblContractLenght.Size = new System.Drawing.Size(108, 17);
-            this.lblContractLenght.TabIndex = 1;
-            this.lblContractLenght.Text = "Dlugosc Umowy";
-            this.lblContractLenght.Click += new System.EventHandler(this.lblContractLenght_Click);
-            // 
-            // lblStartDate
-            // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(13, 21);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(205, 17);
-            this.lblStartDate.TabIndex = 0;
-            this.lblStartDate.Text = "Początek Umowy (yyyy-MM-dd)";
-            // 
-            // dateTimePickerStartDate
-            // 
-            this.dateTimePickerStartDate.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(16, 51);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerStartDate.TabIndex = 1;
+            this.dateTimePickerEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerEndDate.Location = new System.Drawing.Point(16, 138);
+            this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
+            this.dateTimePickerEndDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerEndDate.TabIndex = 3;
             // 
             // lblEndDate
             // 
@@ -319,26 +308,35 @@
             this.lblEndDate.TabIndex = 2;
             this.lblEndDate.Text = "Koniec Umowy (yyyy-MM-dd)";
             // 
-            // dateTimePickerEndDate
+            // dateTimePickerStartDate
             // 
-            this.dateTimePickerEndDate.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(16, 138);
-            this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            this.dateTimePickerEndDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerEndDate.TabIndex = 3;
+            this.dateTimePickerStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerStartDate.Location = new System.Drawing.Point(16, 51);
+            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
+            this.dateTimePickerStartDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerStartDate.TabIndex = 1;
+            // 
+            // lblStartDate
+            // 
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Location = new System.Drawing.Point(13, 21);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(205, 17);
+            this.lblStartDate.TabIndex = 0;
+            this.lblStartDate.Text = "Początek Umowy (yyyy-MM-dd)";
             // 
             // AddEmployee
             // 
-            this.AcceptButton = this.btAdd;
+            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btCancel;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlContractLenght);
-            this.Controls.Add(this.btCancel);
-            this.Controls.Add(this.btClear);
-            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbPESEL);
             this.Controls.Add(this.tbPhoneNumber);
             this.Controls.Add(this.tbApartmentNumber);
@@ -359,7 +357,6 @@
             this.Controls.Add(this.lblFirstName);
             this.Name = "AddEmployee";
             this.Text = "Dodaj Pracownika";
-            this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.tabControlContractLenght.ResumeLayout(false);
             this.ContractLenght.ResumeLayout(false);
             this.ContractLenght.PerformLayout();
@@ -390,9 +387,9 @@
         private System.Windows.Forms.TextBox tbApartmentNumber;
         private System.Windows.Forms.TextBox tbPhoneNumber;
         private System.Windows.Forms.TextBox tbPESEL;
-        private System.Windows.Forms.Button btAdd;
-        private System.Windows.Forms.Button btClear;
-        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TabControl tabControlContractLenght;
         private System.Windows.Forms.TabPage ContractLenght;
         private System.Windows.Forms.Label lblContractLenght;

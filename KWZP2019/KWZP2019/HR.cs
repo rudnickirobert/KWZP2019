@@ -19,11 +19,6 @@ namespace KWZP2019
            
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             AddEmployee addEmployee = new AddEmployee();
