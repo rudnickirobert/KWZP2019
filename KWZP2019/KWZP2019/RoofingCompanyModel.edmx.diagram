@@ -122,6 +122,9 @@
         <AssociationConnector Association="RoofingCompanyModel.SemiFinishedOrderSupplier" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.SfOrderDetailSemiFinishedOrder" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.SupplierSupplierType" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess1" />
+        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -31,7 +31,7 @@ create table FEMAnalysis(
 	);
 
 create table OutControl(
-	IdProces int primary key not null,
+	IdProcess int primary key not null,
 	IdEmployee int not null,
 	ControlDate DateTime not null,
 	ControlStatus bit not null,
@@ -495,7 +495,7 @@ alter table EntranceControl add constraint FKEnteranceControlEmployee foreign ke
 alter table FEMAnalysis add constraint FkFEMAnalysisEmployee foreign key (IdEmployee) references Employee(IdEmployee);
 
 alter table OutControl add constraint FkOutControlEmployee foreign key (IdEmployee) references Employee(IdEmployee);
-alter table OutControl add constraint FkOutControlProcess foreign key (IdProces) references ProductionProces(IdProces);
+alter table OutControl add constraint FkOutControlProcess foreign key (IdProcess) references ProductionProces(IdProces);
 
 alter table SafetyControl add constraint FkInspectedEmployee foreign key (IdInspectedEmployee) references Employee(IdEmployee);
 

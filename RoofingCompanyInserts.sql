@@ -474,7 +474,7 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 insert into FailureMaintenance values (1, 1, 2);
 
  --OutControl
-insert into OutControl (IdProces, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
 (1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
 (2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
 (3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
