@@ -375,7 +375,7 @@ WorkplaceTrainingDate Date null
 
 create table SkillsForMachine(
 IdSkill int primary key identity(1,1) not null,
-IdMachine int, --foreign key references Machine(ID_Machine)
+IdMachine int foreign key references Machine(IdMachine),
 IdPosition int not null Foreign Key references Position(IdPosition)
 );
 
