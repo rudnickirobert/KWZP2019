@@ -3,17 +3,17 @@ use RoofingCompany;
 --HR
 insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
 	values
-		('Andrzej', 'Kowalski', '01-493', 'Warszawa', 'Niepodleg³oœci', '105', '102', '589 603 804', '78121611920'),
-		('Stefan', 'Nowak', '04-905', 'Warszawa', 'Powstañców', '10', '20', '607 894 489', '66123111809'),
-		('Witold', 'Wiœniewski', '03-444', 'Otwock', 'G³ówna', '23A', '5', '555 555 444', '33112244560'),
-		('Szymon', 'Wójcik', '40-404', 'Wroc³aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
+		('Andrzej', 'Kowalski', '01-493', 'Warszawa', 'NiepodlegÅ‚oÅ›ci', '105', '102', '589 603 804', '78121611920'),
+		('Stefan', 'Nowak', '04-905', 'Warszawa', 'PowstaÅ„cÃ³w', '10', '20', '607 894 489', '66123111809'),
+		('Witold', 'WiÅ›niewski', '03-444', 'Otwock', 'GÅ‚Ã³wna', '23A', '5', '555 555 444', '33112244560'),
+		('Szymon', 'WÃ³jcik', '40-404', 'WrocÅ‚aw', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
 		('Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
 
 
 insert into Position (Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
 	values
 		('Kierownik', 2, 2),
-		('Ksiêgowy', 3, 99),
+		('KsiÄ™gowy', 3, 99),
 		('Pracownik produkcji', 1, 1),
 		('Konserwator', 1, 1),
 		('Dyrektor', 4, 5);
@@ -37,9 +37,9 @@ insert into SkillsForMachine(IdMachine, IdPosition)
 
 Insert into AbsenceType(AbscenceReason, Multiplier)
 	values 
-		('Urlop p³atny', 1),
-		('Urlop bezp³atny', 0),
-		('Na ¿¹danie', 0),
+		('Urlop pÅ‚atny', 1),
+		('Urlop bezpÅ‚atny', 0),
+		('Na Å¼Ä…danie', 0),
 		('Nieusprawiedliwiona', 0),
 		('L4', 0.75);
 
@@ -65,7 +65,7 @@ INSERT INTO Department(DepartmentName)
 		('Utrzymanie ruchu'),
 		('HR i Finanse'),
 		('Logistyka'),
-		('Kontrola jakoœci');
+		('Kontrola jakoci');
 
 insert into Staff(IdDeparment, IdPosition, Number, DateFrom)
 	values 
@@ -78,18 +78,18 @@ insert into Staff(IdDeparment, IdPosition, Number, DateFrom)
 INSERT INTO Contractor(ContractorName,Phone,Email,City,PostalCode,Street,HouseNumber,ApartmentNumber,NIP,KRS)
 	values
 		('PGNiG',520325652,'pgnigo@o2.pl','Warszawa',00537,'ul.Krucza','14','6',525008028,0000059492),
-		('Energa',652232522,'energa.sa@energa.pl','Gdañsk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
+		('Energa',652232522,'energa.sa@energa.pl','GdaÅ„sk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
 		('MPWiK',224455000,'dok@mpwik.com.pl','Warszawa',02015,'pl. Starynkiewicza','5','',5250005662,0000146138),
 		('T-Mobile',602913000,'pr@t-mobile.pl','Warszawa',02674,'ul. Marynarska','12','',5261040567,0000391193),
-		('T-Mobile',222200000,'nc+@canal+.pl','£ódŸ',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
+		('T-Mobile',222200000,'nc+@canal+.pl','ÅÃ³dÅº',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
 		;
 
 INSERT INTO InvoiceType(Type)
 	values
 		('Energia elektryczna'),
-		('Wodoci¹gi'), 
-		('Œmieci'),
-		('Artyku³y biurowe'),
+		('WodociÄ…gi'), 
+		('Åšmieci'),
+		('ArtykuÅ‚y biurowe'),
 		('Inwestycje');
 
 
@@ -132,9 +132,8 @@ insert into EducationLevel(EducationLevel, Degree, DegreeShort)
 		('Ponadgimnazjalne', Null, null),
 		('Policealne', Null, null),
 		('Studium', Null, null),
-		('Wy¿sze I stopnia techniczne', 'in¿ynier', 'in¿'),
-		('Wy¿sze I stopnia', 'licencjat', null);
-
+		('WyÅ¼sze I stopnia techniczne', 'inÅ¼ynier', 'inÅ¼'),
+		('WyÅ¼sze I stopnia', 'licencjat', null);
 
 insert into Training(IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
 	values 
@@ -157,46 +156,45 @@ insert into Education(IdEmployee, IdEducationLevel, GraduationDate)
 
 --Accident
 insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
-		(1, '2019-01-07 09:30:00', 'Skaleczenie d³oni arkuszem blachy'),
-		(2, '2019-02-01 10:15:00', 'Potkniêcie o niezabezpieczony kabel, uraz kostki'),
-		(3, '2019-03-11 11:25:00', 'Skaleczenie d³oni podczas rozwijania blachy'),
-		(4, '2019-03-12 13:35:00', 'Uraz rêki na skutek w³o¿enia jej do maszyny'),
-		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej pó³ki magazynowej');
+		(1, '2019-01-07 09:30:00', 'Skaleczenie dï¿½oni arkuszem blachy'),
+		(2, '2019-02-01 10:15:00', 'Potkniï¿½cie o niezabezpieczony kabel, uraz kostki'),
+		(3, '2019-03-11 11:25:00', 'Skaleczenie dï¿½oni podczas rozwijania blachy'),
+		(4, '2019-03-12 13:35:00', 'Uraz rï¿½ki na skutek wï¿½oï¿½enia jej do maszyny'),
+		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej pï¿½ki magazynowej');
 
 
 --FEMAnalysis
 insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
-		(2, ' ', 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy'),
-		(2, ' ', 'Wzór nr 2, nowatorskie t³oczenia'),
-		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta'),
-		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej wiêŸby'),
-		(2, ' ', 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie');
+		(2, ' ', 'Wzï¿½r nr 1, odporny na duï¿½e naciski, idealny na gï¿½rskie dachy'),
+		(2, ' ', 'Wzï¿½r nr 2, nowatorskie tï¿½oczenia'),
+		(2, ' ', 'Wzï¿½r nr 3, test blachy od nowego producenta'),
+		(2, ' ', 'Wzï¿½r nr 4, wersja ekonomiczna dla lekkiej wiï¿½by'),
+		(2, ' ', 'Wzï¿½r nr 5, dla montaï¿½u o najmniejszym odpadzie');
 
 /*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wzór nr 1, odporny na du¿e naciski, idealny na górskie dachy'
+Select '2', BulkColumn, 'Wzï¿½r nr 1, odporny na duï¿½e naciski, idealny na gï¿½rskie dachy'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
 Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select , '2', BulkColumn, 'Wzór nr 2, nowatorskie t³oczenia'
+Select , '2', BulkColumn, 'Wzï¿½r nr 2, nowatorskie tï¿½oczenia'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
 Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wzór nr 3, test blachy od nowego producenta'
+Select '2', BulkColumn, 'Wzï¿½r nr 3, test blachy od nowego producenta'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
 Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wzór nr 4, wersja ekonomiczna dla lekkiej wiêŸby'
+Select '2', BulkColumn, 'Wzï¿½r nr 4, wersja ekonomiczna dla lekkiej wiï¿½by'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
 Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wzór nr 5, dla monta¿u o najmniejszym odpadzie'
+Select '2', BulkColumn, 'Wzï¿½r nr 5, dla montaï¿½u o najmniejszym odpadzie'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
-
 
 
 --SafetyControl
 insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
-		('Dêbek Jaros³aw 423452', 1, '2019-01-07 10:20:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dêbek Jaros³aw 423452', 2, '2019-01-07 10:30:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dêbek Jaros³aw 423452', 3, '2019-01-07 10:40:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dêbek Jaros³aw 423452', 4, '2019-01-07 10:50:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dêbek Jaros³aw 423452', 5, '2019-01-07 11:00:00', 'Œrodki ochrony indywidualnej, pozytywnie', 'TBF');
+		('Dï¿½bek Jarosï¿½aw 423452', 1, '2019-01-07 10:20:00', 'ï¿½rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dï¿½bek Jarosï¿½aw 423452', 2, '2019-01-07 10:30:00', 'ï¿½rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dï¿½bek Jarosï¿½aw 423452', 3, '2019-01-07 10:40:00', 'ï¿½rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dï¿½bek Jarosï¿½aw 423452', 4, '2019-01-07 10:50:00', 'ï¿½rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dï¿½bek Jarosï¿½aw 423452', 5, '2019-01-07 11:00:00', 'ï¿½rodki ochrony indywidualnej, pozytywnie', 'TBF');
 
 --SafetyTraining
 insert into SafetyTraining (IdEmployee, TrainingDate) values
@@ -207,17 +205,17 @@ insert into SafetyTraining (IdEmployee, TrainingDate) values
 		(5, '2019-01-02 08:00:00');
 
 --SemiFinished
-/*gruboœci blachy u Pruszyñskiego: 0,5; 0,7, 1; 1,25
-kolory G - grafit, C - ceg³a, W - wiœnia, B - br¹z, X - czerñ
+/*gruboï¿½ci blachy u Pruszyï¿½skiego: 0,5; 0,7, 1; 1,25
+kolory G - grafit, C - cegï¿½a, W - wiï¿½nia, B - brï¿½z, X - czerï¿½
 po # numer rolki
 jednostki: mm, kg
-przyk³adowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
+przykï¿½adowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
 insert into SemiFinished (SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values
-		('C05#1', 0.5, 1000, 580, 'ceg³a', 'C, Fe, Ni, Cr'),
+		('C05#1', 0.5, 1000, 580, 'cegï¿½a', 'C, Fe, Ni, Cr'),
 		('G05#1', 0.5, 1000, 580, 'grafit', 'C, Fe, Ni, Cr'),
-		('C07#1', 0.7, 1000, 750, 'ceg³a', 'C, Fe, Ni, Cr'),
-		('W10#1', 1.0, 1000, 950, 'wiœnia', 'C, Fe, Ni, Cr'),
-		('B125#1', 1.25, 1000, 1400, 'br¹z', 'C, Fe, Ni, Cr');
+		('C07#1', 0.7, 1000, 750, 'cegï¿½a', 'C, Fe, Ni, Cr'),
+		('W10#1', 1.0, 1000, 950, 'wiï¿½nia', 'C, Fe, Ni, Cr'),
+		('B125#1', 1.25, 1000, 1400, 'brï¿½z', 'C, Fe, Ni, Cr');
 
 insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
 	Values
@@ -228,7 +226,7 @@ insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
 		('Falisty', 2.5, 1);
 
 --Product
-/*TD - trapez du¿y, TM - trapez ma³y P - p³aski, D - dachówka, F - falisty*/
+/*TD - trapez duï¿½y, TM - trapez maï¿½y P - pï¿½aski, D - dachï¿½wka, F - falisty*/
 insert into Product (IdSemiFinished, ProductCode, IdTechnology, InputDate) values
 		(1, 'C05#1D', 4, '2019-01-07 10:30:00'),
 		(2, 'G05#1D', 4, '2019-01-07 10:40:00'),
@@ -268,7 +266,7 @@ insert into Unit values (2, 'Litr');
 insert into Unit values (3, 'Metr');
 insert into Unit values (4, 'Kilogram');
 
-insert into MachineType values (1, '¿³obiarka');
+insert into MachineType values (1, 'ï¿½ï¿½obiarka');
 insert into MachineType values (2, 'Walcarka');
 insert into MachineType values (3, 'Profilarka');
 insert into MachineType values (4, 'Zaginarka');
@@ -281,26 +279,26 @@ insert into Machine values (4, 2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 
 insert into Machine values (5, 1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
  
 insert into MaintType values (1, 'Awaria');
-insert into MaintType values (2, 'Przegl¹d');
+insert into MaintType values (2, 'Przeglï¿½d');
 insert into MaintType values (3, 'Konserwacja');
 
-insert into MaintDescription values (1, 'Smarowanie ³añcucha', null, 0.25);
-insert into MaintDescription values (2, 'Wymiana ³o¿ysk', null, 6);
+insert into MaintDescription values (1, 'Smarowanie ï¿½aï¿½cucha', null, 0.25);
+insert into MaintDescription values (2, 'Wymiana ï¿½oï¿½ysk', null, 6);
 insert into MaintDescription values (3, 'Regulacja luzu napinacza', null, 1);
-insert into MaintDescription values (4, 'Pomiar zu¿ycia kó³ zêbatych', null, 2);
-insert into MaintDescription values (5, 'Wymiana pasa napêdowego', null, 0.25);
+insert into MaintDescription values (4, 'Pomiar zuï¿½ycia kï¿½ zï¿½batych', null, 2);
+insert into MaintDescription values (5, 'Wymiana pasa napï¿½dowego', null, 0.25);
 
-insert into PartType values (1, '£o¿ysko');
+insert into PartType values (1, 'ï¿½oï¿½ysko');
 insert into PartType values (2, 'Pasek');
-insert into PartType values (3, 'Ko³o zêbate');
+insert into PartType values (3, 'Koï¿½o zï¿½bate');
 insert into PartType values (4, 'Smar');
-insert into PartType values (5, '£añcuch');
+insert into PartType values (5, 'ï¿½aï¿½cuch');
 
-insert into Part values (1, 1, 1, '£o¿ysko kulkowe', 'SKF', 6305, 10);
-insert into Part values (2, 3, 1, 'Ko³o zêbate M5', 'Tente', 516, 3);
+insert into Part values (1, 1, 1, 'ï¿½oï¿½ysko kulkowe', 'SKF', 6305, 10);
+insert into Part values (2, 3, 1, 'Koï¿½o zï¿½bate M5', 'Tente', 516, 3);
 insert into Part values (3, 4, 4, 'Smar maszynowy', 'CX80', 43681554, 2);
-insert into Part values (4, 5, 3, '£añcuch krzy¿akowy', 'Kort', 5735, 5);
-insert into Part values (5, 2, 3, 'Pasek zêbaty', 'Oscar', 450, 12);
+insert into Part values (4, 5, 3, 'ï¿½aï¿½cuch krzyï¿½akowy', 'Kort', 5735, 5);
+insert into Part values (5, 2, 3, 'Pasek zï¿½baty', 'Oscar', 450, 12);
 
 insert into Maintenance values (1, 2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
 insert into Maintenance values (2, 4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
@@ -352,15 +350,15 @@ insert into EmployeePlan values (5, 3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 
 
 
 --SD
-insert into Customer values('AndrzejBlach Sp. z o.o.', '606842134', 'AnBlach@gmail.com', 'Kraków',
-'12-852', 'Wolnoœci', '6', '', '', '1021256487', '974131497', ' ');
+insert into Customer values('AndrzejBlach Sp. z o.o.', '606842134', 'AnBlach@gmail.com', 'Krakï¿½w',
+'12-852', 'Wolnoï¿½ci', '6', '', '', '1021256487', '974131497', ' ');
 insert into Customer values('BlachPOL Sp. z o.o.', '504897425', 'BPPL@gmail.com', 'Bytom',
 '97-234', 'Sosnowa', '7', '16', '', '1023259852', '134863918', '');
 insert into Customer values('BlachLAND Sp. akcyjna', '506487412', 'blachland@wp.pl', 'Kielce',
-'41-262', 'Œwierkowa', '9', '26', '', '2012549782', '654316487', '');
-insert into Customer values('Zdzis³aw £om¿ysñki', '602352148', 'zdzisiek58@gmail.com', 'Sosnowiec',
-'62-234', 'Pusta', '2', '', '1021112065', ' ', '', 'Wa¿ny klient');
-insert into Customer values('Zenon ¯eliwny', '605987412', 'ZenonZET@pocztaonet.pl', '¯yrardów',
+'41-262', 'ï¿½wierkowa', '9', '26', '', '2012549782', '654316487', '');
+insert into Customer values('Zdzisï¿½aw ï¿½omï¿½ysï¿½ki', '602352148', 'zdzisiek58@gmail.com', 'Sosnowiec',
+'62-234', 'Pusta', '2', '', '1021112065', ' ', '', 'Waï¿½ny klient');
+insert into Customer values('Zenon ï¿½eliwny', '605987412', 'ZenonZET@pocztaonet.pl', 'ï¿½yrardï¿½w',
 '05-813', 'Sosnowa', '43', '', '1021023158', ' ', '', '');
 
 insert into OrderCustomer values('2', '1', '2019-04-05 14:00', '5500', '20');
@@ -382,19 +380,19 @@ insert into OrderDetail values('6', '1', '400');
 insert into OrderDetail values('6', '2', '900');
 insert into OrderDetail values('7', '2', '1200');
 
-insert into SupplierType values('Pó³fabrykaty');
-insert into SupplierType values('Czêœci');
+insert into SupplierType values('Pï¿½fabrykaty');
+insert into SupplierType values('Czï¿½ci');
 
-insert into Supplier values('1', 'BlachoSprzedawca s.a.', '604215468', 'BlachoSprzedawca@wp.pl', '¯yrardów',
-'05-813', 'D³uga', '11', '', '1023254186','56168496', '');
+insert into Supplier values('1', 'BlachoSprzedawca s.a.', '604215468', 'BlachoSprzedawca@wp.pl', 'ï¿½yrardï¿½w',
+'05-813', 'Dï¿½uga', '11', '', '1023254186','56168496', '');
 insert into Supplier values('1', 'Urimarex s.a.', '616201425', 'unimarex@gmail.com', 'Warszawa',
-'02-111', 'Pu³awska', '98', '2', '1203256475','61543244', ' ');
-insert into Supplier values('1', 'BlachMAN s.j.', '807412345', 'BlachMAN@pocztaonet.pl', 'Gdañsk',
+'02-111', 'Puï¿½awska', '98', '2', '1203256475','61543244', ' ');
+insert into Supplier values('1', 'BlachMAN s.j.', '807412345', 'BlachMAN@pocztaonet.pl', 'Gdaï¿½sk',
 '11-025', 'Morska', '2', '', '1023256412','7564231', '');
-insert into Supplier values('2', 'RoboMAN s.j.', '978085413', 'RoboMAN@gmail.com', 'P³oñsk',
+insert into Supplier values('2', 'RoboMAN s.j.', '978085413', 'RoboMAN@gmail.com', 'Pï¿½oï¿½sk',
 '07-514', 'Sroga', '34', '11', '1202325142','2483213', '');
 insert into Supplier values('2', 'Vortex s.j.', '504123520', 'Vortex@gmail.com', 'Katowice',
-'02-134', 'Po³udniowa', '214', '', '1102012584','123135468', '');
+'02-134', 'Poï¿½udniowa', '214', '', '1102012584','123135468', '');
 
 insert into SemiFinishedOrder values('1', '2019-03-02 10:00', '2019-03-05 10:00', '8000');
 insert into SemiFinishedOrder values('2', '2019-03-03 10:00', '2019-03-05 10:00', '400');
@@ -416,17 +414,17 @@ insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus,
 		(2, 1, '2019-01-02 08:07:36', 1, 'Brak wad', 1),
 		(3, 1, '2019-01-02 08:13:36', 1, 'Brak wad', 3),
 		(4, 1, '2019-01-02 08:20:36', 1, 'Brak wad', 1),
-		(6, 1, '2019-01-02 08:25:36', 0, 'Z³y kolor', 2);
+		(6, 1, '2019-01-02 08:25:36', 0, 'Zï¿½y kolor', 2);
 
 insert into OutsourcingType values('Gosp. odpadami');
 insert into OutsourcingType values('Transport do klienta');
 insert into OutsourcingType values('Reklama');
 
-insert into Outsourcing values('1', 'Œmieciorex s.a.', '807412621', 'Œmieciorex@gmail.com', 'Poznañ',
+insert into Outsourcing values('1', 'ï¿½mieciorex s.a.', '807412621', 'ï¿½mieciorex@gmail.com', 'Poznaï¿½',
 '02-144', 'Brudna', '123', '321', '7452145876','32165498', '');
 insert into Outsourcing values('2', 'TirPower s.a.', '604215120', 'TirPower@gmail.com', 'Gdynia',
 '04-741', 'Daleka', '84', '', '1202325489','10231512', '');
-insert into Outsourcing values('3', 'Reda SA s.a.', '908741521', 'CleanHouse@gmail.com', 'Zamoœæ',
+insert into Outsourcing values('3', 'Reda SA s.a.', '908741521', 'CleanHouse@gmail.com', 'Zamoï¿½ï¿½',
 '01-121', 'Toporna', '24', '1', '1203254158','102135157', '');
 
 insert into OutsourcingCommitment values('1', '2019-07-31', '');
@@ -465,18 +463,18 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 
  insert into Failure(IdProces, Specification, FailureDate)
  values 
-	('1','wybuch³o','2019-02-23'),
-	('2','pali siê','2019-03-23'),
+	('1','wybuchï¿½o','2019-02-23'),
+	('2','pali siï¿½','2019-03-23'),
 	('3','stuka','2019-04-23'),
-	('4','ale urwa³','2019-05-23'),
+	('4','ale urwaï¿½','2019-05-23'),
 	('5','nie dziala','2019-06-23');
 
 insert into FailureMaintenance values (1, 1, 2);
 
  --OutControl
 insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
-(1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
-(2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
-(3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
-(4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawid³owe', 10),
-(5, 3, '2019-01-08 15:42:22', 0, 'Nierówne t³oczenie', 10);
+(1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawidï¿½owe', 10),
+(2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawidï¿½owe', 10),
+(3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawidï¿½owe', 10),
+(4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawidï¿½owe', 10),
+(5, 3, '2019-01-08 15:42:22', 0, 'Nierï¿½wne tï¿½oczenie', 10);
