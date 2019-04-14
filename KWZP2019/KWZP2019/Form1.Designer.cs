@@ -38,7 +38,7 @@
             // btnSales
             // 
             this.btnSales.Location = new System.Drawing.Point(16, 15);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(4);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(557, 76);
             this.btnSales.TabIndex = 0;
@@ -48,7 +48,7 @@
             // btnProduction
             // 
             this.btnProduction.Location = new System.Drawing.Point(16, 98);
-            this.btnProduction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProduction.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduction.Name = "btnProduction";
             this.btnProduction.Size = new System.Drawing.Size(557, 76);
             this.btnProduction.TabIndex = 1;
@@ -58,7 +58,7 @@
             // btnHR
             // 
             this.btnHR.Location = new System.Drawing.Point(16, 182);
-            this.btnHR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHR.Margin = new System.Windows.Forms.Padding(4);
             this.btnHR.Name = "btnHR";
             this.btnHR.Size = new System.Drawing.Size(557, 76);
             this.btnHR.TabIndex = 2;
@@ -68,7 +68,7 @@
             // btnQA
             // 
             this.btnQA.Location = new System.Drawing.Point(16, 266);
-            this.btnQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQA.Margin = new System.Windows.Forms.Padding(4);
             this.btnQA.Name = "btnQA";
             this.btnQA.Size = new System.Drawing.Size(557, 76);
             this.btnQA.TabIndex = 3;
@@ -78,7 +78,7 @@
             // btnMaintenance
             // 
             this.btnMaintenance.Location = new System.Drawing.Point(16, 350);
-            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaintenance.Name = "btnMaintenance";
             this.btnMaintenance.Size = new System.Drawing.Size(557, 76);
             this.btnMaintenance.TabIndex = 4;
@@ -96,7 +96,7 @@
             this.Controls.Add(this.btnHR);
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnSales);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "startForm";
             this.Text = "Formularz startowy";
             this.ResumeLayout(false);

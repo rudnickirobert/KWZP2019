@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class MaintenanceManagment
+    partial class MaintenanceManagement
     {
         /// <summary>
         /// Required designer variable.
