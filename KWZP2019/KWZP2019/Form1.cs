@@ -12,17 +12,19 @@ namespace KWZP2019
 {
     public partial class startForm : Form
     {
-        RoofingCompanyEntities db;
+      private RoofingCompanyEntities db;
+
         public startForm()
         {
             InitializeComponent();
             db = new RoofingCompanyEntities();
+
         }
 
         private void btnProduction_Click(object sender, EventArgs e)
         {
-            Production productionform = new Production(db);
-            productionform.Show();
+            Production productionForm = new Production(db);
+            productionForm.Show();
         }
     }
 }
