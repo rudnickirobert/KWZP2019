@@ -74,6 +74,7 @@
             this.btnQA.TabIndex = 3;
             this.btnQA.Text = "Kontrola jakości";
             this.btnQA.UseVisualStyleBackColor = true;
+            this.btnQA.Click += new System.EventHandler(this.btnQA_Click);
             // 
             // btnMaintenance
             // 
@@ -97,6 +98,7 @@
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnSales);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "StartForm";
             this.Text = "Formularz startowy";
             this.ResumeLayout(false);
