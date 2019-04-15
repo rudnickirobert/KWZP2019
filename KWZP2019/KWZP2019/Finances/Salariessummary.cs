@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class Salariessummary : Form
+    public partial class SalariesSummary : Form
     {
-        public Salariessummary()
+        public SalariesSummary()
         {
             InitializeComponent();
         }
