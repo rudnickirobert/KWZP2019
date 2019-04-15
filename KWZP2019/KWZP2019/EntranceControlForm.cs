@@ -13,10 +13,10 @@ namespace KWZP2019
     public partial class EntranceControlForm : Form
     {
         RoofingCompanyEntities db;
-        startForm startForm;
+        StartForm startForm;
         QualityControl qualityControlForm;
 
-        public EntranceControlForm(RoofingCompanyEntities db, startForm startForm, QualityControl qualityControlForm)
+        public EntranceControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
             this.db = db;
             this.startForm = startForm;

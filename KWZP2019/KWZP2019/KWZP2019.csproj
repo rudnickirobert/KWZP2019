@@ -284,6 +284,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OutControlForm.resx">
       <DependentUpon>OutControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceManagement.resx">
       <DependentUpon>MaintenanceManagement.cs</DependentUpon>
     </EmbeddedResource>
