@@ -12,9 +12,11 @@ namespace KWZP2019
 {
     public partial class Production : Form
     {
+        RoofingCompanyEntities baza = new RoofingCompanyEntities();
         public Production(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            baza = db; 
         }
 
         private void btnTechnology_Click(object sender, EventArgs e)
