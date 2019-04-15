@@ -16,7 +16,7 @@ namespace KWZP2019
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new startForm());
+            Application.Run(new StartForm());
         }
     }
 }

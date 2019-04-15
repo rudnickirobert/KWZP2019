@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class startForm : Form
+    public partial class StartForm : Form
     {
       private RoofingCompanyEntities db;
 
-        public startForm()
+        public StartForm()
         {
             InitializeComponent();
             db = new RoofingCompanyEntities();

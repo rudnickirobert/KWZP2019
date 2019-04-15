@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class startForm
+    partial class StartForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -86,7 +86,7 @@
             this.btnMaintenance.UseVisualStyleBackColor = true;
             this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
             // 
-            // startForm
+            // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +97,7 @@
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnSales);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "startForm";
+            this.Name = "StartForm";
             this.Text = "Formularz startowy";
             this.ResumeLayout(false);
 
