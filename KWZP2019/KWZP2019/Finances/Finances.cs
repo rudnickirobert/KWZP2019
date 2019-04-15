@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,38 +19,38 @@ namespace KWZP2019
 
         private void btnPayments_Click(object sender, EventArgs e)
         {
-            Salaries salaries = new Salaries();
+            Salaries Salaries = new Salaries();
             salaries.ShowDialog();
         }
 
-        private void btnCountpayments_Click(object sender, EventArgs e)
+        private void btnCountPayments_Click(object sender, EventArgs e)
         {
-            Salariessummary salariessummary = new Salariessummary();
-            salariessummary.ShowDialog();
+            SalariesSummary SalariesSummary = new Salariessummary();
+            SalariesSummary.ShowDialog();
         }
 
         private void btnCosts_Click(object sender, EventArgs e)
         {
-            Costs costs = new Costs();
-            costs.ShowDialog();
+            Costs Costs = new Costs();
+            Costs.ShowDialog();
         }
 
         private void btnEarnings_Click(object sender, EventArgs e)
         {
-            Profits profits = new Profits();
-            profits.ShowDialog();
+            Profits Profits = new Profits();
+            Profits.ShowDialog();
         }
 
-        private void btnFinancialstatement_Click(object sender, EventArgs e)
+        private void btnFinancialStatement_Click(object sender, EventArgs e)
         {
-            Allcosts allcosts = new Allcosts();
-            allcosts.ShowDialog();
+            AllCosts AllCosts = new Allcosts();
+            Allcosts.ShowDialog();
         }
 
-        private void btnAddinvoice_Click(object sender, EventArgs e)
+        private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            AddInvoices addinvoices = new Addfvat();
-            addinvoices.ShowDialog();
+            AddInvoices AddInvoices = new Addfvat();
+            AddInvoices.ShowDialog();
         }
     }
 }

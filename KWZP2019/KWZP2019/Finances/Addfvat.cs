@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class AddInovoice : Form
+    public partial class AddInvoice : Form
     {
         public AddInvoice()
         {
