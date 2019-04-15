@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RoofingCompanyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RoofingCompanyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Absence">
           <Key>
             <PropertyRef Name="IdAbsence" />
           </Key>
-          <Property Name="IdAbsence" Type="int" Nullable="false" />
+          <Property Name="IdAbsence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdAbsenceType" Type="int" />
           <Property Name="IdEmployee" Type="int" />
           <Property Name="StartOfAbsence" Type="date" />
@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="IdAbsenceType" />
           </Key>
-          <Property Name="IdAbsenceType" Type="int" Nullable="false" />
+          <Property Name="IdAbsenceType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AbscenceReason" Type="nvarchar" MaxLength="50" />
           <Property Name="Multiplier" Type="float" />
         </EntityType>
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="IdAccident" />
           </Key>
-          <Property Name="IdAccident" Type="int" Nullable="false" />
+          <Property Name="IdAccident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="AccidentDate" Type="datetime" Nullable="false" />
           <Property Name="AccidentDescription" Type="text" Nullable="false" />
@@ -36,7 +36,7 @@
           <Key>
             <PropertyRef Name="IdAllocation" />
           </Key>
-          <Property Name="IdAllocation" Type="int" Nullable="false" />
+          <Property Name="IdAllocation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" />
           <Property Name="IdDepartment" Type="int" />
           <Property Name="StartDate" Type="date" />
@@ -46,7 +46,7 @@
           <Key>
             <PropertyRef Name="IdContract" />
           </Key>
-          <Property Name="IdContract" Type="int" Nullable="false" />
+          <Property Name="IdContract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StartDate" Type="date" />
           <Property Name="EndDate" Type="date" />
           <Property Name="Salary" Type="money" />
@@ -59,7 +59,7 @@
           <Key>
             <PropertyRef Name="IdContractor" />
           </Key>
-          <Property Name="IdContractor" Type="int" Nullable="false" />
+          <Property Name="IdContractor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ContractorName" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="int" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -94,14 +94,14 @@
           <Key>
             <PropertyRef Name="IdDepartment" />
           </Key>
-          <Property Name="IdDepartment" Type="int" Nullable="false" />
+          <Property Name="IdDepartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Education">
           <Key>
             <PropertyRef Name="IdEducation" />
           </Key>
-          <Property Name="IdEducation" Type="int" Nullable="false" />
+          <Property Name="IdEducation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" />
           <Property Name="IdEducationLevel" Type="int" />
           <Property Name="GraduationDate" Type="date" />
@@ -110,7 +110,7 @@
           <Key>
             <PropertyRef Name="IdEducationLevel" />
           </Key>
-          <Property Name="IdEducationLevel" Type="int" Nullable="false" />
+          <Property Name="IdEducationLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EducationLevel" Type="nvarchar" MaxLength="50" />
           <Property Name="Degree" Type="nvarchar" MaxLength="50" />
           <Property Name="DegreeShort" Type="nvarchar" MaxLength="10" />
@@ -119,7 +119,7 @@
           <Key>
             <PropertyRef Name="IdEmployee" />
           </Key>
-          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
           <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
@@ -144,7 +144,7 @@
           <Key>
             <PropertyRef Name="IdEntranceControl" />
           </Key>
-          <Property Name="IdEntranceControl" Type="int" Nullable="false" />
+          <Property Name="IdEntranceControl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdSfDetail" Type="int" Nullable="false" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="ControlDate" Type="datetime" Nullable="false" />
@@ -156,7 +156,7 @@
           <Key>
             <PropertyRef Name="IdExpense" />
           </Key>
-          <Property Name="IdExpense" Type="int" Nullable="false" />
+          <Property Name="IdExpense" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdDepartment" Type="int" />
           <Property Name="IdInvoice" Type="int" />
         </EntityType>
@@ -181,7 +181,7 @@
           <Key>
             <PropertyRef Name="IdFEMAnalysis" />
           </Key>
-          <Property Name="IdFEMAnalysis" Type="int" Nullable="false" />
+          <Property Name="IdFEMAnalysis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="NewPattern" Type="image" Nullable="false" />
           <Property Name="AnalysisResults" Type="text" Nullable="false" />
@@ -190,7 +190,7 @@
           <Key>
             <PropertyRef Name="IdInvoice" />
           </Key>
-          <Property Name="IdInvoice" Type="int" Nullable="false" />
+          <Property Name="IdInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdContractor" Type="int" />
           <Property Name="IdInvoiceType" Type="int" />
           <Property Name="Date" Type="date" />
@@ -200,7 +200,7 @@
           <Key>
             <PropertyRef Name="IdInvoiceType" />
           </Key>
-          <Property Name="IdInvoiceType" Type="int" Nullable="false" />
+          <Property Name="IdInvoiceType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Machine">
@@ -266,7 +266,7 @@
           <Key>
             <PropertyRef Name="IdMedicalExamination" />
           </Key>
-          <Property Name="IdMedicalExamination" Type="int" Nullable="false" />
+          <Property Name="IdMedicalExamination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" />
           <Property Name="Date" Type="date" />
         </EntityType>
@@ -395,7 +395,7 @@
           <Key>
             <PropertyRef Name="IdPayment" />
           </Key>
-          <Property Name="IdPayment" Type="int" Nullable="false" />
+          <Property Name="IdPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Bonus" Type="money" />
           <Property Name="IdEmployee" Type="int" />
           <Property Name="Date" Type="date" />
@@ -426,7 +426,7 @@
           <Key>
             <PropertyRef Name="IdPosition" />
           </Key>
-          <Property Name="IdPosition" Type="int" Nullable="false" />
+          <Property Name="IdPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
           <Property Name="ValidityOfOshTraining" Type="tinyint" />
           <Property Name="VailidityOfMedicalExam" Type="tinyint" />
@@ -435,7 +435,7 @@
           <Key>
             <PropertyRef Name="IdProduct" />
           </Key>
-          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="IdProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdSemiFinished" Type="int" Nullable="false" />
           <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
           <Property Name="IdTechnology" Type="int" Nullable="false" />
@@ -464,7 +464,7 @@
           <Key>
             <PropertyRef Name="IdInspection" />
           </Key>
-          <Property Name="IdInspection" Type="int" Nullable="false" />
+          <Property Name="IdInspection" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdSafetyEmployee" Type="nvarchar" MaxLength="60" Nullable="false" />
           <Property Name="IdInspectedEmployee" Type="int" Nullable="false" />
           <Property Name="SaftyControlDate" Type="datetime" Nullable="false" />
@@ -482,7 +482,7 @@
           <Key>
             <PropertyRef Name="IdSemiFinished" />
           </Key>
-          <Property Name="IdSemiFinished" Type="int" Nullable="false" />
+          <Property Name="IdSemiFinished" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Thickness" Type="float" Nullable="false" />
           <Property Name="Width" Type="float" Nullable="false" />
@@ -513,7 +513,7 @@
           <Key>
             <PropertyRef Name="IdSkill" />
           </Key>
-          <Property Name="IdSkill" Type="int" Nullable="false" />
+          <Property Name="IdSkill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdMachine" Type="int" />
           <Property Name="IdPosition" Type="int" Nullable="false" />
         </EntityType>
@@ -521,7 +521,7 @@
           <Key>
             <PropertyRef Name="IdStaff" />
           </Key>
-          <Property Name="IdStaff" Type="int" Nullable="false" />
+          <Property Name="IdStaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdDeparment" Type="int" />
           <Property Name="IdPosition" Type="int" />
           <Property Name="Number" Type="tinyint" />
@@ -576,7 +576,7 @@
           <Key>
             <PropertyRef Name="IdTraining" />
           </Key>
-          <Property Name="IdTraining" Type="int" Nullable="false" />
+          <Property Name="IdTraining" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" />
           <Property Name="TrainingName" Type="nvarchar" MaxLength="200" />
           <Property Name="TrainingStartDate" Type="date" />
@@ -1082,6 +1082,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
+          <End Role="Allocation" Type="Self.Allocation" Multiplicity="1" />
+          <End Role="PlannedProductionEmployeeDetails" Type="Self.PlannedProductionEmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Allocation">
+              <PropertyRef Name="IdAllocation" />
+            </Principal>
+            <Dependent Role="PlannedProductionEmployeeDetails">
+              <PropertyRef Name="IdEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKPlannedProductionEmployeeDetailsPlannedProduction">
           <End Role="PlannedProduction" Type="Self.PlannedProduction" Multiplicity="1" />
           <End Role="PlannedProductionEmployeeDetails" Type="Self.PlannedProductionEmployeeDetails" Multiplicity="*" />
@@ -1247,18 +1259,6 @@
             </Principal>
             <Dependent Role="Outsourcing">
               <PropertyRef Name="IdOutsourcingType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="PlannedProductionOrderDetail">
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
-          <End Role="PlannedProduction" Type="Self.PlannedProduction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OrderDetail">
-              <PropertyRef Name="IdDetail" />
-            </Principal>
-            <Dependent Role="PlannedProduction">
-              <PropertyRef Name="IdDetail" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1521,6 +1521,10 @@
             <End Role="ProductionProces" EntitySet="ProductionProces" />
             <End Role="OutControl" EntitySet="OutControl" />
           </AssociationSet>
+          <AssociationSet Name="FKPlannedProductionEmployeeDetailsAllocation" Association="Self.FKPlannedProductionEmployeeDetailsAllocation">
+            <End Role="Allocation" EntitySet="Allocation" />
+            <End Role="PlannedProductionEmployeeDetails" EntitySet="PlannedProductionEmployeeDetails" />
+          </AssociationSet>
           <AssociationSet Name="FKPlannedProductionEmployeeDetailsPlannedProduction" Association="Self.FKPlannedProductionEmployeeDetailsPlannedProduction">
             <End Role="PlannedProduction" EntitySet="PlannedProduction" />
             <End Role="PlannedProductionEmployeeDetails" EntitySet="PlannedProductionEmployeeDetails" />
@@ -1577,10 +1581,6 @@
             <End Role="OutsourcingType" EntitySet="OutsourcingType" />
             <End Role="Outsourcing" EntitySet="Outsourcing" />
           </AssociationSet>
-          <AssociationSet Name="PlannedProductionOrderDetail" Association="Self.PlannedProductionOrderDetail">
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-            <End Role="PlannedProduction" EntitySet="PlannedProduction" />
-          </AssociationSet>
           <AssociationSet Name="SemiFinishedOrderSupplier" Association="Self.SemiFinishedOrderSupplier">
             <End Role="Supplier" EntitySet="Supplier" />
             <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrder" />
@@ -1594,8 +1594,7 @@
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RoofingCompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1641,6 +1640,7 @@
           <Property Name="EndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Department" Relationship="Self.FK__Allocatio__IdDep__1EA48E88" FromRole="Allocation" ToRole="Department" />
           <NavigationProperty Name="Employee" Relationship="Self.FK__Allocatio__IdEmp__1DB06A4F" FromRole="Allocation" ToRole="Employee" />
+          <NavigationProperty Name="PlannedProductionEmployeeDetails" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" FromRole="Allocation" ToRole="PlannedProductionEmployeeDetail" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
@@ -2104,6 +2104,7 @@
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="PlannedProduction" Relationship="Self.FKPlannedProductionEmployeeDetailsPlannedProduction" FromRole="PlannedProductionEmployeeDetails" ToRole="PlannedProduction" />
+          <NavigationProperty Name="Allocation" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" FromRole="PlannedProductionEmployeeDetail" ToRole="Allocation" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -3305,7 +3306,23 @@
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <AssociationSet Name="FKPlannedProductionEmployeeDetailsAllocation" Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation">
+            <End Role="Allocation" EntitySet="Allocations" />
+            <End Role="PlannedProductionEmployeeDetail" EntitySet="PlannedProductionEmployeeDetails" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
+          <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PlannedProductionEmployeeDetail" Role="PlannedProductionEmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Allocation">
+              <PropertyRef Name="IdAllocation" />
+            </Principal>
+            <Dependent Role="PlannedProductionEmployeeDetail">
+              <PropertyRef Name="IdEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

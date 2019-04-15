@@ -6,7 +6,7 @@ create database RoofingCompany;
 use RoofingCompany;
 
 create table Accident(
-	IdAccident int primary key not null,
+	IdAccident int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	AccidentDate DateTime not null,
 	-- YYYY-MM-DD HH:MI:SS
@@ -14,7 +14,7 @@ create table Accident(
 	);
 
 create table EntranceControl(
-	IdEntranceControl int primary key not null,
+	IdEntranceControl int primary key identity (1,1) not null,
 	IdSfDetail int not null,
 	IdEmployee int not null,
 	ControlDate DateTime not null,
@@ -24,7 +24,7 @@ create table EntranceControl(
 	);
 
 create table FEMAnalysis(
-	IdFEMAnalysis int primary key not null,
+	IdFEMAnalysis int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	NewPattern image not null,
 	AnalysisResults text not null
@@ -40,7 +40,7 @@ create table OutControl(
 	);
 
 create table SafetyControl(
-	IdInspection int primary key not null,
+	IdInspection int primary key identity (1,1) not null,
 	IdSafetyEmployee nvarchar(60) not null,
 	IdInspectedEmployee int not null,
 	SaftyControlDate DateTime not null,
@@ -54,7 +54,7 @@ create table SafetyTraining(
 	);
 
 create table SemiFinished(
-	IdSemiFinished int primary key not null,
+	IdSemiFinished int primary key identity (1,1) not null,
 	SfCode nvarchar(30) not null,
 	Thickness float not null,
 	Width float not null,
@@ -73,7 +73,7 @@ create table TechnicalProductData(
 	);
 
 create table Product(
-	IdProduct int primary key not null,
+	IdProduct int primary key identity (1,1) not null,
 	IdSemiFinished int not null,
 	ProductCode nvarchar(50),
 	IdTechnology int not null,
@@ -375,7 +375,7 @@ WorkplaceTrainingDate Date null
 
 create table SkillsForMachine(
 IdSkill int primary key identity(1,1) not null,
-IdMachine int, --foreign key references Machine(ID_Machine)
+IdMachine int foreign key references Machine(IdMachine),
 IdPosition int not null Foreign Key references Position(IdPosition)
 );
 
@@ -515,8 +515,6 @@ ALTER TABLE OrderDetail ADD CONSTRAINT OrderDetailOrderCustomer FOREIGN KEY (IdO
 ALTER TABLE OrderCustomer ADD CONSTRAINT OrderCustomerEmployee FOREIGN KEY (IdEmployee) REFERENCES  Employee(IdEmployee);
 
 ALTER TABLE OrderDetail ADD CONSTRAINT OrderDetailProduct FOREIGN KEY (IdProduct) REFERENCES Product (IdProduct);
-
-ALTER TABLE PlannedProduction ADD CONSTRAINT PlannedProductionOrderDetail FOREIGN KEY (IdDetail) REFERENCES OrderDetail (IdDetail);
 
 ALTER TABLE Supplier ADD CONSTRAINT SupplierSupplierType FOREIGN KEY (IdSupplierType) REFERENCES SupplierType (IdSupplierType);
 

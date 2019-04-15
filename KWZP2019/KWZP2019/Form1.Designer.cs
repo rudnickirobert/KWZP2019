@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class startForm
+    partial class StartForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -38,17 +38,18 @@
             // btnSales
             // 
             this.btnSales.Location = new System.Drawing.Point(16, 15);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(4);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(557, 76);
             this.btnSales.TabIndex = 0;
             this.btnSales.Text = "Dział handlowy";
             this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnProduction
             // 
             this.btnProduction.Location = new System.Drawing.Point(16, 98);
-            this.btnProduction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProduction.Margin = new System.Windows.Forms.Padding(4);
             this.btnProduction.Name = "btnProduction";
             this.btnProduction.Size = new System.Drawing.Size(557, 76);
             this.btnProduction.TabIndex = 1;
@@ -58,7 +59,7 @@
             // btnHR
             // 
             this.btnHR.Location = new System.Drawing.Point(16, 182);
-            this.btnHR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHR.Margin = new System.Windows.Forms.Padding(4);
             this.btnHR.Name = "btnHR";
             this.btnHR.Size = new System.Drawing.Size(557, 76);
             this.btnHR.TabIndex = 2;
@@ -69,24 +70,26 @@
             // btnQA
             // 
             this.btnQA.Location = new System.Drawing.Point(16, 266);
-            this.btnQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQA.Margin = new System.Windows.Forms.Padding(4);
             this.btnQA.Name = "btnQA";
             this.btnQA.Size = new System.Drawing.Size(557, 76);
             this.btnQA.TabIndex = 3;
             this.btnQA.Text = "Kontrola jakości";
             this.btnQA.UseVisualStyleBackColor = true;
+            this.btnQA.Click += new System.EventHandler(this.btnQA_Click);
             // 
             // btnMaintenance
             // 
             this.btnMaintenance.Location = new System.Drawing.Point(16, 350);
-            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaintenance.Name = "btnMaintenance";
             this.btnMaintenance.Size = new System.Drawing.Size(557, 76);
             this.btnMaintenance.TabIndex = 4;
             this.btnMaintenance.Text = "Utrzymanie ruchu";
             this.btnMaintenance.UseVisualStyleBackColor = true;
+            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
             // 
-            // startForm
+            // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,8 +99,9 @@
             this.Controls.Add(this.btnHR);
             this.Controls.Add(this.btnProduction);
             this.Controls.Add(this.btnSales);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "startForm";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "StartForm";
             this.Text = "Formularz startowy";
             this.ResumeLayout(false);
 
