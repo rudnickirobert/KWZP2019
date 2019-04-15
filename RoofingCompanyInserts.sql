@@ -1,4 +1,4 @@
-use RoofingCompany;
+﻿use RoofingCompany;
 
 --HR
 insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
