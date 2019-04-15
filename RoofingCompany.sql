@@ -613,11 +613,8 @@ join SafetyTraining
 on Employee.IdEmployee = SafetyTraining.IdEmployee;
 
 
-<<<<<<< HEAD
+
 /*====SALES DEPARTMENT===*/
-=======
-/*====DZIA£ HANDLOWY===*/
->>>>>>> 5ef44daeb9087592747032a64bd0a0ea1c50ad16
 
 GO
 
