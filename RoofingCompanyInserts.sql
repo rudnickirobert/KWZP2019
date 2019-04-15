@@ -156,20 +156,20 @@ insert into Education(IdEmployee, IdEducationLevel, GraduationDate)
 
 --Accident
 insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
-		(1, '2019-01-07 09:30:00', 'Skaleczenie d�oni arkuszem blachy'),
-		(2, '2019-02-01 10:15:00', 'Potkni�cie o niezabezpieczony kabel, uraz kostki'),
-		(3, '2019-03-11 11:25:00', 'Skaleczenie d�oni podczas rozwijania blachy'),
-		(4, '2019-03-12 13:35:00', 'Uraz r�ki na skutek w�o�enia jej do maszyny'),
-		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej p�ki magazynowej');
+		(1, '2019-01-07 09:30:00', 'Skaleczenie dłoni arkuszem blachy'),
+		(2, '2019-02-01 10:15:00', 'Potknięcie o niezabezpieczony kabel, uraz kostki'),
+		(3, '2019-03-11 11:25:00', 'Skaleczenie dłoni podczas rozwijania blachy'),
+		(4, '2019-03-12 13:35:00', 'Uraz ręki na skutek włożenia jej do maszyny'),
+		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej półki magazynowej');
 
 
 --FEMAnalysis
 insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
-		(2, ' ', 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'),
-		(2, ' ', 'Wz�r nr 2, nowatorskie t�oczenia'),
-		(2, ' ', 'Wz�r nr 3, test blachy od nowego producenta'),
-		(2, ' ', 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by'),
-		(2, ' ', 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie');
+		(2, ' ', 'Wzór nr 1, odporny na duże naciski, idealny na górskie dachy'),
+		(2, ' ', 'Wzór nr 2, nowatorskie tłoczenia'),
+		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta'),
+		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej więźby'),
+		(2, ' ', 'Wzór nr 5, dla montażu o najmniejszym odpadzie');
 
 /*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
 Select '2', BulkColumn, 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'
@@ -190,11 +190,11 @@ from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5
 
 --SafetyControl
 insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
-		('D�bek Jaros�aw 423452', 1, '2019-01-07 10:20:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('D�bek Jaros�aw 423452', 2, '2019-01-07 10:30:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('D�bek Jaros�aw 423452', 3, '2019-01-07 10:40:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('D�bek Jaros�aw 423452', 4, '2019-01-07 10:50:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('D�bek Jaros�aw 423452', 5, '2019-01-07 11:00:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
+		('Dąbek Jarosław 423452', 1, '2019-01-07 10:20:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dąbek Jarosław 423452', 2, '2019-01-07 10:30:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dąbek Jarosław 423452', 3, '2019-01-07 10:40:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dąbek Jarosław 423452', 4, '2019-01-07 10:50:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('Dąbek Jarosław 423452', 5, '2019-01-07 11:00:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF');
 
 --SafetyTraining
 insert into SafetyTraining (IdEmployee, TrainingDate) values
@@ -211,11 +211,11 @@ po # numer rolki
 jednostki: mm, kg
 przyk�adowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
 insert into SemiFinished (SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values
-		('C05#1', 0.5, 1000, 580, 'ceg�a', 'C, Fe, Ni, Cr'),
+		('C05#1', 0.5, 1000, 580, 'cegła', 'C, Fe, Ni, Cr'),
 		('G05#1', 0.5, 1000, 580, 'grafit', 'C, Fe, Ni, Cr'),
-		('C07#1', 0.7, 1000, 750, 'ceg�a', 'C, Fe, Ni, Cr'),
-		('W10#1', 1.0, 1000, 950, 'wi�nia', 'C, Fe, Ni, Cr'),
-		('B125#1', 1.25, 1000, 1400, 'br�z', 'C, Fe, Ni, Cr');
+		('C07#1', 0.7, 1000, 750, 'cegła', 'C, Fe, Ni, Cr'),
+		('W10#1', 1.0, 1000, 950, 'wiśnia', 'C, Fe, Ni, Cr'),
+		('B125#1', 1.25, 1000, 1400, 'brąz', 'C, Fe, Ni, Cr');
 
 insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
 	Values
@@ -261,104 +261,104 @@ from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5
 
 --UR
 
-insert into Unit values ('Szt');
-insert into Unit values ('Litr');
-insert into Unit values ('Metr');
-insert into Unit values ('Kilogram');
+insert into Unit values (1, 'Szt');
+insert into Unit values (2, 'Litr');
+insert into Unit values (3, 'Metr');
+insert into Unit values (4, 'Kilogram');
 
-insert into MachineType values ('zlobiarka');
-insert into MachineType values ('Walcarka');
-insert into MachineType values ('Profilarka');
-insert into MachineType values ('Zaginarka');
-insert into MachineType values ('Gilotyna');
+insert into MachineType values (1, 'Żłobiarka');
+insert into MachineType values (2, 'Walcarka');
+insert into MachineType values (3, 'Profilarka');
+insert into MachineType values (4, 'Zaginarka');
+insert into MachineType values (5, 'Gilotyna');
 
-insert into Machine values (4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360);
-insert into Machine values (5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80);
-insert into Machine values (4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400);
-insert into Machine values (2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200);
-insert into Machine values (1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
+insert into Machine values (1, 4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360);
+insert into Machine values (2, 5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80);
+insert into Machine values (3, 4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400);
+insert into Machine values (4, 2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200);
+insert into Machine values (5, 1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
  
-insert into MaintType values ('Awaria');
-insert into MaintType values ('Przeglad');
-insert into MaintType values ('Konserwacja');
+insert into MaintType values (1, 'Awaria');
+insert into MaintType values (2, 'Przegląd');
+insert into MaintType values (3, 'Konserwacja');
 
-insert into MaintDescription values ('Smarowanie lancucha', null, 0.25);
-insert into MaintDescription values ('Wymiana lozysk', null, 6);
-insert into MaintDescription values ('Regulacja luzu napinacza', null, 1);
-insert into MaintDescription values ('Pomiar zuzycia kol zebatych', null, 2);
-insert into MaintDescription values ('Wymiana pasa napedowego', null, 0.25);
+insert into MaintDescription values (1, 'Smarowanie łańcucha', null, 0.25);
+insert into MaintDescription values (2, 'Wymiana łożysk', null, 6);
+insert into MaintDescription values (3, 'Regulacja luzu napinacza', null, 1);
+insert into MaintDescription values (4, 'Pomiar zużycia kół zębatych', null, 2);
+insert into MaintDescription values (5, 'Wymiana pasa napędowego', null, 0.25);
 
-insert into PartType values ('lozysko');
-insert into PartType values ('Pasek');
-insert into PartType values ('Kolo zebate');
-insert into PartType values ('Smar');
-insert into PartType values ('lancuch');
+insert into PartType values (1, 'Łożysko');
+insert into PartType values (2, 'Pasek');
+insert into PartType values (3, 'Koło zębate');
+insert into PartType values (4, 'Smar');
+insert into PartType values (5, 'Łańcuch');
 
-insert into Part values (1, 1, 'lozysko kulkowe', 'SKF', 6305, 10);
-insert into Part values (3, 1, 'Kolo zebate M5', 'Tente', 516, 3);
-insert into Part values (4, 4, 'Smar maszynowy', 'CX80', 43681554, 2);
-insert into Part values (5, 3, 'lancuch krzyzakowy', 'Kort', 5735, 5);
-insert into Part values (2, 3, 'Pasek zebaty', 'Oscar', 450, 12);
+insert into Part values (1, 1, 1, 'Łożysko kulkowe', 'SKF', 6305, 10);
+insert into Part values (2, 3, 1, 'Koło zębate M5', 'Tente', 516, 3);
+insert into Part values (3, 4, 4, 'Smar maszynowy', 'CX80', 43681554, 2);
+insert into Part values (4, 5, 3, 'Łańcuch krzyżakowy', 'Kort', 5735, 5);
+insert into Part values (5, 2, 3, 'Pasek zębaty', 'Oscar', 450, 12);
 
-insert into Maintenance values (2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
-insert into Maintenance values (4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
-insert into Maintenance values (1, 3, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
-insert into Maintenance values (5, 2, 3, '2019-03-13 12:15:54 PM', '2019-03-13 12:20:42 PM', '2019-03-13 12:40:32 PM', 'J4K1EHU1');
-insert into Maintenance values (3, 2, 4, '2019-04-10 08:33:21 AM', '2019-05-20 08:12:47 AM', '2019-05-20 10:53:40 AM', 'T0D3B1L3');
+insert into Maintenance values (1, 2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
+insert into Maintenance values (2, 4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
+insert into Maintenance values (3, 1, 3, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
+insert into Maintenance values (4, 5, 2, 3, '2019-03-13 12:15:54 PM', '2019-03-13 12:20:42 PM', '2019-03-13 12:40:32 PM', 'J4K1EHU1');
+insert into Maintenance values (5, 3, 2, 4, '2019-04-10 08:33:21 AM', '2019-05-20 08:12:47 AM', '2019-05-20 10:53:40 AM', 'T0D3B1L3');
 
-insert into MaintPart values (1, 5, 2);
-insert into MaintPart values (2, 1, 4);
-insert into MaintPart values (3, 3, 1);
-insert into MaintPart values (4, 5, 3);
-insert into MaintPart values (5, 2, 1);
+insert into MaintPart values (1, 1, 5, 2);
+insert into MaintPart values (2, 2, 1, 4);
+insert into MaintPart values (3, 3, 3, 1);
+insert into MaintPart values (4, 4, 5, 3);
+insert into MaintPart values (5, 5, 2, 1);
 
-insert into PartRequest values (2, 5, 0, '2019-04-07 12:12:47 AM');
-insert into PartRequest values (3, 10, 0, '2019-04-08 08:42:27 AM');
-insert into PartRequest values (5, 25, 0, '2019-04-08 10:25:45 AM');
-insert into PartRequest values (1, 8, 0, '2019-04-09 09:10:26 AM');
-insert into PartRequest values (4, 20, 0, '2019-04-10 11:31:24 AM');
+insert into PartRequest values (1, 2, 5, 0, '2019-04-07 12:12:47 AM');
+insert into PartRequest values (2, 3, 10, 0, '2019-04-08 08:42:27 AM');
+insert into PartRequest values (3, 5, 25, 0, '2019-04-08 10:25:45 AM');
+insert into PartRequest values (4, 1, 8, 0, '2019-04-09 09:10:26 AM');
+insert into PartRequest values (5, 4, 20, 0, '2019-04-10 11:31:24 AM');
 
-insert into PartOrder values (1, '2019-04-07 12:32:42 PM', 0, 50);
-insert into PartOrder values (2, '2019-04-08 08:55:10 AM', 0, 125);
-insert into PartOrder values (3, '2019-04-08 11:40:15 AM', 0, 30);
-insert into PartOrder values (4, '2019-04-09 09:26:53 AM', 0, 47);
-insert into PartOrder values (5, '2019-04-10 12:05:25 PM', 0, 215);
+insert into PartOrder values (1, 1, '2019-04-07 12:32:42 PM', 0, 50);
+insert into PartOrder values (2, 2, '2019-04-08 08:55:10 AM', 0, 125);
+insert into PartOrder values (3, 3, '2019-04-08 11:40:15 AM', 0, 30);
+insert into PartOrder values (4, 4, '2019-04-09 09:26:53 AM', 0, 47);
+insert into PartOrder values (5, 5, '2019-04-10 12:05:25 PM', 0, 215);
 
-insert into PartOrderRequest values (1, 1);
-insert into PartOrderRequest values (2, 2);
-insert into PartOrderRequest values (3, 3);
-insert into PartOrderRequest values (4, 4);
-insert into PartOrderRequest values (5, 5);
+insert into PartOrderRequest values (1, 1, 1);
+insert into PartOrderRequest values (2, 2, 2);
+insert into PartOrderRequest values (3, 3, 3);
+insert into PartOrderRequest values (4, 4, 4);
+insert into PartOrderRequest values (5, 5, 5);
 
-insert into PartOrderDetail values (1, 1, 5);
-insert into PartOrderDetail values (2, 2, 20);
-insert into PartOrderDetail values (3, 3, 13);
-insert into PartOrderDetail values (4, 4, 100);
-insert into PartOrderDetail values (5, 5, 32);
+insert into PartOrderDetail values (1, 1, 1, 5);
+insert into PartOrderDetail values (2, 2, 2, 20);
+insert into PartOrderDetail values (3, 3, 3, 13);
+insert into PartOrderDetail values (4, 4, 4, 100);
+insert into PartOrderDetail values (5, 5, 5, 32);
 
-insert into Realization values (1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into Realization values (1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into Realization values (2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into Realization values (2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into Realization values (3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
+insert into Realization values (1, 1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into Realization values (2, 1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into Realization values (3, 2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into Realization values (4, 2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into Realization values (5, 3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
 
-insert into EmployeePlan values (1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into EmployeePlan values (1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into EmployeePlan values (2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into EmployeePlan values (2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into EmployeePlan values (3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
+insert into EmployeePlan values (1, 1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into EmployeePlan values (2, 1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into EmployeePlan values (3, 2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into EmployeePlan values (4, 2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into EmployeePlan values (5, 3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
 
 
 --SD
-insert into Customer values('AndrzejBlach Sp. z o.o.', '606842134', 'AnBlach@gmail.com', 'Krak�w',
-'12-852', 'Wolno�ci', '6', '', '', '1021256487', '974131497', ' ');
+insert into Customer values('AndrzejBlach Sp. z o.o.', '606842134', 'AnBlach@gmail.com', 'Kraków',
+'12-852', 'Wolnosci', '6', '', '', '1021256487', '974131497', ' ');
 insert into Customer values('BlachPOL Sp. z o.o.', '504897425', 'BPPL@gmail.com', 'Bytom',
 '97-234', 'Sosnowa', '7', '16', '', '1023259852', '134863918', '');
 insert into Customer values('BlachLAND Sp. akcyjna', '506487412', 'blachland@wp.pl', 'Kielce',
-'41-262', '�wierkowa', '9', '26', '', '2012549782', '654316487', '');
-insert into Customer values('Zdzis�aw �om�ys�ki', '602352148', 'zdzisiek58@gmail.com', 'Sosnowiec',
-'62-234', 'Pusta', '2', '', '1021112065', ' ', '', 'Wa�ny klient');
-insert into Customer values('Zenon �eliwny', '605987412', 'ZenonZET@pocztaonet.pl', '�yrard�w',
+'41-262', 'Świerkowa', '9', '26', '', '2012549782', '654316487', '');
+insert into Customer values('Zdzisław Kręcinai', '602352148', 'zdzisiek58@gmail.com', 'Sosnowiec',
+'62-234', 'Pusta', '2', '', '1021112065', ' ', '', 'Ważny klient');
+insert into Customer values('Krzysztof Kononowicz', '605987412', 'konon@pocztaonet.pl', 'Białystok',
 '05-813', 'Sosnowa', '43', '', '1021023158', ' ', '', '');
 
 insert into OrderCustomer values('2', '1', '2019-04-05 14:00', '5500', '20');
@@ -380,19 +380,19 @@ insert into OrderDetail values('6', '1', '400');
 insert into OrderDetail values('6', '2', '900');
 insert into OrderDetail values('7', '2', '1200');
 
-insert into SupplierType values('P�fabrykaty');
-insert into SupplierType values('Cz�ci');
+insert into SupplierType values('Półfabrykaty');
+insert into SupplierType values('Części');
 
-insert into Supplier values('1', 'BlachoSprzedawca s.a.', '604215468', 'BlachoSprzedawca@wp.pl', '�yrard�w',
-'05-813', 'D�uga', '11', '', '1023254186','56168496', '');
+insert into Supplier values('1', 'BlachoSprzedawca s.a.', '604215468', 'BlachoSprzedawca@wp.pl', 'Żyrardów',
+'05-813', 'Długa', '11', '', '1023254186','56168496', '');
 insert into Supplier values('1', 'Urimarex s.a.', '616201425', 'unimarex@gmail.com', 'Warszawa',
-'02-111', 'Pu�awska', '98', '2', '1203256475','61543244', ' ');
-insert into Supplier values('1', 'BlachMAN s.j.', '807412345', 'BlachMAN@pocztaonet.pl', 'Gda�sk',
+'02-111', 'Puławska', '98', '2', '1203256475','61543244', ' ');
+insert into Supplier values('1', 'BlachMAN s.j.', '807412345', 'BlachMAN@pocztaonet.pl', 'Gdańsk',
 '11-025', 'Morska', '2', '', '1023256412','7564231', '');
-insert into Supplier values('2', 'RoboMAN s.j.', '978085413', 'RoboMAN@gmail.com', 'P�o�sk',
+insert into Supplier values('2', 'RoboMAN s.j.', '978085413', 'RoboMAN@gmail.com', 'Płońsk',
 '07-514', 'Sroga', '34', '11', '1202325142','2483213', '');
 insert into Supplier values('2', 'Vortex s.j.', '504123520', 'Vortex@gmail.com', 'Katowice',
-'02-134', 'Po�udniowa', '214', '', '1102012584','123135468', '');
+'02-134', 'Południowa', '214', '', '1102012584','123135468', '');
 
 insert into SemiFinishedOrder values('1', '2019-03-02 10:00', '2019-03-05 10:00', '8000');
 insert into SemiFinishedOrder values('2', '2019-03-03 10:00', '2019-03-05 10:00', '400');
@@ -414,17 +414,17 @@ insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus,
 		(2, 1, '2019-01-02 08:07:36', 1, 'Brak wad', 1),
 		(3, 1, '2019-01-02 08:13:36', 1, 'Brak wad', 3),
 		(4, 1, '2019-01-02 08:20:36', 1, 'Brak wad', 1),
-		(6, 1, '2019-01-02 08:25:36', 0, 'Z�y kolor', 2);
+		(6, 1, '2019-01-02 08:25:36', 0, 'Zły kolor', 2);
 
 insert into OutsourcingType values('Gosp. odpadami');
 insert into OutsourcingType values('Transport do klienta');
 insert into OutsourcingType values('Reklama');
 
-insert into Outsourcing values('1', '�mieciorex s.a.', '807412621', '�mieciorex@gmail.com', 'Pozna�',
+insert into Outsourcing values('1', 'Śmieciorex s.a.', '807412621', 'Śmieciorex@gmail.com', 'Poznań',
 '02-144', 'Brudna', '123', '321', '7452145876','32165498', '');
 insert into Outsourcing values('2', 'TirPower s.a.', '604215120', 'TirPower@gmail.com', 'Gdynia',
 '04-741', 'Daleka', '84', '', '1202325489','10231512', '');
-insert into Outsourcing values('3', 'Reda SA s.a.', '908741521', 'CleanHouse@gmail.com', 'Zamo��',
+insert into Outsourcing values('3', 'Reda SA s.a.', '908741521', 'CleanHouse@gmail.com', 'Zamość',
 '01-121', 'Toporna', '24', '1', '1203254158','102135157', '');
 
 insert into OutsourcingCommitment values('1', '2019-07-31', '');
@@ -463,18 +463,18 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 
  insert into Failure(IdProces, Specification, FailureDate)
  values 
-	('1','wybuch�o','2019-02-23'),
-	('2','pali si�','2019-03-23'),
+	('1','wybuchło','2019-02-23'),
+	('2','pali się','2019-03-23'),
 	('3','stuka','2019-04-23'),
-	('4','ale urwa�','2019-05-23'),
+	('4','ale urwał','2019-05-23'),
 	('5','nie dziala','2019-06-23');
 
 insert into FailureMaintenance values (1, 1, 2);
 
  --OutControl
 insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
-(1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
-(2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
-(3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
-(4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
-(5, 3, '2019-01-08 15:42:22', 0, 'Nier�wne t�oczenie', 10);
+(1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
+(2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
+(3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
+(4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
+(5, 3, '2019-01-08 15:42:22', 0, 'Nierówne tłoczenie', 10);
