@@ -19,38 +19,38 @@ namespace KWZP2019
 
         private void btnPayments_Click(object sender, EventArgs e)
         {
-            Salaries obecnosci = new Salaries();
-            obecnosci.ShowDialog();
+            Salaries salaries = new Salaries();
+            salaries.ShowDialog();
         }
 
         private void btnCountpayments_Click(object sender, EventArgs e)
         {
-            Salariessummary urlopy = new Salariessummary();
-            urlopy.ShowDialog();
+            Salariessummary salariessummary = new Salariessummary();
+            salariessummary.ShowDialog();
         }
 
         private void btnCosts_Click(object sender, EventArgs e)
         {
-            Costs faktury = new Costs();
-            faktury.ShowDialog();
+            Costs costs = new Costs();
+            costs.ShowDialog();
         }
 
         private void btnEarnings_Click(object sender, EventArgs e)
         {
-            Profits kadry = new Profits();
-            kadry.ShowDialog();
+            Profits profits = new Profits();
+            profits.ShowDialog();
         }
 
         private void btnFinancialstatement_Click(object sender, EventArgs e)
         {
-            Allcosts wyplaty = new Allcosts();
-            wyplaty.ShowDialog();
+            Allcosts allcosts = new Allcosts();
+            allcosts.ShowDialog();
         }
 
         private void btnAddinvoice_Click(object sender, EventArgs e)
         {
-            Addfvat raporty = new Addfvat();
-            raporty.ShowDialog();
+            AddInvoices addinvoices = new Addfvat();
+            addinvoices.ShowDialog();
         }
     }
 }
