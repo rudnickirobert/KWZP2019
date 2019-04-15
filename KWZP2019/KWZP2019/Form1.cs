@@ -38,8 +38,8 @@ namespace KWZP2019
         }
 
         private void btnHR_Click(object sender, EventArgs e)
-            FinancesAndHR finanseIHR = new FinancesAndHR();
         {
+            FinancesAndHR finanseIHR = new FinancesAndHR()
             finanseIHR.Show();
         }
     }
