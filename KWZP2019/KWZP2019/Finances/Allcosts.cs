@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class Allcosts : Form
+    public partial class AllCosts : Form
     {
-        public Allcosts()
+        public AllCosts()
         {
             InitializeComponent();
         }
