@@ -611,3 +611,57 @@ on Staff.IdPosition = Position.IdPosition) as [NeedPos]
 on [NeedPos].IdPosition = Contract.IdPosition
 join SafetyTraining
 on Employee.IdEmployee = SafetyTraining.IdEmployee;
+
+
+/*====DZIA£ HANDLOWY===*/
+
+GO
+
+CREATE VIEW vCustomerOrderCustomer
+AS
+SELECT CustomerName, IdOrderCustomer, OrderDate, Cost, Markup    
+FROM Customer
+JOIN OrderCustomer
+ON Customer.IdCustomer = OrderCustomer.IdCustomer;
+GO
+ 
+CREATE VIEW vSupplierType1
+AS
+SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+FROM Supplier
+JOIN SupplierType
+ON Supplier.IdSupplierType = SupplierType.IdSupplierType
+WHERE (Type = 'Czêœci');
+GO
+
+CREATE VIEW vSupplierType2
+AS
+SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+FROM Supplier
+JOIN SupplierType
+ON Supplier.IdSupplierType = SupplierType.IdSupplierType
+WHERE (Type = 'Pó³fabrykaty');
+GO
+
+CREATE VIEW vOutsourcingOutsourcingType
+AS
+SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+FROM Outsourcing
+JOIN OutsourcingType
+ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
+GO
+
+CREATE VIEW vCustomerPesel
+AS
+SELECT *
+FROM Customer
+WHERE Pesel !=0; 
+GO
+
+CREATE VIEW vCustomerNIPandKRS
+AS
+SELECT *
+FROM Customer
+WHERE NIP !=0 AND KRS !=0 ; 
+GO
+
