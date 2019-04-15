@@ -613,7 +613,7 @@ join SafetyTraining
 on Employee.IdEmployee = SafetyTraining.IdEmployee;
 
 
-/*====DZIA£ HANDLOWY===*/
+/*====DZIAÂ£ HANDLOWY===*/
 
 GO
 
@@ -631,7 +631,7 @@ SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Czêœci');
+WHERE (Type = 'CzÄ™Å›ci');
 GO
 
 CREATE VIEW vSupplierType2
@@ -640,7 +640,7 @@ SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Pó³fabrykaty');
+WHERE (Type = 'PÃ³Å‚fabrykaty');
 GO
 
 CREATE VIEW vOutsourcingOutsourcingType
