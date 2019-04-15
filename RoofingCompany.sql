@@ -613,7 +613,11 @@ join SafetyTraining
 on Employee.IdEmployee = SafetyTraining.IdEmployee;
 
 
+<<<<<<< HEAD
 /*====SALES DEPARTMENT===*/
+=======
+/*====DZIA£ HANDLOWY===*/
+>>>>>>> 5ef44daeb9087592747032a64bd0a0ea1c50ad16
 
 GO
 
@@ -631,7 +635,7 @@ SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Cz�ci');
+WHERE (Type = 'Części');
 GO
 
 CREATE VIEW vSupplierSemis
@@ -640,7 +644,7 @@ SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'P�fabrykaty');
+WHERE (Type = 'Półfabrykaty');
 GO
 
 CREATE VIEW vOutsourcingWithType
