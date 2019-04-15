@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="42">
+      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="RoofingCompanyModel.Absence" Width="1.5" PointX="6.75" PointY="22.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.AbsenceType" Width="1.5" PointX="4.5" PointY="34.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Accident" Width="1.5" PointX="3.75" PointY="17.625" IsExpanded="true" />
@@ -124,7 +124,6 @@
         <AssociationConnector Association="RoofingCompanyModel.SupplierSupplierType" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess1" />
-        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
