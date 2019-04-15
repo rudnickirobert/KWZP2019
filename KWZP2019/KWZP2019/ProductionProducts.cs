@@ -16,5 +16,12 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddProduct AddProductForm = new AddProduct();
+            AddProductForm.Show();
+
+        }
     }
 }
