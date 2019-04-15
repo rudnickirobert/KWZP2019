@@ -16,7 +16,6 @@ namespace KWZP2019
         public HR()
         {
             InitializeComponent();
-           
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
