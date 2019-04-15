@@ -597,21 +597,18 @@ on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
 
 go
 create view ViewOshTraining as
-select Employee.EmployeeName, Employee.EmployeeSurName, SafetyTraining.TrainingDate, [NeedPos].ValidityOfOshTraining, [NeedPos].DepartmentName
+select Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Department.DepartmentName, Contract.EndDate, SafetyTraining.TrainingDate, Position.ValidityOfOshTraining
 from Employee
 join Contract
 on Employee.IdEmployee = Contract.IdEmployee
-join(
-select Department.DepartmentName, Staff.IdPosition, Position.ValidityOfOshTraining
-from Staff
-join Department
-on Staff.IdDeparment = Department.IdDepartment
-join Position
-on Staff.IdPosition = Position.IdPosition) as [NeedPos]
-on [NeedPos].IdPosition = Contract.IdPosition
 join SafetyTraining
-on Employee.IdEmployee = SafetyTraining.IdEmployee;
-
+on Employee.IdEmployee = SafetyTraining.IdEmployee
+join Position
+on Position.IdPosition = Contract.IdPosition
+join Allocation
+on Employee.IdEmployee = Allocation.IdEmployee
+join Department
+on Department.IdDepartment = Allocation.IdDepartment;
 
 
 /*====SALES DEPARTMENT===*/
