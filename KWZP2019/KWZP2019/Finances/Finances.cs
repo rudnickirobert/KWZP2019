@@ -25,7 +25,7 @@ namespace KWZP2019
 
         private void btnCountPayments_Click(object sender, EventArgs e)
         {
-            SalariesSummary SalariesSummary = new Salariessummary();
+            SalariesSummary SalariesSummary = new SalariesSummary();
             SalariesSummary.ShowDialog();
         }
 
@@ -43,13 +43,13 @@ namespace KWZP2019
 
         private void btnFinancialStatement_Click(object sender, EventArgs e)
         {
-            AllCosts AllCosts = new Allcosts();
+            AllCosts AllCosts = new AllCosts();
             Allcosts.ShowDialog();
         }
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            AddInvoices AddInvoices = new Addfvat();
+            AddInvoices AddInvoices = new AddFvat();
             AddInvoices.ShowDialog();
         }
     }
