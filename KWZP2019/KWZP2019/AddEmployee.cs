@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,15 +21,15 @@ namespace KWZP2019
         
         void clear()
         {
-            tbFirstName.Text =
-            tbLastName.Text = 
-            tbZipCode.Text =
-            tbCity.Text =
-            tbStreet.Text =
-            tbHouseNumber.Text =
-            tbApartmentNumber.Text =
-            tbPhoneNumber.Text =
-            tbPESEL.Text =
+            tbFirstName.Text = "";
+            tbLastName.Text =  "";
+            tbZipCode.Text = "";
+            tbCity.Text = "";
+            tbStreet.Text = "";
+            tbHouseNumber.Text = "";
+            tbApartmentNumber.Text = "";
+            tbPhoneNumber.Text = "";
+            tbPESEL.Text = "";
             tbContractLenght.Text = "";
         }
 
@@ -43,7 +43,6 @@ namespace KWZP2019
             clear();
         }
 
-        //button which adds values from text boxes to database
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (tbFirstName.Text.Trim() == "" || tbLastName.Text.Trim() == "")
@@ -63,15 +62,8 @@ namespace KWZP2019
             Contract newContract = new Contract();
             if (tbContractLenght.Text.Trim() == "")
             {
-                //newContract.StartDate = dateTimePickerStartDate.Value();
-                //newContract.EndDate = dateTimePickerEndDate.Value();
+               
             }
-            //newContract.StartDate = DateTime.Now();
-            //newContract.EndDate = DateTime.Now.AddMonths(int.Parse(tbContractLenght.Text));
-            /*db.Employee.Add(newEmployee);
-            db.SaveChanges();
-            clear();
-            MessageBox.Show("Employee has been added correctly");*/
             
         }
     }
