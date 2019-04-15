@@ -18,6 +18,13 @@ namespace KWZP2019
         {
             InitializeComponent();
             db = new RoofingCompanyEntities();
+
+        }
+
+        private void btnProduction_Click(object sender, EventArgs e)
+        {
+            Production productionForm = new Production(db);
+            productionForm.Show();
         }
         private void btnSales_Click(object sender, EventArgs e)
         {
