@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,12 +26,22 @@ namespace KWZP2019
             Production productionForm = new Production(db);
             productionForm.Show();
         }
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            SalesDepartment salesDepartment = new SalesDepartment(db);
+            salesDepartment.Show();
+        }
+        private void btnQA_Click(object sender, EventArgs e)
+        {
+            QualityControl qualityControlForm = new QualityControl(db, this);
+            qualityControlForm.Show();
+            this.Hide();
+        }
 
         private void btnMaintenance_Click(object sender, EventArgs e)
         {
             MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db);
             maintenanceManagement.Show();
         }
-        
     }
 }
