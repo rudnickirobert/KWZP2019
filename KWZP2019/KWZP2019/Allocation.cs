@@ -14,6 +14,12 @@ namespace KWZP2019
     
     public partial class Allocation
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Allocation()
+        {
+            this.PlannedProductionEmployeeDetails = new HashSet<PlannedProductionEmployeeDetail>();
+        }
+    
         public int IdAllocation { get; set; }
         public Nullable<int> IdEmployee { get; set; }
         public Nullable<int> IdDepartment { get; set; }
@@ -22,5 +28,7 @@ namespace KWZP2019
     
         public virtual Department Department { get; set; }
         public virtual Employee Employee { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
     }
 }
