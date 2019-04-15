@@ -10,20 +10,17 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class startForm : Form
+    public partial class FinancesAndHR : Form
     {
-      private RoofingCompanyEntities db;
-
-        public startForm()
+        public FinancesAndHR()
         {
             InitializeComponent();
-            db = new RoofingCompanyEntities();
         }
 
         private void btnHR_Click(object sender, EventArgs e)
         {
-            FinancesAndHR finanseIHR = new FinancesAndHR();
-            finanseIHR.Show();
+            HR hR = new HR();
+            hR.Show();
         }
     }
 }
