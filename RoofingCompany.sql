@@ -613,11 +613,11 @@ join SafetyTraining
 on Employee.IdEmployee = SafetyTraining.IdEmployee;
 
 
-/*====DZIA£ HANDLOWY===*/
+/*====SALES DEPARTMENT===*/
 
 GO
 
-CREATE VIEW vCustomerOrderCustomer
+CREATE VIEW vCustomerWithOrder
 AS
 SELECT CustomerName, IdOrderCustomer, OrderDate, Cost, Markup    
 FROM Customer
@@ -625,7 +625,7 @@ JOIN OrderCustomer
 ON Customer.IdCustomer = OrderCustomer.IdCustomer;
 GO
  
-CREATE VIEW vSupplierType1
+CREATE VIEW vSupplierParts
 AS
 SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
 FROM Supplier
@@ -634,7 +634,7 @@ ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (Type = 'Czêœci');
 GO
 
-CREATE VIEW vSupplierType2
+CREATE VIEW vSupplierSemis
 AS
 SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
 FROM Supplier
@@ -643,7 +643,7 @@ ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (Type = 'Pó³fabrykaty');
 GO
 
-CREATE VIEW vOutsourcingOutsourcingType
+CREATE VIEW vOutsourcingWithType
 AS
 SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
 FROM Outsourcing
@@ -651,14 +651,14 @@ JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
 GO
 
-CREATE VIEW vCustomerPesel
+CREATE VIEW vIndividualCustomer
 AS
 SELECT *
 FROM Customer
 WHERE Pesel !=0; 
 GO
 
-CREATE VIEW vCustomerNIPandKRS
+CREATE VIEW vCompany
 AS
 SELECT *
 FROM Customer
