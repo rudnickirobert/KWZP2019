@@ -20,11 +20,18 @@ namespace KWZP2019
             db = new RoofingCompanyEntities();
         }
 
+
         private void btnQA_Click(object sender, EventArgs e)
         {
             QualityControl qualityControlForm = new QualityControl(db, this);
             qualityControlForm.Show();
             this.Hide();
+        }
+
+        private void btnMaintenance_Click(object sender, EventArgs e)
+        {
+            MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db);
+            maintenanceManagement.Show();
         }
     }
 }
