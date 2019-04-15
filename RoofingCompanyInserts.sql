@@ -27,13 +27,6 @@ insert into Contract(StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTes
 		('2010-04-10', '2012-04-12', 3000, 4, 4, '2010-04-09', '2010-04-10'),
 		('2010-04-10', '2012-04-12', 6000, 5, 5, '2010-04-09', '2010-04-10');
 
-insert into SkillsForMachine(IdMachine, IdPosition)
-	values
-		(1, 3),
-		(2, 3),
-		(3, 3),
-		(4, 3),
-		(5, 3);
 
 Insert into AbsenceType(AbscenceReason, Multiplier)
 	values 
@@ -272,11 +265,20 @@ insert into MachineType values (3, 'Profilarka');
 insert into MachineType values (4, 'Zaginarka');
 insert into MachineType values (5, 'Gilotyna');
 
+
 insert into Machine values (1, 4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360);
 insert into Machine values (2, 5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80);
 insert into Machine values (3, 4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400);
 insert into Machine values (4, 2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200);
 insert into Machine values (5, 1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
+
+insert into SkillsForMachine(IdMachine, IdPosition)
+	values
+		(1, 3),
+		(2, 3),
+		(3, 3),
+		(4, 3),
+		(5, 3);
  
 insert into MaintType values (1, 'Awaria');
 insert into MaintType values (2, 'Przegląd');
