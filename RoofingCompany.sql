@@ -213,14 +213,16 @@ CREATE TABLE OutsourcingCommitment
 	StartDate DATE,
 	EndDate DATE,
 	);
+
+
 --UR
 create table Unit (
-IdUnit int primary key not null,
+IdUnit int primary key identity (1,1) not null,
 UnitName varchar (50) not null
 );
 
 create table PartRequest (
-IdPartRequest int primary key not null,
+IdPartRequest int primary key identity (1,1) not null,
 IdPart int not null,
 Quantity int not null,
 StatusPart int not null,
@@ -228,7 +230,7 @@ RequestDate datetime not null
 );
 
 create table PartOrder (
-IdPartOrder int primary key not null,
+IdPartOrder int primary key identity (1,1) not null,
 IdSupplier int not null,
 OrderDate datetime not null,
 StatusPartOrder varchar (50) not null,
@@ -236,13 +238,13 @@ CostPartOrder int not null
 );
 
 create table PartOrderRequest (
-IdPartOrderRequest int primary key not null,
+IdPartOrderRequest int primary key identity (1,1) not null,
 IdPartOrder int not null,
 IdPartRequest int not null
 );
 
 create table Part (
-IdPart int primary key not null,
+IdPart int primary key identity (1,1) not null,
 IdPartType int not null,
 IdUnit int not null,
 PartName varchar (50) not null,
@@ -252,19 +254,19 @@ QuantityWarehouse int not null
 );
 
 create table MaintPart (
-IdMaintPart int primary key not null,
+IdMaintPart int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdPart int not null,
 PartQuantity int not null
 );
 
 create table PartType (
-IdPartType int primary key not null,
+IdPartType int primary key identity (1,1) not null,
 PartType varchar (50) not null
 );
 
 create table Maintenance (
-IdMaintenance int primary key not null,
+IdMaintenance int primary key identity (1,1) not null,
 IdMachine int not null,
 IdMaintType int not null,
 IdMaintDesc int not null,
@@ -283,20 +285,20 @@ FailureDate datetime not null
 );
 */
 create table PartOrderDetail (
-IdPartOrderDetail int primary key not null,
+IdPartOrderDetail int primary key identity (1,1) not null,
 IdPartOrder int not null,
 IdPart int not null,
 Quantity int not null
 );
 
 create table FailureMaintenance (
-IdFailureMaint int primary key not null,
+IdFailureMaint int primary key identity (1,1) not null,
 IdFailure int not null,
 IdMaintenance int not null
 );
 
 create table EmployeePlan (
-IdEmployeePlan int primary key not null,
+IdEmployeePlan int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdEmployee int not null,
 StartDate datetime not null,
@@ -304,19 +306,19 @@ EndDate datetime not null
 );
 
 create table MaintType (
-IdMaintenanceType int primary key not null,
+IdMaintenanceType int primary key identity (1,1) not null,
 MaintenanceType varchar (50) not null
 );
 
 create table MaintDescription (
-IdMaintDesc int primary key not null,
+IdMaintDesc int primary key identity (1,1) not null,
 MaintDescName varchar (50) not null,
 MaintDescription varchar (50) null,
 InspectionTimeInterval float (2) not null
 );
 
 create table Machine (
-IdMachine int primary key not null,
+IdMachine int primary key identity (1,1) not null,
 IdMachineType int not null,
 MachineName varchar (50) null,
 ProducerMachine varchar (50) null,
@@ -328,12 +330,12 @@ MetersPerHour float (2) not null
 );
 
 create table MachineType (
-IdMachineType int primary key not null,
+IdMachineType int primary key identity (1,1) not null,
 MachineTypeName varchar (50) not null
 );
 
 create table Realization (
-IdRealization int primary key not null,
+IdRealization int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdEmployee int not null,
 StartRealDate datetime not null,
