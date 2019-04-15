@@ -64,6 +64,24 @@
     <Compile Include="Accident.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddNewCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewCustomerForm.designer.cs">
+      <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewOutsourcingCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewOutsourcingCompanyForm.designer.cs">
+      <DependentUpon>AddNewOutsourcingCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewSupplierForm.designer.cs">
+      <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Allocation.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -75,6 +93,12 @@
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForm.designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -157,6 +181,12 @@
     <Compile Include="OrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OutControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -171,6 +201,12 @@
     </Compile>
     <Compile Include="OutsourcingCommitment.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OutsourcingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutsourcingForm.designer.cs">
+      <DependentUpon>OutsourcingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OutsourcingType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -243,11 +279,11 @@
     <Compile Include="SafetyTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SalesDepartment.cs">
+    <Compile Include="SalesDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesDepartment.Designer.cs">
-      <DependentUpon>SalesDepartment.cs</DependentUpon>
+    <Compile Include="SalesDepartmentForm.designer.cs">
+      <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SemiFinished.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -267,6 +303,12 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierForm.designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupplierType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -282,17 +324,41 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseForm.designer.cs">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewCustomerForm.resx">
+      <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewOutsourcingCompanyForm.resx">
+      <DependentUpon>AddNewOutsourcingCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewSupplierForm.resx">
+      <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EntranceControlForm.resx">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OutControlForm.resx">
       <DependentUpon>OutControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceManagement.resx">
       <DependentUpon>MaintenanceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutsourcingForm.resx">
+      <DependentUpon>OutsourcingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -303,11 +369,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SalesDepartment.resx">
-      <DependentUpon>SalesDepartment.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesDepartmentForm.resx">
+      <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseForm.resx">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
