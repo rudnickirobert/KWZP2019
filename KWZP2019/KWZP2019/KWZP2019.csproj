@@ -324,6 +324,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +342,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
+=======
+>>>>>>> 5cd49bb6546abcd9871cc7475a836c6e1f9d90e6
     <EmbeddedResource Include="OutControlForm.resx">
       <DependentUpon>OutControlForm.cs</DependentUpon>
     </EmbeddedResource>

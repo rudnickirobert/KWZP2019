@@ -37,6 +37,17 @@ namespace KWZP2019
             qualityControlForm.Show();
             this.Hide();
         }
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            SalesDepartment salesDepartment = new SalesDepartment(db);
+            salesDepartment.Show();
+        }
+        private void btnQA_Click(object sender, EventArgs e)
+        {
+            QualityControl qualityControlForm = new QualityControl(db, this);
+            qualityControlForm.Show();
+            this.Hide();
+        }
 
         private void btnMaintenance_Click(object sender, EventArgs e)
         {
