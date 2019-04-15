@@ -254,23 +254,23 @@ from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5
 
 --UR
 
-insert into Unit values (1, 'Szt');
-insert into Unit values (2, 'Litr');
-insert into Unit values (3, 'Metr');
-insert into Unit values (4, 'Kilogram');
+insert into Unit values ('Szt');
+insert into Unit values ('Litr');
+insert into Unit values ('Metr');
+insert into Unit values ('Kilogram');
 
-insert into MachineType values (1, 'Żłobiarka');
-insert into MachineType values (2, 'Walcarka');
-insert into MachineType values (3, 'Profilarka');
-insert into MachineType values (4, 'Zaginarka');
-insert into MachineType values (5, 'Gilotyna');
+insert into MachineType values ('Żłobiarka');
+insert into MachineType values ('Walcarka');
+insert into MachineType values ('Profilarka');
+insert into MachineType values ('Zaginarka');
+insert into MachineType values ('Gilotyna');
 
 
-insert into Machine values (1, 4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360);
-insert into Machine values (2, 5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80);
-insert into Machine values (3, 4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400);
-insert into Machine values (4, 2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200);
-insert into Machine values (5, 1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
+insert into Machine values (4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360);
+insert into Machine values (5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80);
+insert into Machine values (4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400);
+insert into Machine values (2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200);
+insert into Machine values (1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
 
 insert into SkillsForMachine(IdMachine, IdPosition)
 	values
@@ -280,75 +280,75 @@ insert into SkillsForMachine(IdMachine, IdPosition)
 		(4, 3),
 		(5, 3);
  
-insert into MaintType values (1, 'Awaria');
-insert into MaintType values (2, 'Przegląd');
-insert into MaintType values (3, 'Konserwacja');
+insert into MaintType values ('Awaria');
+insert into MaintType values ('Przegląd');
+insert into MaintType values ('Konserwacja');
 
-insert into MaintDescription values (1, 'Smarowanie łańcucha', null, 0.25);
-insert into MaintDescription values (2, 'Wymiana łożysk', null, 6);
-insert into MaintDescription values (3, 'Regulacja luzu napinacza', null, 1);
-insert into MaintDescription values (4, 'Pomiar zużycia kół zębatych', null, 2);
-insert into MaintDescription values (5, 'Wymiana pasa napędowego', null, 0.25);
+insert into MaintDescription values ('Smarowanie łańcucha', null, 0.25);
+insert into MaintDescription values ('Wymiana łożysk', null, 6);
+insert into MaintDescription values ('Regulacja luzu napinacza', null, 1);
+insert into MaintDescription values ('Pomiar zużycia kół zębatych', null, 2);
+insert into MaintDescription values ('Wymiana pasa napędowego', null, 0.25);
 
-insert into PartType values (1, 'Łożysko');
-insert into PartType values (2, 'Pasek');
-insert into PartType values (3, 'Koło zębate');
-insert into PartType values (4, 'Smar');
-insert into PartType values (5, 'Łańcuch');
+insert into PartType values ('Łożysko');
+insert into PartType values ('Pasek');
+insert into PartType values ('Koło zębate');
+insert into PartType values ('Smar');
+insert into PartType values ('Łańcuch');
 
-insert into Part values (1, 1, 1, 'Łożysko kulkowe', 'SKF', 6305, 10);
-insert into Part values (2, 3, 1, 'Koło zębate M5', 'Tente', 516, 3);
-insert into Part values (3, 4, 4, 'Smar maszynowy', 'CX80', 43681554, 2);
-insert into Part values (4, 5, 3, 'Łańcuch krzyżakowy', 'Kort', 5735, 5);
-insert into Part values (5, 2, 3, 'Pasek zębaty', 'Oscar', 450, 12);
+insert into Part values (1, 1, 'Łożysko kulkowe', 'SKF', 6305, 10);
+insert into Part values (3, 1, 'Koło zębate M5', 'Tente', 516, 3);
+insert into Part values (4, 4, 'Smar maszynowy', 'CX80', 43681554, 2);
+insert into Part values (5, 3, 'Łańcuch krzyżakowy', 'Kort', 5735, 5);
+insert into Part values (2, 3, 'Pasek zębaty', 'Oscar', 450, 12);
 
-insert into Maintenance values (1, 2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
-insert into Maintenance values (2, 4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
-insert into Maintenance values (3, 1, 3, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
-insert into Maintenance values (4, 5, 2, 3, '2019-03-13 12:15:54 PM', '2019-03-13 12:20:42 PM', '2019-03-13 12:40:32 PM', 'J4K1EHU1');
-insert into Maintenance values (5, 3, 2, 4, '2019-04-10 08:33:21 AM', '2019-05-20 08:12:47 AM', '2019-05-20 10:53:40 AM', 'T0D3B1L3');
+insert into Maintenance values (2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
+insert into Maintenance values (4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
+insert into Maintenance values (1, 3, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
+insert into Maintenance values (5, 2, 3, '2019-03-13 12:15:54 PM', '2019-03-13 12:20:42 PM', '2019-03-13 12:40:32 PM', 'J4K1EHU1');
+insert into Maintenance values (3, 2, 4, '2019-04-10 08:33:21 AM', '2019-05-20 08:12:47 AM', '2019-05-20 10:53:40 AM', 'T0D3B1L3');
 
-insert into MaintPart values (1, 1, 5, 2);
-insert into MaintPart values (2, 2, 1, 4);
-insert into MaintPart values (3, 3, 3, 1);
-insert into MaintPart values (4, 4, 5, 3);
-insert into MaintPart values (5, 5, 2, 1);
+insert into MaintPart values (1, 5, 2);
+insert into MaintPart values (2, 1, 4);
+insert into MaintPart values (3, 3, 1);
+insert into MaintPart values (4, 5, 3);
+insert into MaintPart values (5, 2, 1);
 
-insert into PartRequest values (1, 2, 5, 0, '2019-04-07 12:12:47 AM');
-insert into PartRequest values (2, 3, 10, 0, '2019-04-08 08:42:27 AM');
-insert into PartRequest values (3, 5, 25, 0, '2019-04-08 10:25:45 AM');
-insert into PartRequest values (4, 1, 8, 0, '2019-04-09 09:10:26 AM');
-insert into PartRequest values (5, 4, 20, 0, '2019-04-10 11:31:24 AM');
+insert into PartRequest values (2, 5, 0, '2019-04-07 12:12:47 AM');
+insert into PartRequest values (3, 10, 0, '2019-04-08 08:42:27 AM');
+insert into PartRequest values (5, 25, 0, '2019-04-08 10:25:45 AM');
+insert into PartRequest values (1, 8, 0, '2019-04-09 09:10:26 AM');
+insert into PartRequest values (4, 20, 0, '2019-04-10 11:31:24 AM');
 
-insert into PartOrder values (1, 1, '2019-04-07 12:32:42 PM', 0, 50);
-insert into PartOrder values (2, 2, '2019-04-08 08:55:10 AM', 0, 125);
-insert into PartOrder values (3, 3, '2019-04-08 11:40:15 AM', 0, 30);
-insert into PartOrder values (4, 4, '2019-04-09 09:26:53 AM', 0, 47);
-insert into PartOrder values (5, 5, '2019-04-10 12:05:25 PM', 0, 215);
+insert into PartOrder values (1, '2019-04-07 12:32:42 PM', 0, 50);
+insert into PartOrder values (2, '2019-04-08 08:55:10 AM', 0, 125);
+insert into PartOrder values (3, '2019-04-08 11:40:15 AM', 0, 30);
+insert into PartOrder values (4, '2019-04-09 09:26:53 AM', 0, 47);
+insert into PartOrder values (5, '2019-04-10 12:05:25 PM', 0, 215);
 
-insert into PartOrderRequest values (1, 1, 1);
-insert into PartOrderRequest values (2, 2, 2);
-insert into PartOrderRequest values (3, 3, 3);
-insert into PartOrderRequest values (4, 4, 4);
-insert into PartOrderRequest values (5, 5, 5);
+insert into PartOrderRequest values (1, 1);
+insert into PartOrderRequest values (2, 2);
+insert into PartOrderRequest values (3, 3);
+insert into PartOrderRequest values (4, 4);
+insert into PartOrderRequest values (5, 5);
 
-insert into PartOrderDetail values (1, 1, 1, 5);
-insert into PartOrderDetail values (2, 2, 2, 20);
-insert into PartOrderDetail values (3, 3, 3, 13);
-insert into PartOrderDetail values (4, 4, 4, 100);
-insert into PartOrderDetail values (5, 5, 5, 32);
+insert into PartOrderDetail values (1, 1, 5);
+insert into PartOrderDetail values (2, 2, 20);
+insert into PartOrderDetail values (3, 3, 13);
+insert into PartOrderDetail values (4, 4, 100);
+insert into PartOrderDetail values (5, 5, 32);
 
-insert into Realization values (1, 1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into Realization values (2, 1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into Realization values (3, 2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into Realization values (4, 2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into Realization values (5, 3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
+insert into Realization values (1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into Realization values (1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into Realization values (2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into Realization values (2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into Realization values (3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
 
-insert into EmployeePlan values (1, 1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into EmployeePlan values (2, 1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into EmployeePlan values (3, 2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into EmployeePlan values (4, 2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into EmployeePlan values (5, 3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
+insert into EmployeePlan values (1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into EmployeePlan values (1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into EmployeePlan values (2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into EmployeePlan values (2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into EmployeePlan values (3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
 
 
 --SD
@@ -471,7 +471,7 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 	('4','ale urwał','2019-05-23'),
 	('5','nie dziala','2019-06-23');
 
-insert into FailureMaintenance values (1, 1, 2);
+insert into FailureMaintenance values (1, 2);
 
  --OutControl
 insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
