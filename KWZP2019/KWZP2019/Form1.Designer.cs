@@ -55,6 +55,7 @@
             this.btnProduction.TabIndex = 1;
             this.btnProduction.Text = "Produkcja";
             this.btnProduction.UseVisualStyleBackColor = true;
+            this.btnProduction.Click += new System.EventHandler(this.btnProduction_Click);
             // 
             // btnHR
             // 
