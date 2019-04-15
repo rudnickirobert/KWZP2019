@@ -342,7 +342,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,7 +381,20 @@
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Machine.datasource" />
+    <None Include="Maintenance.datasource" />
+    <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="PlannedProduction.datasource" />
+    <None Include="PlannedProductionEmployeeDetail.datasource" />
+    <None Include="Product.datasource" />
+    <None Include="Production.datasource" />
+    <None Include="ProductionFailures.datasource" />
+    <None Include="ProductionPlanned.datasource" />
+    <None Include="ProductionProce.datasource" />
+    <None Include="ProductionProcess.datasource" />
+    <None Include="ProductionProducts.datasource" />
+    <None Include="ProductionTechnology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -399,6 +411,7 @@
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>
+    <None Include="Technology.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
