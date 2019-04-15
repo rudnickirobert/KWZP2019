@@ -36,5 +36,11 @@ namespace KWZP2019
             MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db);
             maintenanceManagement.Show();
         }
+
+        private void btnHR_Click(object sender, EventArgs e)
+        {
+            FinancesAndHR finanseIHR = new FinancesAndHR()
+            finanseIHR.Show();
+        }
     }
 }
