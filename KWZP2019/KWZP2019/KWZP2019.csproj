@@ -305,6 +305,7 @@
     </Compile>
     <EmbeddedResource Include="SalesDepartment.resx">
       <DependentUpon>SalesDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
     </EmbeddedResource>
