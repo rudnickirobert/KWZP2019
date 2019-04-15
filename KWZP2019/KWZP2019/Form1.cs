@@ -19,8 +19,11 @@ namespace KWZP2019
             InitializeComponent();
             db = new RoofingCompanyEntities();
         }
-
-
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            SalesDepartment salesDepartment = new SalesDepartment(db);
+            salesDepartment.Show();
+        }
         private void btnQA_Click(object sender, EventArgs e)
         {
             QualityControl qualityControlForm = new QualityControl(db, this);
