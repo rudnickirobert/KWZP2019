@@ -213,14 +213,16 @@ CREATE TABLE OutsourcingCommitment
 	StartDate DATE,
 	EndDate DATE,
 	);
+
+
 --UR
 create table Unit (
-IdUnit int primary key not null,
+IdUnit int primary key identity (1,1) not null,
 UnitName varchar (50) not null
 );
 
 create table PartRequest (
-IdPartRequest int primary key not null,
+IdPartRequest int primary key identity (1,1) not null,
 IdPart int not null,
 Quantity int not null,
 StatusPart int not null,
@@ -228,7 +230,7 @@ RequestDate datetime not null
 );
 
 create table PartOrder (
-IdPartOrder int primary key not null,
+IdPartOrder int primary key identity (1,1) not null,
 IdSupplier int not null,
 OrderDate datetime not null,
 StatusPartOrder varchar (50) not null,
@@ -236,13 +238,13 @@ CostPartOrder int not null
 );
 
 create table PartOrderRequest (
-IdPartOrderRequest int primary key not null,
+IdPartOrderRequest int primary key identity (1,1) not null,
 IdPartOrder int not null,
 IdPartRequest int not null
 );
 
 create table Part (
-IdPart int primary key not null,
+IdPart int primary key identity (1,1) not null,
 IdPartType int not null,
 IdUnit int not null,
 PartName varchar (50) not null,
@@ -252,19 +254,19 @@ QuantityWarehouse int not null
 );
 
 create table MaintPart (
-IdMaintPart int primary key not null,
+IdMaintPart int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdPart int not null,
 PartQuantity int not null
 );
 
 create table PartType (
-IdPartType int primary key not null,
+IdPartType int primary key identity (1,1) not null,
 PartType varchar (50) not null
 );
 
 create table Maintenance (
-IdMaintenance int primary key not null,
+IdMaintenance int primary key identity (1,1) not null,
 IdMachine int not null,
 IdMaintType int not null,
 IdMaintDesc int not null,
@@ -283,20 +285,20 @@ FailureDate datetime not null
 );
 */
 create table PartOrderDetail (
-IdPartOrderDetail int primary key not null,
+IdPartOrderDetail int primary key identity (1,1) not null,
 IdPartOrder int not null,
 IdPart int not null,
 Quantity int not null
 );
 
 create table FailureMaintenance (
-IdFailureMaint int primary key not null,
+IdFailureMaint int primary key identity (1,1) not null,
 IdFailure int not null,
 IdMaintenance int not null
 );
 
 create table EmployeePlan (
-IdEmployeePlan int primary key not null,
+IdEmployeePlan int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdEmployee int not null,
 StartDate datetime not null,
@@ -304,19 +306,19 @@ EndDate datetime not null
 );
 
 create table MaintType (
-IdMaintenanceType int primary key not null,
+IdMaintenanceType int primary key identity (1,1) not null,
 MaintenanceType varchar (50) not null
 );
 
 create table MaintDescription (
-IdMaintDesc int primary key not null,
+IdMaintDesc int primary key identity (1,1) not null,
 MaintDescName varchar (50) not null,
 MaintDescription varchar (50) null,
 InspectionTimeInterval float (2) not null
 );
 
 create table Machine (
-IdMachine int primary key not null,
+IdMachine int primary key identity (1,1) not null,
 IdMachineType int not null,
 MachineName varchar (50) null,
 ProducerMachine varchar (50) null,
@@ -328,12 +330,12 @@ MetersPerHour float (2) not null
 );
 
 create table MachineType (
-IdMachineType int primary key not null,
+IdMachineType int primary key identity (1,1) not null,
 MachineTypeName varchar (50) not null
 );
 
 create table Realization (
-IdRealization int primary key not null,
+IdRealization int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdEmployee int not null,
 StartRealDate datetime not null,
@@ -352,7 +354,7 @@ Street nvarchar(50) null,
 HouseNumber nvarchar(50) null,
 ApartmentNum nvarchar(50) null,
 PhoneNumber nvarchar(50) null,
-PESEL bigint
+PESEL bigint,
 );
 
 create table Position(
@@ -508,25 +510,27 @@ alter table Product add constraint FkProductIdTech foreign key (IdTechnology) re
 
 --============/SALES DEPARTMENT/==============================
 
-ALTER TABLE OrderCustomer ADD CONSTRAINT OrederCustomerCustomer FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer);
+ALTER TABLE OrderCustomer ADD CONSTRAINT FkOrderCustomerCustomer FOREIGN KEY (IdCustomer) REFERENCES Customer (IdCustomer);
 
-ALTER TABLE OrderDetail ADD CONSTRAINT OrderDetailOrderCustomer FOREIGN KEY (IdOrderCustomer) REFERENCES OrderCustomer (IdOrderCustomer);
+ALTER TABLE OrderDetail ADD CONSTRAINT FkOrderDetailOrderCustomer FOREIGN KEY (IdOrderCustomer) REFERENCES OrderCustomer (IdOrderCustomer);
 
-ALTER TABLE OrderCustomer ADD CONSTRAINT OrderCustomerEmployee FOREIGN KEY (IdEmployee) REFERENCES  Employee(IdEmployee);
+ALTER TABLE OrderCustomer ADD CONSTRAINT FkOrderCustomerEmployee FOREIGN KEY (IdEmployee) REFERENCES  Employee(IdEmployee);
 
-ALTER TABLE OrderDetail ADD CONSTRAINT OrderDetailProduct FOREIGN KEY (IdProduct) REFERENCES Product (IdProduct);
+ALTER TABLE OrderDetail ADD CONSTRAINT FkOrderDetailProduct FOREIGN KEY (IdProduct) REFERENCES Product (IdProduct);
 
-ALTER TABLE Supplier ADD CONSTRAINT SupplierSupplierType FOREIGN KEY (IdSupplierType) REFERENCES SupplierType (IdSupplierType);
+ALTER TABLE Supplier ADD CONSTRAINT FkSupplierSupplierType FOREIGN KEY (IdSupplierType) REFERENCES SupplierType (IdSupplierType);
 
-ALTER TABLE SemiFinishedOrder ADD CONSTRAINT SemiFinishedOrderSupplier FOREIGN KEY (IdSupplier)  REFERENCES Supplier (IdSupplier);
+ALTER TABLE SemiFinishedOrder ADD CONSTRAINT FkSemiFinishedOrderSupplier FOREIGN KEY (IdSupplier)  REFERENCES Supplier (IdSupplier);
 
-ALTER TABLE SfOrderDetail ADD CONSTRAINT SfOrderDetailSemiFinishedOrder FOREIGN KEY (IdSfOrder) REFERENCES SemiFinishedOrder (IdSfOrder);
+ALTER TABLE SfOrderDetail ADD CONSTRAINT FkSfOrderDetailSemiFinishedOrder FOREIGN KEY (IdSfOrder) REFERENCES SemiFinishedOrder (IdSfOrder);
 
-ALTER TABLE EntranceControl ADD CONSTRAINT EntranceControlSfOrderDetail FOREIGN KEY (IdSfDetail) REFERENCES SfOrderDetail (IdSfDetail);
+ALTER TABLE EntranceControl ADD CONSTRAINT FkEntranceControlSfOrderDetail FOREIGN KEY (IdSfDetail) REFERENCES SfOrderDetail (IdSfDetail);
 
-ALTER TABLE Outsourcing ADD CONSTRAINT OutsourcingOutsourcingType FOREIGN KEY (IdOutsourcingType) REFERENCES  OutsourcingType (IdOutsourcingType);
+ALTER TABLE Outsourcing ADD CONSTRAINT FkOutsourcingOutsourcingType FOREIGN KEY (IdOutsourcingType) REFERENCES  OutsourcingType (IdOutsourcingType);
 
-ALTER TABLE OutsourcingCommitment ADD CONSTRAINT OutsourcingCommitmentOutsourcing FOREIGN KEY (IdOutsourcing) REFERENCES Outsourcing (IdOutsourcing); 
+ALTER TABLE OutsourcingCommitment ADD CONSTRAINT FkOutsourcingCommitmentOutsourcing FOREIGN KEY (IdOutsourcing) REFERENCES Outsourcing (IdOutsourcing); 
+
+ALTER TABLE SfOrderDetail ADD CONSTRAINT FkSfOrderDetailSemiFinished FOREIGN KEY (IdSemiFinished) REFERENCES SemiFinished (IdSemiFinished); 
 
 
 --============/PRODUCTION CONSTRAINTS -> FOREIGN KEYS==========
@@ -568,3 +572,42 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
+
+
+go
+create view EntranceControlView as
+select IdSfDetail, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition from SemiFinished
+Right Join SfOrderDetail
+on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished
+
+go
+create view ViewDailySfDelivery as
+select SemiFinishedOrder.SfDeliveryDate as [Delivery], Supplier.SupplierName, [Material].SfCode, [Material].Quantity
+from SemiFinishedOrder
+join
+Supplier
+on SemiFinishedOrder.IdSupplier = Supplier.IdSupplier
+join
+(select SemiFinished.SfCode, SfOrderDetail.Quantity, SfOrderDetail.IdSfOrder
+from SfOrderDetail
+join
+SemiFinished
+on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished) as [Material]
+on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
+
+go
+create view ViewOshTraining as
+select Employee.EmployeeName, Employee.EmployeeSurName, SafetyTraining.TrainingDate, [NeedPos].ValidityOfOshTraining, [NeedPos].DepartmentName
+from Employee
+join Contract
+on Employee.IdEmployee = Contract.IdEmployee
+join(
+select Department.DepartmentName, Staff.IdPosition, Position.ValidityOfOshTraining
+from Staff
+join Department
+on Staff.IdDeparment = Department.IdDepartment
+join Position
+on Staff.IdPosition = Position.IdPosition) as [NeedPos]
+on [NeedPos].IdPosition = Contract.IdPosition
+join SafetyTraining
+on Employee.IdEmployee = SafetyTraining.IdEmployee;

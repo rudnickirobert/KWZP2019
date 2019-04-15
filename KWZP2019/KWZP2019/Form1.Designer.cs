@@ -65,6 +65,7 @@
             this.btnHR.TabIndex = 2;
             this.btnHR.Text = "Kadry i finanse";
             this.btnHR.UseVisualStyleBackColor = true;
+            this.btnHR.Click += new System.EventHandler(this.btnHR_Click);
             // 
             // btnQA
             // 
