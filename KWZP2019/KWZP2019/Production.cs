@@ -12,41 +12,41 @@ namespace KWZP2019
 {
     public partial class Production : Form
     {
-        RoofingCompanyEntities baza = new RoofingCompanyEntities();
+        RoofingCompanyEntities dBase = new RoofingCompanyEntities();
         public Production(RoofingCompanyEntities db)
         {
             InitializeComponent();
-            baza = db; 
+            dBase = db; 
         }
 
         private void btnTechnology_Click(object sender, EventArgs e)
         {
-            ProductionTechnology ProductionTechnologyform = new ProductionTechnology();
-            ProductionTechnologyform.Show();
+            ProductionTechnology ProductionTechnologyForm = new ProductionTechnology();
+            ProductionTechnologyForm.Show();
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            ProductionProducts ProductionProductsform = new ProductionProducts();
-            ProductionProductsform.Show();
+            ProductionProducts ProductionProductsForm = new ProductionProducts();
+            ProductionProductsForm.Show();
         }
 
         private void btnFailures_Click(object sender, EventArgs e)
         {
-            ProductionFailures ProductionFailuresform = new ProductionFailures();
-            ProductionFailuresform.Show();
+            ProductionFailures ProductionFailuresForm = new ProductionFailures();
+            ProductionFailuresForm.Show();
         }
 
         private void btnProductionProcess_Click(object sender, EventArgs e)
         {
-            ProductionProcess ProductionProcessform = new ProductionProcess();
-            ProductionProcessform.Show();
+            ProductionProcess ProductionProcessForm = new ProductionProcess();
+            ProductionProcessForm.Show();
         }
 
         private void btnProductionPlanned_Click(object sender, EventArgs e)
         {
-            ProductionPlanned ProductionPlannedform = new ProductionPlanned();
-            ProductionPlannedform.Show();
+            ProductionPlanned ProductionPlannedForm = new ProductionPlanned();
+            ProductionPlannedForm.Show();
         }
     }
 }
