@@ -568,3 +568,42 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
+
+
+go
+create view EntranceControlView as
+select IdSfDetail, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition from SemiFinished
+Right Join SfOrderDetail
+on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished
+
+go
+create view ViewDailySfDelivery as
+select SemiFinishedOrder.SfDeliveryDate as [Delivery], Supplier.SupplierName, [Material].SfCode, [Material].Quantity
+from SemiFinishedOrder
+join
+Supplier
+on SemiFinishedOrder.IdSupplier = Supplier.IdSupplier
+join
+(select SemiFinished.SfCode, SfOrderDetail.Quantity, SfOrderDetail.IdSfOrder
+from SfOrderDetail
+join
+SemiFinished
+on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished) as [Material]
+on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
+
+go
+create view ViewOshTraining as
+select Employee.EmployeeName, Employee.EmployeeSurName, SafetyTraining.TrainingDate, [NeedPos].ValidityOfOshTraining, [NeedPos].DepartmentName
+from Employee
+join Contract
+on Employee.IdEmployee = Contract.IdEmployee
+join(
+select Department.DepartmentName, Staff.IdPosition, Position.ValidityOfOshTraining
+from Staff
+join Department
+on Staff.IdDeparment = Department.IdDepartment
+join Position
+on Staff.IdPosition = Position.IdPosition) as [NeedPos]
+on [NeedPos].IdPosition = Contract.IdPosition
+join SafetyTraining
+on Employee.IdEmployee = SafetyTraining.IdEmployee;
