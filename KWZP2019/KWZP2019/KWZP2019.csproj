@@ -130,6 +130,12 @@
     <Compile Include="Maintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MaintenanceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceManagement.Designer.cs">
+      <DependentUpon>MaintenanceManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaintPart.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -308,6 +314,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
+    <EmbeddedResource Include="MaintenanceManagement.resx">
+      <DependentUpon>MaintenanceManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

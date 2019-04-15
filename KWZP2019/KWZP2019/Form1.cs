@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class startForm : Form
+    public partial class StartForm : Form
     {
       private RoofingCompanyEntities db;
 
-        public startForm()
+        public StartForm()
         {
             InitializeComponent();
             db = new RoofingCompanyEntities();
@@ -26,5 +26,12 @@ namespace KWZP2019
             Production productionForm = new Production(db);
             productionForm.Show();
         }
+
+        private void btnMaintenance_Click(object sender, EventArgs e)
+        {
+            MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db);
+            maintenanceManagement.Show();
+        }
+        
     }
 }

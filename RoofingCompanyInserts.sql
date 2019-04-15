@@ -135,7 +135,6 @@ insert into EducationLevel(EducationLevel, Degree, DegreeShort)
 		('Wyższe I stopnia techniczne', 'inżynier', 'inż'),
 		('Wyższe I stopnia', 'licencjat', null);
 
-
 insert into Training(IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
 	values 
 		(1, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 600),
@@ -156,51 +155,54 @@ insert into Education(IdEmployee, IdEducationLevel, GraduationDate)
 --Quality control
 
 --Accident
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('1', '1', '2019-01-07 09:30:00', 'Skaleczenie d�oni arkuszem blachy');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('2', '2', '2019-02-01 10:15:00', 'Potkni�cie o niezabezpieczony kabel, uraz kostki');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('3', '3', '2019-03-11 11:25:00', 'Skaleczenie d�oni podczas rozwijania blachy');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('4', '4', '2019-03-12 13:35:00', 'Uraz r�ki na skutek w�o�enia jej do maszyny');
-insert into Accident (IdAccident, IdEmployee, AccidentDate, AccidentDescription) values('5', '5', '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej p�ki magazynowej');
+insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
+		(1, '2019-01-07 09:30:00', 'Skaleczenie d�oni arkuszem blachy'),
+		(2, '2019-02-01 10:15:00', 'Potkni�cie o niezabezpieczony kabel, uraz kostki'),
+		(3, '2019-03-11 11:25:00', 'Skaleczenie d�oni podczas rozwijania blachy'),
+		(4, '2019-03-12 13:35:00', 'Uraz r�ki na skutek w�o�enia jej do maszyny'),
+		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej p�ki magazynowej');
 
 
 --FEMAnalysis
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('1', '2', ' ', 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('2', '2', ' ', 'Wz�r nr 2, nowatorskie t�oczenia');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('3', '2', ' ', 'Wz�r nr 3, test blachy od nowego producenta');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('4', '2', ' ', 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by');
-insert into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults) values('5', '2', ' ', 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie');
+insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
+		(2, ' ', 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'),
+		(2, ' ', 'Wz�r nr 2, nowatorskie t�oczenia'),
+		(2, ' ', 'Wz�r nr 3, test blachy od nowego producenta'),
+		(2, ' ', 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by'),
+		(2, ' ', 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie');
 
-/*Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '1', '2', BulkColumn, 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'
+/*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '2', '2', BulkColumn, 'Wz�r nr 2, nowatorskie t�oczenia'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select , '2', BulkColumn, 'Wz�r nr 2, nowatorskie t�oczenia'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '3', '2', BulkColumn, 'Wz�r nr 3, test blachy od nowego producenta'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wz�r nr 3, test blachy od nowego producenta'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '4', '2', BulkColumn, 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdFEMAnalysis, IdEmployee, NewPattern, AnalysisResults)
-Select '5', '2', BulkColumn, 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie'
+Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
+Select '2', BulkColumn, 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
 
 
-
 --SafetyControl
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('1', 'D�bek Jaros�aw 423452', '1', '2019-01-07 10:20:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('2', 'D�bek Jaros�aw 423452', '2', '2019-01-07 10:30:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('3', 'D�bek Jaros�aw 423452', '3', '2019-01-07 10:40:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('4', 'D�bek Jaros�aw 423452', '4', '2019-01-07 10:50:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
-insert into SafetyControl (IdInspection, IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values('5', 'D�bek Jaros�aw 423452', '5', '2019-01-07 11:00:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
+insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
+		('D�bek Jaros�aw 423452', 1, '2019-01-07 10:20:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('D�bek Jaros�aw 423452', 2, '2019-01-07 10:30:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('D�bek Jaros�aw 423452', 3, '2019-01-07 10:40:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('D�bek Jaros�aw 423452', 4, '2019-01-07 10:50:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF'),
+		('D�bek Jaros�aw 423452', 5, '2019-01-07 11:00:00', '�rodki ochrony indywidualnej, pozytywnie', 'TBF');
 
 --SafetyTraining
-insert into SafetyTraining (IdEmployee, TrainingDate) values('1', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('2', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('3', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('4', '2019-01-02 08:00:00');
-insert into SafetyTraining (IdEmployee, TrainingDate) values('5', '2019-01-02 08:00:00');
+insert into SafetyTraining (IdEmployee, TrainingDate) values
+		(1, '2019-01-02 08:00:00'),
+		(2, '2019-01-02 08:00:00'),
+		(3, '2019-01-02 08:00:00'),
+		(4, '2019-01-02 08:00:00'),
+		(5, '2019-01-02 08:00:00');
 
 --SemiFinished
 /*grubo�ci blachy u Pruszy�skiego: 0,5; 0,7, 1; 1,25
@@ -208,13 +210,37 @@ kolory G - grafit, C - ceg�a, W - wi�nia, B - br�z, X - czer�
 po # numer rolki
 jednostki: mm, kg
 przyk�adowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('1', 'C05#1', '0.5', '1000', '580', 'ceg�a', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('2', 'G05#1', '0.5', '1000', '580', 'grafit', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('3', 'C07#1', '0.7', '1000', '750', 'ceg�a', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('4', 'W10#1', '1.0', '1000', '950', 'wi�nia', 'C, Fe, Cu');
-insert into SemiFinished (IdSemiFinished, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values('5', 'B125#1', '1.25', '1000', '1400', 'br�z', 'C, Fe, Cu');
+insert into SemiFinished (SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values
+		('C05#1', 0.5, 1000, 580, 'ceg�a', 'C, Fe, Ni, Cr'),
+		('G05#1', 0.5, 1000, 580, 'grafit', 'C, Fe, Ni, Cr'),
+		('C07#1', 0.7, 1000, 750, 'ceg�a', 'C, Fe, Ni, Cr'),
+		('W10#1', 1.0, 1000, 950, 'wi�nia', 'C, Fe, Ni, Cr'),
+		('B125#1', 1.25, 1000, 1400, 'br�z', 'C, Fe, Ni, Cr');
 
+insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
+	Values
+		('Trapez maly', 3, 0.9),
+		('Trapez duzy', 2, 0.8),
+		('Plaski', 5, 1),
+		('Dachowka', 3, 1),
+		('Falisty', 2.5, 1);
 
+--Product
+/*TD - trapez du�y, TM - trapez ma�y P - p�aski, D - dach�wka, F - falisty*/
+insert into Product (IdSemiFinished, ProductCode, IdTechnology, InputDate) values
+		(1, 'C05#1D', 4, '2019-01-07 10:30:00'),
+		(2, 'G05#1D', 4, '2019-01-07 10:40:00'),
+		(3, 'C07#1D', 4, '2019-01-07 10:50:00'),
+		(4, 'W10#1D', 4, '2019-01-07 11:00:00'),
+		(5, 'B125#1D', 4, '2019-01-07 11:10:00');
+
+--TechnicalProductData
+insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values
+		(1, '', 800, 50, 5000, 40),
+		(2, '', 800, 55, 5000, 45),
+		(3, '', 800, 48, 5000, 38),
+		(4, '', 800, 55, 5000, 35),
+		(5, '', 800, 57, 5000, 40);
 
 
 /*Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
@@ -224,44 +250,15 @@ Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Len
 Select '2', BulkColumn, '800', '55', '5000', '45'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
 Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '3', BulkColumn, '800', '48', '5000', '38'
+Select '3' BulkColumn, '800', '48', '5000', '38'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
 Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '4', BulkColumn, '800', '55', '5000', '35'
+Select '4' BulkColumn, '800', '55', '5000', '35'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
 Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '5', BulkColumn, '800', '57', '5000', '40'
+Select '5' BulkColumn, '800', '57', '5000', '40'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
 
-
---Product
-/*T - trapezowa, B - blachodach�wka*/
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('1', '1', 'C05#1B', '1', '2019-01-07 10:30:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('2', '1', 'G05#1B', '2', '2019-01-07 10:40:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('3', '1', 'C07#1B', '3', '2019-01-07 10:50:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('4', '1', 'W10#1B', '4', '2019-01-07 11:00:00');
-insert into Product (IdProduct, IdSemiFinished, ProductCode, IdTechnology, InputDate) values('5', '1', 'B125#1B', '5', '2019-01-07 11:10:00');
-
---TechnicalProductData
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('1', '', '800', '50', '5000', '40');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('2', '', '800', '55', '5000', '45');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('3', '', '800', '48', '5000', '38');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('4', '', '800', '55', '5000', '35');
-insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values('5', '', '800', '57', '5000', '40');
-
---EntranceControl
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '1', '1', '2019-01-02 08:03:36', '1', 'Rozerwana folia ochronna','2');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '2', '1', '2019-01-02 08:07:36', '1', 'Brak wad','1');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '1', '2019-01-02 08:13:36', '1', 'Brak wad','3');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '4', '1', '2019-01-02 08:20:36', '1', 'Brak wad','1');
-insert into EntranceControl (IdEntranceControl, IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '5', '1', '2019-01-02 08:25:36', '0', 'Z�y kolor','2');
-
---OutControl
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('1', '3', '2019-01-02 15:28:36', '1', 'Wszystkie zmierzone parametry prawid�owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('2', '3', '2019-01-03 14:55:17', '1', 'Wszystkie zmierzone parametry prawid�owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('3', '3', '2019-01-04 15:23:55', '1', 'Wszystkie zmierzone parametry prawid�owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('4', '3', '2019-01-07 16:05:45', '1', 'Wszystkie zmierzone parametry prawid�owe', '10');
-insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values('5', '3', '2019-01-08 15:42:22', '0', 'Nier�wne t�oczenie', '10');
 --UR
 
 insert into Unit values (1, 'Szt');
@@ -339,8 +336,6 @@ insert into PartOrderDetail values (3, 3, 3, 13);
 insert into PartOrderDetail values (4, 4, 4, 100);
 insert into PartOrderDetail values (5, 5, 5, 32);
 
-insert into FailureMaintenance values (1, 1, 2);
-
 insert into Realization values (1, 1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
 insert into Realization values (2, 1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
 insert into Realization values (3, 2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
@@ -413,6 +408,14 @@ insert into SfOrderDetail values('3', '1', '2700');
 insert into SfOrderDetail values('4', '2', '1450');
 insert into SfOrderDetail values('5', '3', '705');
 
+--EntranceControl
+insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
+		(1, 1, '2019-01-02 08:03:36', 1, 'Rozerwana folia ochronna', 2),
+		(2, 1, '2019-01-02 08:07:36', 1, 'Brak wad', 1),
+		(3, 1, '2019-01-02 08:13:36', 1, 'Brak wad', 3),
+		(4, 1, '2019-01-02 08:20:36', 1, 'Brak wad', 1),
+		(6, 1, '2019-01-02 08:25:36', 0, 'Z�y kolor', 2);
+
 insert into OutsourcingType values('Gosp. odpadami');
 insert into OutsourcingType values('Transport do klienta');
 insert into OutsourcingType values('Reklama');
@@ -432,3 +435,46 @@ insert into OutsourcingCommitment values('2', '2019-04-02', '3500');
 insert into OutsourcingCommitment values('2', '2019-03-31', '5000');
 insert into OutsourcingCommitment values('3', '2019-11-30', '');
 
+--production
+
+ insert into PlannedProduction (IdDetail, IdMachine, PlannedStartd,PlannedEndd,Inproduction)
+ values 
+	('1', '1', '2019-07-31','2019-02-15','0'),
+	('2', '2', '2019-07-31','2019-03-30','0'),
+	('3', '3', '2019-07-31','2019-03-30','1'),
+	('4', '4', '2019-07-31','2019-04-30','1'),
+	('5', '5', '2019-07-31','2019-05-30','1');
+
+insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, EndDate)
+ values
+	('1','1', '2019-01-27', '2019-02-15'),
+	('2','2', '2019-02-15', '2019-03-27'),
+	('3','3', '2019-03-27', '2019-04-27'),
+	('4','4', '2019-04-27', '2019-05-27'),
+	('5','5', '2019-05-27', '2019-06-27');
+
+ insert into ProductionProces(IdPlan, StartDate, EndDate)
+ values  
+	('1', '2019-03-23','2019-04-23'),
+	('2', '2019-04-23','2019-05-23'),
+	('3', '2019-05-23','2019-06-23'),
+	('4', '2019-06-23','2019-07-23'),
+	('5', '2019-08-23','2019-09-23');
+
+ insert into Failure(IdProces, Specification, FailureDate)
+ values 
+	('1','wybuch�o','2019-02-23'),
+	('2','pali si�','2019-03-23'),
+	('3','stuka','2019-04-23'),
+	('4','ale urwa�','2019-05-23'),
+	('5','nie dziala','2019-06-23');
+
+insert into FailureMaintenance values (1, 1, 2);
+
+ --OutControl
+insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
+(1, 3, '2019-01-02 15:28:36', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
+(2, 3, '2019-01-03 14:55:17', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
+(3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
+(4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawid�owe', 10),
+(5, 3, '2019-01-08 15:42:22', 0, 'Nier�wne t�oczenie', 10);
