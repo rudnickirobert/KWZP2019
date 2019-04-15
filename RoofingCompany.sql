@@ -6,7 +6,7 @@ create database RoofingCompany;
 use RoofingCompany;
 
 create table Accident(
-	IdAccident int primary key not null,
+	IdAccident int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	AccidentDate DateTime not null,
 	-- YYYY-MM-DD HH:MI:SS
@@ -14,7 +14,7 @@ create table Accident(
 	);
 
 create table EntranceControl(
-	IdEntranceControl int primary key not null,
+	IdEntranceControl int primary key identity (1,1) not null,
 	IdSfDetail int not null,
 	IdEmployee int not null,
 	ControlDate DateTime not null,
@@ -24,7 +24,7 @@ create table EntranceControl(
 	);
 
 create table FEMAnalysis(
-	IdFEMAnalysis int primary key not null,
+	IdFEMAnalysis int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	NewPattern image not null,
 	AnalysisResults text not null
@@ -40,7 +40,7 @@ create table OutControl(
 	);
 
 create table SafetyControl(
-	IdInspection int primary key not null,
+	IdInspection int primary key identity (1,1) not null,
 	IdSafetyEmployee nvarchar(60) not null,
 	IdInspectedEmployee int not null,
 	SaftyControlDate DateTime not null,
@@ -54,7 +54,7 @@ create table SafetyTraining(
 	);
 
 create table SemiFinished(
-	IdSemiFinished int primary key not null,
+	IdSemiFinished int primary key identity (1,1) not null,
 	SfCode nvarchar(30) not null,
 	Thickness float not null,
 	Width float not null,
@@ -73,7 +73,7 @@ create table TechnicalProductData(
 	);
 
 create table Product(
-	IdProduct int primary key not null,
+	IdProduct int primary key identity (1,1) not null,
 	IdSemiFinished int not null,
 	ProductCode nvarchar(50),
 	IdTechnology int not null,
@@ -340,10 +340,10 @@ StartRealDate datetime not null,
 EndRealDate datetime null
 );
 
---hr
+--------------------------------------------------------------------------hr
 
 create table Employee(
-IdEmployee int primary key not null,
+IdEmployee int primary key identity(1,1) not null,
 EmployeeName nvarchar(50) null,
 EmployeeSurname nvarchar(50) null,
 ZipCode nvarchar(50) null,
@@ -356,14 +356,14 @@ PESEL bigint
 );
 
 create table Position(
-IdPosition int not null Primary key,
+IdPosition int not null Primary key identity(1,1),
 Workplace nvarchar(50) null,
 ValidityOfOshTraining tinyint null,
 VailidityOfMedicalExam tinyint null
 );
 
 create table Contract(
-IdContract int not null primary key,
+IdContract int not null primary key identity(1,1),
 StartDate date null,
 EndDate date null,
 Salary money null,
@@ -374,19 +374,19 @@ WorkplaceTrainingDate Date null
 );
 
 create table SkillsForMachine(
-IdSkill int primary key not null,
-IdMachine int, --foreign key references Machine(ID_Machine)
+IdSkill int primary key identity(1,1) not null,
+IdMachine int foreign key references Machine(IdMachine),
 IdPosition int not null Foreign Key references Position(IdPosition)
 );
 
 Create table AbsenceType(
-IdAbsenceType int primary key not null,
+IdAbsenceType int primary key identity(1,1) not null,
 AbscenceReason nvarchar(50),
 Multiplier float
 );
 
 Create table Absence(
-IdAbsence int primary key not null,
+IdAbsence int primary key identity(1,1) not null,
 IdAbsenceType int Foreign Key references AbsenceType(IdAbsenceType),
 IdEmployee int Foreign Key references Employee(IdEmployee),
 StartOfAbsence date,
@@ -394,7 +394,7 @@ EndOfAbsence date
 );
 
 Create table Payment(
-IdPayment int primary key not null,
+IdPayment int primary key identity(1,1) not null,
 Bonus money Default(0),
 IdEmployee int foreign key references Employee(IdEmployee),
 Date date,
@@ -402,12 +402,12 @@ Sum money
 );
 
 Create table Department(
-IdDepartment int primary key not null,
+IdDepartment int primary key identity(1,1) not null,
 DepartmentName nvarchar(50)
 );
 
 Create table Staff(
-IdStaff int primary key not null,
+IdStaff int primary key identity(1,1) not null,
 IdDeparment int foreign key references Department(IdDepartment),
 IdPosition int foreign key references Position(IdPosition),
 Number tinyint,
@@ -415,7 +415,7 @@ DateFrom date
 );
 
 create table Allocation(
-IdAllocation int primary key not null,
+IdAllocation int primary key identity(1,1) not null,
 IdEmployee int foreign key references Employee(IdEmployee),
 IdDepartment int foreign key references Department(IdDepartment),
 StartDate date,
@@ -423,21 +423,21 @@ EndDate date
 );
 
 Create table EducationLevel(
-IdEducationLevel int primary key not null,
+IdEducationLevel int primary key identity(1,1) not null,
 EducationLevel nvarchar(50),
 Degree nvarchar(50),
 DegreeShort nvarchar(10)
 );
 
 Create table Education(
-IdEducation int primary key not null,
+IdEducation int primary key identity(1,1) not null,
 IdEmployee int foreign key references Employee(IdEmployee),
 IdEducationLevel int foreign key references EducationLevel(IdEducationLevel),
 GraduationDate date,
 );
 
 Create table Training(
-IdTraining int primary key not null,
+IdTraining int primary key identity(1,1) not null,
 IdEmployee int foreign key references Employee(IdEmployee),
 TrainingName nvarchar(200),
 TrainingStartDate date,
@@ -446,18 +446,18 @@ TrainingPrice money
 );
 
 Create table MedicalExamination(
-IdMedicalExamination int primary key not null,
+IdMedicalExamination int primary key identity(1,1) not null,
 IdEmployee int foreign key references Employee(IdEmployee),
 Date date
 );
 
 create table InvoiceType(
-IdInvoiceType int primary key not null,
+IdInvoiceType int primary key identity(1,1) not null,
 Type nvarchar(50)
 );
 
 create table Contractor(
-IdContractor int primary key not null,
+IdContractor int primary key identity(1,1) not null,
 ContractorName nvarchar(50),
 Phone int,
 Email nvarchar(50),
@@ -472,7 +472,7 @@ Description nvarchar(200)
 );
 
 Create table Invoice(
-IdInvoice int primary key not null,
+IdInvoice int primary key identity(1,1) not null,
 IdContractor int foreign key references Contractor(IdContractor),
 IdInvoiceType int foreign key references InvoiceType(IdInvoiceType),
 Date date,
@@ -480,12 +480,12 @@ Sum money
 );
 
 Create table Expense(
-IdExpense int primary key not null,
+IdExpense int primary key identity(1,1) not null,
 IdDepartment int foreign key references Department(IdDepartment),
 IdInvoice int foreign key references Invoice(IdInvoice)
 );
 
--- END HR & FINANCES
+-- -----------------------------------------------------END HR & FINANCES
 
 alter table Accident add constraint FKAccidentEmployee foreign key (IdEmployee) references Employee(IdEmployee);
 
@@ -516,8 +516,6 @@ ALTER TABLE OrderCustomer ADD CONSTRAINT OrderCustomerEmployee FOREIGN KEY (IdEm
 
 ALTER TABLE OrderDetail ADD CONSTRAINT OrderDetailProduct FOREIGN KEY (IdProduct) REFERENCES Product (IdProduct);
 
-ALTER TABLE PlannedProduction ADD CONSTRAINT PlannedProductionOrderDetail FOREIGN KEY (IdDetail) REFERENCES OrderDetail (IdDetail);
-
 ALTER TABLE Supplier ADD CONSTRAINT SupplierSupplierType FOREIGN KEY (IdSupplierType) REFERENCES SupplierType (IdSupplierType);
 
 ALTER TABLE SemiFinishedOrder ADD CONSTRAINT SemiFinishedOrderSupplier FOREIGN KEY (IdSupplier)  REFERENCES Supplier (IdSupplier);
@@ -535,12 +533,11 @@ ALTER TABLE OutsourcingCommitment ADD CONSTRAINT OutsourcingCommitmentOutsourcin
 --planned_production FOREING KEYS--------
 ALTER TABLE PlannedProduction ADD CONSTRAINT FkOrderDetail
 FOREIGN KEY (IdDetail) REFERENCES OrderDetail(IdDetail)
-/*
-Do poprawy
+
 -- planned_prod_empl_det FOREING KEYS--------
 ALTER TABLE PlannedProductionEmployeeDetails ADD CONSTRAINT FKPlannedProductionEmployeeDetailsAllocation
-FOREIGN KEY (IdEmployee) REFERENCES Allocation(IdEmployee)
-*/
+FOREIGN KEY (IdEmployee) REFERENCES Allocation(IdAllocation)
+
 ALTER TABLE PlannedProductionEmployeeDetails ADD CONSTRAINT FKPlannedProductionEmployeeDetailsPlannedProduction
 FOREIGN KEY (IdProces) REFERENCES PlannedProduction(IdPlan)
 

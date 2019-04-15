@@ -21,5 +21,6 @@ namespace KWZP2019
         public Nullable<System.DateTime> EndDate { get; set; }
     
         public virtual PlannedProduction PlannedProduction { get; set; }
+        public virtual Allocation Allocation { get; set; }
     }
 }
