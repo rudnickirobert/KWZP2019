@@ -18,9 +18,14 @@ namespace KWZP2019
         public int IdSfDetail { get; set; }
         public int IdEmployee { get; set; }
         public System.DateTime ControlDate { get; set; }
-        public bool ControlStatus { get; set; }
+        public Nullable<bool> ControlStatus { get; set; }
         public string Comments { get; set; }
-        public int Quantity { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public decimal RealThickness { get; set; }
+        public decimal RealWidth { get; set; }
+        public decimal RealWeight { get; set; }
+        public string RealColor { get; set; }
+        public bool ChemicalComposition { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual SfOrderDetail SfOrderDetail { get; set; }

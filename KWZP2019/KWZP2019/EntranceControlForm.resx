@@ -158,7 +158,7 @@
         ELhFcbKvaK0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="picboxControlStatus.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picBoxControlStatus.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAACeZJREFUeF7tXHlsFNcdJm3aJlHV/yJFVf9qq0RNjyRtmv7RSlQK9i4UEkJDohYq
@@ -206,7 +206,7 @@
         YQVvKqGKodixwJ6hCOrBgwcPHjx48KAM/fr9H07CYXxncqH2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picboxControlStatus.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picBoxControlStatus.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAC31JREFUeF7tXP1zFdUZ5qd22h/a/gGdlk5/7Xen08601v5gci8IghYKtbR2bAWx
@@ -261,7 +261,7 @@
         NHFTxo0+N3AD1wHmzPk/sxlZ6EyCA44AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="picboxControlStatus.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picBoxControlStatus.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAC3FJREFUeF7tXOlzFMcV51NSyYckf0AqIZWvuVOppCpxnA+WdjlsMDGGYJykkpgY

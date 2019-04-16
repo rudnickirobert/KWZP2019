@@ -37,24 +37,29 @@
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblMass = new System.Windows.Forms.Label();
             this.lblComment = new System.Windows.Forms.Label();
-            this.picboxControlStatus = new System.Windows.Forms.PictureBox();
-            this.domUDSuppId = new System.Windows.Forms.DomainUpDown();
-            this.domUDDetailId = new System.Windows.Forms.DomainUpDown();
-            this.domUDControlerId = new System.Windows.Forms.DomainUpDown();
+            this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
+            this.domUDOrderId = new System.Windows.Forms.DomainUpDown();
+            this.domUDSfId = new System.Windows.Forms.DomainUpDown();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.domUDColour = new System.Windows.Forms.DomainUpDown();
-            this.txtboxControlDate = new System.Windows.Forms.TextBox();
             this.txtboxThickness = new System.Windows.Forms.TextBox();
             this.txtboxWidth = new System.Windows.Forms.TextBox();
             this.txtboxMass = new System.Windows.Forms.TextBox();
             this.txtboxComment = new System.Windows.Forms.TextBox();
             this.checkBoxComposition = new System.Windows.Forms.CheckBox();
-            this.checkBoxControlStatus = new System.Windows.Forms.CheckBox();
             this.lblParameterCheck = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxControlStatus)).BeginInit();
+            this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
+            this.lblEmployeeId = new System.Windows.Forms.Label();
+            this.lblEmployeeFullName = new System.Windows.Forms.Label();
+            this.lblDaysOfDelay = new System.Windows.Forms.Label();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.textBoxColor = new System.Windows.Forms.TextBox();
+            this.picBoxChemicalComposition = new System.Windows.Forms.PictureBox();
+            this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -168,62 +173,51 @@
             this.lblComment.BackColor = System.Drawing.Color.Transparent;
             this.lblComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblComment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblComment.Location = new System.Drawing.Point(835, 614);
+            this.lblComment.Location = new System.Drawing.Point(835, 558);
             this.lblComment.Name = "lblComment";
             this.lblComment.Size = new System.Drawing.Size(160, 26);
             this.lblComment.TabIndex = 9;
             this.lblComment.Text = "Komentarz";
             this.lblComment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picboxControlStatus
+            // picBoxControlStatus
             // 
-            this.picboxControlStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picboxControlStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxControlStatus.BackgroundImage")));
-            this.picboxControlStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picboxControlStatus.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picboxControlStatus.ErrorImage")));
-            this.picboxControlStatus.InitialImage = ((System.Drawing.Image)(resources.GetObject("picboxControlStatus.InitialImage")));
-            this.picboxControlStatus.Location = new System.Drawing.Point(545, 509);
-            this.picboxControlStatus.Name = "picboxControlStatus";
-            this.picboxControlStatus.Size = new System.Drawing.Size(160, 160);
-            this.picboxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picboxControlStatus.TabIndex = 10;
-            this.picboxControlStatus.TabStop = false;
+            this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxControlStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.BackgroundImage")));
+            this.picBoxControlStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxControlStatus.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.ErrorImage")));
+            this.picBoxControlStatus.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.InitialImage")));
+            this.picBoxControlStatus.Location = new System.Drawing.Point(545, 509);
+            this.picBoxControlStatus.Name = "picBoxControlStatus";
+            this.picBoxControlStatus.Size = new System.Drawing.Size(160, 160);
+            this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxControlStatus.TabIndex = 10;
+            this.picBoxControlStatus.TabStop = false;
             // 
-            // domUDSuppId
+            // domUDOrderId
             // 
-            this.domUDSuppId.BackColor = System.Drawing.SystemColors.Window;
-            this.domUDSuppId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.domUDSuppId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDSuppId.Location = new System.Drawing.Point(545, 233);
-            this.domUDSuppId.Name = "domUDSuppId";
-            this.domUDSuppId.Size = new System.Drawing.Size(160, 26);
-            this.domUDSuppId.TabIndex = 12;
-            this.domUDSuppId.Text = "Id Dostawcy";
-            this.domUDSuppId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.domUDOrderId.BackColor = System.Drawing.SystemColors.Window;
+            this.domUDOrderId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.domUDOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.domUDOrderId.Location = new System.Drawing.Point(545, 233);
+            this.domUDOrderId.Name = "domUDOrderId";
+            this.domUDOrderId.Size = new System.Drawing.Size(160, 26);
+            this.domUDOrderId.TabIndex = 12;
+            this.domUDOrderId.Text = "Wybierz zamówienie";
+            this.domUDOrderId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.domUDOrderId.SelectedItemChanged += new System.EventHandler(this.domUDOrderId_SelectedItemChanged);
             // 
-            // domUDDetailId
+            // domUDSfId
             // 
-            this.domUDDetailId.BackColor = System.Drawing.SystemColors.Window;
-            this.domUDDetailId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.domUDDetailId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDDetailId.Location = new System.Drawing.Point(545, 277);
-            this.domUDDetailId.Name = "domUDDetailId";
-            this.domUDDetailId.Size = new System.Drawing.Size(160, 26);
-            this.domUDDetailId.TabIndex = 13;
-            this.domUDDetailId.Text = "Id Detalu";
-            this.domUDDetailId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // domUDControlerId
-            // 
-            this.domUDControlerId.BackColor = System.Drawing.SystemColors.Window;
-            this.domUDControlerId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.domUDControlerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDControlerId.Location = new System.Drawing.Point(545, 325);
-            this.domUDControlerId.Name = "domUDControlerId";
-            this.domUDControlerId.Size = new System.Drawing.Size(160, 26);
-            this.domUDControlerId.TabIndex = 14;
-            this.domUDControlerId.Text = "Id Kontrolującego";
-            this.domUDControlerId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.domUDSfId.BackColor = System.Drawing.SystemColors.Window;
+            this.domUDSfId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.domUDSfId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.domUDSfId.Location = new System.Drawing.Point(545, 277);
+            this.domUDSfId.Name = "domUDSfId";
+            this.domUDSfId.Size = new System.Drawing.Size(160, 26);
+            this.domUDSfId.TabIndex = 13;
+            this.domUDSfId.Text = "Id półfabrykatu";
+            this.domUDSfId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox3
             // 
@@ -235,26 +229,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(670, 737);
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
-            // 
-            // domUDColour
-            // 
-            this.domUDColour.BackColor = System.Drawing.SystemColors.Window;
-            this.domUDColour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.domUDColour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDColour.Location = new System.Drawing.Point(835, 458);
-            this.domUDColour.Name = "domUDColour";
-            this.domUDColour.Size = new System.Drawing.Size(160, 26);
-            this.domUDColour.TabIndex = 18;
-            this.domUDColour.Text = "Kolor";
-            this.domUDColour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtboxControlDate
-            // 
-            this.txtboxControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxControlDate.Location = new System.Drawing.Point(542, 407);
-            this.txtboxControlDate.Name = "txtboxControlDate";
-            this.txtboxControlDate.Size = new System.Drawing.Size(160, 26);
-            this.txtboxControlDate.TabIndex = 21;
             // 
             // txtboxThickness
             // 
@@ -283,9 +257,10 @@
             // txtboxComment
             // 
             this.txtboxComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxComment.Location = new System.Drawing.Point(835, 643);
+            this.txtboxComment.Location = new System.Drawing.Point(817, 587);
+            this.txtboxComment.Multiline = true;
             this.txtboxComment.Name = "txtboxComment";
-            this.txtboxComment.Size = new System.Drawing.Size(160, 26);
+            this.txtboxComment.Size = new System.Drawing.Size(202, 93);
             this.txtboxComment.TabIndex = 25;
             // 
             // checkBoxComposition
@@ -293,24 +268,12 @@
             this.checkBoxComposition.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxComposition.Location = new System.Drawing.Point(835, 509);
+            this.checkBoxComposition.Location = new System.Drawing.Point(825, 525);
             this.checkBoxComposition.Name = "checkBoxComposition";
-            this.checkBoxComposition.Size = new System.Drawing.Size(200, 26);
+            this.checkBoxComposition.Size = new System.Drawing.Size(170, 26);
             this.checkBoxComposition.TabIndex = 26;
-            this.checkBoxComposition.Text = "Zgodność składu";
+            this.checkBoxComposition.Text = "Skład chemiczny";
             this.checkBoxComposition.UseVisualStyleBackColor = false;
-            // 
-            // checkBoxControlStatus
-            // 
-            this.checkBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxControlStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxControlStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxControlStatus.Location = new System.Drawing.Point(835, 568);
-            this.checkBoxControlStatus.Name = "checkBoxControlStatus";
-            this.checkBoxControlStatus.Size = new System.Drawing.Size(200, 26);
-            this.checkBoxControlStatus.TabIndex = 27;
-            this.checkBoxControlStatus.Text = "Kontrola pozytywna";
-            this.checkBoxControlStatus.UseVisualStyleBackColor = false;
             // 
             // lblParameterCheck
             // 
@@ -321,7 +284,7 @@
             this.lblParameterCheck.Name = "lblParameterCheck";
             this.lblParameterCheck.Size = new System.Drawing.Size(200, 26);
             this.lblParameterCheck.TabIndex = 28;
-            this.lblParameterCheck.Text = "Zgodność parametrów";
+            this.lblParameterCheck.Text = "StatusKontroli";
             this.lblParameterCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClear
@@ -366,6 +329,89 @@
             this.btnDone.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDone.UseVisualStyleBackColor = false;
             // 
+            // textBoxEmployeeId
+            // 
+            this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxEmployeeId.Location = new System.Drawing.Point(656, 317);
+            this.textBoxEmployeeId.Name = "textBoxEmployeeId";
+            this.textBoxEmployeeId.Size = new System.Drawing.Size(49, 26);
+            this.textBoxEmployeeId.TabIndex = 31;
+            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
+            // 
+            // lblEmployeeId
+            // 
+            this.lblEmployeeId.AutoSize = true;
+            this.lblEmployeeId.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeeId.Location = new System.Drawing.Point(542, 320);
+            this.lblEmployeeId.Margin = new System.Windows.Forms.Padding(0);
+            this.lblEmployeeId.Name = "lblEmployeeId";
+            this.lblEmployeeId.Size = new System.Drawing.Size(114, 20);
+            this.lblEmployeeId.TabIndex = 32;
+            this.lblEmployeeId.Text = "ID pracownika:";
+            // 
+            // lblEmployeeFullName
+            // 
+            this.lblEmployeeFullName.AutoSize = true;
+            this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(551, 354);
+            this.lblEmployeeFullName.Name = "lblEmployeeFullName";
+            this.lblEmployeeFullName.Size = new System.Drawing.Size(13, 20);
+            this.lblEmployeeFullName.TabIndex = 33;
+            this.lblEmployeeFullName.Text = " ";
+            // 
+            // lblDaysOfDelay
+            // 
+            this.lblDaysOfDelay.AutoSize = true;
+            this.lblDaysOfDelay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDaysOfDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDaysOfDelay.Location = new System.Drawing.Point(714, 236);
+            this.lblDaysOfDelay.Name = "lblDaysOfDelay";
+            this.lblDaysOfDelay.Size = new System.Drawing.Size(13, 20);
+            this.lblDaysOfDelay.TabIndex = 33;
+            this.lblDaysOfDelay.Text = " ";
+            // 
+            // lblColor
+            // 
+            this.lblColor.BackColor = System.Drawing.Color.Transparent;
+            this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblColor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblColor.Location = new System.Drawing.Point(835, 448);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(160, 26);
+            this.lblColor.TabIndex = 6;
+            this.lblColor.Text = "Kolor";
+            this.lblColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxColor
+            // 
+            this.textBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxColor.Location = new System.Drawing.Point(835, 477);
+            this.textBoxColor.Name = "textBoxColor";
+            this.textBoxColor.Size = new System.Drawing.Size(160, 26);
+            this.textBoxColor.TabIndex = 24;
+            // 
+            // picBoxChemicalComposition
+            // 
+            this.picBoxChemicalComposition.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxChemicalComposition.Location = new System.Drawing.Point(989, 522);
+            this.picBoxChemicalComposition.Name = "picBoxChemicalComposition";
+            this.picBoxChemicalComposition.Size = new System.Drawing.Size(30, 30);
+            this.picBoxChemicalComposition.TabIndex = 34;
+            this.picBoxChemicalComposition.TabStop = false;
+            // 
+            // datePickerControlDate
+            // 
+            this.datePickerControlDate.Enabled = false;
+            this.datePickerControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerControlDate.Location = new System.Drawing.Point(529, 407);
+            this.datePickerControlDate.Name = "datePickerControlDate";
+            this.datePickerControlDate.Size = new System.Drawing.Size(188, 26);
+            this.datePickerControlDate.TabIndex = 35;
+            this.datePickerControlDate.Value = new System.DateTime(2019, 4, 16, 20, 35, 51, 0);
+            // 
             // EntranceControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,21 +419,25 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.datePickerControlDate);
+            this.Controls.Add(this.picBoxChemicalComposition);
+            this.Controls.Add(this.lblDaysOfDelay);
+            this.Controls.Add(this.lblEmployeeFullName);
+            this.Controls.Add(this.lblEmployeeId);
+            this.Controls.Add(this.textBoxEmployeeId);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblParameterCheck);
-            this.Controls.Add(this.checkBoxControlStatus);
             this.Controls.Add(this.checkBoxComposition);
             this.Controls.Add(this.txtboxComment);
+            this.Controls.Add(this.textBoxColor);
             this.Controls.Add(this.txtboxMass);
             this.Controls.Add(this.txtboxWidth);
             this.Controls.Add(this.txtboxThickness);
-            this.Controls.Add(this.txtboxControlDate);
-            this.Controls.Add(this.domUDColour);
-            this.Controls.Add(this.domUDControlerId);
-            this.Controls.Add(this.domUDDetailId);
-            this.Controls.Add(this.domUDSuppId);
-            this.Controls.Add(this.picboxControlStatus);
+            this.Controls.Add(this.domUDSfId);
+            this.Controls.Add(this.domUDOrderId);
+            this.Controls.Add(this.picBoxControlStatus);
+            this.Controls.Add(this.lblColor);
             this.Controls.Add(this.lblComment);
             this.Controls.Add(this.lblMass);
             this.Controls.Add(this.lblWidth);
@@ -404,8 +454,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kontrola Wejściowa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxControlStatus)).EndInit();
+            this.Load += new System.EventHandler(this.EntranceControlForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,21 +473,25 @@
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblMass;
         private System.Windows.Forms.Label lblComment;
-        private System.Windows.Forms.PictureBox picboxControlStatus;
-        private System.Windows.Forms.DomainUpDown domUDSuppId;
-        private System.Windows.Forms.DomainUpDown domUDDetailId;
-        private System.Windows.Forms.DomainUpDown domUDControlerId;
+        private System.Windows.Forms.PictureBox picBoxControlStatus;
+        private System.Windows.Forms.DomainUpDown domUDOrderId;
+        private System.Windows.Forms.DomainUpDown domUDSfId;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DomainUpDown domUDColour;
-        private System.Windows.Forms.TextBox txtboxControlDate;
         private System.Windows.Forms.TextBox txtboxThickness;
         private System.Windows.Forms.TextBox txtboxWidth;
         private System.Windows.Forms.TextBox txtboxMass;
         private System.Windows.Forms.TextBox txtboxComment;
         private System.Windows.Forms.CheckBox checkBoxComposition;
-        private System.Windows.Forms.CheckBox checkBoxControlStatus;
         private System.Windows.Forms.Label lblParameterCheck;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.TextBox textBoxEmployeeId;
+        private System.Windows.Forms.Label lblEmployeeId;
+        private System.Windows.Forms.Label lblEmployeeFullName;
+        private System.Windows.Forms.Label lblDaysOfDelay;
+        private System.Windows.Forms.Label lblColor;
+        private System.Windows.Forms.TextBox textBoxColor;
+        private System.Windows.Forms.PictureBox picBoxChemicalComposition;
+        private System.Windows.Forms.DateTimePicker datePickerControlDate;
     }
 }
