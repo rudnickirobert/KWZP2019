@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.ANCF_Nazwa_lbl = new System.Windows.Forms.Label();
-            this.ANCF_Telefon_lbl = new System.Windows.Forms.Label();
+            this.nameLbl = new System.Windows.Forms.Label();
+            this.phoneLbl = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.ANCF_Miejscowosc_lbl = new System.Windows.Forms.Label();
-            this.ANCF_Email_lbl = new System.Windows.Forms.Label();
+            this.cityLbl = new System.Windows.Forms.Label();
+            this.emailLbl = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.ANCF_Nrlokalu_lbl = new System.Windows.Forms.Label();
-            this.ANCF_Nrdomu_lbl = new System.Windows.Forms.Label();
+            this.apartmentNumberLbl = new System.Windows.Forms.Label();
+            this.houseNumberLbl = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.ANCF_Ulica_lbl = new System.Windows.Forms.Label();
-            this.ANCF_Kodpocztowy_lbl = new System.Windows.Forms.Label();
+            this.streetLbl = new System.Windows.Forms.Label();
+            this.zipCodeLbl = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.ANCF_Opis_lbl = new System.Windows.Forms.Label();
-            this.ANCF_KPS_lbl = new System.Windows.Forms.Label();
+            this.descriptionLbl = new System.Windows.Forms.Label();
+            this.krsLbl = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.ANCF_NIP_lbl = new System.Windows.Forms.Label();
+            this.nipLbl = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.ANCF_PESEL_lbl = new System.Windows.Forms.Label();
-            this.ANCF_Dodajklienta_btn = new System.Windows.Forms.Button();
+            this.peselLbl = new System.Windows.Forms.Label();
+            this.addNewCustomerBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -65,23 +65,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Dodaj nowego klienta";
             // 
-            // ANCF_Nazwa_lbl
+            // nameLbl
             // 
-            this.ANCF_Nazwa_lbl.AutoSize = true;
-            this.ANCF_Nazwa_lbl.Location = new System.Drawing.Point(49, 78);
-            this.ANCF_Nazwa_lbl.Name = "ANCF_Nazwa_lbl";
-            this.ANCF_Nazwa_lbl.Size = new System.Drawing.Size(50, 17);
-            this.ANCF_Nazwa_lbl.TabIndex = 1;
-            this.ANCF_Nazwa_lbl.Text = "Nazwa";
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.Location = new System.Drawing.Point(49, 78);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(50, 17);
+            this.nameLbl.TabIndex = 1;
+            this.nameLbl.Text = "Nazwa";
             // 
-            // ANCF_Telefon_lbl
+            // phoneLbl
             // 
-            this.ANCF_Telefon_lbl.AutoSize = true;
-            this.ANCF_Telefon_lbl.Location = new System.Drawing.Point(49, 126);
-            this.ANCF_Telefon_lbl.Name = "ANCF_Telefon_lbl";
-            this.ANCF_Telefon_lbl.Size = new System.Drawing.Size(56, 17);
-            this.ANCF_Telefon_lbl.TabIndex = 2;
-            this.ANCF_Telefon_lbl.Text = "Telefon";
+            this.phoneLbl.AutoSize = true;
+            this.phoneLbl.Location = new System.Drawing.Point(49, 126);
+            this.phoneLbl.Name = "phoneLbl";
+            this.phoneLbl.Size = new System.Drawing.Size(56, 17);
+            this.phoneLbl.TabIndex = 2;
+            this.phoneLbl.Text = "Telefon";
             // 
             // textBox1
             // 
@@ -111,23 +111,23 @@
             this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 7;
             // 
-            // ANCF_Miejscowosc_lbl
+            // cityLbl
             // 
-            this.ANCF_Miejscowosc_lbl.AutoSize = true;
-            this.ANCF_Miejscowosc_lbl.Location = new System.Drawing.Point(49, 222);
-            this.ANCF_Miejscowosc_lbl.Name = "ANCF_Miejscowosc_lbl";
-            this.ANCF_Miejscowosc_lbl.Size = new System.Drawing.Size(86, 17);
-            this.ANCF_Miejscowosc_lbl.TabIndex = 6;
-            this.ANCF_Miejscowosc_lbl.Text = "Miejscowość";
+            this.cityLbl.AutoSize = true;
+            this.cityLbl.Location = new System.Drawing.Point(49, 222);
+            this.cityLbl.Name = "cityLbl";
+            this.cityLbl.Size = new System.Drawing.Size(86, 17);
+            this.cityLbl.TabIndex = 6;
+            this.cityLbl.Text = "Miejscowość";
             // 
-            // ANCF_Email_lbl
+            // emailLbl
             // 
-            this.ANCF_Email_lbl.AutoSize = true;
-            this.ANCF_Email_lbl.Location = new System.Drawing.Point(49, 174);
-            this.ANCF_Email_lbl.Name = "ANCF_Email_lbl";
-            this.ANCF_Email_lbl.Size = new System.Drawing.Size(47, 17);
-            this.ANCF_Email_lbl.TabIndex = 5;
-            this.ANCF_Email_lbl.Text = "E-mail";
+            this.emailLbl.AutoSize = true;
+            this.emailLbl.Location = new System.Drawing.Point(49, 174);
+            this.emailLbl.Name = "emailLbl";
+            this.emailLbl.Size = new System.Drawing.Size(47, 17);
+            this.emailLbl.TabIndex = 5;
+            this.emailLbl.Text = "E-mail";
             // 
             // textBox5
             // 
@@ -143,23 +143,23 @@
             this.textBox6.Size = new System.Drawing.Size(100, 22);
             this.textBox6.TabIndex = 15;
             // 
-            // ANCF_Nrlokalu_lbl
+            // apartmentNumberLbl
             // 
-            this.ANCF_Nrlokalu_lbl.AutoSize = true;
-            this.ANCF_Nrlokalu_lbl.Location = new System.Drawing.Point(49, 413);
-            this.ANCF_Nrlokalu_lbl.Name = "ANCF_Nrlokalu_lbl";
-            this.ANCF_Nrlokalu_lbl.Size = new System.Drawing.Size(64, 17);
-            this.ANCF_Nrlokalu_lbl.TabIndex = 14;
-            this.ANCF_Nrlokalu_lbl.Text = "Nr lokalu";
+            this.apartmentNumberLbl.AutoSize = true;
+            this.apartmentNumberLbl.Location = new System.Drawing.Point(49, 413);
+            this.apartmentNumberLbl.Name = "apartmentNumberLbl";
+            this.apartmentNumberLbl.Size = new System.Drawing.Size(64, 17);
+            this.apartmentNumberLbl.TabIndex = 14;
+            this.apartmentNumberLbl.Text = "Nr lokalu";
             // 
-            // ANCF_Nrdomu_lbl
+            // houseNumberLbl
             // 
-            this.ANCF_Nrdomu_lbl.AutoSize = true;
-            this.ANCF_Nrdomu_lbl.Location = new System.Drawing.Point(49, 365);
-            this.ANCF_Nrdomu_lbl.Name = "ANCF_Nrdomu_lbl";
-            this.ANCF_Nrdomu_lbl.Size = new System.Drawing.Size(62, 17);
-            this.ANCF_Nrdomu_lbl.TabIndex = 13;
-            this.ANCF_Nrdomu_lbl.Text = "Nr domu";
+            this.houseNumberLbl.AutoSize = true;
+            this.houseNumberLbl.Location = new System.Drawing.Point(49, 365);
+            this.houseNumberLbl.Name = "houseNumberLbl";
+            this.houseNumberLbl.Size = new System.Drawing.Size(62, 17);
+            this.houseNumberLbl.TabIndex = 13;
+            this.houseNumberLbl.Text = "Nr domu";
             // 
             // textBox7
             // 
@@ -175,24 +175,23 @@
             this.textBox8.Size = new System.Drawing.Size(100, 22);
             this.textBox8.TabIndex = 11;
             // 
-            // ANCF_Ulica_lbl
+            // streetLbl
             // 
-            this.ANCF_Ulica_lbl.AutoSize = true;
-            this.ANCF_Ulica_lbl.Location = new System.Drawing.Point(49, 317);
-            this.ANCF_Ulica_lbl.Name = "ANCF_Ulica_lbl";
-            this.ANCF_Ulica_lbl.Size = new System.Drawing.Size(39, 17);
-            this.ANCF_Ulica_lbl.TabIndex = 10;
-            this.ANCF_Ulica_lbl.Text = "Ulica";
+            this.streetLbl.AutoSize = true;
+            this.streetLbl.Location = new System.Drawing.Point(49, 317);
+            this.streetLbl.Name = "streetLbl";
+            this.streetLbl.Size = new System.Drawing.Size(39, 17);
+            this.streetLbl.TabIndex = 10;
+            this.streetLbl.Text = "Ulica";
             // 
-            // ANCF_Kodpocztowy_lbl
+            // zipCodeLbl
             // 
-            this.ANCF_Kodpocztowy_lbl.AutoSize = true;
-            this.ANCF_Kodpocztowy_lbl.Location = new System.Drawing.Point(49, 269);
-            this.ANCF_Kodpocztowy_lbl.Name = "ANCF_Kodpocztowy_lbl";
-            this.ANCF_Kodpocztowy_lbl.Size = new System.Drawing.Size(95, 17);
-            this.ANCF_Kodpocztowy_lbl.TabIndex = 9;
-            this.ANCF_Kodpocztowy_lbl.Text = "Kod pocztowy";
-            this.ANCF_Kodpocztowy_lbl.Click += new System.EventHandler(this.label9_Click);
+            this.zipCodeLbl.AutoSize = true;
+            this.zipCodeLbl.Location = new System.Drawing.Point(49, 269);
+            this.zipCodeLbl.Name = "zipCodeLbl";
+            this.zipCodeLbl.Size = new System.Drawing.Size(95, 17);
+            this.zipCodeLbl.TabIndex = 9;
+            this.zipCodeLbl.Text = "Kod pocztowy";
             // 
             // textBox9
             // 
@@ -208,23 +207,23 @@
             this.textBox10.Size = new System.Drawing.Size(100, 22);
             this.textBox10.TabIndex = 21;
             // 
-            // ANCF_Opis_lbl
+            // descriptionLbl
             // 
-            this.ANCF_Opis_lbl.AutoSize = true;
-            this.ANCF_Opis_lbl.Location = new System.Drawing.Point(49, 595);
-            this.ANCF_Opis_lbl.Name = "ANCF_Opis_lbl";
-            this.ANCF_Opis_lbl.Size = new System.Drawing.Size(37, 17);
-            this.ANCF_Opis_lbl.TabIndex = 20;
-            this.ANCF_Opis_lbl.Text = "Opis";
+            this.descriptionLbl.AutoSize = true;
+            this.descriptionLbl.Location = new System.Drawing.Point(49, 595);
+            this.descriptionLbl.Name = "descriptionLbl";
+            this.descriptionLbl.Size = new System.Drawing.Size(37, 17);
+            this.descriptionLbl.TabIndex = 20;
+            this.descriptionLbl.Text = "Opis";
             // 
-            // ANCF_KPS_lbl
+            // krsLbl
             // 
-            this.ANCF_KPS_lbl.AutoSize = true;
-            this.ANCF_KPS_lbl.Location = new System.Drawing.Point(49, 508);
-            this.ANCF_KPS_lbl.Name = "ANCF_KPS_lbl";
-            this.ANCF_KPS_lbl.Size = new System.Drawing.Size(36, 17);
-            this.ANCF_KPS_lbl.TabIndex = 19;
-            this.ANCF_KPS_lbl.Text = "KRS";
+            this.krsLbl.AutoSize = true;
+            this.krsLbl.Location = new System.Drawing.Point(49, 508);
+            this.krsLbl.Name = "krsLbl";
+            this.krsLbl.Size = new System.Drawing.Size(36, 17);
+            this.krsLbl.TabIndex = 19;
+            this.krsLbl.Text = "KRS";
             // 
             // textBox11
             // 
@@ -233,14 +232,14 @@
             this.textBox11.Size = new System.Drawing.Size(100, 22);
             this.textBox11.TabIndex = 18;
             // 
-            // ANCF_NIP_lbl
+            // nipLbl
             // 
-            this.ANCF_NIP_lbl.AutoSize = true;
-            this.ANCF_NIP_lbl.Location = new System.Drawing.Point(49, 460);
-            this.ANCF_NIP_lbl.Name = "ANCF_NIP_lbl";
-            this.ANCF_NIP_lbl.Size = new System.Drawing.Size(30, 17);
-            this.ANCF_NIP_lbl.TabIndex = 17;
-            this.ANCF_NIP_lbl.Text = "NIP";
+            this.nipLbl.AutoSize = true;
+            this.nipLbl.Location = new System.Drawing.Point(49, 460);
+            this.nipLbl.Name = "nipLbl";
+            this.nipLbl.Size = new System.Drawing.Size(30, 17);
+            this.nipLbl.TabIndex = 17;
+            this.nipLbl.Text = "NIP";
             // 
             // textBox12
             // 
@@ -248,58 +247,55 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(100, 22);
             this.textBox12.TabIndex = 24;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // ANCF_PESEL_lbl
+            // peselLbl
             // 
-            this.ANCF_PESEL_lbl.AutoSize = true;
-            this.ANCF_PESEL_lbl.Location = new System.Drawing.Point(49, 555);
-            this.ANCF_PESEL_lbl.Name = "ANCF_PESEL_lbl";
-            this.ANCF_PESEL_lbl.Size = new System.Drawing.Size(52, 17);
-            this.ANCF_PESEL_lbl.TabIndex = 23;
-            this.ANCF_PESEL_lbl.Text = "PESEL";
-            this.ANCF_PESEL_lbl.Click += new System.EventHandler(this.label2_Click);
+            this.peselLbl.AutoSize = true;
+            this.peselLbl.Location = new System.Drawing.Point(49, 555);
+            this.peselLbl.Name = "peselLbl";
+            this.peselLbl.Size = new System.Drawing.Size(52, 17);
+            this.peselLbl.TabIndex = 23;
+            this.peselLbl.Text = "PESEL";
             // 
-            // ANCF_Dodajklienta_btn
+            // addNewCustomerBtn
             // 
-            this.ANCF_Dodajklienta_btn.Location = new System.Drawing.Point(360, 568);
-            this.ANCF_Dodajklienta_btn.Name = "ANCF_Dodajklienta_btn";
-            this.ANCF_Dodajklienta_btn.Size = new System.Drawing.Size(211, 80);
-            this.ANCF_Dodajklienta_btn.TabIndex = 25;
-            this.ANCF_Dodajklienta_btn.Text = "Dodaj klienta";
-            this.ANCF_Dodajklienta_btn.UseVisualStyleBackColor = true;
-            this.ANCF_Dodajklienta_btn.Click += new System.EventHandler(this.ANCF_Dodajklienta_btn_Click);
+            this.addNewCustomerBtn.Location = new System.Drawing.Point(360, 568);
+            this.addNewCustomerBtn.Name = "addNewCustomerBtn";
+            this.addNewCustomerBtn.Size = new System.Drawing.Size(211, 80);
+            this.addNewCustomerBtn.TabIndex = 25;
+            this.addNewCustomerBtn.Text = "Dodaj klienta";
+            this.addNewCustomerBtn.UseVisualStyleBackColor = true;
             // 
             // AddNewCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 708);
-            this.Controls.Add(this.ANCF_Dodajklienta_btn);
+            this.Controls.Add(this.addNewCustomerBtn);
             this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.ANCF_PESEL_lbl);
+            this.Controls.Add(this.peselLbl);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.ANCF_Opis_lbl);
-            this.Controls.Add(this.ANCF_KPS_lbl);
+            this.Controls.Add(this.descriptionLbl);
+            this.Controls.Add(this.krsLbl);
             this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.ANCF_NIP_lbl);
+            this.Controls.Add(this.nipLbl);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.ANCF_Nrlokalu_lbl);
-            this.Controls.Add(this.ANCF_Nrdomu_lbl);
+            this.Controls.Add(this.apartmentNumberLbl);
+            this.Controls.Add(this.houseNumberLbl);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.ANCF_Ulica_lbl);
-            this.Controls.Add(this.ANCF_Kodpocztowy_lbl);
+            this.Controls.Add(this.streetLbl);
+            this.Controls.Add(this.zipCodeLbl);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.ANCF_Miejscowosc_lbl);
-            this.Controls.Add(this.ANCF_Email_lbl);
+            this.Controls.Add(this.cityLbl);
+            this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.ANCF_Telefon_lbl);
-            this.Controls.Add(this.ANCF_Nazwa_lbl);
+            this.Controls.Add(this.phoneLbl);
+            this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.label1);
             this.Name = "AddNewCustomerForm";
             this.Text = "AddNewCustomerForm";
@@ -311,30 +307,30 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label ANCF_Nazwa_lbl;
-        private System.Windows.Forms.Label ANCF_Telefon_lbl;
+        private System.Windows.Forms.Label nameLbl;
+        private System.Windows.Forms.Label phoneLbl;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label ANCF_Miejscowosc_lbl;
-        private System.Windows.Forms.Label ANCF_Email_lbl;
+        private System.Windows.Forms.Label cityLbl;
+        private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label ANCF_Nrlokalu_lbl;
-        private System.Windows.Forms.Label ANCF_Nrdomu_lbl;
+        private System.Windows.Forms.Label apartmentNumberLbl;
+        private System.Windows.Forms.Label houseNumberLbl;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label ANCF_Ulica_lbl;
-        private System.Windows.Forms.Label ANCF_Kodpocztowy_lbl;
+        private System.Windows.Forms.Label streetLbl;
+        private System.Windows.Forms.Label zipCodeLbl;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label ANCF_Opis_lbl;
-        private System.Windows.Forms.Label ANCF_KPS_lbl;
+        private System.Windows.Forms.Label descriptionLbl;
+        private System.Windows.Forms.Label krsLbl;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label ANCF_NIP_lbl;
+        private System.Windows.Forms.Label nipLbl;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label ANCF_PESEL_lbl;
-        private System.Windows.Forms.Button ANCF_Dodajklienta_btn;
+        private System.Windows.Forms.Label peselLbl;
+        private System.Windows.Forms.Button addNewCustomerBtn;
     }
 }

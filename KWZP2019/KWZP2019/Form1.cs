@@ -21,8 +21,9 @@ namespace KWZP2019
         }
         private void btnSales_Click(object sender, EventArgs e)
         {
-            SalesDepartmentForm salesDepartmentForm = new SalesDepartmentForm();
+            SalesDepartmentForm salesDepartmentForm = new SalesDepartmentForm(db);
             salesDepartmentForm.Show();
+            this.Hide();
         }
         private void btnQA_Click(object sender, EventArgs e)
         {

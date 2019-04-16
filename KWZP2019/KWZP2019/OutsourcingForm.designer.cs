@@ -60,7 +60,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Typ firmy outsourcingowej";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Reklama_rb
             // 
@@ -249,7 +248,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "OutsourcingForm";
             this.Text = "OutsourcingForm";
-            this.Load += new System.EventHandler(this.OutsourcingForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

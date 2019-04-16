@@ -17,19 +17,12 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
-
-        private void OutsourcingForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Transportdoklienta_rb_CheckedChanged(object sender, EventArgs e)
         {
             Nazwatransport_tb.Visible = true;
             Nazwatransport_lbl.Visible = true;
             Szczegolytransport_lbl.Visible = true;
             Szczegolytransport_lv.Visible = true;
-
             Nazwaodpady_lbl.Visible = false;
             Nazwaodpady_tb.Visible = false;
             Nazwareklama_lbl.Visible = false;
@@ -38,7 +31,6 @@ namespace KWZP2019
             Szczegolyodpady_lv.Visible = false;
             Szczegolyreklama_lbl.Visible = false;
             Szczegolyreklama_lv.Visible = false;
-            
         }
 
         private void Odpady_rb_CheckedChanged(object sender, EventArgs e)
@@ -47,7 +39,6 @@ namespace KWZP2019
             Nazwaodpady_lbl.Visible = true;
             Szczegolyodpady_lbl.Visible = true;
             Szczegolyodpady_lv.Visible = true;
-
             Nazwatransport_lbl.Visible = false;
             Nazwatransport_tb.Visible = false;
             Nazwareklama_lbl.Visible = false;
@@ -64,7 +55,6 @@ namespace KWZP2019
             Nazwareklama_lbl.Visible = true;
             Szczegolyreklama_lbl.Visible = true;
             Szczegolyreklama_lv.Visible = true;
-
             Nazwatransport_lbl.Visible = false;
             Nazwatransport_tb.Visible = false;
             Nazwaodpady_lbl.Visible = false;
@@ -74,12 +64,6 @@ namespace KWZP2019
             Szczegolyodpady_lbl.Visible = false;
             Szczegolyodpady_lv.Visible = false;
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Dodajfirmeoutsourcingowa_btn_Click(object sender, EventArgs e)
         {
             this.Hide();

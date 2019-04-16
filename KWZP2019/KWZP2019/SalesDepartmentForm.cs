@@ -12,49 +12,40 @@ namespace KWZP2019
 {
     public partial class SalesDepartmentForm : Form
     {
-        CustomerForm customerForm = new CustomerForm();
-        OrderForm orderForm = new OrderForm();
-        SupplierForm supplierForm = new SupplierForm();
-        WarehouseForm warehouseForm = new WarehouseForm();
-        OutsourcingForm outsourcingForm = new OutsourcingForm();
-        //SalesDepartmentForm salesDepartmentForm = new SalesDepartmentForm();
-
-        public SalesDepartmentForm()
+        private RoofingCompanyEntities db;
+        public SalesDepartmentForm(RoofingCompanyEntities db)
         {
+            this.db = db;
             InitializeComponent();
-        }
-
-        private void SalesDepartmentForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void SDF_Klient_btn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            CustomerForm customerForm = new CustomerForm();
             customerForm.ShowDialog();
-            this.Close();
-
         }
 
         private void SDF_Zamowienie_btn_Click(object sender, EventArgs e)
         {
+            OrderForm orderForm = new OrderForm();
             orderForm.ShowDialog();
         }
 
         private void SDF_Dostawcy_btn_Click(object sender, EventArgs e)
         {
+            SupplierForm supplierForm = new SupplierForm();
             supplierForm.ShowDialog();
         }
 
         private void SDF_Magazyn_btn_Click(object sender, EventArgs e)
         {
+            WarehouseForm warehouseForm = new WarehouseForm();
             warehouseForm.ShowDialog();
-
         }
 
         private void SDF_Outsourcing_btn_Click(object sender, EventArgs e)
         {
+            OutsourcingForm outsourcingForm = new OutsourcingForm();
             outsourcingForm.ShowDialog();
         }
     }

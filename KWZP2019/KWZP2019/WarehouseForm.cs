@@ -16,20 +16,13 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
-
         private void Magazynwejściowy_btn_Click(object sender, EventArgs e)
         {
-            Magazynwejsciowy_gb.Visible = true;
+            entranceWarehouseGb.Visible = true;
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Magazynwyjsciowy_btn_Click(object sender, EventArgs e)
         {
-            Magazynwyjsciowy_gb.Visible = true;
+            outWarehouseGb.Visible = true;
         }
     }
 }
