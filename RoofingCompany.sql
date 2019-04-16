@@ -617,15 +617,14 @@ on Employee.IdEmployee = SafetyTraining.IdEmployee;
 /*====SALES DEPARTMENT===*/
 
 GO
-
 CREATE VIEW vCustomerWithOrder
 AS
-SELECT CustomerName, IdOrderCustomer, OrderDate, Cost, Markup    
+SELECT CustomerName, IdOrderCustomer, OrderDate, Cost
 FROM Customer
 JOIN OrderCustomer
 ON Customer.IdCustomer = OrderCustomer.IdCustomer;
-GO
- 
+
+GO 
 CREATE VIEW vSupplierParts
 AS
 SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
@@ -633,8 +632,8 @@ FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (Type = 'Części');
-GO
 
+GO
 CREATE VIEW vSupplierSemis
 AS
 SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
@@ -642,27 +641,38 @@ FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (Type = 'Półfabrykaty');
-GO
 
+GO
 CREATE VIEW vOutsourcingWithType
 AS
 SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
 FROM Outsourcing
 JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
-GO
 
+GO
 CREATE VIEW vIndividualCustomer
 AS
 SELECT *
 FROM Customer
 WHERE Pesel !=0; 
-GO
 
+GO
 CREATE VIEW vCompany
 AS
 SELECT *
 FROM Customer
 WHERE NIP !=0 AND KRS !=0 ; 
+
 GO
+CREATE VIEW vOutputMagazine
+AS
+SELECT ProductCode, Quantity, ControlDate
+FROM Product, OutControl;
+
+GO
+CREATE VIEW vInputMagazine
+AS
+SELECT SfCode, Quantity, ControlDate 
+FROM EntranceControl, SemiFinished;
 
