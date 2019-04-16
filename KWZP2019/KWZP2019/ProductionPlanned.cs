@@ -40,7 +40,15 @@ namespace KWZP2019
             }
 
         }
+        // add/edit plan form
+        private void btnAddPlan_Click(object sender, EventArgs e)
+        {
+            NewProductionPlan NewProductionPlanForm = new NewProductionPlan(db);
+            NewProductionPlanForm.Show();
+        }
+        
 
- 
+
+
     }
 }

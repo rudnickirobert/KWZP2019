@@ -33,8 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxPlanSearch = new System.Windows.Forms.TextBox();
             this.btnAddPlan = new System.Windows.Forms.Button();
-            this.btnEditPlan = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.btnEmployee = new System.Windows.Forms.Button();
+            this.btnMachineDet = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMachineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +48,6 @@
             this.plannedProductionEmployeeDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productionProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plannedProductionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnEmployee = new System.Windows.Forms.Button();
-            this.btnMachineDet = new System.Windows.Forms.Button();
-            this.btnOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlannedProductionGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plannedProductionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -94,31 +93,50 @@
             // 
             // btnAddPlan
             // 
-            this.btnAddPlan.Location = new System.Drawing.Point(30, 62);
+            this.btnAddPlan.Location = new System.Drawing.Point(12, 62);
             this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(126, 39);
+            this.btnAddPlan.Size = new System.Drawing.Size(215, 39);
             this.btnAddPlan.TabIndex = 3;
-            this.btnAddPlan.Text = "Nowy plan";
+            this.btnAddPlan.Text = "Nowy plan /edytuj plan";
             this.btnAddPlan.UseVisualStyleBackColor = true;
-            // 
-            // btnEditPlan
-            // 
-            this.btnEditPlan.Location = new System.Drawing.Point(162, 62);
-            this.btnEditPlan.Name = "btnEditPlan";
-            this.btnEditPlan.Size = new System.Drawing.Size(126, 39);
-            this.btnEditPlan.TabIndex = 4;
-            this.btnEditPlan.Text = "Edytuj plan";
-            this.btnEditPlan.UseVisualStyleBackColor = true;
+            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(929, 458);
+            this.btnReturn.Location = new System.Drawing.Point(929, 441);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(126, 39);
             this.btnReturn.TabIndex = 5;
             this.btnReturn.Text = "POWRÓT";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnEmployee
+            // 
+            this.btnEmployee.Location = new System.Drawing.Point(231, 441);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Size = new System.Drawing.Size(201, 39);
+            this.btnEmployee.TabIndex = 7;
+            this.btnEmployee.Text = "Pracownicy wykonujący";
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            // 
+            // btnMachineDet
+            // 
+            this.btnMachineDet.Location = new System.Drawing.Point(12, 441);
+            this.btnMachineDet.Name = "btnMachineDet";
+            this.btnMachineDet.Size = new System.Drawing.Size(213, 39);
+            this.btnMachineDet.TabIndex = 6;
+            this.btnMachineDet.Text = "Szczegóły maszyny";
+            this.btnMachineDet.UseVisualStyleBackColor = true;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Location = new System.Drawing.Point(438, 441);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(129, 39);
+            this.btnOrder.TabIndex = 8;
+            this.btnOrder.Text = "Zamówienie";
+            this.btnOrder.UseVisualStyleBackColor = true;
             // 
             // idPlanDataGridViewTextBoxColumn
             // 
@@ -194,43 +212,15 @@
             // 
             this.plannedProductionBindingSource.DataSource = typeof(KWZP2019.PlannedProduction);
             // 
-            // btnEmployee
-            // 
-            this.btnEmployee.Location = new System.Drawing.Point(249, 458);
-            this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(201, 39);
-            this.btnEmployee.TabIndex = 7;
-            this.btnEmployee.Text = "Pracownicy wykonujący";
-            this.btnEmployee.UseVisualStyleBackColor = true;
-            // 
-            // btnMachineDet
-            // 
-            this.btnMachineDet.Location = new System.Drawing.Point(30, 458);
-            this.btnMachineDet.Name = "btnMachineDet";
-            this.btnMachineDet.Size = new System.Drawing.Size(213, 39);
-            this.btnMachineDet.TabIndex = 6;
-            this.btnMachineDet.Text = "Szczegóły maszyny";
-            this.btnMachineDet.UseVisualStyleBackColor = true;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.Location = new System.Drawing.Point(456, 458);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(129, 39);
-            this.btnOrder.TabIndex = 8;
-            this.btnOrder.Text = "Zamówienie";
-            this.btnOrder.UseVisualStyleBackColor = true;
-            // 
             // ProductionPlanned
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1067, 499);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.btnMachineDet);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnEditPlan);
             this.Controls.Add(this.btnAddPlan);
             this.Controls.Add(this.txtBoxPlanSearch);
             this.Controls.Add(this.label1);
@@ -263,7 +253,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBoxPlanSearch;
         private System.Windows.Forms.Button btnAddPlan;
-        private System.Windows.Forms.Button btnEditPlan;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnMachineDet;
