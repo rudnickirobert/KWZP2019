@@ -1,7 +1,10 @@
 ﻿use master;
 
 drop database RoofingCompany;
+go
+
 create database RoofingCompany;
+go
 
 use RoofingCompany;
 
@@ -33,11 +36,19 @@ create table FEMAnalysis(
 create table OutControl(
 	IdProcess int primary key not null,
 	IdEmployee int not null,
-	ControlDate DateTime not null,
-	ControlStatus bit not null,
-	Comments nvarchar(255),
-	Quantity int not null
+	StartControlDate DateTime not null,
+    EndControlDate DateTime not null,
+    WidthAcceptableDeviation decimal not null,
+	LenghtAcceptableDeviation decimal not null
+    );
+
+create table OutputProductMeasurements(
+    IdMeasurement int primary key not null,
+    IdProcess int not null,
+    Lenght decimal not null,
+    Width decimal not null
 	);
+
 
 create table SafetyControl(
 	IdInspection int primary key identity (1,1) not null,
@@ -499,6 +510,8 @@ alter table FEMAnalysis add constraint FkFEMAnalysisEmployee foreign key (IdEmpl
 alter table OutControl add constraint FkOutControlEmployee foreign key (IdEmployee) references Employee(IdEmployee);
 alter table OutControl add constraint FkOutControlProcess foreign key (IdProcess) references ProductionProces(IdProces);
 
+alter table OutputProductMeasurements add constraint FkOutputProductMeasurements foreign key (IdProcess) references OutControl(IdProcess);
+
 alter table SafetyControl add constraint FkInspectedEmployee foreign key (IdInspectedEmployee) references Employee(IdEmployee);
 
 alter table SafetyTraining add constraint FkTrainedEmployee foreign key (IdEmployee) references Employee(IdEmployee);
@@ -665,9 +678,18 @@ FROM Customer
 WHERE NIP !=0 AND KRS !=0 ; 
 
 GO
+
+CREATE VIEW TechnicalProductDataPerProcess
+AS
+SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width 
+FROM OrderDetail A, Product B, PlannedProduction C, ProductionProces D, OutControl E, TechnicalProductData F
+WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
+
+GO
+
 CREATE VIEW vOutputMagazine
 AS
-SELECT ProductCode, Quantity, ControlDate
+SELECT ProductCode, Quantity, EndControlDate
 FROM Product, OutControl;
 
 GO
