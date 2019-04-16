@@ -40,6 +40,7 @@
             this.btnFinances.TabIndex = 0;
             this.btnFinances.Text = "Finanse";
             this.btnFinances.UseVisualStyleBackColor = true;
+            this.btnFinances.Click += new System.EventHandler(this.btnFinances_Click);
             // 
             // btnHR
             // 
