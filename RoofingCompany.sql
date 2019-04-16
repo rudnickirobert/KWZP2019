@@ -670,4 +670,9 @@ AS
 SELECT ProductCode, Quantity, ControlDate
 FROM Product, OutControl;
 
+GO
+CREATE VIEW vInputMagazine
+AS
+SELECT SfCode, Quantity, ControlDate 
+FROM EntranceControl, SemiFinished;
 
