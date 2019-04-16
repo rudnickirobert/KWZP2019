@@ -12,13 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class SkillsForMachine
+    public partial class vCustomerWithOrder
     {
-        public int IdSkill { get; set; }
-        public Nullable<int> IdMachine { get; set; }
-        public int IdPosition { get; set; }
-    
-        public virtual Position Position { get; set; }
-        public virtual Machine Machine { get; set; }
+        public string CustomerName { get; set; }
+        public int IdOrderCustomer { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public decimal Cost { get; set; }
+        public int Markup { get; set; }
     }
 }

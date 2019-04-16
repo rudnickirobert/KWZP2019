@@ -85,6 +85,7 @@
             this.btnOSHTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnOSHTraining.Name = "btnOSHTraining";
             this.btnOSHTraining.UseVisualStyleBackColor = false;
+            this.btnOSHTraining.Click += new System.EventHandler(this.btnOSHTraining_Click);
             // 
             // btnDevelopment
             // 

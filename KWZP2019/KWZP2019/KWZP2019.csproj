@@ -106,6 +106,9 @@
     <Compile Include="EntranceControlForm.Designer.cs">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntranceControlView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Expense.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -174,6 +177,12 @@
     </Compile>
     <Compile Include="OrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OshTrainingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OshTrainingForm.Designer.cs">
+      <DependentUpon>OshTrainingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OutControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -336,13 +345,39 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vCompany.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCustomerWithOrder.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDailySfDelivery.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewOshTraining.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vIndividualCustomer.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOutsourcingWithType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierPart.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierSemi.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EntranceControlForm.resx">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="OshTrainingForm.resx">
+      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>

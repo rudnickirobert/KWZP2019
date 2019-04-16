@@ -38,7 +38,7 @@
             this.btnReturnMain.FlatAppearance.BorderSize = 0;
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturnMain.Location = new System.Drawing.Point(960, 32);
+            this.btnReturnMain.Location = new System.Drawing.Point(972, 12);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(200, 50);
             this.btnReturnMain.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.btnReturn.FlatAppearance.BorderSize = 0;
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturn.Location = new System.Drawing.Point(960, 109);
+            this.btnReturn.Location = new System.Drawing.Point(972, 89);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(200, 50);
             this.btnReturn.TabIndex = 0;

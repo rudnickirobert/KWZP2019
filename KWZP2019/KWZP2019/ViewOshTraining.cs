@@ -12,13 +12,14 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class SkillsForMachine
+    public partial class ViewOshTraining
     {
-        public int IdSkill { get; set; }
-        public Nullable<int> IdMachine { get; set; }
-        public int IdPosition { get; set; }
-    
-        public virtual Position Position { get; set; }
-        public virtual Machine Machine { get; set; }
+        public int IdEmployee { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeSurname { get; set; }
+        public string DepartmentName { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public System.DateTime TrainingDate { get; set; }
+        public Nullable<byte> ValidityOfOshTraining { get; set; }
     }
 }

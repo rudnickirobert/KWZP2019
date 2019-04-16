@@ -46,5 +46,12 @@ namespace KWZP2019
         {
             this.startForm.Show();
         }
+
+        private void btnOSHTraining_Click(object sender, EventArgs e)
+        {
+            OshTrainingForm oshTrainingForm = new OshTrainingForm(db, startForm, this);
+            this.Hide();
+            oshTrainingForm.Show();
+        }
     }
 }
