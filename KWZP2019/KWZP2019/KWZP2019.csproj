@@ -64,6 +64,7 @@
     <Compile Include="Accident.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+
     <Compile Include="AddNewCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,13 @@
     </Compile>
     <Compile Include="AddNewSupplierForm.designer.cs">
       <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
+
+    <Compile Include="AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Allocation.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -136,11 +144,23 @@
     <Compile Include="FEMAnalysi.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FinancesAndHR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinancesAndHR.Designer.cs">
+      <DependentUpon>FinancesAndHR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR.Designer.cs">
+      <DependentUpon>HR.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
