@@ -41,7 +41,7 @@
             this.domUDSuppId = new System.Windows.Forms.DomainUpDown();
             this.domUDDetailId = new System.Windows.Forms.DomainUpDown();
             this.domUDControlerId = new System.Windows.Forms.DomainUpDown();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.domUDColour = new System.Windows.Forms.DomainUpDown();
             this.txtboxControlDate = new System.Windows.Forms.TextBox();
             this.txtboxThickness = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxControlStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -225,16 +225,16 @@
             this.domUDControlerId.Text = "Id Kontrolującego";
             this.domUDControlerId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox3
+            // pictureBoxForm
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(438, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(670, 737);
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxForm.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxForm.BackgroundImage")));
+            this.pictureBoxForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxForm.Location = new System.Drawing.Point(438, 12);
+            this.pictureBoxForm.Name = "pictureBoxForm";
+            this.pictureBoxForm.Size = new System.Drawing.Size(670, 737);
+            this.pictureBoxForm.TabIndex = 17;
+            this.pictureBoxForm.TabStop = false;
             // 
             // domUDColour
             // 
@@ -396,7 +396,7 @@
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBoxForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -405,7 +405,7 @@
             this.Text = "Kontrola Wejściowa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.picboxControlStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,7 +425,7 @@
         private System.Windows.Forms.DomainUpDown domUDSuppId;
         private System.Windows.Forms.DomainUpDown domUDDetailId;
         private System.Windows.Forms.DomainUpDown domUDControlerId;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.DomainUpDown domUDColour;
         private System.Windows.Forms.TextBox txtboxControlDate;
         private System.Windows.Forms.TextBox txtboxThickness;
