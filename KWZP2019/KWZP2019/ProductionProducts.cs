@@ -13,18 +13,26 @@ namespace KWZP2019
     public partial class ProductionProducts : Form
     {
         RoofingCompanyEntities db = new RoofingCompanyEntities();
-
         public ProductionProducts(RoofingCompanyEntities db)
         {
             InitializeComponent();
             this.db = db;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btAddProduct_Click(object sender, EventArgs e)
         {
-            AddProduct AddProductForm = new AddProduct(db);
-            AddProductForm.Show();
+            AddProduct addProduct = new AddProduct(db);
+            addProduct.Show();
+        }
 
+        private void ProductionProducts_Load(object sender, EventArgs e)
+        {
+            dataGridProducts.DataSource = db.Products.ToList();
+        }
+
+        private void btEnd_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
