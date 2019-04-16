@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class Salariessummary
+    partial class SalariesSummary
     {
         /// <summary>
         /// Required designer variable.

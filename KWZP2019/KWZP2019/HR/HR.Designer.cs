@@ -31,6 +31,12 @@
             this.tbEmployeeSearching = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridViewEmloyees = new System.Windows.Forms.DataGridView();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PESEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Warnings = new System.Windows.Forms.ListBox();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnExamination = new System.Windows.Forms.Button();
@@ -38,12 +44,6 @@
             this.btnTraining = new System.Windows.Forms.Button();
             this.btnAbsences = new System.Windows.Forms.Button();
             this.btnPayChecks = new System.Windows.Forms.Button();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PESEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmloyees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,70 +80,6 @@
             this.dataGridViewEmloyees.Size = new System.Drawing.Size(477, 326);
             this.dataGridViewEmloyees.TabIndex = 2;
             // 
-            // Warnings
-            // 
-            this.Warnings.FormattingEnabled = true;
-            this.Warnings.ItemHeight = 16;
-            this.Warnings.Location = new System.Drawing.Point(513, 353);
-            this.Warnings.Name = "Warnings";
-            this.Warnings.Size = new System.Drawing.Size(212, 52);
-            this.Warnings.TabIndex = 3;
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.Location = new System.Drawing.Point(585, 25);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(120, 32);
-            this.btnDetails.TabIndex = 4;
-            this.btnDetails.Text = "Szczegoly";
-            this.btnDetails.UseVisualStyleBackColor = true;
-            // 
-            // btnExamination
-            // 
-            this.btnExamination.Location = new System.Drawing.Point(585, 63);
-            this.btnExamination.Name = "btnExamination";
-            this.btnExamination.Size = new System.Drawing.Size(120, 37);
-            this.btnExamination.TabIndex = 5;
-            this.btnExamination.Text = "Badania";
-            this.btnExamination.UseVisualStyleBackColor = true;
-            // 
-            // btnAddEmployee
-            // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(585, 106);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(120, 51);
-            this.btnAddEmployee.TabIndex = 6;
-            this.btnAddEmployee.Text = "Dodaj Pracownika";
-            this.btnAddEmployee.UseVisualStyleBackColor = true;
-            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
-            // 
-            // btnTraining
-            // 
-            this.btnTraining.Location = new System.Drawing.Point(585, 163);
-            this.btnTraining.Name = "btnTraining";
-            this.btnTraining.Size = new System.Drawing.Size(120, 43);
-            this.btnTraining.TabIndex = 7;
-            this.btnTraining.Text = "Szkolenia";
-            this.btnTraining.UseVisualStyleBackColor = true;
-            // 
-            // btnAbsences
-            // 
-            this.btnAbsences.Location = new System.Drawing.Point(585, 212);
-            this.btnAbsences.Name = "btnAbsences";
-            this.btnAbsences.Size = new System.Drawing.Size(120, 37);
-            this.btnAbsences.TabIndex = 8;
-            this.btnAbsences.Text = "Nieobecnosci";
-            this.btnAbsences.UseVisualStyleBackColor = true;
-            // 
-            // btnPayChecks
-            // 
-            this.btnPayChecks.Location = new System.Drawing.Point(585, 255);
-            this.btnPayChecks.Name = "btnPayChecks";
-            this.btnPayChecks.Size = new System.Drawing.Size(120, 43);
-            this.btnPayChecks.TabIndex = 9;
-            this.btnPayChecks.Text = "Wyplaty";
-            this.btnPayChecks.UseVisualStyleBackColor = true;
-            // 
             // FirstName
             // 
             this.FirstName.DataPropertyName = "EmployeeName";
@@ -179,6 +115,74 @@
             this.PESEL.DataPropertyName = "PESEL";
             this.PESEL.HeaderText = "PESEL";
             this.PESEL.Name = "PESEL";
+            // 
+            // Warnings
+            // 
+            this.Warnings.FormattingEnabled = true;
+            this.Warnings.ItemHeight = 16;
+            this.Warnings.Location = new System.Drawing.Point(513, 353);
+            this.Warnings.Name = "Warnings";
+            this.Warnings.Size = new System.Drawing.Size(212, 52);
+            this.Warnings.TabIndex = 3;
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.Location = new System.Drawing.Point(585, 25);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(120, 32);
+            this.btnDetails.TabIndex = 4;
+            this.btnDetails.Text = "Szczegoly";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            // 
+            // btnExamination
+            // 
+            this.btnExamination.Location = new System.Drawing.Point(585, 63);
+            this.btnExamination.Name = "btnExamination";
+            this.btnExamination.Size = new System.Drawing.Size(120, 37);
+            this.btnExamination.TabIndex = 5;
+            this.btnExamination.Text = "Badania";
+            this.btnExamination.UseVisualStyleBackColor = true;
+            this.btnExamination.Click += new System.EventHandler(this.btnExamination_Click);
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.Location = new System.Drawing.Point(585, 106);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(120, 51);
+            this.btnAddEmployee.TabIndex = 6;
+            this.btnAddEmployee.Text = "Dodaj Pracownika";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
+            // btnTraining
+            // 
+            this.btnTraining.Location = new System.Drawing.Point(585, 163);
+            this.btnTraining.Name = "btnTraining";
+            this.btnTraining.Size = new System.Drawing.Size(120, 43);
+            this.btnTraining.TabIndex = 7;
+            this.btnTraining.Text = "Szkolenia";
+            this.btnTraining.UseVisualStyleBackColor = true;
+            this.btnTraining.Click += new System.EventHandler(this.btnTraining_Click);
+            // 
+            // btnAbsences
+            // 
+            this.btnAbsences.Location = new System.Drawing.Point(585, 212);
+            this.btnAbsences.Name = "btnAbsences";
+            this.btnAbsences.Size = new System.Drawing.Size(120, 37);
+            this.btnAbsences.TabIndex = 8;
+            this.btnAbsences.Text = "Nieobecnosci";
+            this.btnAbsences.UseVisualStyleBackColor = true;
+            this.btnAbsences.Click += new System.EventHandler(this.btnAbsences_Click);
+            // 
+            // btnPayChecks
+            // 
+            this.btnPayChecks.Location = new System.Drawing.Point(585, 255);
+            this.btnPayChecks.Name = "btnPayChecks";
+            this.btnPayChecks.Size = new System.Drawing.Size(120, 43);
+            this.btnPayChecks.TabIndex = 9;
+            this.btnPayChecks.Text = "Wyplaty";
+            this.btnPayChecks.UseVisualStyleBackColor = true;
             // 
             // HR
             // 
