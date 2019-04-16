@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,9 +55,9 @@ namespace KWZP2019
         {
             dataGVOshTraining.DataSource = db.ViewOshTrainings.
                 Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
-                && EntityFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining * 365) <= EntityFunctions.AddDays(DateTime.Now, 45)
-                && vOsh.EndDate > EntityFunctions.AddDays(DateTime.Now, 45))
-                .Select(osh => new { osh.EmployeeName, osh.EmployeeSurname, NextTrainingDate = EntityFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining * 365) })
+                && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining * 365) <= DbFunctions.AddDays(DateTime.Now, 45)
+                && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))
+                .Select(osh => new { osh.EmployeeName, osh.EmployeeSurname, NextTrainingDate = DbFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining * 365) })
                 .ToList();
         }
     }
