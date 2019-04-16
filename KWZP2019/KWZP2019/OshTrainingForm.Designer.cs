@@ -30,11 +30,11 @@
         {
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGVOshTraining = new System.Windows.Forms.DataGridView();
             this.btnShow = new System.Windows.Forms.Button();
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.domainUpDownDepartmentName = new System.Windows.Forms.DomainUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturn
@@ -65,13 +65,13 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
-            // dataGridView1
+            // dataGVOshTraining
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(52, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(695, 145);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGVOshTraining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVOshTraining.Location = new System.Drawing.Point(52, 54);
+            this.dataGVOshTraining.Name = "dataGVOshTraining";
+            this.dataGVOshTraining.Size = new System.Drawing.Size(695, 145);
+            this.dataGVOshTraining.TabIndex = 3;
             // 
             // btnShow
             // 
@@ -95,11 +95,11 @@
             // domainUpDownDepartmentName
             // 
             this.domainUpDownDepartmentName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.domainUpDownDepartmentName.Location = new System.Drawing.Point(258, 233);
-            this.domainUpDownDepartmentName.Margin = new System.Windows.Forms.Padding(0);
+            this.domainUpDownDepartmentName.Location = new System.Drawing.Point(280, 233);
             this.domainUpDownDepartmentName.Name = "domainUpDownDepartmentName";
-            this.domainUpDownDepartmentName.Size = new System.Drawing.Size(150, 16);
-            this.domainUpDownDepartmentName.TabIndex = 7;
+            this.domainUpDownDepartmentName.Size = new System.Drawing.Size(120, 16);
+            this.domainUpDownDepartmentName.Sorted = true;
+            this.domainUpDownDepartmentName.TabIndex = 8;
             this.domainUpDownDepartmentName.Text = "Wybierz dział";
             // 
             // OshTrainingForm
@@ -110,7 +110,7 @@
             this.Controls.Add(this.domainUpDownDepartmentName);
             this.Controls.Add(this.lblDepartmentName);
             this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGVOshTraining);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -120,7 +120,7 @@
             this.Text = "OshTrainingForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OshTrainingForm_FormClosed);
             this.Load += new System.EventHandler(this.OshTrainingForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +130,7 @@
 
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGVOshTraining;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Label lblDepartmentName;
         private System.Windows.Forms.DomainUpDown domainUpDownDepartmentName;
