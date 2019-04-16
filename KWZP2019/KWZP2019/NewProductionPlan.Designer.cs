@@ -45,16 +45,6 @@
             this.cBoxIntoProduction = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.viewProcessEmpl = new System.Windows.Forms.DataGridView();
-            this.lblOperators = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,9 +52,19 @@
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plannedProductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblOperators = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddEmp
@@ -216,95 +216,6 @@
             this.viewProcessEmpl.Size = new System.Drawing.Size(520, 223);
             this.viewProcessEmpl.TabIndex = 17;
             // 
-            // lblOperators
-            // 
-            this.lblOperators.AutoSize = true;
-            this.lblOperators.Location = new System.Drawing.Point(429, 92);
-            this.lblOperators.Name = "lblOperators";
-            this.lblOperators.Size = new System.Drawing.Size(158, 17);
-            this.lblOperators.TabIndex = 18;
-            this.lblOperators.Text = "Przydzieleni pracownicy";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnRemove);
-            this.groupBox1.Controls.Add(this.dateTimePicker4);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnAddEmp);
-            this.groupBox1.Location = new System.Drawing.Point(226, 361);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 100);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dodawanie pracowników";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(346, 66);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker4.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(219, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 17);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Data zakończenia";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(346, 38);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker3.TabIndex = 21;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(219, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 17);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Data rozpoczęcia";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 59);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(194, 24);
-            this.comboBox3.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 17);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Pracownik:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(590, 59);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(91, 34);
-            this.btnRemove.TabIndex = 24;
-            this.btnRemove.Text = "USUŃ";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // plannedProductionEmployeeDetailBindingSource
-            // 
-            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
-            // 
             // idDetailDataGridViewTextBoxColumn
             // 
             this.idDetailDataGridViewTextBoxColumn.DataPropertyName = "IdDetail";
@@ -354,6 +265,94 @@
             this.allocationDataGridViewTextBoxColumn.Name = "allocationDataGridViewTextBoxColumn";
             this.allocationDataGridViewTextBoxColumn.Visible = false;
             // 
+            // plannedProductionEmployeeDetailBindingSource
+            // 
+            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
+            // 
+            // lblOperators
+            // 
+            this.lblOperators.AutoSize = true;
+            this.lblOperators.Location = new System.Drawing.Point(429, 92);
+            this.lblOperators.Name = "lblOperators";
+            this.lblOperators.Size = new System.Drawing.Size(158, 17);
+            this.lblOperators.TabIndex = 18;
+            this.lblOperators.Text = "Przydzieleni pracownicy";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.btnRemove);
+            this.groupBox1.Controls.Add(this.dateTimePicker4);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dateTimePicker3);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.btnAddEmp);
+            this.groupBox1.Location = new System.Drawing.Point(226, 361);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(726, 100);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dodawanie pracowników";
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(590, 59);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(91, 34);
+            this.btnRemove.TabIndex = 24;
+            this.btnRemove.Text = "USUŃ";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(346, 66);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker4.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(219, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 17);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Data zakończenia";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(346, 38);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(219, 38);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 17);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Data rozpoczęcia";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(6, 59);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(194, 24);
+            this.comboBox3.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Pracownik";
+            // 
             // NewProductionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -380,9 +379,9 @@
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,7 +408,6 @@
         private System.Windows.Forms.BindingSource plannedProductionEmployeeDetailBindingSource;
         private System.Windows.Forms.Label lblOperators;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
@@ -423,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plannedProductionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label7;
     }
 }

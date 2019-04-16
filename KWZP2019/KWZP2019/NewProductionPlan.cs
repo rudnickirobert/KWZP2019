@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class NewProductionPlan : Form
     {
-        RoofingCompanyEntities db = new RoofingCompanyEntities();
+        RoofingCompanyEntities db;
         public NewProductionPlan(RoofingCompanyEntities db)
         {
             InitializeComponent();
@@ -22,13 +22,6 @@ namespace KWZP2019
         private void NewProductionPlan_Load(object sender, EventArgs e)
         {
             viewProcessEmpl.DataSource = db.PlannedProductionEmployeeDetails.ToList();
-        }
-
-
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

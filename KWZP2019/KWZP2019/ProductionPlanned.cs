@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class ProductionPlanned : Form
     {
-        RoofingCompanyEntities db = new RoofingCompanyEntities();
+        RoofingCompanyEntities db; 
 
         public ProductionPlanned(RoofingCompanyEntities db)
         {
@@ -30,17 +30,17 @@ namespace KWZP2019
         {
             Close();
         }
-
+        private bool isTxtBoxEmpty(TextBox tBox)
+        {
+            return tBox.Text.Trim().Length < 1;
+        }
         private void txtBoxPlanSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(txtBoxPlanSearch.Text.Trim().Length<1) //jesli nie wpisano niczego - zwroc wszystkie rekordy z tabeli
+            if(isTxtBoxEmpty(txtBoxPlanSearch)) 
             {
                 PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
-
             }
-
         }
-        // add/edit plan form
         private void btnAddPlan_Click(object sender, EventArgs e)
         {
             NewProductionPlan NewProductionPlanForm = new NewProductionPlan(db);
