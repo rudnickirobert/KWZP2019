@@ -479,6 +479,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Finances\Salaries.resx">
       <DependentUpon>Salaries.cs</DependentUpon>
@@ -516,6 +517,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\53529133_302328057098856_6495078002911608832_n.png" />
+    <None Include="Resources\icons8-receive-cash-40.png" />
+    <None Include="Resources\icons8-euro-money-80.png" />
+    <None Include="Resources\icons8-user-groups-80 %281%29.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

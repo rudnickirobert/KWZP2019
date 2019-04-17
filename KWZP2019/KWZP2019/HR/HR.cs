@@ -22,6 +22,7 @@ namespace KWZP2019
         {
             AddEmployee addEmployee = new AddEmployee();
             addEmployee.Show();
+            this.Hide();
         }
 
         private void HR_Load(object sender, EventArgs e)
@@ -34,24 +35,28 @@ namespace KWZP2019
         {
             Examination examination = new Examination();
             examination.Show();
+            this.Hide();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
             EmployeeDetails employeeDetails = new EmployeeDetails();
             employeeDetails.Show();
+            this.Hide();
         }
 
         private void btnAbsences_Click(object sender, EventArgs e)
         {
             Absences absences = new Absences();
             absences.Show();
+            this.Hide();
         }
 
         private void btnTraining_Click(object sender, EventArgs e)
         {
             AddTraining addTraining = new AddTraining();
             addTraining.Show();
+            this.Hide();
         }
     }
 }

@@ -15,18 +15,21 @@ namespace KWZP2019
         public FinancesAndHR()
         {
             InitializeComponent();
+
         }
 
         private void btnHR_Click(object sender, EventArgs e)
         {
             HR hr = new HR();
             hr.Show();
+            this.Hide();
         }
 
         private void btnFinances_Click(object sender, EventArgs e)
         {
             Finances finances = new Finances();
             finances.Show();
+            this.Hide();
         }
     }
 }

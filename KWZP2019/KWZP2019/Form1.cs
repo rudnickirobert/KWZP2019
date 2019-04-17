@@ -48,6 +48,7 @@ namespace KWZP2019
         {
             FinancesAndHR finanseIHR = new FinancesAndHR();
             finanseIHR.Show();
+            this.Hide();
         }
     }
 }
