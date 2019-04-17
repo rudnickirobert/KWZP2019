@@ -74,10 +74,39 @@ namespace KWZP2019
 
             // var bo nie wiem jaki typ zwraca join
             var doControlExist = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
-                (ec, order) => new { idSfOrder = order.IdSfOrder, idSemiFinished = order.IdSemiFinished })
-                .Where(order => order.idSfOrder.ToString() == domUDOrderId.Text && order.idSemiFinished.ToString() == domUDSfId.Text).FirstOrDefault();
+                (ec, order) => new { order.IdSfOrder, order.IdSemiFinished, ec.RealThickness, ec.RealWidth, ec.RealWeight, ec.RealColor, ec.Quantity })
+                .Where(order => order.IdSfOrder.ToString() == domUDOrderId.Text && order.IdSemiFinished.ToString() == domUDSfId.Text).FirstOrDefault();
 
-            lblControlNotExist.Text = doControlExist == null ? "Brak kontroli\nw bazie!" : "";
+            if(doControlExist == null)
+            {
+                lblControlNotExist.Text = "Brak kontroli\nw bazie!";
+                txtboxThickness.Text = "";
+                txtboxWidth.Text = "";
+                txtboxMass.Text = "";
+                txtBoxColor.Text = "";
+                txtBoxQuantity.Text = "";
+            }
+            else
+            {
+                lblControlNotExist.Text = "";
+                txtboxThickness.Text = doControlExist.RealThickness.ToString();
+                txtboxWidth.Text = doControlExist.RealWidth.ToString();
+                txtboxMass.Text = doControlExist.RealWeight.ToString();
+                txtBoxColor.Text = doControlExist.RealColor.ToString();
+                txtBoxQuantity.Text = doControlExist.Quantity.ToString();
+            }
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if(true)
+            {
+                MessageBox.Show("Proszę uzupełnić wszystkie pola", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Operacja udana!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

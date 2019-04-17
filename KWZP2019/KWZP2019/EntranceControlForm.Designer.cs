@@ -54,7 +54,7 @@
             this.lblEmployeeFullName = new System.Windows.Forms.Label();
             this.lblDaysOfDelay = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
-            this.textBoxColor = new System.Windows.Forms.TextBox();
+            this.txtBoxColor = new System.Windows.Forms.TextBox();
             this.picBoxChemicalComposition = new System.Windows.Forms.PictureBox();
             this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
             this.lblIdSfOrder = new System.Windows.Forms.Label();
@@ -64,6 +64,9 @@
             this.picBoxWeightStatus = new System.Windows.Forms.PictureBox();
             this.picBoxThicknessStatus = new System.Windows.Forms.PictureBox();
             this.lblControlNotExist = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxQuantity = new System.Windows.Forms.TextBox();
+            this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).BeginInit();
@@ -71,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -160,7 +164,7 @@
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWidth.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWidth.Location = new System.Drawing.Point(858, 297);
+            this.lblWidth.Location = new System.Drawing.Point(858, 289);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(160, 26);
             this.lblWidth.TabIndex = 5;
@@ -172,7 +176,7 @@
             this.lblMass.BackColor = System.Drawing.Color.Transparent;
             this.lblMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMass.Location = new System.Drawing.Point(858, 365);
+            this.lblMass.Location = new System.Drawing.Point(858, 348);
             this.lblMass.Name = "lblMass";
             this.lblMass.Size = new System.Drawing.Size(160, 26);
             this.lblMass.TabIndex = 6;
@@ -184,7 +188,7 @@
             this.lblComment.BackColor = System.Drawing.Color.Transparent;
             this.lblComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblComment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblComment.Location = new System.Drawing.Point(725, 526);
+            this.lblComment.Location = new System.Drawing.Point(684, 559);
             this.lblComment.Name = "lblComment";
             this.lblComment.Size = new System.Drawing.Size(114, 26);
             this.lblComment.TabIndex = 9;
@@ -250,7 +254,7 @@
             // txtboxWidth
             // 
             this.txtboxWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxWidth.Location = new System.Drawing.Point(858, 326);
+            this.txtboxWidth.Location = new System.Drawing.Point(858, 318);
             this.txtboxWidth.Name = "txtboxWidth";
             this.txtboxWidth.Size = new System.Drawing.Size(160, 26);
             this.txtboxWidth.TabIndex = 23;
@@ -258,7 +262,7 @@
             // txtboxMass
             // 
             this.txtboxMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxMass.Location = new System.Drawing.Point(858, 394);
+            this.txtboxMass.Location = new System.Drawing.Point(858, 377);
             this.txtboxMass.Name = "txtboxMass";
             this.txtboxMass.Size = new System.Drawing.Size(160, 26);
             this.txtboxMass.TabIndex = 24;
@@ -266,10 +270,10 @@
             // txtboxComment
             // 
             this.txtboxComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxComment.Location = new System.Drawing.Point(720, 557);
+            this.txtboxComment.Location = new System.Drawing.Point(688, 592);
             this.txtboxComment.Multiline = true;
             this.txtboxComment.Name = "txtboxComment";
-            this.txtboxComment.Size = new System.Drawing.Size(359, 114);
+            this.txtboxComment.Size = new System.Drawing.Size(391, 79);
             this.txtboxComment.TabIndex = 25;
             // 
             // checkBoxComposition
@@ -277,7 +281,7 @@
             this.checkBoxComposition.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxComposition.Location = new System.Drawing.Point(862, 511);
+            this.checkBoxComposition.Location = new System.Drawing.Point(862, 539);
             this.checkBoxComposition.Name = "checkBoxComposition";
             this.checkBoxComposition.Size = new System.Drawing.Size(170, 26);
             this.checkBoxComposition.TabIndex = 26;
@@ -337,6 +341,7 @@
             this.btnDone.Text = "Zatwierdź";
             this.btnDone.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // textBoxEmployeeId
             // 
@@ -388,25 +393,25 @@
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
             this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblColor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblColor.Location = new System.Drawing.Point(858, 434);
+            this.lblColor.Location = new System.Drawing.Point(858, 407);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(160, 26);
             this.lblColor.TabIndex = 6;
             this.lblColor.Text = "Kolor";
             this.lblColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxColor
+            // txtBoxColor
             // 
-            this.textBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxColor.Location = new System.Drawing.Point(858, 463);
-            this.textBoxColor.Name = "textBoxColor";
-            this.textBoxColor.Size = new System.Drawing.Size(160, 26);
-            this.textBoxColor.TabIndex = 24;
+            this.txtBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxColor.Location = new System.Drawing.Point(858, 436);
+            this.txtBoxColor.Name = "txtBoxColor";
+            this.txtBoxColor.Size = new System.Drawing.Size(160, 26);
+            this.txtBoxColor.TabIndex = 24;
             // 
             // picBoxChemicalComposition
             // 
             this.picBoxChemicalComposition.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxChemicalComposition.Location = new System.Drawing.Point(1035, 508);
+            this.picBoxChemicalComposition.Location = new System.Drawing.Point(1035, 536);
             this.picBoxChemicalComposition.Name = "picBoxChemicalComposition";
             this.picBoxChemicalComposition.Size = new System.Drawing.Size(30, 30);
             this.picBoxChemicalComposition.TabIndex = 34;
@@ -453,7 +458,7 @@
             // picBoxColorStatus
             // 
             this.picBoxColorStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxColorStatus.Location = new System.Drawing.Point(1035, 461);
+            this.picBoxColorStatus.Location = new System.Drawing.Point(1035, 434);
             this.picBoxColorStatus.Name = "picBoxColorStatus";
             this.picBoxColorStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxColorStatus.TabIndex = 34;
@@ -462,7 +467,7 @@
             // picBoxMassStatus
             // 
             this.picBoxMassStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxMassStatus.Location = new System.Drawing.Point(1035, 392);
+            this.picBoxMassStatus.Location = new System.Drawing.Point(1035, 375);
             this.picBoxMassStatus.Name = "picBoxMassStatus";
             this.picBoxMassStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxMassStatus.TabIndex = 34;
@@ -471,7 +476,7 @@
             // picBoxWeightStatus
             // 
             this.picBoxWeightStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxWeightStatus.Location = new System.Drawing.Point(1034, 323);
+            this.picBoxWeightStatus.Location = new System.Drawing.Point(1034, 315);
             this.picBoxWeightStatus.Name = "picBoxWeightStatus";
             this.picBoxWeightStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxWeightStatus.TabIndex = 34;
@@ -499,6 +504,35 @@
             this.lblControlNotExist.Text = " ";
             this.lblControlNotExist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(858, 468);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 26);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Ilość";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBoxQuantity
+            // 
+            this.txtBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxQuantity.Location = new System.Drawing.Point(858, 497);
+            this.txtBoxQuantity.Name = "txtBoxQuantity";
+            this.txtBoxQuantity.Size = new System.Drawing.Size(160, 26);
+            this.txtBoxQuantity.TabIndex = 24;
+            // 
+            // picBoxQuantityStatus
+            // 
+            this.picBoxQuantityStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxQuantityStatus.Location = new System.Drawing.Point(1035, 495);
+            this.picBoxQuantityStatus.Name = "picBoxQuantityStatus";
+            this.picBoxQuantityStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxQuantityStatus.TabIndex = 34;
+            this.picBoxQuantityStatus.TabStop = false;
+            // 
             // EntranceControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +544,7 @@
             this.Controls.Add(this.picBoxThicknessStatus);
             this.Controls.Add(this.picBoxWeightStatus);
             this.Controls.Add(this.picBoxMassStatus);
+            this.Controls.Add(this.picBoxQuantityStatus);
             this.Controls.Add(this.picBoxColorStatus);
             this.Controls.Add(this.picBoxChemicalComposition);
             this.Controls.Add(this.lblDaysOfDelay);
@@ -524,12 +559,14 @@
             this.Controls.Add(this.lblParameterCheck);
             this.Controls.Add(this.checkBoxComposition);
             this.Controls.Add(this.txtboxComment);
-            this.Controls.Add(this.textBoxColor);
+            this.Controls.Add(this.txtBoxQuantity);
+            this.Controls.Add(this.txtBoxColor);
             this.Controls.Add(this.txtboxMass);
             this.Controls.Add(this.txtboxWidth);
             this.Controls.Add(this.txtboxThickness);
             this.Controls.Add(this.domUDSfId);
             this.Controls.Add(this.domUDOrderId);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.picBoxControlStatus);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.lblComment);
@@ -556,6 +593,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,7 +626,7 @@
         private System.Windows.Forms.Label lblEmployeeFullName;
         private System.Windows.Forms.Label lblDaysOfDelay;
         private System.Windows.Forms.Label lblColor;
-        private System.Windows.Forms.TextBox textBoxColor;
+        private System.Windows.Forms.TextBox txtBoxColor;
         private System.Windows.Forms.PictureBox picBoxChemicalComposition;
         private System.Windows.Forms.DateTimePicker datePickerControlDate;
         private System.Windows.Forms.Label lblIdSfOrder;
@@ -598,5 +636,8 @@
         private System.Windows.Forms.PictureBox picBoxWeightStatus;
         private System.Windows.Forms.PictureBox picBoxThicknessStatus;
         private System.Windows.Forms.Label lblControlNotExist;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBoxQuantity;
+        private System.Windows.Forms.PictureBox picBoxQuantityStatus;
     }
 }
