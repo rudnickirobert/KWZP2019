@@ -1,8 +1,8 @@
 ﻿use master;
-
+go
 drop database RoofingCompany;
 create database RoofingCompany;
-
+go
 use RoofingCompany;
 
 create table Accident(
@@ -538,6 +538,8 @@ ALTER TABLE SfOrderDetail ADD CONSTRAINT FkSfOrderDetailSemiFinished FOREIGN KEY
 ALTER TABLE PlannedProduction ADD CONSTRAINT FkOrderDetail
 FOREIGN KEY (IdDetail) REFERENCES OrderDetail(IdDetail)
 
+ALTER TABLE PlannedProduction ADD CONSTRAINT FkMachine
+FOREIGN KEY (IdMachine) REFERENCES Maintenance(IdMaintenance)
 -- planned_prod_empl_det FOREING KEYS--------
 ALTER TABLE PlannedProductionEmployeeDetails ADD CONSTRAINT FKPlannedProductionEmployeeDetailsAllocation
 FOREIGN KEY (IdEmployee) REFERENCES Allocation(IdAllocation)

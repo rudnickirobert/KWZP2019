@@ -220,6 +220,12 @@
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="NewProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProductionPlan.Designer.cs">
+      <DependentUpon>NewProductionPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -477,6 +483,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewProductionPlan.resx">
+      <DependentUpon>NewProductionPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
     </EmbeddedResource>
@@ -528,7 +537,20 @@
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Machine.datasource" />
+    <None Include="Maintenance.datasource" />
+    <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="PlannedProduction.datasource" />
+    <None Include="PlannedProductionEmployeeDetail.datasource" />
+    <None Include="Product.datasource" />
+    <None Include="Production.datasource" />
+    <None Include="ProductionFailures.datasource" />
+    <None Include="ProductionPlanned.datasource" />
+    <None Include="ProductionProce.datasource" />
+    <None Include="ProductionProcess.datasource" />
+    <None Include="ProductionProducts.datasource" />
+    <None Include="ProductionTechnology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -545,6 +567,7 @@
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>
+    <None Include="Technology.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
