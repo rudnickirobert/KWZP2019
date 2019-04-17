@@ -64,7 +64,8 @@ create table SemiFinished(
 	);
 
 create table TechnicalProductData(
-	IdProduct int primary key not null,
+	IdTechnicalProductData int primary key not null,
+	IdProduct int,
 	Pattern image not null,
 	Width float not null,
 	WeightPerMeter float not null,
