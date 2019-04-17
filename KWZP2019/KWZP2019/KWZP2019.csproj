@@ -153,6 +153,7 @@
     </Compile>
     <Compile Include="EntranceControlView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="HR\Examination.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,8 +244,9 @@
     <Compile Include="OshTrainingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OshTrainingForm.Designer.cs">
-      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+      <Compile Include="OshTrainingForm.Designer.cs">
+        <DependentUpon>OshTrainingForm.cs</DependentUpon>
+      </Compile>
     <Compile Include="OSHControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -502,8 +504,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OshTrainingForm.resx">
-      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+      <EmbeddedResource Include="OshTrainingForm.resx">
+        <DependentUpon>OshTrainingForm.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="NewProductionPlan.resx">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
