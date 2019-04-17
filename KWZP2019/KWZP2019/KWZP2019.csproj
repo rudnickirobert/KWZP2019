@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntranceControlView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
