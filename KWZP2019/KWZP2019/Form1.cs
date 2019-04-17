@@ -40,13 +40,14 @@ namespace KWZP2019
 
         private void btnMaintenance_Click(object sender, EventArgs e)
         {
-            MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db);
+            MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db, this);
             maintenanceManagement.Show();
+            this.Hide();
         }
 
         private void btnHR_Click(object sender, EventArgs e)
         {
-            FinancesAndHR finanseIHR = new FinancesAndHR(db);
+            FinancesAndHR finanseIHR = new FinancesAndHR();
             finanseIHR.Show();
         }
     }

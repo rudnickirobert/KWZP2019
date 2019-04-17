@@ -45,13 +45,8 @@ namespace KWZP2019
 
         private void btnProductionPlanned_Click(object sender, EventArgs e)
         {
-            ProductionPlanned ProductionPlannedForm = new ProductionPlanned(db);
+            ProductionPlanned ProductionPlannedForm = new ProductionPlanned();
             ProductionPlannedForm.Show();
-        }
-
-        private void btnProductionToMain_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
