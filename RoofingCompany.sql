@@ -360,8 +360,8 @@ PESEL bigint,
 create table Position(
 IdPosition int not null Primary key identity(1,1),
 Workplace nvarchar(50) null,
-ValidityOfOshTraining int null,
-VailidityOfMedicalExam int null
+ValidityOfOshTraining tinyint null,
+VailidityOfMedicalExam tinyint null
 );
 
 create table Contract(
@@ -412,7 +412,7 @@ Create table Staff(
 IdStaff int primary key identity(1,1) not null,
 IdDeparment int foreign key references Department(IdDepartment),
 IdPosition int foreign key references Position(IdPosition),
-Number int,
+Number tinyint,
 DateFrom date
 );
 
