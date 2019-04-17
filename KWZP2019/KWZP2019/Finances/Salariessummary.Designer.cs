@@ -59,11 +59,11 @@
             // 
             // btnAcceptchangesandsave
             // 
-            this.btnAcceptchangesandsave.Location = new System.Drawing.Point(243, 260);
+            this.btnAcceptchangesandsave.Location = new System.Drawing.Point(243, 296);
             this.btnAcceptchangesandsave.Name = "btnAcceptchangesandsave";
-            this.btnAcceptchangesandsave.Size = new System.Drawing.Size(276, 61);
+            this.btnAcceptchangesandsave.Size = new System.Drawing.Size(276, 25);
             this.btnAcceptchangesandsave.TabIndex = 14;
-            this.btnAcceptchangesandsave.Text = "ZAAKCEPTUJ ZMIANY I ZAPISZ JE W SYSTEMIE";
+            this.btnAcceptchangesandsave.Text = "Zaakceptuj i zapisz zmiany";
             this.btnAcceptchangesandsave.UseVisualStyleBackColor = true;
             // 
             // lblSelectemployee
@@ -105,7 +105,7 @@
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(273, 23);
             this.btnApprove.TabIndex = 24;
-            this.btnApprove.Text = "ZATWIERDŹ";
+            this.btnApprove.Text = "Zatwierdź";
             this.btnApprove.UseVisualStyleBackColor = true;
             // 
             // lblAmountbonus
@@ -117,7 +117,7 @@
             this.lblAmountbonus.TabIndex = 25;
             this.lblAmountbonus.Text = "Kwota premii:";
             // 
-            // salariessummary
+            // SalariesSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,7 +131,7 @@
             this.Controls.Add(this.btnAcceptchangesandsave);
             this.Controls.Add(this.lblGrantingbonus);
             this.Controls.Add(this.lblAmounttopay);
-            this.Name = "salariessummary";
+            this.Name = "SalariesSummary";
             this.Text = "Podlicz wypłaty";
             this.ResumeLayout(false);
             this.PerformLayout();

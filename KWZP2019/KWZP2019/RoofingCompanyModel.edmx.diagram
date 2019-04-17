@@ -130,9 +130,11 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewDailySfDelivery" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="12.75" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vIndividualCustomer" Width="1.5" PointX="17.75" PointY="18.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="19.75" PointY="18.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="21.75" PointY="18.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="19.75" PointY="18.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="21.75" PointY="18.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="23.75" PointY="17.75" />
         <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdMac__0B91BA14" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinished" />
       </Diagram>

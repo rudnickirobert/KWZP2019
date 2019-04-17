@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -641,13 +641,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vCustomerWithOrder' does not ha
             <PropertyRef Name="IdOrderCustomer" />
             <PropertyRef Name="OrderDate" />
             <PropertyRef Name="Cost" />
-            <PropertyRef Name="Markup" />
           </Key>
           <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IdOrderCustomer" Type="int" Nullable="false" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
-          <Property Name="Markup" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -706,6 +704,29 @@ warning 6002: The table/view 'RoofingCompany.dbo.vIndividualCustomer' does not h
           <Property Name="NIP" Type="float" />
           <Property Name="KRS" Type="float" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vInputMagazine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vInputMagazine">
+          <Key>
+            <PropertyRef Name="SfCode" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="ControlDate" />
+          </Key>
+          <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ControlDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOutputMagazine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOutputMagazine">
+          <Key>
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="ControlDate" />
+          </Key>
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ControlDate" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1627,8 +1648,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
     [vCustomerWithOrder].[CustomerName] AS [CustomerName], 
     [vCustomerWithOrder].[IdOrderCustomer] AS [IdOrderCustomer], 
     [vCustomerWithOrder].[OrderDate] AS [OrderDate], 
-    [vCustomerWithOrder].[Cost] AS [Cost], 
-    [vCustomerWithOrder].[Markup] AS [Markup]
+    [vCustomerWithOrder].[Cost] AS [Cost]
     FROM [dbo].[vCustomerWithOrder] AS [vCustomerWithOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDailySfDelivery" EntityType="Self.ViewDailySfDelivery" store:Type="Views" store:Schema="dbo">
@@ -1666,6 +1686,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
     [vIndividualCustomer].[KRS] AS [KRS], 
     [vIndividualCustomer].[Description] AS [Description]
     FROM [dbo].[vIndividualCustomer] AS [vIndividualCustomer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vInputMagazine" EntityType="Self.vInputMagazine" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vInputMagazine].[SfCode] AS [SfCode], 
+    [vInputMagazine].[Quantity] AS [Quantity], 
+    [vInputMagazine].[ControlDate] AS [ControlDate]
+    FROM [dbo].[vInputMagazine] AS [vInputMagazine]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vOutputMagazine" EntityType="Self.vOutputMagazine" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOutputMagazine].[ProductCode] AS [ProductCode], 
+    [vOutputMagazine].[Quantity] AS [Quantity], 
+    [vOutputMagazine].[ControlDate] AS [ControlDate]
+    FROM [dbo].[vOutputMagazine] AS [vOutputMagazine]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOutsourcingWithType" EntityType="Self.vOutsourcingWithType" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3689,6 +3723,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySet Name="ViewDailySfDeliveries" EntityType="RoofingCompanyModel.ViewDailySfDelivery" />
           <EntitySet Name="ViewOshTrainings" EntityType="RoofingCompanyModel.ViewOshTraining" />
           <EntitySet Name="vIndividualCustomers" EntityType="RoofingCompanyModel.vIndividualCustomer" />
+          <EntitySet Name="vInputMagazines" EntityType="RoofingCompanyModel.vInputMagazine" />
+          <EntitySet Name="vOutputMagazines" EntityType="RoofingCompanyModel.vOutputMagazine" />
           <EntitySet Name="vOutsourcingWithTypes" EntityType="RoofingCompanyModel.vOutsourcingWithType" />
           <EntitySet Name="vSupplierParts" EntityType="RoofingCompanyModel.vSupplierPart" />
           <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemi" />
@@ -3758,13 +3794,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <PropertyRef Name="IdOrderCustomer" />
             <PropertyRef Name="OrderDate" />
             <PropertyRef Name="Cost" />
-            <PropertyRef Name="Markup" />
           </Key>
           <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Markup" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewDailySfDelivery">
           <Key>
@@ -3817,6 +3851,25 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <Property Name="NIP" Type="Double" />
           <Property Name="KRS" Type="Double" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vInputMagazine">
+          <Key>
+            <PropertyRef Name="SfCode" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="ControlDate" />
+          </Key>
+          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ControlDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vOutputMagazine">
+          <Key>
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="ControlDate" />
+          </Key>
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ControlDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="vOutsourcingWithType">
           <Key>
@@ -4616,7 +4669,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySetMapping Name="vCustomerWithOrders">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vCustomerWithOrder">
               <MappingFragment StoreEntitySet="vCustomerWithOrder">
-                <ScalarProperty Name="Markup" ColumnName="Markup" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
@@ -4663,6 +4715,24 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vInputMagazines">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vInputMagazine">
+              <MappingFragment StoreEntitySet="vInputMagazine">
+                <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutputMagazines">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutputMagazine">
+              <MappingFragment StoreEntitySet="vOutputMagazine">
+                <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

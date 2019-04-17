@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridViewEmployeeDetails = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnExamination = new System.Windows.Forms.Button();
-            this.btnContract = new System.Windows.Forms.Button();
-            this.btnEducation = new System.Windows.Forms.Button();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +38,10 @@
             this.ApartmentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PESEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnExamination = new System.Windows.Forms.Button();
+            this.btnContract = new System.Windows.Forms.Button();
+            this.btnEducation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,48 +58,13 @@
             this.ApartmentNumber,
             this.PhoneNumber,
             this.PESEL});
-            this.dataGridViewEmployeeDetails.Location = new System.Drawing.Point(24, 23);
+            this.dataGridViewEmployeeDetails.Location = new System.Drawing.Point(18, 19);
+            this.dataGridViewEmployeeDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewEmployeeDetails.Name = "dataGridViewEmployeeDetails";
             this.dataGridViewEmployeeDetails.RowHeadersVisible = false;
             this.dataGridViewEmployeeDetails.RowTemplate.Height = 24;
-            this.dataGridViewEmployeeDetails.Size = new System.Drawing.Size(597, 370);
+            this.dataGridViewEmployeeDetails.Size = new System.Drawing.Size(448, 301);
             this.dataGridViewEmployeeDetails.TabIndex = 0;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(666, 58);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Edytuj";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnExamination
-            // 
-            this.btnExamination.Location = new System.Drawing.Point(666, 206);
-            this.btnExamination.Name = "btnExamination";
-            this.btnExamination.Size = new System.Drawing.Size(122, 23);
-            this.btnExamination.TabIndex = 2;
-            this.btnExamination.Text = "Badania lekarskie";
-            this.btnExamination.UseVisualStyleBackColor = true;
-            // 
-            // btnContract
-            // 
-            this.btnContract.Location = new System.Drawing.Point(666, 248);
-            this.btnContract.Name = "btnContract";
-            this.btnContract.Size = new System.Drawing.Size(122, 23);
-            this.btnContract.TabIndex = 3;
-            this.btnContract.Text = "Umowa";
-            this.btnContract.UseVisualStyleBackColor = true;
-            // 
-            // btnEducation
-            // 
-            this.btnEducation.Location = new System.Drawing.Point(666, 292);
-            this.btnEducation.Name = "btnEducation";
-            this.btnEducation.Size = new System.Drawing.Size(122, 23);
-            this.btnEducation.TabIndex = 4;
-            this.btnEducation.Text = "Wykształcenie";
-            this.btnEducation.UseVisualStyleBackColor = true;
             // 
             // FirstName
             // 
@@ -146,16 +111,57 @@
             this.PESEL.HeaderText = "PESEL";
             this.PESEL.Name = "PESEL";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(500, 47);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(56, 23);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Edytuj";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnExamination
+            // 
+            this.btnExamination.Location = new System.Drawing.Point(500, 167);
+            this.btnExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExamination.Name = "btnExamination";
+            this.btnExamination.Size = new System.Drawing.Size(92, 25);
+            this.btnExamination.TabIndex = 2;
+            this.btnExamination.Text = "Badania lekarskie";
+            this.btnExamination.UseVisualStyleBackColor = true;
+            // 
+            // btnContract
+            // 
+            this.btnContract.Location = new System.Drawing.Point(500, 202);
+            this.btnContract.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContract.Name = "btnContract";
+            this.btnContract.Size = new System.Drawing.Size(92, 25);
+            this.btnContract.TabIndex = 3;
+            this.btnContract.Text = "Umowa";
+            this.btnContract.UseVisualStyleBackColor = true;
+            // 
+            // btnEducation
+            // 
+            this.btnEducation.Location = new System.Drawing.Point(500, 237);
+            this.btnEducation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEducation.Name = "btnEducation";
+            this.btnEducation.Size = new System.Drawing.Size(92, 25);
+            this.btnEducation.TabIndex = 4;
+            this.btnEducation.Text = "Wykształcenie";
+            this.btnEducation.UseVisualStyleBackColor = true;
+            // 
             // EmployeeDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnEducation);
             this.Controls.Add(this.btnContract);
             this.Controls.Add(this.btnExamination);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.dataGridViewEmployeeDetails);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmployeeDetails";
             this.Text = "Employee Details";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeDetails)).EndInit();

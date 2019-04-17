@@ -12,11 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vCustomerWithOrder
+    public partial class vOutputMagazine
     {
-        public string CustomerName { get; set; }
-        public int IdOrderCustomer { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public decimal Cost { get; set; }
+        public string ProductCode { get; set; }
+        public int Quantity { get; set; }
+        public System.DateTime ControlDate { get; set; }
     }
 }
