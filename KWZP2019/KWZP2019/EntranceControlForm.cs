@@ -76,7 +76,7 @@ namespace KWZP2019
 
             // var bo nie wiem jaki typ zwraca join
             var doControlExist = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
-                (ec, order) => new { order.IdSfOrder, order.IdSemiFinished, ec.RealThickness, ec.RealWidth, ec.RealWeight, ec.RealColor, ec.Quantity })
+                (ec, order) => new { order.IdSfOrder, order.IdSemiFinished, ec.RealThickness, ec.RealWidth, ec.RealWeight, ec.RealColor, ec.Quantity, ec.ControlStatus })
                 .Where(order => order.IdSfOrder.ToString() == domUDOrderId.Text && order.IdSemiFinished.ToString() == domUDSfId.Text).FirstOrDefault();
 
             if(doControlExist == null)
@@ -87,6 +87,7 @@ namespace KWZP2019
                 txtboxMass.Text = "";
                 txtBoxColor.Text = "";
                 txtBoxQuantity.Text = "";
+                picBoxControlStatus.Image = Properties.Resources.new_80px;
             }
             else
             {
@@ -96,6 +97,7 @@ namespace KWZP2019
                 txtboxMass.Text = doControlExist.RealWeight.ToString();
                 txtBoxColor.Text = doControlExist.RealColor.ToString();
                 txtBoxQuantity.Text = doControlExist.Quantity.ToString();
+                picBoxControlStatus.Image = doControlExist.ControlStatus == true ? Properties.Resources.good_quality_80px : Properties.Resources.poor_quality_80px;
             }
         }
 

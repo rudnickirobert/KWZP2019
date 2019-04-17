@@ -342,7 +342,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +374,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SalesDepartment.resx">
       <DependentUpon>SalesDepartment.cs</DependentUpon>
@@ -406,6 +406,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cancel_48px.png" />
+    <None Include="Resources\good_quality_40px.png" />
+    <None Include="Resources\help_40px.png" />
+    <None Include="Resources\new_40px.png" />
+    <None Include="Resources\ok_48px.png" />
+    <None Include="Resources\poor_quality_40px.png" />
+    <None Include="Resources\new_80px.png" />
+    <None Include="Resources\good_quality_80px.png" />
+    <None Include="Resources\poor_quality_80px.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

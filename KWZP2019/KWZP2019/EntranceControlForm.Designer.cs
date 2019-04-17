@@ -37,7 +37,6 @@
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblMass = new System.Windows.Forms.Label();
             this.lblComment = new System.Windows.Forms.Label();
-            this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.domUDOrderId = new System.Windows.Forms.DomainUpDown();
             this.domUDSfId = new System.Windows.Forms.DomainUpDown();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -67,7 +66,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxQuantity = new System.Windows.Forms.TextBox();
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
@@ -75,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -195,20 +197,6 @@
             this.lblComment.Text = "Komentarz";
             this.lblComment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picBoxControlStatus
-            // 
-            this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxControlStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.BackgroundImage")));
-            this.picBoxControlStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxControlStatus.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.ErrorImage")));
-            this.picBoxControlStatus.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.InitialImage")));
-            this.picBoxControlStatus.Location = new System.Drawing.Point(476, 511);
-            this.picBoxControlStatus.Name = "picBoxControlStatus";
-            this.picBoxControlStatus.Size = new System.Drawing.Size(160, 160);
-            this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxControlStatus.TabIndex = 10;
-            this.picBoxControlStatus.TabStop = false;
-            // 
             // domUDOrderId
             // 
             this.domUDOrderId.BackColor = System.Drawing.SystemColors.Window;
@@ -238,9 +226,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(334, 11);
+            this.pictureBox3.Location = new System.Drawing.Point(335, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(845, 737);
+            this.pictureBox3.Size = new System.Drawing.Size(844, 738);
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             // 
@@ -357,7 +345,7 @@
             this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxEmployeeId.Location = new System.Drawing.Point(578, 318);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
-            this.textBoxEmployeeId.Size = new System.Drawing.Size(70, 26);
+            this.textBoxEmployeeId.Size = new System.Drawing.Size(58, 26);
             this.textBoxEmployeeId.TabIndex = 31;
             this.textBoxEmployeeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
@@ -547,6 +535,26 @@
             this.picBoxQuantityStatus.TabIndex = 34;
             this.picBoxQuantityStatus.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-23, -46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBoxControlStatus
+            // 
+            this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxControlStatus.Image = global::KWZP2019.Properties.Resources.new_80px;
+            this.picBoxControlStatus.InitialImage = null;
+            this.picBoxControlStatus.Location = new System.Drawing.Point(472, 511);
+            this.picBoxControlStatus.Name = "picBoxControlStatus";
+            this.picBoxControlStatus.Size = new System.Drawing.Size(169, 158);
+            this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxControlStatus.TabIndex = 37;
+            this.picBoxControlStatus.TabStop = false;
+            // 
             // EntranceControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +562,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.picBoxControlStatus);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.picBoxThicknessStatus);
             this.Controls.Add(this.picBoxWeightStatus);
@@ -581,7 +591,6 @@
             this.Controls.Add(this.domUDSfId);
             this.Controls.Add(this.domUDOrderId);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.picBoxControlStatus);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.lblComment);
             this.Controls.Add(this.lblMass);
@@ -600,7 +609,6 @@
             this.Text = "Kontrola Wejściowa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
             this.Load += new System.EventHandler(this.EntranceControlForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).EndInit();
@@ -608,6 +616,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -623,7 +633,6 @@
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblMass;
         private System.Windows.Forms.Label lblComment;
-        private System.Windows.Forms.PictureBox picBoxControlStatus;
         private System.Windows.Forms.DomainUpDown domUDOrderId;
         private System.Windows.Forms.DomainUpDown domUDSfId;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -653,5 +662,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBoxQuantity;
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxControlStatus;
     }
 }
