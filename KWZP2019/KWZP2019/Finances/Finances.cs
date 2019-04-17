@@ -19,38 +19,38 @@ namespace KWZP2019
 
         private void btnPayments_Click(object sender, EventArgs e)
         {
-            Salaries Salaries = new Salaries();
+            Salaries salaries = new Salaries();
             salaries.ShowDialog();
         }
 
         private void btnCountPayments_Click(object sender, EventArgs e)
         {
-            SalariesSummary SalariesSummary = new SalariesSummary();
-            SalariesSummary.ShowDialog();
+            SalariesSummary salariesSummary = new SalariesSummary();
+            salariesSummary.ShowDialog();
         }
 
         private void btnCosts_Click(object sender, EventArgs e)
         {
-            Costs Costs = new Costs();
-            Costs.ShowDialog();
+            Costs costs = new Costs();
+            costs.ShowDialog();
         }
 
         private void btnEarnings_Click(object sender, EventArgs e)
         {
-            Profits Profits = new Profits();
-            Profits.ShowDialog();
+            Profits profits = new Profits();
+            profits.ShowDialog();
         }
 
         private void btnFinancialStatement_Click(object sender, EventArgs e)
         {
-            AllCosts AllCosts = new AllCosts();
-            Allcosts.ShowDialog();
+            AllCosts allCosts = new AllCosts();
+            allCosts.ShowDialog();
         }
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            AddInvoices AddInvoices = new AddFvat();
-            AddInvoices.ShowDialog();
+            AddInvoices addInvoices = new AddInvoices();
+            addInvoices.ShowDialog();
         }
     }
 }

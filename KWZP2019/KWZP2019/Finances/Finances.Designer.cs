@@ -22,13 +22,13 @@
         private void InitializeComponent()
         {
             this.btnPayments = new System.Windows.Forms.Button();
-            this.btnCountpayments = new System.Windows.Forms.Button();
+            this.btnCountPayments = new System.Windows.Forms.Button();
             this.btnCosts = new System.Windows.Forms.Button();
             this.btnEarnings = new System.Windows.Forms.Button();
-            this.btnFinancialstatement = new System.Windows.Forms.Button();
-            this.btnAddinvoice = new System.Windows.Forms.Button();
+            this.btnFinancialStatement = new System.Windows.Forms.Button();
+            this.btnAddInvoice = new System.Windows.Forms.Button();
             this.lblIntroduction = new System.Windows.Forms.Label();
-            this.lblOtherfunctions = new System.Windows.Forms.Label();
+            this.lblOtherFunctions = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPayments
@@ -43,13 +43,13 @@
             // 
             // btnCountpayments
             // 
-            this.btnCountpayments.Location = new System.Drawing.Point(195, 77);
-            this.btnCountpayments.Name = "btnCountpayments";
-            this.btnCountpayments.Size = new System.Drawing.Size(140, 50);
-            this.btnCountpayments.TabIndex = 1;
-            this.btnCountpayments.Text = "Podlicz wypłaty";
-            this.btnCountpayments.UseVisualStyleBackColor = true;
-            this.btnCountpayments.Click += new System.EventHandler(this.btnCountpayments_Click);
+            this.btnCountPayments.Location = new System.Drawing.Point(195, 77);
+            this.btnCountPayments.Name = "btnCountpayments";
+            this.btnCountPayments.Size = new System.Drawing.Size(140, 50);
+            this.btnCountPayments.TabIndex = 1;
+            this.btnCountPayments.Text = "Podlicz wypłaty";
+            this.btnCountPayments.UseVisualStyleBackColor = true;
+            this.btnCountPayments.Click += new System.EventHandler(this.btnCountPayments_Click);
             // 
             // btnCosts
             // 
@@ -73,23 +73,23 @@
             // 
             // btnFinancialstatement
             // 
-            this.btnFinancialstatement.Location = new System.Drawing.Point(195, 218);
-            this.btnFinancialstatement.Name = "btnFinancialstatement";
-            this.btnFinancialstatement.Size = new System.Drawing.Size(140, 50);
-            this.btnFinancialstatement.TabIndex = 4;
-            this.btnFinancialstatement.Text = "Bilans finansowy";
-            this.btnFinancialstatement.UseVisualStyleBackColor = true;
-            this.btnFinancialstatement.Click += new System.EventHandler(this.btnFinancialstatement_Click);
+            this.btnFinancialStatement.Location = new System.Drawing.Point(195, 218);
+            this.btnFinancialStatement.Name = "btnFinancialstatement";
+            this.btnFinancialStatement.Size = new System.Drawing.Size(140, 50);
+            this.btnFinancialStatement.TabIndex = 4;
+            this.btnFinancialStatement.Text = "Bilans finansowy";
+            this.btnFinancialStatement.UseVisualStyleBackColor = true;
+            this.btnFinancialStatement.Click += new System.EventHandler(this.btnFinancialStatement_Click);
             // 
-            // btnAddinvoice
+            // btnAddInvoice
             // 
-            this.btnAddinvoice.Location = new System.Drawing.Point(342, 218);
-            this.btnAddinvoice.Name = "btnAddinvoice";
-            this.btnAddinvoice.Size = new System.Drawing.Size(140, 50);
-            this.btnAddinvoice.TabIndex = 5;
-            this.btnAddinvoice.Text = "Dodaj fakturę";
-            this.btnAddinvoice.UseVisualStyleBackColor = true;
-            this.btnAddinvoice.Click += new System.EventHandler(this.btnAddinvoice_Click);
+            this.btnAddInvoice.Location = new System.Drawing.Point(342, 218);
+            this.btnAddInvoice.Name = "btnAddinvoice";
+            this.btnAddInvoice.Size = new System.Drawing.Size(140, 50);
+            this.btnAddInvoice.TabIndex = 5;
+            this.btnAddInvoice.Text = "Dodaj fakturę";
+            this.btnAddInvoice.UseVisualStyleBackColor = true;
+            this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
             // lblIntroduction
             // 
@@ -100,27 +100,27 @@
             this.lblIntroduction.TabIndex = 6;
             this.lblIntroduction.Text = "WPROWADZANIE";
             // 
-            // lblOtherfunctions
+            // lblOtherFunctions
             // 
-            this.lblOtherfunctions.AutoSize = true;
-            this.lblOtherfunctions.Location = new System.Drawing.Point(203, 186);
-            this.lblOtherfunctions.Name = "lblOtherfunctions";
-            this.lblOtherfunctions.Size = new System.Drawing.Size(123, 13);
-            this.lblOtherfunctions.TabIndex = 7;
-            this.lblOtherfunctions.Text = "POZOSTAŁE FUNKCJE";
+            this.lblOtherFunctions.AutoSize = true;
+            this.lblOtherFunctions.Location = new System.Drawing.Point(203, 186);
+            this.lblOtherFunctions.Name = "lblOtherfunctions";
+            this.lblOtherFunctions.Size = new System.Drawing.Size(123, 13);
+            this.lblOtherFunctions.TabIndex = 7;
+            this.lblOtherFunctions.Text = "POZOSTAŁE FUNKCJE";
             // 
             // finances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
-            this.Controls.Add(this.lblOtherfunctions);
+            this.Controls.Add(this.lblOtherFunctions);
             this.Controls.Add(this.lblIntroduction);
-            this.Controls.Add(this.btnAddinvoice);
-            this.Controls.Add(this.btnFinancialstatement);
+            this.Controls.Add(this.btnAddInvoice);
+            this.Controls.Add(this.btnFinancialStatement);
             this.Controls.Add(this.btnEarnings);
             this.Controls.Add(this.btnCosts);
-            this.Controls.Add(this.btnCountpayments);
+            this.Controls.Add(this.btnCountPayments);
             this.Controls.Add(this.btnPayments);
             this.Name = "finances";
             this.Text = "Finanse";
@@ -132,13 +132,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnPayments;
-        private System.Windows.Forms.Button btnCountpayments;
+        private System.Windows.Forms.Button btnCountPayments;
         private System.Windows.Forms.Button btnCosts;
         private System.Windows.Forms.Button btnEarnings;
-        private System.Windows.Forms.Button btnFinancialstatement;
-        private System.Windows.Forms.Button btnAddinvoice;
+        private System.Windows.Forms.Button btnFinancialStatement;
+        private System.Windows.Forms.Button btnAddInvoice;
         private System.Windows.Forms.Label lblIntroduction;
-        private System.Windows.Forms.Label lblOtherfunctions;
+        private System.Windows.Forms.Label lblOtherFunctions;
     }
 }
 

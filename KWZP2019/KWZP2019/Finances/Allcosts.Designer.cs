@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class Allcosts
+    partial class AllCosts
     {
         /// <summary>
         /// Required designer variable.

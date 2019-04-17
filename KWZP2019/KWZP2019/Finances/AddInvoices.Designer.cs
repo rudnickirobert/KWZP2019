@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class Addfvat
+    partial class AddInvoices
     {
         /// <summary>
         /// Required designer variable.
