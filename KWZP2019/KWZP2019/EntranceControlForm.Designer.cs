@@ -54,13 +54,12 @@
             this.lblDaysOfDelay = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
             this.txtBoxColor = new System.Windows.Forms.TextBox();
-            this.picBoxChemicalComposition = new System.Windows.Forms.PictureBox();
             this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
             this.lblIdSfOrder = new System.Windows.Forms.Label();
             this.lblIdSf = new System.Windows.Forms.Label();
             this.picBoxColorStatus = new System.Windows.Forms.PictureBox();
             this.picBoxMassStatus = new System.Windows.Forms.PictureBox();
-            this.picBoxWeightStatus = new System.Windows.Forms.PictureBox();
+            this.picBoxWidhtStatus = new System.Windows.Forms.PictureBox();
             this.picBoxThicknessStatus = new System.Windows.Forms.PictureBox();
             this.lblControlNotExist = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,11 +67,11 @@
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
+            this.btnApproval = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -279,9 +278,9 @@
             this.checkBoxComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.checkBoxComposition.Location = new System.Drawing.Point(862, 539);
             this.checkBoxComposition.Name = "checkBoxComposition";
-            this.checkBoxComposition.Size = new System.Drawing.Size(170, 26);
+            this.checkBoxComposition.Size = new System.Drawing.Size(170, 46);
             this.checkBoxComposition.TabIndex = 26;
-            this.checkBoxComposition.Text = "Skład chemiczny";
+            this.checkBoxComposition.Text = "Zgodność skład chemicznego";
             this.checkBoxComposition.UseVisualStyleBackColor = false;
             // 
             // lblParameterCheck
@@ -408,15 +407,6 @@
             this.txtBoxColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxColor.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
-            // picBoxChemicalComposition
-            // 
-            this.picBoxChemicalComposition.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxChemicalComposition.Location = new System.Drawing.Point(1035, 536);
-            this.picBoxChemicalComposition.Name = "picBoxChemicalComposition";
-            this.picBoxChemicalComposition.Size = new System.Drawing.Size(30, 30);
-            this.picBoxChemicalComposition.TabIndex = 34;
-            this.picBoxChemicalComposition.TabStop = false;
-            // 
             // datePickerControlDate
             // 
             this.datePickerControlDate.Enabled = false;
@@ -461,6 +451,7 @@
             this.picBoxColorStatus.Location = new System.Drawing.Point(1035, 434);
             this.picBoxColorStatus.Name = "picBoxColorStatus";
             this.picBoxColorStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxColorStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxColorStatus.TabIndex = 34;
             this.picBoxColorStatus.TabStop = false;
             // 
@@ -470,17 +461,19 @@
             this.picBoxMassStatus.Location = new System.Drawing.Point(1035, 375);
             this.picBoxMassStatus.Name = "picBoxMassStatus";
             this.picBoxMassStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxMassStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxMassStatus.TabIndex = 34;
             this.picBoxMassStatus.TabStop = false;
             // 
-            // picBoxWeightStatus
+            // picBoxWidhtStatus
             // 
-            this.picBoxWeightStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxWeightStatus.Location = new System.Drawing.Point(1034, 315);
-            this.picBoxWeightStatus.Name = "picBoxWeightStatus";
-            this.picBoxWeightStatus.Size = new System.Drawing.Size(30, 30);
-            this.picBoxWeightStatus.TabIndex = 34;
-            this.picBoxWeightStatus.TabStop = false;
+            this.picBoxWidhtStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxWidhtStatus.Location = new System.Drawing.Point(1034, 315);
+            this.picBoxWidhtStatus.Name = "picBoxWidhtStatus";
+            this.picBoxWidhtStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxWidhtStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxWidhtStatus.TabIndex = 34;
+            this.picBoxWidhtStatus.TabStop = false;
             // 
             // picBoxThicknessStatus
             // 
@@ -488,6 +481,7 @@
             this.picBoxThicknessStatus.Location = new System.Drawing.Point(1034, 258);
             this.picBoxThicknessStatus.Name = "picBoxThicknessStatus";
             this.picBoxThicknessStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxThicknessStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxThicknessStatus.TabIndex = 34;
             this.picBoxThicknessStatus.TabStop = false;
             // 
@@ -532,6 +526,7 @@
             this.picBoxQuantityStatus.Location = new System.Drawing.Point(1035, 495);
             this.picBoxQuantityStatus.Name = "picBoxQuantityStatus";
             this.picBoxQuantityStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxQuantityStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxQuantityStatus.TabIndex = 34;
             this.picBoxQuantityStatus.TabStop = false;
             // 
@@ -555,6 +550,26 @@
             this.picBoxControlStatus.TabIndex = 37;
             this.picBoxControlStatus.TabStop = false;
             // 
+            // btnApproval
+            // 
+            this.btnApproval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnApproval.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnApproval.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnApproval.FlatAppearance.BorderSize = 3;
+            this.btnApproval.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnApproval.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnApproval.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnApproval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnApproval.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnApproval.Location = new System.Drawing.Point(663, 378);
+            this.btnApproval.Name = "btnApproval";
+            this.btnApproval.Size = new System.Drawing.Size(170, 114);
+            this.btnApproval.TabIndex = 29;
+            this.btnApproval.Text = "Kliknij, aby potwierdzić wyniki";
+            this.btnApproval.UseVisualStyleBackColor = false;
+            this.btnApproval.Click += new System.EventHandler(this.btnApproval_Click);
+            // 
             // EntranceControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,11 +581,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.picBoxThicknessStatus);
-            this.Controls.Add(this.picBoxWeightStatus);
+            this.Controls.Add(this.picBoxWidhtStatus);
             this.Controls.Add(this.picBoxMassStatus);
             this.Controls.Add(this.picBoxQuantityStatus);
             this.Controls.Add(this.picBoxColorStatus);
-            this.Controls.Add(this.picBoxChemicalComposition);
             this.Controls.Add(this.lblDaysOfDelay);
             this.Controls.Add(this.lblControlNotExist);
             this.Controls.Add(this.lblEmployeeFullName);
@@ -579,6 +593,7 @@
             this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.textBoxEmployeeId);
             this.Controls.Add(this.btnDone);
+            this.Controls.Add(this.btnApproval);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.lblParameterCheck);
             this.Controls.Add(this.checkBoxComposition);
@@ -610,10 +625,9 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
             this.Load += new System.EventHandler(this.EntranceControlForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -650,13 +664,12 @@
         private System.Windows.Forms.Label lblDaysOfDelay;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.TextBox txtBoxColor;
-        private System.Windows.Forms.PictureBox picBoxChemicalComposition;
         private System.Windows.Forms.DateTimePicker datePickerControlDate;
         private System.Windows.Forms.Label lblIdSfOrder;
         private System.Windows.Forms.Label lblIdSf;
         private System.Windows.Forms.PictureBox picBoxColorStatus;
         private System.Windows.Forms.PictureBox picBoxMassStatus;
-        private System.Windows.Forms.PictureBox picBoxWeightStatus;
+        private System.Windows.Forms.PictureBox picBoxWidhtStatus;
         private System.Windows.Forms.PictureBox picBoxThicknessStatus;
         private System.Windows.Forms.Label lblControlNotExist;
         private System.Windows.Forms.Label label1;
@@ -664,5 +677,6 @@
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picBoxControlStatus;
+        private System.Windows.Forms.Button btnApproval;
     }
 }
