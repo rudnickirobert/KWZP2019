@@ -407,7 +407,7 @@
 
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
-
+    </EmbeddedResource>
 
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
