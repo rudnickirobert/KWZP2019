@@ -36,7 +36,6 @@
             this.tbTotalcostfordepartment = new System.Windows.Forms.TextBox();
             this.btnAddinvoice = new System.Windows.Forms.Button();
             this.btnGeneratedetailedreport = new System.Windows.Forms.Button();
-            this.btnGenerategeneralreport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSelectdepartmentanddate
@@ -99,28 +98,18 @@
             // 
             // btnGeneratedetailedreport
             // 
-            this.btnGeneratedetailedreport.Location = new System.Drawing.Point(24, 259);
+            this.btnGeneratedetailedreport.Location = new System.Drawing.Point(24, 223);
             this.btnGeneratedetailedreport.Name = "btnGeneratedetailedreport";
             this.btnGeneratedetailedreport.Size = new System.Drawing.Size(478, 50);
             this.btnGeneratedetailedreport.TabIndex = 29;
-            this.btnGeneratedetailedreport.Text = "Generuj raport szczegółowy";
+            this.btnGeneratedetailedreport.Text = "Generuj raport";
             this.btnGeneratedetailedreport.UseVisualStyleBackColor = true;
             // 
-            // btnGenerategeneralreport
-            // 
-            this.btnGenerategeneralreport.Location = new System.Drawing.Point(24, 203);
-            this.btnGenerategeneralreport.Name = "btnGenerategeneralreport";
-            this.btnGenerategeneralreport.Size = new System.Drawing.Size(478, 50);
-            this.btnGenerategeneralreport.TabIndex = 30;
-            this.btnGenerategeneralreport.Text = "Generuj raport ogólny";
-            this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
-            // 
-            // costs
+            // Costs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
-            this.Controls.Add(this.btnGenerategeneralreport);
             this.Controls.Add(this.btnGeneratedetailedreport);
             this.Controls.Add(this.btnAddinvoice);
             this.Controls.Add(this.tbTotalcostfordepartment);
@@ -129,7 +118,7 @@
             this.Controls.Add(this.cbDepartmentsList);
             this.Controls.Add(this.btnApprovechoice);
             this.Controls.Add(this.lblSelectdepartmentanddate);
-            this.Name = "costs";
+            this.Name = "Costs";
             this.Text = "Koszty";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,6 +134,5 @@
         private System.Windows.Forms.TextBox tbTotalcostfordepartment;
         private System.Windows.Forms.Button btnAddinvoice;
         private System.Windows.Forms.Button btnGeneratedetailedreport;
-        private System.Windows.Forms.Button btnGenerategeneralreport;
     }
 }
