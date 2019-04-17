@@ -1,4 +1,4 @@
-﻿namespace KWZP2019
+namespace KWZP2019
 {
     partial class EntranceControlForm
     {
