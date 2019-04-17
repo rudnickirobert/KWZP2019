@@ -58,6 +58,11 @@
     <Compile Include="Absence.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Development.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Development.Designer.cs">
+      <DependentUpon>Development.cs</DependentUpon>
     <Compile Include="EntranceControlView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -231,6 +236,18 @@
     </Compile>
     <Compile Include="OrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OSHControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSHControl.Designer.cs">
+      <DependentUpon>OSHControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSHTraining.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSHTraining.Designer.cs">
+      <DependentUpon>OSHTraining.cs</DependentUpon>
     </Compile>
     <Compile Include="OutControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -488,6 +505,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSHControl.resx">
+      <DependentUpon>OSHControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSHTraining.resx">
+      <DependentUpon>OSHTraining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
