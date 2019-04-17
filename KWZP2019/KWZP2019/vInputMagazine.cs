@@ -12,13 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class SkillsForMachine
+    public partial class vInputMagazine
     {
-        public int IdSkill { get; set; }
-        public Nullable<int> IdMachine { get; set; }
-        public int IdPosition { get; set; }
-    
-        public virtual Position Position { get; set; }
-        public virtual Machine Machine { get; set; }
+        public string SfCode { get; set; }
+        public int Quantity { get; set; }
+        public System.DateTime ControlDate { get; set; }
     }
 }
