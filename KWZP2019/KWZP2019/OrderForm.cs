@@ -32,11 +32,6 @@ namespace KWZP2019
             this.Close();
         }
 
-        private void orderDetailsBtn_Click(object sender, EventArgs e)
-        {
-            orderDetailsGb.Visible = true;
-        }
-
         private void addOrderGb_Enter(object sender, EventArgs e)
         {
             addOrderGb.Visible = true;
@@ -46,7 +41,5 @@ namespace KWZP2019
         {
             searchOrderGb.Visible = true;
         }
-
-        
     }
 }

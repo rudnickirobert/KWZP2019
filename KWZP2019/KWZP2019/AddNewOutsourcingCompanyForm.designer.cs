@@ -263,7 +263,7 @@
             this.addNewOutsourcingCompanyBtn.Name = "addNewOutsourcingCompanyBtn";
             this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(263, 57);
             this.addNewOutsourcingCompanyBtn.TabIndex = 50;
-            this.addNewOutsourcingCompanyBtn.Text = "Dodaj nową firmę outsourcingową";
+            this.addNewOutsourcingCompanyBtn.Text = "Zatwierdź";
             this.addNewOutsourcingCompanyBtn.UseVisualStyleBackColor = true;
             // 
             // AddNewOutsourcingCompanyForm

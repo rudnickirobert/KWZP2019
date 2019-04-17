@@ -16,5 +16,10 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
+
+        private void nameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

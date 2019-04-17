@@ -253,7 +253,7 @@
             this.addNewSupplierBtn.Name = "addNewSupplierBtn";
             this.addNewSupplierBtn.Size = new System.Drawing.Size(247, 61);
             this.addNewSupplierBtn.TabIndex = 41;
-            this.addNewSupplierBtn.Text = "Dodaj nowego dostawcę";
+            this.addNewSupplierBtn.Text = "Zatwierdź";
             this.addNewSupplierBtn.UseVisualStyleBackColor = true;
             // 
             // AddNewSupplierForm

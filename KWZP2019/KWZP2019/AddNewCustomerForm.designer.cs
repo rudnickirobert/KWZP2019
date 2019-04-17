@@ -31,27 +31,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.phoneLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.nameTb = new System.Windows.Forms.TextBox();
+            this.phoneTb = new System.Windows.Forms.TextBox();
+            this.cityTb = new System.Windows.Forms.TextBox();
+            this.emailTb = new System.Windows.Forms.TextBox();
             this.cityLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.apartmentNumberTb = new System.Windows.Forms.TextBox();
+            this.houseNumberTb = new System.Windows.Forms.TextBox();
             this.apartmentNumberLbl = new System.Windows.Forms.Label();
             this.houseNumberLbl = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.streetTb = new System.Windows.Forms.TextBox();
+            this.zipCodeTb = new System.Windows.Forms.TextBox();
             this.streetLbl = new System.Windows.Forms.Label();
             this.zipCodeLbl = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.descriptionTb = new System.Windows.Forms.TextBox();
+            this.krsTb = new System.Windows.Forms.TextBox();
             this.descriptionLbl = new System.Windows.Forms.Label();
             this.krsLbl = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.nipTb = new System.Windows.Forms.TextBox();
             this.nipLbl = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.peselTb = new System.Windows.Forms.TextBox();
             this.peselLbl = new System.Windows.Forms.Label();
             this.addNewCustomerBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.nameLbl.Size = new System.Drawing.Size(50, 17);
             this.nameLbl.TabIndex = 1;
             this.nameLbl.Text = "Nazwa";
+            this.nameLbl.Click += new System.EventHandler(this.nameLbl_Click);
             // 
             // phoneLbl
             // 
@@ -83,33 +84,33 @@
             this.phoneLbl.TabIndex = 2;
             this.phoneLbl.Text = "Telefon";
             // 
-            // textBox1
+            // nameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 3;
+            this.nameTb.Location = new System.Drawing.Point(147, 78);
+            this.nameTb.Name = "nameTb";
+            this.nameTb.Size = new System.Drawing.Size(100, 22);
+            this.nameTb.TabIndex = 3;
             // 
-            // textBox2
+            // phoneTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 4;
+            this.phoneTb.Location = new System.Drawing.Point(147, 126);
+            this.phoneTb.Name = "phoneTb";
+            this.phoneTb.Size = new System.Drawing.Size(100, 22);
+            this.phoneTb.TabIndex = 4;
             // 
-            // textBox3
+            // cityTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 222);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 8;
+            this.cityTb.Location = new System.Drawing.Point(147, 222);
+            this.cityTb.Name = "cityTb";
+            this.cityTb.Size = new System.Drawing.Size(100, 22);
+            this.cityTb.TabIndex = 8;
             // 
-            // textBox4
+            // emailTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(147, 174);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 7;
+            this.emailTb.Location = new System.Drawing.Point(147, 174);
+            this.emailTb.Name = "emailTb";
+            this.emailTb.Size = new System.Drawing.Size(100, 22);
+            this.emailTb.TabIndex = 7;
             // 
             // cityLbl
             // 
@@ -129,19 +130,19 @@
             this.emailLbl.TabIndex = 5;
             this.emailLbl.Text = "E-mail";
             // 
-            // textBox5
+            // apartmentNumberTb
             // 
-            this.textBox5.Location = new System.Drawing.Point(147, 413);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 16;
+            this.apartmentNumberTb.Location = new System.Drawing.Point(147, 413);
+            this.apartmentNumberTb.Name = "apartmentNumberTb";
+            this.apartmentNumberTb.Size = new System.Drawing.Size(100, 22);
+            this.apartmentNumberTb.TabIndex = 16;
             // 
-            // textBox6
+            // houseNumberTb
             // 
-            this.textBox6.Location = new System.Drawing.Point(147, 365);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 15;
+            this.houseNumberTb.Location = new System.Drawing.Point(147, 365);
+            this.houseNumberTb.Name = "houseNumberTb";
+            this.houseNumberTb.Size = new System.Drawing.Size(100, 22);
+            this.houseNumberTb.TabIndex = 15;
             // 
             // apartmentNumberLbl
             // 
@@ -161,19 +162,19 @@
             this.houseNumberLbl.TabIndex = 13;
             this.houseNumberLbl.Text = "Nr domu";
             // 
-            // textBox7
+            // streetTb
             // 
-            this.textBox7.Location = new System.Drawing.Point(147, 317);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 12;
+            this.streetTb.Location = new System.Drawing.Point(147, 317);
+            this.streetTb.Name = "streetTb";
+            this.streetTb.Size = new System.Drawing.Size(100, 22);
+            this.streetTb.TabIndex = 12;
             // 
-            // textBox8
+            // zipCodeTb
             // 
-            this.textBox8.Location = new System.Drawing.Point(147, 269);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 11;
+            this.zipCodeTb.Location = new System.Drawing.Point(147, 269);
+            this.zipCodeTb.Name = "zipCodeTb";
+            this.zipCodeTb.Size = new System.Drawing.Size(100, 22);
+            this.zipCodeTb.TabIndex = 11;
             // 
             // streetLbl
             // 
@@ -193,19 +194,19 @@
             this.zipCodeLbl.TabIndex = 9;
             this.zipCodeLbl.Text = "Kod pocztowy";
             // 
-            // textBox9
+            // descriptionTb
             // 
-            this.textBox9.Location = new System.Drawing.Point(147, 595);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 22;
+            this.descriptionTb.Location = new System.Drawing.Point(147, 595);
+            this.descriptionTb.Name = "descriptionTb";
+            this.descriptionTb.Size = new System.Drawing.Size(100, 22);
+            this.descriptionTb.TabIndex = 22;
             // 
-            // textBox10
+            // krsTb
             // 
-            this.textBox10.Location = new System.Drawing.Point(147, 508);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 21;
+            this.krsTb.Location = new System.Drawing.Point(147, 508);
+            this.krsTb.Name = "krsTb";
+            this.krsTb.Size = new System.Drawing.Size(100, 22);
+            this.krsTb.TabIndex = 21;
             // 
             // descriptionLbl
             // 
@@ -225,12 +226,12 @@
             this.krsLbl.TabIndex = 19;
             this.krsLbl.Text = "KRS";
             // 
-            // textBox11
+            // nipTb
             // 
-            this.textBox11.Location = new System.Drawing.Point(147, 460);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 18;
+            this.nipTb.Location = new System.Drawing.Point(147, 460);
+            this.nipTb.Name = "nipTb";
+            this.nipTb.Size = new System.Drawing.Size(100, 22);
+            this.nipTb.TabIndex = 18;
             // 
             // nipLbl
             // 
@@ -241,12 +242,12 @@
             this.nipLbl.TabIndex = 17;
             this.nipLbl.Text = "NIP";
             // 
-            // textBox12
+            // peselTb
             // 
-            this.textBox12.Location = new System.Drawing.Point(147, 555);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 22);
-            this.textBox12.TabIndex = 24;
+            this.peselTb.Location = new System.Drawing.Point(147, 555);
+            this.peselTb.Name = "peselTb";
+            this.peselTb.Size = new System.Drawing.Size(100, 22);
+            this.peselTb.TabIndex = 24;
             // 
             // peselLbl
             // 
@@ -263,7 +264,7 @@
             this.addNewCustomerBtn.Name = "addNewCustomerBtn";
             this.addNewCustomerBtn.Size = new System.Drawing.Size(211, 80);
             this.addNewCustomerBtn.TabIndex = 25;
-            this.addNewCustomerBtn.Text = "Dodaj klienta";
+            this.addNewCustomerBtn.Text = "Zatwierdź";
             this.addNewCustomerBtn.UseVisualStyleBackColor = true;
             // 
             // AddNewCustomerForm
@@ -272,28 +273,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 708);
             this.Controls.Add(this.addNewCustomerBtn);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.peselTb);
             this.Controls.Add(this.peselLbl);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.descriptionTb);
+            this.Controls.Add(this.krsTb);
             this.Controls.Add(this.descriptionLbl);
             this.Controls.Add(this.krsLbl);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.nipTb);
             this.Controls.Add(this.nipLbl);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.apartmentNumberTb);
+            this.Controls.Add(this.houseNumberTb);
             this.Controls.Add(this.apartmentNumberLbl);
             this.Controls.Add(this.houseNumberLbl);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.streetTb);
+            this.Controls.Add(this.zipCodeTb);
             this.Controls.Add(this.streetLbl);
             this.Controls.Add(this.zipCodeLbl);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.cityTb);
+            this.Controls.Add(this.emailTb);
             this.Controls.Add(this.cityLbl);
             this.Controls.Add(this.emailLbl);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.phoneTb);
+            this.Controls.Add(this.nameTb);
             this.Controls.Add(this.phoneLbl);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.label1);
@@ -309,27 +310,27 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label phoneLbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox nameTb;
+        private System.Windows.Forms.TextBox phoneTb;
+        private System.Windows.Forms.TextBox cityTb;
+        private System.Windows.Forms.TextBox emailTb;
         private System.Windows.Forms.Label cityLbl;
         private System.Windows.Forms.Label emailLbl;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox apartmentNumberTb;
+        private System.Windows.Forms.TextBox houseNumberTb;
         private System.Windows.Forms.Label apartmentNumberLbl;
         private System.Windows.Forms.Label houseNumberLbl;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox streetTb;
+        private System.Windows.Forms.TextBox zipCodeTb;
         private System.Windows.Forms.Label streetLbl;
         private System.Windows.Forms.Label zipCodeLbl;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox descriptionTb;
+        private System.Windows.Forms.TextBox krsTb;
         private System.Windows.Forms.Label descriptionLbl;
         private System.Windows.Forms.Label krsLbl;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox nipTb;
         private System.Windows.Forms.Label nipLbl;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox peselTb;
         private System.Windows.Forms.Label peselLbl;
         private System.Windows.Forms.Button addNewCustomerBtn;
     }
