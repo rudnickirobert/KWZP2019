@@ -480,3 +480,13 @@ insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comme
 (3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
 (4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
 (5, 3, '2019-01-08 15:42:22', 0, 'Nierówne tłoczenie', 10);
+
+UPDATE OrderCustomer
+SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*(1+OrderCustomer.Markup/100))
+FROM OrderDetail
+JOIN OrderCustomer
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+JOIN TechnicalProductData
+ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
+JOIN Customer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer
