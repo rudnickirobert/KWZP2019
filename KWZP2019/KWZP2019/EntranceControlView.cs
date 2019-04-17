@@ -12,13 +12,14 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class SkillsForMachine
+    public partial class EntranceControlView
     {
-        public int IdSkill { get; set; }
-        public Nullable<int> IdMachine { get; set; }
-        public int IdPosition { get; set; }
-    
-        public virtual Position Position { get; set; }
-        public virtual Machine Machine { get; set; }
+        public int IdSfDetail { get; set; }
+        public string SfCode { get; set; }
+        public Nullable<double> Thickness { get; set; }
+        public Nullable<double> Width { get; set; }
+        public Nullable<double> SfWeight { get; set; }
+        public string Color { get; set; }
+        public string ChemicalComposition { get; set; }
     }
 }

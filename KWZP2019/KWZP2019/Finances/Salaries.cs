@@ -12,9 +12,11 @@ namespace KWZP2019
 {
     public partial class Salaries : Form
     {
-        public Salaries()
+        RoofingCompanyEntities db;
+        public Salaries(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
     }
 }
