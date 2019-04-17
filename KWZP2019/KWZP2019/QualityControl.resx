@@ -188,7 +188,7 @@
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
   <data name="btnEntranceControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>452, 167</value>
+    <value>452, 174</value>
   </data>
   <data name="btnEntranceControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -277,7 +277,7 @@
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
   <data name="btnOutControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>837, 167</value>
+    <value>837, 174</value>
   </data>
   <data name="btnOutControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -353,7 +353,7 @@
 </value>
   </data>
   <data name="btnReturnMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 167</value>
+    <value>57, 174</value>
   </data>
   <data name="btnReturnMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -435,7 +435,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOSHTraining.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 419</value>
+    <value>57, 426</value>
   </data>
   <data name="btnOSHTraining.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -507,7 +507,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDevelopment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>837, 419</value>
+    <value>837, 426</value>
   </data>
   <data name="btnDevelopment.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -625,7 +625,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOSHControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>452, 419</value>
+    <value>452, 426</value>
   </data>
   <data name="btnOSHControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -5410,13 +5410,13 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 746</value>
+    <value>1184, 761</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>QualityControl</value>
+    <value>Kontrola Jakości</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>QualityControl</value>
