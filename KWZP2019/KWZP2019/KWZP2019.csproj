@@ -76,11 +76,11 @@
     <Compile Include="HR\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finances\Addfvat.cs">
+    <Compile Include="Finances\AddInvoices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Addfvat.Designer.cs">
-      <DependentUpon>Addfvat.cs</DependentUpon>
+    <Compile Include="Finances\AddInvoices.Designer.cs">
+      <DependentUpon>AddInvoices.cs</DependentUpon>
     </Compile>
     <Compile Include="HR\AddTraining.cs">
       <SubType>Form</SubType>
@@ -88,11 +88,11 @@
     <Compile Include="HR\AddTraining.Designer.cs">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finances\Allcosts.cs">
+    <Compile Include="Finances\AllCosts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Allcosts.Designer.cs">
-      <DependentUpon>Allcosts.cs</DependentUpon>
+    <Compile Include="Finances\AllCosts.Designer.cs">
+      <DependentUpon>AllCosts.cs</DependentUpon>
     </Compile>
     <Compile Include="Allocation.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -411,14 +411,14 @@
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\Addfvat.resx">
-      <DependentUpon>Addfvat.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\AddInvoices.resx">
+      <DependentUpon>AddInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\AddTraining.resx">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\Allcosts.resx">
-      <DependentUpon>Allcosts.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\AllCosts.resx">
+      <DependentUpon>AllCosts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\Costs.resx">
       <DependentUpon>Costs.cs</DependentUpon>
@@ -441,7 +441,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-
+    <EmbeddedResource Include="HR\HR.resx">
+      <DependentUpon>HR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>

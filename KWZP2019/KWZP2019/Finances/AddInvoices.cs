@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class AddInvoice : Form
+    public partial class AddInvoices : Form
     {
-        public AddInvoice()
+        public AddInvoices()
         {
             InitializeComponent();
         }

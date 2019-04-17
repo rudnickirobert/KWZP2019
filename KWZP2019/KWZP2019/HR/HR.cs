@@ -29,5 +29,29 @@ namespace KWZP2019
             dataGridViewEmloyees.AutoGenerateColumns = false;
             dataGridViewEmloyees.DataSource = db.Employees.ToList<Employee>();
         }
+
+        private void btnExamination_Click(object sender, EventArgs e)
+        {
+            Examination examination = new Examination();
+            examination.Show();
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            EmployeeDetails employeeDetails = new EmployeeDetails();
+            employeeDetails.Show();
+        }
+
+        private void btnAbsences_Click(object sender, EventArgs e)
+        {
+            Absences absences = new Absences();
+            absences.Show();
+        }
+
+        private void btnTraining_Click(object sender, EventArgs e)
+        {
+            AddTraining addTraining = new AddTraining();
+            addTraining.Show();
+        }
     }
 }
