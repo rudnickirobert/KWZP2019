@@ -44,6 +44,7 @@ namespace KWZP2019
 
         private void EntranceControlForm_Load(object sender, EventArgs e)
         {
+            datePickerControlDate.Value = DateTime.Now;
             List<SemiFinishedOrder> sfOrdersList = db.SemiFinishedOrders.ToList();
             foreach (SemiFinishedOrder sfOrder in sfOrdersList)
             {
@@ -59,15 +60,24 @@ namespace KWZP2019
 
         private void domUDOrderId_SelectedItemChanged(object sender, EventArgs e)
         {
+            domUDSfId.Items.Clear(); // czeszczenie z poprzedniego wyboru, listy id półproduktów mogą się rożnic między zamówieniami
             List<SfOrderDetail> sfOrderDetails = db.SfOrderDetails
                 .Where(detail => detail.IdSfOrder.ToString() == domUDOrderId.Text).ToList();
             foreach (SfOrderDetail sfOrderDetail in sfOrderDetails)
             {
                 domUDSfId.Items.Add(sfOrderDetail.IdSemiFinished);
             }
-
+            domUDSfId.Text = domUDSfId.Items.ToArray()[0].ToString(); // ustawia pierwszy element z danej listy jako aktualny tekst
+            
             SemiFinishedOrder semiFinishedOrder = db.SemiFinishedOrders.FirstOrDefault(s => s.IdSfOrder.ToString() == domUDOrderId.Text);
             lblDaysOfDelay.Text = (semiFinishedOrder == null || semiFinishedOrder.SfDeliveryDate == DateTime.Now) ? "" : $"{Math.Round((DateTime.Now - semiFinishedOrder.SfDeliveryDate).TotalDays, 0).ToString()} dni opóźnienia";
+
+            // var bo nie wiem jaki typ zwraca join
+            var doControlExist = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
+                (ec, order) => new { idSfOrder = order.IdSfOrder, idSemiFinished = order.IdSemiFinished })
+                .Where(order => order.idSfOrder.ToString() == domUDOrderId.Text && order.idSemiFinished.ToString() == domUDSfId.Text).FirstOrDefault();
+
+            lblControlNotExist.Text = doControlExist == null ? "Brak kontroli\nw bazie!" : "";
         }
     }
 }

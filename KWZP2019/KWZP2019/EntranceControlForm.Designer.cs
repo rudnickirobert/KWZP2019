@@ -57,9 +57,20 @@
             this.textBoxColor = new System.Windows.Forms.TextBox();
             this.picBoxChemicalComposition = new System.Windows.Forms.PictureBox();
             this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
+            this.lblIdSfOrder = new System.Windows.Forms.Label();
+            this.lblIdSf = new System.Windows.Forms.Label();
+            this.picBoxColorStatus = new System.Windows.Forms.PictureBox();
+            this.picBoxMassStatus = new System.Windows.Forms.PictureBox();
+            this.picBoxWeightStatus = new System.Windows.Forms.PictureBox();
+            this.picBoxThicknessStatus = new System.Windows.Forms.PictureBox();
+            this.lblControlNotExist = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -113,9 +124,9 @@
             this.lblFormTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(576, 126);
+            this.lblFormTitle.Location = new System.Drawing.Point(509, 126);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(387, 56);
+            this.lblFormTitle.Size = new System.Drawing.Size(486, 56);
             this.lblFormTitle.TabIndex = 2;
             this.lblFormTitle.Text = "Wprowadź dane kontroli";
             this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,8 +135,8 @@
             // 
             this.lblControlDate.BackColor = System.Drawing.Color.Transparent;
             this.lblControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblControlDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblControlDate.Location = new System.Drawing.Point(542, 378);
+            this.lblControlDate.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblControlDate.Location = new System.Drawing.Point(464, 396);
             this.lblControlDate.Name = "lblControlDate";
             this.lblControlDate.Size = new System.Drawing.Size(160, 26);
             this.lblControlDate.TabIndex = 3;
@@ -137,7 +148,7 @@
             this.lblThickness.BackColor = System.Drawing.Color.Transparent;
             this.lblThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblThickness.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblThickness.Location = new System.Drawing.Point(835, 233);
+            this.lblThickness.Location = new System.Drawing.Point(858, 231);
             this.lblThickness.Name = "lblThickness";
             this.lblThickness.Size = new System.Drawing.Size(160, 26);
             this.lblThickness.TabIndex = 4;
@@ -149,7 +160,7 @@
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWidth.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWidth.Location = new System.Drawing.Point(835, 306);
+            this.lblWidth.Location = new System.Drawing.Point(858, 297);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(160, 26);
             this.lblWidth.TabIndex = 5;
@@ -161,7 +172,7 @@
             this.lblMass.BackColor = System.Drawing.Color.Transparent;
             this.lblMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMass.Location = new System.Drawing.Point(835, 378);
+            this.lblMass.Location = new System.Drawing.Point(858, 365);
             this.lblMass.Name = "lblMass";
             this.lblMass.Size = new System.Drawing.Size(160, 26);
             this.lblMass.TabIndex = 6;
@@ -173,9 +184,9 @@
             this.lblComment.BackColor = System.Drawing.Color.Transparent;
             this.lblComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblComment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblComment.Location = new System.Drawing.Point(835, 558);
+            this.lblComment.Location = new System.Drawing.Point(725, 526);
             this.lblComment.Name = "lblComment";
-            this.lblComment.Size = new System.Drawing.Size(160, 26);
+            this.lblComment.Size = new System.Drawing.Size(114, 26);
             this.lblComment.TabIndex = 9;
             this.lblComment.Text = "Komentarz";
             this.lblComment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,7 +198,7 @@
             this.picBoxControlStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBoxControlStatus.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.ErrorImage")));
             this.picBoxControlStatus.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxControlStatus.InitialImage")));
-            this.picBoxControlStatus.Location = new System.Drawing.Point(545, 509);
+            this.picBoxControlStatus.Location = new System.Drawing.Point(476, 511);
             this.picBoxControlStatus.Name = "picBoxControlStatus";
             this.picBoxControlStatus.Size = new System.Drawing.Size(160, 160);
             this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -199,11 +210,10 @@
             this.domUDOrderId.BackColor = System.Drawing.SystemColors.Window;
             this.domUDOrderId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.domUDOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDOrderId.Location = new System.Drawing.Point(545, 233);
+            this.domUDOrderId.Location = new System.Drawing.Point(577, 233);
             this.domUDOrderId.Name = "domUDOrderId";
-            this.domUDOrderId.Size = new System.Drawing.Size(160, 26);
+            this.domUDOrderId.Size = new System.Drawing.Size(71, 26);
             this.domUDOrderId.TabIndex = 12;
-            this.domUDOrderId.Text = "Wybierz zamówienie";
             this.domUDOrderId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.domUDOrderId.SelectedItemChanged += new System.EventHandler(this.domUDOrderId_SelectedItemChanged);
             // 
@@ -212,11 +222,10 @@
             this.domUDSfId.BackColor = System.Drawing.SystemColors.Window;
             this.domUDSfId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.domUDSfId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDSfId.Location = new System.Drawing.Point(545, 277);
+            this.domUDSfId.Location = new System.Drawing.Point(577, 277);
             this.domUDSfId.Name = "domUDSfId";
-            this.domUDSfId.Size = new System.Drawing.Size(160, 26);
+            this.domUDSfId.Size = new System.Drawing.Size(71, 26);
             this.domUDSfId.TabIndex = 13;
-            this.domUDSfId.Text = "Id półfabrykatu";
             this.domUDSfId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox3
@@ -224,16 +233,16 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(438, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(334, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(670, 737);
+            this.pictureBox3.Size = new System.Drawing.Size(845, 737);
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             // 
             // txtboxThickness
             // 
             this.txtboxThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxThickness.Location = new System.Drawing.Point(835, 262);
+            this.txtboxThickness.Location = new System.Drawing.Point(858, 260);
             this.txtboxThickness.Name = "txtboxThickness";
             this.txtboxThickness.Size = new System.Drawing.Size(160, 26);
             this.txtboxThickness.TabIndex = 22;
@@ -241,7 +250,7 @@
             // txtboxWidth
             // 
             this.txtboxWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxWidth.Location = new System.Drawing.Point(835, 335);
+            this.txtboxWidth.Location = new System.Drawing.Point(858, 326);
             this.txtboxWidth.Name = "txtboxWidth";
             this.txtboxWidth.Size = new System.Drawing.Size(160, 26);
             this.txtboxWidth.TabIndex = 23;
@@ -249,7 +258,7 @@
             // txtboxMass
             // 
             this.txtboxMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxMass.Location = new System.Drawing.Point(835, 407);
+            this.txtboxMass.Location = new System.Drawing.Point(858, 394);
             this.txtboxMass.Name = "txtboxMass";
             this.txtboxMass.Size = new System.Drawing.Size(160, 26);
             this.txtboxMass.TabIndex = 24;
@@ -257,10 +266,10 @@
             // txtboxComment
             // 
             this.txtboxComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxComment.Location = new System.Drawing.Point(817, 587);
+            this.txtboxComment.Location = new System.Drawing.Point(720, 557);
             this.txtboxComment.Multiline = true;
             this.txtboxComment.Name = "txtboxComment";
-            this.txtboxComment.Size = new System.Drawing.Size(202, 93);
+            this.txtboxComment.Size = new System.Drawing.Size(359, 114);
             this.txtboxComment.TabIndex = 25;
             // 
             // checkBoxComposition
@@ -268,7 +277,7 @@
             this.checkBoxComposition.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxComposition.Location = new System.Drawing.Point(825, 525);
+            this.checkBoxComposition.Location = new System.Drawing.Point(862, 511);
             this.checkBoxComposition.Name = "checkBoxComposition";
             this.checkBoxComposition.Size = new System.Drawing.Size(170, 26);
             this.checkBoxComposition.TabIndex = 26;
@@ -280,7 +289,7 @@
             this.lblParameterCheck.BackColor = System.Drawing.Color.Transparent;
             this.lblParameterCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblParameterCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblParameterCheck.Location = new System.Drawing.Point(521, 480);
+            this.lblParameterCheck.Location = new System.Drawing.Point(452, 482);
             this.lblParameterCheck.Name = "lblParameterCheck";
             this.lblParameterCheck.Size = new System.Drawing.Size(200, 26);
             this.lblParameterCheck.TabIndex = 28;
@@ -332,9 +341,9 @@
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxEmployeeId.Location = new System.Drawing.Point(656, 317);
+            this.textBoxEmployeeId.Location = new System.Drawing.Point(578, 318);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
-            this.textBoxEmployeeId.Size = new System.Drawing.Size(49, 26);
+            this.textBoxEmployeeId.Size = new System.Drawing.Size(70, 26);
             this.textBoxEmployeeId.TabIndex = 31;
             this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
             // 
@@ -343,11 +352,12 @@
             this.lblEmployeeId.AutoSize = true;
             this.lblEmployeeId.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmployeeId.Location = new System.Drawing.Point(542, 320);
+            this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeeId.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblEmployeeId.Location = new System.Drawing.Point(432, 321);
             this.lblEmployeeId.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmployeeId.Name = "lblEmployeeId";
-            this.lblEmployeeId.Size = new System.Drawing.Size(114, 20);
+            this.lblEmployeeId.Size = new System.Drawing.Size(128, 20);
             this.lblEmployeeId.TabIndex = 32;
             this.lblEmployeeId.Text = "ID pracownika:";
             // 
@@ -356,7 +366,7 @@
             this.lblEmployeeFullName.AutoSize = true;
             this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(551, 354);
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(453, 351);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
             this.lblEmployeeFullName.Size = new System.Drawing.Size(13, 20);
             this.lblEmployeeFullName.TabIndex = 33;
@@ -367,7 +377,7 @@
             this.lblDaysOfDelay.AutoSize = true;
             this.lblDaysOfDelay.BackColor = System.Drawing.Color.Transparent;
             this.lblDaysOfDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDaysOfDelay.Location = new System.Drawing.Point(714, 236);
+            this.lblDaysOfDelay.Location = new System.Drawing.Point(665, 235);
             this.lblDaysOfDelay.Name = "lblDaysOfDelay";
             this.lblDaysOfDelay.Size = new System.Drawing.Size(13, 20);
             this.lblDaysOfDelay.TabIndex = 33;
@@ -378,7 +388,7 @@
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
             this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblColor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblColor.Location = new System.Drawing.Point(835, 448);
+            this.lblColor.Location = new System.Drawing.Point(858, 434);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(160, 26);
             this.lblColor.TabIndex = 6;
@@ -388,7 +398,7 @@
             // textBoxColor
             // 
             this.textBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxColor.Location = new System.Drawing.Point(835, 477);
+            this.textBoxColor.Location = new System.Drawing.Point(858, 463);
             this.textBoxColor.Name = "textBoxColor";
             this.textBoxColor.Size = new System.Drawing.Size(160, 26);
             this.textBoxColor.TabIndex = 24;
@@ -396,7 +406,7 @@
             // picBoxChemicalComposition
             // 
             this.picBoxChemicalComposition.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxChemicalComposition.Location = new System.Drawing.Point(989, 522);
+            this.picBoxChemicalComposition.Location = new System.Drawing.Point(1035, 508);
             this.picBoxChemicalComposition.Name = "picBoxChemicalComposition";
             this.picBoxChemicalComposition.Size = new System.Drawing.Size(30, 30);
             this.picBoxChemicalComposition.TabIndex = 34;
@@ -406,11 +416,88 @@
             // 
             this.datePickerControlDate.Enabled = false;
             this.datePickerControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerControlDate.Location = new System.Drawing.Point(529, 407);
+            this.datePickerControlDate.Location = new System.Drawing.Point(451, 425);
             this.datePickerControlDate.Name = "datePickerControlDate";
             this.datePickerControlDate.Size = new System.Drawing.Size(188, 26);
             this.datePickerControlDate.TabIndex = 35;
             this.datePickerControlDate.Value = new System.DateTime(2019, 4, 16, 20, 35, 51, 0);
+            // 
+            // lblIdSfOrder
+            // 
+            this.lblIdSfOrder.AutoSize = true;
+            this.lblIdSfOrder.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdSfOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblIdSfOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIdSfOrder.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblIdSfOrder.Location = new System.Drawing.Point(424, 235);
+            this.lblIdSfOrder.Margin = new System.Windows.Forms.Padding(0);
+            this.lblIdSfOrder.Name = "lblIdSfOrder";
+            this.lblIdSfOrder.Size = new System.Drawing.Size(131, 20);
+            this.lblIdSfOrder.TabIndex = 32;
+            this.lblIdSfOrder.Text = "ID zamówienia:";
+            // 
+            // lblIdSf
+            // 
+            this.lblIdSf.AutoSize = true;
+            this.lblIdSf.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdSf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblIdSf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIdSf.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblIdSf.Location = new System.Drawing.Point(424, 279);
+            this.lblIdSf.Margin = new System.Windows.Forms.Padding(0);
+            this.lblIdSf.Name = "lblIdSf";
+            this.lblIdSf.Size = new System.Drawing.Size(138, 20);
+            this.lblIdSf.TabIndex = 32;
+            this.lblIdSf.Text = "ID półfabrykatu:";
+            // 
+            // picBoxColorStatus
+            // 
+            this.picBoxColorStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxColorStatus.Location = new System.Drawing.Point(1035, 461);
+            this.picBoxColorStatus.Name = "picBoxColorStatus";
+            this.picBoxColorStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxColorStatus.TabIndex = 34;
+            this.picBoxColorStatus.TabStop = false;
+            // 
+            // picBoxMassStatus
+            // 
+            this.picBoxMassStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxMassStatus.Location = new System.Drawing.Point(1035, 392);
+            this.picBoxMassStatus.Name = "picBoxMassStatus";
+            this.picBoxMassStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxMassStatus.TabIndex = 34;
+            this.picBoxMassStatus.TabStop = false;
+            // 
+            // picBoxWeightStatus
+            // 
+            this.picBoxWeightStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxWeightStatus.Location = new System.Drawing.Point(1034, 323);
+            this.picBoxWeightStatus.Name = "picBoxWeightStatus";
+            this.picBoxWeightStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxWeightStatus.TabIndex = 34;
+            this.picBoxWeightStatus.TabStop = false;
+            // 
+            // picBoxThicknessStatus
+            // 
+            this.picBoxThicknessStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxThicknessStatus.Location = new System.Drawing.Point(1034, 258);
+            this.picBoxThicknessStatus.Name = "picBoxThicknessStatus";
+            this.picBoxThicknessStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxThicknessStatus.TabIndex = 34;
+            this.picBoxThicknessStatus.TabStop = false;
+            // 
+            // lblControlNotExist
+            // 
+            this.lblControlNotExist.AutoSize = true;
+            this.lblControlNotExist.BackColor = System.Drawing.Color.Transparent;
+            this.lblControlNotExist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblControlNotExist.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblControlNotExist.Location = new System.Drawing.Point(684, 281);
+            this.lblControlNotExist.Name = "lblControlNotExist";
+            this.lblControlNotExist.Size = new System.Drawing.Size(16, 24);
+            this.lblControlNotExist.TabIndex = 33;
+            this.lblControlNotExist.Text = " ";
+            this.lblControlNotExist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceControlForm
             // 
@@ -420,9 +507,16 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.datePickerControlDate);
+            this.Controls.Add(this.picBoxThicknessStatus);
+            this.Controls.Add(this.picBoxWeightStatus);
+            this.Controls.Add(this.picBoxMassStatus);
+            this.Controls.Add(this.picBoxColorStatus);
             this.Controls.Add(this.picBoxChemicalComposition);
             this.Controls.Add(this.lblDaysOfDelay);
+            this.Controls.Add(this.lblControlNotExist);
             this.Controls.Add(this.lblEmployeeFullName);
+            this.Controls.Add(this.lblIdSf);
+            this.Controls.Add(this.lblIdSfOrder);
             this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.textBoxEmployeeId);
             this.Controls.Add(this.btnDone);
@@ -458,6 +552,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalComposition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxWeightStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,5 +591,12 @@
         private System.Windows.Forms.TextBox textBoxColor;
         private System.Windows.Forms.PictureBox picBoxChemicalComposition;
         private System.Windows.Forms.DateTimePicker datePickerControlDate;
+        private System.Windows.Forms.Label lblIdSfOrder;
+        private System.Windows.Forms.Label lblIdSf;
+        private System.Windows.Forms.PictureBox picBoxColorStatus;
+        private System.Windows.Forms.PictureBox picBoxMassStatus;
+        private System.Windows.Forms.PictureBox picBoxWeightStatus;
+        private System.Windows.Forms.PictureBox picBoxThicknessStatus;
+        private System.Windows.Forms.Label lblControlNotExist;
     }
 }
