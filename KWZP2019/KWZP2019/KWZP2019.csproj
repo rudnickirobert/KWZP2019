@@ -73,8 +73,6 @@
     <Compile Include="Accident.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-
-
     <Compile Include="AddNewCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,15 +91,11 @@
     <Compile Include="AddNewSupplierForm.designer.cs">
       <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddEmployee.cs">
-</Compile>
     <Compile Include="HR\AddEmployee.cs">
-
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HR\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Finances\AddInvoices.cs">
       <SubType>Form</SubType>
@@ -304,12 +298,6 @@
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HR\Paychecks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HR\Paychecks.Designer.cs">
-      <DependentUpon>Paychecks.cs</DependentUpon>
-    </Compile>
     <Compile Include="Payment.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -402,9 +390,9 @@
     <Compile Include="SafetyTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-
     <Compile Include="SalesDepartmentForm.cs">
-</Compile>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Finances\Salaries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,10 +404,6 @@
     </Compile>
     <Compile Include="Finances\Salariessummary.Designer.cs">
       <DependentUpon>Salariessummary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SalesDepartment.cs">
-
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesDepartmentForm.designer.cs">
       <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
@@ -531,7 +515,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HR\EmployeeDetails.resx">
       <DependentUpon>EmployeeDetails.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="EntranceControlForm.resx">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
@@ -548,14 +531,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
@@ -573,7 +554,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="OutControlForm.resx">
       <DependentUpon>OutControlForm.cs</DependentUpon>
@@ -581,13 +561,11 @@
     <EmbeddedResource Include="MaintenanceManagement.resx">
       <DependentUpon>MaintenanceManagement.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="OutsourcingForm.resx">
       <DependentUpon>OutsourcingForm.cs</DependentUpon>
- </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Finances\Profits.resx">
       <DependentUpon>Profits.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -604,10 +582,6 @@
     <EmbeddedResource Include="Finances\Salariessummary.resx">
       <DependentUpon>Salariessummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesDepartment.resx">
-      <DependentUpon>SalesDepartment.cs</DependentUpon>
-    </EmbeddedResource>
-
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
     </EmbeddedResource>
