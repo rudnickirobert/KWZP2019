@@ -12,9 +12,11 @@ namespace KWZP2019
 {
     public partial class Costs : Form
     {
-        public Costs()
+        RoofingCompanyEntities db;
+        public Costs(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
     }
 }

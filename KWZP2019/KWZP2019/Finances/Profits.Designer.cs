@@ -36,7 +36,6 @@
             this.btnAcceptselectedtime = new System.Windows.Forms.Button();
             this.lvListofrevenues = new System.Windows.Forms.ListView();
             this.lblListofrevenues = new System.Windows.Forms.Label();
-            this.btnGeneratedetailedreport = new System.Windows.Forms.Button();
             this.btnGenerategeneralreport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -107,31 +106,21 @@
             this.lblListofrevenues.TabIndex = 7;
             this.lblListofrevenues.Text = "Lista przychodów w wybranym przedziale czasowym:";
             // 
-            // btnGeneratedetailedreport
-            // 
-            this.btnGeneratedetailedreport.Location = new System.Drawing.Point(15, 296);
-            this.btnGeneratedetailedreport.Name = "btnGeneratedetailedreport";
-            this.btnGeneratedetailedreport.Size = new System.Drawing.Size(497, 23);
-            this.btnGeneratedetailedreport.TabIndex = 8;
-            this.btnGeneratedetailedreport.Text = "Generuj raport szczegółowy";
-            this.btnGeneratedetailedreport.UseVisualStyleBackColor = true;
-            // 
             // btnGenerategeneralreport
             // 
-            this.btnGenerategeneralreport.Location = new System.Drawing.Point(15, 267);
+            this.btnGenerategeneralreport.Location = new System.Drawing.Point(15, 282);
             this.btnGenerategeneralreport.Name = "btnGenerategeneralreport";
             this.btnGenerategeneralreport.Size = new System.Drawing.Size(497, 23);
             this.btnGenerategeneralreport.TabIndex = 9;
-            this.btnGenerategeneralreport.Text = "Generuj raport ogólny";
+            this.btnGenerategeneralreport.Text = "Generuj raport";
             this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
             // 
-            // profits
+            // Profits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
             this.Controls.Add(this.btnGenerategeneralreport);
-            this.Controls.Add(this.btnGeneratedetailedreport);
             this.Controls.Add(this.lblListofrevenues);
             this.Controls.Add(this.lvListofrevenues);
             this.Controls.Add(this.btnAcceptselectedtime);
@@ -140,7 +129,7 @@
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
-            this.Name = "profits";
+            this.Name = "Profits";
             this.Text = "Zyski";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,7 +146,6 @@
         private System.Windows.Forms.Button btnAcceptselectedtime;
         private System.Windows.Forms.ListView lvListofrevenues;
         private System.Windows.Forms.Label lblListofrevenues;
-        private System.Windows.Forms.Button btnGeneratedetailedreport;
         private System.Windows.Forms.Button btnGenerategeneralreport;
     }
 }

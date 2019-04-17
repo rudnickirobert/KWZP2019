@@ -12,9 +12,11 @@ namespace KWZP2019
 {
     public partial class AddTraining : Form
     {
-        public AddTraining()
+        RoofingCompanyEntities db;
+        public AddTraining(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
     }
 }
