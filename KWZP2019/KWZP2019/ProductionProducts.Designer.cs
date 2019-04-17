@@ -34,7 +34,6 @@
             this.btDeleteProduct = new System.Windows.Forms.Button();
             this.btEnd = new System.Windows.Forms.Button();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSemiFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,7 @@
             this.semiFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.technologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.technicalProductDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,7 @@
             this.btDeleteProduct.TabIndex = 2;
             this.btDeleteProduct.Text = "Usuń";
             this.btDeleteProduct.UseVisualStyleBackColor = true;
+            this.btDeleteProduct.Click += new System.EventHandler(this.btDeleteProduct_Click);
             // 
             // btEnd
             // 
@@ -105,10 +106,7 @@
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.Size = new System.Drawing.Size(776, 398);
             this.dataGridProducts.TabIndex = 4;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
+            this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);
             // 
             // idProductDataGridViewTextBoxColumn
             // 
@@ -163,6 +161,10 @@
             this.technicalProductDataDataGridViewTextBoxColumn.DataPropertyName = "TechnicalProductData";
             this.technicalProductDataDataGridViewTextBoxColumn.HeaderText = "TechnicalProductData";
             this.technicalProductDataDataGridViewTextBoxColumn.Name = "technicalProductDataDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
             // 
             // ProductionProducts
             // 
