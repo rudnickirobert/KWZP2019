@@ -231,6 +231,7 @@
             this.domUDSfId.Size = new System.Drawing.Size(71, 26);
             this.domUDSfId.TabIndex = 13;
             this.domUDSfId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.domUDSfId.SelectedItemChanged += new System.EventHandler(this.domUDSfId_SelectedItemChanged);
             // 
             // pictureBox3
             // 
@@ -247,9 +248,12 @@
             // 
             this.txtboxThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtboxThickness.Location = new System.Drawing.Point(858, 260);
+            this.txtboxThickness.Margin = new System.Windows.Forms.Padding(0);
             this.txtboxThickness.Name = "txtboxThickness";
             this.txtboxThickness.Size = new System.Drawing.Size(160, 26);
             this.txtboxThickness.TabIndex = 22;
+            this.txtboxThickness.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtboxThickness.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
             // txtboxWidth
             // 
@@ -258,6 +262,8 @@
             this.txtboxWidth.Name = "txtboxWidth";
             this.txtboxWidth.Size = new System.Drawing.Size(160, 26);
             this.txtboxWidth.TabIndex = 23;
+            this.txtboxWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtboxWidth.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
             // txtboxMass
             // 
@@ -266,6 +272,8 @@
             this.txtboxMass.Name = "txtboxMass";
             this.txtboxMass.Size = new System.Drawing.Size(160, 26);
             this.txtboxMass.TabIndex = 24;
+            this.txtboxMass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtboxMass.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
             // txtboxComment
             // 
@@ -350,6 +358,7 @@
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(70, 26);
             this.textBoxEmployeeId.TabIndex = 31;
+            this.textBoxEmployeeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
             // 
             // lblEmployeeId
@@ -407,6 +416,8 @@
             this.txtBoxColor.Name = "txtBoxColor";
             this.txtBoxColor.Size = new System.Drawing.Size(160, 26);
             this.txtBoxColor.TabIndex = 24;
+            this.txtBoxColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBoxColor.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
             // picBoxChemicalComposition
             // 
@@ -523,6 +534,8 @@
             this.txtBoxQuantity.Name = "txtBoxQuantity";
             this.txtBoxQuantity.Size = new System.Drawing.Size(160, 26);
             this.txtBoxQuantity.TabIndex = 24;
+            this.txtBoxQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBoxQuantity.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
             // picBoxQuantityStatus
             // 

@@ -54,12 +54,14 @@ namespace KWZP2019
 
         private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
         {
+            textBoxEmployeeId.BackColor = Color.White;
             Employee employee = db.Employees.FirstOrDefault(empee => empee.IdEmployee.ToString() == textBoxEmployeeId.Text);
             lblEmployeeFullName.Text = employee != null ? $"{employee.EmployeeName} {employee.EmployeeSurname}" : "";
         }
 
         private void domUDOrderId_SelectedItemChanged(object sender, EventArgs e)
         {
+            domUDOrderId.BackColor = Color.White;
             domUDSfId.Items.Clear(); // czeszczenie z poprzedniego wyboru, listy id półproduktów mogą się rożnic między zamówieniami
             List<SfOrderDetail> sfOrderDetails = db.SfOrderDetails
                 .Where(detail => detail.IdSfOrder.ToString() == domUDOrderId.Text).ToList();
@@ -99,14 +101,57 @@ namespace KWZP2019
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if(true)
+            if(domUDOrderId.Text == "" || domUDSfId.Text == "" || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
+                || txtboxWidth.Text == "" || txtboxMass.Text == "" || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
                 MessageBox.Show("Proszę uzupełnić wszystkie pola", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(domUDOrderId.Text == "")
+                {
+                    domUDOrderId.BackColor = Color.Red;
+                }
+                if(domUDSfId.Text == "")
+                {
+                    domUDSfId.BackColor = Color.Red;
+                }
+                if(textBoxEmployeeId.Text == "")
+                {
+                    textBoxEmployeeId.BackColor = Color.Red;
+                }
+                if(txtboxThickness.Text == "")
+                {
+                    txtboxThickness.BackColor = Color.Red;
+                }
+                if(txtboxWidth.Text == "")
+                {
+                    txtboxWidth.BackColor = Color.Red;
+                }
+                if(txtboxMass.Text == "")
+                {
+                    txtboxMass.BackColor = Color.Red;
+                }
+                if(txtBoxColor.Text == "")
+                {
+                    txtBoxColor.BackColor = Color.Red;
+                }
+                if(txtBoxQuantity.Text == "")
+                {
+                    txtBoxQuantity.BackColor = Color.Red;
+                }
             }
             else
             {
                 MessageBox.Show("Operacja udana!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void txtbox_TextChanged(object sender, EventArgs e)
+        {
+            (sender as TextBox).BackColor = Color.White;
+        }
+
+        private void domUDSfId_SelectedItemChanged(object sender, EventArgs e)
+        {
+            domUDSfId.BackColor = Color.White;
         }
     }
 }
