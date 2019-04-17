@@ -47,7 +47,7 @@
             this.txtboxComment = new System.Windows.Forms.TextBox();
             this.checkBoxComposition = new System.Windows.Forms.CheckBox();
             this.lblParameterCheck = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.lblEmployeeId = new System.Windows.Forms.Label();
@@ -308,26 +308,27 @@
             this.lblParameterCheck.Text = "StatusKontroli";
             this.lblParameterCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnClear
+            // btnCheck
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnClear.FlatAppearance.BorderSize = 3;
-            this.btnClear.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(67, 458);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(200, 120);
-            this.btnClear.TabIndex = 29;
-            this.btnClear.Text = "Wyczyść dane";
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCheck.FlatAppearance.BorderSize = 3;
+            this.btnCheck.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCheck.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCheck.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnCheck.Image")));
+            this.btnCheck.Location = new System.Drawing.Point(67, 458);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(200, 120);
+            this.btnCheck.TabIndex = 29;
+            this.btnCheck.Text = "Sprawdź";
+            this.btnCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnDone
             // 
@@ -568,7 +569,7 @@
             this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.textBoxEmployeeId);
             this.Controls.Add(this.btnDone);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.lblParameterCheck);
             this.Controls.Add(this.checkBoxComposition);
             this.Controls.Add(this.txtboxComment);
@@ -632,7 +633,7 @@
         private System.Windows.Forms.TextBox txtboxComment;
         private System.Windows.Forms.CheckBox checkBoxComposition;
         private System.Windows.Forms.Label lblParameterCheck;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.TextBox textBoxEmployeeId;
         private System.Windows.Forms.Label lblEmployeeId;

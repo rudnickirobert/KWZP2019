@@ -153,5 +153,23 @@ namespace KWZP2019
         {
             domUDSfId.BackColor = Color.White;
         }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished.ToString() == domUDSfId.Text);
+            bool flagThickenss = false;
+            bool flagWidth = false;
+            bool flagMass = false;
+            bool flagColor = false;
+            bool flagQuantity = false;
+            if (semiFinished == null)
+            {
+                return;
+            }
+            else
+            {
+                // if'y do każdego textboxa wtedy zmieniają się obrazki z boku
+            }
+        }
     }
 }
