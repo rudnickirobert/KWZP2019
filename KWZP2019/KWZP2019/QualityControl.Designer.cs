@@ -43,7 +43,8 @@
             this.btnEntranceControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnEntranceControl.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnEntranceControl.FlatAppearance.BorderSize = 3;
-            this.btnEntranceControl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btnEntranceControl.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEntranceControl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnEntranceControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnEntranceControl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEntranceControl.Name = "btnEntranceControl";
@@ -56,6 +57,8 @@
             this.btnOutControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnOutControl.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnOutControl.FlatAppearance.BorderSize = 3;
+            this.btnOutControl.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOutControl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnOutControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnOutControl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnOutControl.Name = "btnOutControl";
@@ -68,6 +71,8 @@
             this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Name = "btnReturnMain";
@@ -80,7 +85,8 @@
             this.btnOSHTraining.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnOSHTraining.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnOSHTraining.FlatAppearance.BorderSize = 3;
-            this.btnOSHTraining.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btnOSHTraining.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOSHTraining.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
             this.btnOSHTraining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnOSHTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnOSHTraining.Name = "btnOSHTraining";
@@ -92,7 +98,8 @@
             this.btnDevelopment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnDevelopment.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnDevelopment.FlatAppearance.BorderSize = 3;
-            this.btnDevelopment.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDevelopment.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDevelopment.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
             this.btnDevelopment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnDevelopment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDevelopment.Name = "btnDevelopment";
@@ -104,7 +111,8 @@
             this.btnOSHControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnOSHControl.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnOSHControl.FlatAppearance.BorderSize = 3;
-            this.btnOSHControl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btnOSHControl.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOSHControl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
             this.btnOSHControl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnOSHControl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnOSHControl.Name = "btnOSHControl";
@@ -122,6 +130,7 @@
             this.Controls.Add(this.btnEntranceControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QualityControl";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QualityControl_FormClosed);
             this.ResumeLayout(false);
