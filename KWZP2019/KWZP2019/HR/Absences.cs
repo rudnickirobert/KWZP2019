@@ -12,9 +12,11 @@ namespace KWZP2019
 {
     public partial class Absences : Form
     {
-        public Absences()
+        RoofingCompanyEntities db;
+        public Absences(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
     }
 }
