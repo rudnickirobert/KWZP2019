@@ -60,7 +60,7 @@
             this.entranceWarehouseBtn.TabIndex = 0;
             this.entranceWarehouseBtn.Text = "Magazyn wejściowy";
             this.entranceWarehouseBtn.UseVisualStyleBackColor = true;
-            this.entranceWarehouseBtn.Click += new System.EventHandler(this.Magazynwejściowy_btn_Click);
+            this.entranceWarehouseBtn.Click += new System.EventHandler(this.entranceWarehouseBtn_Click);
             // 
             // outWarehouseBtn
             // 
@@ -70,7 +70,7 @@
             this.outWarehouseBtn.TabIndex = 1;
             this.outWarehouseBtn.Text = "Magazyn wyjściowy";
             this.outWarehouseBtn.UseVisualStyleBackColor = true;
-            this.outWarehouseBtn.Click += new System.EventHandler(this.Magazynwyjsciowy_btn_Click);
+            this.outWarehouseBtn.Click += new System.EventHandler(this.outWarehouseBtn_Click);
             // 
             // entranceWarehouseGb
             // 

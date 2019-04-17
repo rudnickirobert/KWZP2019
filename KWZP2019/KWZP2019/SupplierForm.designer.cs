@@ -67,7 +67,7 @@
             this.addNewSupplierBtn.TabIndex = 3;
             this.addNewSupplierBtn.Text = "Dodaj nowego dostawcę";
             this.addNewSupplierBtn.UseVisualStyleBackColor = true;
-            this.addNewSupplierBtn.Click += new System.EventHandler(this.Dodajnowegodostawce_btn_Click);
+            this.addNewSupplierBtn.Click += new System.EventHandler(this.addNewSupplierBtn_Click);
             // 
             // supplierTypeGb
             // 

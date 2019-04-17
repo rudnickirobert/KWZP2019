@@ -19,31 +19,31 @@ namespace KWZP2019
             InitializeComponent();
         }
 
-        private void SDF_Klient_btn_Click(object sender, EventArgs e)
+        private void customerBtn_Click(object sender, EventArgs e)
         {
             CustomerForm customerForm = new CustomerForm();
             customerForm.ShowDialog();
         }
 
-        private void SDF_Zamowienie_btn_Click(object sender, EventArgs e)
+        private void orderBtn_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm();
             orderForm.ShowDialog();
         }
 
-        private void SDF_Dostawcy_btn_Click(object sender, EventArgs e)
-        {
-            SupplierForm supplierForm = new SupplierForm();
-            supplierForm.ShowDialog();
-        }
-
-        private void SDF_Magazyn_btn_Click(object sender, EventArgs e)
+        private void warehouseBtn_Click(object sender, EventArgs e)
         {
             WarehouseForm warehouseForm = new WarehouseForm();
             warehouseForm.ShowDialog();
         }
 
-        private void SDF_Outsourcing_btn_Click(object sender, EventArgs e)
+        private void suppliersBtn_Click(object sender, EventArgs e)
+        {
+            SupplierForm supplierForm = new SupplierForm();
+            supplierForm.ShowDialog();
+        }
+
+        private void outsourcingBtn_Click(object sender, EventArgs e)
         {
             OutsourcingForm outsourcingForm = new OutsourcingForm();
             outsourcingForm.ShowDialog();

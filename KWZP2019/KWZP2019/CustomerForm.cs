@@ -16,18 +16,20 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
-        private void dodajKlientaBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AddNewCustomerForm addnewcustomerForm = new AddNewCustomerForm();
-            addnewcustomerForm.ShowDialog();
-            this.Close();
-        }
-        private void CF_Zamówienie_btn_Click(object sender, EventArgs e)
+
+        private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             OrderForm orderForm = new OrderForm();
             orderForm.ShowDialog();
+            this.Close();
+        }
+
+        private void addNewCustomerBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddNewCustomerForm addnewcustomerForm = new AddNewCustomerForm();
+            addnewcustomerForm.ShowDialog();
             this.Close();
         }
     }

@@ -78,7 +78,7 @@
             this.searchOrderBtn.TabIndex = 0;
             this.searchOrderBtn.Text = "Wyszukaj zamówienie";
             this.searchOrderBtn.UseVisualStyleBackColor = true;
-            this.searchOrderBtn.Click += new System.EventHandler(this.OF_WyszukajZamowienie_btn_Click);
+            this.searchOrderBtn.Click += new System.EventHandler(this.searchOrderBtn_Click);
             // 
             // addOrderBtn
             // 
@@ -88,7 +88,6 @@
             this.addOrderBtn.TabIndex = 1;
             this.addOrderBtn.Text = "Dodaj zamówienie";
             this.addOrderBtn.UseVisualStyleBackColor = true;
-            this.addOrderBtn.Click += new System.EventHandler(this.OF_DodajZamowienie_btn_Click);
             // 
             // searchOrderGb
             // 
@@ -128,7 +127,7 @@
             this.transportBtn.TabIndex = 14;
             this.transportBtn.Text = "Transport do Klienta";
             this.transportBtn.UseVisualStyleBackColor = true;
-            this.transportBtn.Click += new System.EventHandler(this.TransportdoKlienta_btn_Click);
+            this.transportBtn.Click += new System.EventHandler(this.transportBtn_Click);
             // 
             // warehouseBtn
             // 
@@ -138,7 +137,7 @@
             this.warehouseBtn.TabIndex = 10;
             this.warehouseBtn.Text = "Stan magazynowy";
             this.warehouseBtn.UseVisualStyleBackColor = true;
-            this.warehouseBtn.Click += new System.EventHandler(this.StanMagazynowy_btn_Click);
+            this.warehouseBtn.Click += new System.EventHandler(this.warehouseBtn_Click);
             // 
             // orderDetailsGb
             // 
@@ -194,7 +193,7 @@
             this.orderDetailsBtn.TabIndex = 8;
             this.orderDetailsBtn.Text = "Szczegóły zamówienia";
             this.orderDetailsBtn.UseVisualStyleBackColor = true;
-            this.orderDetailsBtn.Click += new System.EventHandler(this.button1_Click);
+            this.orderDetailsBtn.Click += new System.EventHandler(this.orderDetailsBtn_Click);
             // 
             // costTb
             // 
@@ -255,13 +254,14 @@
             this.addOrderGb.Controls.Add(this.dateNewOrderTb);
             this.addOrderGb.Controls.Add(this.costNewOrderLbl);
             this.addOrderGb.Controls.Add(this.dateNewOrderLbl);
-            this.addOrderGb.Location = new System.Drawing.Point(153, 410);
+            this.addOrderGb.Location = new System.Drawing.Point(242, 375);
             this.addOrderGb.Name = "addOrderGb";
             this.addOrderGb.Size = new System.Drawing.Size(798, 408);
             this.addOrderGb.TabIndex = 16;
             this.addOrderGb.TabStop = false;
             this.addOrderGb.Text = "DodajZamowienie";
             this.addOrderGb.Visible = false;
+            this.addOrderGb.Enter += new System.EventHandler(this.addOrderGb_Enter);
             // 
             // productionNewOrderBtn
             // 

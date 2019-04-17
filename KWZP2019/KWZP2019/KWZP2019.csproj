@@ -82,7 +82,7 @@
     </Compile>
     <Compile Include="AddNewSupplierForm.designer.cs">
       <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
-
+    </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>

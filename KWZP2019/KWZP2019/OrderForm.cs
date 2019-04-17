@@ -16,31 +16,37 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
-        private void OF_WyszukajZamowienie_btn_Click(object sender, EventArgs e)
-        {
-            searchOrderGb.Visible = true;
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-          orderDetailsGb.Visible = true;
-        }
-        private void StanMagazynowy_btn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            WarehouseForm warehouseForm = new WarehouseForm();
-            warehouseForm.ShowDialog();
-            this.Close();
-        }
-        private void TransportdoKlienta_btn_Click(object sender, EventArgs e)
+        private void transportBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             OutsourcingForm outsourcingForm = new OutsourcingForm();
             outsourcingForm.ShowDialog();
             this.Close();
         }
-        private void OF_DodajZamowienie_btn_Click(object sender, EventArgs e)
+
+        private void warehouseBtn_Click(object sender, EventArgs e)
         {
-            addOrderGb.Visible = true; 
+            this.Hide();
+            WarehouseForm warehouseForm = new WarehouseForm();
+            warehouseForm.ShowDialog();
+            this.Close();
         }
+
+        private void orderDetailsBtn_Click(object sender, EventArgs e)
+        {
+            orderDetailsGb.Visible = true;
+        }
+
+        private void addOrderGb_Enter(object sender, EventArgs e)
+        {
+            addOrderGb.Visible = true;
+        }
+
+        private void searchOrderBtn_Click(object sender, EventArgs e)
+        {
+            searchOrderGb.Visible = true;
+        }
+
+        
     }
 }

@@ -44,7 +44,7 @@
             this.addNewCustomerBtn.TabIndex = 1;
             this.addNewCustomerBtn.Text = "Dodaj klienta";
             this.addNewCustomerBtn.UseVisualStyleBackColor = true;
-            this.addNewCustomerBtn.Click += new System.EventHandler(this.dodajKlientaBtn_Click);
+            this.addNewCustomerBtn.Click += new System.EventHandler(this.addNewCustomerBtn_Click);
             // 
             // orderBtn
             // 
@@ -54,7 +54,7 @@
             this.orderBtn.TabIndex = 12;
             this.orderBtn.Text = "Zamówienie";
             this.orderBtn.UseVisualStyleBackColor = true;
-            this.orderBtn.Click += new System.EventHandler(this.CF_Zamówienie_btn_Click);
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // customersDgv
             // 

@@ -43,7 +43,7 @@
             this.customerBtn.TabIndex = 0;
             this.customerBtn.Text = "Klient";
             this.customerBtn.UseVisualStyleBackColor = true;
-            this.customerBtn.Click += new System.EventHandler(this.SDF_Klient_btn_Click);
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // orderBtn
             // 
@@ -53,7 +53,7 @@
             this.orderBtn.TabIndex = 1;
             this.orderBtn.Text = "Zamówienie";
             this.orderBtn.UseVisualStyleBackColor = true;
-            this.orderBtn.Click += new System.EventHandler(this.SDF_Zamowienie_btn_Click);
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // warehouseBtn
             // 
@@ -63,7 +63,7 @@
             this.warehouseBtn.TabIndex = 2;
             this.warehouseBtn.Text = "Magazyn";
             this.warehouseBtn.UseVisualStyleBackColor = true;
-            this.warehouseBtn.Click += new System.EventHandler(this.SDF_Magazyn_btn_Click);
+            this.warehouseBtn.Click += new System.EventHandler(this.warehouseBtn_Click);
             // 
             // suppliersBtn
             // 
@@ -73,7 +73,7 @@
             this.suppliersBtn.TabIndex = 3;
             this.suppliersBtn.Text = "Dostawcy";
             this.suppliersBtn.UseVisualStyleBackColor = true;
-            this.suppliersBtn.Click += new System.EventHandler(this.SDF_Dostawcy_btn_Click);
+            this.suppliersBtn.Click += new System.EventHandler(this.suppliersBtn_Click);
             // 
             // outsourcingBtn
             // 
@@ -83,7 +83,7 @@
             this.outsourcingBtn.TabIndex = 4;
             this.outsourcingBtn.Text = "Outsourcing";
             this.outsourcingBtn.UseVisualStyleBackColor = true;
-            this.outsourcingBtn.Click += new System.EventHandler(this.SDF_Outsourcing_btn_Click);
+            this.outsourcingBtn.Click += new System.EventHandler(this.outsourcingBtn_Click);
             // 
             // SalesDepartmentForm
             // 

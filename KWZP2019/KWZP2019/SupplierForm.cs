@@ -17,10 +17,11 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
-        private void Dodajnowegodostawce_btn_Click(object sender, EventArgs e)
+
+        private void addNewSupplierBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-           addnewsupplierForm.ShowDialog();
+            addnewsupplierForm.ShowDialog();
             this.Close();
         }
     }
