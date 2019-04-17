@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class AddProduct : Form
     {
-        RoofingCompanyEntities db = new RoofingCompanyEntities();
+        RoofingCompanyEntities db;
         public AddProduct(RoofingCompanyEntities db)
         {
             InitializeComponent();

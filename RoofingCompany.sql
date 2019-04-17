@@ -632,7 +632,7 @@ SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Części');
+WHERE Type = 'Części';
 GO
 
 CREATE VIEW vSupplierSemis
