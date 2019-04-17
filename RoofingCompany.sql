@@ -615,14 +615,6 @@ on Department.IdDepartment = Allocation.IdDepartment;
 
 /*====SALES DEPARTMENT===*/
 
-GO
-CREATE VIEW vCustomerWithOrder
-AS
-SELECT CustomerName, IdOrderCustomer, OrderDate, Cost
-FROM Customer
-JOIN OrderCustomer
-ON Customer.IdCustomer = OrderCustomer.IdCustomer;
-
 GO 
 CREATE VIEW vSupplierParts
 AS
@@ -675,3 +667,14 @@ AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
 
+GO 
+CREATE VIEW vOrderDetail 
+AS
+SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
+FROM OrderCustomer
+JOIN Customer
+ON Customer.IdCustomer = OrderCustomer.IdCustomer
+JOIN OrderDetail
+on OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+JOIN Product
+on OrderDetail.IdProduct = Product.IdProduct;
