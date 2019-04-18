@@ -18,6 +18,7 @@ namespace KWZP2019
         private QualityControl qualityControlForm;
         private bool resultsApproved = false;
         private bool doControlExist = true;
+        private bool wholeControlStatus = false;
 
         // ==================================================
 
@@ -130,6 +131,12 @@ namespace KWZP2019
                 .Where(sfod => sfod.IdSfOrder.ToString() == domUDOrderId.Text && sfod.IdSemiFinished.ToString() == domUDSfId.Text)
                 .FirstOrDefault();
 
+            bool flagThickness = false;
+            bool flagWidth = false;
+            bool flagMass = false;
+            bool flagColor = false;
+            bool flagQuantity = false;
+
             if (semiFinished == null)
             {
                 MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -141,11 +148,17 @@ namespace KWZP2019
                     double thickness;
                     if(double.TryParse(txtboxThickness.Text, out thickness))
                     {
-                        picBoxThicknessStatus.Image =
-                        semiFinished.Thickness * 0.95 < thickness &&
-                        thickness < semiFinished.Thickness * 1.05 ?
-                        Properties.Resources.ok_48px :
-                        Properties.Resources.cancel_48px;
+
+                        if(semiFinished.Thickness * 0.95 < thickness &&
+                        thickness < semiFinished.Thickness * 1.05)
+                        {
+                            picBoxThicknessStatus.Image = Properties.Resources.ok_48px;
+                            flagThickness = true;
+                        }
+                        else
+                        {
+                            picBoxThicknessStatus.Image = Properties.Resources.cancel_48px;
+                        }  
                     }
                     else if(doControlExist)
                     {
@@ -163,11 +176,17 @@ namespace KWZP2019
                     double width;
                     if(double.TryParse(txtboxWidth.Text, out width))
                     {
-                        picBoxWidhtStatus.Image =
-                        semiFinished.Width * 0.95 < width &&
-                        width < semiFinished.Width * 1.05 ?
-                        Properties.Resources.ok_48px :
-                        Properties.Resources.cancel_48px;
+
+                        if(semiFinished.Width * 0.95 < width &&
+                        width < semiFinished.Width * 1.05)
+                        {
+                            picBoxWidhtStatus.Image = Properties.Resources.ok_48px;
+                            flagWidth = true;
+                        }
+                        else
+                        {
+                            picBoxWidhtStatus.Image = Properties.Resources.cancel_48px;
+                        }
                     }
                     else if(doControlExist)
                     {
@@ -184,11 +203,17 @@ namespace KWZP2019
                     double mass;
                     if(double.TryParse(txtboxMass.Text, out mass))
                     {
-                        picBoxMassStatus.Image =
-                        semiFinished.SfWeight * 0.95 < mass &&
-                        mass < semiFinished.SfWeight * 1.05 ?
-                        Properties.Resources.ok_48px :
-                        Properties.Resources.cancel_48px;
+
+                        if(semiFinished.SfWeight * 0.95 < mass &&
+                        mass < semiFinished.SfWeight * 1.05)
+                        {
+                            picBoxMassStatus.Image = Properties.Resources.ok_48px;
+                            flagMass = true;
+                        }
+                        else
+                        {
+                            picBoxMassStatus.Image = Properties.Resources.cancel_48px;
+                        }
                     }
                     else if(doControlExist)
                     {
@@ -203,9 +228,15 @@ namespace KWZP2019
 
                 if (txtBoxColor.Text != "")
                 {
-                    picBoxColorStatus.Image = semiFinished.Color == txtBoxColor.Text ?
-                        Properties.Resources.ok_48px :
-                        Properties.Resources.cancel_48px;
+                    if(semiFinished.Color == txtBoxColor.Text)
+                    {
+                        picBoxColorStatus.Image = Properties.Resources.ok_48px;
+                        flagColor = true;
+                    }
+                    else
+                    {
+                        picBoxColorStatus.Image = Properties.Resources.cancel_48px;
+                    }  
                 }
 
                 if (txtBoxQuantity.Text != "")
@@ -213,9 +244,15 @@ namespace KWZP2019
                     double quantity;
                     if(double.TryParse(txtBoxQuantity.Text, out quantity))
                     {
-                        picBoxQuantityStatus.Image = quantitySfOrder.Quantity == quantity ?
-                        Properties.Resources.ok_48px :
-                        Properties.Resources.cancel_48px;
+                        if(quantitySfOrder.Quantity == quantity)
+                        {
+                            picBoxQuantityStatus.Image = Properties.Resources.ok_48px;
+                            flagQuantity = true;
+                        }
+                        else
+                        {
+                            picBoxQuantityStatus.Image = Properties.Resources.cancel_48px;
+                        }
                     }
                     else if(doControlExist)
                     {
@@ -225,7 +262,14 @@ namespace KWZP2019
                     {
                         MessageBox.Show("Wpisz liczbę w pole 'Ilość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+                    if(flagThickness && flagWidth && flagMass && flagColor && flagQuantity && checkBoxComposition.Checked)
+                    {
+                        picBoxControlStatus.Image = Properties.Resources.good_quality_80px;
+                    }
+                    else
+                    {
+                        picBoxControlStatus.Image = Properties.Resources.poor_quality_80px;
+                    }
                 }
             }
         }
@@ -307,6 +351,7 @@ namespace KWZP2019
                 entranceControl.RealWeight = decimal.Parse(txtboxMass.Text);
                 entranceControl.RealColor = txtBoxColor.Text;
                 entranceControl.ChemicalComposition = checkBoxComposition.Checked;
+                entranceControl.ControlStatus = this.wholeControlStatus;
 
                 db.EntranceControls.Add(entranceControl);
                 //db.SaveChanges();
