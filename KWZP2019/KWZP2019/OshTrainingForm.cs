@@ -13,9 +13,9 @@ namespace KWZP2019
 {
     public partial class OshTrainingForm : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
-        QualityControl qualityControlForm;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private QualityControl qualityControlForm;
 
         public OshTrainingForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {

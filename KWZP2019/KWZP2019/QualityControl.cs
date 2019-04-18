@@ -12,8 +12,8 @@ namespace KWZP2019
 {
     public partial class QualityControl : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
 
         public QualityControl(RoofingCompanyEntities db, StartForm startForm)
         {

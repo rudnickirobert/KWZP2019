@@ -13,11 +13,11 @@ namespace KWZP2019
 {
     public partial class EntranceControlForm : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
-        QualityControl qualityControlForm;
-        bool resultsApproved = false;
-        bool doControlExist = true;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private QualityControl qualityControlForm;
+        private bool resultsApproved = false;
+        private bool doControlExist = true;
 
         // ==================================================
 
@@ -43,7 +43,7 @@ namespace KWZP2019
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.qualityControlForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         // ==================================================

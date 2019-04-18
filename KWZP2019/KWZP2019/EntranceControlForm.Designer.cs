@@ -39,7 +39,6 @@ namespace KWZP2019
             this.lblComment = new System.Windows.Forms.Label();
             this.domUDOrderId = new System.Windows.Forms.DomainUpDown();
             this.domUDSfId = new System.Windows.Forms.DomainUpDown();
-            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.txtboxThickness = new System.Windows.Forms.TextBox();
             this.txtboxWidth = new System.Windows.Forms.TextBox();
             this.txtboxMass = new System.Windows.Forms.TextBox();
@@ -65,16 +64,13 @@ namespace KWZP2019
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxQuantity = new System.Windows.Forms.TextBox();
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.btnApproval = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
             this.SuspendLayout();
             // 
@@ -519,14 +515,6 @@ namespace KWZP2019
             this.picBoxQuantityStatus.TabIndex = 34;
             this.picBoxQuantityStatus.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(-23, -46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
             // picBoxControlStatus
             // 
             this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
@@ -567,7 +555,6 @@ namespace KWZP2019
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.picBoxControlStatus);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.picBoxThicknessStatus);
             this.Controls.Add(this.picBoxWidhtStatus);
@@ -604,7 +591,6 @@ namespace KWZP2019
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
-            this.Controls.Add(this.pictureBoxForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -613,13 +599,11 @@ namespace KWZP2019
             this.Text = "Kontrola Wejściowa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
             this.Load += new System.EventHandler(this.EntranceControlForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -638,7 +622,6 @@ namespace KWZP2019
         private System.Windows.Forms.Label lblComment;
         private System.Windows.Forms.DomainUpDown domUDOrderId;
         private System.Windows.Forms.DomainUpDown domUDSfId;
-        private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.TextBox txtboxThickness;
         private System.Windows.Forms.TextBox txtboxWidth;
         private System.Windows.Forms.TextBox txtboxMass;
@@ -664,7 +647,6 @@ namespace KWZP2019
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBoxQuantity;
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picBoxControlStatus;
         private System.Windows.Forms.Button btnApproval;
     }
