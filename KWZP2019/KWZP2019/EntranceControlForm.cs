@@ -138,29 +138,68 @@ namespace KWZP2019
             {
                 if (txtboxThickness.Text != "")
                 {
-                    picBoxThicknessStatus.Image =
-                        semiFinished.Thickness * 0.95 < double.Parse(txtboxThickness.Text) &&
-                        double.Parse(txtboxThickness.Text) < semiFinished.Thickness * 1.05 ?
+                    double thickness;
+                    if(double.TryParse(txtboxThickness.Text, out thickness))
+                    {
+                        picBoxThicknessStatus.Image =
+                        semiFinished.Thickness * 0.95 < thickness &&
+                        thickness < semiFinished.Thickness * 1.05 ?
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
+                    }
+                    else if(doControlExist)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wpisz liczbę w pole 'Grubość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
 
+                
                 if (txtboxWidth.Text != "")
                 {
-                    picBoxWidhtStatus.Image =
-                        semiFinished.Width * 0.95 < double.Parse(txtboxWidth.Text) &&
-                        double.Parse(txtboxWidth.Text) < semiFinished.Width * 1.05 ?
+                    double width;
+                    if(double.TryParse(txtboxWidth.Text, out width))
+                    {
+                        picBoxWidhtStatus.Image =
+                        semiFinished.Width * 0.95 < width &&
+                        width < semiFinished.Width * 1.05 ?
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
+                    }
+                    else if(doControlExist)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wpisz liczbę w pole 'Szerokość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
                 if (txtboxMass.Text != "")
                 {
-                    picBoxMassStatus.Image =
-                        semiFinished.SfWeight * 0.95 < double.Parse(txtboxMass.Text) &&
-                        double.Parse(txtboxMass.Text) < semiFinished.SfWeight * 1.05 ?
+                    double mass;
+                    if(double.TryParse(txtboxMass.Text, out mass))
+                    {
+                        picBoxMassStatus.Image =
+                        semiFinished.SfWeight * 0.95 < mass &&
+                        mass < semiFinished.SfWeight * 1.05 ?
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
+                    }
+                    else if(doControlExist)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wpisz liczbę w pole 'Masa'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
 
                 if (txtBoxColor.Text != "")
@@ -172,9 +211,22 @@ namespace KWZP2019
 
                 if (txtBoxQuantity.Text != "")
                 {
-                    picBoxQuantityStatus.Image = quantitySfOrder.Quantity.ToString() == txtBoxQuantity.Text ?
+                    double quantity;
+                    if(double.TryParse(txtBoxQuantity.Text, out quantity))
+                    {
+                        picBoxQuantityStatus.Image = quantitySfOrder.Quantity == quantity ?
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
+                    }
+                    else if(doControlExist)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wpisz liczbę w pole 'Ilość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
         }
@@ -251,9 +303,9 @@ namespace KWZP2019
                 entranceControl.ControlDate = datePickerControlDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
-                entranceControl.RealThickness = int.Parse(txtboxThickness.Text);
-                entranceControl.RealWidth = int.Parse(txtboxWidth.Text);
-                entranceControl.RealWeight = int.Parse(txtboxMass.Text);
+                entranceControl.RealThickness = decimal.Parse(txtboxThickness.Text);
+                entranceControl.RealWidth = decimal.Parse(txtboxWidth.Text);
+                entranceControl.RealWeight = decimal.Parse(txtboxMass.Text);
                 entranceControl.RealColor = txtBoxColor.Text;
                 entranceControl.ChemicalComposition = checkBoxComposition.Checked;
 
