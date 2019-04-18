@@ -100,7 +100,6 @@
             this.Name = "FinancesAndHR";
             this.Text = "Finanse i Kadry";
             this.ResumeLayout(false);
-
         }
 
         #endregion

@@ -66,152 +66,172 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(51, 23);
+            this.lblFirstName.Location = new System.Drawing.Point(38, 19);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(33, 17);
+            this.lblFirstName.Size = new System.Drawing.Size(26, 13);
             this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "Imie";
+            this.lblFirstName.Text = "Imię";
+            this.lblFirstName.Click += new System.EventHandler(this.lblFirstName_Click);
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(51, 84);
+            this.lblLastName.Location = new System.Drawing.Point(38, 68);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(67, 17);
+            this.lblLastName.Size = new System.Drawing.Size(53, 13);
             this.lblLastName.TabIndex = 1;
             this.lblLastName.Text = "Nazwisko";
             // 
             // lblZipCode
             // 
             this.lblZipCode.AutoSize = true;
-            this.lblZipCode.Location = new System.Drawing.Point(51, 139);
+            this.lblZipCode.Location = new System.Drawing.Point(38, 113);
+            this.lblZipCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblZipCode.Name = "lblZipCode";
-            this.lblZipCode.Size = new System.Drawing.Size(96, 17);
+            this.lblZipCode.Size = new System.Drawing.Size(75, 13);
             this.lblZipCode.TabIndex = 2;
             this.lblZipCode.Text = "Kod Pocztowy";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(51, 191);
+            this.lblCity.Location = new System.Drawing.Point(38, 155);
+            this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(49, 17);
+            this.lblCity.Size = new System.Drawing.Size(38, 13);
             this.lblCity.TabIndex = 2;
             this.lblCity.Text = "Miasto";
             // 
             // lblHouseNumber
             // 
             this.lblHouseNumber.AutoSize = true;
-            this.lblHouseNumber.Location = new System.Drawing.Point(51, 275);
+            this.lblHouseNumber.Location = new System.Drawing.Point(38, 223);
+            this.lblHouseNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHouseNumber.Name = "lblHouseNumber";
-            this.lblHouseNumber.Size = new System.Drawing.Size(91, 17);
+            this.lblHouseNumber.Size = new System.Drawing.Size(69, 13);
             this.lblHouseNumber.TabIndex = 3;
             this.lblHouseNumber.Text = "Numer Domu";
             // 
             // lblStreet
             // 
             this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(51, 238);
+            this.lblStreet.Location = new System.Drawing.Point(38, 193);
+            this.lblStreet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(39, 17);
+            this.lblStreet.Size = new System.Drawing.Size(31, 13);
             this.lblStreet.TabIndex = 3;
             this.lblStreet.Text = "Ulica";
             // 
             // lblApartmentNumber
             // 
             this.lblApartmentNumber.AutoSize = true;
-            this.lblApartmentNumber.Location = new System.Drawing.Point(51, 319);
+            this.lblApartmentNumber.Location = new System.Drawing.Point(38, 259);
+            this.lblApartmentNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApartmentNumber.Name = "lblApartmentNumber";
-            this.lblApartmentNumber.Size = new System.Drawing.Size(96, 17);
+            this.lblApartmentNumber.Size = new System.Drawing.Size(73, 13);
             this.lblApartmentNumber.TabIndex = 4;
             this.lblApartmentNumber.Text = "Numer Lokalu";
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(51, 358);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(38, 291);
+            this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(110, 17);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(83, 13);
             this.lblPhoneNumber.TabIndex = 5;
             this.lblPhoneNumber.Text = "Numer Telefonu";
             // 
             // lblPESEL
             // 
             this.lblPESEL.AutoSize = true;
-            this.lblPESEL.Location = new System.Drawing.Point(51, 404);
+            this.lblPESEL.Location = new System.Drawing.Point(38, 328);
+            this.lblPESEL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPESEL.Name = "lblPESEL";
-            this.lblPESEL.Size = new System.Drawing.Size(52, 17);
+            this.lblPESEL.Size = new System.Drawing.Size(41, 13);
             this.lblPESEL.TabIndex = 6;
             this.lblPESEL.Text = "PESEL";
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(261, 23);
+            this.tbFirstName.Location = new System.Drawing.Point(196, 19);
+            this.tbFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(183, 22);
+            this.tbFirstName.Size = new System.Drawing.Size(138, 20);
             this.tbFirstName.TabIndex = 7;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(261, 79);
+            this.tbLastName.Location = new System.Drawing.Point(196, 64);
+            this.tbLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(183, 22);
+            this.tbLastName.Size = new System.Drawing.Size(138, 20);
             this.tbLastName.TabIndex = 8;
             // 
             // tbZipCode
             // 
-            this.tbZipCode.Location = new System.Drawing.Point(261, 134);
+            this.tbZipCode.Location = new System.Drawing.Point(196, 109);
+            this.tbZipCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbZipCode.Name = "tbZipCode";
-            this.tbZipCode.Size = new System.Drawing.Size(183, 22);
+            this.tbZipCode.Size = new System.Drawing.Size(138, 20);
             this.tbZipCode.TabIndex = 9;
             // 
             // tbCity
             // 
-            this.tbCity.Location = new System.Drawing.Point(261, 186);
+            this.tbCity.Location = new System.Drawing.Point(196, 151);
+            this.tbCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCity.Name = "tbCity";
-            this.tbCity.Size = new System.Drawing.Size(183, 22);
+            this.tbCity.Size = new System.Drawing.Size(138, 20);
             this.tbCity.TabIndex = 10;
             // 
             // tbStreet
             // 
-            this.tbStreet.Location = new System.Drawing.Point(261, 233);
+            this.tbStreet.Location = new System.Drawing.Point(196, 189);
+            this.tbStreet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(183, 22);
+            this.tbStreet.Size = new System.Drawing.Size(138, 20);
             this.tbStreet.TabIndex = 11;
             // 
             // tbHouseNumber
             // 
-            this.tbHouseNumber.Location = new System.Drawing.Point(261, 270);
+            this.tbHouseNumber.Location = new System.Drawing.Point(196, 219);
+            this.tbHouseNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbHouseNumber.Name = "tbHouseNumber";
-            this.tbHouseNumber.Size = new System.Drawing.Size(183, 22);
+            this.tbHouseNumber.Size = new System.Drawing.Size(138, 20);
             this.tbHouseNumber.TabIndex = 12;
             // 
             // tbApartmentNumber
             // 
-            this.tbApartmentNumber.Location = new System.Drawing.Point(261, 319);
+            this.tbApartmentNumber.Location = new System.Drawing.Point(196, 259);
+            this.tbApartmentNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbApartmentNumber.Name = "tbApartmentNumber";
-            this.tbApartmentNumber.Size = new System.Drawing.Size(183, 22);
+            this.tbApartmentNumber.Size = new System.Drawing.Size(138, 20);
             this.tbApartmentNumber.TabIndex = 13;
             // 
             // tbPhoneNumber
             // 
-            this.tbPhoneNumber.Location = new System.Drawing.Point(261, 358);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(196, 291);
+            this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(183, 22);
+            this.tbPhoneNumber.Size = new System.Drawing.Size(138, 20);
             this.tbPhoneNumber.TabIndex = 14;
             // 
             // tbPESEL
             // 
-            this.tbPESEL.Location = new System.Drawing.Point(261, 399);
+            this.tbPESEL.Location = new System.Drawing.Point(196, 324);
+            this.tbPESEL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPESEL.Name = "tbPESEL";
-            this.tbPESEL.Size = new System.Drawing.Size(183, 22);
+            this.tbPESEL.Size = new System.Drawing.Size(138, 20);
             this.tbPESEL.TabIndex = 15;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(603, 358);
+            this.btnAdd.Location = new System.Drawing.Point(452, 291);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(155, 57);
+            this.btnAdd.Size = new System.Drawing.Size(116, 46);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -219,22 +239,24 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(602, 296);
+            this.btnClear.Location = new System.Drawing.Point(452, 240);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(156, 57);
+            this.btnClear.Size = new System.Drawing.Size(117, 46);
             this.btnClear.TabIndex = 17;
-            this.btnClear.Text = "Wyczysc";
+            this.btnClear.Text = "Wyczyść";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(603, 233);
+            this.btnCancel.Location = new System.Drawing.Point(452, 189);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(155, 57);
+            this.btnCancel.Size = new System.Drawing.Size(116, 46);
             this.btnCancel.TabIndex = 18;
-            this.btnCancel.Text = "Wyjdz";
+            this.btnCancel.Text = "Wyjdź";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -242,10 +264,11 @@
             // 
             this.tabControlContractLenght.Controls.Add(this.ContractLenght);
             this.tabControlContractLenght.Controls.Add(this.Dates);
-            this.tabControlContractLenght.Location = new System.Drawing.Point(545, 12);
+            this.tabControlContractLenght.Location = new System.Drawing.Point(409, 10);
+            this.tabControlContractLenght.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControlContractLenght.Name = "tabControlContractLenght";
             this.tabControlContractLenght.SelectedIndex = 0;
-            this.tabControlContractLenght.Size = new System.Drawing.Size(243, 212);
+            this.tabControlContractLenght.Size = new System.Drawing.Size(182, 172);
             this.tabControlContractLenght.TabIndex = 19;
             // 
             // ContractLenght
@@ -253,27 +276,30 @@
             this.ContractLenght.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ContractLenght.Controls.Add(this.lblContractLenght);
             this.ContractLenght.Controls.Add(this.tbContractLenght);
-            this.ContractLenght.Location = new System.Drawing.Point(4, 25);
+            this.ContractLenght.Location = new System.Drawing.Point(4, 22);
+            this.ContractLenght.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ContractLenght.Name = "ContractLenght";
-            this.ContractLenght.Padding = new System.Windows.Forms.Padding(3);
-            this.ContractLenght.Size = new System.Drawing.Size(235, 183);
+            this.ContractLenght.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContractLenght.Size = new System.Drawing.Size(174, 146);
             this.ContractLenght.TabIndex = 0;
             this.ContractLenght.Text = "Długość Umowy";
             // 
             // lblContractLenght
             // 
             this.lblContractLenght.AutoSize = true;
-            this.lblContractLenght.Location = new System.Drawing.Point(15, 31);
+            this.lblContractLenght.Location = new System.Drawing.Point(11, 25);
+            this.lblContractLenght.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContractLenght.Name = "lblContractLenght";
-            this.lblContractLenght.Size = new System.Drawing.Size(108, 17);
+            this.lblContractLenght.Size = new System.Drawing.Size(84, 13);
             this.lblContractLenght.TabIndex = 1;
-            this.lblContractLenght.Text = "Dlugosc Umowy";
+            this.lblContractLenght.Text = "Dlugość Umowy";
             // 
             // tbContractLenght
             // 
-            this.tbContractLenght.Location = new System.Drawing.Point(15, 62);
+            this.tbContractLenght.Location = new System.Drawing.Point(11, 50);
+            this.tbContractLenght.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbContractLenght.Name = "tbContractLenght";
-            this.tbContractLenght.Size = new System.Drawing.Size(194, 22);
+            this.tbContractLenght.Size = new System.Drawing.Size(146, 20);
             this.tbContractLenght.TabIndex = 0;
             // 
             // Dates
@@ -283,10 +309,11 @@
             this.Dates.Controls.Add(this.lblEndDate);
             this.Dates.Controls.Add(this.dateTimePickerStartDate);
             this.Dates.Controls.Add(this.lblStartDate);
-            this.Dates.Location = new System.Drawing.Point(4, 25);
+            this.Dates.Location = new System.Drawing.Point(4, 22);
+            this.Dates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Dates.Name = "Dates";
-            this.Dates.Padding = new System.Windows.Forms.Padding(3);
-            this.Dates.Size = new System.Drawing.Size(235, 183);
+            this.Dates.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Dates.Size = new System.Drawing.Size(174, 146);
             this.Dates.TabIndex = 1;
             this.Dates.Text = "Daty Od i Do";
             // 
@@ -294,17 +321,19 @@
             // 
             this.dateTimePickerEndDate.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(16, 138);
+            this.dateTimePickerEndDate.Location = new System.Drawing.Point(12, 112);
+            this.dateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            this.dateTimePickerEndDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerEndDate.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerEndDate.TabIndex = 3;
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(13, 109);
+            this.lblEndDate.Location = new System.Drawing.Point(10, 89);
+            this.lblEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(190, 17);
+            this.lblEndDate.Size = new System.Drawing.Size(143, 13);
             this.lblEndDate.TabIndex = 2;
             this.lblEndDate.Text = "Koniec Umowy (yyyy-MM-dd)";
             // 
@@ -312,27 +341,29 @@
             // 
             this.dateTimePickerStartDate.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(16, 51);
+            this.dateTimePickerStartDate.Location = new System.Drawing.Point(12, 41);
+            this.dateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerStartDate.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerStartDate.TabIndex = 1;
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(13, 21);
+            this.lblStartDate.Location = new System.Drawing.Point(10, 17);
+            this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(205, 17);
+            this.lblStartDate.Size = new System.Drawing.Size(155, 13);
             this.lblStartDate.TabIndex = 0;
             this.lblStartDate.Text = "Początek Umowy (yyyy-MM-dd)";
             // 
             // AddEmployee
             // 
             this.AcceptButton = this.btnAdd;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tabControlContractLenght);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
@@ -355,6 +386,7 @@
             this.Controls.Add(this.lblZipCode);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddEmployee";
             this.Text = "Dodaj Pracownika";
             this.tabControlContractLenght.ResumeLayout(false);

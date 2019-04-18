@@ -48,6 +48,7 @@
             this.dtpDateadded = new System.Windows.Forms.DateTimePicker();
             this.tbValue = new System.Windows.Forms.TextBox();
             this.lblPln = new System.Windows.Forms.Label();
+            this.btnAccept = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAdddata
@@ -212,11 +213,22 @@
             this.lblPln.TabIndex = 19;
             this.lblPln.Text = "złotych";
             // 
-            // addfvat
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(409, 238);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(75, 23);
+            this.btnAccept.TabIndex = 20;
+            this.btnAccept.Text = "Dodaj";
+            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // AddInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
+            this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.lblPln);
             this.Controls.Add(this.tbValue);
             this.Controls.Add(this.dtpDateadded);
@@ -237,7 +249,7 @@
             this.Controls.Add(this.lblNameofentity);
             this.Controls.Add(this.tbZipcode);
             this.Controls.Add(this.lblAdddata);
-            this.Name = "addfvat";
+            this.Name = "AddInvoices";
             this.Text = "Dodaj fakturę";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -266,5 +278,6 @@
         private System.Windows.Forms.DateTimePicker dtpDateadded;
         private System.Windows.Forms.TextBox tbValue;
         private System.Windows.Forms.Label lblPln;
+        private System.Windows.Forms.Button btnAccept;
     }
 }

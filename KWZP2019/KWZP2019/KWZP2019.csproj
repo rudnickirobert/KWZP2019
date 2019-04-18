@@ -58,6 +58,15 @@
     <Compile Include="Absence.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Development.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Development.Designer.cs">
+      <DependentUpon>Development.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntranceControlView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="HR\Absences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,11 +226,29 @@
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="NewProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProductionPlan.Designer.cs">
+      <DependentUpon>NewProductionPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OshTrainingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OshTrainingForm.Designer.cs">
+      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSHControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSHControl.Designer.cs">
+      <DependentUpon>OSHControl.cs</DependentUpon>
     </Compile>
     <Compile Include="OutControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -258,12 +285,6 @@
     </Compile>
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Finances\Paychecks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Finances\Paychecks.Designer.cs">
-      <DependentUpon>Paychecks.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -408,11 +429,44 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vCompany.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCustomerWithOrder.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDailySfDelivery.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewOshTraining.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vIndividualCustomer.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vInputMagazine.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOutputMagazine.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOutsourcingWithType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierPart.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierSemi.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\AddInvoices.resx">
       <DependentUpon>AddInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\AddTraining.resx">
       <DependentUpon>AddTraining.cs</DependentUpon>
@@ -441,8 +495,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OshTrainingForm.resx">
+      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProductionPlan.resx">
+      <DependentUpon>NewProductionPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSHControl.resx">
+      <DependentUpon>OSHControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
@@ -493,7 +556,20 @@
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Machine.datasource" />
+    <None Include="Maintenance.datasource" />
+    <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="PlannedProduction.datasource" />
+    <None Include="PlannedProductionEmployeeDetail.datasource" />
+    <None Include="Product.datasource" />
+    <None Include="Production.datasource" />
+    <None Include="ProductionFailures.datasource" />
+    <None Include="ProductionPlanned.datasource" />
+    <None Include="ProductionProce.datasource" />
+    <None Include="ProductionProcess.datasource" />
+    <None Include="ProductionProducts.datasource" />
+    <None Include="ProductionTechnology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -510,6 +586,7 @@
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>
+    <None Include="Technology.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
