@@ -19,6 +19,8 @@ namespace KWZP2019
         bool resultsApproved = false;
         bool doControlExist = true;
 
+        // ==================================================
+
         public EntranceControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
             this.db = db;
@@ -27,22 +29,32 @@ namespace KWZP2019
             InitializeComponent();
         }
 
+        // ==================================================
+
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
-            this.Hide();
+            this.qualityControlForm.Close();
+            this.Close();
         }
+
+        // ==================================================
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.qualityControlForm.Show();
-            this.Hide();
+            this.Close();
         }
+
+        // ==================================================
 
         private void EntranceControlForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.startForm.Show();
+            this.qualityControlForm.Close();
         }
+
+        // ==================================================
 
         private void EntranceControlForm_Load(object sender, EventArgs e)
         {
@@ -54,6 +66,8 @@ namespace KWZP2019
             }
         }
 
+        // ==================================================
+
         private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
         {
             textBoxEmployeeId.BackColor = Color.White;
@@ -61,56 +75,24 @@ namespace KWZP2019
             lblEmployeeFullName.Text = employee != null ? $"{employee.EmployeeName} {employee.EmployeeSurname}" : "";
         }
 
-        private bool changeTextBoxes()
-        {
-            // var bo to typ anonimowy
-            var doControlExist = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
-                (ec, order) => new { order.IdSfOrder, order.IdSemiFinished, ec.RealThickness, ec.RealWidth, ec.RealWeight, ec.RealColor, ec.Quantity, ec.ControlStatus, ec.ChemicalComposition })
-                .Where(order => order.IdSfOrder.ToString() == domUDOrderId.Text && order.IdSemiFinished.ToString() == domUDSfId.Text).FirstOrDefault();
-
-            if (doControlExist == null)
-            {
-                lblControlNotExist.Text = "Brak kontroli\nw bazie!";
-                this.resetAllCheckedPicBox();
-                txtboxThickness.Text = "";
-                txtboxWidth.Text = "";
-                txtboxMass.Text = "";
-                txtBoxColor.Text = "";
-                txtBoxQuantity.Text = "";
-                checkBoxComposition.Checked = false;
-                picBoxControlStatus.Image = Properties.Resources.new_80px;
-                return false;
-            }
-            else
-            {
-                lblControlNotExist.Text = "";
-                txtboxThickness.Text = doControlExist.RealThickness.ToString();
-                txtboxWidth.Text = doControlExist.RealWidth.ToString();
-                txtboxMass.Text = doControlExist.RealWeight.ToString();
-                txtBoxColor.Text = doControlExist.RealColor.ToString();
-                txtBoxQuantity.Text = doControlExist.Quantity.ToString();
-                checkBoxComposition.Checked = doControlExist.ChemicalComposition;
-                picBoxControlStatus.Image = doControlExist.ControlStatus == true ? Properties.Resources.good_quality_80px : Properties.Resources.poor_quality_80px;
-                return true;
-            }
-        }
+        // ==================================================
 
         private void domUDOrderId_SelectedItemChanged(object sender, EventArgs e)
         {
             domUDOrderId.BackColor = Color.White;
-            domUDSfId.Items.Clear(); // czeszczenie z poprzedniego wyboru, listy id półproduktów mogą się rożnic między zamówieniami
+            domUDSfId.Items.Clear();
             List<SfOrderDetail> sfOrderDetails = db.SfOrderDetails
                 .Where(detail => detail.IdSfOrder.ToString() == domUDOrderId.Text).ToList();
             foreach (SfOrderDetail sfOrderDetail in sfOrderDetails)
             {
                 domUDSfId.Items.Add(sfOrderDetail.IdSemiFinished);
             }
-            domUDSfId.Text = domUDSfId.Items.ToArray()[0].ToString(); // ustawia pierwszy element z danej listy jako aktualny tekst
+            domUDSfId.Text = domUDSfId.Items.ToArray()[0].ToString(); // set first element as active from actual Items collection
             
             SemiFinishedOrder semiFinishedOrder = db.SemiFinishedOrders.FirstOrDefault(s => s.IdSfOrder.ToString() == domUDOrderId.Text);
             lblDaysOfDelay.Text = (semiFinishedOrder == null || semiFinishedOrder.SfDeliveryDate == DateTime.Now) ? "" : $"{Math.Round((DateTime.Now - semiFinishedOrder.SfDeliveryDate).TotalDays, 0).ToString()} dni opóźnienia";
 
-            if(changeTextBoxes())
+            if(changeTextBoxesDependingOnExistedSelectedControl())
             {
                 btnCheck_Click(sender, e);
                 this.doControlExist = true;
@@ -121,45 +103,13 @@ namespace KWZP2019
             }
         }
 
-        private void btnDone_Click(object sender, EventArgs e)
-        {
-            
-            if(resultsApproved)
-            {
-                // var bo to typ anonimowy
-                var idSfDetail = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
-                (ec, order) => new { ec.IdSfDetail }).FirstOrDefault();
-
-                EntranceControl entranceControl = new EntranceControl();
-
-                entranceControl.IdSfDetail = int.Parse(idSfDetail.ToString());
-                entranceControl.ControlDate = datePickerControlDate.Value;
-                entranceControl.Comments = txtboxComment.Text;
-                entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
-                entranceControl.RealThickness = int.Parse(txtboxThickness.Text);
-                entranceControl.RealWidth = int.Parse(txtboxWidth.Text);
-                entranceControl.RealWeight = int.Parse(txtboxMass.Text);
-                entranceControl.RealColor = txtBoxColor.Text;
-                entranceControl.ChemicalComposition = checkBoxComposition.Checked;
-
-                db.EntranceControls.Add(entranceControl);
-                //db.SaveChanges();
-            }
-            {
-                MessageBox.Show("Proszę zatwierdzić wyniki", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void txtbox_TextChanged(object sender, EventArgs e)
-        {
-            (sender as TextBox).BackColor = Color.White;
-        }
+        // ==================================================
 
         private void domUDSfId_SelectedItemChanged(object sender, EventArgs e)
         {
             domUDSfId.BackColor = Color.White;
 
-            if(changeTextBoxes())
+            if (changeTextBoxesDependingOnExistedSelectedControl())
             {
                 btnCheck_Click(sender, e);
                 this.doControlExist = true;
@@ -170,13 +120,15 @@ namespace KWZP2019
             }
         }
 
+        // ================================================== 
+
         private void btnCheck_Click(object sender, EventArgs e)
         {
             SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished.ToString() == domUDSfId.Text);
 
-            // var bo to typ anonimowy
-            var quantity = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
-                (ec, order) => new { ec.Quantity }).FirstOrDefault();
+            SfOrderDetail quantitySfOrder = db.SfOrderDetails
+                .Where(sfod => sfod.IdSfOrder.ToString() == domUDOrderId.Text && sfod.IdSemiFinished.ToString() == domUDSfId.Text)
+                .FirstOrDefault();
 
             if (semiFinished == null)
             {
@@ -184,7 +136,7 @@ namespace KWZP2019
             }
             else
             {
-                if(txtboxThickness.Text != "")
+                if (txtboxThickness.Text != "")
                 {
                     picBoxThicknessStatus.Image =
                         semiFinished.Thickness * 0.95 < double.Parse(txtboxThickness.Text) &&
@@ -192,8 +144,8 @@ namespace KWZP2019
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
                 }
-                    
-                if(txtboxWidth.Text != "")
+
+                if (txtboxWidth.Text != "")
                 {
                     picBoxWidhtStatus.Image =
                         semiFinished.Width * 0.95 < double.Parse(txtboxWidth.Text) &&
@@ -201,8 +153,8 @@ namespace KWZP2019
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
                 }
-                    
-                if(txtboxMass.Text != "")
+
+                if (txtboxMass.Text != "")
                 {
                     picBoxMassStatus.Image =
                         semiFinished.SfWeight * 0.95 < double.Parse(txtboxMass.Text) &&
@@ -210,43 +162,36 @@ namespace KWZP2019
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
                 }
-                    
-                if(txtBoxColor.Text != "")
+
+                if (txtBoxColor.Text != "")
                 {
-                    picBoxColorStatus.Image = semiFinished.Color.Equals(txtBoxColor.Text) ?
+                    picBoxColorStatus.Image = semiFinished.Color == txtBoxColor.Text ?
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
                 }
-                    
-                if(txtBoxQuantity.Text != "")
+
+                if (txtBoxQuantity.Text != "")
                 {
-                    picBoxQuantityStatus.Image = quantity.ToString().Equals(txtBoxQuantity.Text) ?
+                    picBoxQuantityStatus.Image = quantitySfOrder.Quantity.ToString() == txtBoxQuantity.Text ?
                         Properties.Resources.ok_48px :
                         Properties.Resources.cancel_48px;
                 }
             }
         }
 
-        private void resetAllCheckedPicBox()
-        {
-            picBoxThicknessStatus.Image = Properties.Resources.help_40px;
-            picBoxWidhtStatus.Image = Properties.Resources.help_40px;
-            picBoxMassStatus.Image = Properties.Resources.help_40px;
-            picBoxColorStatus.Image = Properties.Resources.help_40px;
-            picBoxQuantityStatus.Image = Properties.Resources.help_40px;
-        }
+        // ==================================================
 
         private void btnApproval_Click(object sender, EventArgs e)
         {
-            if(domUDOrderId.Text == "")
+            if (domUDOrderId.Text == "")
             {
                 MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(this.doControlExist)
+            else if (this.doControlExist)
             {
                 MessageBox.Show("Ta kontrola już istnieje w bazie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(domUDOrderId.Text == "" || domUDSfId.Text == "" || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
+            else if (domUDOrderId.Text == "" || domUDSfId.Text == "" || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
                         || txtboxWidth.Text == "" || txtboxMass.Text == "" || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
                 MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -286,6 +231,112 @@ namespace KWZP2019
             else
             {
                 resultsApproved = true;
+            }
+        }
+
+        // ==================================================
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            
+            if(resultsApproved)
+            {
+                // var because it's anonymouse type
+                var idSfDetail = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
+                (ec, order) => new { ec.IdSfDetail }).FirstOrDefault();
+
+                EntranceControl entranceControl = new EntranceControl();
+
+                entranceControl.IdSfDetail = int.Parse(idSfDetail.ToString());
+                entranceControl.ControlDate = datePickerControlDate.Value;
+                entranceControl.Comments = txtboxComment.Text;
+                entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
+                entranceControl.RealThickness = int.Parse(txtboxThickness.Text);
+                entranceControl.RealWidth = int.Parse(txtboxWidth.Text);
+                entranceControl.RealWeight = int.Parse(txtboxMass.Text);
+                entranceControl.RealColor = txtBoxColor.Text;
+                entranceControl.ChemicalComposition = checkBoxComposition.Checked;
+
+                db.EntranceControls.Add(entranceControl);
+                //db.SaveChanges();
+            }
+            {
+                MessageBox.Show("Proszę zatwierdzić wyniki", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        // ==================================================
+
+        private void txtbox_TextChanged(object sender, EventArgs e)
+        {
+            (sender as TextBox).BackColor = Color.White;
+        }
+
+        // ==================================================
+
+        private void resetAllCheckedPicBox()
+        {
+            picBoxThicknessStatus.Image = Properties.Resources.help_40px;
+            picBoxWidhtStatus.Image = Properties.Resources.help_40px;
+            picBoxMassStatus.Image = Properties.Resources.help_40px;
+            picBoxColorStatus.Image = Properties.Resources.help_40px;
+            picBoxQuantityStatus.Image = Properties.Resources.help_40px;
+        }
+
+        // ==================================================
+
+        private bool changeTextBoxesDependingOnExistedSelectedControl()
+        {
+            // Changed text boxes style depending on if selected control exist in database and return true if exist, if not return false
+            // var because it's anonymouse type
+            var doControlExist = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
+                (ec, order) => new { order.IdSfOrder, order.IdSemiFinished, ec.IdEmployee, ec.RealThickness, ec.RealWidth, ec.RealWeight, ec.RealColor, ec.Quantity, ec.ControlStatus, ec.ChemicalComposition, ec.Comments })
+                .Where(order => order.IdSfOrder.ToString() == domUDOrderId.Text && order.IdSemiFinished.ToString() == domUDSfId.Text).FirstOrDefault();
+
+            if (doControlExist == null)
+            {
+                lblControlNotExist.Text = "Brak kontroli\nw bazie!";
+                this.resetAllCheckedPicBox();
+                textBoxEmployeeId.Text = "";
+                textBoxEmployeeId.Enabled = true;
+                txtboxThickness.Text = "";
+                txtboxThickness.Enabled = true;
+                txtboxWidth.Text = "";
+                txtboxWidth.Enabled = true;
+                txtboxMass.Text = "";
+                txtboxMass.Enabled = true;
+                txtBoxColor.Text = "";
+                txtBoxColor.Enabled = true;
+                txtBoxQuantity.Text = "";
+                txtBoxQuantity.Enabled = true;
+                checkBoxComposition.Checked = false;
+                checkBoxComposition.Enabled = true;
+                txtboxComment.Text = "";
+                txtboxComment.Enabled = true;
+                picBoxControlStatus.Image = Properties.Resources.new_80px;
+                return false;
+            }
+            else
+            {
+                lblControlNotExist.Text = "";
+                textBoxEmployeeId.Text = doControlExist.IdEmployee.ToString();
+                textBoxEmployeeId.Enabled = false;
+                txtboxThickness.Text = doControlExist.RealThickness.ToString();
+                txtboxThickness.Enabled = false;
+                txtboxWidth.Text = doControlExist.RealWidth.ToString();
+                txtboxWidth.Enabled = false;
+                txtboxMass.Text = doControlExist.RealWeight.ToString();
+                txtboxMass.Enabled = false;
+                txtBoxColor.Text = doControlExist.RealColor;
+                txtBoxColor.Enabled = false;
+                txtBoxQuantity.Text = doControlExist.Quantity.ToString();
+                txtBoxQuantity.Enabled = false;
+                checkBoxComposition.Checked = doControlExist.ChemicalComposition;
+                checkBoxComposition.Enabled = false;
+                txtboxComment.Text = doControlExist.Comments;
+                txtboxComment.Enabled = false;
+                picBoxControlStatus.Image = doControlExist.ControlStatus == true ? Properties.Resources.good_quality_80px : Properties.Resources.poor_quality_80px;
+                return true;
             }
         }
     }

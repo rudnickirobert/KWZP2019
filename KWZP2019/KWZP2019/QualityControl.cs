@@ -32,7 +32,7 @@ namespace KWZP2019
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnOutControl_Click(object sender, EventArgs e)
