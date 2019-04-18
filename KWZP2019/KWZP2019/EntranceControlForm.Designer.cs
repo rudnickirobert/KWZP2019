@@ -1,4 +1,4 @@
-﻿namespace KWZP2019
+namespace KWZP2019
 {
     partial class EntranceControlForm
     {
@@ -39,7 +39,7 @@
             this.lblComment = new System.Windows.Forms.Label();
             this.domUDOrderId = new System.Windows.Forms.DomainUpDown();
             this.domUDSfId = new System.Windows.Forms.DomainUpDown();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.txtboxThickness = new System.Windows.Forms.TextBox();
             this.txtboxWidth = new System.Windows.Forms.TextBox();
             this.txtboxMass = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.btnApproval = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
@@ -219,17 +219,6 @@
             this.domUDSfId.TabIndex = 13;
             this.domUDSfId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.domUDSfId.SelectedItemChanged += new System.EventHandler(this.domUDSfId_SelectedItemChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(335, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(844, 738);
-            this.pictureBox3.TabIndex = 17;
-            this.pictureBox3.TabStop = false;
             // 
             // txtboxThickness
             // 
@@ -615,7 +604,7 @@
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBoxForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -624,7 +613,7 @@
             this.Text = "Kontrola Wejściowa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlForm_FormClosed);
             this.Load += new System.EventHandler(this.EntranceControlForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).EndInit();
@@ -649,7 +638,7 @@
         private System.Windows.Forms.Label lblComment;
         private System.Windows.Forms.DomainUpDown domUDOrderId;
         private System.Windows.Forms.DomainUpDown domUDSfId;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.TextBox txtboxThickness;
         private System.Windows.Forms.TextBox txtboxWidth;
         private System.Windows.Forms.TextBox txtboxMass;

@@ -34,18 +34,21 @@
             // 
             // btnFinances
             // 
-            this.btnFinances.Location = new System.Drawing.Point(167, 53);
+            this.btnFinances.Location = new System.Drawing.Point(125, 43);
+            this.btnFinances.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFinances.Name = "btnFinances";
-            this.btnFinances.Size = new System.Drawing.Size(428, 113);
+            this.btnFinances.Size = new System.Drawing.Size(321, 92);
             this.btnFinances.TabIndex = 0;
             this.btnFinances.Text = "Finanse";
             this.btnFinances.UseVisualStyleBackColor = true;
+            this.btnFinances.Click += new System.EventHandler(this.btnFinances_Click);
             // 
             // btnHR
             // 
-            this.btnHR.Location = new System.Drawing.Point(167, 205);
+            this.btnHR.Location = new System.Drawing.Point(125, 167);
+            this.btnHR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHR.Name = "btnHR";
-            this.btnHR.Size = new System.Drawing.Size(428, 113);
+            this.btnHR.Size = new System.Drawing.Size(321, 92);
             this.btnHR.TabIndex = 1;
             this.btnHR.Text = "Kadry";
             this.btnHR.UseVisualStyleBackColor = true;
@@ -53,15 +56,15 @@
             // 
             // FinancesAndHR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnHR);
             this.Controls.Add(this.btnFinances);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FinancesAndHR";
             this.Text = "Finanse i Kadry";
             this.ResumeLayout(false);
-
         }
 
         #endregion

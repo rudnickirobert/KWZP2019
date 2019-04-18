@@ -12,15 +12,24 @@ namespace KWZP2019
 {
     public partial class FinancesAndHR : Form
     {
-        public FinancesAndHR()
+        RoofingCompanyEntities db;
+        public FinancesAndHR(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
 
         private void btnHR_Click(object sender, EventArgs e)
         {
-            HR hR = new HR();
-            hR.Show();
+            HR hr = new HR(db);
+            hr.Show();
         }
+
+        private void btnFinances_Click(object sender, EventArgs e)
+        {
+            Finances finances = new Finances(db);
+            finances.Show();
+        }
+
     }
 }

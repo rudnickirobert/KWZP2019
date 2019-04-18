@@ -12,9 +12,11 @@ namespace KWZP2019
 {
     public partial class AddEmployee : Form
     {
-        public AddEmployee()
+        RoofingCompanyEntities db;
+        public AddEmployee(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
             clear();
         }
 
@@ -65,6 +67,11 @@ namespace KWZP2019
                
             }
             
+        }
+
+        private void lblFirstName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
