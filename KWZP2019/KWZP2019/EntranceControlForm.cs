@@ -158,7 +158,6 @@ namespace KWZP2019
                     
                 }
 
-                
                 if (txtboxWidth.Text != "")
                 {
                     double width;
