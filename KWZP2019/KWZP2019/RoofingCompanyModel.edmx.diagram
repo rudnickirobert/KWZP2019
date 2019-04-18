@@ -126,8 +126,6 @@
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess1" />
         <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdMac__0B91BA14" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinished" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vCustomerWithOrder1" Width="1.5" PointX="9.375" PointY="22.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.EntranceControlView1" Width="1.5" PointX="10.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vCompany" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewDailySfDelivery" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="7.375" PointY="0.75" />

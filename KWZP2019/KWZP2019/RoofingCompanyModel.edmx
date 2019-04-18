@@ -597,18 +597,6 @@
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.EntranceControlView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="EntranceControlView">
-          <Key>
-            <PropertyRef Name="IdSfDetail" />
-          </Key>
-          <Property Name="IdSfDetail" Type="int" Nullable="false" />
-          <Property Name="SfCode" Type="nvarchar" MaxLength="30" />
-          <Property Name="Thickness" Type="float" />
-          <Property Name="Width" Type="float" />
-          <Property Name="SfWeight" Type="float" />
-          <Property Name="Color" Type="nvarchar" MaxLength="50" />
-          <Property Name="ChemicalComposition" Type="nvarchar" MaxLength="255" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vCompany">
@@ -1631,17 +1619,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySet Name="Technology" EntityType="Self.Technology" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Training" EntityType="Self.Training" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EntranceControlView" EntityType="Self.EntranceControlView" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [EntranceControlView].[IdSfDetail] AS [IdSfDetail], 
-    [EntranceControlView].[SfCode] AS [SfCode], 
-    [EntranceControlView].[Thickness] AS [Thickness], 
-    [EntranceControlView].[Width] AS [Width], 
-    [EntranceControlView].[SfWeight] AS [SfWeight], 
-    [EntranceControlView].[Color] AS [Color], 
-    [EntranceControlView].[ChemicalComposition] AS [ChemicalComposition]
-    FROM [dbo].[EntranceControlView] AS [EntranceControlView]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="vCompany" EntityType="Self.vCompany" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vCompany].[IdCustomer] AS [IdCustomer], 
@@ -3753,7 +3730,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
           </AssociationSet>
           <EntitySet Name="vCustomerWithOrder1Set" EntityType="RoofingCompanyModel.vCustomerWithOrder1" />
-          <EntitySet Name="EntranceControlView1Set" EntityType="RoofingCompanyModel.EntranceControlView1" />
           <EntitySet Name="vCompany" EntityType="RoofingCompanyModel.vCompany" />
           <EntitySet Name="ViewDailySfDelivery" EntityType="RoofingCompanyModel.ViewDailySfDelivery" />
           <EntitySet Name="ViewOshTraining" EntityType="RoofingCompanyModel.ViewOshTraining" />
@@ -3815,18 +3791,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-        </EntityType>
-        <EntityType Name="EntranceControlView1">
-          <Key>
-            <PropertyRef Name="IdSfDetail" />
-          </Key>
-          <Property Name="IdSfDetail" Type="Int32" Nullable="false" />
-          <Property Name="SfCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Thickness" Type="Double" />
-          <Property Name="Width" Type="Double" />
-          <Property Name="SfWeight" Type="Double" />
-          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ChemicalComposition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vCompany">
           <Key>
@@ -4688,19 +4652,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EntranceControlView1Set">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.EntranceControlView1">
-              <MappingFragment StoreEntitySet="EntranceControlView">
-                <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
-                <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="SfWeight" ColumnName="SfWeight" />
-                <ScalarProperty Name="Width" ColumnName="Width" />
-                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
-                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
-                <ScalarProperty Name="IdSfDetail" ColumnName="IdSfDetail" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
