@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -174,9 +174,6 @@
     </Compile>
     <Compile Include="EntranceControlForm.Designer.cs">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EntranceControlView.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="HR\Examination.cs">
       <SubType>Form</SubType>
@@ -572,9 +569,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSHControl.resx">
       <DependentUpon>OSHControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OSHTraining.resx">
-      <DependentUpon>OSHTraining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
