@@ -103,7 +103,7 @@ CREATE TABLE OrderCustomer
 	IdEmployee int NOT NULL,
 	OrderDate datetime NOT NULL,
 	Cost money NOT NULL,
-	Markup int NOT NULL);
+	Markup float NOT NULL);
 
 CREATE TABLE OrderDetail
 	(IdDetail int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -360,8 +360,8 @@ PESEL bigint,
 create table Position(
 IdPosition int not null Primary key identity(1,1),
 Workplace nvarchar(50) null,
-ValidityOfOshTraining tinyint null,
-VailidityOfMedicalExam tinyint null
+ValidityOfOshTraining int null,
+VailidityOfMedicalExam int null
 );
 
 create table Contract(
@@ -412,7 +412,7 @@ Create table Staff(
 IdStaff int primary key identity(1,1) not null,
 IdDeparment int foreign key references Department(IdDepartment),
 IdPosition int foreign key references Position(IdPosition),
-Number tinyint,
+Number int,
 DateFrom date
 );
 
@@ -674,4 +674,15 @@ CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
+GO
 
+CREATE VIEW vPredictedPriceForCustomer
+AS
+SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
+FROM OrderDetail
+JOIN OrderCustomer
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+JOIN TechnicalProductData
+ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
+JOIN Customer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer
