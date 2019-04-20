@@ -49,16 +49,18 @@
             // 
             // tbEmployeeSearching
             // 
-            this.tbEmployeeSearching.Location = new System.Drawing.Point(41, 25);
+            this.tbEmployeeSearching.Location = new System.Drawing.Point(31, 20);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
-            this.tbEmployeeSearching.Size = new System.Drawing.Size(293, 22);
+            this.tbEmployeeSearching.Size = new System.Drawing.Size(221, 20);
             this.tbEmployeeSearching.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(353, 25);
+            this.btnSearch.Location = new System.Drawing.Point(265, 20);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 32);
+            this.btnSearch.Size = new System.Drawing.Size(84, 26);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Szukaj";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -73,11 +75,12 @@
             this.PhoneNumber,
             this.Address,
             this.PESEL});
-            this.dataGridViewEmloyees.Location = new System.Drawing.Point(11, 79);
+            this.dataGridViewEmloyees.Location = new System.Drawing.Point(8, 64);
+            this.dataGridViewEmloyees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewEmloyees.Name = "dataGridViewEmloyees";
             this.dataGridViewEmloyees.RowHeadersVisible = false;
             this.dataGridViewEmloyees.RowTemplate.Height = 24;
-            this.dataGridViewEmloyees.Size = new System.Drawing.Size(477, 326);
+            this.dataGridViewEmloyees.Size = new System.Drawing.Size(358, 265);
             this.dataGridViewEmloyees.TabIndex = 2;
             // 
             // FirstName
@@ -119,27 +122,29 @@
             // Warnings
             // 
             this.Warnings.FormattingEnabled = true;
-            this.Warnings.ItemHeight = 16;
-            this.Warnings.Location = new System.Drawing.Point(513, 353);
+            this.Warnings.Location = new System.Drawing.Point(385, 287);
+            this.Warnings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Warnings.Name = "Warnings";
-            this.Warnings.Size = new System.Drawing.Size(212, 52);
+            this.Warnings.Size = new System.Drawing.Size(160, 43);
             this.Warnings.TabIndex = 3;
             // 
             // btnDetails
             // 
-            this.btnDetails.Location = new System.Drawing.Point(585, 25);
+            this.btnDetails.Location = new System.Drawing.Point(439, 20);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(120, 32);
+            this.btnDetails.Size = new System.Drawing.Size(90, 26);
             this.btnDetails.TabIndex = 4;
-            this.btnDetails.Text = "Szczegoly";
+            this.btnDetails.Text = "Szczegóły";
             this.btnDetails.UseVisualStyleBackColor = true;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnExamination
             // 
-            this.btnExamination.Location = new System.Drawing.Point(585, 63);
+            this.btnExamination.Location = new System.Drawing.Point(439, 51);
+            this.btnExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExamination.Name = "btnExamination";
-            this.btnExamination.Size = new System.Drawing.Size(120, 37);
+            this.btnExamination.Size = new System.Drawing.Size(90, 30);
             this.btnExamination.TabIndex = 5;
             this.btnExamination.Text = "Badania";
             this.btnExamination.UseVisualStyleBackColor = true;
@@ -147,19 +152,21 @@
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(585, 106);
+            this.btnAddEmployee.Location = new System.Drawing.Point(439, 86);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(120, 51);
+            this.btnAddEmployee.Size = new System.Drawing.Size(90, 41);
             this.btnAddEmployee.TabIndex = 6;
-            this.btnAddEmployee.Text = "Dodaj Pracownika";
+            this.btnAddEmployee.Text = "Dodaj pracownika";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnTraining
             // 
-            this.btnTraining.Location = new System.Drawing.Point(585, 163);
+            this.btnTraining.Location = new System.Drawing.Point(439, 132);
+            this.btnTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTraining.Name = "btnTraining";
-            this.btnTraining.Size = new System.Drawing.Size(120, 43);
+            this.btnTraining.Size = new System.Drawing.Size(90, 35);
             this.btnTraining.TabIndex = 7;
             this.btnTraining.Text = "Szkolenia";
             this.btnTraining.UseVisualStyleBackColor = true;
@@ -167,28 +174,30 @@
             // 
             // btnAbsences
             // 
-            this.btnAbsences.Location = new System.Drawing.Point(585, 212);
+            this.btnAbsences.Location = new System.Drawing.Point(439, 172);
+            this.btnAbsences.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAbsences.Name = "btnAbsences";
-            this.btnAbsences.Size = new System.Drawing.Size(120, 37);
+            this.btnAbsences.Size = new System.Drawing.Size(90, 30);
             this.btnAbsences.TabIndex = 8;
-            this.btnAbsences.Text = "Nieobecnosci";
+            this.btnAbsences.Text = "Nieobecności";
             this.btnAbsences.UseVisualStyleBackColor = true;
             this.btnAbsences.Click += new System.EventHandler(this.btnAbsences_Click);
             // 
             // btnPayChecks
             // 
-            this.btnPayChecks.Location = new System.Drawing.Point(585, 255);
+            this.btnPayChecks.Location = new System.Drawing.Point(439, 207);
+            this.btnPayChecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPayChecks.Name = "btnPayChecks";
-            this.btnPayChecks.Size = new System.Drawing.Size(120, 43);
+            this.btnPayChecks.Size = new System.Drawing.Size(90, 35);
             this.btnPayChecks.TabIndex = 9;
-            this.btnPayChecks.Text = "Wyplaty";
+            this.btnPayChecks.Text = "Wypłaty";
             this.btnPayChecks.UseVisualStyleBackColor = true;
             // 
             // HR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnPayChecks);
             this.Controls.Add(this.btnAbsences);
             this.Controls.Add(this.btnTraining);
@@ -199,9 +208,9 @@
             this.Controls.Add(this.dataGridViewEmloyees);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tbEmployeeSearching);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HR";
             this.Text = "Kadry";
-            this.Load += new System.EventHandler(this.HR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmloyees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

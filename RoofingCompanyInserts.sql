@@ -1,4 +1,4 @@
-﻿use RoofingCompany;
+use RoofingCompany;
 
 --HR
 insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
@@ -7,25 +7,77 @@ insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, Hous
 		('Stefan', 'Nowak', '04-905', 'Warszawa', 'Powstańców', '10', '20', '607 894 489', '66123111809'),
 		('Witold', 'Wiśniewski', '03-444', 'Otwock', 'Główna', '23A', '5', '555 555 444', '33112244560'),
 		('Szymon', 'Wójcik', '40-404', 'Wrocław', 'Gen. Maczka', '50B', '10', '666 666 321', '55100511890'),
-		('Darek', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290');
+		('Dariusz', 'Kowalczyk', '30-400', 'Lublin', 'Marii Curie', '300C', '11', '555 312 123', '89011588290'),
+		('Andrzej', 'Andrzej', '99-351', 'Włocławek', 'Główna', '3E', '3', '543 123 888', '88061155443'),
+		('Jakub', 'Kowal', '33-230', 'Warszawa', 'Puławska', '33', Null, '777 777 777', '55112234562'),
+		('Michał', 'Bromiński', '09-212', 'Warszawa', 'Ekologiczna', '25', '22', '666 666 666', '95031355232'),
+		('Michał', 'Kujda', '01-494', 'Warszawa', 'Rosy Bailly', '1C', Null, '666 626 234', '94032312455'),
+		('Paweł', 'Kusicielek', '30-303', 'Pruszków', Null, '401', 'Null', '555 321 123', '55012155222'),
+		('Anna', 'Kowalczyk', '01-505', 'Warszawa', 'Nadwodna', '30', '12', '546 879 659', '89021585230'),
+		('Jacław', 'Rozmus', '20-350', 'Kraków', 'Marii Curie', '300C', '22', '667 631 557', '71073067344'),
+		('Huberta', 'Bartosiak', '30-500', 'Lublin', 'Główna', '3', null, '287 254 650', '74061973058'),
+		('Andromeda', 'Adamek', '10-800', 'Warszawa', 'Racławicka', '20', null, '723 420 610', '89051334881'),
+		('Niecisław', 'ŚWitała', '22-555', 'Kraków', 'Rakowiecka', '81', '12', '708 154 330', '67082435131'),
+		('Iwa', 'Szymanek', '33-440', 'Zakopane', 'Puławska', '35', '2', '595 810 620', '65062863154'),
+		('Anna', 'Zielonka', '07-400', 'Gliwice', 'Niepodległości', '32', '10', '172 537 850', '57102456561'),
+		('Marek', 'Góralczyk', '05-333', 'Sosnowiec', 'Dolna', '33', '15', '139 523 658', '91031803733'),
+		('Dorota', 'Kosicka', '19-303', 'Gdańsk', 'Górna', '121', Null, '321 479 793', '98122988203'),
+		('Małgorzata', 'Brzóska', '10-105', 'Gdynia', 'Boczna', '78', null, '142 553 559', '57041566600'),
+		('Marcin', 'Kot', '02-708', 'Szczecin', 'Poznańska', '58', '11', '136 516 860', '87082457595'),
+		('Dariusz', 'Dzik', '23-567', 'Sopot', 'Mazowiecka', '96', '9', '467 153 414', '85040624829'),
+		('Diana', 'Nycz', '67-324', 'Białystok', 'Krakowska', '10', '25', '538 343 829', '96050977429'),
+		('Edyta', 'Sagan', '06-632', 'Bielsk Podlaski', 'Kremowa', '9', null, '817 857 290', '99083052624'),
+		('Gabriel', 'Kowalczy', '20-455', 'Bielsko-Biała', 'Biała', '1B', null, '196 622 270', '66070613575'),
+		('Wojciech', 'Konieczny', '80-505', 'Poznań', 'Czarna', '3C', '5', '277 105 690', '51012491533'),
+		('Mariusz', 'Podgórski', '90-606', 'Toruń', 'Kwiatowa', '8B', '3', '831 794 577', '81072821397'),
+		('Klaudia', 'Badura', '55-555', 'Wadowice', 'Różana', '20A', '8', '886 232 342', '64020854245'),
+		('Marceli', 'Milewski', '66-666', 'Częstochowa', 'Jaskółki', '11', '20', '187 680 053', '89011588290');
 
-
-insert into Position (Workplace, ValidityOfOshTraining, VailidityOfMedicalExam)
+		
+insert into Position (Workplace, ValidityOfOshTraining, VailidityOfMedicalExam) --Validity in days
 	values
-		('Kierownik', 2, 2),
-		('Księgowy', 3, 99),
-		('Pracownik produkcji', 1, 1),
-		('Konserwator', 1, 1),
-		('Dyrektor', 4, 5);
+		('Kierownik', 2190, 730),				--1 All
+		('Kontroler jakości', 730, 730),		--2	Quality control
+		('Inżynier projektant', 730, 730),		--3 Quality control
+		('Operator', 365, 365),					--4	Production
+		('Elektromechanik', 365, 365),			--5	Maintenance
+		('Automatyk', 365, 365),				--6 Maintenance
+		('Handlowiec', 2190, 730),				--7 Logistics
+		('Księgowy', 2190, 730),				--8	HR&Finances
+		('Pracownik HR', 2190, 730),			--9	HR&Finances
+		('Dyrektor', null, null);				--10
 
 
 insert into Contract(StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTestDate, WorkplaceTrainingDate)
 	values
-		('2010-04-10', '2012-04-12', 5000, 1, 1, '2010-04-09', '2010-04-10'),
-		('2010-04-10', '2012-04-12', 4000, 2, 2, '2010-04-09', '2010-04-10'),
-		('2010-04-10', '2012-04-12', 2000, 3, 3, '2010-04-09', '2010-04-10'),
-		('2010-04-10', '2012-04-12', 3000, 4, 4, '2010-04-09', '2010-04-10'),
-		('2010-04-10', '2012-04-12', 6000, 5, 5, '2010-04-09', '2010-04-10');
+		('2018-03-22', '2020-03-22', 25000, 1, 10, '2018-03-20', '2018-03-23'),
+		('2018-05-06', '2020-05-06', 8000, 2, 1, '2018-05-05', '2018-05-06'),
+		('2018-06-13', '2020-06-13', 7000, 3, 1, '2018-06-10', '2018-06-13'),
+		('2018-03-16', '2020-03-16', 9000, 4, 1, '2018-03-12', '2018-03-16'),
+		('2018-02-15', '2020-02-15', 7500, 5, 1, '2018-02-13', '2018-02-15'),
+		('2018-03-22', '2020-03-22', 8000, 6, 1, '2018-03-20', '2018-03-23'),
+		('2018-05-06', '2020-05-06', 5000, 7, 2, '2018-05-05', '2018-05-06'),
+		('2018-06-13', '2020-06-13', 4000, 8, 2, '2018-06-10', '2018-06-13'),
+		('2018-03-16', '2020-03-16', 4500, 9, 3, '2018-03-12', '2018-03-16'),
+		('2018-02-15', '2020-02-15', 4000, 10, 3, '2018-02-13', '2018-02-15'),
+		('2018-03-22', '2020-03-22', 4000, 11, 4, '2018-03-20', '2018-03-23'),
+		('2018-05-06', '2020-05-06', 4700, 12, 4, '2018-05-05', '2018-05-06'),
+		('2018-06-13', '2020-06-13', 4300, 13, 4, '2018-06-10', '2018-06-13'),
+		('2018-03-16', '2020-03-16', 3700, 14, 4, '2018-03-12', '2018-03-16'),
+		('2018-02-15', '2020-02-15', 3500, 15, 4, '2018-02-13', '2018-02-15'),
+		('2018-03-22', '2020-03-22', 4500, 16, 4, '2018-03-20', '2018-03-23'),
+		('2018-05-06', '2020-05-06', 4000, 17, 4, '2018-05-05', '2018-05-06'),
+		('2018-06-13', '2020-06-13', 4200, 18, 4, '2018-06-10', '2018-06-13'),
+		('2018-03-16', '2020-03-16', 4100, 19, 4, '2018-03-12', '2018-03-16'),
+		('2018-02-15', '2020-02-15', 4700, 20, 4, '2018-02-13', '2018-02-15'),
+		('2018-03-22', '2020-03-22', 5000, 21, 5, '2018-03-20', '2018-03-23'),
+		('2018-05-06', '2020-05-06', 5100, 22, 5, '2018-05-05', '2018-05-06'),
+		('2018-06-13', '2020-06-13', 4700, 23, 6, '2018-06-10', '2018-06-13'),
+		('2018-03-16', '2020-03-16', 4500, 24, 6, '2018-03-12', '2018-03-16'),
+		('2018-02-15', '2020-02-15', 3500, 25, 7, '2018-02-13', '2018-02-15'),
+		('2018-03-22', '2020-03-22', 3500, 26, 7, '2018-03-20', '2018-03-23'),
+		('2018-05-06', '2020-05-06', 6500, 27, 8, '2018-05-05', '2018-05-06'),
+		('2018-06-13', '2020-06-13', 4500, 28, 9, '2018-06-10', '2018-06-13');
 
 
 Insert into AbsenceType(AbscenceReason, Multiplier)
@@ -38,19 +90,40 @@ Insert into AbsenceType(AbscenceReason, Multiplier)
 
 insert into Absence(IdAbsenceType, IdEmployee, StartOfAbsence, EndOfAbsence)
 	values
-		(1, 1, '2012-02-10', '2012-02-24'),
-		(2, 2, '2013-06-01', '2013-06-04'),
-		(3, 3, '2014-07-21', '2014-07-21'),
-		(4, 4, '2015-03-02', '2015-03-02'),
-		(5, 5, '2016-08-15', '2016-08-23');
+		(1, 1, '2018-05-12', '2018-05-19'),
+		(2, 2, '2018-08-01', '2018-08-08'),
+		(3, 3, '2018-10-21', '2018-10-22'),
+		(4, 4, '2018-11-02', '2018-11-02'),
+		(5, 5, '2018-12-15', '2018-12-20'),
+		(1, 7, '2019-01-12', '2019-01-19'),
+		(1, 11, '2019-01-01', '2019-01-08'),
+		(3, 13, '2019-01-21', '2019-01-23'),
+		(5, 17, '2019-01-02', '2019-01-22'),
+		(3, 20, '2019-02-15', '2019-02-20'),
+		(1, 21, '2019-02-12', '2019-02-19'),
+		(5, 22, '2019-02-01', '2019-02-08'),
+		(2, 9, '2019-02-21', '2019-02-22'),
+		(2, 19, '2019-03-02', '2019-03-02'),
+		(5, 28, '2019-03-15', '2019-03-20'),
+		(1, 6, '2019-05-12', '2019-05-19'),
+		(2, 12, '2019-06-01', '2019-06-08'),
+		(2, 1, '2019-06-21', '2019-06-22'),
+		(2, 2, '2019-07-02', '2019-07-02'),
+		(1, 3, '2019-06-15', '2019-06-20'),
+		(1, 4, '2019-05-12', '2019-05-19'),
+		(1, 5, '2019-05-01', '2019-05-08'),
+		(2, 6, '2019-04-21', '2019-04-22'),
+		(2, 11, '2019-07-02', '2019-07-10'),
+		(1, 23, '2019-05-15', '2019-05-20');
+		
 
 insert into Payment(Bonus, IdEmployee, Date, Sum)
 	values
-		(DEFAULT, 1, '2010-03-01', 3500),
-		(300, 2, '2010-03-01', 3000),
-		(100, 3, '2010-03-01', 3000),
-		(500, 4, '2010-03-01', 3000),
-		(250, 5, '2010-03-01', 3000);
+		(DEFAULT, 1, '2018-03-01', 3500),
+		(300, 2, '2018-03-01', 3000),
+		(100, 3, '2018-03-01', 3000),
+		(500, 4, '2018-03-01', 3000),
+		(250, 5, '2018-03-01', 3000);
 
 INSERT INTO Department(DepartmentName)
 	values
@@ -62,11 +135,20 @@ INSERT INTO Department(DepartmentName)
 
 insert into Staff(IdDeparment, IdPosition, Number, DateFrom)
 	values 
-		(1, 3, 10, '2019-04-04'),
-		(1, 3, 10, '2019-04-04'),
-		(1, 3, 10, '2019-04-04'),
-		(1, 3, 10, '2019-04-04'),
-		(1, 3, 10, '2019-04-04');
+		(1, 1, 1, '2019-04-04'),
+		(1, 4, 5, '2019-04-04'),
+		(2, 1, 1, '2019-04-04'),
+		(2, 5, 2, '2019-04-04'),
+		(2, 6, 2, '2019-04-04'),
+		(3, 1, 1, '2019-04-04'),
+		(3, 8, 1, '2019-04-04'),
+		(3, 9, 2, '2019-04-04'),
+		(4, 1, 1, '2019-04-04'),
+		(4, 7, 2, '2019-04-04'),
+		(5, 9, 2, '2019-04-04'),
+		(5, 1, 1, '2019-04-04'),
+		(5, 7, 2, '2019-04-04');
+
 
 INSERT INTO Contractor(ContractorName,Phone,Email,City,PostalCode,Street,HouseNumber,ApartmentNumber,NIP,KRS)
 	values
@@ -74,8 +156,7 @@ INSERT INTO Contractor(ContractorName,Phone,Email,City,PostalCode,Street,HouseNu
 		('Energa',652232522,'energa.sa@energa.pl','Gdańsk',80309,'al. Grunwaldzka','472','',9570957722,0000271591),
 		('MPWiK',224455000,'dok@mpwik.com.pl','Warszawa',02015,'pl. Starynkiewicza','5','',5250005662,0000146138),
 		('T-Mobile',602913000,'pr@t-mobile.pl','Warszawa',02674,'ul. Marynarska','12','',5261040567,0000391193),
-		('T-Mobile',222200000,'nc+@canal+.pl','Łódź',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644)
-		;
+		('T-Mobile',222200000,'nc+@canal+.pl','Łódź',31535,'al. gen. W. Sikorskiego','12','2',5210082774,0000469644);
 
 INSERT INTO InvoiceType(Type)
 	values
@@ -104,11 +185,34 @@ INSERT INTO Expense(IdDepartment,IdInvoice)
 
 insert into Allocation(IdEmployee, IdDepartment, StartDate, EndDate)
 	Values
-		(1, 1, '2011-10-11', NULL),
-		(2, 2, '2011-10-11', NULL),
-		(3, 3, '2011-10-11', NULL),
-		(4, 4, '2011-10-11', NULL),
-		(5, 5, '2011-10-11', NULL);
+		(2, 1, '2018-03-22', NULL),
+		(3, 2, '2018-05-06', NULL),
+		(4, 3, '2018-06-13', NULL),
+		(5, 4, '2018-03-16', NULL),
+		(6, 5, '2018-02-15', NULL),
+		(7, 5, '2018-03-22', NULL),
+		(8, 5, '2018-05-06', NULL),
+		(9, 5, '2018-06-13', NULL),
+		(10, 5, '2018-03-13', NULL),
+		(11, 1, '2018-02-22', NULL),
+		(12, 1, '2018-03-06', NULL),
+		(13, 1, '2018-05-13', NULL),
+		(14, 1, '2018-06-16', NULL),
+		(15, 1, '2018-03-15', NULL),
+		(16, 1, '2018-02-22', NULL),
+		(17, 1, '2018-03-06', NULL),
+		(18, 1, '2018-05-13', NULL),
+		(19, 1, '2018-06-16', NULL),
+		(20, 1, '2018-03-15', NULL),
+		(21, 2, '2018-02-22', NULL),
+		(22, 2, '2018-03-06', NULL),
+		(23, 2, '2018-05-13', NULL),
+		(24, 2, '2018-06-16', NULL),
+		(25, 4, '2018-03-15', NULL),
+		(26, 4, '2018-02-22', NULL),
+		(27, 3, '2018-05-06', NULL),
+		(28, 3, '2018-06-13', NULL);
+		
 
 insert into MedicalExamination(IdEmployee, Date)
 	values 
@@ -123,6 +227,7 @@ insert into EducationLevel(EducationLevel, Degree, DegreeShort)
 		('Podstawowe', Null, null),
 		('Gimnazjalne', Null, null),
 		('Ponadgimnazjalne', Null, null),
+		('Średnie', Null, null),
 		('Policealne', Null, null),
 		('Studium', Null, null),
 		('Wyższe I stopnia techniczne', 'inżynier', 'inż'),
@@ -130,11 +235,11 @@ insert into EducationLevel(EducationLevel, Degree, DegreeShort)
 
 insert into Training(IdEmployee, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice)
 	values 
-		(1, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 600),
-		(2, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1000),
-		(3, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 400),
-		(4, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 500),
-		(5, 'Szkolenie kierownicze', '2020-01-05', '2020-01-06', 1500);
+		(2, 'Szkolenie kierownicze', '2020-01-05', '2020-01-05', 1000),
+		(3, 'Szkolenie kierownicze', '2020-01-05', '2020-01-05', 1000),
+		(4, 'Szkolenie kierownicze', '2020-01-05', '2020-01-05', 1000),
+		(5, 'Szkolenie kierownicze', '2020-01-05', '2020-01-05', 1000),
+		(6, 'Szkolenie kierownicze', '2020-01-05', '2020-01-05', 1000);
 		
 
 insert into Education(IdEmployee, IdEducationLevel, GraduationDate)
@@ -441,35 +546,35 @@ insert into OutsourcingCommitment values('3', '2019-11-30', '');
 
  insert into PlannedProduction (IdDetail, IdMachine, PlannedStartd,PlannedEndd,Inproduction)
  values 
-	('1', '1', '2019-07-31','2019-02-15','0'),
-	('2', '2', '2019-07-31','2019-03-30','0'),
-	('3', '3', '2019-07-31','2019-03-30','1'),
-	('4', '4', '2019-07-31','2019-04-30','1'),
-	('5', '5', '2019-07-31','2019-05-30','1');
+	(1, 2, '2019-07-31','2019-02-15','0'),
+	(2, 2, '2019-07-31','2019-03-30','0'),
+	(3, 1, '2019-07-31','2019-03-30','1'),
+	(4, 1, '2019-07-31','2019-04-30','1'),
+	(5, 3, '2019-07-31','2019-05-30','1');
 
 insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, EndDate)
  values
-	('1','1', '2019-01-27', '2019-02-15'),
-	('2','2', '2019-02-15', '2019-03-27'),
-	('3','3', '2019-03-27', '2019-04-27'),
-	('4','4', '2019-04-27', '2019-05-27'),
-	('5','5', '2019-05-27', '2019-06-27');
+	(1,1, '2019-01-27', '2019-02-15'),
+	(2,2, '2019-02-15', '2019-03-27'),
+	(3,3, '2019-03-27', '2019-04-27'),
+	(4,4, '2019-04-27', '2019-05-27'),
+	(5,5, '2019-05-27', '2019-06-27');
 
  insert into ProductionProces(IdPlan, StartDate, EndDate)
  values  
-	('1', '2019-03-23','2019-04-23'),
-	('2', '2019-04-23','2019-05-23'),
-	('3', '2019-05-23','2019-06-23'),
-	('4', '2019-06-23','2019-07-23'),
-	('5', '2019-08-23','2019-09-23');
+	(1, '2019-03-23','2019-04-23'),
+	(2, '2019-04-23','2019-05-23'),
+	(3, '2019-05-23','2019-06-23'),
+	(4, '2019-06-23','2019-07-23'),
+	(5, '2019-08-23','2019-09-23');
 
  insert into Failure(IdProces, Specification, FailureDate)
  values 
-	('1','wybuchło','2019-02-23'),
-	('2','pali się','2019-03-23'),
-	('3','stuka','2019-04-23'),
-	('4','ale urwał','2019-05-23'),
-	('5','nie dziala','2019-06-23');
+	(1,'wybuchło','2019-02-23'),
+	(2,'pali się','2019-03-23'),
+	(3,'stuka','2019-04-23'),
+	(4,'ale urwał','2019-05-23'),
+	(5,'nie dziala','2019-06-23');
 
 insert into FailureMaintenance values (1, 2);
 
@@ -480,3 +585,13 @@ insert into OutControl (IdProcess, IdEmployee, ControlDate, ControlStatus, Comme
 (3, 3, '2019-01-04 15:23:55', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
 (4, 3, '2019-01-07 16:05:45', 1, 'Wszystkie zmierzone parametry prawidłowe', 10),
 (5, 3, '2019-01-08 15:42:22', 0, 'Nierówne tłoczenie', 10);
+
+UPDATE OrderCustomer
+SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*(1+OrderCustomer.Markup/100))
+FROM OrderDetail
+JOIN OrderCustomer
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+JOIN TechnicalProductData
+ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
+JOIN Customer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer
