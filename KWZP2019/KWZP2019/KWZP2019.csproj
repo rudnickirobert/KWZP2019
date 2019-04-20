@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -151,9 +151,6 @@
     <Compile Include="EntranceControlForm.Designer.cs">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntranceControlView.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="HR\Examination.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,9 +241,9 @@
     <Compile Include="OshTrainingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-      <Compile Include="OshTrainingForm.Designer.cs">
-        <DependentUpon>OshTrainingForm.cs</DependentUpon>
-      </Compile>
+    <Compile Include="OshTrainingForm.Designer.cs">
+      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSHControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,12 +285,6 @@
     </Compile>
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HR\Paychecks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HR\Paychecks.Designer.cs">
-      <DependentUpon>Paychecks.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -504,9 +495,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-      <EmbeddedResource Include="OshTrainingForm.resx">
-        <DependentUpon>OshTrainingForm.cs</DependentUpon>
-      </EmbeddedResource>
+    <EmbeddedResource Include="OshTrainingForm.resx">
+      <DependentUpon>OshTrainingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewProductionPlan.resx">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,9 +506,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSHControl.resx">
       <DependentUpon>OSHControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OSHTraining.resx">
-      <DependentUpon>OSHTraining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
