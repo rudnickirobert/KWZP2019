@@ -12,8 +12,8 @@ namespace KWZP2019
 {
     public partial class ProductionPlanned : Form
     {
-        RoofingCompanyEntities db; 
-
+        RoofingCompanyEntities db;
+        static int id, newId;
         public ProductionPlanned(RoofingCompanyEntities db)
         {
             InitializeComponent();
@@ -23,6 +23,7 @@ namespace KWZP2019
         private void ProductionPlanned_Load(object sender, EventArgs e)
         {
             PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
+            newId = PlannedProductionGridView.RowCount + 1;
         }
 
 
@@ -36,14 +37,28 @@ namespace KWZP2019
         }
         private void txtBoxPlanSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
+            int srchPlanNumber;
             if(isTxtBoxEmpty(txtBoxPlanSearch)) 
             {
                 PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
             }
+            else
+            {
+                srchPlanNumber = Convert.ToInt32(txtBoxPlanSearch.Text.Trim());
+                PlannedProductionGridView.DataSource = (from PlannedProduction in db.PlannedProductions
+                                                        where PlannedProduction.IdPlan == srchPlanNumber
+                                                        select PlannedProduction).ToList();
+            }
         }
+
+        private void PlannedProductionGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(this.PlannedProductionGridView.CurrentRow.Cells[0].Value);
+        }
+
         private void btnAddPlan_Click(object sender, EventArgs e)
         {
-            NewProductionPlan NewProductionPlanForm = new NewProductionPlan(db);
+            NewProductionPlan NewProductionPlanForm = new NewProductionPlan(db,id,newId);
             NewProductionPlanForm.Show();
         }
         
