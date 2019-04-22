@@ -580,7 +580,7 @@ insert into FailureMaintenance values (1, 2);
 
 insert into OutControl (IdProcess, IdEmployee, StartControlDate, EndControlDate, WidthAcceptableDeviation, LenghtAcceptableDeviation)
 values
-	('1', '3', '2019-01-02', '2019-01-02', '1.2','1.3'),
+	('1', '3', '2019-01-02', '2019-01-02', '2.2','2.3'),
 	('2', '3', '2019-02-01', '2019-02-12', '1.2','1.3'),
 	('3', '3', '2019-02-03', '2019-02-03', '1.2','1.3'),
 	('4', '3', '2019-02-13', '2019-03-13', '1.2','1.4'),
@@ -592,7 +592,7 @@ values
 	('9', '3', '2019-03-06', '2019-03-06', '1.2','1.3'),
 	('10', '3', '2019-03-08', '2019-03-08', '1.2','1.3');*/
 
-insert into OutputProductMeasurements(IdMeasurement, IdProcess, Lenght, Width)
+insert into OutputProductMeasurements(IdMeasurement, IdProcess, MeasuredLenght, MeasuredWidth)
 values
 	('1', '1', '4941.97', '795.96'),
 	('2', '1', '5012.61', '802.36'),
@@ -693,7 +693,8 @@ values
 	('97', '1', '4951.60', '801.65'),
 	('98', '1', '4953.18', '795.16'),
 	('99', '1', '4977.38', '814.90'),
-	('100', '1', '4993.76', '797.03');
+	('100', '1', '4996.76', '755.03'),
+	('101', '1', '4993.76', '797.03');
 
 UPDATE OrderCustomer
 SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*(1+OrderCustomer.Markup/100))

@@ -35,15 +35,15 @@ create table OutControl(
 	IdEmployee int not null,
 	StartControlDate DateTime not null,
     EndControlDate DateTime not null,
-    WidthAcceptableDeviation decimal not null,
-	LenghtAcceptableDeviation decimal not null
+    WidthAcceptableDeviation float not null,
+	LenghtAcceptableDeviation float not null
     );
 
 create table OutputProductMeasurements(
     IdMeasurement int primary key not null,
     IdProcess int not null,
-    Lenght decimal not null,
-    Width decimal not null
+    MeasuredLenght float not null,
+    MeasuredWidth float not null
 	);
 
 create table SafetyControl(
@@ -676,16 +676,34 @@ GO
 
 CREATE VIEW TechnicalProductDataPerProcess
 AS
-SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width 
+SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
 FROM OrderDetail A, Product B, PlannedProduction C, ProductionProces D, OutControl E, TechnicalProductData F
 WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
 
 GO
 
+CREATE VIEW DevotionsInMeasuremntsPerProcess
+AS
+SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
+FROM TechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
+WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
+
+GO
+
+CREATE VIEW SuccesfullyProducedPerProcess
+AS
+SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced
+FROM DevotionsInMeasuremntsPerProcess
+WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<= WidthAcceptableDeviation
+GROUP BY IdProcess
+
+GO
+
 CREATE VIEW vOutputMagazine
 AS
-SELECT ProductCode, Quantity, ControlDate
-FROM Product, OutControl;
+SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
+FROM TechnicalProductDataPerProcess A, OutControl B, SuccesfullyProducedPerProcess C
+WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
 CREATE VIEW vInputMagazine
