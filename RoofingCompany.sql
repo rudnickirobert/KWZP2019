@@ -1,11 +1,8 @@
 ﻿use master;
-
-drop database RoofingCompany;
 go
-
+drop database RoofingCompany;
 create database RoofingCompany;
 go
-
 use RoofingCompany;
 
 create table Accident(
@@ -48,7 +45,6 @@ create table OutputProductMeasurements(
     Lenght decimal not null,
     Width decimal not null
 	);
-
 
 create table SafetyControl(
 	IdInspection int primary key identity (1,1) not null,
@@ -114,7 +110,7 @@ CREATE TABLE OrderCustomer
 	IdEmployee int NOT NULL,
 	OrderDate datetime NOT NULL,
 	Cost money NOT NULL,
-	Markup int NOT NULL);
+	Markup float NOT NULL);
 
 CREATE TABLE OrderDetail
 	(IdDetail int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -371,8 +367,8 @@ PESEL bigint,
 create table Position(
 IdPosition int not null Primary key identity(1,1),
 Workplace nvarchar(50) null,
-ValidityOfOshTraining tinyint null,
-VailidityOfMedicalExam tinyint null
+ValidityOfOshTraining int null,
+VailidityOfMedicalExam int null
 );
 
 create table Contract(
@@ -423,7 +419,7 @@ Create table Staff(
 IdStaff int primary key identity(1,1) not null,
 IdDeparment int foreign key references Department(IdDepartment),
 IdPosition int foreign key references Position(IdPosition),
-Number tinyint,
+Number int,
 DateFrom date
 );
 
@@ -551,6 +547,8 @@ ALTER TABLE SfOrderDetail ADD CONSTRAINT FkSfOrderDetailSemiFinished FOREIGN KEY
 ALTER TABLE PlannedProduction ADD CONSTRAINT FkOrderDetail
 FOREIGN KEY (IdDetail) REFERENCES OrderDetail(IdDetail)
 
+ALTER TABLE PlannedProduction ADD CONSTRAINT FkMachine
+FOREIGN KEY (IdMachine) REFERENCES Maintenance(IdMaintenance)
 -- planned_prod_empl_det FOREING KEYS--------
 ALTER TABLE PlannedProductionEmployeeDetails ADD CONSTRAINT FKPlannedProductionEmployeeDetailsAllocation
 FOREIGN KEY (IdEmployee) REFERENCES Allocation(IdAllocation)
@@ -610,21 +608,18 @@ on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
 
 go
 create view ViewOshTraining as
-select Employee.EmployeeName, Employee.EmployeeSurName, SafetyTraining.TrainingDate, [NeedPos].ValidityOfOshTraining, [NeedPos].DepartmentName
+select Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Department.DepartmentName, Contract.EndDate, SafetyTraining.TrainingDate, Position.ValidityOfOshTraining
 from Employee
 join Contract
 on Employee.IdEmployee = Contract.IdEmployee
-join(
-select Department.DepartmentName, Staff.IdPosition, Position.ValidityOfOshTraining
-from Staff
-join Department
-on Staff.IdDeparment = Department.IdDepartment
-join Position
-on Staff.IdPosition = Position.IdPosition) as [NeedPos]
-on [NeedPos].IdPosition = Contract.IdPosition
 join SafetyTraining
-on Employee.IdEmployee = SafetyTraining.IdEmployee;
-
+on Employee.IdEmployee = SafetyTraining.IdEmployee
+join Position
+on Position.IdPosition = Contract.IdPosition
+join Allocation
+on Employee.IdEmployee = Allocation.IdEmployee
+join Department
+on Department.IdDepartment = Allocation.IdDepartment;
 
 
 /*====SALES DEPARTMENT===*/
@@ -689,7 +684,7 @@ GO
 
 CREATE VIEW vOutputMagazine
 AS
-SELECT ProductCode, Quantity, EndControlDate
+SELECT ProductCode, Quantity, ControlDate
 FROM Product, OutControl;
 
 GO
@@ -697,4 +692,15 @@ CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
+GO
 
+CREATE VIEW vPredictedPriceForCustomer
+AS
+SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
+FROM OrderDetail
+JOIN OrderCustomer
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+JOIN TechnicalProductData
+ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
+JOIN Customer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer

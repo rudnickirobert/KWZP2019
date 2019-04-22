@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class Paychecks : Form
+    public partial class OSHControl : Form
     {
-        public Paychecks()
+        public OSHControl()
         {
             InitializeComponent();
         }
