@@ -313,6 +313,12 @@
     <Compile Include="ProductionFailures.Designer.cs">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionHistory.Designer.cs">
+      <DependentUpon>ProductionHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionPlanned.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,12 @@
     </Compile>
     <Compile Include="ProductionProducts.Designer.cs">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionSelection.Designer.cs">
+      <DependentUpon>ProductionSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionTechnology.cs">
       <SubType>Form</SubType>
@@ -513,6 +525,9 @@
     <EmbeddedResource Include="ProductionFailures.resx">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductionHistory.resx">
+      <DependentUpon>ProductionHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductionPlanned.resx">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
     </EmbeddedResource>
@@ -521,6 +536,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionProducts.resx">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionSelection.resx">
+      <DependentUpon>ProductionSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
