@@ -14,18 +14,9 @@ namespace KWZP2019
     
     public partial class Technology
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Technology()
-        {
-            this.Products = new HashSet<Product>();
-        }
-    
         public int IdTechnology { get; set; }
         public string TechnologyName { get; set; }
         public int TimePermeter { get; set; }
         public int SpeedFactor { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
     }
 }

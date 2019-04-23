@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -279,7 +279,7 @@
           <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
-          <Property Name="Markup" Type="int" Nullable="false" />
+          <Property Name="Markup" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -428,8 +428,8 @@
           </Key>
           <Property Name="IdPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
-          <Property Name="ValidityOfOshTraining" Type="tinyint" />
-          <Property Name="VailidityOfMedicalExam" Type="tinyint" />
+          <Property Name="ValidityOfOshTraining" Type="int" />
+          <Property Name="VailidityOfMedicalExam" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -524,7 +524,7 @@
           <Property Name="IdStaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdDeparment" Type="int" />
           <Property Name="IdPosition" Type="int" />
-          <Property Name="Number" Type="tinyint" />
+          <Property Name="Number" Type="int" />
           <Property Name="DateFrom" Type="date" />
         </EntityType>
         <EntityType Name="Supplier">
@@ -674,7 +674,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have 
           <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
           <Property Name="EndDate" Type="date" />
           <Property Name="TrainingDate" Type="datetime" Nullable="false" />
-          <Property Name="ValidityOfOshTraining" Type="tinyint" />
+          <Property Name="ValidityOfOshTraining" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vIndividualCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1289,6 +1289,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             </Principal>
             <Dependent Role="SafetyControl">
               <PropertyRef Name="IdInspectedEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkMachine">
+          <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="1" />
+          <End Role="PlannedProduction" Type="Self.PlannedProduction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maintenance">
+              <PropertyRef Name="IdMaintenance" />
+            </Principal>
+            <Dependent Role="PlannedProduction">
+              <PropertyRef Name="IdMachine" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1908,6 +1920,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <End Role="Employee" EntitySet="Employee" />
             <End Role="SafetyControl" EntitySet="SafetyControl" />
           </AssociationSet>
+          <AssociationSet Name="FkMachine" Association="Self.FkMachine">
+            <End Role="Maintenance" EntitySet="Maintenance" />
+            <End Role="PlannedProduction" EntitySet="PlannedProduction" />
+          </AssociationSet>
           <AssociationSet Name="FkOrderCustomerCustomer" Association="Self.FkOrderCustomerCustomer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="OrderCustomer" EntitySet="OrderCustomer" />
@@ -2298,6 +2314,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <NavigationProperty Name="MaintDescription" Relationship="Self.FK_MainDescriptionMaintenance" FromRole="Maintenance" ToRole="MaintDescription" />
           <NavigationProperty Name="Realizations" Relationship="Self.FK_MaintenanceRealization" FromRole="Maintenance" ToRole="Realization" />
           <NavigationProperty Name="MaintType" Relationship="Self.FK_MaintTypeMaintenance" FromRole="Maintenance" ToRole="MaintType" />
+          <NavigationProperty Name="PlannedProduction" Relationship="RoofingCompanyModel.FkMachine" FromRole="Maintenance" ToRole="PlannedProduction" />
         </EntityType>
         <EntityType Name="MaintPart">
           <Key>
@@ -2497,6 +2514,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <NavigationProperty Name="OrderDetail1" Relationship="Self.PlannedProductionOrderDetail" FromRole="PlannedProduction" ToRole="OrderDetail" />
           <NavigationProperty Name="PlannedProductionEmployeeDetails" Relationship="Self.FKPlannedProductionEmployeeDetailsPlannedProduction" FromRole="PlannedProduction" ToRole="PlannedProductionEmployeeDetails" />
           <NavigationProperty Name="ProductionProces" Relationship="Self.FKProductionProcesPlannedProduction" FromRole="PlannedProduction" ToRole="ProductionProces" />
+          <NavigationProperty Name="Maintenance" Relationship="RoofingCompanyModel.FkMachine" FromRole="PlannedProduction" ToRole="Maintenance" />
         </EntityType>
         <EntityType Name="PlannedProductionEmployeeDetail">
           <Key>
@@ -2688,7 +2706,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <Property Name="TechnologyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TimePermeter" Type="Int32" Nullable="false" />
           <Property Name="SpeedFactor" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="Self.FkProductIdTech" FromRole="Technology" ToRole="Product" />
         </EntityType>
         <EntityType Name="Training">
           <Key>
@@ -3736,6 +3753,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <End Role="SemiFinished" EntitySet="SemiFinisheds" />
             <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
           </AssociationSet>
+          <AssociationSet Name="FkMachine" Association="RoofingCompanyModel.FkMachine">
+            <End Role="Maintenance" EntitySet="Maintenances" />
+            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
           <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
@@ -3982,6 +4003,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             </Principal>
             <Dependent Role="SfOrderDetail">
               <PropertyRef Name="IdSemiFinished" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkMachine">
+          <End Type="RoofingCompanyModel.Maintenance" Role="Maintenance" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maintenance">
+              <PropertyRef Name="IdMaintenance" />
+            </Principal>
+            <Dependent Role="PlannedProduction">
+              <PropertyRef Name="IdMachine" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
