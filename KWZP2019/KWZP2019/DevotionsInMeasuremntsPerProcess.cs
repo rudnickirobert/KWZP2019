@@ -12,10 +12,14 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vOutputMagazine
+    public partial class DevotionsInMeasuremntsPerProcess
     {
-        public string ProductCode { get; set; }
-        public System.DateTime EndControlDate { get; set; }
-        public Nullable<int> SuccesfullProduced { get; set; }
+        public int IdMeasurement { get; set; }
+        public int IdProcess { get; set; }
+        public int QuantityToBeProducted { get; set; }
+        public double LenghtDeviation { get; set; }
+        public double WidthDeviation { get; set; }
+        public double LenghtAcceptableDeviation { get; set; }
+        public double WidthAcceptableDeviation { get; set; }
     }
 }

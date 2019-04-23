@@ -41,7 +41,7 @@
             this.lbltextBAcceptableLenghtDeviation = new System.Windows.Forms.Label();
             this.lblControlDateEnd = new System.Windows.Forms.Label();
             this.txtbAcceptableLenghtDeviation = new System.Windows.Forms.TextBox();
-            this.cbProcesNumber = new System.Windows.Forms.ComboBox();
+            this.cbProcessNumber = new System.Windows.Forms.ComboBox();
             this.cbControlerId = new System.Windows.Forms.ComboBox();
             this.lbltextBAcceptableHeightDeviation = new System.Windows.Forms.Label();
             this.txtbAcceptableHeightDeviation = new System.Windows.Forms.TextBox();
@@ -206,13 +206,13 @@
             this.txtbAcceptableLenghtDeviation.Size = new System.Drawing.Size(160, 26);
             this.txtbAcceptableLenghtDeviation.TabIndex = 43;
             // 
-            // cbProcesNumber
+            // cbProcessNumber
             // 
-            this.cbProcesNumber.FormattingEnabled = true;
-            this.cbProcesNumber.Location = new System.Drawing.Point(566, 245);
-            this.cbProcesNumber.Name = "cbProcesNumber";
-            this.cbProcesNumber.Size = new System.Drawing.Size(160, 21);
-            this.cbProcesNumber.TabIndex = 53;
+            this.cbProcessNumber.FormattingEnabled = true;
+            this.cbProcessNumber.Location = new System.Drawing.Point(566, 245);
+            this.cbProcessNumber.Name = "cbProcessNumber";
+            this.cbProcessNumber.Size = new System.Drawing.Size(160, 21);
+            this.cbProcessNumber.TabIndex = 53;
             // 
             // cbControlerId
             // 
@@ -255,6 +255,7 @@
             this.btnSMeasures.Text = "Uruchom Pomiary";
             this.btnSMeasures.UseCompatibleTextRendering = true;
             this.btnSMeasures.UseVisualStyleBackColor = false;
+            this.btnSMeasures.Click += new System.EventHandler(this.btnSMeasures_Click);
             // 
             // stpStartDate
             // 
@@ -281,7 +282,7 @@
             this.Controls.Add(this.stpStartDate);
             this.Controls.Add(this.btnSMeasures);
             this.Controls.Add(this.cbControlerId);
-            this.Controls.Add(this.cbProcesNumber);
+            this.Controls.Add(this.cbProcessNumber);
             this.Controls.Add(this.txtbAcceptableHeightDeviation);
             this.Controls.Add(this.txtbAcceptableLenghtDeviation);
             this.Controls.Add(this.txtbMeasurmentsNumber);
@@ -324,7 +325,7 @@
         private System.Windows.Forms.Label lbltextBAcceptableLenghtDeviation;
         private System.Windows.Forms.Label lblControlDateEnd;
         private System.Windows.Forms.TextBox txtbAcceptableLenghtDeviation;
-        private System.Windows.Forms.ComboBox cbProcesNumber;
+        private System.Windows.Forms.ComboBox cbProcessNumber;
         private System.Windows.Forms.ComboBox cbControlerId;
         private System.Windows.Forms.Label lbltextBAcceptableHeightDeviation;
         private System.Windows.Forms.TextBox txtbAcceptableHeightDeviation;

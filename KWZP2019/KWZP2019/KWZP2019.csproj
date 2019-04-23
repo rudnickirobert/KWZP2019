@@ -64,6 +64,9 @@
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevotionsInMeasuremntsPerProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntranceControlView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -289,6 +292,15 @@
     <Compile Include="OutControlForm.Designer.cs">
       <DependentUpon>OutControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OutMeasures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutMeasures.Designer.cs">
+      <DependentUpon>OutMeasures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutputProductMeasurements.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Outsourcing.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -459,6 +471,9 @@
     <Compile Include="Staff.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SuccesfullyProducedPerProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Supplier.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -466,6 +481,9 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TechnicalProductData.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechnicalProductDataPerProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Technology.cs">
@@ -566,6 +584,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSHControl.resx">
       <DependentUpon>OSHControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutMeasures.resx">
+      <DependentUpon>OutMeasures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartsForm.resx">
       <DependentUpon>PartsForm.cs</DependentUpon>

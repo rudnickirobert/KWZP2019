@@ -12,10 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vOutputMagazine
+    public partial class SuccesfullyProducedPerProcess
     {
-        public string ProductCode { get; set; }
-        public System.DateTime EndControlDate { get; set; }
+        public int IdProcess { get; set; }
         public Nullable<int> SuccesfullProduced { get; set; }
+        public int QuantityToBeProducted { get; set; }
     }
 }

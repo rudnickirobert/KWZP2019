@@ -137,6 +137,12 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="23.75" PointY="17.75" />
         <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdMac__0B91BA14" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinished" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutputProductMeasurements" Width="1.5" PointX="6" PointY="43.5" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.DevotionsInMeasuremntsPerProcess" Width="1.5" PointX="15.375" PointY="23.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SuccesfullyProducedPerProcess" Width="1.5" PointX="9.375" PointY="22.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.TechnicalProductDataPerProcess" Width="1.5" PointX="17.375" PointY="23.75" />
+        <AssociationConnector Association="RoofingCompanyModel.FkMachine" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutputProductMeasurements" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,6 +22,12 @@ namespace KWZP2019
             this.startForm = startForm;
             this.qualityControlForm = qualityControlForm;
             InitializeComponent();
+            ComponentsDataInitialize();
+        }
+
+        private void ComponentsDataInitialize()
+        {
+            cbProcessNumber.DataSource = db.SuccesfullyProducedPerProcess.Where(e => e.SuccesfullProduced == e.QuantityToBeProducted).ToList();
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -39,6 +45,12 @@ namespace KWZP2019
         {
             this.qualityControlForm.Show();
             this.Hide();
+        }
+
+        private void btnSMeasures_Click(object sender, EventArgs e)
+        {
+            OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this);
+            outControlForm.Show();
         }
     }
 }
