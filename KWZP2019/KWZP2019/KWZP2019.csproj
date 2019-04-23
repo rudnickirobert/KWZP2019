@@ -202,6 +202,12 @@
     <Compile Include="Machine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MachinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachinesForm.Designer.cs">
+      <DependentUpon>MachinesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MachineType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -210,6 +216,18 @@
     </Compile>
     <Compile Include="Maintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceCalendarForm.Designer.cs">
+      <DependentUpon>MaintenanceCalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceEmployeeCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceEmployeeCalendarForm.Designer.cs">
+      <DependentUpon>MaintenanceEmployeeCalendarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MaintenanceManagement.cs">
       <SubType>Form</SubType>
@@ -225,6 +243,12 @@
     </Compile>
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMaintenanceForm.Designer.cs">
+      <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewProductionPlan.cs">
       <SubType>Form</SubType>
@@ -282,6 +306,12 @@
     </Compile>
     <Compile Include="PartRequest.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsForm.Designer.cs">
+      <DependentUpon>PartsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -495,6 +525,18 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MachinesForm.resx">
+      <DependentUpon>MachinesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceCalendarForm.resx">
+      <DependentUpon>MaintenanceCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceEmployeeCalendarForm.resx">
+      <DependentUpon>MaintenanceEmployeeCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMaintenanceForm.resx">
+      <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -506,6 +548,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSHControl.resx">
       <DependentUpon>OSHControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartsForm.resx">
+      <DependentUpon>PartsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
@@ -542,6 +587,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Finances\Salaries.resx">
       <DependentUpon>Salaries.cs</DependentUpon>
@@ -593,6 +639,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\53062472_302328053765523_8291849142804676608_n.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
