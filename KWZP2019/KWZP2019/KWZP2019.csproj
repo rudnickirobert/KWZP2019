@@ -103,6 +103,12 @@
     <Compile Include="Finances\AllCosts.Designer.cs">
       <DependentUpon>AllCosts.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Allocation.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -623,6 +629,7 @@
     <None Include="Maintenance.datasource" />
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Product.datasource" />
     <None Include="PlannedProduction.datasource" />
     <None Include="PlannedProductionEmployeeDetail.datasource" />
     <None Include="Product.datasource" />

@@ -27,7 +27,7 @@ namespace KWZP2019
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            ProductionProducts ProductionProductsForm = new ProductionProducts();
+            ProductionProducts ProductionProductsForm = new ProductionProducts(db);
             ProductionProductsForm.Show();
         }
 
