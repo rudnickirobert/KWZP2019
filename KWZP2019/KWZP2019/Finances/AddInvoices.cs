@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
+
+
     public partial class AddInvoices : Form
     {
-        public AddInvoices()
+        RoofingCompanyEntities db;
+        public AddInvoices(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

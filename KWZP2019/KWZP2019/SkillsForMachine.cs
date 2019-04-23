@@ -19,5 +19,6 @@ namespace KWZP2019
         public int IdPosition { get; set; }
     
         public virtual Position Position { get; set; }
+        public virtual Machine Machine { get; set; }
     }
 }
