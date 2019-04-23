@@ -20,6 +20,13 @@ namespace KWZP2019
             this.db = db;
         }
 
+        private void deleteProduct()
+        {
+            var produkt = db.Products.FirstOrDefault(f => f.IdProduct == idSelected);
+            db.Products.Remove(produkt);
+            db.SaveChanges();
+        }
+
         private void refreshProducts()
         {
             dataGridProducts.DataSource = db.Products.ToList();
@@ -43,10 +50,7 @@ namespace KWZP2019
 
         private void btDeleteProduct_Click(object sender, EventArgs e)
         {
-            var produkt = db.Products.FirstOrDefault(f => f.IdProduct == idSelected);
-            db.Products.Remove(produkt);
-            db.SaveChanges();
-
+            deleteProduct();
             refreshProducts();
         }
 
