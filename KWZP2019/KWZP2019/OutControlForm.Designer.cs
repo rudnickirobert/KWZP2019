@@ -221,6 +221,7 @@
             this.cbControlerId.Name = "cbControlerId";
             this.cbControlerId.Size = new System.Drawing.Size(160, 21);
             this.cbControlerId.TabIndex = 53;
+            this.cbControlerId.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbControlerId_Format);
             // 
             // lbltextBAcceptableHeightDeviation
             // 

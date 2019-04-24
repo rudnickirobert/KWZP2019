@@ -27,7 +27,12 @@ namespace KWZP2019
 
         private void ComponentsDataInitialize()
         {
-        
+            cbProcessNumber.DataSource = db.vUnfinishedProcess.ToList();
+            cbProcessNumber.DisplayMember = "IdProces";
+            cbProcessNumber.ValueMember = "IdProces";
+            cbControlerId.DataSource = db.Employees.ToList();
+            cbControlerId.ValueMember = "IdEmployee";
+            stpStartDate.Value = DateTime.Today;
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -49,8 +54,18 @@ namespace KWZP2019
 
         private void btnSMeasures_Click(object sender, EventArgs e)
         {
-            OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this);
+            int procesNumber = Int32.Parse(cbProcessNumber.SelectedValue.ToString());
+
+            OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this, procesNumber);
             outControlForm.Show();
+        }
+
+        private void cbControlerId_Format(object sender, ListControlConvertEventArgs e)
+        {
+            int id = ((Employee)e.ListItem).IdEmployee;
+            string lastname = ((Employee)e.ListItem).EmployeeName;
+            string firstname = ((Employee)e.ListItem).EmployeeSurname;
+            e.Value = id +" "+ lastname + " " + firstname;
         }
     }
 }
