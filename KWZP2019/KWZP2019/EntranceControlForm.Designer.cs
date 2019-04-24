@@ -29,16 +29,18 @@ namespace KWZP2019
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceControlForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblFormTitle = new System.Windows.Forms.Label();
-            this.lblControlDate = new System.Windows.Forms.Label();
             this.lblThickness = new System.Windows.Forms.Label();
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblMass = new System.Windows.Forms.Label();
             this.lblComment = new System.Windows.Forms.Label();
-            this.domUDOrderId = new System.Windows.Forms.DomainUpDown();
-            this.domUDSfId = new System.Windows.Forms.DomainUpDown();
             this.txtboxThickness = new System.Windows.Forms.TextBox();
             this.txtboxWidth = new System.Windows.Forms.TextBox();
             this.txtboxMass = new System.Windows.Forms.TextBox();
@@ -50,10 +52,10 @@ namespace KWZP2019
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.lblEmployeeId = new System.Windows.Forms.Label();
             this.lblEmployeeFullName = new System.Windows.Forms.Label();
-            this.lblDaysOfDelay = new System.Windows.Forms.Label();
+            this.lblDelayTime = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
             this.txtBoxColor = new System.Windows.Forms.TextBox();
-            this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
+            this.datePickerSelectedControlsDate = new System.Windows.Forms.DateTimePicker();
             this.lblIdSfOrder = new System.Windows.Forms.Label();
             this.lblIdSf = new System.Windows.Forms.Label();
             this.picBoxColorStatus = new System.Windows.Forms.PictureBox();
@@ -66,12 +68,19 @@ namespace KWZP2019
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.btnApproval = new System.Windows.Forms.Button();
+            this.dataGVEntranceControl = new System.Windows.Forms.DataGridView();
+            this.lblSelectedControl = new System.Windows.Forms.Label();
+            this.picBoxChemicalCompositionStatus = new System.Windows.Forms.PictureBox();
+            this.lblOrderIdShow = new System.Windows.Forms.Label();
+            this.lblSfIdShow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalCompositionStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -94,7 +103,7 @@ namespace KWZP2019
             this.btnReturnMain.Text = "Menu Główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
-            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
+            this.btnReturnMain.Click += new System.EventHandler(this.BtnReturnMain_Click);
             // 
             // btnReturn
             // 
@@ -116,7 +125,7 @@ namespace KWZP2019
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
             // lblFormTitle
             // 
@@ -125,33 +134,21 @@ namespace KWZP2019
             this.lblFormTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(509, 126);
+            this.lblFormTitle.Location = new System.Drawing.Point(670, 32);
             this.lblFormTitle.Name = "lblFormTitle";
             this.lblFormTitle.Size = new System.Drawing.Size(486, 56);
             this.lblFormTitle.TabIndex = 2;
             this.lblFormTitle.Text = "Wprowadź dane kontroli";
             this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblControlDate
-            // 
-            this.lblControlDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblControlDate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblControlDate.Location = new System.Drawing.Point(464, 396);
-            this.lblControlDate.Name = "lblControlDate";
-            this.lblControlDate.Size = new System.Drawing.Size(160, 26);
-            this.lblControlDate.TabIndex = 3;
-            this.lblControlDate.Text = "Data kontroli";
-            this.lblControlDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblThickness
             // 
             this.lblThickness.BackColor = System.Drawing.Color.Transparent;
             this.lblThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblThickness.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblThickness.Location = new System.Drawing.Point(858, 231);
+            this.lblThickness.Location = new System.Drawing.Point(868, 107);
             this.lblThickness.Name = "lblThickness";
-            this.lblThickness.Size = new System.Drawing.Size(160, 26);
+            this.lblThickness.Size = new System.Drawing.Size(91, 26);
             this.lblThickness.TabIndex = 4;
             this.lblThickness.Text = "Grubość";
             this.lblThickness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,9 +158,9 @@ namespace KWZP2019
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWidth.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWidth.Location = new System.Drawing.Point(858, 289);
+            this.lblWidth.Location = new System.Drawing.Point(856, 151);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(160, 26);
+            this.lblWidth.Size = new System.Drawing.Size(104, 26);
             this.lblWidth.TabIndex = 5;
             this.lblWidth.Text = "Szerokość";
             this.lblWidth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,9 +170,9 @@ namespace KWZP2019
             this.lblMass.BackColor = System.Drawing.Color.Transparent;
             this.lblMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMass.Location = new System.Drawing.Point(858, 348);
+            this.lblMass.Location = new System.Drawing.Point(897, 192);
             this.lblMass.Name = "lblMass";
-            this.lblMass.Size = new System.Drawing.Size(160, 26);
+            this.lblMass.Size = new System.Drawing.Size(61, 26);
             this.lblMass.TabIndex = 6;
             this.lblMass.Text = "Masa";
             this.lblMass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,75 +182,51 @@ namespace KWZP2019
             this.lblComment.BackColor = System.Drawing.Color.Transparent;
             this.lblComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblComment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblComment.Location = new System.Drawing.Point(684, 559);
+            this.lblComment.Location = new System.Drawing.Point(832, 350);
             this.lblComment.Name = "lblComment";
             this.lblComment.Size = new System.Drawing.Size(114, 26);
             this.lblComment.TabIndex = 9;
             this.lblComment.Text = "Komentarz";
             this.lblComment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // domUDOrderId
-            // 
-            this.domUDOrderId.BackColor = System.Drawing.SystemColors.Window;
-            this.domUDOrderId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.domUDOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDOrderId.Location = new System.Drawing.Point(577, 233);
-            this.domUDOrderId.Name = "domUDOrderId";
-            this.domUDOrderId.Size = new System.Drawing.Size(71, 26);
-            this.domUDOrderId.TabIndex = 12;
-            this.domUDOrderId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.domUDOrderId.SelectedItemChanged += new System.EventHandler(this.domUDOrderId_SelectedItemChanged);
-            // 
-            // domUDSfId
-            // 
-            this.domUDSfId.BackColor = System.Drawing.SystemColors.Window;
-            this.domUDSfId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.domUDSfId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.domUDSfId.Location = new System.Drawing.Point(577, 277);
-            this.domUDSfId.Name = "domUDSfId";
-            this.domUDSfId.Size = new System.Drawing.Size(71, 26);
-            this.domUDSfId.TabIndex = 13;
-            this.domUDSfId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.domUDSfId.SelectedItemChanged += new System.EventHandler(this.domUDSfId_SelectedItemChanged);
-            // 
             // txtboxThickness
             // 
             this.txtboxThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxThickness.Location = new System.Drawing.Point(858, 260);
+            this.txtboxThickness.Location = new System.Drawing.Point(962, 107);
             this.txtboxThickness.Margin = new System.Windows.Forms.Padding(0);
             this.txtboxThickness.Name = "txtboxThickness";
             this.txtboxThickness.Size = new System.Drawing.Size(160, 26);
             this.txtboxThickness.TabIndex = 22;
             this.txtboxThickness.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtboxThickness.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
+            this.txtboxThickness.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // txtboxWidth
             // 
             this.txtboxWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxWidth.Location = new System.Drawing.Point(858, 318);
+            this.txtboxWidth.Location = new System.Drawing.Point(962, 150);
             this.txtboxWidth.Name = "txtboxWidth";
             this.txtboxWidth.Size = new System.Drawing.Size(160, 26);
             this.txtboxWidth.TabIndex = 23;
             this.txtboxWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtboxWidth.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
+            this.txtboxWidth.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // txtboxMass
             // 
             this.txtboxMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxMass.Location = new System.Drawing.Point(858, 377);
+            this.txtboxMass.Location = new System.Drawing.Point(962, 192);
             this.txtboxMass.Name = "txtboxMass";
             this.txtboxMass.Size = new System.Drawing.Size(160, 26);
             this.txtboxMass.TabIndex = 24;
             this.txtboxMass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtboxMass.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
+            this.txtboxMass.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // txtboxComment
             // 
             this.txtboxComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxComment.Location = new System.Drawing.Point(688, 592);
+            this.txtboxComment.Location = new System.Drawing.Point(812, 384);
             this.txtboxComment.Multiline = true;
             this.txtboxComment.Name = "txtboxComment";
-            this.txtboxComment.Size = new System.Drawing.Size(391, 79);
+            this.txtboxComment.Size = new System.Drawing.Size(357, 137);
             this.txtboxComment.TabIndex = 25;
             // 
             // checkBoxComposition
@@ -261,7 +234,7 @@ namespace KWZP2019
             this.checkBoxComposition.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxComposition.Location = new System.Drawing.Point(862, 539);
+            this.checkBoxComposition.Location = new System.Drawing.Point(962, 321);
             this.checkBoxComposition.Name = "checkBoxComposition";
             this.checkBoxComposition.Size = new System.Drawing.Size(170, 46);
             this.checkBoxComposition.TabIndex = 26;
@@ -273,9 +246,9 @@ namespace KWZP2019
             this.lblParameterCheck.BackColor = System.Drawing.Color.Transparent;
             this.lblParameterCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblParameterCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblParameterCheck.Location = new System.Drawing.Point(452, 482);
+            this.lblParameterCheck.Location = new System.Drawing.Point(993, 542);
             this.lblParameterCheck.Name = "lblParameterCheck";
-            this.lblParameterCheck.Size = new System.Drawing.Size(200, 26);
+            this.lblParameterCheck.Size = new System.Drawing.Size(159, 26);
             this.lblParameterCheck.TabIndex = 28;
             this.lblParameterCheck.Text = "StatusKontroli";
             this.lblParameterCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,7 +273,7 @@ namespace KWZP2019
             this.btnCheck.Text = "Sprawdź";
             this.btnCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheck.UseVisualStyleBackColor = false;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            this.btnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
             // 
             // btnDone
             // 
@@ -322,17 +295,17 @@ namespace KWZP2019
             this.btnDone.Text = "Zatwierdź";
             this.btnDone.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDone.UseVisualStyleBackColor = false;
-            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
+            this.btnDone.Click += new System.EventHandler(this.BtnDone_Click);
             // 
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxEmployeeId.Location = new System.Drawing.Point(578, 318);
+            this.textBoxEmployeeId.Location = new System.Drawing.Point(794, 209);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(58, 26);
             this.textBoxEmployeeId.TabIndex = 31;
             this.textBoxEmployeeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
+            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.TextBoxEmployeeId_TextChanged);
             // 
             // lblEmployeeId
             // 
@@ -340,8 +313,8 @@ namespace KWZP2019
             this.lblEmployeeId.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmployeeId.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblEmployeeId.Location = new System.Drawing.Point(432, 321);
+            this.lblEmployeeId.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeeId.Location = new System.Drawing.Point(653, 211);
             this.lblEmployeeId.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmployeeId.Name = "lblEmployeeId";
             this.lblEmployeeId.Size = new System.Drawing.Size(128, 20);
@@ -353,31 +326,34 @@ namespace KWZP2019
             this.lblEmployeeFullName.AutoSize = true;
             this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(453, 351);
+            this.lblEmployeeFullName.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(680, 237);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
             this.lblEmployeeFullName.Size = new System.Drawing.Size(13, 20);
             this.lblEmployeeFullName.TabIndex = 33;
             this.lblEmployeeFullName.Text = " ";
+            this.lblEmployeeFullName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDaysOfDelay
+            // lblDelayTime
             // 
-            this.lblDaysOfDelay.AutoSize = true;
-            this.lblDaysOfDelay.BackColor = System.Drawing.Color.Transparent;
-            this.lblDaysOfDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDaysOfDelay.Location = new System.Drawing.Point(665, 235);
-            this.lblDaysOfDelay.Name = "lblDaysOfDelay";
-            this.lblDaysOfDelay.Size = new System.Drawing.Size(13, 20);
-            this.lblDaysOfDelay.TabIndex = 33;
-            this.lblDaysOfDelay.Text = " ";
+            this.lblDelayTime.AutoSize = true;
+            this.lblDelayTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblDelayTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDelayTime.ForeColor = System.Drawing.Color.White;
+            this.lblDelayTime.Location = new System.Drawing.Point(351, 185);
+            this.lblDelayTime.Name = "lblDelayTime";
+            this.lblDelayTime.Size = new System.Drawing.Size(13, 20);
+            this.lblDelayTime.TabIndex = 33;
+            this.lblDelayTime.Text = " ";
             // 
             // lblColor
             // 
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
             this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblColor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblColor.Location = new System.Drawing.Point(858, 407);
+            this.lblColor.Location = new System.Drawing.Point(900, 235);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(160, 26);
+            this.lblColor.Size = new System.Drawing.Size(58, 26);
             this.lblColor.TabIndex = 6;
             this.lblColor.Text = "Kolor";
             this.lblColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,22 +361,23 @@ namespace KWZP2019
             // txtBoxColor
             // 
             this.txtBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxColor.Location = new System.Drawing.Point(858, 436);
+            this.txtBoxColor.Location = new System.Drawing.Point(962, 235);
             this.txtBoxColor.Name = "txtBoxColor";
             this.txtBoxColor.Size = new System.Drawing.Size(160, 26);
             this.txtBoxColor.TabIndex = 24;
             this.txtBoxColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBoxColor.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
+            this.txtBoxColor.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // datePickerControlDate
+            // datePickerSelectedControlsDate
             // 
-            this.datePickerControlDate.Enabled = false;
-            this.datePickerControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerControlDate.Location = new System.Drawing.Point(451, 425);
-            this.datePickerControlDate.Name = "datePickerControlDate";
-            this.datePickerControlDate.Size = new System.Drawing.Size(188, 26);
-            this.datePickerControlDate.TabIndex = 35;
-            this.datePickerControlDate.Value = new System.DateTime(2019, 4, 16, 20, 35, 51, 0);
+            this.datePickerSelectedControlsDate.Enabled = false;
+            this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(344, 210);
+            this.datePickerSelectedControlsDate.Margin = new System.Windows.Forms.Padding(0);
+            this.datePickerSelectedControlsDate.Name = "datePickerSelectedControlsDate";
+            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(293, 26);
+            this.datePickerSelectedControlsDate.TabIndex = 35;
+            this.datePickerSelectedControlsDate.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
             // 
             // lblIdSfOrder
             // 
@@ -408,8 +385,8 @@ namespace KWZP2019
             this.lblIdSfOrder.BackColor = System.Drawing.Color.Transparent;
             this.lblIdSfOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIdSfOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIdSfOrder.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblIdSfOrder.Location = new System.Drawing.Point(424, 235);
+            this.lblIdSfOrder.ForeColor = System.Drawing.Color.White;
+            this.lblIdSfOrder.Location = new System.Drawing.Point(653, 148);
             this.lblIdSfOrder.Margin = new System.Windows.Forms.Padding(0);
             this.lblIdSfOrder.Name = "lblIdSfOrder";
             this.lblIdSfOrder.Size = new System.Drawing.Size(131, 20);
@@ -422,8 +399,8 @@ namespace KWZP2019
             this.lblIdSf.BackColor = System.Drawing.Color.Transparent;
             this.lblIdSf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIdSf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIdSf.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblIdSf.Location = new System.Drawing.Point(424, 279);
+            this.lblIdSf.ForeColor = System.Drawing.Color.White;
+            this.lblIdSf.Location = new System.Drawing.Point(646, 179);
             this.lblIdSf.Margin = new System.Windows.Forms.Padding(0);
             this.lblIdSf.Name = "lblIdSf";
             this.lblIdSf.Size = new System.Drawing.Size(138, 20);
@@ -433,7 +410,7 @@ namespace KWZP2019
             // picBoxColorStatus
             // 
             this.picBoxColorStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxColorStatus.Location = new System.Drawing.Point(1035, 434);
+            this.picBoxColorStatus.Location = new System.Drawing.Point(1139, 233);
             this.picBoxColorStatus.Name = "picBoxColorStatus";
             this.picBoxColorStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxColorStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -443,7 +420,7 @@ namespace KWZP2019
             // picBoxMassStatus
             // 
             this.picBoxMassStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxMassStatus.Location = new System.Drawing.Point(1035, 375);
+            this.picBoxMassStatus.Location = new System.Drawing.Point(1139, 190);
             this.picBoxMassStatus.Name = "picBoxMassStatus";
             this.picBoxMassStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxMassStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -453,7 +430,7 @@ namespace KWZP2019
             // picBoxWidhtStatus
             // 
             this.picBoxWidhtStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxWidhtStatus.Location = new System.Drawing.Point(1034, 315);
+            this.picBoxWidhtStatus.Location = new System.Drawing.Point(1138, 147);
             this.picBoxWidhtStatus.Name = "picBoxWidhtStatus";
             this.picBoxWidhtStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxWidhtStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -463,7 +440,7 @@ namespace KWZP2019
             // picBoxThicknessStatus
             // 
             this.picBoxThicknessStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxThicknessStatus.Location = new System.Drawing.Point(1034, 258);
+            this.picBoxThicknessStatus.Location = new System.Drawing.Point(1138, 105);
             this.picBoxThicknessStatus.Name = "picBoxThicknessStatus";
             this.picBoxThicknessStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxThicknessStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -475,8 +452,8 @@ namespace KWZP2019
             this.lblControlNotExist.AutoSize = true;
             this.lblControlNotExist.BackColor = System.Drawing.Color.Transparent;
             this.lblControlNotExist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblControlNotExist.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblControlNotExist.Location = new System.Drawing.Point(684, 281);
+            this.lblControlNotExist.ForeColor = System.Drawing.Color.Red;
+            this.lblControlNotExist.Location = new System.Drawing.Point(382, 93);
             this.lblControlNotExist.Name = "lblControlNotExist";
             this.lblControlNotExist.Size = new System.Drawing.Size(16, 24);
             this.lblControlNotExist.TabIndex = 33;
@@ -488,9 +465,9 @@ namespace KWZP2019
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(858, 468);
+            this.label1.Location = new System.Drawing.Point(902, 280);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 26);
+            this.label1.Size = new System.Drawing.Size(56, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ilość";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -498,17 +475,17 @@ namespace KWZP2019
             // txtBoxQuantity
             // 
             this.txtBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxQuantity.Location = new System.Drawing.Point(858, 497);
+            this.txtBoxQuantity.Location = new System.Drawing.Point(962, 278);
             this.txtBoxQuantity.Name = "txtBoxQuantity";
             this.txtBoxQuantity.Size = new System.Drawing.Size(160, 26);
             this.txtBoxQuantity.TabIndex = 24;
             this.txtBoxQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBoxQuantity.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
+            this.txtBoxQuantity.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // picBoxQuantityStatus
             // 
             this.picBoxQuantityStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxQuantityStatus.Location = new System.Drawing.Point(1035, 495);
+            this.picBoxQuantityStatus.Location = new System.Drawing.Point(1139, 276);
             this.picBoxQuantityStatus.Name = "picBoxQuantityStatus";
             this.picBoxQuantityStatus.Size = new System.Drawing.Size(30, 30);
             this.picBoxQuantityStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -520,7 +497,7 @@ namespace KWZP2019
             this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
             this.picBoxControlStatus.Image = global::KWZP2019.Properties.Resources.new_80px;
             this.picBoxControlStatus.InitialImage = null;
-            this.picBoxControlStatus.Location = new System.Drawing.Point(472, 511);
+            this.picBoxControlStatus.Location = new System.Drawing.Point(988, 570);
             this.picBoxControlStatus.Name = "picBoxControlStatus";
             this.picBoxControlStatus.Size = new System.Drawing.Size(169, 158);
             this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -539,13 +516,113 @@ namespace KWZP2019
             this.btnApproval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnApproval.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnApproval.Location = new System.Drawing.Point(663, 378);
+            this.btnApproval.Location = new System.Drawing.Point(812, 570);
             this.btnApproval.Name = "btnApproval";
-            this.btnApproval.Size = new System.Drawing.Size(170, 114);
+            this.btnApproval.Size = new System.Drawing.Size(170, 158);
             this.btnApproval.TabIndex = 29;
             this.btnApproval.Text = "Kliknij, aby potwierdzić wyniki";
             this.btnApproval.UseVisualStyleBackColor = false;
-            this.btnApproval.Click += new System.EventHandler(this.btnApproval_Click);
+            this.btnApproval.Click += new System.EventHandler(this.BtnApproval_Click);
+            // 
+            // dataGVEntranceControl
+            // 
+            this.dataGVEntranceControl.AllowUserToAddRows = false;
+            this.dataGVEntranceControl.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGVEntranceControl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGVEntranceControl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGVEntranceControl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGVEntranceControl.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.dataGVEntranceControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGVEntranceControl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGVEntranceControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGVEntranceControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGVEntranceControl.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGVEntranceControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGVEntranceControl.Location = new System.Drawing.Point(344, 262);
+            this.dataGVEntranceControl.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGVEntranceControl.MultiSelect = false;
+            this.dataGVEntranceControl.Name = "dataGVEntranceControl";
+            this.dataGVEntranceControl.ReadOnly = true;
+            this.dataGVEntranceControl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGVEntranceControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGVEntranceControl.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGVEntranceControl.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGVEntranceControl.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGVEntranceControl.ShowEditingIcon = false;
+            this.dataGVEntranceControl.Size = new System.Drawing.Size(447, 466);
+            this.dataGVEntranceControl.TabIndex = 38;
+            this.dataGVEntranceControl.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGVEntranceControl_RowHeaderMouseDoubleClick);
+            // 
+            // lblSelectedControl
+            // 
+            this.lblSelectedControl.BackColor = System.Drawing.Color.Transparent;
+            this.lblSelectedControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSelectedControl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSelectedControl.Location = new System.Drawing.Point(671, 105);
+            this.lblSelectedControl.Name = "lblSelectedControl";
+            this.lblSelectedControl.Size = new System.Drawing.Size(161, 26);
+            this.lblSelectedControl.TabIndex = 4;
+            this.lblSelectedControl.Text = "Wybrana Kontrola";
+            this.lblSelectedControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picBoxChemicalCompositionStatus
+            // 
+            this.picBoxChemicalCompositionStatus.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxChemicalCompositionStatus.Location = new System.Drawing.Point(1138, 330);
+            this.picBoxChemicalCompositionStatus.Name = "picBoxChemicalCompositionStatus";
+            this.picBoxChemicalCompositionStatus.Size = new System.Drawing.Size(30, 30);
+            this.picBoxChemicalCompositionStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxChemicalCompositionStatus.TabIndex = 34;
+            this.picBoxChemicalCompositionStatus.TabStop = false;
+            // 
+            // lblOrderIdShow
+            // 
+            this.lblOrderIdShow.BackColor = System.Drawing.SystemColors.Window;
+            this.lblOrderIdShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOrderIdShow.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblOrderIdShow.Location = new System.Drawing.Point(794, 143);
+            this.lblOrderIdShow.Margin = new System.Windows.Forms.Padding(0);
+            this.lblOrderIdShow.Name = "lblOrderIdShow";
+            this.lblOrderIdShow.Size = new System.Drawing.Size(58, 26);
+            this.lblOrderIdShow.TabIndex = 6;
+            this.lblOrderIdShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSfIdShow
+            // 
+            this.lblSfIdShow.BackColor = System.Drawing.SystemColors.Window;
+            this.lblSfIdShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSfIdShow.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblSfIdShow.Location = new System.Drawing.Point(794, 175);
+            this.lblSfIdShow.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSfIdShow.Name = "lblSfIdShow";
+            this.lblSfIdShow.Size = new System.Drawing.Size(58, 26);
+            this.lblSfIdShow.TabIndex = 6;
+            this.lblSfIdShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceControlForm
             // 
@@ -555,13 +632,14 @@ namespace KWZP2019
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.picBoxControlStatus);
-            this.Controls.Add(this.datePickerControlDate);
+            this.Controls.Add(this.datePickerSelectedControlsDate);
             this.Controls.Add(this.picBoxThicknessStatus);
             this.Controls.Add(this.picBoxWidhtStatus);
             this.Controls.Add(this.picBoxMassStatus);
+            this.Controls.Add(this.picBoxChemicalCompositionStatus);
             this.Controls.Add(this.picBoxQuantityStatus);
             this.Controls.Add(this.picBoxColorStatus);
-            this.Controls.Add(this.lblDaysOfDelay);
+            this.Controls.Add(this.lblDelayTime);
             this.Controls.Add(this.lblControlNotExist);
             this.Controls.Add(this.lblEmployeeFullName);
             this.Controls.Add(this.lblIdSf);
@@ -579,18 +657,19 @@ namespace KWZP2019
             this.Controls.Add(this.txtboxMass);
             this.Controls.Add(this.txtboxWidth);
             this.Controls.Add(this.txtboxThickness);
-            this.Controls.Add(this.domUDSfId);
-            this.Controls.Add(this.domUDOrderId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.lblComment);
+            this.Controls.Add(this.lblSfIdShow);
+            this.Controls.Add(this.lblOrderIdShow);
             this.Controls.Add(this.lblMass);
             this.Controls.Add(this.lblWidth);
+            this.Controls.Add(this.lblSelectedControl);
             this.Controls.Add(this.lblThickness);
-            this.Controls.Add(this.lblControlDate);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.dataGVEntranceControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -605,6 +684,8 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalCompositionStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,13 +696,10 @@ namespace KWZP2019
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblFormTitle;
-        private System.Windows.Forms.Label lblControlDate;
         private System.Windows.Forms.Label lblThickness;
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblMass;
         private System.Windows.Forms.Label lblComment;
-        private System.Windows.Forms.DomainUpDown domUDOrderId;
-        private System.Windows.Forms.DomainUpDown domUDSfId;
         private System.Windows.Forms.TextBox txtboxThickness;
         private System.Windows.Forms.TextBox txtboxWidth;
         private System.Windows.Forms.TextBox txtboxMass;
@@ -633,10 +711,10 @@ namespace KWZP2019
         private System.Windows.Forms.TextBox textBoxEmployeeId;
         private System.Windows.Forms.Label lblEmployeeId;
         private System.Windows.Forms.Label lblEmployeeFullName;
-        private System.Windows.Forms.Label lblDaysOfDelay;
+        private System.Windows.Forms.Label lblDelayTime;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.TextBox txtBoxColor;
-        private System.Windows.Forms.DateTimePicker datePickerControlDate;
+        private System.Windows.Forms.DateTimePicker datePickerSelectedControlsDate;
         private System.Windows.Forms.Label lblIdSfOrder;
         private System.Windows.Forms.Label lblIdSf;
         private System.Windows.Forms.PictureBox picBoxColorStatus;
@@ -649,5 +727,10 @@ namespace KWZP2019
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
         private System.Windows.Forms.PictureBox picBoxControlStatus;
         private System.Windows.Forms.Button btnApproval;
+        private System.Windows.Forms.DataGridView dataGVEntranceControl;
+        private System.Windows.Forms.Label lblSelectedControl;
+        private System.Windows.Forms.PictureBox picBoxChemicalCompositionStatus;
+        private System.Windows.Forms.Label lblOrderIdShow;
+        private System.Windows.Forms.Label lblSfIdShow;
     }
 }
