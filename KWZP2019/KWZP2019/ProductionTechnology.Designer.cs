@@ -36,19 +36,32 @@
             this.lblTimePermeter = new System.Windows.Forms.Label();
             this.lblSpeedFactor = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lblSpeedFactorFrom = new System.Windows.Forms.Label();
+            this.lblTimePermeterFrom = new System.Windows.Forms.Label();
+            this.lblTechnologyNameFrom = new System.Windows.Forms.Label();
+            this.textBoxSpeedFactorTo = new System.Windows.Forms.TextBox();
+            this.textBoxTimePermeterTo = new System.Windows.Forms.TextBox();
+            this.textBoxTechnologyNameTo = new System.Windows.Forms.TextBox();
+            this.lblSelectedTechnology = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVtechnology)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGVtechnology
             // 
+            this.dataGVtechnology.AllowUserToAddRows = false;
             this.dataGVtechnology.AllowUserToDeleteRows = false;
             this.dataGVtechnology.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGVtechnology.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGVtechnology.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVtechnology.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGVtechnology.Location = new System.Drawing.Point(12, 12);
             this.dataGVtechnology.Name = "dataGVtechnology";
-            this.dataGVtechnology.Size = new System.Drawing.Size(655, 524);
+            this.dataGVtechnology.Size = new System.Drawing.Size(655, 363);
             this.dataGVtechnology.TabIndex = 0;
+            this.dataGVtechnology.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGVtechnology_RowHeaderMouseDoubleClick);
             // 
             // textBoxTechnologyName
             // 
@@ -100,7 +113,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(766, 513);
+            this.btnSave.Location = new System.Drawing.Point(767, 323);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
@@ -108,11 +121,112 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(738, 623);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 4;
+            this.btnReturn.Text = "POWRÓT";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(127, 623);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edycja";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblSpeedFactorFrom
+            // 
+            this.lblSpeedFactorFrom.AutoSize = true;
+            this.lblSpeedFactorFrom.Location = new System.Drawing.Point(44, 520);
+            this.lblSpeedFactorFrom.Name = "lblSpeedFactorFrom";
+            this.lblSpeedFactorFrom.Size = new System.Drawing.Size(124, 13);
+            this.lblSpeedFactorFrom.TabIndex = 10;
+            this.lblSpeedFactorFrom.Text = "Współczynnik prędkości";
+            this.lblSpeedFactorFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblTimePermeterFrom
+            // 
+            this.lblTimePermeterFrom.AutoSize = true;
+            this.lblTimePermeterFrom.Location = new System.Drawing.Point(44, 469);
+            this.lblTimePermeterFrom.Name = "lblTimePermeterFrom";
+            this.lblTimePermeterFrom.Size = new System.Drawing.Size(101, 13);
+            this.lblTimePermeterFrom.TabIndex = 11;
+            this.lblTimePermeterFrom.Text = "Prędkość produkcji ";
+            this.lblTimePermeterFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblTechnologyNameFrom
+            // 
+            this.lblTechnologyNameFrom.AutoSize = true;
+            this.lblTechnologyNameFrom.Location = new System.Drawing.Point(44, 411);
+            this.lblTechnologyNameFrom.Name = "lblTechnologyNameFrom";
+            this.lblTechnologyNameFrom.Size = new System.Drawing.Size(92, 13);
+            this.lblTechnologyNameFrom.TabIndex = 12;
+            this.lblTechnologyNameFrom.Text = "Nazwa technologi";
+            this.lblTechnologyNameFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBoxSpeedFactorTo
+            // 
+            this.textBoxSpeedFactorTo.Location = new System.Drawing.Point(181, 513);
+            this.textBoxSpeedFactorTo.Name = "textBoxSpeedFactorTo";
+            this.textBoxSpeedFactorTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSpeedFactorTo.TabIndex = 7;
+            // 
+            // textBoxTimePermeterTo
+            // 
+            this.textBoxTimePermeterTo.Location = new System.Drawing.Point(181, 462);
+            this.textBoxTimePermeterTo.Name = "textBoxTimePermeterTo";
+            this.textBoxTimePermeterTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTimePermeterTo.TabIndex = 8;
+            // 
+            // textBoxTechnologyNameTo
+            // 
+            this.textBoxTechnologyNameTo.Location = new System.Drawing.Point(181, 411);
+            this.textBoxTechnologyNameTo.Name = "textBoxTechnologyNameTo";
+            this.textBoxTechnologyNameTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTechnologyNameTo.TabIndex = 9;
+            // 
+            // lblSelectedTechnology
+            // 
+            this.lblSelectedTechnology.AutoSize = true;
+            this.lblSelectedTechnology.Location = new System.Drawing.Point(44, 378);
+            this.lblSelectedTechnology.Name = "lblSelectedTechnology";
+            this.lblSelectedTechnology.Size = new System.Drawing.Size(111, 13);
+            this.lblSelectedTechnology.TabIndex = 13;
+            this.lblSelectedTechnology.Text = "Wybrana technologia ";
+            this.lblSelectedTechnology.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(306, 623);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Usuń";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // ProductionTechnology
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.lblSelectedTechnology);
+            this.Controls.Add(this.lblSpeedFactorFrom);
+            this.Controls.Add(this.lblTimePermeterFrom);
+            this.Controls.Add(this.lblTechnologyNameFrom);
+            this.Controls.Add(this.textBoxSpeedFactorTo);
+            this.Controls.Add(this.textBoxTimePermeterTo);
+            this.Controls.Add(this.textBoxTechnologyNameTo);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblSpeedFactor);
             this.Controls.Add(this.lblTimePermeter);
@@ -121,6 +235,9 @@
             this.Controls.Add(this.textBoxTimePermeter);
             this.Controls.Add(this.textBoxTechnologyName);
             this.Controls.Add(this.dataGVtechnology);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ProductionTechnology";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Technologia";
@@ -141,5 +258,15 @@
         private System.Windows.Forms.Label lblTimePermeter;
         private System.Windows.Forms.Label lblSpeedFactor;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label lblSpeedFactorFrom;
+        private System.Windows.Forms.Label lblTimePermeterFrom;
+        private System.Windows.Forms.Label lblTechnologyNameFrom;
+        private System.Windows.Forms.TextBox textBoxSpeedFactorTo;
+        private System.Windows.Forms.TextBox textBoxTimePermeterTo;
+        private System.Windows.Forms.TextBox textBoxTechnologyNameTo;
+        private System.Windows.Forms.Label lblSelectedTechnology;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
