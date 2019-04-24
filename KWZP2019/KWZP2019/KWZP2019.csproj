@@ -100,6 +100,12 @@
     <Compile Include="Finances\AllCosts.Designer.cs">
       <DependentUpon>AllCosts.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Allocation.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -199,6 +205,12 @@
     <Compile Include="Machine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MachinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachinesForm.Designer.cs">
+      <DependentUpon>MachinesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MachineType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -207,6 +219,18 @@
     </Compile>
     <Compile Include="Maintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceCalendarForm.Designer.cs">
+      <DependentUpon>MaintenanceCalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceEmployeeCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceEmployeeCalendarForm.Designer.cs">
+      <DependentUpon>MaintenanceEmployeeCalendarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MaintenanceManagement.cs">
       <SubType>Form</SubType>
@@ -222,6 +246,12 @@
     </Compile>
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMaintenanceForm.Designer.cs">
+      <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewProductionPlan.cs">
       <SubType>Form</SubType>
@@ -280,6 +310,12 @@
     <Compile Include="PartRequest.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsForm.Designer.cs">
+      <DependentUpon>PartsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -310,6 +346,12 @@
     <Compile Include="ProductionFailures.Designer.cs">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionHistory.Designer.cs">
+      <DependentUpon>ProductionHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionPlanned.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +378,12 @@
     </Compile>
     <Compile Include="ProductionProducts.Designer.cs">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionSelection.Designer.cs">
+      <DependentUpon>ProductionSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionTechnology.cs">
       <SubType>Form</SubType>
@@ -483,6 +531,18 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MachinesForm.resx">
+      <DependentUpon>MachinesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceCalendarForm.resx">
+      <DependentUpon>MaintenanceCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceEmployeeCalendarForm.resx">
+      <DependentUpon>MaintenanceEmployeeCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMaintenanceForm.resx">
+      <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -495,11 +555,17 @@
     <EmbeddedResource Include="OSHControl.resx">
       <DependentUpon>OSHControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartsForm.resx">
+      <DependentUpon>PartsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionFailures.resx">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionHistory.resx">
+      <DependentUpon>ProductionHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionPlanned.resx">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
@@ -509,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionProducts.resx">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionSelection.resx">
+      <DependentUpon>ProductionSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
@@ -548,6 +617,7 @@
     <None Include="Maintenance.datasource" />
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Product.datasource" />
     <None Include="PlannedProduction.datasource" />
     <None Include="PlannedProductionEmployeeDetail.datasource" />
     <None Include="Product.datasource" />
@@ -582,6 +652,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\53062472_302328053765523_8291849142804676608_n.png" />
     <None Include="Resources\cancel_48px.png" />
     <None Include="Resources\good_quality_40px.png" />
     <None Include="Resources\help_40px.png" />

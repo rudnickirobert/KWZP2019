@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class ProductionProcess
+    partial class ProductionHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ProductionProcessGridView = new System.Windows.Forms.DataGridView();
+            this.ProductionHistoryGridView = new System.Windows.Forms.DataGridView();
+            this.productionProceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionProceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductionProcessGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductionHistoryGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionProceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // ProductionProcessGridView
+            // ProductionHistoryGridView
             // 
-            this.ProductionProcessGridView.AutoGenerateColumns = false;
-            this.ProductionProcessGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductionProcessGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductionHistoryGridView.AutoGenerateColumns = false;
+            this.ProductionHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductionHistoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProcesDataGridViewTextBoxColumn,
             this.idPlanDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
             this.endDateDataGridViewTextBoxColumn});
-            this.ProductionProcessGridView.DataSource = this.productionProceBindingSource;
-            this.ProductionProcessGridView.Location = new System.Drawing.Point(12, 68);
-            this.ProductionProcessGridView.Name = "ProductionProcessGridView";
-            this.ProductionProcessGridView.Size = new System.Drawing.Size(760, 281);
-            this.ProductionProcessGridView.TabIndex = 0;
+            this.ProductionHistoryGridView.DataSource = this.productionProceBindingSource;
+            this.ProductionHistoryGridView.Location = new System.Drawing.Point(13, 60);
+            this.ProductionHistoryGridView.Name = "ProductionHistoryGridView";
+            this.ProductionHistoryGridView.Size = new System.Drawing.Size(759, 289);
+            this.ProductionHistoryGridView.TabIndex = 0;
+            // 
+            // productionProceBindingSource
+            // 
+            this.productionProceBindingSource.DataSource = typeof(KWZP2019.ProductionProce);
             // 
             // idProcesDataGridViewTextBoxColumn
             // 
@@ -69,7 +73,7 @@
             // startDateDataGridViewTextBoxColumn
             // 
             this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data rozpoczęcia";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data początku";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
             // 
             // endDateDataGridViewTextBoxColumn
@@ -78,21 +82,18 @@
             this.endDateDataGridViewTextBoxColumn.HeaderText = "Data zakończenia";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
             // 
-            // productionProceBindingSource
-            // 
-            this.productionProceBindingSource.DataSource = typeof(KWZP2019.ProductionProce);
-            // 
-            // ProductionProcess
+            // ProductionHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 361);
-            this.Controls.Add(this.ProductionProcessGridView);
-            this.Name = "ProductionProcess";
+            this.Controls.Add(this.ProductionHistoryGridView);
+            this.Name = "ProductionHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aktualnie w produkcji";
-            this.Load += new System.EventHandler(this.ProductionProcess_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductionProcessGridView)).EndInit();
+            this.Text = "Rejestr produkcji";
+            this.Load += new System.EventHandler(this.ProductionHistory_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductionHistoryGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionProceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -100,11 +101,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ProductionProcessGridView;
+        private System.Windows.Forms.DataGridView ProductionHistoryGridView;
+        private System.Windows.Forms.BindingSource productionProceBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProcesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPlanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource productionProceBindingSource;
     }
 }

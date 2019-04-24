@@ -63,6 +63,16 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _53062472_302328053765523_8291849142804676608_n {
+            get {
+                object obj = ResourceManager.GetObject("53062472_302328053765523_8291849142804676608_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_48px {
             get {
                 object obj = ResourceManager.GetObject("cancel_48px", resourceCulture);

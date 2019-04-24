@@ -29,51 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Production));
-            this.btnProductionPlanned = new System.Windows.Forms.Button();
-            this.btnProductionProcess = new System.Windows.Forms.Button();
             this.btnFailures = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnTechnology = new System.Windows.Forms.Button();
             this.btnProductionToMain = new System.Windows.Forms.Button();
+            this.btnProductionSelection = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnProductionPlanned
-            // 
-            this.btnProductionPlanned.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnProductionPlanned.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnProductionPlanned.FlatAppearance.BorderSize = 3;
-            this.btnProductionPlanned.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnProductionPlanned.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductionPlanned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnProductionPlanned.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnProductionPlanned.Image = ((System.Drawing.Image)(resources.GetObject("btnProductionPlanned.Image")));
-            this.btnProductionPlanned.Location = new System.Drawing.Point(837, 419);
-            this.btnProductionPlanned.Name = "btnProductionPlanned";
-            this.btnProductionPlanned.Size = new System.Drawing.Size(290, 160);
-            this.btnProductionPlanned.TabIndex = 9;
-            this.btnProductionPlanned.Text = "Planowana produkcja";
-            this.btnProductionPlanned.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProductionPlanned.UseVisualStyleBackColor = false;
-            this.btnProductionPlanned.Click += new System.EventHandler(this.btnProductionPlanned_Click);
-            // 
-            // btnProductionProcess
-            // 
-            this.btnProductionProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnProductionProcess.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnProductionProcess.FlatAppearance.BorderSize = 3;
-            this.btnProductionProcess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnProductionProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductionProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnProductionProcess.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnProductionProcess.Image = ((System.Drawing.Image)(resources.GetObject("btnProductionProcess.Image")));
-            this.btnProductionProcess.Location = new System.Drawing.Point(452, 419);
-            this.btnProductionProcess.Name = "btnProductionProcess";
-            this.btnProductionProcess.Size = new System.Drawing.Size(290, 160);
-            this.btnProductionProcess.TabIndex = 8;
-            this.btnProductionProcess.Text = "Aktualna Produkcja";
-            this.btnProductionProcess.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProductionProcess.UseVisualStyleBackColor = false;
-            this.btnProductionProcess.Click += new System.EventHandler(this.btnProductionProcess_Click);
             // 
             // btnFailures
             // 
@@ -86,7 +47,7 @@
             this.btnFailures.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnFailures.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFailures.Image = ((System.Drawing.Image)(resources.GetObject("btnFailures.Image")));
-            this.btnFailures.Location = new System.Drawing.Point(57, 419);
+            this.btnFailures.Location = new System.Drawing.Point(254, 419);
             this.btnFailures.Name = "btnFailures";
             this.btnFailures.Size = new System.Drawing.Size(290, 160);
             this.btnFailures.TabIndex = 7;
@@ -155,16 +116,35 @@
             this.btnProductionToMain.UseVisualStyleBackColor = false;
             this.btnProductionToMain.Click += new System.EventHandler(this.btnProductionToMain_Click);
             // 
+            // btnProductionSelection
+            // 
+            this.btnProductionSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnProductionSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnProductionSelection.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnProductionSelection.FlatAppearance.BorderSize = 3;
+            this.btnProductionSelection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnProductionSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductionSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnProductionSelection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnProductionSelection.Image = ((System.Drawing.Image)(resources.GetObject("btnProductionSelection.Image")));
+            this.btnProductionSelection.Location = new System.Drawing.Point(640, 419);
+            this.btnProductionSelection.Name = "btnProductionSelection";
+            this.btnProductionSelection.Size = new System.Drawing.Size(290, 160);
+            this.btnProductionSelection.TabIndex = 11;
+            this.btnProductionSelection.Text = "Produkcja";
+            this.btnProductionSelection.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProductionSelection.UseVisualStyleBackColor = false;
+            this.btnProductionSelection.Click += new System.EventHandler(this.btnProductionSelection_Click);
+            // 
             // Production
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 746);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.btnProductionSelection);
             this.Controls.Add(this.btnProductionToMain);
-            this.Controls.Add(this.btnProductionPlanned);
-            this.Controls.Add(this.btnProductionProcess);
             this.Controls.Add(this.btnFailures);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.btnTechnology);
@@ -177,12 +157,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnProductionPlanned;
-        private System.Windows.Forms.Button btnProductionProcess;
         private System.Windows.Forms.Button btnFailures;
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnTechnology;
         private System.Windows.Forms.Button btnProductionToMain;
+        private System.Windows.Forms.Button btnProductionSelection;
     }
 }
