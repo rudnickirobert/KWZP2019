@@ -13,7 +13,7 @@ namespace KWZP2019
     public partial class ProductionProducts : Form
     {
         RoofingCompanyEntities db;
-        static int idSelected;
+        private int idSelected;
         public ProductionProducts(RoofingCompanyEntities db)
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace KWZP2019
 
         private void deleteProduct()
         {
-            var produkt = db.Products.FirstOrDefault(f => f.IdProduct == idSelected);
+            Product produkt = db.Products.First(f => f.IdProduct == idSelected);
             db.Products.Remove(produkt);
             db.SaveChanges();
         }
