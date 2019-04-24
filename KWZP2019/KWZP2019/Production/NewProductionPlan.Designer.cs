@@ -30,29 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnAddEmp = new System.Windows.Forms.Button();
-            this.cBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cBoxMachine = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxPlanNr = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeStart = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.cBoxIntoProduction = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.viewProcessEmpl = new System.Windows.Forms.DataGridView();
-            this.idDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plannedProductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblOperators = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,9 +54,24 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
+            this.viewOrderDetail = new System.Windows.Forms.DataGridView();
+            this.idDetailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vUnhandledOrderDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plannedProductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddEmp
@@ -76,14 +82,6 @@
             this.btnAddEmp.TabIndex = 0;
             this.btnAddEmp.Text = "DODAJ";
             this.btnAddEmp.UseVisualStyleBackColor = true;
-            // 
-            // cBox
-            // 
-            this.cBox.FormattingEnabled = true;
-            this.cBox.Location = new System.Drawing.Point(226, 124);
-            this.cBox.Name = "cBox";
-            this.cBox.Size = new System.Drawing.Size(121, 24);
-            this.cBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -97,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 178);
+            this.label2.Location = new System.Drawing.Point(20, 300);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 17);
             this.label2.TabIndex = 4;
@@ -106,7 +104,7 @@
             // cBoxMachine
             // 
             this.cBoxMachine.FormattingEnabled = true;
-            this.cBoxMachine.Location = new System.Drawing.Point(226, 176);
+            this.cBoxMachine.Location = new System.Drawing.Point(226, 298);
             this.cBoxMachine.Name = "cBoxMachine";
             this.cBoxMachine.Size = new System.Drawing.Size(121, 24);
             this.cBoxMachine.TabIndex = 3;
@@ -114,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 236);
+            this.label3.Location = new System.Drawing.Point(828, 351);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 17);
             this.label3.TabIndex = 6;
@@ -128,28 +126,28 @@
             this.tBoxPlanNr.Size = new System.Drawing.Size(100, 38);
             this.tBoxPlanNr.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dateTimeStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(226, 236);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimeStart.Location = new System.Drawing.Point(1034, 351);
+            this.dateTimeStart.Name = "dateTimeStart";
+            this.dateTimeStart.Size = new System.Drawing.Size(200, 22);
+            this.dateTimeStart.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 284);
+            this.label5.Location = new System.Drawing.Point(828, 399);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Szacowana data realizacji";
             // 
-            // dateTimePicker2
+            // dateTimeEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(226, 284);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimeEnd.Location = new System.Drawing.Point(1034, 399);
+            this.dateTimeEnd.Name = "dateTimeEnd";
+            this.dateTimeEnd.Size = new System.Drawing.Size(200, 22);
+            this.dateTimeEnd.TabIndex = 11;
             // 
             // label4
             // 
@@ -163,7 +161,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(56, 370);
+            this.btnSave.Location = new System.Drawing.Point(439, 463);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(91, 34);
             this.btnSave.TabIndex = 13;
@@ -172,7 +170,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(56, 427);
+            this.btnReturn.Location = new System.Drawing.Point(439, 520);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(91, 34);
             this.btnReturn.TabIndex = 14;
@@ -183,7 +181,7 @@
             // cBoxIntoProduction
             // 
             this.cBoxIntoProduction.AutoSize = true;
-            this.cBoxIntoProduction.Location = new System.Drawing.Point(226, 330);
+            this.cBoxIntoProduction.Location = new System.Drawing.Point(318, 530);
             this.cBoxIntoProduction.Name = "cBoxIntoProduction";
             this.cBoxIntoProduction.Size = new System.Drawing.Size(18, 17);
             this.cBoxIntoProduction.TabIndex = 15;
@@ -192,7 +190,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 329);
+            this.label6.Location = new System.Drawing.Point(112, 529);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(172, 17);
             this.label6.TabIndex = 16;
@@ -211,69 +209,16 @@
             this.plannedProductionDataGridViewTextBoxColumn,
             this.allocationDataGridViewTextBoxColumn});
             this.viewProcessEmpl.DataSource = this.plannedProductionEmployeeDetailBindingSource;
-            this.viewProcessEmpl.Location = new System.Drawing.Point(432, 123);
+            this.viewProcessEmpl.Location = new System.Drawing.Point(804, 111);
             this.viewProcessEmpl.Name = "viewProcessEmpl";
             this.viewProcessEmpl.RowTemplate.Height = 24;
             this.viewProcessEmpl.Size = new System.Drawing.Size(520, 223);
             this.viewProcessEmpl.TabIndex = 17;
             // 
-            // idDetailDataGridViewTextBoxColumn
-            // 
-            this.idDetailDataGridViewTextBoxColumn.DataPropertyName = "IdDetail";
-            this.idDetailDataGridViewTextBoxColumn.HeaderText = "IdDetail";
-            this.idDetailDataGridViewTextBoxColumn.Name = "idDetailDataGridViewTextBoxColumn";
-            this.idDetailDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idProcesDataGridViewTextBoxColumn
-            // 
-            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.HeaderText = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
-            this.idProcesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idEmployeeDataGridViewTextBoxColumn
-            // 
-            this.idEmployeeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IdEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "IdEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // plannedProductionDataGridViewTextBoxColumn
-            // 
-            this.plannedProductionDataGridViewTextBoxColumn.DataPropertyName = "PlannedProduction";
-            this.plannedProductionDataGridViewTextBoxColumn.HeaderText = "PlannedProduction";
-            this.plannedProductionDataGridViewTextBoxColumn.Name = "plannedProductionDataGridViewTextBoxColumn";
-            this.plannedProductionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // allocationDataGridViewTextBoxColumn
-            // 
-            this.allocationDataGridViewTextBoxColumn.DataPropertyName = "Allocation";
-            this.allocationDataGridViewTextBoxColumn.HeaderText = "Allocation";
-            this.allocationDataGridViewTextBoxColumn.Name = "allocationDataGridViewTextBoxColumn";
-            this.allocationDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // plannedProductionEmployeeDetailBindingSource
-            // 
-            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
-            // 
             // lblOperators
             // 
             this.lblOperators.AutoSize = true;
-            this.lblOperators.Location = new System.Drawing.Point(429, 92);
+            this.lblOperators.Location = new System.Drawing.Point(801, 80);
             this.lblOperators.Name = "lblOperators";
             this.lblOperators.Size = new System.Drawing.Size(158, 17);
             this.lblOperators.TabIndex = 18;
@@ -289,7 +234,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.btnAddEmp);
-            this.groupBox1.Location = new System.Drawing.Point(226, 361);
+            this.groupBox1.Location = new System.Drawing.Point(609, 454);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(726, 100);
             this.groupBox1.TabIndex = 19;
@@ -364,11 +309,105 @@
             this.btnNewPlan.UseVisualStyleBackColor = true;
             this.btnNewPlan.Click += new System.EventHandler(this.btnNewPlan_Click);
             // 
+            // viewOrderDetail
+            // 
+            this.viewOrderDetail.AutoGenerateColumns = false;
+            this.viewOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDetailDataGridViewTextBoxColumn1,
+            this.quantityDataGridViewTextBoxColumn,
+            this.productCodeDataGridViewTextBoxColumn});
+            this.viewOrderDetail.DataSource = this.vUnhandledOrderDetailsBindingSource;
+            this.viewOrderDetail.Location = new System.Drawing.Point(23, 156);
+            this.viewOrderDetail.Name = "viewOrderDetail";
+            this.viewOrderDetail.RowTemplate.Height = 24;
+            this.viewOrderDetail.Size = new System.Drawing.Size(554, 101);
+            this.viewOrderDetail.TabIndex = 22;
+            // 
+            // idDetailDataGridViewTextBoxColumn1
+            // 
+            this.idDetailDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idDetailDataGridViewTextBoxColumn1.DataPropertyName = "IdDetail";
+            this.idDetailDataGridViewTextBoxColumn1.HeaderText = "Nr szczegółu";
+            this.idDetailDataGridViewTextBoxColumn1.Name = "idDetailDataGridViewTextBoxColumn1";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Ilosć";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // productCodeDataGridViewTextBoxColumn
+            // 
+            this.productCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "ProductCode";
+            this.productCodeDataGridViewTextBoxColumn.HeaderText = "Kod produktu";
+            this.productCodeDataGridViewTextBoxColumn.Name = "productCodeDataGridViewTextBoxColumn";
+            // 
+            // vUnhandledOrderDetailsBindingSource
+            // 
+            this.vUnhandledOrderDetailsBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetails);
+            // 
+            // idDetailDataGridViewTextBoxColumn
+            // 
+            this.idDetailDataGridViewTextBoxColumn.DataPropertyName = "IdDetail";
+            this.idDetailDataGridViewTextBoxColumn.HeaderText = "IdDetail";
+            this.idDetailDataGridViewTextBoxColumn.Name = "idDetailDataGridViewTextBoxColumn";
+            this.idDetailDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idProcesDataGridViewTextBoxColumn
+            // 
+            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
+            this.idProcesDataGridViewTextBoxColumn.HeaderText = "IdProces";
+            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
+            this.idProcesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idEmployeeDataGridViewTextBoxColumn
+            // 
+            this.idEmployeeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IdEmployee";
+            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "IdEmployee";
+            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // plannedProductionDataGridViewTextBoxColumn
+            // 
+            this.plannedProductionDataGridViewTextBoxColumn.DataPropertyName = "PlannedProduction";
+            this.plannedProductionDataGridViewTextBoxColumn.HeaderText = "PlannedProduction";
+            this.plannedProductionDataGridViewTextBoxColumn.Name = "plannedProductionDataGridViewTextBoxColumn";
+            this.plannedProductionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // allocationDataGridViewTextBoxColumn
+            // 
+            this.allocationDataGridViewTextBoxColumn.DataPropertyName = "Allocation";
+            this.allocationDataGridViewTextBoxColumn.HeaderText = "Allocation";
+            this.allocationDataGridViewTextBoxColumn.Name = "allocationDataGridViewTextBoxColumn";
+            this.allocationDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // plannedProductionEmployeeDetailBindingSource
+            // 
+            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
+            // 
             // NewProductionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 492);
+            this.ClientSize = new System.Drawing.Size(1347, 566);
+            this.Controls.Add(this.viewOrderDetail);
             this.Controls.Add(this.btnNewPlan);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblOperators);
@@ -378,22 +417,23 @@
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimeEnd);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimeStart);
             this.Controls.Add(this.tBoxPlanNr);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cBoxMachine);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cBox);
             this.Name = "NewProductionPlan";
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,15 +442,14 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddEmp;
-        private System.Windows.Forms.ComboBox cBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cBoxMachine;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tBoxPlanNr;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeStart;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimeEnd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReturn;
@@ -435,5 +474,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn allocationDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNewPlan;
+        private System.Windows.Forms.DataGridView viewOrderDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDetailDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vUnhandledOrderDetailsBindingSource;
     }
 }

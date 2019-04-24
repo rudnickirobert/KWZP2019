@@ -486,6 +486,9 @@ insert into OrderDetail values('5', '2', '800');
 insert into OrderDetail values('6', '1', '400');
 insert into OrderDetail values('6', '2', '900');
 insert into OrderDetail values('7', '2', '1200');
+insert into OrderDetail values('3', '1', '200');
+insert into OrderDetail values('2', '2', '400');
+insert into OrderDetail values('4', '2', '500');
 
 insert into SupplierType values('Półfabrykaty');
 insert into SupplierType values('Części');
