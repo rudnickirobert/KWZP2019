@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class SalesDepartment : Form
+    public partial class AddNewOutsourcingCompanyForm : Form
     {
-        RoofingCompanyEntities db;
-
-        public SalesDepartment(RoofingCompanyEntities db)
+        public AddNewOutsourcingCompanyForm()
         {
-            this.db = db;
             InitializeComponent();
         }
     }
-        
 }

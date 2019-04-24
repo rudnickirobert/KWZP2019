@@ -19,9 +19,14 @@ create table EntranceControl(
 	IdSfDetail int not null,
 	IdEmployee int not null,
 	ControlDate DateTime not null,
-	ControlStatus bit not null,
+	ControlStatus bit null,
 	Comments nvarchar(255),
-	Quantity int not null
+	Quantity int null,
+	RealThickness decimal(3, 2) not null,
+	RealWidth decimal(6, 2) not null,
+	RealWeight decimal(6,2) not null,
+	RealColor nvarchar(20) not null,
+	ChemicalComposition bit not null
 	);
 
 create table FEMAnalysis(
@@ -616,14 +621,6 @@ on Department.IdDepartment = Allocation.IdDepartment;
 
 /*====SALES DEPARTMENT===*/
 
-GO
-CREATE VIEW vCustomerWithOrder
-AS
-SELECT CustomerName, IdOrderCustomer, OrderDate, Cost
-FROM Customer
-JOIN OrderCustomer
-ON Customer.IdCustomer = OrderCustomer.IdCustomer;
-
 GO 
 CREATE VIEW vSupplierParts
 AS
@@ -675,8 +672,8 @@ CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
-GO
 
+GO
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -686,8 +683,21 @@ ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN TechnicalProductData
 ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
 JOIN Customer
-ON OrderCustomer.IdCustomer = Customer.IdCustomer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer;
+
 GO
+CREATE VIEW vOrderDetail 
+AS
+SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
+FROM OrderCustomer
+JOIN Customer
+ON Customer.IdCustomer = OrderCustomer.IdCustomer
+JOIN OrderDetail
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+JOIN Product
+ON OrderDetail.IdProduct = Product.IdProduct;
+GO
+/*====PRODUCTION===*/
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail,OrderDetail.Quantity,Product.ProductCode
