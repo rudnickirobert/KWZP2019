@@ -12,7 +12,7 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class TechnicalProductDataPerProcess
+    public partial class vTechnicalProductDataPerProcess
     {
         public int IdProcess { get; set; }
         public string ProductCode { get; set; }

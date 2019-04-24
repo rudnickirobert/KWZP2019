@@ -12,13 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class OutputProductMeasurements
+    public partial class vSuccesfullyProducedPerProcess
     {
-        public int IdMeasurement { get; set; }
         public int IdProcess { get; set; }
-        public double MeasuredLenght { get; set; }
-        public double MeasuredWidth { get; set; }
-    
-        public virtual OutControl OutControl { get; set; }
+        public Nullable<int> SuccesfullProduced { get; set; }
+        public int QuantityToBeProducted { get; set; }
     }
 }

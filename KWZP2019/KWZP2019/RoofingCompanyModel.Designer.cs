@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Bartłomiej\Desktop\KWZP_PROJEKT\najnowsza działająca 18-04-19\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Damian\Documents\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

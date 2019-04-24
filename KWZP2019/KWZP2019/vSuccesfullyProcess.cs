@@ -12,10 +12,8 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class SuccesfullyProducedPerProcess
+    public partial class vSuccesfullyProcess
     {
         public int IdProcess { get; set; }
-        public Nullable<int> SuccesfullProduced { get; set; }
-        public int QuantityToBeProducted { get; set; }
     }
 }

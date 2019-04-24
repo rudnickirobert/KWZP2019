@@ -12,7 +12,7 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class DevotionsInMeasuremntsPerProcess
+    public partial class vDevotionsInMeasuremntsPerProcess
     {
         public int IdMeasurement { get; set; }
         public int IdProcess { get; set; }

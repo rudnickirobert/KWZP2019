@@ -671,7 +671,7 @@ WHERE NIP !=0 AND KRS !=0 ;
 
 GO
 
-CREATE VIEW TechnicalProductDataPerProcess
+CREATE VIEW vTechnicalProductDataPerProcess
 AS
 SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
 FROM OrderDetail A, Product B, PlannedProduction C, ProductionProces D, OutControl E, TechnicalProductData F
@@ -679,27 +679,43 @@ WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdP
 
 GO
 
-CREATE VIEW DevotionsInMeasuremntsPerProcess
+CREATE VIEW vDevotionsInMeasuremntsPerProcess
 AS
 SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
-FROM TechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
+FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
 WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
 
 GO
 
-CREATE VIEW SuccesfullyProducedPerProcess
+CREATE VIEW vSuccesfullyProducedPerProcess
 AS
-SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced
-FROM DevotionsInMeasuremntsPerProcess
+SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced, QuantityToBeProducted
+FROM vDevotionsInMeasuremntsPerProcess
 WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<= WidthAcceptableDeviation
-GROUP BY IdProcess
+GROUP BY IdProcess, QuantityToBeProducted
+
+GO
+
+CREATE VIEW vSuccesfullyProcess
+AS
+SELECT IdProcess
+FROM vSuccesfullyProducedPerProcess
+WHERE SuccesfullProduced >= QuantityToBeProducted
+
+GO
+
+CREATE VIEW vUnfinishedProcess
+AS
+SELECT IdProces
+FROM ProductionProces, vSuccesfullyProcess
+WHERE IdProces != IdProcess
 
 GO
 
 CREATE VIEW vOutputMagazine
 AS
 SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
-FROM TechnicalProductDataPerProcess A, OutControl B, SuccesfullyProducedPerProcess C
+FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO

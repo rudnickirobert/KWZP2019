@@ -27,7 +27,7 @@ namespace KWZP2019
 
         private void ComponentsDataInitialize()
         {
-            cbProcessNumber.DataSource = db.SuccesfullyProducedPerProcess.Where(e => e.SuccesfullProduced == e.QuantityToBeProducted).ToList();
+        
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
