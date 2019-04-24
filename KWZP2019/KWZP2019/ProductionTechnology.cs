@@ -57,6 +57,8 @@ namespace KWZP2019
             }
         }
 
+        //===========================================================
+
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -72,7 +74,7 @@ namespace KWZP2019
             selectedId = (int)selectedRow.Cells["IdTechnology"].Value;
             technology = db.Technologies.Where(t => t.IdTechnology == selectedId).First();
         }
-
+        //===========================================================
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (textBoxTechnologyNameTo.Text.Trim() != "")
@@ -100,6 +102,8 @@ namespace KWZP2019
             lblTimePermeterFrom.Text = "";
             lblSpeedFactorFrom.Text = "";
         }
+
+        //===========================================================
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
