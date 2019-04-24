@@ -284,7 +284,7 @@
           <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
-          <Property Name="Markup" Type="int" Nullable="false" />
+          <Property Name="Markup" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -433,8 +433,8 @@
           </Key>
           <Property Name="IdPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
-          <Property Name="ValidityOfOshTraining" Type="tinyint" />
-          <Property Name="VailidityOfMedicalExam" Type="tinyint" />
+          <Property Name="ValidityOfOshTraining" Type="int" />
+          <Property Name="VailidityOfMedicalExam" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -529,7 +529,7 @@
           <Property Name="IdStaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdDeparment" Type="int" />
           <Property Name="IdPosition" Type="int" />
-          <Property Name="Number" Type="tinyint" />
+          <Property Name="Number" Type="int" />
           <Property Name="DateFrom" Type="date" />
         </EntityType>
         <EntityType Name="Supplier">
@@ -596,8 +596,6 @@
           <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.EntranceControlView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vCompany">
           <Key>
@@ -627,20 +625,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a prima
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.vCustomerWithOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vCustomerWithOrder">
-          <Key>
-            <PropertyRef Name="CustomerName" />
-            <PropertyRef Name="IdOrderCustomer" />
-            <PropertyRef Name="OrderDate" />
-            <PropertyRef Name="Cost" />
-          </Key>
-          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="IdOrderCustomer" Type="int" Nullable="false" />
-          <Property Name="OrderDate" Type="datetime" Nullable="false" />
-          <Property Name="Cost" Type="money" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewDailySfDelivery">
           <Key>
@@ -667,7 +651,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have 
           <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
           <Property Name="EndDate" Type="date" />
           <Property Name="TrainingDate" Type="datetime" Nullable="false" />
-          <Property Name="ValidityOfOshTraining" Type="tinyint" />
+          <Property Name="ValidityOfOshTraining" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vIndividualCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1635,14 +1619,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
     [vCompany].[KRS] AS [KRS], 
     [vCompany].[Description] AS [Description]
     FROM [dbo].[vCompany] AS [vCompany]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vCustomerWithOrder" EntityType="Self.vCustomerWithOrder" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vCustomerWithOrder].[CustomerName] AS [CustomerName], 
-    [vCustomerWithOrder].[IdOrderCustomer] AS [IdOrderCustomer], 
-    [vCustomerWithOrder].[OrderDate] AS [OrderDate], 
-    [vCustomerWithOrder].[Cost] AS [Cost]
-    FROM [dbo].[vCustomerWithOrder] AS [vCustomerWithOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDailySfDelivery" EntityType="Self.ViewDailySfDelivery" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3729,7 +3705,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <End Role="SemiFinished" EntitySet="SemiFinisheds" />
             <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
           </AssociationSet>
-          <EntitySet Name="vCustomerWithOrder1Set" EntityType="RoofingCompanyModel.vCustomerWithOrder1" />
           <EntitySet Name="vCompany" EntityType="RoofingCompanyModel.vCompany" />
           <EntitySet Name="ViewDailySfDelivery" EntityType="RoofingCompanyModel.ViewDailySfDelivery" />
           <EntitySet Name="ViewOshTraining" EntityType="RoofingCompanyModel.ViewOshTraining" />
@@ -3780,18 +3755,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="vCustomerWithOrder1">
-          <Key>
-            <PropertyRef Name="CustomerName" />
-            <PropertyRef Name="IdOrderCustomer" />
-            <PropertyRef Name="OrderDate" />
-            <PropertyRef Name="Cost" />
-          </Key>
-          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
-          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-        </EntityType>
         <EntityType Name="vCompany">
           <Key>
             <PropertyRef Name="IdCustomer" />
@@ -4642,16 +4605,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
               <MappingFragment StoreEntitySet="Unit">
                 <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
                 <ScalarProperty Name="UnitName" ColumnName="UnitName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vCustomerWithOrder1Set">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vCustomerWithOrder1">
-              <MappingFragment StoreEntitySet="vCustomerWithOrder">
-                <ScalarProperty Name="Cost" ColumnName="Cost" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
