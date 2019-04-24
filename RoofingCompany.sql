@@ -666,10 +666,9 @@ CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
-GO
 
+GO
 CREATE VIEW vPredictedPriceForCustomer
-GO 
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
 FROM OrderDetail
@@ -678,7 +677,9 @@ ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN TechnicalProductData
 ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
 JOIN Customer
-ON OrderCustomer.IdCustomer = Customer.IdCustomer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer;
+
+GO
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
@@ -686,6 +687,6 @@ FROM OrderCustomer
 JOIN Customer
 ON Customer.IdCustomer = OrderCustomer.IdCustomer
 JOIN OrderDetail
-on OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
-on OrderDetail.IdProduct = Product.IdProduct;
+ON OrderDetail.IdProduct = Product.IdProduct;
