@@ -55,6 +55,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
             this.viewOrderDetail = new System.Windows.Forms.DataGridView();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.idDetailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +68,7 @@
             this.plannedProductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEndDateCalculate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).BeginInit();
@@ -128,9 +130,10 @@
             // 
             // dateTimeStart
             // 
+            this.dateTimeStart.AllowDrop = true;
             this.dateTimeStart.Location = new System.Drawing.Point(1034, 351);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(200, 22);
+            this.dateTimeStart.Size = new System.Drawing.Size(264, 22);
             this.dateTimeStart.TabIndex = 9;
             // 
             // label5
@@ -146,7 +149,7 @@
             // 
             this.dateTimeEnd.Location = new System.Drawing.Point(1034, 399);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(200, 22);
+            this.dateTimeEnd.Size = new System.Drawing.Size(264, 22);
             this.dateTimeEnd.TabIndex = 11;
             // 
             // label4
@@ -323,6 +326,15 @@
             this.viewOrderDetail.RowTemplate.Height = 24;
             this.viewOrderDetail.Size = new System.Drawing.Size(554, 101);
             this.viewOrderDetail.TabIndex = 22;
+            this.viewOrderDetail.SelectionChanged += new System.EventHandler(this.viewOrderDetail_SelectionChanged);
+            // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
             // 
             // idDetailDataGridViewTextBoxColumn1
             // 
@@ -402,11 +414,22 @@
             // 
             this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
             // 
+            // btnEndDateCalculate
+            // 
+            this.btnEndDateCalculate.Location = new System.Drawing.Point(549, 387);
+            this.btnEndDateCalculate.Name = "btnEndDateCalculate";
+            this.btnEndDateCalculate.Size = new System.Drawing.Size(223, 34);
+            this.btnEndDateCalculate.TabIndex = 23;
+            this.btnEndDateCalculate.Text = "OSZACUJ DATĘ KOŃCOWĄ";
+            this.btnEndDateCalculate.UseVisualStyleBackColor = true;
+            this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
+            // 
             // NewProductionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 566);
+            this.Controls.Add(this.btnEndDateCalculate);
             this.Controls.Add(this.viewOrderDetail);
             this.Controls.Add(this.btnNewPlan);
             this.Controls.Add(this.groupBox1);
@@ -479,5 +502,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vUnhandledOrderDetailsBindingSource;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private System.Windows.Forms.Button btnEndDateCalculate;
     }
 }

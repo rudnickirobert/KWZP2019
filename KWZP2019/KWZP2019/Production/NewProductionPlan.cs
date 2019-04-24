@@ -58,14 +58,38 @@ namespace KWZP2019
             Close();
         }
 
+        private void viewOrderDetail_SelectionChanged(object sender, EventArgs e)
+        {
+            int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
+            OrderDetail orderDetail = db.OrderDetails.FirstOrDefault(f => f.IdDetail == idDetail);
+            OrderCustomer orderCustomer = db.OrderCustomers.FirstOrDefault(f => f.IdOrderCustomer == orderDetail.IdOrderCustomer);
+            dateTimeStart.Value = orderCustomer.OrderDate;
+        }
+
+        private void btnEndDateCalculate_Click(object sender, EventArgs e)
+        {
+            int idMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+            int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
+            double timeInterval;
+            OrderDetail orderDetail = db.OrderDetails.FirstOrDefault(f => f.IdDetail == idDetail);
+            Product product = db.Products.FirstOrDefault(f => f.IdProduct == orderDetail.IdProduct);
+            Technology technology = db.Technologies.FirstOrDefault(f => f.IdTechnology == product.IdTechnology);
+            Maintenance maintenance = db.Maintenances.FirstOrDefault(f => f.IdMaintenance == idMachine);
+            Machine machine = db.Machines.FirstOrDefault(f => f.IdMachine == maintenance.IdMachine);
+            timeInterval = orderDetail.Quantity * machine.MetersPerHour * technology.TimePermeter * 0.2;
+        }
+
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
+            viewOrderDetail.DataSource = db.vUnhandledOrderDetails.ToList();
             tBoxPlanNr.Text = Convert.ToString(idNewPlan);
             viewProcessEmpl.DataSource = null;
-            viewOrderDetail.DataSource = db.vUnhandledOrderDetails.ToList();
-            //OrderCustomer orderCustomer = db.OrderCustomers.FirstOrDefault(f => f.IdOrderCustomer == orderDetail.IdOrderCustomer);
+            dateTimeStart.Format = DateTimePickerFormat.Custom;
+            dateTimeStart.CustomFormat = "yyyy-MM-dd HH:mm";
+            dateTimeEnd.CustomFormat = "yyyy-MM-dd HH:mm";
 
 
         }
+
     }
 }
