@@ -18,5 +18,21 @@ namespace KWZP2019
             InitializeComponent();
             this.db = db;
         }
+
+        private void btCloseAddProduct_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btAddConfirm_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            product.IdSemiFinished = 5;
+            product.ProductCode = "laalelalamanocha";
+            product.IdTechnology = 5;
+            product.InputDate = DateTime.Now;
+            db.Products.Add(product);
+            db.SaveChanges();
+        }
     }
 }
