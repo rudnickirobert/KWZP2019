@@ -274,16 +274,19 @@
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+
     <Compile Include="NewMaintenanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewProductionPlan.cs">
+
+    <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewProductionPlan.Designer.cs">
+
+    <Compile Include="Production\NewProductionPlan.Designer.cs">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderCustomer.cs">
@@ -373,16 +376,16 @@
     <Compile Include="Product.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Production.cs">
+    <Compile Include="Production\Production.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production.Designer.cs">
+    <Compile Include="Production\Production.Designer.cs">
       <DependentUpon>Production.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionFailures.cs">
+    <Compile Include="Production\ProductionFailures.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionFailures.Designer.cs">
+    <Compile Include="Production\ProductionFailures.Designer.cs">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionHistory.cs">
@@ -391,10 +394,11 @@
     <Compile Include="ProductionHistory.Designer.cs">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionPlanned.cs">
+
+    <Compile Include="Production\ProductionPlanned.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionPlanned.Designer.cs">
+    <Compile Include="Production\ProductionPlanned.Designer.cs">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionProce.cs">
@@ -406,16 +410,16 @@
     <Compile Include="Finances\Profits.Designer.cs">
       <DependentUpon>Profits.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionProcess.cs">
+    <Compile Include="Production\ProductionProcess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionProcess.Designer.cs">
+    <Compile Include="Production\ProductionProcess.Designer.cs">
       <DependentUpon>ProductionProcess.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionProducts.cs">
+    <Compile Include="Production\ProductionProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionProducts.Designer.cs">
+    <Compile Include="Production\ProductionProducts.Designer.cs">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionSelection.cs">
@@ -424,10 +428,11 @@
     <Compile Include="ProductionSelection.Designer.cs">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionTechnology.cs">
+
+    <Compile Include="Production\ProductionTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionTechnology.Designer.cs">
+    <Compile Include="Production\ProductionTechnology.Designer.cs">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -621,7 +626,7 @@
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewProductionPlan.resx">
+    <EmbeddedResource Include="Production\NewProductionPlan.resx">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
@@ -633,28 +638,31 @@
     <EmbeddedResource Include="PartsForm.resx">
       <DependentUpon>PartsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production.resx">
+ 
+    <EmbeddedResource Include="Production\Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionFailures.resx">
+    <EmbeddedResource Include="Production\ProductionFailures.resx">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionHistory.resx">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionPlanned.resx">
+
+    <EmbeddedResource Include="Production\ProductionPlanned.resx">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionProcess.resx">
+    <EmbeddedResource Include="Production\ProductionProcess.resx">
       <DependentUpon>ProductionProcess.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionProducts.resx">
+    <EmbeddedResource Include="Production\ProductionProducts.resx">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionSelection.resx">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionTechnology.resx">
+
+    <EmbeddedResource Include="Production\ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OutControlForm.resx">
@@ -702,16 +710,17 @@
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Product.datasource" />
-    <None Include="PlannedProduction.datasource" />
-    <None Include="PlannedProductionEmployeeDetail.datasource" />
-    <None Include="Product.datasource" />
-    <None Include="Production.datasource" />
-    <None Include="ProductionFailures.datasource" />
-    <None Include="ProductionPlanned.datasource" />
-    <None Include="ProductionProce.datasource" />
-    <None Include="ProductionProcess.datasource" />
-    <None Include="ProductionProducts.datasource" />
-    <None Include="ProductionTechnology.datasource" />
+
+    <None Include="Production\PlannedProduction.datasource" />
+    <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
+    <None Include="Production\Product.datasource" />
+    <None Include="Production\Production.datasource" />
+    <None Include="Production\ProductionFailures.datasource" />
+    <None Include="Production\ProductionPlanned.datasource" />
+    <None Include="Production\ProductionProce.datasource" />
+    <None Include="Production\ProductionProcess.datasource" />
+    <None Include="Production\ProductionProducts.datasource" />
+    <None Include="Production\ProductionTechnology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
