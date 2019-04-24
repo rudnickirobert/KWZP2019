@@ -23,12 +23,14 @@ namespace KWZP2019
         {
             HR hr = new HR(db);
             hr.Show();
+            this.Hide();
         }
 
         private void btnFinances_Click(object sender, EventArgs e)
         {
             Finances finances = new Finances(db);
             finances.Show();
+            this.Hide();
         }
 
     }
