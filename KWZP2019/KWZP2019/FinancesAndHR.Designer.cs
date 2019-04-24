@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinancesAndHR));
             this.btnFinances = new System.Windows.Forms.Button();
             this.btnHR = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFinances
             // 
+            this.btnFinances.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFinances.BackgroundImage")));
             this.btnFinances.Location = new System.Drawing.Point(125, 43);
-            this.btnFinances.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFinances.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinances.Name = "btnFinances";
             this.btnFinances.Size = new System.Drawing.Size(321, 92);
             this.btnFinances.TabIndex = 0;
@@ -45,8 +47,9 @@
             // 
             // btnHR
             // 
+            this.btnHR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHR.BackgroundImage")));
             this.btnHR.Location = new System.Drawing.Point(125, 167);
-            this.btnHR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHR.Margin = new System.Windows.Forms.Padding(2);
             this.btnHR.Name = "btnHR";
             this.btnHR.Size = new System.Drawing.Size(321, 92);
             this.btnHR.TabIndex = 1;
@@ -58,13 +61,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.ClientSize = new System.Drawing.Size(761, 358);
             this.Controls.Add(this.btnHR);
             this.Controls.Add(this.btnFinances);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FinancesAndHR";
             this.Text = "Finanse i Kadry";
             this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -737,6 +737,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\53062472_302328053765523_8291849142804676608_n.png" />
+    <None Include="Resources\icons8-euro-money-80.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
