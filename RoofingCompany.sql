@@ -18,9 +18,14 @@ create table EntranceControl(
 	IdSfDetail int not null,
 	IdEmployee int not null,
 	ControlDate DateTime not null,
-	ControlStatus bit not null,
+	ControlStatus bit null,
 	Comments nvarchar(255),
-	Quantity int not null
+	Quantity int null,
+	RealThickness decimal(3, 2) not null,
+	RealWidth decimal(6, 2) not null,
+	RealWeight decimal(6,2) not null,
+	RealColor nvarchar(20) not null,
+	ChemicalComposition bit not null
 	);
 
 create table FEMAnalysis(
