@@ -13,10 +13,14 @@ namespace KWZP2019
     public partial class HR : Form
     {
         RoofingCompanyEntities db;
-        public HR(RoofingCompanyEntities db)
+        StartForm startForm;
+        FinancesAndHR finanseIHR;
+        public HR(RoofingCompanyEntities db, StartForm startForm, FinancesAndHR finanseIHR)
         {
-            InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.finanseIHR = finanseIHR;
+            InitializeComponent();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -39,7 +43,6 @@ namespace KWZP2019
             employeeDetails.Show();
             this.Hide();
         }
-
         private void btnAbsences_Click(object sender, EventArgs e)
         {
             Absences absences = new Absences(db);

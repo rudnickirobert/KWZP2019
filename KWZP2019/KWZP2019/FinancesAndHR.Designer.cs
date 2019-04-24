@@ -88,6 +88,7 @@
             this.btnReturnMain.Text = "Powrót do menu";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // FinancesAndHR
             // 
