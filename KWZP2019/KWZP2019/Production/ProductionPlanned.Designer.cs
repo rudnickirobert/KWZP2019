@@ -48,6 +48,7 @@
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnMachineDet = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
+            this.btnRefreshPlanList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlannedProductionGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plannedProductionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -213,11 +214,22 @@
             this.btnOrder.Text = "Zamówienie";
             this.btnOrder.UseVisualStyleBackColor = true;
             // 
+            // btnRefreshPlanList
+            // 
+            this.btnRefreshPlanList.Location = new System.Drawing.Point(690, 65);
+            this.btnRefreshPlanList.Name = "btnRefreshPlanList";
+            this.btnRefreshPlanList.Size = new System.Drawing.Size(129, 39);
+            this.btnRefreshPlanList.TabIndex = 9;
+            this.btnRefreshPlanList.Text = "Odśwież listę";
+            this.btnRefreshPlanList.UseVisualStyleBackColor = true;
+            this.btnRefreshPlanList.Click += new System.EventHandler(this.btnRefreshPlanList_Click);
+            // 
             // ProductionPlanned
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 499);
+            this.Controls.Add(this.btnRefreshPlanList);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.btnMachineDet);
@@ -258,5 +270,6 @@
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnMachineDet;
         private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.Button btnRefreshPlanList;
     }
 }

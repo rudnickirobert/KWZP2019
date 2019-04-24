@@ -21,7 +21,6 @@ namespace KWZP2019
             idPlan = id;
             idNewPlan = newId;
         }
-
         private void NewProductionPlan_Load(object sender, EventArgs e)
         {
             
@@ -30,8 +29,7 @@ namespace KWZP2019
                 PlannedProduction plan = db.PlannedProductions.FirstOrDefault(f => f.IdPlan == idPlan);
                 vUnhandledOrderDetails order = new vUnhandledOrderDetails();
                 OrderDetail orderDetail = db.OrderDetails.FirstOrDefault(f => f.IdDetail == plan.IdDetail);
-                Product product = db.Products.FirstOrDefault(f=>f.IdProduct==orderDetail.IdProduct);
-               
+                Product product = db.Products.FirstOrDefault(f=>f.IdProduct==orderDetail.IdProduct);               
                 if (plan != null)
                 {
                     tBoxPlanNr.Text = Convert.ToString(plan.IdPlan);
@@ -42,22 +40,16 @@ namespace KWZP2019
                 }
                 List<vUnhandledOrderDetails> handledOrder = new List<vUnhandledOrderDetails>();
                 handledOrder.Add(order);
-                viewOrderDetail.DataSource = handledOrder;
-                
-                
+                viewOrderDetail.DataSource = handledOrder;                      
             }
             viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
                                           where PlannedProductionEmployeeDetail.IdProces == idPlan
                                           select PlannedProductionEmployeeDetail).ToList();
-
-
         }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void viewOrderDetail_SelectionChanged(object sender, EventArgs e)
         {
             int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
@@ -76,20 +68,32 @@ namespace KWZP2019
             Technology technology = db.Technologies.FirstOrDefault(f => f.IdTechnology == product.IdTechnology);
             Maintenance maintenance = db.Maintenances.FirstOrDefault(f => f.IdMaintenance == idMachine);
             Machine machine = db.Machines.FirstOrDefault(f => f.IdMachine == maintenance.IdMachine);
-            timeInterval = orderDetail.Quantity * machine.MetersPerHour * technology.TimePermeter * 0.2;
+            timeInterval = orderDetail.Quantity * machine.MetersPerHour*0.5* technology.TimePermeter * 0.2;
+            DateTime dateEnd = dateTimeStart.Value.AddMinutes(timeInterval);
+            dateTimeEnd.Value = dateEnd;
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            PlannedProduction newPlan = new PlannedProduction();
+            newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
+            newPlan.IdMachine=Convert.ToInt32(cBoxMachine.Text.Trim());
+            newPlan.PlannedStartd = dateTimeStart.Value;
+            newPlan.PlannedEndd = dateTimeEnd.Value;
+            newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
+            db.PlannedProductions.Add(newPlan);
+            db.SaveChanges();
+            MessageBox.Show("Dodano nowy plan!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
             viewOrderDetail.DataSource = db.vUnhandledOrderDetails.ToList();
             tBoxPlanNr.Text = Convert.ToString(idNewPlan);
             viewProcessEmpl.DataSource = null;
             dateTimeStart.Format = DateTimePickerFormat.Custom;
+            dateTimeEnd.Format = DateTimePickerFormat.Custom;
             dateTimeStart.CustomFormat = "yyyy-MM-dd HH:mm";
             dateTimeEnd.CustomFormat = "yyyy-MM-dd HH:mm";
-
-
         }
-
     }
 }
