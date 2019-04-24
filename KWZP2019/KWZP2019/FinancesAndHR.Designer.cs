@@ -47,7 +47,7 @@
             // 
             // btnHR
             // 
-            this.btnHR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHR.BackgroundImage")));
+            this.btnHR.BackgroundImage = global::KWZP2019.Properties.Resources.icons8_user_groups_80__1_;
             this.btnHR.Location = new System.Drawing.Point(125, 167);
             this.btnHR.Margin = new System.Windows.Forms.Padding(2);
             this.btnHR.Name = "btnHR";
