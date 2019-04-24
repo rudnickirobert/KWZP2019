@@ -580,13 +580,6 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
 
-
-go
-create view EntranceControlView as
-select IdSfDetail, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition from SemiFinished
-Right Join SfOrderDetail
-on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished
-
 go
 create view ViewDailySfDelivery as
 select SemiFinishedOrder.SfDeliveryDate as [Delivery], Supplier.SupplierName, [Material].SfCode, [Material].Quantity
