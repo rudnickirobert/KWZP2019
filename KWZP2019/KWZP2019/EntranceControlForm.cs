@@ -79,7 +79,7 @@ namespace KWZP2019
         {
 
             // var because it's an anonymouse type
-            /*var orders = db.SfOrderDetails
+            var orders = db.SfOrderDetails
                 .Join(db.SemiFinishedOrders,
                 sfOrderDetail => sfOrderDetail.IdSfOrder,
                 sfOrder => sfOrder.IdSfOrder,
@@ -88,31 +88,21 @@ namespace KWZP2019
                     sfOrderDetail,
                     sfOrder
                 })
-                .Join(db.EntranceControls,
-                sfOrderDetailJoinSfOrder => sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfDetail,
-                entranceControl => entranceControl.IdSfDetail,
-                (sfOrderDetailJoinSfOrder, entranceControl) => new
-                {
-                    sfOrderDetailJoinSfOrder,
-                    entranceControl
-                })
                 .Where(check =>
-                check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Year == selectedDate.Year
-                && check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Month == selectedDate.Month
-                && check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Day == selectedDate.Day
-                && check.entranceControl.ControlStatus == null)
-                .Select(sfOrderDetailJoinSfOrderJoinEntranceControl => new
+                check.sfOrder.SfDeliveryDate.Year == selectedDate.Year
+                && check.sfOrder.SfDeliveryDate.Month == selectedDate.Month
+                && check.sfOrder.SfDeliveryDate.Day == selectedDate.Day)
+                .Select(sfOrderDetailJoinSfOrder => new
                 {
-                    ID_zamówienia = sfOrderDetailJoinSfOrderJoinEntranceControl.sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
-                    ID_półfabrykatu = sfOrderDetailJoinSfOrderJoinEntranceControl.sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
-                    Data_dostarczenia = sfOrderDetailJoinSfOrderJoinEntranceControl.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
+                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
+                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
+                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
                 })
                 .OrderBy(orderBy =>
                 orderBy.Data_dostarczenia)
-                .ToList();*/
-
+                .ToList();
             // Polish names only for displaying into dataGridView in form
-            //dataGVEntranceControl.DataSource = orders;
+            dataGVEntranceControl.DataSource = orders;
         }
 
         // ==================================================
@@ -123,13 +113,15 @@ namespace KWZP2019
             // var because it's an anonymouse type
             var orders = db.SfOrderDetails
                 .Join(db.SemiFinishedOrders,
-                d => d.IdSfOrder,
-                o => o.IdSfOrder,
-                (d, o) => new {
-                    ID_zamówienia = d.IdSfOrder,
-                    ID_półfabrykatu = d.IdSemiFinished,
-                    Data_dostarczenia = o.SfDeliveryDate
+                sfOrderDetail => sfOrderDetail.IdSfOrder,
+                sfOrder => sfOrder.IdSfOrder,
+                (sfOrderDetail, sfOrder) => new {
+                    ID_zamówienia = sfOrderDetail.IdSfOrder,
+                    ID_półfabrykatu = sfOrderDetail.IdSemiFinished,
+                    Data_dostarczenia = sfOrder.SfDeliveryDate
                 })
+                .OrderBy(orderBy =>
+                orderBy.Data_dostarczenia)
                 .ToList();
             dataGVEntranceControl.DataSource = orders;
         }
