@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnAddEmp = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBoxMachine = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBoxPlanNr = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -55,13 +55,14 @@
             this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblOperators = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnNewPlan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,13 +77,13 @@
             this.btnAddEmp.Text = "DODAJ";
             this.btnAddEmp.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(226, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cBox.FormattingEnabled = true;
+            this.cBox.Location = new System.Drawing.Point(226, 124);
+            this.cBox.Name = "cBox";
+            this.cBox.Size = new System.Drawing.Size(121, 24);
+            this.cBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -102,13 +103,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Przydzielona maszyna";
             // 
-            // comboBox2
+            // cBoxMachine
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(226, 176);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 3;
+            this.cBoxMachine.FormattingEnabled = true;
+            this.cBoxMachine.Location = new System.Drawing.Point(226, 176);
+            this.cBoxMachine.Name = "cBoxMachine";
+            this.cBoxMachine.Size = new System.Drawing.Size(121, 24);
+            this.cBoxMachine.TabIndex = 3;
             // 
             // label3
             // 
@@ -119,13 +120,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Data zamówienia";
             // 
-            // textBox1
+            // tBoxPlanNr
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(477, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 7;
+            this.tBoxPlanNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tBoxPlanNr.Location = new System.Drawing.Point(477, 12);
+            this.tBoxPlanNr.Name = "tBoxPlanNr";
+            this.tBoxPlanNr.Size = new System.Drawing.Size(100, 38);
+            this.tBoxPlanNr.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
@@ -295,6 +296,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodawanie pracowników";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Pracownik";
+            // 
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(590, 59);
@@ -344,20 +354,22 @@
             this.comboBox3.Size = new System.Drawing.Size(194, 24);
             this.comboBox3.TabIndex = 5;
             // 
-            // label7
+            // btnNewPlan
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Pracownik";
+            this.btnNewPlan.Location = new System.Drawing.Point(671, 9);
+            this.btnNewPlan.Name = "btnNewPlan";
+            this.btnNewPlan.Size = new System.Drawing.Size(101, 41);
+            this.btnNewPlan.TabIndex = 21;
+            this.btnNewPlan.Text = "NOWY";
+            this.btnNewPlan.UseVisualStyleBackColor = true;
+            this.btnNewPlan.Click += new System.EventHandler(this.btnNewPlan_Click);
             // 
             // NewProductionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 492);
+            this.Controls.Add(this.btnNewPlan);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblOperators);
             this.Controls.Add(this.viewProcessEmpl);
@@ -369,12 +381,12 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tBoxPlanNr);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cBoxMachine);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cBox);
             this.Name = "NewProductionPlan";
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
@@ -390,12 +402,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddEmp;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBoxMachine;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBoxPlanNr;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -422,5 +434,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn plannedProductionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allocationDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnNewPlan;
     }
 }

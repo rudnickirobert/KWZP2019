@@ -34,5 +34,6 @@ namespace KWZP2019
         public virtual ICollection<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductionProce> ProductionProces { get; set; }
+        public virtual Maintenance Maintenance { get; set; }
     }
 }

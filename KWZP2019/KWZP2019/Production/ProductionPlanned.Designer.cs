@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PlannedProductionGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBoxPlanSearch = new System.Windows.Forms.TextBox();
-            this.btnAddPlan = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnEmployee = new System.Windows.Forms.Button();
-            this.btnMachineDet = new System.Windows.Forms.Button();
-            this.btnOrder = new System.Windows.Forms.Button();
             this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMachineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +41,13 @@
             this.plannedProductionEmployeeDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productionProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plannedProductionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxPlanSearch = new System.Windows.Forms.TextBox();
+            this.btnAddPlan = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnEmployee = new System.Windows.Forms.Button();
+            this.btnMachineDet = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlannedProductionGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plannedProductionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -73,70 +73,7 @@
             this.PlannedProductionGridView.RowTemplate.Height = 24;
             this.PlannedProductionGridView.Size = new System.Drawing.Size(1043, 316);
             this.PlannedProductionGridView.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Szukaj planu:";
-            // 
-            // txtBoxPlanSearch
-            // 
-            this.txtBoxPlanSearch.Location = new System.Drawing.Point(486, 70);
-            this.txtBoxPlanSearch.Name = "txtBoxPlanSearch";
-            this.txtBoxPlanSearch.Size = new System.Drawing.Size(166, 22);
-            this.txtBoxPlanSearch.TabIndex = 2;
-            this.txtBoxPlanSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxPlanSearch_KeyPress);
-            // 
-            // btnAddPlan
-            // 
-            this.btnAddPlan.Location = new System.Drawing.Point(12, 62);
-            this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(215, 39);
-            this.btnAddPlan.TabIndex = 3;
-            this.btnAddPlan.Text = "Nowy plan /edytuj plan";
-            this.btnAddPlan.UseVisualStyleBackColor = true;
-            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(929, 441);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(126, 39);
-            this.btnReturn.TabIndex = 5;
-            this.btnReturn.Text = "POWRÓT";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnEmployee
-            // 
-            this.btnEmployee.Location = new System.Drawing.Point(231, 441);
-            this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(201, 39);
-            this.btnEmployee.TabIndex = 7;
-            this.btnEmployee.Text = "Pracownicy wykonujący";
-            this.btnEmployee.UseVisualStyleBackColor = true;
-            // 
-            // btnMachineDet
-            // 
-            this.btnMachineDet.Location = new System.Drawing.Point(12, 441);
-            this.btnMachineDet.Name = "btnMachineDet";
-            this.btnMachineDet.Size = new System.Drawing.Size(213, 39);
-            this.btnMachineDet.TabIndex = 6;
-            this.btnMachineDet.Text = "Szczegóły maszyny";
-            this.btnMachineDet.UseVisualStyleBackColor = true;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.Location = new System.Drawing.Point(438, 441);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(129, 39);
-            this.btnOrder.TabIndex = 8;
-            this.btnOrder.Text = "Zamówienie";
-            this.btnOrder.UseVisualStyleBackColor = true;
+            this.PlannedProductionGridView.SelectionChanged += new System.EventHandler(this.PlannedProductionGridView_SelectionChanged);
             // 
             // idPlanDataGridViewTextBoxColumn
             // 
@@ -211,6 +148,70 @@
             // plannedProductionBindingSource
             // 
             this.plannedProductionBindingSource.DataSource = typeof(KWZP2019.PlannedProduction);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(386, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Szukaj planu:";
+            // 
+            // txtBoxPlanSearch
+            // 
+            this.txtBoxPlanSearch.Location = new System.Drawing.Point(486, 70);
+            this.txtBoxPlanSearch.Name = "txtBoxPlanSearch";
+            this.txtBoxPlanSearch.Size = new System.Drawing.Size(166, 22);
+            this.txtBoxPlanSearch.TabIndex = 2;
+            this.txtBoxPlanSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxPlanSearch_KeyPress);
+            // 
+            // btnAddPlan
+            // 
+            this.btnAddPlan.Location = new System.Drawing.Point(12, 62);
+            this.btnAddPlan.Name = "btnAddPlan";
+            this.btnAddPlan.Size = new System.Drawing.Size(215, 39);
+            this.btnAddPlan.TabIndex = 3;
+            this.btnAddPlan.Text = "Nowy plan /edytuj plan";
+            this.btnAddPlan.UseVisualStyleBackColor = true;
+            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(929, 441);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(126, 39);
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.Text = "POWRÓT";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnEmployee
+            // 
+            this.btnEmployee.Location = new System.Drawing.Point(231, 441);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Size = new System.Drawing.Size(201, 39);
+            this.btnEmployee.TabIndex = 7;
+            this.btnEmployee.Text = "Pracownicy wykonujący";
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            // 
+            // btnMachineDet
+            // 
+            this.btnMachineDet.Location = new System.Drawing.Point(12, 441);
+            this.btnMachineDet.Name = "btnMachineDet";
+            this.btnMachineDet.Size = new System.Drawing.Size(213, 39);
+            this.btnMachineDet.TabIndex = 6;
+            this.btnMachineDet.Text = "Szczegóły maszyny";
+            this.btnMachineDet.UseVisualStyleBackColor = true;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Location = new System.Drawing.Point(438, 441);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(129, 39);
+            this.btnOrder.TabIndex = 8;
+            this.btnOrder.Text = "Zamówienie";
+            this.btnOrder.UseVisualStyleBackColor = true;
             // 
             // ProductionPlanned
             // 

@@ -18,9 +18,14 @@ create table EntranceControl(
 	IdSfDetail int not null,
 	IdEmployee int not null,
 	ControlDate DateTime not null,
-	ControlStatus bit not null,
+	ControlStatus bit null,
 	Comments nvarchar(255),
-	Quantity int not null
+	Quantity int null,
+	RealThickness decimal(3, 2) not null,
+	RealWidth decimal(6, 2) not null,
+	RealWeight decimal(6,2) not null,
+	RealColor nvarchar(20) not null,
+	ChemicalComposition bit not null
 	);
 
 create table FEMAnalysis(
@@ -668,8 +673,8 @@ CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
-GO
 
+GO
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -679,7 +684,9 @@ ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN TechnicalProductData
 ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
 JOIN Customer
-ON OrderCustomer.IdCustomer = Customer.IdCustomer
+ON OrderCustomer.IdCustomer = Customer.IdCustomer;
+
+GO
 go
 CREATE VIEW vOrderDetail 
 AS
@@ -688,6 +695,6 @@ FROM OrderCustomer
 JOIN Customer
 ON Customer.IdCustomer = OrderCustomer.IdCustomer
 JOIN OrderDetail
-on OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
-on OrderDetail.IdProduct = Product.IdProduct;
+ON OrderDetail.IdProduct = Product.IdProduct;
