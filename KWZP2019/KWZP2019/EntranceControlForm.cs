@@ -63,7 +63,21 @@ namespace KWZP2019
         private void EntranceControlForm_Load(object sender, EventArgs e)
         {
             datePickerSelectedControlsDate.Value = DateTime.Now;
-            /*Kod na przyszłość jak będą odpowiednie rekordy w bazie, wypisuje tylko na dzisiaj i te które nie mają statusu w bazie
+            ShowControlsFromDate(DateTime.Now);
+        }
+
+        // ==================================================
+
+        private void BtnShowFromDate_Click(object sender, EventArgs e)
+        {
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value);
+        }
+
+        // ==================================================
+
+        private void ShowControlsFromDate(DateTime selectedDate)
+        {
+            // var because it's an anonymouse type
             var orders = db.SfOrderDetails
                 .Join(db.SemiFinishedOrders,
                 sfOrderDetail => sfOrderDetail.IdSfOrder,
@@ -81,8 +95,10 @@ namespace KWZP2019
                     sfOrderDetailJoinSfOrder,
                     entranceControl
                 })
-                .Where(check => 
-                check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Year == DateTime.Now.Year 
+                .Where(check =>
+                check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Year == selectedDate.Year
+                && check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Month == selectedDate.Month
+                && check.sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate.Day == selectedDate.Day
                 && check.entranceControl.ControlStatus == null)
                 .Select(sfOrderDetailJoinSfOrderJoinEntranceControl => new
                 {
@@ -93,8 +109,17 @@ namespace KWZP2019
                 .OrderBy(orderBy =>
                 orderBy.Data_dostarczenia)
                 .ToList();
-            */
+
             // Polish names only for displaying into dataGridView in form
+            dataGVEntranceControl.DataSource = orders;
+        }
+
+        // ==================================================
+
+        private void BtnShow_Click(object sender, EventArgs e)
+        {
+            // Polish names only for displaying into dataGridView in form
+            // var because it's an anonymouse type
             var orders = db.SfOrderDetails
                 .Join(db.SemiFinishedOrders,
                 d => d.IdSfOrder,

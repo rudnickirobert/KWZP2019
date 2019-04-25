@@ -610,6 +610,15 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment;
 
+go
+create view ViewEntranceControl as
+select SfOrderDetail.IdSfOrder, SfOrderDetail.IdSemiFinished, SemiFinishedOrder.SfDeliveryDate, EntranceControl.ControlStatus
+from SfOrderDetail
+full outer join SemiFinishedOrder
+on SfOrderDetail.IdSforder = SemiFinishedOrder.IdSfOrder
+full outer join EntranceControl
+on SfOrderDetail.IdSfDetail = EntranceControl.IdSfDetail;
+
 
 /*====SALES DEPARTMENT===*/
 

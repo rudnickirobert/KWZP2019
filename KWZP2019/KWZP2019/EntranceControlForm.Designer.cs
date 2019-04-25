@@ -72,6 +72,8 @@ namespace KWZP2019
             this.lblSelectedControl = new System.Windows.Forms.Label();
             this.lblOrderIdShow = new System.Windows.Forms.Label();
             this.lblSfIdShow = new System.Windows.Forms.Label();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.btnShowFromDate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
@@ -368,7 +370,6 @@ namespace KWZP2019
             // 
             // datePickerSelectedControlsDate
             // 
-            this.datePickerSelectedControlsDate.Enabled = false;
             this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(344, 210);
             this.datePickerSelectedControlsDate.Margin = new System.Windows.Forms.Padding(0);
@@ -612,6 +613,26 @@ namespace KWZP2019
             this.lblSfIdShow.TabIndex = 6;
             this.lblSfIdShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(812, 294);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(75, 23);
+            this.btnShowAll.TabIndex = 39;
+            this.btnShowAll.Text = "Pokaż";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.BtnShow_Click);
+            // 
+            // btnShowFromDate
+            // 
+            this.btnShowFromDate.Location = new System.Drawing.Point(267, 211);
+            this.btnShowFromDate.Name = "btnShowFromDate";
+            this.btnShowFromDate.Size = new System.Drawing.Size(75, 23);
+            this.btnShowFromDate.TabIndex = 39;
+            this.btnShowFromDate.Text = "Pokaż z";
+            this.btnShowFromDate.UseVisualStyleBackColor = true;
+            this.btnShowFromDate.Click += new System.EventHandler(this.BtnShowFromDate_Click);
+            // 
             // EntranceControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,6 +640,8 @@ namespace KWZP2019
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.btnShowFromDate);
+            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.picBoxControlStatus);
             this.Controls.Add(this.datePickerSelectedControlsDate);
             this.Controls.Add(this.picBoxThicknessStatus);
@@ -717,5 +740,7 @@ namespace KWZP2019
         private System.Windows.Forms.Label lblSelectedControl;
         private System.Windows.Forms.Label lblOrderIdShow;
         private System.Windows.Forms.Label lblSfIdShow;
+        private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.Button btnShowFromDate;
     }
 }
