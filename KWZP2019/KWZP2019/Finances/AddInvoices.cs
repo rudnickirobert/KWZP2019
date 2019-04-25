@@ -34,7 +34,6 @@ namespace KWZP2019
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
         void clear()
         {
@@ -61,6 +60,7 @@ namespace KWZP2019
             newInvoiceValue.Sum = decimal.Parse(tbInvoiceValue.Text.Trim());
             int selectedIndex = comboBox1.SelectedIndex+1;
             newInvoiceValue.IdInvoiceType = selectedIndex;
+            newInvoiceValue.Date = DateTime.Parse(dtpDateadded.Value.ToString("yyyy-MM-dd"));
             Contractor newContractor = new Contractor();
             newContractor.ContractorName = tbCompanyName.Text.Trim();
             newContractor.Phone = int.Parse(tbPhone.Text.Trim());
@@ -73,7 +73,6 @@ namespace KWZP2019
             newContractor.NIP = long.Parse(tbNIP.Text.Trim());
             newContractor.KRS = long.Parse(tbKRS.Text.Trim());
             newContractor.Description = tbDescription.Text.Trim();
-
             db.Invoices.Add(newInvoiceValue);
             db.Contractors.Add(newContractor);
             db.SaveChanges();
