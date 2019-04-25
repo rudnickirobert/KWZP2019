@@ -209,19 +209,16 @@ namespace KWZP2019
             if(doResultsApproved)
             {
                 // var because it's anonymouse type
-                var idSfDetail = db.SfOrderDetails
+                SfOrderDetail idSfDetail = db.SfOrderDetails
                     .Where(check =>
                     check.IdSfOrder.ToString() == selectedOrderId
-                    && check.IdSemiFinished.ToString() == selectedSfId)
-                    .Select(id => new
-                    {
-                        id.IdSfDetail
-                    });
+                    && check.IdSemiFinished.ToString() == selectedSfId).First();
 
 
                 EntranceControl entranceControl = new EntranceControl();
 
-                entranceControl.IdSfDetail = int.Parse(idSfDetail.ToString());
+                entranceControl.IdSfDetail = idSfDetail.IdSfDetail;
+                entranceControl.IdEmployee = int.Parse(textBoxEmployeeId.Text);
                 entranceControl.ControlDate = datePickerSelectedControlsDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
