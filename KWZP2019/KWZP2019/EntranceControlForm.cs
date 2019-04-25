@@ -77,8 +77,9 @@ namespace KWZP2019
 
         private void ShowControlsFromDate(DateTime selectedDate)
         {
+
             // var because it's an anonymouse type
-            var orders = db.SfOrderDetails
+            /*var orders = db.SfOrderDetails
                 .Join(db.SemiFinishedOrders,
                 sfOrderDetail => sfOrderDetail.IdSfOrder,
                 sfOrder => sfOrder.IdSfOrder,
@@ -108,10 +109,10 @@ namespace KWZP2019
                 })
                 .OrderBy(orderBy =>
                 orderBy.Data_dostarczenia)
-                .ToList();
+                .ToList();*/
 
             // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
+            //dataGVEntranceControl.DataSource = orders;
         }
 
         // ==================================================
