@@ -70,7 +70,6 @@ namespace KWZP2019
             this.btnApproval = new System.Windows.Forms.Button();
             this.dataGVEntranceControl = new System.Windows.Forms.DataGridView();
             this.lblSelectedControl = new System.Windows.Forms.Label();
-            this.picBoxChemicalCompositionStatus = new System.Windows.Forms.PictureBox();
             this.lblOrderIdShow = new System.Windows.Forms.Label();
             this.lblSfIdShow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
@@ -80,7 +79,6 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalCompositionStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -327,7 +325,7 @@ namespace KWZP2019
             this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeFullName.ForeColor = System.Drawing.Color.White;
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(680, 237);
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(646, 235);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
             this.lblEmployeeFullName.Size = new System.Drawing.Size(13, 20);
             this.lblEmployeeFullName.TabIndex = 33;
@@ -590,16 +588,6 @@ namespace KWZP2019
             this.lblSelectedControl.Text = "Wybrana Kontrola";
             this.lblSelectedControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picBoxChemicalCompositionStatus
-            // 
-            this.picBoxChemicalCompositionStatus.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxChemicalCompositionStatus.Location = new System.Drawing.Point(1138, 330);
-            this.picBoxChemicalCompositionStatus.Name = "picBoxChemicalCompositionStatus";
-            this.picBoxChemicalCompositionStatus.Size = new System.Drawing.Size(30, 30);
-            this.picBoxChemicalCompositionStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxChemicalCompositionStatus.TabIndex = 34;
-            this.picBoxChemicalCompositionStatus.TabStop = false;
-            // 
             // lblOrderIdShow
             // 
             this.lblOrderIdShow.BackColor = System.Drawing.SystemColors.Window;
@@ -636,7 +624,6 @@ namespace KWZP2019
             this.Controls.Add(this.picBoxThicknessStatus);
             this.Controls.Add(this.picBoxWidhtStatus);
             this.Controls.Add(this.picBoxMassStatus);
-            this.Controls.Add(this.picBoxChemicalCompositionStatus);
             this.Controls.Add(this.picBoxQuantityStatus);
             this.Controls.Add(this.picBoxColorStatus);
             this.Controls.Add(this.lblDelayTime);
@@ -685,7 +672,6 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxChemicalCompositionStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -729,7 +715,6 @@ namespace KWZP2019
         private System.Windows.Forms.Button btnApproval;
         private System.Windows.Forms.DataGridView dataGVEntranceControl;
         private System.Windows.Forms.Label lblSelectedControl;
-        private System.Windows.Forms.PictureBox picBoxChemicalCompositionStatus;
         private System.Windows.Forms.Label lblOrderIdShow;
         private System.Windows.Forms.Label lblSfIdShow;
     }

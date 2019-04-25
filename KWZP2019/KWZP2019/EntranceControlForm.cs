@@ -16,8 +16,9 @@ namespace KWZP2019
         private RoofingCompanyEntities db;
         private StartForm startForm;
         private QualityControl qualityControlForm;
-        private bool resultsApproved = false;
-        private bool doControlExist = true;
+        private bool doResultsApproved;
+        private bool doControlExist;
+        private bool doResultsChecked;
         private bool wholeControlStatus = false;
         private String selectedOrderId;
         private String selectedSfId;
@@ -122,11 +123,12 @@ namespace KWZP2019
             }
             else
             {
+                this.doResultsChecked = false;
+                this.doResultsApproved = false;
                 this.doControlExist = false;
                 int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Data_dostarczenia"].Value).TotalMinutes, 0);
                 lblDelayTime.Text = $"{minutesOfDelay / 1440} dni, {(minutesOfDelay % 1440) / 60} godzin i {(minutesOfDelay % 1440) % 60} minut opóźnienia";
             }
-            BtnCheck_Click(sender, e);
         }
 
         // ==================================================
@@ -136,168 +138,15 @@ namespace KWZP2019
             Employee employee = db.Employees
                 .FirstOrDefault(check => 
                 check.IdEmployee.ToString() == textBoxEmployeeId.Text);
-            lblEmployeeFullName.Text = employee != null ? $"{employee.EmployeeName} {employee.EmployeeSurname}" : "";
+            lblEmployeeFullName.Text = employee != null ? $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : "";
         }
 
         // ================================================== 
 
         private void BtnCheck_Click(object sender, EventArgs e)
         {
-            SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished.ToString() == selectedOrderId);
-
-            SfOrderDetail quantitySfOrder = db.SfOrderDetails
-                .Where(check => 
-                check.IdSfOrder.ToString() == selectedOrderId 
-                && check.IdSemiFinished.ToString() == selectedSfId)
-                .FirstOrDefault();
-
-            bool flagThickness = false;
-            bool flagWidth = false;
-            bool flagMass = false;
-            bool flagColor = false;
-            bool flagQuantity = false;
-
-            if (semiFinished == null)
-            {
-                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                if (txtboxThickness.Text != "")
-                {
-                    if(int.TryParse(txtboxThickness.Text, out int thickness))
-                    {
-
-                        if(semiFinished.Thickness * 0.95 < thickness &&
-                        thickness < semiFinished.Thickness * 1.05)
-                        {
-                            picBoxThicknessStatus.Image = Properties.Resources.ok_48px;
-                            flagThickness = true;
-                        }
-                        else
-                        {
-                            picBoxThicknessStatus.Image = Properties.Resources.cancel_48px;
-                        }  
-                    }
-                    else if(doControlExist)
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisz liczbę w pole 'Grubość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    
-                }
-
-                if (txtboxWidth.Text != "")
-                {
-                    if(int.TryParse(txtboxWidth.Text, out int width))
-                    {
-
-                        if(semiFinished.Width * 0.95 < width &&
-                        width < semiFinished.Width * 1.05)
-                        {
-                            picBoxWidhtStatus.Image = Properties.Resources.ok_48px;
-                            flagWidth = true;
-                        }
-                        else
-                        {
-                            picBoxWidhtStatus.Image = Properties.Resources.cancel_48px;
-                        }
-                    }
-                    else if(doControlExist)
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisz liczbę w pole 'Szerokość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                if (txtboxMass.Text != "")
-                {
-                    int mass;
-                    if(int.TryParse(txtboxMass.Text, out mass))
-                    {
-
-                        if(semiFinished.SfWeight * 0.95 < mass &&
-                        mass < semiFinished.SfWeight * 1.05)
-                        {
-                            picBoxMassStatus.Image = Properties.Resources.ok_48px;
-                            flagMass = true;
-                        }
-                        else
-                        {
-                            picBoxMassStatus.Image = Properties.Resources.cancel_48px;
-                        }
-                    }
-                    else if(doControlExist)
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisz liczbę w pole 'Masa'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    
-                }
-
-                if (txtBoxColor.Text != "")
-                {
-                    if(semiFinished.Color == txtBoxColor.Text)
-                    {
-                        picBoxColorStatus.Image = Properties.Resources.ok_48px;
-                        flagColor = true;
-                    }
-                    else
-                    {
-                        picBoxColorStatus.Image = Properties.Resources.cancel_48px;
-                    }
-                    if (doControlExist)
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisz nazwę koloru w pole 'Kolor'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                if (txtBoxQuantity.Text != "")
-                {
-                    if(int.TryParse(txtBoxQuantity.Text, out int quantity))
-                    {
-                        if(quantitySfOrder.Quantity == quantity)
-                        {
-                            picBoxQuantityStatus.Image = Properties.Resources.ok_48px;
-                            flagQuantity = true;
-                        }
-                        else
-                        {
-                            picBoxQuantityStatus.Image = Properties.Resources.cancel_48px;
-                        }
-                    }
-                    else if(doControlExist)
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisz liczbę w pole 'Ilość'!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                if (flagThickness && flagWidth && flagMass && flagColor && flagQuantity && checkBoxComposition.Checked)
-                {
-                    picBoxControlStatus.Image = Properties.Resources.good_quality_80px;
-                }
-                else
-                {
-                    picBoxControlStatus.Image = Properties.Resources.poor_quality_80px;
-                }
-            }
+            CheckControl();
+            this.doResultsChecked = true;
         }
 
         // ==================================================
@@ -349,9 +198,13 @@ namespace KWZP2019
                     txtBoxQuantity.BackColor = Color.Red;
                 }
             }
+            else if(this.doResultsChecked)
+            {
+                this.doResultsApproved = true;
+            }
             else
             {
-                resultsApproved = true;
+                MessageBox.Show("Najpierw sprawdź wyniki!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -360,7 +213,7 @@ namespace KWZP2019
         private void BtnDone_Click(object sender, EventArgs e)
         {
             
-            if(resultsApproved)
+            if(doResultsApproved)
             {
                 // var because it's anonymouse type
                 var idSfDetail = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
@@ -392,6 +245,8 @@ namespace KWZP2019
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             (sender as TextBox).BackColor = Color.White;
+            ResetAllCheckedPicBox();
+            this.doResultsChecked = false;
         }
 
         // ==================================================
@@ -403,7 +258,6 @@ namespace KWZP2019
             picBoxMassStatus.Image = Properties.Resources.help_40px;
             picBoxColorStatus.Image = Properties.Resources.help_40px;
             picBoxQuantityStatus.Image = Properties.Resources.help_40px;
-            picBoxChemicalCompositionStatus.Image = Properties.Resources.help_40px;
         }
 
         // ==================================================
@@ -462,23 +316,148 @@ namespace KWZP2019
             {
                 lblControlNotExist.Text = "";
                 textBoxEmployeeId.Text = selectedControl.IdEmployee.ToString();
-                textBoxEmployeeId.Enabled = false;
                 txtboxThickness.Text = selectedControl.RealThickness.ToString();
-                txtboxThickness.Enabled = false;
                 txtboxWidth.Text = selectedControl.RealWidth.ToString();
-                txtboxWidth.Enabled = false;
                 txtboxMass.Text = selectedControl.RealWeight.ToString();
-                txtboxMass.Enabled = false;
                 txtBoxColor.Text = selectedControl.RealColor;
-                txtBoxColor.Enabled = false;
                 txtBoxQuantity.Text = selectedControl.Quantity.ToString();
-                txtBoxQuantity.Enabled = false;
                 checkBoxComposition.Checked = selectedControl.ChemicalComposition;
-                checkBoxComposition.Enabled = false;
                 txtboxComment.Text = selectedControl.Comments;
+
+                CheckControl();
+
+                textBoxEmployeeId.Enabled = false;
+                txtboxThickness.Enabled = false;
+                txtboxWidth.Enabled = false;
+                txtboxMass.Enabled = false;
+                txtBoxColor.Enabled = false;
+                txtBoxQuantity.Enabled = false;
+                checkBoxComposition.Enabled = false;
                 txtboxComment.Enabled = false;
-                picBoxControlStatus.Image = selectedControl.ControlStatus == true ? Properties.Resources.good_quality_80px : Properties.Resources.poor_quality_80px;
+
+                picBoxControlStatus.Image = selectedControl.ControlStatus == true ? 
+                    Properties.Resources.good_quality_80px : 
+                    Properties.Resources.poor_quality_80px;
                 return true;
+            }
+        }
+
+        // ==================================================
+
+        private void CheckControl()
+        {
+            if (lblOrderIdShow.Text == "")
+            {
+                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished.ToString() == selectedSfId);
+
+                bool flagThickness = false;
+                bool flagWidth = false;
+                bool flagMass = false;
+                bool flagColor = false;
+                bool flagQuantity = false;
+
+                if (txtboxThickness.Text.Trim() != "")
+                {
+                    if (int.TryParse(txtboxThickness.Text, out int thickness))
+                    {
+
+                        if (semiFinished.Thickness * 0.95 < thickness &&
+                        thickness < semiFinished.Thickness * 1.05)
+                        {
+                            picBoxThicknessStatus.Image = Properties.Resources.ok_48px;
+                            flagThickness = true;
+                        }
+                        else
+                        {
+                            picBoxThicknessStatus.Image = Properties.Resources.cancel_48px;
+                        }
+                    }
+                }
+
+                if (txtboxWidth.Text.Trim() != "")
+                {
+                    if (int.TryParse(txtboxWidth.Text, out int width))
+                    {
+
+                        if (semiFinished.Width * 0.95 < width &&
+                        width < semiFinished.Width * 1.05)
+                        {
+                            picBoxWidhtStatus.Image = Properties.Resources.ok_48px;
+                            flagWidth = true;
+                        }
+                        else
+                        {
+                            picBoxWidhtStatus.Image = Properties.Resources.cancel_48px;
+                        }
+                    }
+                }
+
+                if (txtboxMass.Text.Trim() != "")
+                {
+                    int mass;
+                    if (int.TryParse(txtboxMass.Text, out mass))
+                    {
+
+                        if (semiFinished.SfWeight * 0.95 < mass &&
+                        mass < semiFinished.SfWeight * 1.05)
+                        {
+                            picBoxMassStatus.Image = Properties.Resources.ok_48px;
+                            flagMass = true;
+                        }
+                        else
+                        {
+                            picBoxMassStatus.Image = Properties.Resources.cancel_48px;
+                        }
+                    }
+                }
+
+                if (txtBoxColor.Text.Trim() != "")
+                {
+                    if (semiFinished.Color == txtBoxColor.Text)
+                    {
+                        picBoxColorStatus.Image = Properties.Resources.ok_48px;
+                        flagColor = true;
+                    }
+                    else
+                    {
+                        picBoxColorStatus.Image = Properties.Resources.cancel_48px;
+                    }
+                }
+
+                if (txtBoxQuantity.Text.Trim() != "")
+                {
+                    SfOrderDetail quantitySfOrder = db.SfOrderDetails
+                        .Where(check =>
+                        check.IdSfOrder.ToString() == selectedOrderId
+                        && check.IdSemiFinished.ToString() == selectedSfId)
+                        .FirstOrDefault();
+
+                    if (int.TryParse(txtBoxQuantity.Text, out int quantity))
+                    {
+                        if (quantitySfOrder.Quantity == quantity)
+                        {
+                            picBoxQuantityStatus.Image = Properties.Resources.ok_48px;
+                            flagQuantity = true;
+                        }
+                        else
+                        {
+                            picBoxQuantityStatus.Image = Properties.Resources.cancel_48px;
+                        }
+                    }
+                }
+
+                if (flagThickness && flagWidth && flagMass && flagColor && flagQuantity && checkBoxComposition.Checked)
+                {
+                    picBoxControlStatus.Image = Properties.Resources.good_quality_80px;
+                }
+                else
+                {
+                    picBoxControlStatus.Image = Properties.Resources.poor_quality_80px;
+                }
             }
         }
     }
