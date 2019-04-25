@@ -13,9 +13,9 @@ namespace KWZP2019
 {
     public partial class OshTrainingForm : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
-        QualityControl qualityControlForm;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private QualityControl qualityControlForm;
 
         public OshTrainingForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -53,7 +53,7 @@ namespace KWZP2019
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            dataGVOshTraining.DataSource = db.ViewOshTrainings.
+            dataGVOshTraining.DataSource = db.ViewOshTraining.
                 Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
                 && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining * 365) <= DbFunctions.AddDays(DateTime.Now, 45)
                 && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))

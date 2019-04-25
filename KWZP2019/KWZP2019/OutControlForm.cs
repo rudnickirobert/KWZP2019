@@ -12,9 +12,9 @@ namespace KWZP2019
 {
     public partial class OutControlForm : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
-        QualityControl qualityControlForm;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private QualityControl qualityControlForm;
 
         public OutControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
