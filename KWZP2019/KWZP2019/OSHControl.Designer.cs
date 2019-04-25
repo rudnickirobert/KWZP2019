@@ -41,10 +41,11 @@
             this.lblControlDate = new System.Windows.Forms.Label();
             this.txtBoxControlerId = new System.Windows.Forms.TextBox();
             this.txtBoxControlingCompany = new System.Windows.Forms.TextBox();
-            this.domainUD = new System.Windows.Forms.DomainUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.domUDEmployee = new System.Windows.Forms.DomainUpDown();
+            this.dateTimeOSHControl = new System.Windows.Forms.DateTimePicker();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.lblComment = new System.Windows.Forms.Label();
+            this.lblEmployeeFullName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.btnDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDone.Name = "btnDone";
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // btnClear
             // 
@@ -85,6 +87,7 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnReturnMain
             // 
@@ -97,6 +100,7 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // pictureBoxForm
             // 
@@ -152,20 +156,21 @@
             resources.ApplyResources(this.txtBoxControlingCompany, "txtBoxControlingCompany");
             this.txtBoxControlingCompany.Name = "txtBoxControlingCompany";
             // 
-            // domainUD
+            // domUDEmployee
             // 
-            resources.ApplyResources(this.domainUD, "domainUD");
-            this.domainUD.Name = "domainUD";
+            resources.ApplyResources(this.domUDEmployee, "domUDEmployee");
+            this.domUDEmployee.Name = "domUDEmployee";
+            this.domUDEmployee.SelectedItemChanged += new System.EventHandler(this.domUDEmployee_SelectedItemChanged);
             // 
-            // dateTimePicker1
+            // dateTimeOSHControl
             // 
-            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
-            this.dateTimePicker1.Name = "dateTimePicker1";
+            resources.ApplyResources(this.dateTimeOSHControl, "dateTimeOSHControl");
+            this.dateTimeOSHControl.Name = "dateTimeOSHControl";
             // 
-            // textBox3
+            // textBoxDescription
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
+            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.textBoxDescription.Name = "textBoxDescription";
             // 
             // lblComment
             // 
@@ -174,14 +179,21 @@
             this.lblComment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblComment.Name = "lblComment";
             // 
+            // lblEmployeeFullName
+            // 
+            resources.ApplyResources(this.lblEmployeeFullName, "lblEmployeeFullName");
+            this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeFullName.Name = "lblEmployeeFullName";
+            // 
             // OSHControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblEmployeeFullName);
             this.Controls.Add(this.lblComment);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.domainUD);
+            this.Controls.Add(this.textBoxDescription);
+            this.Controls.Add(this.dateTimeOSHControl);
+            this.Controls.Add(this.domUDEmployee);
             this.Controls.Add(this.txtBoxControlingCompany);
             this.Controls.Add(this.txtBoxControlerId);
             this.Controls.Add(this.lblControlDate);
@@ -198,6 +210,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OSHControl";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OSHControl_FormClosed);
+            this.Load += new System.EventHandler(this.OSHControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,9 +232,10 @@
         private System.Windows.Forms.Label lblControlDate;
         private System.Windows.Forms.TextBox txtBoxControlerId;
         private System.Windows.Forms.TextBox txtBoxControlingCompany;
-        private System.Windows.Forms.DomainUpDown domainUD;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DomainUpDown domUDEmployee;
+        private System.Windows.Forms.DateTimePicker dateTimeOSHControl;
+        private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label lblComment;
+        private System.Windows.Forms.Label lblEmployeeFullName;
     }
 }

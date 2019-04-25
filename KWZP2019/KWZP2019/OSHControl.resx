@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDone.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnClear.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -229,7 +229,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnReturn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -284,7 +284,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReturn.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="btnReturnMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -341,7 +341,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReturnMain.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="pictureBoxForm.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -665,7 +665,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBoxForm.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblFormTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
@@ -695,7 +695,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFormTitle.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblControlerId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -725,7 +725,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblControlerId.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblControlingCompany.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -758,7 +758,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblControlingCompany.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblEmployeeId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -791,7 +791,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEmployeeId.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblControlDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -824,7 +824,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblControlDate.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtBoxControlerId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -848,7 +848,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBoxControlerId.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtBoxControlingCompany.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -872,85 +872,82 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBoxControlingCompany.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="domainUD.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="domUDEmployee.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="domainUD.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="domUDEmployee.Location" type="System.Drawing.Point, System.Drawing">
     <value>701, 427</value>
   </data>
-  <data name="domainUD.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="domUDEmployee.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 26</value>
   </data>
-  <data name="domainUD.TabIndex" type="System.Int32, mscorlib">
+  <data name="domUDEmployee.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
-  <data name="domainUD.Text" xml:space="preserve">
-    <value>Id Pracownika</value>
+  <data name="&gt;&gt;domUDEmployee.Name" xml:space="preserve">
+    <value>domUDEmployee</value>
   </data>
-  <data name="&gt;&gt;domainUD.Name" xml:space="preserve">
-    <value>domainUD</value>
-  </data>
-  <data name="&gt;&gt;domainUD.Type" xml:space="preserve">
+  <data name="&gt;&gt;domUDEmployee.Type" xml:space="preserve">
     <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;domainUD.Parent" xml:space="preserve">
+  <data name="&gt;&gt;domUDEmployee.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;domainUD.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;domUDEmployee.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="dateTimePicker1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="dateTimeOSHControl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dateTimeOSHControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>653, 514</value>
   </data>
-  <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dateTimeOSHControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 26</value>
   </data>
-  <data name="dateTimePicker1.TabIndex" type="System.Int32, mscorlib">
+  <data name="dateTimeOSHControl.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
   </data>
-  <data name="&gt;&gt;dateTimePicker1.Name" xml:space="preserve">
-    <value>dateTimePicker1</value>
+  <data name="&gt;&gt;dateTimeOSHControl.Name" xml:space="preserve">
+    <value>dateTimeOSHControl</value>
   </data>
-  <data name="&gt;&gt;dateTimePicker1.Type" xml:space="preserve">
+  <data name="&gt;&gt;dateTimeOSHControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dateTimePicker1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dateTimeOSHControl.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;dateTimeOSHControl.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="textBoxDescription.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>653, 592</value>
   </data>
-  <data name="textBox3.Multiline" type="System.Boolean, mscorlib">
+  <data name="textBoxDescription.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 86</value>
   </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
+  <data name="&gt;&gt;textBoxDescription.Name" xml:space="preserve">
+    <value>textBoxDescription</value>
   </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBoxDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBoxDescription.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;textBoxDescription.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lblComment.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -983,6 +980,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblComment.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblEmployeeFullName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmployeeFullName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="lblEmployeeFullName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 465</value>
+  </data>
+  <data name="lblEmployeeFullName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 20</value>
+  </data>
+  <data name="lblEmployeeFullName.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="lblEmployeeFullName.Text" xml:space="preserve">
+    <value>------------------------</value>
+  </data>
+  <data name="&gt;&gt;lblEmployeeFullName.Name" xml:space="preserve">
+    <value>lblEmployeeFullName</value>
+  </data>
+  <data name="&gt;&gt;lblEmployeeFullName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmployeeFullName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEmployeeFullName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -22071,7 +22098,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 761</value>
+    <value>1184, 749</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
