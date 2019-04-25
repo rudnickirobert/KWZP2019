@@ -340,7 +340,7 @@ namespace KWZP2019
             this.lblDelayTime.BackColor = System.Drawing.Color.Transparent;
             this.lblDelayTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDelayTime.ForeColor = System.Drawing.Color.White;
-            this.lblDelayTime.Location = new System.Drawing.Point(351, 185);
+            this.lblDelayTime.Location = new System.Drawing.Point(351, 148);
             this.lblDelayTime.Name = "lblDelayTime";
             this.lblDelayTime.Size = new System.Drawing.Size(13, 20);
             this.lblDelayTime.TabIndex = 33;
@@ -371,10 +371,10 @@ namespace KWZP2019
             // datePickerSelectedControlsDate
             // 
             this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(344, 210);
+            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(344, 173);
             this.datePickerSelectedControlsDate.Margin = new System.Windows.Forms.Padding(0);
             this.datePickerSelectedControlsDate.Name = "datePickerSelectedControlsDate";
-            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(293, 26);
+            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(302, 26);
             this.datePickerSelectedControlsDate.TabIndex = 35;
             this.datePickerSelectedControlsDate.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
             // 
@@ -452,7 +452,7 @@ namespace KWZP2019
             this.lblControlNotExist.BackColor = System.Drawing.Color.Transparent;
             this.lblControlNotExist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlNotExist.ForeColor = System.Drawing.Color.Red;
-            this.lblControlNotExist.Location = new System.Drawing.Point(382, 93);
+            this.lblControlNotExist.Location = new System.Drawing.Point(421, 64);
             this.lblControlNotExist.Name = "lblControlNotExist";
             this.lblControlNotExist.Size = new System.Drawing.Size(16, 24);
             this.lblControlNotExist.TabIndex = 33;
@@ -615,22 +615,37 @@ namespace KWZP2019
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(812, 294);
+            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowAll.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowAll.Location = new System.Drawing.Point(455, 206);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(75, 23);
+            this.btnShowAll.Size = new System.Drawing.Size(191, 50);
             this.btnShowAll.TabIndex = 39;
-            this.btnShowAll.Text = "Pokaż";
-            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Text = "Pokaż wszystko";
+            this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.BtnShow_Click);
             // 
             // btnShowFromDate
             // 
-            this.btnShowFromDate.Location = new System.Drawing.Point(267, 211);
+            this.btnShowFromDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowFromDate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowFromDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowFromDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowFromDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowFromDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowFromDate.Location = new System.Drawing.Point(344, 206);
+            this.btnShowFromDate.Margin = new System.Windows.Forms.Padding(0);
             this.btnShowFromDate.Name = "btnShowFromDate";
-            this.btnShowFromDate.Size = new System.Drawing.Size(75, 23);
+            this.btnShowFromDate.Size = new System.Drawing.Size(106, 50);
             this.btnShowFromDate.TabIndex = 39;
             this.btnShowFromDate.Text = "Pokaż z";
-            this.btnShowFromDate.UseVisualStyleBackColor = true;
+            this.btnShowFromDate.UseVisualStyleBackColor = false;
             this.btnShowFromDate.Click += new System.EventHandler(this.BtnShowFromDate_Click);
             // 
             // EntranceControlForm

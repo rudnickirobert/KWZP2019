@@ -75,38 +75,6 @@ namespace KWZP2019
 
         // ==================================================
 
-        private void ShowControlsFromDate(DateTime selectedDate)
-        {
-
-            // var because it's an anonymouse type
-            var orders = db.SfOrderDetails
-                .Join(db.SemiFinishedOrders,
-                sfOrderDetail => sfOrderDetail.IdSfOrder,
-                sfOrder => sfOrder.IdSfOrder,
-                (sfOrderDetail, sfOrder) => new
-                {
-                    sfOrderDetail,
-                    sfOrder
-                })
-                .Where(check =>
-                check.sfOrder.SfDeliveryDate.Year == selectedDate.Year
-                && check.sfOrder.SfDeliveryDate.Month == selectedDate.Month
-                && check.sfOrder.SfDeliveryDate.Day == selectedDate.Day)
-                .Select(sfOrderDetailJoinSfOrder => new
-                {
-                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
-                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
-                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
-                })
-                .OrderBy(orderBy =>
-                orderBy.Data_dostarczenia)
-                .ToList();
-            // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
-        }
-
-        // ==================================================
-
         private void BtnShow_Click(object sender, EventArgs e)
         {
             // Polish names only for displaying into dataGridView in form
@@ -152,11 +120,15 @@ namespace KWZP2019
         // ==================================================
         private void TextBoxEmployeeId_TextChanged(object sender, EventArgs e)
         {
-           textBoxEmployeeId.BackColor = Color.White;
+            textBoxEmployeeId.BackColor = Color.White;
+
             Employee employee = db.Employees
                 .FirstOrDefault(check => 
                 check.IdEmployee.ToString() == textBoxEmployeeId.Text);
-            lblEmployeeFullName.Text = employee != null ? $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : "";
+
+            lblEmployeeFullName.Text = employee != null ? 
+                $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : 
+                "";
         }
 
         // ================================================== 
@@ -179,8 +151,10 @@ namespace KWZP2019
             {
                 MessageBox.Show("Ta kontrola już istnieje w bazie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (lblOrderIdShow.Text == "" || lblSfIdShow.Text == "" || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
-                        || txtboxWidth.Text == "" || txtboxMass.Text == "" || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
+            else if (lblOrderIdShow.Text == "" || lblSfIdShow.Text == "" 
+                || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
+                || txtboxWidth.Text == "" || txtboxMass.Text == ""
+                || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
                 MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (lblOrderIdShow.Text == "")
@@ -235,12 +209,19 @@ namespace KWZP2019
             if(doResultsApproved)
             {
                 // var because it's anonymouse type
-                var idSfDetail = db.EntranceControls.Join(db.SfOrderDetails, ec => ec.IdSfDetail, order => order.IdSfDetail,
-                (ec, order) => new { ec.IdSfDetail }).FirstOrDefault();
+                var idSfDetail = db.SfOrderDetails
+                    .Where(check =>
+                    check.IdSfOrder.ToString() == selectedOrderId
+                    && check.IdSemiFinished.ToString() == selectedSfId)
+                    .Select(id => new
+                    {
+                        id.IdSfDetail
+                    });
+
 
                 EntranceControl entranceControl = new EntranceControl();
 
-                entranceControl.IdSfDetail = int.Parse(selectedSfId.ToString());
+                entranceControl.IdSfDetail = int.Parse(idSfDetail.ToString());
                 entranceControl.ControlDate = datePickerSelectedControlsDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
@@ -252,7 +233,7 @@ namespace KWZP2019
                 entranceControl.ControlStatus = this.wholeControlStatus;
 
                 db.EntranceControls.Add(entranceControl);
-                //db.SaveChanges();
+                db.SaveChanges();
                 MessageBox.Show("Kontrola dodana do bazy.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -494,6 +475,37 @@ namespace KWZP2019
                     this.wholeControlStatus = false;
                 }
             }
+        }
+
+        // ==================================================
+
+        private void ShowControlsFromDate(DateTime selectedDate)
+        {
+            // var because it's an anonymouse type
+            var orders = db.SfOrderDetails
+                .Join(db.SemiFinishedOrders,
+                sfOrderDetail => sfOrderDetail.IdSfOrder,
+                sfOrder => sfOrder.IdSfOrder,
+                (sfOrderDetail, sfOrder) => new
+                {
+                    sfOrderDetail,
+                    sfOrder
+                })
+                .Where(check =>
+                check.sfOrder.SfDeliveryDate.Year == selectedDate.Year
+                && check.sfOrder.SfDeliveryDate.Month == selectedDate.Month
+                && check.sfOrder.SfDeliveryDate.Day == selectedDate.Day)
+                .Select(sfOrderDetailJoinSfOrder => new
+                {
+                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
+                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
+                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
+                })
+                .OrderBy(orderBy =>
+                orderBy.Data_dostarczenia)
+                .ToList();
+            // Polish names only for displaying into dataGridView in form
+            dataGVEntranceControl.DataSource = orders;
         }
     }
 }
