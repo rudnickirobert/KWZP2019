@@ -19,7 +19,7 @@ namespace KWZP2019
         private bool doResultsApproved;
         private bool doControlExist;
         private bool doResultsChecked;
-        private bool wholeControlStatus = false;
+        private bool wholeControlStatus;
         private String selectedOrderId;
         private String selectedSfId;
 
@@ -201,6 +201,7 @@ namespace KWZP2019
             else if(this.doResultsChecked)
             {
                 this.doResultsApproved = true;
+                MessageBox.Show("Wyniki potwierdzone.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -225,18 +226,20 @@ namespace KWZP2019
                 entranceControl.ControlDate = datePickerSelectedControlsDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
-                entranceControl.RealThickness = decimal.Parse(txtboxThickness.Text);
-                entranceControl.RealWidth = decimal.Parse(txtboxWidth.Text);
-                entranceControl.RealWeight = decimal.Parse(txtboxMass.Text);
+                entranceControl.RealThickness = Math.Floor(decimal.Parse(txtboxThickness.Text) * 100) / 100;
+                entranceControl.RealWidth = Math.Floor(decimal.Parse(txtboxWidth.Text) * 100) / 100;
+                entranceControl.RealWeight = Math.Floor(decimal.Parse(txtboxMass.Text) * 100) / 100;
                 entranceControl.RealColor = txtBoxColor.Text;
                 entranceControl.ChemicalComposition = checkBoxComposition.Checked;
                 entranceControl.ControlStatus = this.wholeControlStatus;
 
                 db.EntranceControls.Add(entranceControl);
                 //db.SaveChanges();
+                MessageBox.Show("Kontrola dodana do bazy.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
             {
-                MessageBox.Show("Proszę zatwierdzić wyniki", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Proszę zatwierdzić wyniki!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -364,7 +367,6 @@ namespace KWZP2019
                 {
                     if (decimal.TryParse(txtboxThickness.Text, out decimal thickness))
                     {
-
                         if ((decimal)(semiFinished.Thickness * 0.95) < thickness &&
                         thickness < (decimal)(semiFinished.Thickness * 1.05))
                         {
@@ -386,7 +388,6 @@ namespace KWZP2019
                 {
                     if (decimal.TryParse(txtboxWidth.Text, out decimal width))
                     {
-
                         if ((decimal)(semiFinished.Width * 0.95) < width &&
                         width < (decimal)(semiFinished.Width * 1.05))
                         {
@@ -408,7 +409,6 @@ namespace KWZP2019
                 {
                     if (decimal.TryParse(txtboxMass.Text, out decimal mass))
                     {
-
                         if ((decimal)(semiFinished.SfWeight * 0.95) < mass &&
                         mass < (decimal)(semiFinished.SfWeight * 1.05))
                         {
@@ -461,17 +461,19 @@ namespace KWZP2019
                     }
                     else
                     {
-                        txtBoxQuantity.Text = "WPISZ LICZBĘ!";
+                        txtBoxQuantity.Text = "LICZBA CAŁKOWITA!";
                     }
                 }
 
                 if (flagThickness && flagWidth && flagMass && flagColor && flagQuantity && checkBoxComposition.Checked)
                 {
                     picBoxControlStatus.Image = Properties.Resources.good_quality_80px;
+                    this.wholeControlStatus = true;
                 }
                 else
                 {
                     picBoxControlStatus.Image = Properties.Resources.poor_quality_80px;
+                    this.wholeControlStatus = false;
                 }
             }
         }
