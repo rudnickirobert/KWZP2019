@@ -20,13 +20,10 @@ namespace KWZP2019
             this.db = db;
             clear();
         }
-
         private void AddInvoices_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'hRFinancesDataSet.InvoiceType' . Mo¿esz go przenieœæ lub usun¹æ.
             this.invoiceTypeTableAdapter.Fill(this.hRFinancesDataSet.InvoiceType);
         }
-
         private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -39,7 +36,6 @@ namespace KWZP2019
             }
 
         }
-
         void clear()
         {
             tbCompanyName.Text = "";
@@ -55,16 +51,19 @@ namespace KWZP2019
             tbDescription.Text = "";
             tbInvoiceValue.Text = "";
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (tbCompanyName.Text.Trim() == "" || tbNIP.Text.Trim() == "")
             {
                 MessageBox.Show("Nazwa i NIP s¹ wymagane");
             }
+            Invoice newInvoiceValue = new Invoice();
+            newInvoiceValue.Sum = decimal.Parse(tbInvoiceValue.Text.Trim());
+            int selectedIndex = comboBox1.SelectedIndex+1;
+            newInvoiceValue.IdInvoiceType = selectedIndex;
             Contractor newContractor = new Contractor();
             newContractor.ContractorName = tbCompanyName.Text.Trim();
-            //newContractor.Phone = int.Parse(tbPhone.Text.Trim());
+            newContractor.Phone = int.Parse(tbPhone.Text.Trim());
             newContractor.Email = tbEmail.Text.Trim();
             newContractor.City = tbCity.Text.Trim();
             newContractor.PostalCode = tbPostalCode.Text.Trim();
@@ -75,17 +74,9 @@ namespace KWZP2019
             newContractor.KRS = long.Parse(tbKRS.Text.Trim());
             newContractor.Description = tbDescription.Text.Trim();
 
-            Invoice newInvoiceValue = new Invoice();
-            newInvoiceValue.Sum = decimal.Parse(tbInvoiceValue.Text.Trim());
-
-            int selectedIndex = comboBox1.SelectedIndex;
-            newInvoiceValue.IdInvoiceType = selectedIndex;
-
             db.Invoices.Add(newInvoiceValue);
             db.Contractors.Add(newContractor);
             db.SaveChanges();
         }
-
-
     }
 }
