@@ -443,6 +443,11 @@
     <Compile Include="Realization.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RoofingCompanyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoofingCompanyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RoofingCompanyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -729,6 +734,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="RoofingCompanyDataSet.xsc">
+      <DependentUpon>RoofingCompanyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoofingCompanyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoofingCompanyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoofingCompanyDataSet.xss">
+      <DependentUpon>RoofingCompanyDataSet.xsd</DependentUpon>
+    </None>
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>

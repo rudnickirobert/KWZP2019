@@ -22,13 +22,13 @@ namespace KWZP2019
         }
         private void AddInvoices_Load(object sender, EventArgs e)
         {
-            this.invoiceTypeTableAdapter.Fill(this.hRFinancesDataSet.InvoiceType);
+            this.invoiceTypeTableAdapter.Fill(this.roofingCompanyDataSet.InvoiceType);
         }
         private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
-                this.invoiceTypeTableAdapter.FillBy2(this.hRFinancesDataSet.InvoiceType);
+                this.invoiceTypeTableAdapter.Fill(this.roofingCompanyDataSet.InvoiceType);
             }
             catch (System.Exception ex)
             {
@@ -76,6 +76,19 @@ namespace KWZP2019
             db.Invoices.Add(newInvoiceValue);
             db.Contractors.Add(newContractor);
             db.SaveChanges();
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.invoiceTypeTableAdapter.FillBy(this.roofingCompanyDataSet.InvoiceType);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -33,5 +33,16 @@ namespace KWZP2019.Properties {
                 return ((string)(this["HRFinancesDataConnection"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PII15JD\\SQLEXPRESS;Initial Catalog=RoofingCompany;Persist Sec" +
+            "urity Info=True;User ID=sa;Password=Kwzp2019!")]
+        public string RoofingCompanyConnectionString {
+            get {
+                return ((string)(this["RoofingCompanyConnectionString"]));
+            }
+        }
     }
 }
