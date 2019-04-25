@@ -64,6 +64,11 @@
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
+    <Compile Include="HRFinancesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRFinancesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HR\Absences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,18 +276,15 @@
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-
     <Compile Include="NewMaintenanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-
     <Compile Include="Production\NewProductionPlan.Designer.cs">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </Compile>
@@ -391,7 +393,6 @@
     <Compile Include="ProductionHistory.Designer.cs">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Production\ProductionPlanned.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,7 +426,6 @@
     <Compile Include="ProductionSelection.Designer.cs">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Production\ProductionTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -626,7 +626,6 @@
     <EmbeddedResource Include="PartsForm.resx">
       <DependentUpon>PartsForm.cs</DependentUpon>
     </EmbeddedResource>
- 
     <EmbeddedResource Include="Production\Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
@@ -636,7 +635,6 @@
     <EmbeddedResource Include="ProductionHistory.resx">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Production\ProductionPlanned.resx">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
     </EmbeddedResource>
@@ -649,7 +647,6 @@
     <EmbeddedResource Include="ProductionSelection.resx">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Production\ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </EmbeddedResource>
@@ -693,12 +690,22 @@
     <EmbeddedResource Include="WarehouseForm.resx">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HRFinancesDataSet.xsc">
+      <DependentUpon>HRFinancesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HRFinancesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRFinancesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRFinancesDataSet.xss">
+      <DependentUpon>HRFinancesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Machine.datasource" />
     <None Include="Maintenance.datasource" />
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Product.datasource" />
-
     <None Include="Production\PlannedProduction.datasource" />
     <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
     <None Include="Production\Product.datasource" />

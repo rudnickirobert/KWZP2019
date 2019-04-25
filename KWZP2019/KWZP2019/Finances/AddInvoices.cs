@@ -20,15 +20,27 @@ namespace KWZP2019
             this.db = db;
             clear();
         }
-        private void InvoiceTypesLoad(object sender, EventArgs e)
+
+        private void AddInvoices_Load(object sender, EventArgs e)
         {
-            List<InvoiceType> invoiceList = db.InvoiceTypes.ToList();
-            foreach (InvoiceType inv in invoiceList)
-            {
-                InvoiceTypes.Items.Add(inv.Type);
-            }
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'hRFinancesDataSet.InvoiceType' . Mo¿esz go przenieœæ lub usun¹æ.
+            this.invoiceTypeTableAdapter.Fill(this.hRFinancesDataSet.InvoiceType);
         }
-void clear()
+
+        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.invoiceTypeTableAdapter.FillBy2(this.hRFinancesDataSet.InvoiceType);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        void clear()
         {
             tbCompanyName.Text = "";
             tbPhone.Text = "";
@@ -65,9 +77,9 @@ void clear()
             Invoice newInvoiceValue = new Invoice();
             newInvoiceValue.Sum = decimal.Parse(tbInvoiceValue.Text.Trim());
 
-            
+            //newInvoiceValue.IdInvoiceType = (int) comboBox1.SelectedItem;
 
-        db.Invoices.Add(newInvoiceValue);
+            db.Invoices.Add(newInvoiceValue);
             db.Contractors.Add(newContractor);
             db.SaveChanges();
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblAdddata = new System.Windows.Forms.Label();
             this.tbStreet = new System.Windows.Forms.TextBox();
             this.lblNameofentity = new System.Windows.Forms.Label();
@@ -58,7 +59,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.InvoiceTypes = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.hRFinancesDataSet = new KWZP2019.HRFinancesDataSet();
+            this.invoiceTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceTypeTableAdapter = new KWZP2019.HRFinancesDataSetTableAdapters.InvoiceTypeTableAdapter();
+            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.hRFinancesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceTypeBindingSource)).BeginInit();
+            this.fillBy2ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdddata
@@ -306,21 +315,56 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // InvoiceTypes
+            // comboBox1
             // 
-            this.InvoiceTypes.FormattingEnabled = true;
-            this.InvoiceTypes.Location = new System.Drawing.Point(450, 236);
-            this.InvoiceTypes.Name = "InvoiceTypes";
-            this.InvoiceTypes.Size = new System.Drawing.Size(121, 21);
-            this.InvoiceTypes.TabIndex = 33;
-            this.InvoiceTypes.SelectedIndexChanged += new System.EventHandler(this.InvoiceTypesLoad);
+            this.comboBox1.DataSource = this.invoiceTypeBindingSource;
+            this.comboBox1.DisplayMember = "Type";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(450, 232);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 34;
+            this.comboBox1.ValueMember = "IdInvoiceType";
+            // 
+            // hRFinancesDataSet
+            // 
+            this.hRFinancesDataSet.DataSetName = "HRFinancesDataSet";
+            this.hRFinancesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // invoiceTypeBindingSource
+            // 
+            this.invoiceTypeBindingSource.DataMember = "InvoiceType";
+            this.invoiceTypeBindingSource.DataSource = this.hRFinancesDataSet;
+            // 
+            // invoiceTypeTableAdapter
+            // 
+            this.invoiceTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // fillBy2ToolStrip
+            // 
+            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy2ToolStripButton});
+            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
+            this.fillBy2ToolStrip.Size = new System.Drawing.Size(111, 25);
+            this.fillBy2ToolStrip.TabIndex = 35;
+            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
+            // 
+            // fillBy2ToolStripButton
+            // 
+            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
+            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy2ToolStripButton.Text = "FillBy2";
+            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
             // 
             // AddInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 331);
-            this.Controls.Add(this.InvoiceTypes);
+            this.Controls.Add(this.fillBy2ToolStrip);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbDescription);
@@ -353,6 +397,11 @@
             this.Controls.Add(this.lblAdddata);
             this.Name = "AddInvoices";
             this.Text = "Dodaj fakturę";
+            this.Load += new System.EventHandler(this.AddInvoices_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.hRFinancesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceTypeBindingSource)).EndInit();
+            this.fillBy2ToolStrip.ResumeLayout(false);
+            this.fillBy2ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,6 +439,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox InvoiceTypes;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private HRFinancesDataSet hRFinancesDataSet;
+        private System.Windows.Forms.BindingSource invoiceTypeBindingSource;
+        private HRFinancesDataSetTableAdapters.InvoiceTypeTableAdapter invoiceTypeTableAdapter;
+        private System.Windows.Forms.ToolStrip fillBy2ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy2ToolStripButton;
     }
 }
