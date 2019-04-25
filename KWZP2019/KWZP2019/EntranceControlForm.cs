@@ -221,7 +221,7 @@ namespace KWZP2019
 
                 EntranceControl entranceControl = new EntranceControl();
 
-                entranceControl.IdSfDetail = int.Parse(idSfDetail.ToString());
+                entranceControl.IdSfDetail = int.Parse(selectedSfId.ToString());
                 entranceControl.ControlDate = datePickerSelectedControlsDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
@@ -362,11 +362,11 @@ namespace KWZP2019
 
                 if (txtboxThickness.Text.Trim() != "")
                 {
-                    if (int.TryParse(txtboxThickness.Text, out int thickness))
+                    if (decimal.TryParse(txtboxThickness.Text, out decimal thickness))
                     {
 
-                        if (semiFinished.Thickness * 0.95 < thickness &&
-                        thickness < semiFinished.Thickness * 1.05)
+                        if ((decimal)(semiFinished.Thickness * 0.95) < thickness &&
+                        thickness < (decimal)(semiFinished.Thickness * 1.05))
                         {
                             picBoxThicknessStatus.Image = Properties.Resources.ok_48px;
                             flagThickness = true;
@@ -376,15 +376,19 @@ namespace KWZP2019
                             picBoxThicknessStatus.Image = Properties.Resources.cancel_48px;
                         }
                     }
+                    else
+                    {
+                        txtboxThickness.Text = "WPISZ LICZBĘ!";
+                    }
                 }
 
                 if (txtboxWidth.Text.Trim() != "")
                 {
-                    if (int.TryParse(txtboxWidth.Text, out int width))
+                    if (decimal.TryParse(txtboxWidth.Text, out decimal width))
                     {
 
-                        if (semiFinished.Width * 0.95 < width &&
-                        width < semiFinished.Width * 1.05)
+                        if ((decimal)(semiFinished.Width * 0.95) < width &&
+                        width < (decimal)(semiFinished.Width * 1.05))
                         {
                             picBoxWidhtStatus.Image = Properties.Resources.ok_48px;
                             flagWidth = true;
@@ -394,16 +398,19 @@ namespace KWZP2019
                             picBoxWidhtStatus.Image = Properties.Resources.cancel_48px;
                         }
                     }
+                    else
+                    {
+                        txtboxWidth.Text = "WPISZ LICZBĘ!";
+                    }
                 }
 
                 if (txtboxMass.Text.Trim() != "")
                 {
-                    int mass;
-                    if (int.TryParse(txtboxMass.Text, out mass))
+                    if (decimal.TryParse(txtboxMass.Text, out decimal mass))
                     {
 
-                        if (semiFinished.SfWeight * 0.95 < mass &&
-                        mass < semiFinished.SfWeight * 1.05)
+                        if ((decimal)(semiFinished.SfWeight * 0.95) < mass &&
+                        mass < (decimal)(semiFinished.SfWeight * 1.05))
                         {
                             picBoxMassStatus.Image = Properties.Resources.ok_48px;
                             flagMass = true;
@@ -412,6 +419,10 @@ namespace KWZP2019
                         {
                             picBoxMassStatus.Image = Properties.Resources.cancel_48px;
                         }
+                    }
+                    else
+                    {
+                        txtboxMass.Text = "WPISZ LICZBĘ!";
                     }
                 }
 
@@ -447,6 +458,10 @@ namespace KWZP2019
                         {
                             picBoxQuantityStatus.Image = Properties.Resources.cancel_48px;
                         }
+                    }
+                    else
+                    {
+                        txtBoxQuantity.Text = "WPISZ LICZBĘ!";
                     }
                 }
 
