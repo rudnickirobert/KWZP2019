@@ -449,6 +449,21 @@
       <DependentUpon>RoofingCompanyDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="RoofingCompanyDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoofingCompanyDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoofingCompanyDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoofingCompanyDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoofingCompanyDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoofingCompanyDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RoofingCompanyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -749,6 +764,39 @@
       <DependentUpon>RoofingCompanyDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="RoofingCompanyDataSet1.xsc">
+      <DependentUpon>RoofingCompanyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RoofingCompanyDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoofingCompanyDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoofingCompanyDataSet1.xss">
+      <DependentUpon>RoofingCompanyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RoofingCompanyDataSet2.xsc">
+      <DependentUpon>RoofingCompanyDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RoofingCompanyDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoofingCompanyDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoofingCompanyDataSet2.xss">
+      <DependentUpon>RoofingCompanyDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RoofingCompanyDataSet3.xsc">
+      <DependentUpon>RoofingCompanyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RoofingCompanyDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoofingCompanyDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoofingCompanyDataSet3.xss">
+      <DependentUpon>RoofingCompanyDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>
@@ -784,6 +832,8 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

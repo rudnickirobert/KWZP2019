@@ -60,14 +60,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.roofingCompanyDataSet = new KWZP2019.RoofingCompanyDataSet();
+            this.roofingCompanyDataSet3 = new KWZP2019.RoofingCompanyDataSet3();
             this.invoiceTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoiceTypeTableAdapter = new KWZP2019.RoofingCompanyDataSetTableAdapters.InvoiceTypeTableAdapter();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.roofingCompanyDataSet)).BeginInit();
+            this.invoiceTypeTableAdapter = new KWZP2019.RoofingCompanyDataSet3TableAdapters.InvoiceTypeTableAdapter();
+            this.comboBoxFillToolStrip = new System.Windows.Forms.ToolStrip();
+            this.comboBoxFillToolStripButton = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.roofingCompanyDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTypeBindingSource)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
+            this.comboBoxFillToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdddata
@@ -326,44 +326,43 @@
             this.comboBox1.TabIndex = 34;
             this.comboBox1.ValueMember = "IdInvoiceType";
             // 
-            // roofingCompanyDataSet
+            // roofingCompanyDataSet3
             // 
-            this.roofingCompanyDataSet.DataSetName = "RoofingCompanyDataSet";
-            this.roofingCompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.roofingCompanyDataSet3.DataSetName = "RoofingCompanyDataSet3";
+            this.roofingCompanyDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // invoiceTypeBindingSource
             // 
             this.invoiceTypeBindingSource.DataMember = "InvoiceType";
-            this.invoiceTypeBindingSource.DataSource = this.roofingCompanyDataSet;
+            this.invoiceTypeBindingSource.DataSource = this.roofingCompanyDataSet3;
             // 
             // invoiceTypeTableAdapter
             // 
             this.invoiceTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // fillByToolStrip
+            // comboBoxFillToolStrip
             // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(111, 25);
-            this.fillByToolStrip.TabIndex = 35;
-            this.fillByToolStrip.Text = "fillByToolStrip";
+            this.comboBoxFillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comboBoxFillToolStripButton});
+            this.comboBoxFillToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.comboBoxFillToolStrip.Name = "comboBoxFillToolStrip";
+            this.comboBoxFillToolStrip.Size = new System.Drawing.Size(111, 25);
+            this.comboBoxFillToolStrip.TabIndex = 35;
+            this.comboBoxFillToolStrip.Text = "comboBoxFillToolStrip";
             // 
-            // fillByToolStripButton
+            // comboBoxFillToolStripButton
             // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            this.comboBoxFillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.comboBoxFillToolStripButton.Name = "comboBoxFillToolStripButton";
+            this.comboBoxFillToolStripButton.Size = new System.Drawing.Size(85, 22);
+            this.comboBoxFillToolStripButton.Text = "ComboBoxFill";
             // 
             // AddInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 331);
-            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.comboBoxFillToolStrip);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label5);
@@ -398,10 +397,10 @@
             this.Name = "AddInvoices";
             this.Text = "Dodaj fakturę";
             this.Load += new System.EventHandler(this.AddInvoices_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.roofingCompanyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roofingCompanyDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTypeBindingSource)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
+            this.comboBoxFillToolStrip.ResumeLayout(false);
+            this.comboBoxFillToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,10 +439,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox comboBox1;
-        private RoofingCompanyDataSet roofingCompanyDataSet;
+        private RoofingCompanyDataSet3 roofingCompanyDataSet3;
         private System.Windows.Forms.BindingSource invoiceTypeBindingSource;
-        private RoofingCompanyDataSetTableAdapters.InvoiceTypeTableAdapter invoiceTypeTableAdapter;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private RoofingCompanyDataSet3TableAdapters.InvoiceTypeTableAdapter invoiceTypeTableAdapter;
+        private System.Windows.Forms.ToolStrip comboBoxFillToolStrip;
+        private System.Windows.Forms.ToolStripButton comboBoxFillToolStripButton;
     }
 }
