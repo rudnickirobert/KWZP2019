@@ -64,7 +64,7 @@ namespace KWZP2019
             }
             Contractor newContractor = new Contractor();
             newContractor.ContractorName = tbCompanyName.Text.Trim();
-            newContractor.Phone = int.Parse(tbPhone.Text.Trim());
+            //newContractor.Phone = int.Parse(tbPhone.Text.Trim());
             newContractor.Email = tbEmail.Text.Trim();
             newContractor.City = tbCity.Text.Trim();
             newContractor.PostalCode = tbPostalCode.Text.Trim();
@@ -74,10 +74,12 @@ namespace KWZP2019
             newContractor.NIP = long.Parse(tbNIP.Text.Trim());
             newContractor.KRS = long.Parse(tbKRS.Text.Trim());
             newContractor.Description = tbDescription.Text.Trim();
+
             Invoice newInvoiceValue = new Invoice();
             newInvoiceValue.Sum = decimal.Parse(tbInvoiceValue.Text.Trim());
 
-            //newInvoiceValue.IdInvoiceType = (int) comboBox1.SelectedItem;
+            int selectedIndex = comboBox1.SelectedIndex;
+            newInvoiceValue.IdInvoiceType = selectedIndex;
 
             db.Invoices.Add(newInvoiceValue);
             db.Contractors.Add(newContractor);
