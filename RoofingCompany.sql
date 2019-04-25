@@ -64,7 +64,7 @@ create table SemiFinished(
 	);
 
 create table TechnicalProductData(
-	IdTechnicalProductData int primary key not null,
+	IdTechnicalProductData int primary key identity(1,1) not null,
 	IdProduct int,
 	Pattern image not null,
 	Width float not null,
@@ -78,7 +78,8 @@ create table Product(
 	IdSemiFinished int not null,
 	ProductCode nvarchar(50),
 	IdTechnology int not null,
-	InputDate DateTime not null
+	InputDate DateTime not null,
+	InProduction bit
 	);
 
 --============/SALES DEPARTMENT/==============================
@@ -670,7 +671,6 @@ FROM EntranceControl, SemiFinished;
 GO
 
 CREATE VIEW vPredictedPriceForCustomer
-GO 
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
 FROM OrderDetail
@@ -680,6 +680,7 @@ JOIN TechnicalProductData
 ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
 JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer
+go
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
