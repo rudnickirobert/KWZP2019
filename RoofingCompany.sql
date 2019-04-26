@@ -95,11 +95,11 @@ CREATE TABLE Customer
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	Pesel float NULL,
-	NIP float NULL,
-	KRS float NULL,
+	HouseNumber nvarchar(10) NOT NULL,
+	ApartmentNumber nvarchar(10) NOT NULL,
+	Pesel nvarchar(12) NULL,
+	NIP nvarchar(12) NULL,
+	KRS nvarchar(12) NULL,
 	Description nvarchar(100) NOT NULL); 
 
 CREATE TABLE OrderCustomer
@@ -129,10 +129,10 @@ CREATE TABLE Supplier
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
+	HouseNumber nvarchar(10) NOT NULL,
+	ApartmentNumber nvarchar(10) NOT NULL,
+	NIP nvarchar(12) NOT NULL,
+	KRS nvarchar(12) NOT NULL,
 	Description nvarchar(100) NOT NULL);
 
 CREATE TABLE SemiFinishedOrder
@@ -161,10 +161,10 @@ CREATE TABLE Outsourcing
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
+	HouseNumber nvarchar(10) NOT NULL,
+	ApartmentNumber nvarchar(10) NOT NULL,
+	NIP nvarchar(12) NOT NULL,
+	KRS nvarchar(12) NOT NULL,
 	Description nvarchar(100) NOT NULL);
 
 CREATE TABLE OutsourcingCommitment
