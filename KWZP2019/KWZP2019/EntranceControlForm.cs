@@ -128,7 +128,7 @@ namespace KWZP2019
 
             lblEmployeeFullName.Text = employee != null ? 
                 $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : 
-                "";
+                "Brak pracownika z takim ID";
         }
 
         // ================================================== 

@@ -12,16 +12,13 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class OutControl
+    public partial class vTechnicalProductDataPerProcess
     {
         public int IdProcess { get; set; }
-        public int IdEmployee { get; set; }
-        public System.DateTime StartControlDate { get; set; }
-        public System.DateTime EndControlDate { get; set; }
-        public double WidthAcceptableDeviation { get; set; }
-        public double LenghtAcceptableDeviation { get; set; }
-    
-        public virtual Employee Employee { get; set; }
-        public virtual ProductionProce ProductionProce { get; set; }
+        public string ProductCode { get; set; }
+        public int IdProduct { get; set; }
+        public double Lenght { get; set; }
+        public double Width { get; set; }
+        public int Quantity { get; set; }
     }
 }

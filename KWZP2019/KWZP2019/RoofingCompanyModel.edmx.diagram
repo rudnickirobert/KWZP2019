@@ -136,6 +136,11 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="15.75" PointY="23.75" />
         <AssociationConnector Association="RoofingCompanyModel.FkMachine" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" Width="1.5" PointX="23.75" PointY="17.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProcess" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vTechnicalProductDataPerProcess" Width="1.5" PointX="18.75" PointY="23.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vUnfinishedProcess" Width="1.5" PointX="2.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
