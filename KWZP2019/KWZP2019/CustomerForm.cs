@@ -58,9 +58,9 @@ namespace KWZP2019
         }
         private void editCustomerBtn_Click(object sender, EventArgs e)
         {
-            CustomerForm newCustomer = new CustomerForm(customersDgv);
-            newCustomer.ShowDialog();
-            OdswiezGridCustomer();
+            //CustomerForm newCustomer = new CustomerForm(customersDgv);
+            //newCustomer.ShowDialog();
+            //OdswiezGridCustomer();
             //this.customersDgv.EditMode = DataGridViewEditMode.EditOnEnter;
             //AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
             //newCustomer.ShowDialog();
