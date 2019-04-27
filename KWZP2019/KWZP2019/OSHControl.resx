@@ -173,16 +173,16 @@
   <data name="&gt;&gt;btnDone.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="btnClear.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="btnHistory.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="btnClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnHistory.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnHistory.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
-  <data name="btnClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAA8tJREFUWEftmI1L00EYx/0r+h/qzwgiU/OtIiJ7D8oKggwqQgmCUDc1sywtUisi
@@ -204,31 +204,31 @@
         OwdYgrYVHFeSVn81Prd9NqVAbwgfLibmL4G/UtVRJynUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnHistory.Location" type="System.Drawing.Point, System.Drawing">
     <value>67, 458</value>
   </data>
-  <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 120</value>
   </data>
-  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnHistory.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Wyczyść dane</value>
+  <data name="btnHistory.Text" xml:space="preserve">
+    <value>Historia Kontroli</value>
   </data>
-  <data name="btnClear.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btnHistory.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
-    <value>btnClear</value>
+  <data name="&gt;&gt;btnHistory.Name" xml:space="preserve">
+    <value>btnHistory</value>
   </data>
-  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnHistory.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnHistory.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
   <data name="btnReturn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

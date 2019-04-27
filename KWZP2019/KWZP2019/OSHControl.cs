@@ -82,5 +82,12 @@ namespace KWZP2019
 
             }
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            OSHControlHistory oSHControlHistory = new OSHControlHistory(db, startForm, this);
+            oSHControlHistory.Show();
+            this.Hide();
+        }
     }
 }
