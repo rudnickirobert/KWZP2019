@@ -69,7 +69,8 @@ create table SemiFinished(
 	);
 
 create table TechnicalProductData(
-	IdProduct int primary key not null,
+	IdTechnicalProductData int primary key identity(1,1) not null,
+	IdProduct int,
 	Pattern image not null,
 	Width float not null,
 	WeightPerMeter float not null,
@@ -82,7 +83,8 @@ create table Product(
 	IdSemiFinished int not null,
 	ProductCode nvarchar(50),
 	IdTechnology int not null,
-	InputDate DateTime not null
+	InputDate DateTime not null,
+	InProduction bit
 	);
 
 --============/SALES DEPARTMENT/==============================
@@ -685,6 +687,7 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
+go
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
