@@ -15,6 +15,8 @@ namespace KWZP2019
         private RoofingCompanyEntities db;
         private StartForm startForm;
         private QualityControl qualityControlForm;
+        private int selectedEmployee;
+
         public OSHControl(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
             InitializeComponent();
@@ -56,6 +58,7 @@ namespace KWZP2019
         {
             Employee employee = db.Employees.FirstOrDefault(empee => empee.IdEmployee.ToString() == domUDEmployee.Text);
             lblEmployeeFullName.Text = employee != null ? $"{employee.EmployeeName} {employee.EmployeeSurname}" : "";
+            selectedEmployee = Convert.ToInt32(domUDEmployee.Text);
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -65,21 +68,17 @@ namespace KWZP2019
                 MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
-               // Employee employee = db.Employees.FirstOrDefault(emp => emp.IdEmployee.ToString() == domUDEmployee.Text);
-
-               // var idEmployee = db.SafetyControls.Join(db.Employees, oshc => oshc.IdInspectedEmployee, iemp => iemp.IdEmployee,
-                //    (oshc, iemp) => new { oshc.IdInspectedEmployee }).FirstOrDefault();
-
+            {       
                 SafetyControl safetyControl = new SafetyControl();
 
                 safetyControl.IdSafetyEmployee = txtBoxControlerId.Text;
                 safetyControl.CompanyName = txtBoxControlingCompany.Text;
-                //safetyControl.IdInspectedEmployee = int.Parse(domUDEmployee.Text);
+                safetyControl.IdInspectedEmployee = selectedEmployee;
                 safetyControl.SaftyControlDate = dateTimeOSHControl.Value;
                 safetyControl.SafetyControlDescription = textBoxDescription.Text;
 
                 db.SafetyControls.Add(safetyControl);
+                db.SaveChanges();
 
             }
         }
