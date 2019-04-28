@@ -56,6 +56,9 @@ namespace KWZP2019
 
         private void EntranceControlStatisticsForm_Load(object sender, EventArgs e)
         {
+            datePickerDateFrom.Value = DateTime.Now.AddMonths(-1);
+            datePickerDateTo.Value = DateTime.Now;
+
             var semiFinishedList = db.SemiFinisheds
                 .Select(semiFinished => new
                 {
@@ -68,13 +71,71 @@ namespace KWZP2019
 
         // ==================================================
 
+        private void BtnAllTime_Click(object sender, EventArgs e)
+        {
+            if(selectedSemiFinishedId <= 0)
+            {
+                MessageBox.Show("Wybierz półfabrykat.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var controlDates = db.EntranceControls
+                    .Join(db.SfOrderDetails,
+                    entranceControl => entranceControl.IdSfDetail,
+                    sfOrderDetail => sfOrderDetail.IdSfDetail,
+                    (entranceControl, sfOrderDetail) => new
+                    {
+                        entranceControl.ControlDate,
+                        sfOrderDetail.IdSemiFinished
+                    })
+                    .Join(db.SemiFinisheds,
+                    controlJoinDetail => controlJoinDetail.IdSemiFinished,
+                    semiFinished => semiFinished.IdSemiFinished,
+                    (controlJoinDetail, semiFinished) => new
+                    {
+                        Data_Kontroli = controlJoinDetail.ControlDate,
+                        controlJoinDetail.IdSemiFinished
+                    })
+                    .Where(check =>
+                    check.IdSemiFinished == selectedSemiFinishedId)
+                    .Select(select =>
+                    select.Data_Kontroli)
+                    .ToList();
+
+                if(controlDates.Count == 0)
+                {
+                    MessageBox.Show("Brak kontroli wybranego półfabrykatu w bazie.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if(controlDates.Count == 1)
+                {
+                    datePickerDateFrom.Value = controlDates[0];
+                    datePickerDateTo.Value = controlDates[0];
+                }
+                else
+                {
+                    datePickerDateFrom.Value = controlDates.Min();
+                    datePickerDateTo.Value = controlDates.Max();
+                }
+                
+            }
+        }
+
+        // ==================================================
+
         private void BtnShowHistograms_Click(object sender, EventArgs e)
         {
             if(selectedSemiFinishedId <= 0)
             {
-                MessageBox.Show("Wybierz półfabrykat.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Wybierz półfabrykat.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            //ShowHistograms(this.selectedSemiFinishedId, datePickerDateFrom.Value, datePickerDateTo.Value);
+            else if(datePickerDateFrom.Value > datePickerDateTo.Value)
+            {
+                MessageBox.Show("Data \"od\" musi być większa od daty \"do\".", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ShowHistograms(this.selectedSemiFinishedId, datePickerDateFrom.Value, datePickerDateTo.Value);
+            }
         }
 
         // ==================================================
@@ -82,7 +143,7 @@ namespace KWZP2019
         private void DataGridViewSemiFinished_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewSemiFinished.SelectedRows[0];
-            selectedSemiFinishedId = (int)selectedRow.Cells["ID"].Value;
+            selectedSemiFinishedId = (int)selectedRow.Cells["Id"].Value;
         }
 
         // ==================================================

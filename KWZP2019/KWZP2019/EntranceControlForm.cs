@@ -176,18 +176,18 @@ namespace KWZP2019
         {
             if (selectedOrderId == null)
             {
-                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (this.doControlExist)
             {
-                MessageBox.Show("Ta kontrola już istnieje w bazie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ta kontrola już istnieje w bazie!", "Wiadomość", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (lblOrderIdShow.Text == "" || lblSfIdShow.Text == "" 
                 || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
                 || txtboxWidth.Text == "" || txtboxMass.Text == ""
                 || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
-                MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (lblOrderIdShow.Text == "")
                 {
                     lblOrderIdShow.BackColor = Color.Red;

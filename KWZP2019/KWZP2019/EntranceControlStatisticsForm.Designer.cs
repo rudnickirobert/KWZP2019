@@ -43,6 +43,7 @@
             this.datePickerDateTo = new System.Windows.Forms.DateTimePicker();
             this.lblDateFrom = new System.Windows.Forms.Label();
             this.lblDateTo = new System.Windows.Forms.Label();
+            this.btnAllTime = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSemiFinished)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,6 +238,28 @@
             this.lblDateTo.Text = "Data do";
             this.lblDateTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnAllTime
+            // 
+            this.btnAllTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAllTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAllTime.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAllTime.FlatAppearance.BorderSize = 3;
+            this.btnAllTime.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAllTime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAllTime.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnAllTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAllTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAllTime.Image = global::KWZP2019.Properties.Resources.icons8_date_span_40;
+            this.btnAllTime.Location = new System.Drawing.Point(462, 285);
+            this.btnAllTime.Name = "btnAllTime";
+            this.btnAllTime.Size = new System.Drawing.Size(285, 60);
+            this.btnAllTime.TabIndex = 1;
+            this.btnAllTime.Text = "Cały okres czasu";
+            this.btnAllTime.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAllTime.UseVisualStyleBackColor = false;
+            this.btnAllTime.Click += new System.EventHandler(this.BtnAllTime_Click);
+            // 
             // EntranceControlStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +272,7 @@
             this.Controls.Add(this.dataGridViewSemiFinished);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAllTime);
             this.Controls.Add(this.btnShowHistograms);
             this.Controls.Add(this.btnReturn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -275,5 +299,6 @@
         private System.Windows.Forms.DateTimePicker datePickerDateTo;
         private System.Windows.Forms.Label lblDateFrom;
         private System.Windows.Forms.Label lblDateTo;
+        private System.Windows.Forms.Button btnAllTime;
     }
 }
