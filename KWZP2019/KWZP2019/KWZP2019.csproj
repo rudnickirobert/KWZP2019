@@ -388,10 +388,10 @@
     <Compile Include="Production\ProductionFailures.Designer.cs">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionHistory.cs">
+    <Compile Include="Production\ProductionHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionHistory.Designer.cs">
+    <Compile Include="Production\ProductionHistory.Designer.cs">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\ProductionPlanned.cs">
@@ -421,10 +421,10 @@
     <Compile Include="Production\ProductionProducts.Designer.cs">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionSelection.cs">
+    <Compile Include="Production\ProductionSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionSelection.Designer.cs">
+    <Compile Include="Production\ProductionSelection.Designer.cs">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\ProductionTechnology.cs">
@@ -657,7 +657,7 @@
     <EmbeddedResource Include="Production\ProductionFailures.resx">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionHistory.resx">
+    <EmbeddedResource Include="Production\ProductionHistory.resx">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\ProductionPlanned.resx">
@@ -669,7 +669,7 @@
     <EmbeddedResource Include="Production\ProductionProducts.resx">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionSelection.resx">
+    <EmbeddedResource Include="Production\ProductionSelection.resx">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\ProductionTechnology.resx">
