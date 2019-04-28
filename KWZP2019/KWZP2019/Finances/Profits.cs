@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Reflection;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace KWZP2019
 {
@@ -252,5 +257,47 @@ namespace KWZP2019
             tbSumOS.Text = valOS.ToString();
             tbPureMoney.Text = pureMoney.ToString();
         }
+        private void btnGenerategeneralreport_Click(object sender, EventArgs e)
+        {
+            PdfPTable pdfTable = new PdfPTable(dgvProfits.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 30;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+            foreach (DataGridViewColumn column in dgvProfits.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                pdfTable.AddCell(cell);
+            }
+            int row = dgvProfits.Rows.Count;
+            int cell2 = dgvProfits.Rows[1].Cells.Count;
+            for (int i = 0; i < row - 1; i++)
+            {
+                for (int j = 0; j < cell2; j++)
+                {
+                    if (dgvProfits.Rows[i].Cells[j].Value == null)
+                    {
+                        dgvProfits.Rows[i].Cells[j].Value = "null";
+                    }
+                    pdfTable.AddCell(dgvProfits.Rows[i].Cells[j].Value.ToString());
+                }
+            }
+            string folderPath = @"C:\Users\mbrominski\Desktop";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+            }
+            MessageBox.Show("Done");
+        }
     }
+    
 }

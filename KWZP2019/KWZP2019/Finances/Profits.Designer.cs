@@ -131,6 +131,7 @@
             this.btnGenerategeneralreport.TabIndex = 9;
             this.btnGenerategeneralreport.Text = "Generuj raport";
             this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
+            this.btnGenerategeneralreport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
             // 
             // dgvProfits
             // 
