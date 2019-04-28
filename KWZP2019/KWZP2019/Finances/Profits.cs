@@ -114,13 +114,11 @@ namespace KWZP2019
         }
         private void btnAcceptselectedtime_Click(object sender, EventArgs e)
         {
-            string StartDate = dtpStartDate.Value.ToString("yyyy-MM-dd");
-            string EndDate = dtpEndDate.Value.ToString("yyyy-MM-dd");
             SqlCommand sqlCommand = new SqlCommand
-            ("SELECT dbo.Customer.CustomerName, Cast(dbo.OrderCustomer.OrderDate as date) as 'OrderDate', dbo.OrderCustomer.Cost " +
+            ("SELECT dbo.Customer.CustomerName, Cast(dbo.OrderCustomer.OrderDate as DATE) as OrderDate, dbo.OrderCustomer.Cost " +
              "FROM dbo.OrderCustomer " +
              "INNER JOIN dbo.Customer ON dbo.Customer.IdCustomer = dbo.OrderCustomer.IdCustomer " +
-             "WHERE ('OrderDate' between '" + StartDate + "' and '" + EndDate + "') " +
+             "WHERE OrderDate BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
              "ORDER BY (dbo.Customer.CustomerName)", sqlConnection);
             sqlConnection.Open();
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -134,8 +132,83 @@ namespace KWZP2019
             }
             sqlConnection.Close();
             dgvProfits.DataSource = dtCustomer;
+            SqlCommand sqlCommandInvoices = new SqlCommand
+            ("SELECT dbo.Invoice.Sum, dbo.Invoice.Date, dbo.InvoiceType.Type, dbo.Contractor.ContractorName " +
+            "FROM dbo.Invoice " +
+            "INNER JOIN dbo.Contractor ON dbo.Invoice.IdContractor = dbo.Contractor.IdContractor " +
+            "INNER JOIN dbo.InvoiceType ON dbo.Invoice.IdInvoiceType = dbo.InvoiceType.IdInvoiceType " +
+            "WHERE Date BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
+            "ORDER BY (dbo.Contractor.ContractorName)", sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReaderInvoices = sqlCommandInvoices.ExecuteReader();
+            DataTable dtInvoice = new DataTable();
+            dtInvoice.Columns.Add("Kwota", typeof(string));
+            dtInvoice.Columns.Add("Data", typeof(string));
+            dtInvoice.Columns.Add("Typ faktury", typeof(string));
+            dtInvoice.Columns.Add("Nazwa podmiotu", typeof(string));
+            while (sqlDataReaderInvoices.Read())
+            {
+                dtInvoice.Rows.Add(sqlDataReaderInvoices["Sum"], sqlDataReaderInvoices["Date"], sqlDataReaderInvoices["Type"], sqlDataReaderInvoices["ContractorName"]);
+            }
+            sqlConnection.Close();
+            dgvInvoices.DataSource = dtInvoice;
+            SqlCommand sqlCommandPayment = new SqlCommand
+           ("SELECT dbo.Payment.Sum, dbo.Payment.Date, dbo.Payment.Bonus, dbo.Employee.EmployeeName, dbo.Employee.EmployeeSurname " +
+           "FROM dbo.Payment " +
+           "INNER JOIN dbo.Employee ON dbo.Payment.IdEmployee = dbo.Employee.IdEmployee " +
+           "WHERE Date BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
+           "ORDER BY (dbo.Employee.EmployeeSurname)", sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReaderPayment = sqlCommandPayment.ExecuteReader();
+            DataTable dtPayment = new DataTable();
+            dtPayment.Columns.Add("Kwota", typeof(string));
+            dtPayment.Columns.Add("Data", typeof(string));
+            dtPayment.Columns.Add("Bonus", typeof(string));
+            dtPayment.Columns.Add("Imię", typeof(string));
+            dtPayment.Columns.Add("Nazwisko", typeof(string));
+            while (sqlDataReaderPayment.Read())
+            {
+                dtPayment.Rows.Add(sqlDataReaderPayment["Sum"], sqlDataReaderPayment["Date"], sqlDataReaderPayment["Bonus"], sqlDataReaderPayment["EmployeeName"], sqlDataReaderPayment["EmployeeSurname"]);
+            }
+            sqlConnection.Close();
+            dgvSalaries.DataSource = dtPayment;
+            SqlCommand sqlCommandOrders = new SqlCommand
+           ("SELECT dbo.SemiFinishedOrder.Cost, Cast(dbo.SemiFinishedOrder.SFOrderDate as DATE) as SFOrderDate, dbo.Supplier.SupplierName " +
+           "FROM dbo.SemiFinishedOrder " +
+           "INNER JOIN dbo.Supplier ON dbo.SemiFinishedOrder.IdSupplier = dbo.Supplier.IdSupplier " +
+           "WHERE SFOrderDate BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
+           "ORDER BY (dbo.Supplier.SupplierName)", sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReaderOrders = sqlCommandOrders.ExecuteReader();
+            DataTable dtOrders = new DataTable();
+            dtOrders.Columns.Add("Kwota", typeof(string));
+            dtOrders.Columns.Add("Data", typeof(string));
+            dtOrders.Columns.Add("Nazwa dostawcy", typeof(string));
+            while (sqlDataReaderOrders.Read())
+            {
+                dtOrders.Rows.Add(sqlDataReaderOrders["Cost"], sqlDataReaderOrders["SFOrderDate"], sqlDataReaderOrders["SupplierName"]);
+            }
+            sqlConnection.Close();
+            dgvOrders.DataSource = dtOrders;
+            SqlCommand sqlCommandOS = new SqlCommand
+            ("SELECT dbo.OutsourcingCommitment.Cost, Cast(dbo.OutsourcingCommitment.EndCommitmentDate as DATE) as EndCommitmentDate, dbo.Outsourcing.CompanyName " +
+            "FROM dbo.OutsourcingCommitment " +
+            "INNER JOIN dbo.Outsourcing ON dbo.OutsourcingCommitment.IdOutsourcing = dbo.Outsourcing.IdOutsourcing " +
+            "WHERE EndCommitmentDate BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
+            "ORDER BY (dbo.Outsourcing.CompanyName)", sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReaderOS = sqlCommandOS.ExecuteReader();
+            DataTable dtOS = new DataTable();
+            dtOS.Columns.Add("Kwota", typeof(string));
+            dtOS.Columns.Add("Data", typeof(string));
+            dtOS.Columns.Add("Nazwa podmiotu", typeof(string));
+            while (sqlDataReaderOS.Read())
+            {
+                dtOS.Rows.Add(sqlDataReaderOS["Cost"], sqlDataReaderOS["EndCommitmentDate"], sqlDataReaderOS["CompanyName"]);
+            }
+            sqlConnection.Close();
+            dgvOutsourcing.DataSource = dtOS;
         }
-
         private void btSum_Click(object sender, EventArgs e)
         {
             decimal valIncome = 0, valInvoice = 0, valPayment = 0, valOS = 0, valOrder = 0;
@@ -171,9 +244,7 @@ namespace KWZP2019
                 && item.Cells[cellIndex].Value != null && item.Cells[cellIndex].Value != System.DBNull.Value)
                     valPayment += Convert.ToDecimal(item.Cells[cellIndex].Value);
             }
-
             decimal pureMoney = valIncome - valInvoice - valOrder - valOS - valPayment;
-
             tbSumIncome.Text = valIncome.ToString();
             tbSumInvoices.Text = valInvoice.ToString();
             tbSumOrders.Text = valOrder.ToString();
