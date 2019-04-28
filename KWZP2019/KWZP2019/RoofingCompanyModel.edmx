@@ -610,6 +610,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.EntranceControlView' does not h
           <Property Name="ChemicalComposition" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.SafetyControlHistoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SafetyControlHistoryView">
+          <Key>
+            <PropertyRef Name="IdInspection" />
+            <PropertyRef Name="IdSafetyEmployee" />
+            <PropertyRef Name="SaftyControlDate" />
+          </Key>
+          <Property Name="IdInspection" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="IdSafetyEmployee" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="SaftyControlDate" Type="datetime" Nullable="false" />
+          <Property Name="InspectedEmpolyee" Type="nvarchar" MaxLength="100" />
+          <Property Name="SafetyControlDescription" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vCompany">
           <Key>
@@ -1658,6 +1673,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
     [EntranceControlView].[Color] AS [Color], 
     [EntranceControlView].[ChemicalComposition] AS [ChemicalComposition]
     FROM [dbo].[EntranceControlView] AS [EntranceControlView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SafetyControlHistoryView" EntityType="Self.SafetyControlHistoryView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SafetyControlHistoryView].[IdInspection] AS [IdInspection], 
+    [SafetyControlHistoryView].[CompanyName] AS [CompanyName], 
+    [SafetyControlHistoryView].[IdSafetyEmployee] AS [IdSafetyEmployee], 
+    [SafetyControlHistoryView].[SaftyControlDate] AS [SaftyControlDate], 
+    [SafetyControlHistoryView].[InspectedEmpolyee] AS [InspectedEmpolyee], 
+    [SafetyControlHistoryView].[SafetyControlDescription] AS [SafetyControlDescription]
+    FROM [dbo].[SafetyControlHistoryView] AS [SafetyControlHistoryView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vCompany" EntityType="Self.vCompany" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3795,6 +3820,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySet Name="EntranceControlView" EntityType="RoofingCompanyModel.EntranceControlView" />
           <EntitySet Name="vOrderDetail" EntityType="RoofingCompanyModel.vOrderDetail" />
           <EntitySet Name="vPredictedPriceForCustomer" EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" />
+          <EntitySet Name="SafetyControlHistoryView" EntityType="RoofingCompanyModel.SafetyControlHistoryView" />
         </EntityContainer>
         <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
           <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
@@ -4069,6 +4095,19 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Markup" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SafetyControlHistoryView">
+          <Key>
+            <PropertyRef Name="IdInspection" />
+            <PropertyRef Name="IdSafetyEmployee" />
+            <PropertyRef Name="SaftyControlDate" />
+          </Key>
+          <Property Name="IdInspection" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IdSafetyEmployee" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SaftyControlDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SafetyControlDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InspectedEmpolyee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4892,6 +4931,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SafetyControlHistoryView">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.SafetyControlHistoryView">
+              <MappingFragment StoreEntitySet="SafetyControlHistoryView">
+                <ScalarProperty Name="InspectedEmpolyee" ColumnName="InspectedEmpolyee" />
+                <ScalarProperty Name="SafetyControlDescription" ColumnName="SafetyControlDescription" />
+                <ScalarProperty Name="SaftyControlDate" ColumnName="SaftyControlDate" />
+                <ScalarProperty Name="IdSafetyEmployee" ColumnName="IdSafetyEmployee" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="IdInspection" ColumnName="IdInspection" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

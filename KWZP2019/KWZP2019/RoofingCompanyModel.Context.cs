@@ -95,5 +95,6 @@ namespace KWZP2019
         public virtual DbSet<EntranceControlView> EntranceControlView { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetail { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomer { get; set; }
+        public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryView { get; set; }
     }
 }

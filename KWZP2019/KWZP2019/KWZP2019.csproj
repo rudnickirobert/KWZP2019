@@ -465,6 +465,9 @@
     <Compile Include="SafetyControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SafetyControlHistoryView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SafetyTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
