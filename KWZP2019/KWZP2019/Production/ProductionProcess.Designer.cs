@@ -80,7 +80,7 @@
             // 
             // productionProceBindingSource
             // 
-            this.productionProceBindingSource.DataSource = typeof(KWZP2019.ProductionProce);
+            this.productionProceBindingSource.DataSource = typeof(KWZP2019.ProductionProcess);
             // 
             // ProductionProcess
             // 

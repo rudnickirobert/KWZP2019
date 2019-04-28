@@ -18,7 +18,7 @@ namespace KWZP2019
         public PlannedProduction()
         {
             this.PlannedProductionEmployeeDetails = new HashSet<PlannedProductionEmployeeDetail>();
-            this.ProductionProces = new HashSet<ProductionProce>();
+            this.ProductionProcess = new HashSet<ProductionProcess>();
         }
     
         public int IdPlan { get; set; }
@@ -32,8 +32,8 @@ namespace KWZP2019
         public virtual OrderDetail OrderDetail1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionProce> ProductionProces { get; set; }
         public virtual Maintenance Maintenance { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductionProcess> ProductionProcess { get; set; }
     }
 }

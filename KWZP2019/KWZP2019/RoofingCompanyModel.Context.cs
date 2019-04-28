@@ -68,7 +68,6 @@ namespace KWZP2019
         public virtual DbSet<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductionProce> ProductionProces { get; set; }
         public virtual DbSet<Realization> Realizations { get; set; }
         public virtual DbSet<SafetyControl> SafetyControls { get; set; }
         public virtual DbSet<SafetyTraining> SafetyTrainings { get; set; }
@@ -97,5 +96,6 @@ namespace KWZP2019
         public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcess { get; set; }
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcess { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcess { get; set; }
+        public virtual DbSet<ProductionProcess> ProductionProcess { get; set; }
     }
 }

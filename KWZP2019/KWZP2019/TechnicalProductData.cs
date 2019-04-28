@@ -20,7 +20,8 @@ namespace KWZP2019
         public double WeightPerMeter { get; set; }
         public double Lenght { get; set; }
         public double PricePerMeter { get; set; }
+        public int IdTechnicalProductData { get; set; }
     
-        public virtual Product Product { get; set; }
+        public virtual Product Product1 { get; set; }
     }
 }

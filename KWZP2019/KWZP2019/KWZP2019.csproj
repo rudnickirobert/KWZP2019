@@ -277,6 +277,10 @@
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductionProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,9 +403,6 @@
     </Compile>
     <Compile Include="Production\ProductionPlanned.Designer.cs">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductionProce.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Finances\Profits.cs">
       <SubType>Form</SubType>

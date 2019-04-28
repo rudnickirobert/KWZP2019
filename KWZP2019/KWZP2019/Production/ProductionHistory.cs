@@ -21,7 +21,7 @@ namespace KWZP2019
 
         private void ProductionHistory_Load(object sender, EventArgs e)
         {
-            ProductionHistoryGridView.DataSource = db.ProductionProces.
+            ProductionHistoryGridView.DataSource = db.ProductionProcess.
                 Where(ProdHist => ProdHist.EndDate < DateTime.Now).ToList();
         }
     }
