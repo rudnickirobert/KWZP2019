@@ -54,7 +54,7 @@ namespace KWZP2019
 
         private void BtnStatistics_Click(object sender, EventArgs e)
         {
-            EntranceControlStatisticsForm statisticsForm = new EntranceControlStatisticsForm(this);
+            EntranceControlStatisticsForm statisticsForm = new EntranceControlStatisticsForm(db, startForm, this);
             statisticsForm.Show();
             this.Hide();
         }
@@ -122,13 +122,13 @@ namespace KWZP2019
                 .OrderBy(orderBy =>
                 orderBy.Data_dostarczenia)
                 .ToList();
-            dataGVEntranceControl.DataSource = orders;
+            dataGridViewEntranceControl.DataSource = orders;
         }
 
         // ==================================================
         private void DataGVEntranceControl_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewRow selectedRow = dataGVEntranceControl.SelectedRows[0];
+            DataGridViewRow selectedRow = dataGridViewEntranceControl.SelectedRows[0];
             selectedOrderId = selectedRow.Cells["ID_zamówienia"].Value.ToString();
             lblOrderIdShow.Text = selectedOrderId;
             selectedSfId = selectedRow.Cells["ID_półfabrykatu"].Value.ToString();
@@ -533,7 +533,7 @@ namespace KWZP2019
                 orderBy.Data_dostarczenia)
                 .ToList();
             // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
+            dataGridViewEntranceControl.DataSource = orders;
         }
 
         // ==================================================
@@ -563,7 +563,7 @@ namespace KWZP2019
                 orderBy.Data_dostarczenia)
                 .ToList();
             // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
+            dataGridViewEntranceControl.DataSource = orders;
         }
 
         // ==================================================
@@ -592,7 +592,7 @@ namespace KWZP2019
                 orderBy.Data_dostarczenia)
                 .ToList();
             // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
+            dataGridViewEntranceControl.DataSource = orders;
         }
     }
 }

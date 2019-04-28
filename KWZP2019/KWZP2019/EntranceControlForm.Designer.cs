@@ -29,11 +29,11 @@ namespace KWZP2019
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceControlForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblFormTitle = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@ namespace KWZP2019
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.btnApproval = new System.Windows.Forms.Button();
-            this.dataGVEntranceControl = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEntranceControl = new System.Windows.Forms.DataGridView();
             this.lblSelectedControl = new System.Windows.Forms.Label();
             this.lblOrderIdShow = new System.Windows.Forms.Label();
             this.lblSfIdShow = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntranceControl)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -535,59 +535,59 @@ namespace KWZP2019
             this.btnApproval.UseVisualStyleBackColor = false;
             this.btnApproval.Click += new System.EventHandler(this.BtnApproval_Click);
             // 
-            // dataGVEntranceControl
+            // dataGridViewEntranceControl
             // 
-            this.dataGVEntranceControl.AllowUserToAddRows = false;
-            this.dataGVEntranceControl.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVEntranceControl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGVEntranceControl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGVEntranceControl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGVEntranceControl.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.dataGVEntranceControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGVEntranceControl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGVEntranceControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGVEntranceControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGVEntranceControl.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGVEntranceControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGVEntranceControl.Location = new System.Drawing.Point(30, 280);
-            this.dataGVEntranceControl.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGVEntranceControl.MultiSelect = false;
-            this.dataGVEntranceControl.Name = "dataGVEntranceControl";
-            this.dataGVEntranceControl.ReadOnly = true;
-            this.dataGVEntranceControl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGVEntranceControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVEntranceControl.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGVEntranceControl.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGVEntranceControl.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVEntranceControl.ShowEditingIcon = false;
-            this.dataGVEntranceControl.Size = new System.Drawing.Size(450, 455);
-            this.dataGVEntranceControl.TabIndex = 38;
-            this.dataGVEntranceControl.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGVEntranceControl_RowHeaderMouseDoubleClick);
+            this.dataGridViewEntranceControl.AllowUserToAddRows = false;
+            this.dataGridViewEntranceControl.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewEntranceControl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEntranceControl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEntranceControl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridViewEntranceControl.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.dataGridViewEntranceControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewEntranceControl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEntranceControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewEntranceControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEntranceControl.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewEntranceControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewEntranceControl.Location = new System.Drawing.Point(30, 280);
+            this.dataGridViewEntranceControl.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridViewEntranceControl.MultiSelect = false;
+            this.dataGridViewEntranceControl.Name = "dataGridViewEntranceControl";
+            this.dataGridViewEntranceControl.ReadOnly = true;
+            this.dataGridViewEntranceControl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEntranceControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewEntranceControl.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewEntranceControl.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewEntranceControl.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewEntranceControl.ShowEditingIcon = false;
+            this.dataGridViewEntranceControl.Size = new System.Drawing.Size(450, 455);
+            this.dataGridViewEntranceControl.TabIndex = 38;
+            this.dataGridViewEntranceControl.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGVEntranceControl_RowHeaderMouseDoubleClick);
             // 
             // lblSelectedControl
             // 
@@ -807,7 +807,7 @@ namespace KWZP2019
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
-            this.Controls.Add(this.dataGVEntranceControl);
+            this.Controls.Add(this.dataGridViewEntranceControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -822,7 +822,7 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntranceControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -864,7 +864,7 @@ namespace KWZP2019
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
         private System.Windows.Forms.PictureBox picBoxControlStatus;
         private System.Windows.Forms.Button btnApproval;
-        private System.Windows.Forms.DataGridView dataGVEntranceControl;
+        private System.Windows.Forms.DataGridView dataGridViewEntranceControl;
         private System.Windows.Forms.Label lblSelectedControl;
         private System.Windows.Forms.Label lblOrderIdShow;
         private System.Windows.Forms.Label lblSfIdShow;
