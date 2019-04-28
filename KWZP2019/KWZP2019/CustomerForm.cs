@@ -12,15 +12,17 @@ namespace KWZP2019
 {
     public partial class CustomerForm : Form
     {
-        public CustomerForm()
+        RoofingCompanyEntities db;
+        public CustomerForm(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderForm orderForm = new OrderForm();
+            OrderForm orderForm = new OrderForm(db);
             orderForm.ShowDialog();
             this.Close();
         }
