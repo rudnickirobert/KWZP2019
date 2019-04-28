@@ -27,7 +27,7 @@ namespace KWZP2019
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            ProductionProducts ProductionProductsForm = new ProductionProducts();
+            ProductionProducts ProductionProductsForm = new ProductionProducts(db);
             ProductionProductsForm.Show();
         }
 
@@ -37,21 +37,15 @@ namespace KWZP2019
             ProductionFailuresForm.Show();
         }
 
-        private void btnProductionProcess_Click(object sender, EventArgs e)
-        {
-            ProductionProcess ProductionProcessForm = new ProductionProcess();
-            ProductionProcessForm.Show();
-        }
-
-        private void btnProductionPlanned_Click(object sender, EventArgs e)
-        {
-            ProductionPlanned ProductionPlannedForm = new ProductionPlanned(db);
-            ProductionPlannedForm.Show();
-        }
-
         private void btnProductionToMain_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnProductionSelection_Click(object sender, EventArgs e)
+        {
+            ProductionSelection ProductionSelectionForm = new ProductionSelection(db);
+            ProductionSelectionForm.Show();
         }
     }
 }
