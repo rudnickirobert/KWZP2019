@@ -34,6 +34,7 @@
             this.btDeleteProduct = new System.Windows.Forms.Button();
             this.btEnd = new System.Windows.Forms.Button();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
+            this.btRefresh = new System.Windows.Forms.Button();
             this.idProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSemiFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +45,6 @@
             this.technologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.technicalProductDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.btEditProduct.TabIndex = 1;
             this.btEditProduct.Text = "Edytuj";
             this.btEditProduct.UseVisualStyleBackColor = true;
+            this.btEditProduct.Click += new System.EventHandler(this.btEditProduct_Click);
             // 
             // btDeleteProduct
             // 
@@ -108,6 +109,16 @@
             this.dataGridProducts.Size = new System.Drawing.Size(776, 398);
             this.dataGridProducts.TabIndex = 4;
             this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(447, 13);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(112, 20);
+            this.btRefresh.TabIndex = 5;
+            this.btRefresh.Text = "Odśwież";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // idProductDataGridViewTextBoxColumn
             // 
@@ -166,16 +177,6 @@
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(KWZP2019.Product);
-            // 
-            // btRefresh
-            // 
-            this.btRefresh.Location = new System.Drawing.Point(447, 13);
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(112, 20);
-            this.btRefresh.TabIndex = 5;
-            this.btRefresh.Text = "Odśwież";
-            this.btRefresh.UseVisualStyleBackColor = true;
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // ProductionProducts
             // 
