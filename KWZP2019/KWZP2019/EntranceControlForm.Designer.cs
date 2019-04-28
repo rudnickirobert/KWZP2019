@@ -251,7 +251,7 @@ namespace KWZP2019
             this.lblParameterCheck.BackColor = System.Drawing.Color.Transparent;
             this.lblParameterCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblParameterCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblParameterCheck.Location = new System.Drawing.Point(993, 542);
+            this.lblParameterCheck.Location = new System.Drawing.Point(1008, 563);
             this.lblParameterCheck.Name = "lblParameterCheck";
             this.lblParameterCheck.Size = new System.Drawing.Size(159, 26);
             this.lblParameterCheck.TabIndex = 28;
@@ -271,7 +271,7 @@ namespace KWZP2019
             this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnCheck.Image")));
-            this.btnCheck.Location = new System.Drawing.Point(811, 565);
+            this.btnCheck.Location = new System.Drawing.Point(826, 586);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(170, 80);
             this.btnCheck.TabIndex = 29;
@@ -294,7 +294,7 @@ namespace KWZP2019
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDone.Image = ((System.Drawing.Image)(resources.GetObject("btnDone.Image")));
-            this.btnDone.Location = new System.Drawing.Point(811, 650);
+            this.btnDone.Location = new System.Drawing.Point(826, 671);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(170, 80);
             this.btnDone.TabIndex = 30;
@@ -504,7 +504,7 @@ namespace KWZP2019
             this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
             this.picBoxControlStatus.Image = global::KWZP2019.Properties.Resources.new_80px;
             this.picBoxControlStatus.InitialImage = null;
-            this.picBoxControlStatus.Location = new System.Drawing.Point(988, 570);
+            this.picBoxControlStatus.Location = new System.Drawing.Point(1003, 591);
             this.picBoxControlStatus.Name = "picBoxControlStatus";
             this.picBoxControlStatus.Size = new System.Drawing.Size(169, 158);
             this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -524,7 +524,7 @@ namespace KWZP2019
             this.btnApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnApproval.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnApproval.Image = global::KWZP2019.Properties.Resources.icons8_checkmark_40;
-            this.btnApproval.Location = new System.Drawing.Point(657, 565);
+            this.btnApproval.Location = new System.Drawing.Point(672, 586);
             this.btnApproval.Name = "btnApproval";
             this.btnApproval.Size = new System.Drawing.Size(150, 165);
             this.btnApproval.TabIndex = 29;
@@ -634,11 +634,14 @@ namespace KWZP2019
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowAll.Location = new System.Drawing.Point(487, 500);
+            this.btnShowAll.Image = global::KWZP2019.Properties.Resources.icons8_date_span_40;
+            this.btnShowAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowAll.Location = new System.Drawing.Point(487, 520);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(195, 50);
+            this.btnShowAll.Size = new System.Drawing.Size(235, 55);
             this.btnShowAll.TabIndex = 39;
             this.btnShowAll.Text = "Pokaż wszystko";
+            this.btnShowAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.BtnShow_Click);
             // 
@@ -652,12 +655,15 @@ namespace KWZP2019
             this.btnShowFromDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFromDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowFromDay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowFromDay.Location = new System.Drawing.Point(487, 335);
+            this.btnShowFromDay.Image = global::KWZP2019.Properties.Resources.icons8_calendar_13_401;
+            this.btnShowFromDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromDay.Location = new System.Drawing.Point(487, 340);
             this.btnShowFromDay.Margin = new System.Windows.Forms.Padding(0);
             this.btnShowFromDay.Name = "btnShowFromDay";
-            this.btnShowFromDay.Size = new System.Drawing.Size(195, 50);
+            this.btnShowFromDay.Size = new System.Drawing.Size(235, 55);
             this.btnShowFromDay.TabIndex = 39;
             this.btnShowFromDay.Text = "Pokaż z dnia";
+            this.btnShowFromDay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowFromDay.UseVisualStyleBackColor = false;
             this.btnShowFromDay.Click += new System.EventHandler(this.BtnShowFromDay_Click);
             // 
@@ -671,12 +677,15 @@ namespace KWZP2019
             this.btnShowFromMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFromMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowFromMonth.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowFromMonth.Location = new System.Drawing.Point(487, 390);
+            this.btnShowFromMonth.Image = global::KWZP2019.Properties.Resources.icons8_month_view_40;
+            this.btnShowFromMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromMonth.Location = new System.Drawing.Point(487, 400);
             this.btnShowFromMonth.Margin = new System.Windows.Forms.Padding(0);
             this.btnShowFromMonth.Name = "btnShowFromMonth";
-            this.btnShowFromMonth.Size = new System.Drawing.Size(195, 50);
+            this.btnShowFromMonth.Size = new System.Drawing.Size(235, 55);
             this.btnShowFromMonth.TabIndex = 39;
             this.btnShowFromMonth.Text = "Pokaż z miesiąca";
+            this.btnShowFromMonth.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowFromMonth.UseVisualStyleBackColor = false;
             this.btnShowFromMonth.Click += new System.EventHandler(this.BtnShowFromMonth_Click);
             // 
@@ -690,12 +699,15 @@ namespace KWZP2019
             this.btnShowFromYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFromYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowFromYear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowFromYear.Location = new System.Drawing.Point(487, 445);
+            this.btnShowFromYear.Image = global::KWZP2019.Properties.Resources.icons8_calendar_plus_40;
+            this.btnShowFromYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromYear.Location = new System.Drawing.Point(487, 460);
             this.btnShowFromYear.Margin = new System.Windows.Forms.Padding(0);
             this.btnShowFromYear.Name = "btnShowFromYear";
-            this.btnShowFromYear.Size = new System.Drawing.Size(195, 50);
+            this.btnShowFromYear.Size = new System.Drawing.Size(235, 55);
             this.btnShowFromYear.TabIndex = 39;
             this.btnShowFromYear.Text = "Pokaż z roku";
+            this.btnShowFromYear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowFromYear.UseVisualStyleBackColor = false;
             this.btnShowFromYear.Click += new System.EventHandler(this.BtnShowFromYear_Click);
             // 
@@ -709,12 +721,15 @@ namespace KWZP2019
             this.btnShowFromToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowFromToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowFromToday.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowFromToday.Image = global::KWZP2019.Properties.Resources.icons8_calendar_1_40;
+            this.btnShowFromToday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowFromToday.Location = new System.Drawing.Point(487, 280);
             this.btnShowFromToday.Margin = new System.Windows.Forms.Padding(0);
             this.btnShowFromToday.Name = "btnShowFromToday";
-            this.btnShowFromToday.Size = new System.Drawing.Size(195, 50);
+            this.btnShowFromToday.Size = new System.Drawing.Size(235, 55);
             this.btnShowFromToday.TabIndex = 39;
             this.btnShowFromToday.Text = "Pokaż z dziś";
+            this.btnShowFromToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowFromToday.UseVisualStyleBackColor = false;
             this.btnShowFromToday.Click += new System.EventHandler(this.BtnShowFromToday_Click);
             // 
