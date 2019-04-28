@@ -34,7 +34,6 @@
             this.btDeleteProduct = new System.Windows.Forms.Button();
             this.btEnd = new System.Windows.Forms.Button();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSemiFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,13 +43,15 @@
             this.semiFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.technologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.technicalProductDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btAddProduct
             // 
-            this.btAddProduct.Location = new System.Drawing.Point(195, 13);
+            this.btAddProduct.Location = new System.Drawing.Point(66, 13);
             this.btAddProduct.Name = "btAddProduct";
             this.btAddProduct.Size = new System.Drawing.Size(107, 21);
             this.btAddProduct.TabIndex = 0;
@@ -60,7 +61,7 @@
             // 
             // btEditProduct
             // 
-            this.btEditProduct.Location = new System.Drawing.Point(314, 12);
+            this.btEditProduct.Location = new System.Drawing.Point(193, 12);
             this.btEditProduct.Name = "btEditProduct";
             this.btEditProduct.Size = new System.Drawing.Size(107, 21);
             this.btEditProduct.TabIndex = 1;
@@ -69,16 +70,17 @@
             // 
             // btDeleteProduct
             // 
-            this.btDeleteProduct.Location = new System.Drawing.Point(433, 12);
+            this.btDeleteProduct.Location = new System.Drawing.Point(320, 12);
             this.btDeleteProduct.Name = "btDeleteProduct";
             this.btDeleteProduct.Size = new System.Drawing.Size(107, 21);
             this.btDeleteProduct.TabIndex = 2;
             this.btDeleteProduct.Text = "Usuń";
             this.btDeleteProduct.UseVisualStyleBackColor = true;
+            this.btDeleteProduct.Click += new System.EventHandler(this.btDeleteProduct_Click);
             // 
             // btEnd
             // 
-            this.btEnd.Location = new System.Drawing.Point(552, 12);
+            this.btEnd.Location = new System.Drawing.Point(579, 12);
             this.btEnd.Name = "btEnd";
             this.btEnd.Size = new System.Drawing.Size(107, 21);
             this.btEnd.TabIndex = 3;
@@ -105,10 +107,7 @@
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.Size = new System.Drawing.Size(776, 398);
             this.dataGridProducts.TabIndex = 4;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
+            this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);
             // 
             // idProductDataGridViewTextBoxColumn
             // 
@@ -164,11 +163,26 @@
             this.technicalProductDataDataGridViewTextBoxColumn.HeaderText = "TechnicalProductData";
             this.technicalProductDataDataGridViewTextBoxColumn.Name = "technicalProductDataDataGridViewTextBoxColumn";
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(447, 13);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(112, 20);
+            this.btRefresh.TabIndex = 5;
+            this.btRefresh.Text = "Odśwież";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
             // ProductionProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btRefresh);
             this.Controls.Add(this.dataGridProducts);
             this.Controls.Add(this.btEnd);
             this.Controls.Add(this.btDeleteProduct);
@@ -200,5 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn technologyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn technicalProductDataDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.Button btRefresh;
     }
 }

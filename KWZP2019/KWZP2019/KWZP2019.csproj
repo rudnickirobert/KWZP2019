@@ -316,6 +316,12 @@
     <Compile Include="OutControlForm.Designer.cs">
       <DependentUpon>OutControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OutMeasures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutMeasures.Designer.cs">
+      <DependentUpon>OutMeasures.cs</DependentUpon>
+    </Compile>
     <Compile Include="Outsourcing.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -516,6 +522,27 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSuccesfullyProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSuccesfullyProducedPerProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierParts.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierSemis.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vTechnicalProductDataPerProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vUnfinishedProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="WarehouseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -620,6 +647,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSHControl.resx">
       <DependentUpon>OSHControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutMeasures.resx">
+      <DependentUpon>OutMeasures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartsForm.resx">
       <DependentUpon>PartsForm.cs</DependentUpon>

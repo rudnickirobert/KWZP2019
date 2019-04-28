@@ -13,10 +13,23 @@ namespace KWZP2019
     public partial class ProductionProducts : Form
     {
         RoofingCompanyEntities db;
+        private int idSelected;
         public ProductionProducts(RoofingCompanyEntities db)
         {
             InitializeComponent();
             this.db = db;
+        }
+
+        private void deleteProduct()
+        {
+            Product produkt = db.Products.First(f => f.IdProduct == idSelected);
+            db.Products.Remove(produkt);
+            db.SaveChanges();
+        }
+
+        private void refreshProducts()
+        {
+            dataGridProducts.DataSource = db.Products.ToList();
         }
 
         private void btAddProduct_Click(object sender, EventArgs e)
@@ -33,6 +46,22 @@ namespace KWZP2019
         private void btEnd_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btDeleteProduct_Click(object sender, EventArgs e)
+        {
+            deleteProduct();
+            refreshProducts();
+        }
+
+        private void dataGridProducts_SelectionChanged(object sender, EventArgs e)
+        {
+            idSelected = Convert.ToInt32(this.dataGridProducts.CurrentRow.Cells[0].Value);
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            refreshProducts();
         }
     }
 }
