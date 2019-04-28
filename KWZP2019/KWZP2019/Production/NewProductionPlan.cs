@@ -67,7 +67,7 @@ namespace KWZP2019
             Technology technology = db.Technologies.First(f => f.IdTechnology == product.IdTechnology);
             Maintenance maintenance = db.Maintenances.First(f => f.IdMaintenance == idMachine);
             Machine machine = db.Machines.First(f => f.IdMachine == maintenance.IdMachine);
-            timeInterval = orderDetail.Quantity * machine.MetersPerHour*0.5* technology.TimePermeter * 0.2;
+            timeInterval = orderDetail.Quantity * machine.MetersPerHour * 0.5 * technology.TimePermeter * 0.2;
             DateTime dateEnd = dateTimeStart.Value.AddMinutes(timeInterval);
             dateTimeEnd.Value = dateEnd;
         }
@@ -76,7 +76,7 @@ namespace KWZP2019
         {
             PlannedProduction newPlan = new PlannedProduction();
             newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-            newPlan.IdMachine=Convert.ToInt32(cBoxMachine.Text.Trim());
+            newPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
             newPlan.PlannedStartd = dateTimeStart.Value;
             newPlan.PlannedEndd = dateTimeEnd.Value;
             newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
