@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblSpecifytimerange = new System.Windows.Forms.Label();
             this.btnAcceptselectedtime = new System.Windows.Forms.Button();
-            this.lvListofrevenues = new System.Windows.Forms.ListView();
             this.lblListofrevenues = new System.Windows.Forms.Label();
             this.btnGenerategeneralreport = new System.Windows.Forms.Button();
+            this.dgvProfits = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtpFrom
+            // dtpStartDate
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(42, 25);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
-            this.dtpFrom.TabIndex = 0;
+            this.dtpStartDate.Location = new System.Drawing.Point(42, 25);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpStartDate.TabIndex = 0;
             // 
-            // dtpTo
+            // dtpEndDate
             // 
-            this.dtpTo.Location = new System.Drawing.Point(312, 25);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
-            this.dtpTo.TabIndex = 1;
+            this.dtpEndDate.Location = new System.Drawing.Point(312, 25);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpEndDate.TabIndex = 1;
             // 
             // lblFrom
             // 
@@ -88,14 +89,7 @@
             this.btnAcceptselectedtime.TabIndex = 5;
             this.btnAcceptselectedtime.Text = "Zatwierdź wybrany przedzial";
             this.btnAcceptselectedtime.UseVisualStyleBackColor = true;
-            // 
-            // lvListofrevenues
-            // 
-            this.lvListofrevenues.Location = new System.Drawing.Point(15, 97);
-            this.lvListofrevenues.Name = "lvListofrevenues";
-            this.lvListofrevenues.Size = new System.Drawing.Size(497, 164);
-            this.lvListofrevenues.TabIndex = 6;
-            this.lvListofrevenues.UseCompatibleStateImageBehavior = false;
+            this.btnAcceptselectedtime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
             // 
             // lblListofrevenues
             // 
@@ -115,22 +109,32 @@
             this.btnGenerategeneralreport.Text = "Generuj raport";
             this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
             // 
+            // dgvProfits
+            // 
+            this.dgvProfits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfits.Location = new System.Drawing.Point(15, 97);
+            this.dgvProfits.Name = "dgvProfits";
+            this.dgvProfits.Size = new System.Drawing.Size(497, 179);
+            this.dgvProfits.TabIndex = 10;
+            // 
             // Profits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
+            this.Controls.Add(this.dgvProfits);
             this.Controls.Add(this.btnGenerategeneralreport);
             this.Controls.Add(this.lblListofrevenues);
-            this.Controls.Add(this.lvListofrevenues);
             this.Controls.Add(this.btnAcceptselectedtime);
             this.Controls.Add(this.lblSpecifytimerange);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
-            this.Controls.Add(this.dtpTo);
-            this.Controls.Add(this.dtpFrom);
+            this.Controls.Add(this.dtpEndDate);
+            this.Controls.Add(this.dtpStartDate);
             this.Name = "Profits";
             this.Text = "Zyski";
+            this.Load += new System.EventHandler(this.Profits_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,14 +142,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblSpecifytimerange;
         private System.Windows.Forms.Button btnAcceptselectedtime;
-        private System.Windows.Forms.ListView lvListofrevenues;
         private System.Windows.Forms.Label lblListofrevenues;
         private System.Windows.Forms.Button btnGenerategeneralreport;
+        private System.Windows.Forms.DataGridView dgvProfits;
     }
 }
