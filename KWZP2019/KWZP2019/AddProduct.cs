@@ -33,6 +33,7 @@ namespace KWZP2019
             product.InputDate = dTPAddTime.Value;
             db.Products.Add(product);
             db.SaveChanges();
+            MessageBox.Show("Dodano nowy produkt!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AddProduct_Load(object sender, EventArgs e)
