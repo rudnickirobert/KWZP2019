@@ -874,28 +874,28 @@
   <data name="&gt;&gt;txtBoxControlingCompany.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="domUDEmployee.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="domainUpDownEmployee.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <data name="domUDEmployee.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="domainUpDownEmployee.Location" type="System.Drawing.Point, System.Drawing">
     <value>701, 427</value>
   </data>
-  <data name="domUDEmployee.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="domainUpDownEmployee.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 26</value>
   </data>
-  <data name="domUDEmployee.TabIndex" type="System.Int32, mscorlib">
+  <data name="domainUpDownEmployee.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
-  <data name="&gt;&gt;domUDEmployee.Name" xml:space="preserve">
-    <value>domUDEmployee</value>
+  <data name="&gt;&gt;domainUpDownEmployee.Name" xml:space="preserve">
+    <value>domainUpDownEmployee</value>
   </data>
-  <data name="&gt;&gt;domUDEmployee.Type" xml:space="preserve">
+  <data name="&gt;&gt;domainUpDownEmployee.Type" xml:space="preserve">
     <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;domUDEmployee.Parent" xml:space="preserve">
+  <data name="&gt;&gt;domainUpDownEmployee.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;domUDEmployee.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;domainUpDownEmployee.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="dateTimeOSHControl.Font" type="System.Drawing.Font, System.Drawing">

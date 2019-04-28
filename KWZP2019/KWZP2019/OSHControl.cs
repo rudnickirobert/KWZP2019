@@ -44,7 +44,7 @@ namespace KWZP2019
             List<Employee> employeeList = db.Employees.ToList();
             foreach (Employee employee in employeeList)
             {
-                domUDEmployee.Items.Add(employee.IdEmployee);
+                domainUpDownEmployee.Items.Add(employee.IdEmployee);
             }
         }
 
@@ -54,16 +54,16 @@ namespace KWZP2019
             this.qualityControlForm.Close();
         }
 
-        private void domUDEmployee_SelectedItemChanged(object sender, EventArgs e)
+        private void domainUpDownEmployee_SelectedItemChanged(object sender, EventArgs e)
         {
-            Employee employee = db.Employees.FirstOrDefault(empee => empee.IdEmployee.ToString() == domUDEmployee.Text);
-            lblEmployeeFullName.Text = employee != null ? $"{employee.EmployeeName} {employee.EmployeeSurname}" : "";
-            selectedEmployee = Convert.ToInt32(domUDEmployee.Text);
+            Employee employee = db.Employees.First(emp => emp.IdEmployee.ToString() == domainUpDownEmployee.Text);
+            lblEmployeeFullName.Text = $"{employee.EmployeeName} {employee.EmployeeSurname}";
+            selectedEmployee = Convert.ToInt32(domainUpDownEmployee.Text);
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (textBoxDescription.Text == "" || domUDEmployee.Text == "" || txtBoxControlingCompany.Text == "" || txtBoxControlerId.Text == "" )
+            if (textBoxDescription.Text == "" || domainUpDownEmployee.Text == "" || txtBoxControlingCompany.Text == "" || txtBoxControlerId.Text == "" )
             {
                 MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -89,5 +89,7 @@ namespace KWZP2019
             oSHControlHistory.Show();
             this.Hide();
         }
+
+
     }
 }

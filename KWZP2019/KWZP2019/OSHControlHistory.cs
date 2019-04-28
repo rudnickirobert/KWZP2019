@@ -16,10 +16,6 @@ namespace KWZP2019
         private StartForm startForm;
         private OSHControl oSHControl;
 
-        public OSHControlHistory()
-        {
-            InitializeComponent();
-        }
         public OSHControlHistory(RoofingCompanyEntities db, StartForm startForm, OSHControl oSHControl)
         {
             InitializeComponent();

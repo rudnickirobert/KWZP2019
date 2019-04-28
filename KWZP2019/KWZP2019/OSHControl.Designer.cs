@@ -41,7 +41,7 @@
             this.lblControlDate = new System.Windows.Forms.Label();
             this.txtBoxControlerId = new System.Windows.Forms.TextBox();
             this.txtBoxControlingCompany = new System.Windows.Forms.TextBox();
-            this.domUDEmployee = new System.Windows.Forms.DomainUpDown();
+            this.domainUpDownEmployee = new System.Windows.Forms.DomainUpDown();
             this.dateTimeOSHControl = new System.Windows.Forms.DateTimePicker();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.lblComment = new System.Windows.Forms.Label();
@@ -157,11 +157,11 @@
             resources.ApplyResources(this.txtBoxControlingCompany, "txtBoxControlingCompany");
             this.txtBoxControlingCompany.Name = "txtBoxControlingCompany";
             // 
-            // domUDEmployee
+            // domainUpDownEmployee
             // 
-            resources.ApplyResources(this.domUDEmployee, "domUDEmployee");
-            this.domUDEmployee.Name = "domUDEmployee";
-            this.domUDEmployee.SelectedItemChanged += new System.EventHandler(this.domUDEmployee_SelectedItemChanged);
+            resources.ApplyResources(this.domainUpDownEmployee, "domainUpDownEmployee");
+            this.domainUpDownEmployee.Name = "domainUpDownEmployee";
+            this.domainUpDownEmployee.SelectedItemChanged += new System.EventHandler(this.domainUpDownEmployee_SelectedItemChanged);
             // 
             // dateTimeOSHControl
             // 
@@ -194,7 +194,7 @@
             this.Controls.Add(this.lblComment);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.dateTimeOSHControl);
-            this.Controls.Add(this.domUDEmployee);
+            this.Controls.Add(this.domainUpDownEmployee);
             this.Controls.Add(this.txtBoxControlingCompany);
             this.Controls.Add(this.txtBoxControlerId);
             this.Controls.Add(this.lblControlDate);
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Label lblControlDate;
         private System.Windows.Forms.TextBox txtBoxControlerId;
         private System.Windows.Forms.TextBox txtBoxControlingCompany;
-        private System.Windows.Forms.DomainUpDown domUDEmployee;
+        private System.Windows.Forms.DomainUpDown domainUpDownEmployee;
         private System.Windows.Forms.DateTimePicker dateTimeOSHControl;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label lblComment;

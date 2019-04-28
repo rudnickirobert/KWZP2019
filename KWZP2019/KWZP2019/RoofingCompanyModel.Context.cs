@@ -88,7 +88,12 @@ namespace KWZP2019
         public virtual DbSet<ViewOshTraining> ViewOshTraining { get; set; }
         public virtual DbSet<vIndividualCustomer> vIndividualCustomer { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithType { get; set; }
+        public virtual DbSet<vSupplierParts> vSupplierParts { get; set; }
+        public virtual DbSet<vSupplierSemis> vSupplierSemis { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazine { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazine { get; set; }
+        public virtual DbSet<EntranceControlView> EntranceControlView { get; set; }
+        public virtual DbSet<vOrderDetail> vOrderDetail { get; set; }
+        public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomer { get; set; }
     }
 }
