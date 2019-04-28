@@ -28,40 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceControlStatisticsForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnReturnMain = new System.Windows.Forms.Button();
             this.dataGridViewSemiFinished = new System.Windows.Forms.DataGridView();
+            this.btnReturnMain = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnShowHistograms = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.datePickerSelectedControlsDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.lblThickness = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSemiFinished)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnReturn
+            // dataGridViewSemiFinished
             // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnReturn.FlatAppearance.BorderSize = 3;
-            this.btnReturn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(198, 12);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(180, 100);
-            this.btnReturn.TabIndex = 1;
-            this.btnReturn.Text = "Powrót";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            this.dataGridViewSemiFinished.AllowUserToAddRows = false;
+            this.dataGridViewSemiFinished.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewSemiFinished.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSemiFinished.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridViewSemiFinished.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.dataGridViewSemiFinished.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewSemiFinished.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSemiFinished.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewSemiFinished.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSemiFinished.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewSemiFinished.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewSemiFinished.Location = new System.Drawing.Point(12, 150);
+            this.dataGridViewSemiFinished.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridViewSemiFinished.MultiSelect = false;
+            this.dataGridViewSemiFinished.Name = "dataGridViewSemiFinished";
+            this.dataGridViewSemiFinished.ReadOnly = true;
+            this.dataGridViewSemiFinished.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSemiFinished.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.ShowEditingIcon = false;
+            this.dataGridViewSemiFinished.Size = new System.Drawing.Size(300, 398);
+            this.dataGridViewSemiFinished.TabIndex = 39;
+            this.dataGridViewSemiFinished.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSemiFinished_RowHeaderMouseDoubleClick);
             // 
             // btnReturnMain
             // 
@@ -86,66 +123,134 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.BtnReturnMain_Click);
             // 
-            // dataGridViewSemiFinished
+            // button2
             // 
-            this.dataGridViewSemiFinished.AllowUserToAddRows = false;
-            this.dataGridViewSemiFinished.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewSemiFinished.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewSemiFinished.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridViewSemiFinished.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.dataGridViewSemiFinished.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewSemiFinished.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSemiFinished.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewSemiFinished.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSemiFinished.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewSemiFinished.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewSemiFinished.Location = new System.Drawing.Point(12, 154);
-            this.dataGridViewSemiFinished.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridViewSemiFinished.MultiSelect = false;
-            this.dataGridViewSemiFinished.Name = "dataGridViewSemiFinished";
-            this.dataGridViewSemiFinished.ReadOnly = true;
-            this.dataGridViewSemiFinished.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSemiFinished.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.ShowEditingIcon = false;
-            this.dataGridViewSemiFinished.Size = new System.Drawing.Size(300, 300);
-            this.dataGridViewSemiFinished.TabIndex = 39;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Image = global::KWZP2019.Properties.Resources.icons8_fraction_40;
+            this.button2.Location = new System.Drawing.Point(337, 448);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 100);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Wykres kołowy";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
+            // btnShowHistograms
+            // 
+            this.btnShowHistograms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowHistograms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnShowHistograms.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowHistograms.FlatAppearance.BorderSize = 3;
+            this.btnShowHistograms.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnShowHistograms.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowHistograms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowHistograms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowHistograms.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowHistograms.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowHistograms.Image = global::KWZP2019.Properties.Resources.icons8_bar_chart_40;
+            this.btnShowHistograms.Location = new System.Drawing.Point(562, 448);
+            this.btnShowHistograms.Name = "btnShowHistograms";
+            this.btnShowHistograms.Size = new System.Drawing.Size(200, 100);
+            this.btnShowHistograms.TabIndex = 1;
+            this.btnShowHistograms.Text = "Histogramy";
+            this.btnShowHistograms.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnShowHistograms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnShowHistograms.UseVisualStyleBackColor = false;
+            this.btnShowHistograms.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(198, 12);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(180, 100);
+            this.btnReturn.TabIndex = 1;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
+            // datePickerSelectedControlsDate
+            // 
+            this.datePickerSelectedControlsDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(462, 360);
+            this.datePickerSelectedControlsDate.Margin = new System.Windows.Forms.Padding(0);
+            this.datePickerSelectedControlsDate.Name = "datePickerSelectedControlsDate";
+            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(285, 26);
+            this.datePickerSelectedControlsDate.TabIndex = 41;
+            this.datePickerSelectedControlsDate.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker3.Location = new System.Drawing.Point(462, 405);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(0);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePicker3.TabIndex = 42;
+            this.dateTimePicker3.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
+            // 
+            // lblThickness
+            // 
+            this.lblThickness.BackColor = System.Drawing.Color.Transparent;
+            this.lblThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblThickness.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblThickness.Location = new System.Drawing.Point(361, 360);
+            this.lblThickness.Name = "lblThickness";
+            this.lblThickness.Size = new System.Drawing.Size(91, 26);
+            this.lblThickness.TabIndex = 43;
+            this.lblThickness.Text = "Data od";
+            this.lblThickness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(360, 404);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 26);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Data do";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceControlStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblThickness);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.datePickerSelectedControlsDate);
             this.Controls.Add(this.dataGridViewSemiFinished);
             this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnShowHistograms);
             this.Controls.Add(this.btnReturn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -164,5 +269,11 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.DataGridView dataGridViewSemiFinished;
+        private System.Windows.Forms.Button btnShowHistograms;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker datePickerSelectedControlsDate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label lblThickness;
+        private System.Windows.Forms.Label label1;
     }
 }

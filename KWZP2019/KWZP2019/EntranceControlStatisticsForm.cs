@@ -15,6 +15,7 @@ namespace KWZP2019
         private RoofingCompanyEntities db;
         private StartForm startForm;
         private EntranceControlForm entranceControlForm;
+        private int selectedSemiFinishedId;
 
         public EntranceControlStatisticsForm(RoofingCompanyEntities db, StartForm startForm, EntranceControlForm entranceControlForm)
         {
@@ -47,6 +48,12 @@ namespace KWZP2019
                 }).ToList();
 
             dataGridViewSemiFinished.DataSource = semiFinishedList;
+        }
+
+        private void DataGridViewSemiFinished_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewSemiFinished.SelectedRows[0];
+            selectedSemiFinishedId = (int)selectedRow.Cells["ID"].Value;
         }
     }
 }

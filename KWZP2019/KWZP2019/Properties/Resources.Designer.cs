@@ -103,6 +103,16 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bar_chart_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bar-chart-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_calendar_1_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-calendar-1-40", resourceCulture);
@@ -156,6 +166,16 @@ namespace KWZP2019.Properties {
         internal static System.Drawing.Bitmap icons8_date_span_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-date-span-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_fraction_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fraction-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
