@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace KWZP2019
 {
     public partial class CustomerForm : Form
-        
+
     {
         RoofingCompanyEntities db;
         public CustomerForm(RoofingCompanyEntities db)
@@ -19,12 +19,10 @@ namespace KWZP2019
             InitializeComponent();
             this.db = db;
         }
-
         private void CustomerForm_Load(object sender, EventArgs e)
         {
             customersDgv.DataSource = db.Customers.ToList();
         }
-
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -32,34 +30,30 @@ namespace KWZP2019
             orderForm.ShowDialog();
             this.Close();
         }
-
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
             newCustomer.ShowDialog();
-            OdswiezGridCustomer();
+            RefreshGridCustomer();
             this.Close();
         }
-
         //PRZYCISKI
         private void saveBtn_Click(object sender, EventArgs e)
         {
             db.SaveChanges();
         }
-
         private void endCutstomerFormBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void editCustomerBtn_Click(object sender, EventArgs e)
         {
             AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
             newCustomer.ShowDialog();
-            OdswiezGridCustomer();
+            RefreshGridCustomer();
         }
-        private void OdswiezGridCustomer()
+        private void RefreshGridCustomer()
         {
             int saveRow = 0;
             if (customersDgv.Rows.Count > 0)
@@ -73,10 +67,9 @@ namespace KWZP2019
 
             // Odświeżenie dataGridView1 - OrderCustomer
 
-            dataGridView1.DataSource = (from OrderCustomer in db.OrderCustomers
-                                        where OrderCustomer.IdOrderCustomer == saveRow
-                                        select OrderCustomer).ToList();
-
+            ordersDgv.DataSource = (from OrderCustomer in db.OrderCustomers
+                                    where OrderCustomer.IdOrderCustomer == saveRow
+                                    select OrderCustomer).ToList();
         }
         //WYSZUKIWANIE KLIENTA W BAZIE
 
@@ -95,20 +88,17 @@ namespace KWZP2019
                                          || db.City.Contains(searchTxt.Text.Trim())
                                            select db).ToList();
             }
-
         }
         //PRZYPISYWANIE ZAMOWIENIA DO KLIENTA AKTUALNIE WYSZUKIWANEGO
-
-        private void customerDvg_SelectionChanged(object sender, EventArgs e)
+        private void customersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //zadeklarowanie zmiennej "id" typu int i ustalenie wartości na podstawie pierwszej [0] kolumny w customerDgv
             int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells[0].Value);
 
-            dataGridView1.DataSource = (from OrderCustomer in db.OrderCustomers
-                                        where OrderCustomer.IdCustomer == id
-                                        select db).ToList();
+            ordersDgv.DataSource = (from OrderCustomer in db.OrderCustomers
+                                    where OrderCustomer.IdCustomer == id
+                                    select OrderCustomer).ToList();
         }
-
     }
 }
 

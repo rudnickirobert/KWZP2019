@@ -38,7 +38,7 @@
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ordersDgv = new System.Windows.Forms.DataGridView();
             this.idOrderCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,6 @@
             this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,8 +60,9 @@
             this.nIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kRSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.customersDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderCustomerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             // addNewCustomerBtn
             // 
             this.addNewCustomerBtn.Location = new System.Drawing.Point(247, 6);
-            this.addNewCustomerBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewCustomerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewCustomerBtn.Name = "addNewCustomerBtn";
             this.addNewCustomerBtn.Size = new System.Drawing.Size(111, 22);
             this.addNewCustomerBtn.TabIndex = 1;
@@ -81,7 +81,7 @@
             // orderBtn
             // 
             this.orderBtn.Location = new System.Drawing.Point(548, 6);
-            this.orderBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderBtn.Margin = new System.Windows.Forms.Padding(2);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(111, 21);
             this.orderBtn.TabIndex = 12;
@@ -110,12 +110,13 @@
             this.descriptionDataGridViewTextBoxColumn});
             this.customersDgv.DataSource = this.customerBindingSource;
             this.customersDgv.Location = new System.Drawing.Point(35, 44);
-            this.customersDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.customersDgv.Margin = new System.Windows.Forms.Padding(2);
             this.customersDgv.MultiSelect = false;
             this.customersDgv.Name = "customersDgv";
             this.customersDgv.RowTemplate.Height = 24;
             this.customersDgv.Size = new System.Drawing.Size(624, 122);
             this.customersDgv.TabIndex = 15;
+            this.customersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDgv_CellContentClick);
             // 
             // nameLbl
             // 
@@ -176,11 +177,11 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // dataGridView1
+            // ordersDgv
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ordersDgv.AutoGenerateColumns = false;
+            this.ordersDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ordersDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idOrderCustomerDataGridViewTextBoxColumn,
             this.idCustomerDataGridViewTextBoxColumn1,
             this.orderDateDataGridViewTextBoxColumn,
@@ -188,11 +189,11 @@
             this.customerDataGridViewTextBoxColumn,
             this.employeeDataGridViewTextBoxColumn,
             this.orderDetailsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.orderCustomerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 232);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(622, 128);
-            this.dataGridView1.TabIndex = 21;
+            this.ordersDgv.DataSource = this.orderCustomerBindingSource;
+            this.ordersDgv.Location = new System.Drawing.Point(35, 232);
+            this.ordersDgv.Name = "ordersDgv";
+            this.ordersDgv.Size = new System.Drawing.Size(622, 128);
+            this.ordersDgv.TabIndex = 21;
             // 
             // idOrderCustomerDataGridViewTextBoxColumn
             // 
@@ -239,10 +240,6 @@
             // orderCustomerBindingSource
             // 
             this.orderCustomerBindingSource.DataSource = typeof(KWZP2019.OrderCustomer);
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(KWZP2019.Customer);
             // 
             // idCustomerDataGridViewTextBoxColumn
             // 
@@ -322,12 +319,16 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(KWZP2019.Customer);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 612);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ordersDgv);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.searchTxt);
@@ -337,12 +338,12 @@
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.addNewCustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
             this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderCustomerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -361,7 +362,7 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ordersDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrderCustomerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCustomerDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
