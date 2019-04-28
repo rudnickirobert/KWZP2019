@@ -24,9 +24,9 @@ namespace KWZP2019
         private void Examination_Load(object sender, EventArgs e)
         {
 
-            var group = from d in db.Employees
+            /*var group = from d in db.Employees
                         select d.EmployeeSurname;
-            checkedListBox1.Items.AddRange(group.ToArray());
+            checkedListBox1.Items.AddRange(group.ToArray());*/
 
 
 
