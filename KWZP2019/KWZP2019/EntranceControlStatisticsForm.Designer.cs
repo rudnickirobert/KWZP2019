@@ -39,10 +39,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnShowHistograms = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.datePickerSelectedControlsDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.lblThickness = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.datePickerDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.datePickerDateTo = new System.Windows.Forms.DateTimePicker();
+            this.lblDateFrom = new System.Windows.Forms.Label();
+            this.lblDateTo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSemiFinished)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +144,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
             // btnShowHistograms
             // 
@@ -167,7 +166,7 @@
             this.btnShowHistograms.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnShowHistograms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnShowHistograms.UseVisualStyleBackColor = false;
-            this.btnShowHistograms.Click += new System.EventHandler(this.BtnReturn_Click);
+            this.btnShowHistograms.Click += new System.EventHandler(this.BtnShowHistograms_Click);
             // 
             // btnReturn
             // 
@@ -192,61 +191,61 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
-            // datePickerSelectedControlsDate
+            // datePickerDateFrom
             // 
-            this.datePickerSelectedControlsDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(462, 360);
-            this.datePickerSelectedControlsDate.Margin = new System.Windows.Forms.Padding(0);
-            this.datePickerSelectedControlsDate.Name = "datePickerSelectedControlsDate";
-            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(285, 26);
-            this.datePickerSelectedControlsDate.TabIndex = 41;
-            this.datePickerSelectedControlsDate.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
+            this.datePickerDateFrom.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerDateFrom.Location = new System.Drawing.Point(462, 360);
+            this.datePickerDateFrom.Margin = new System.Windows.Forms.Padding(0);
+            this.datePickerDateFrom.Name = "datePickerDateFrom";
+            this.datePickerDateFrom.Size = new System.Drawing.Size(285, 26);
+            this.datePickerDateFrom.TabIndex = 41;
+            this.datePickerDateFrom.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
             // 
-            // dateTimePicker3
+            // datePickerDateTo
             // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(462, 405);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(0);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(286, 26);
-            this.dateTimePicker3.TabIndex = 42;
-            this.dateTimePicker3.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
+            this.datePickerDateTo.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerDateTo.Location = new System.Drawing.Point(462, 405);
+            this.datePickerDateTo.Margin = new System.Windows.Forms.Padding(0);
+            this.datePickerDateTo.Name = "datePickerDateTo";
+            this.datePickerDateTo.Size = new System.Drawing.Size(286, 26);
+            this.datePickerDateTo.TabIndex = 42;
+            this.datePickerDateTo.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
             // 
-            // lblThickness
+            // lblDateFrom
             // 
-            this.lblThickness.BackColor = System.Drawing.Color.Transparent;
-            this.lblThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblThickness.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblThickness.Location = new System.Drawing.Point(361, 360);
-            this.lblThickness.Name = "lblThickness";
-            this.lblThickness.Size = new System.Drawing.Size(91, 26);
-            this.lblThickness.TabIndex = 43;
-            this.lblThickness.Text = "Data od";
-            this.lblThickness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDateFrom.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDateFrom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDateFrom.Location = new System.Drawing.Point(361, 360);
+            this.lblDateFrom.Name = "lblDateFrom";
+            this.lblDateFrom.Size = new System.Drawing.Size(91, 26);
+            this.lblDateFrom.TabIndex = 43;
+            this.lblDateFrom.Text = "Data od";
+            this.lblDateFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblDateTo
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(360, 404);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 26);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Data do";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDateTo.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDateTo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDateTo.Location = new System.Drawing.Point(360, 404);
+            this.lblDateTo.Name = "lblDateTo";
+            this.lblDateTo.Size = new System.Drawing.Size(91, 26);
+            this.lblDateTo.TabIndex = 43;
+            this.lblDateTo.Text = "Data do";
+            this.lblDateTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceControlStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblThickness);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.datePickerSelectedControlsDate);
+            this.Controls.Add(this.lblDateTo);
+            this.Controls.Add(this.lblDateFrom);
+            this.Controls.Add(this.datePickerDateTo);
+            this.Controls.Add(this.datePickerDateFrom);
             this.Controls.Add(this.dataGridViewSemiFinished);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.button2);
@@ -258,6 +257,7 @@
             this.Name = "EntranceControlStatisticsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EntranceControlStatisticsForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntranceControlStatisticsForm_FormClosed);
             this.Load += new System.EventHandler(this.EntranceControlStatisticsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSemiFinished)).EndInit();
             this.ResumeLayout(false);
@@ -271,9 +271,9 @@
         private System.Windows.Forms.DataGridView dataGridViewSemiFinished;
         private System.Windows.Forms.Button btnShowHistograms;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker datePickerSelectedControlsDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label lblThickness;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker datePickerDateFrom;
+        private System.Windows.Forms.DateTimePicker datePickerDateTo;
+        private System.Windows.Forms.Label lblDateFrom;
+        private System.Windows.Forms.Label lblDateTo;
     }
 }
