@@ -58,5 +58,10 @@ namespace KWZP2019
         {
             idSelected = Convert.ToInt32(this.dataGridProducts.CurrentRow.Cells[0].Value);
         }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            refreshProducts();
+        }
     }
 }

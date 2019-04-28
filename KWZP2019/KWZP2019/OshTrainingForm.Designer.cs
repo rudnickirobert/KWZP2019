@@ -28,40 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OshTrainingForm));
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.dataGVOshTraining = new System.Windows.Forms.DataGridView();
             this.btnShow = new System.Windows.Forms.Button();
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.domainUpDownDepartmentName = new System.Windows.Forms.DomainUpDown();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDone = new System.Windows.Forms.Button();
+            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
+            this.lblFormTitle = new System.Windows.Forms.Label();
+            this.lblEmployeeId = new System.Windows.Forms.Label();
+            this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
+            this.lblTrainingDate = new System.Windows.Forms.Label();
+            this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturn
             // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(178)))));
-            this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturn.Location = new System.Drawing.Point(972, 89);
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnReturn, "btnReturn");
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(200, 50);
-            this.btnReturn.TabIndex = 1;
-            this.btnReturn.Text = "Powrót";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnReturnMain
             // 
-            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(178)))));
-            this.btnReturnMain.FlatAppearance.BorderSize = 0;
-            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturnMain.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturnMain.Location = new System.Drawing.Point(972, 12);
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnReturnMain, "btnReturnMain");
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(200, 50);
-            this.btnReturnMain.TabIndex = 2;
-            this.btnReturnMain.Text = "Menu Główne";
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
@@ -74,61 +82,133 @@
             this.dataGVOshTraining.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGVOshTraining.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGVOshTraining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGVOshTraining.Location = new System.Drawing.Point(52, 54);
+            resources.ApplyResources(this.dataGVOshTraining, "dataGVOshTraining");
             this.dataGVOshTraining.Name = "dataGVOshTraining";
             this.dataGVOshTraining.ReadOnly = true;
             this.dataGVOshTraining.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGVOshTraining.Size = new System.Drawing.Size(460, 158);
-            this.dataGVOshTraining.TabIndex = 3;
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(454, 232);
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnShow, "btnShow");
+            this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShow.FlatAppearance.BorderSize = 3;
+            this.btnShow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShow.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 23);
-            this.btnShow.TabIndex = 4;
-            this.btnShow.Text = "Pokaż";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // lblDepartmentName
             // 
-            this.lblDepartmentName.AutoSize = true;
-            this.lblDepartmentName.Location = new System.Drawing.Point(183, 232);
+            resources.ApplyResources(this.lblDepartmentName, "lblDepartmentName");
+            this.lblDepartmentName.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartmentName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDepartmentName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDepartmentName.Name = "lblDepartmentName";
-            this.lblDepartmentName.Size = new System.Drawing.Size(72, 13);
-            this.lblDepartmentName.TabIndex = 6;
-            this.lblDepartmentName.Text = "Nazwa działu";
             // 
             // domainUpDownDepartmentName
             // 
-            this.domainUpDownDepartmentName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.domainUpDownDepartmentName.Location = new System.Drawing.Point(280, 233);
+            this.domainUpDownDepartmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.domainUpDownDepartmentName, "domainUpDownDepartmentName");
             this.domainUpDownDepartmentName.Name = "domainUpDownDepartmentName";
-            this.domainUpDownDepartmentName.Size = new System.Drawing.Size(120, 16);
             this.domainUpDownDepartmentName.Sorted = true;
-            this.domainUpDownDepartmentName.TabIndex = 8;
-            this.domainUpDownDepartmentName.Text = "Wybierz dział";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnClear, "btnClear");
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnClear.FlatAppearance.BorderSize = 3;
+            this.btnClear.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
+            // btnDone
+            // 
+            this.btnDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnDone, "btnDone");
+            this.btnDone.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDone.FlatAppearance.BorderSize = 3;
+            this.btnDone.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDone.Name = "btnDone";
+            this.btnDone.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxForm
+            // 
+            this.pictureBoxForm.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pictureBoxForm, "pictureBoxForm");
+            this.pictureBoxForm.Name = "pictureBoxForm";
+            this.pictureBoxForm.TabStop = false;
+            // 
+            // lblFormTitle
+            // 
+            this.lblFormTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblFormTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFormTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.lblFormTitle, "lblFormTitle");
+            this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFormTitle.Name = "lblFormTitle";
+            // 
+            // lblEmployeeId
+            // 
+            resources.ApplyResources(this.lblEmployeeId, "lblEmployeeId");
+            this.lblEmployeeId.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEmployeeId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmployeeId.Name = "lblEmployeeId";
+            // 
+            // textBoxEmployeeId
+            // 
+            resources.ApplyResources(this.textBoxEmployeeId, "textBoxEmployeeId");
+            this.textBoxEmployeeId.Name = "textBoxEmployeeId";
+            // 
+            // lblTrainingDate
+            // 
+            this.lblTrainingDate.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblTrainingDate, "lblTrainingDate");
+            this.lblTrainingDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTrainingDate.Name = "lblTrainingDate";
+            // 
+            // datePickerControlDate
+            // 
+            resources.ApplyResources(this.datePickerControlDate, "datePickerControlDate");
+            this.datePickerControlDate.Name = "datePickerControlDate";
+            this.datePickerControlDate.Value = new System.DateTime(2019, 4, 16, 20, 35, 51, 0);
             // 
             // OshTrainingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.datePickerControlDate);
+            this.Controls.Add(this.lblTrainingDate);
+            this.Controls.Add(this.textBoxEmployeeId);
+            this.Controls.Add(this.lblEmployeeId);
+            this.Controls.Add(this.lblFormTitle);
+            this.Controls.Add(this.btnDone);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.domainUpDownDepartmentName);
             this.Controls.Add(this.lblDepartmentName);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.dataGVOshTraining);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.pictureBoxForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OshTrainingForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OshTrainingForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OshTrainingForm_FormClosed);
             this.Load += new System.EventHandler(this.OshTrainingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +222,13 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Label lblDepartmentName;
         private System.Windows.Forms.DomainUpDown domainUpDownDepartmentName;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.PictureBox pictureBoxForm;
+        private System.Windows.Forms.Label lblFormTitle;
+        private System.Windows.Forms.Label lblEmployeeId;
+        private System.Windows.Forms.TextBox textBoxEmployeeId;
+        private System.Windows.Forms.Label lblTrainingDate;
+        private System.Windows.Forms.DateTimePicker datePickerControlDate;
     }
 }
