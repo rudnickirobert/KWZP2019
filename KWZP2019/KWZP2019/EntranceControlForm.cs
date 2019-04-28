@@ -106,7 +106,7 @@ namespace KWZP2019
 
         // ==================================================
 
-        private void BtnShow_Click(object sender, EventArgs e)
+        private void BtnShowAll_Click(object sender, EventArgs e)
         {
             // Polish names only for displaying into dataGridView in form
             // var because it's an anonymouse type
