@@ -27,7 +27,7 @@ namespace KWZP2019
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddNewOutsourcingCompanyForm addnewoutsourcingcompanyForm = new AddNewOutsourcingCompanyForm();
+            AddNewOutsourcingCompanyForm addnewoutsourcingcompanyForm = new AddNewOutsourcingCompanyForm(db);
             addnewoutsourcingcompanyForm.ShowDialog();
             this.Close();
         }
