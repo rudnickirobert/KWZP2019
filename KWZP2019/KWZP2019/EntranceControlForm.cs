@@ -52,6 +52,15 @@ namespace KWZP2019
 
         // ==================================================
 
+        private void BtnStatistics_Click(object sender, EventArgs e)
+        {
+            EntranceControlStatisticsForm statisticsForm = new EntranceControlStatisticsForm(this);
+            statisticsForm.Show();
+            this.Hide();
+        }
+
+        // ==================================================
+
         private void EntranceControlForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.startForm.Show();
