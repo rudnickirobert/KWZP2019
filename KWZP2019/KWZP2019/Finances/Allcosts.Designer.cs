@@ -33,7 +33,6 @@
             this.btnOwn = new System.Windows.Forms.Button();
             this.btnSemiannualreport = new System.Windows.Forms.Button();
             this.btnAnnualreport = new System.Windows.Forms.Button();
-            this.btnApproverange = new System.Windows.Forms.Button();
             this.lblSpecifytimerange = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
@@ -87,15 +86,6 @@
             this.btnAnnualreport.Text = "Roczny";
             this.btnAnnualreport.UseVisualStyleBackColor = true;
             // 
-            // btnApproverange
-            // 
-            this.btnApproverange.Location = new System.Drawing.Point(18, 226);
-            this.btnApproverange.Name = "btnApproverange";
-            this.btnApproverange.Size = new System.Drawing.Size(497, 23);
-            this.btnApproverange.TabIndex = 11;
-            this.btnApproverange.Text = "Zatwierdź wybrany przedzial";
-            this.btnApproverange.UseVisualStyleBackColor = true;
-            // 
             // lblSpecifytimerange
             // 
             this.lblSpecifytimerange.AutoSize = true;
@@ -146,13 +136,12 @@
             this.lblGenerateyourownreport.TabIndex = 12;
             this.lblGenerateyourownreport.Text = "Generuj własny raport:";
             // 
-            // allcosts
+            // AllCosts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
             this.Controls.Add(this.lblGenerateyourownreport);
-            this.Controls.Add(this.btnApproverange);
             this.Controls.Add(this.lblSpecifytimerange);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
@@ -163,7 +152,7 @@
             this.Controls.Add(this.btnOwn);
             this.Controls.Add(this.btnQuarterlyreport);
             this.Controls.Add(this.lblGeneratereport);
-            this.Name = "allcosts";
+            this.Name = "AllCosts";
             this.Text = "Bilans finansowy";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,7 +166,6 @@
         private System.Windows.Forms.Button btnOwn;
         private System.Windows.Forms.Button btnSemiannualreport;
         private System.Windows.Forms.Button btnAnnualreport;
-        private System.Windows.Forms.Button btnApproverange;
         private System.Windows.Forms.Label lblSpecifytimerange;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;

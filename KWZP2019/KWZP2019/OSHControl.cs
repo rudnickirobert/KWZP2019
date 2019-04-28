@@ -12,9 +12,15 @@ namespace KWZP2019
 {
     public partial class OSHControl : Form
     {
-        public OSHControl()
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private QualityControl qualityControl;
+        public OSHControl(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControl)
         {
             InitializeComponent();
+            this.db = db;
+            this.startForm = startForm;
+            this.qualityControl = qualityControl;
         }
     }
 }

@@ -33,10 +33,11 @@
             this.btnAcceptchangesandsave = new System.Windows.Forms.Button();
             this.lblSelectemployee = new System.Windows.Forms.Label();
             this.lblAddbonus = new System.Windows.Forms.Label();
-            this.lbAmounttopay = new System.Windows.Forms.CheckedListBox();
             this.tbAmountbonus = new System.Windows.Forms.TextBox();
             this.btnApprove = new System.Windows.Forms.Button();
             this.lblAmountbonus = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // lblAmounttopay
@@ -84,24 +85,16 @@
             this.lblAddbonus.TabIndex = 21;
             this.lblAddbonus.Text = "wprowadź kwotę premii, a następnie wybierz \"zatwierdź\".";
             // 
-            // lbAmounttopay
-            // 
-            this.lbAmounttopay.FormattingEnabled = true;
-            this.lbAmounttopay.Location = new System.Drawing.Point(12, 31);
-            this.lbAmounttopay.Name = "lbAmounttopay";
-            this.lbAmounttopay.Size = new System.Drawing.Size(222, 289);
-            this.lbAmounttopay.TabIndex = 22;
-            // 
             // tbAmountbonus
             // 
-            this.tbAmountbonus.Location = new System.Drawing.Point(335, 99);
+            this.tbAmountbonus.Location = new System.Drawing.Point(335, 203);
             this.tbAmountbonus.Name = "tbAmountbonus";
             this.tbAmountbonus.Size = new System.Drawing.Size(100, 20);
             this.tbAmountbonus.TabIndex = 23;
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(246, 125);
+            this.btnApprove.Location = new System.Drawing.Point(246, 229);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(273, 23);
             this.btnApprove.TabIndex = 24;
@@ -111,21 +104,38 @@
             // lblAmountbonus
             // 
             this.lblAmountbonus.AutoSize = true;
-            this.lblAmountbonus.Location = new System.Drawing.Point(351, 83);
+            this.lblAmountbonus.Location = new System.Drawing.Point(351, 187);
             this.lblAmountbonus.Name = "lblAmountbonus";
             this.lblAmountbonus.Size = new System.Drawing.Size(70, 13);
             this.lblAmountbonus.TabIndex = 25;
             this.lblAmountbonus.Text = "Kwota premii:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(263, 102);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(236, 20);
+            this.textBox1.TabIndex = 26;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(12, 28);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(222, 289);
+            this.checkedListBox1.TabIndex = 27;
             // 
             // SalariesSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblAmountbonus);
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.tbAmountbonus);
-            this.Controls.Add(this.lbAmounttopay);
             this.Controls.Add(this.lblAddbonus);
             this.Controls.Add(this.lblSelectemployee);
             this.Controls.Add(this.btnAcceptchangesandsave);
@@ -144,9 +154,10 @@
         private System.Windows.Forms.Button btnAcceptchangesandsave;
         private System.Windows.Forms.Label lblSelectemployee;
         private System.Windows.Forms.Label lblAddbonus;
-        private System.Windows.Forms.CheckedListBox lbAmounttopay;
         private System.Windows.Forms.TextBox tbAmountbonus;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Label lblAmountbonus;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

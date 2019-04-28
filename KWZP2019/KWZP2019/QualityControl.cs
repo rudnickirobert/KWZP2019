@@ -12,8 +12,8 @@ namespace KWZP2019
 {
     public partial class QualityControl : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
 
         public QualityControl(RoofingCompanyEntities db, StartForm startForm)
         {
@@ -32,7 +32,7 @@ namespace KWZP2019
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnOutControl_Click(object sender, EventArgs e)

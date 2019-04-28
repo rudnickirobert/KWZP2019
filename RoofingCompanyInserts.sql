@@ -516,12 +516,12 @@ insert into SfOrderDetail values('4', '2', '1450');
 insert into SfOrderDetail values('5', '3', '705');
 
 --EntranceControl
-insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity) values
-		(1, 1, '2019-01-02 08:03:36', 1, 'Rozerwana folia ochronna', 2),
-		(2, 1, '2019-01-02 08:07:36', 1, 'Brak wad', 1),
-		(3, 1, '2019-01-02 08:13:36', 1, 'Brak wad', 3),
-		(4, 1, '2019-01-02 08:20:36', 1, 'Brak wad', 1),
-		(6, 1, '2019-01-02 08:25:36', 0, 'Zły kolor', 2);
+insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity, RealThickness, RealWidth, RealWeight, RealColor, ChemicalComposition) values
+		(1, 1, '2019-01-02 08:03:36', 1, 'Rozerwana folia ochronna', 2, 1, 1, 500, 'czerwony', 1),
+		(2, 1, '2019-01-02 08:07:36', 1, 'Brak wad', 1, 1, 1, 500, 'czerwony', 1),
+		(3, 1, '2019-01-02 08:13:36', 1, 'Brak wad', 3, 1, 1, 500, 'czerwony', 1),
+		(4, 1, '2019-01-02 08:20:36', 1, 'Brak wad', 1, 1, 1, 500, 'czerwony', 1),
+		(6, 1, '2019-01-02 08:25:36', 0, 'Zły kolor', 2, 1, 1, 500, 'czerwony', 1);
 
 insert into OutsourcingType values('Gosp. odpadami');
 insert into OutsourcingType values('Transport do klienta');
