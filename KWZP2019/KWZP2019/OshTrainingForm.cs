@@ -55,9 +55,9 @@ namespace KWZP2019
         {
             dataGVOshTraining.DataSource = db.ViewOshTraining.
                 Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
-                && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining * 365) <= DbFunctions.AddDays(DateTime.Now, 45)
+                && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining) <= DbFunctions.AddDays(DateTime.Now, 45)
                 && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))
-                .Select(osh => new { osh.EmployeeName, osh.EmployeeSurname, NextTrainingDate = DbFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining * 365) })
+                .Select(osh => new { osh.EmployeeName, osh.EmployeeSurname, NextTrainingDate = DbFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining) })
                 .ToList();
         }
     }

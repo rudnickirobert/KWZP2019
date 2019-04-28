@@ -784,6 +784,7 @@
     <None Include="Resources\icons8-statistics-40.png" />
     <None Include="Resources\icons8-fraction-40.png" />
     <None Include="Resources\icons8-bar-chart-40.png" />
+    <None Include="Resources\58676720_582174248933845_5894671111420903424_n.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
