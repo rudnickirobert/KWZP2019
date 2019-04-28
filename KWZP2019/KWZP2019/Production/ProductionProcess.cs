@@ -24,18 +24,15 @@ namespace KWZP2019
             List<PlannedProduction> plansAddedToProduction = db.PlannedProductions.
                Where(plannedProductionPlan => !db.ProductionProces.
                Select(productionProcessPlan => productionProcessPlan.IdPlan).
-               Contains(plannedProductionPlan.IdPlan)).ToList();
+               Contains(plannedProductionPlan.IdPlan) && plannedProductionPlan.Inproduction.Value).ToList();
 
             foreach (PlannedProduction plannedProduction in plansAddedToProduction)
-            {
-                if (plannedProduction.Inproduction == true)
-                {
+            {   
                     ProductionProce newProductionProces = new ProductionProce();
                     newProductionProces.IdPlan = plannedProduction.IdPlan;
                     newProductionProces.StartDate = plannedProduction.PlannedStartd;
                     newProductionProces.EndDate = plannedProduction.PlannedEndd;
                     db.ProductionProces.Add(newProductionProces);
-                }
             }
             db.SaveChanges();
             ProductionProcessGridView.DataSource = db.ProductionProces.
