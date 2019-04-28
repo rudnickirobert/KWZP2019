@@ -21,5 +21,15 @@ namespace KWZP2019
             InitializeComponent();
             tBNumberProd.Text = Convert.ToString(IDProd);
         }
+
+        private void btEditConfirm_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Edytowano!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btEditBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
