@@ -27,10 +27,10 @@ namespace KWZP2019
         private void btAddConfirm_Click(object sender, EventArgs e)
         {
             Product product = new Product();
-            product.IdSemiFinished = 5;
-            product.ProductCode = "laalelalamanocha";
-            product.IdTechnology = 5;
-            product.InputDate = DateTime.Now;
+            product.IdSemiFinished = Convert.ToInt32(cBSemiFinished.SelectedValue);
+            product.ProductCode = tBProductCode.Text;
+            product.IdTechnology = Convert.ToInt32(cBTechnology.SelectedValue);
+            product.InputDate = dTPAddTime.Value;
             db.Products.Add(product);
             db.SaveChanges();
         }

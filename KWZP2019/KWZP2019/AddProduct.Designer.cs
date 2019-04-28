@@ -34,10 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.cBSemiFinished = new System.Windows.Forms.ComboBox();
             this.cBTechnology = new System.Windows.Forms.ComboBox();
+            this.dTPAddTime = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btAddConfirm
@@ -94,13 +94,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Technologia";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(310, 229);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -126,15 +119,22 @@
             this.cBTechnology.Size = new System.Drawing.Size(213, 21);
             this.cBTechnology.TabIndex = 11;
             // 
+            // dTPAddTime
+            // 
+            this.dTPAddTime.Location = new System.Drawing.Point(309, 227);
+            this.dTPAddTime.Name = "dTPAddTime";
+            this.dTPAddTime.Size = new System.Drawing.Size(213, 20);
+            this.dTPAddTime.TabIndex = 12;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dTPAddTime);
             this.Controls.Add(this.cBTechnology);
             this.Controls.Add(this.cBSemiFinished);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -157,9 +157,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBSemiFinished;
         private System.Windows.Forms.ComboBox cBTechnology;
+        private System.Windows.Forms.DateTimePicker dTPAddTime;
     }
 }
