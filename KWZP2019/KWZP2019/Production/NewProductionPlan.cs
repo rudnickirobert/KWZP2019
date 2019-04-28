@@ -22,14 +22,13 @@ namespace KWZP2019
             idNewPlan = newId;
         }
         private void NewProductionPlan_Load(object sender, EventArgs e)
-        {
-            
+        {           
             if (idPlan > 0)
             {
-                PlannedProduction plan = db.PlannedProductions.FirstOrDefault(f => f.IdPlan == idPlan);
+                PlannedProduction plan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
                 vUnhandledOrderDetails order = new vUnhandledOrderDetails();
-                OrderDetail orderDetail = db.OrderDetails.FirstOrDefault(f => f.IdDetail == plan.IdDetail);
-                Product product = db.Products.FirstOrDefault(f=>f.IdProduct==orderDetail.IdProduct);               
+                OrderDetail orderDetail = db.OrderDetails.First(f => f.IdDetail == plan.IdDetail);
+                Product product = db.Products.First(f=>f.IdProduct==orderDetail.IdProduct);               
                 if (plan != null)
                 {
                     tBoxPlanNr.Text = Convert.ToString(plan.IdPlan);
@@ -53,8 +52,8 @@ namespace KWZP2019
         private void viewOrderDetail_SelectionChanged(object sender, EventArgs e)
         {
             int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-            OrderDetail orderDetail = db.OrderDetails.FirstOrDefault(f => f.IdDetail == idDetail);
-            OrderCustomer orderCustomer = db.OrderCustomers.FirstOrDefault(f => f.IdOrderCustomer == orderDetail.IdOrderCustomer);
+            OrderDetail orderDetail = db.OrderDetails.First(f => f.IdDetail == idDetail);
+            OrderCustomer orderCustomer = db.OrderCustomers.First(f => f.IdOrderCustomer == orderDetail.IdOrderCustomer);
             dateTimeStart.Value = orderCustomer.OrderDate;
         }
 
@@ -63,11 +62,11 @@ namespace KWZP2019
             int idMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
             int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
             double timeInterval;
-            OrderDetail orderDetail = db.OrderDetails.FirstOrDefault(f => f.IdDetail == idDetail);
-            Product product = db.Products.FirstOrDefault(f => f.IdProduct == orderDetail.IdProduct);
-            Technology technology = db.Technologies.FirstOrDefault(f => f.IdTechnology == product.IdTechnology);
-            Maintenance maintenance = db.Maintenances.FirstOrDefault(f => f.IdMaintenance == idMachine);
-            Machine machine = db.Machines.FirstOrDefault(f => f.IdMachine == maintenance.IdMachine);
+            OrderDetail orderDetail = db.OrderDetails.First(f => f.IdDetail == idDetail);
+            Product product = db.Products.First(f => f.IdProduct == orderDetail.IdProduct);
+            Technology technology = db.Technologies.First(f => f.IdTechnology == product.IdTechnology);
+            Maintenance maintenance = db.Maintenances.First(f => f.IdMaintenance == idMachine);
+            Machine machine = db.Machines.First(f => f.IdMachine == maintenance.IdMachine);
             timeInterval = orderDetail.Quantity * machine.MetersPerHour*0.5* technology.TimePermeter * 0.2;
             DateTime dateEnd = dateTimeStart.Value.AddMinutes(timeInterval);
             dateTimeEnd.Value = dateEnd;
