@@ -50,6 +50,7 @@ namespace KWZP2019
         {
             FinancesAndHR finanseIHR = new FinancesAndHR(db);
             finanseIHR.Show();
+            this.Hide();
         }
     }
 }
