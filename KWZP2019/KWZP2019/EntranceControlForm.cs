@@ -68,9 +68,31 @@ namespace KWZP2019
 
         // ==================================================
 
-        private void BtnShowFromDate_Click(object sender, EventArgs e)
+        private void BtnShowFromToday_Click(object sender, EventArgs e)
+        {
+            datePickerSelectedControlsDate.Value = DateTime.Now;
+            ShowControlsFromDate(DateTime.Now);
+        }
+
+        // ==================================================
+
+        private void BtnShowFromDay_Click(object sender, EventArgs e)
         {
             ShowControlsFromDate(datePickerSelectedControlsDate.Value);
+        }
+
+        // ==================================================
+
+        private void BtnShowFromMonth_Click(object sender, EventArgs e)
+        {
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value.Month, datePickerSelectedControlsDate.Value.Year);
+        }
+
+        // ==================================================
+
+        private void BtnShowFromYear_Click(object sender, EventArgs e)
+        {
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value.Year);
         }
 
         // ==================================================
@@ -492,6 +514,65 @@ namespace KWZP2019
                 check.sfOrder.SfDeliveryDate.Year == selectedDate.Year
                 && check.sfOrder.SfDeliveryDate.Month == selectedDate.Month
                 && check.sfOrder.SfDeliveryDate.Day == selectedDate.Day)
+                .Select(sfOrderDetailJoinSfOrder => new
+                {
+                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
+                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
+                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
+                })
+                .OrderBy(orderBy =>
+                orderBy.Data_dostarczenia)
+                .ToList();
+            // Polish names only for displaying into dataGridView in form
+            dataGVEntranceControl.DataSource = orders;
+        }
+
+        // ==================================================
+
+        private void ShowControlsFromDate(int month, int year)
+        {
+            // var because it's an anonymouse type
+            var orders = db.SfOrderDetails
+                .Join(db.SemiFinishedOrders,
+                sfOrderDetail => sfOrderDetail.IdSfOrder,
+                sfOrder => sfOrder.IdSfOrder,
+                (sfOrderDetail, sfOrder) => new
+                {
+                    sfOrderDetail,
+                    sfOrder
+                })
+                .Where(check =>
+                check.sfOrder.SfDeliveryDate.Year == year
+                && check.sfOrder.SfDeliveryDate.Month == month)
+                .Select(sfOrderDetailJoinSfOrder => new
+                {
+                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
+                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
+                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
+                })
+                .OrderBy(orderBy =>
+                orderBy.Data_dostarczenia)
+                .ToList();
+            // Polish names only for displaying into dataGridView in form
+            dataGVEntranceControl.DataSource = orders;
+        }
+
+        // ==================================================
+
+        private void ShowControlsFromDate(int year)
+        {
+            // var because it's an anonymouse type
+            var orders = db.SfOrderDetails
+                .Join(db.SemiFinishedOrders,
+                sfOrderDetail => sfOrderDetail.IdSfOrder,
+                sfOrder => sfOrder.IdSfOrder,
+                (sfOrderDetail, sfOrder) => new
+                {
+                    sfOrderDetail,
+                    sfOrder
+                })
+                .Where(check =>
+                check.sfOrder.SfDeliveryDate.Year == year)
                 .Select(sfOrderDetailJoinSfOrder => new
                 {
                     ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
