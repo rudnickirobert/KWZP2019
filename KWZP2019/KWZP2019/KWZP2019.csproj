@@ -771,6 +771,8 @@
     <None Include="Resources\icons8-month-view-40.png" />
     <None Include="Resources\icons8-calendar-plus-40.png" />
     <None Include="Resources\icons8-date-span-40.png" />
+    <None Include="Resources\icons8-statistics-80.png" />
+    <None Include="Resources\icons8-statistics-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

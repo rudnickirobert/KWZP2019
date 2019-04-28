@@ -77,6 +77,7 @@ namespace KWZP2019
             this.btnShowFromMonth = new System.Windows.Forms.Button();
             this.btnShowFromYear = new System.Windows.Forms.Button();
             this.btnShowFromToday = new System.Windows.Forms.Button();
+            this.btnStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
@@ -99,7 +100,7 @@ namespace KWZP2019
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(12, 118);
+            this.btnReturnMain.Location = new System.Drawing.Point(12, 12);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(180, 100);
             this.btnReturnMain.TabIndex = 0;
@@ -122,7 +123,7 @@ namespace KWZP2019
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Location = new System.Drawing.Point(198, 12);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(180, 100);
             this.btnReturn.TabIndex = 0;
@@ -460,7 +461,7 @@ namespace KWZP2019
             this.lblControlNotExist.BackColor = System.Drawing.Color.Transparent;
             this.lblControlNotExist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlNotExist.ForeColor = System.Drawing.Color.Red;
-            this.lblControlNotExist.Location = new System.Drawing.Point(501, 613);
+            this.lblControlNotExist.Location = new System.Drawing.Point(156, 154);
             this.lblControlNotExist.Name = "lblControlNotExist";
             this.lblControlNotExist.Size = new System.Drawing.Size(16, 24);
             this.lblControlNotExist.TabIndex = 33;
@@ -733,6 +734,28 @@ namespace KWZP2019
             this.btnShowFromToday.UseVisualStyleBackColor = false;
             this.btnShowFromToday.Click += new System.EventHandler(this.BtnShowFromToday_Click);
             // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnStatistics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnStatistics.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnStatistics.FlatAppearance.BorderSize = 3;
+            this.btnStatistics.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnStatistics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStatistics.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnStatistics.Image = global::KWZP2019.Properties.Resources.icons8_statistics_40;
+            this.btnStatistics.Location = new System.Drawing.Point(384, 12);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(180, 100);
+            this.btnStatistics.TabIndex = 0;
+            this.btnStatistics.Text = "Wykresy";
+            this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            // 
             // EntranceControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,6 +803,7 @@ namespace KWZP2019
             this.Controls.Add(this.lblSelectedControl);
             this.Controls.Add(this.lblThickness);
             this.Controls.Add(this.lblFormTitle);
+            this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.dataGVEntranceControl);
@@ -848,5 +872,6 @@ namespace KWZP2019
         private System.Windows.Forms.Button btnShowFromMonth;
         private System.Windows.Forms.Button btnShowFromYear;
         private System.Windows.Forms.Button btnShowFromToday;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }
