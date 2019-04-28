@@ -51,22 +51,22 @@ namespace KWZP2019
             {
                 MessageBox.Show("Imię i nazwisko są wymagane");
             }
-            Employee newEmployee = new Employee();
-            newEmployee.EmployeeName = tbFirstName.Text.Trim();
-            newEmployee.EmployeeSurname = tbLastName.Text.Trim();
-            newEmployee.ZipCode = tbZipCode.Text.Trim();
-            newEmployee.City = tbCity.Text.Trim();
-            newEmployee.Street = tbStreet.Text.Trim();
-            newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
-            newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
-            newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
-            newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
-            Contract newContract = new Contract();
-            if (tbContractLenght.Text.Trim() == "")
+            else
             {
-               
+                Employee newEmployee = new Employee();
+                newEmployee.EmployeeName = tbFirstName.Text.Trim();
+                newEmployee.EmployeeSurname = tbLastName.Text.Trim();
+                newEmployee.ZipCode = tbZipCode.Text.Trim();
+                newEmployee.City = tbCity.Text.Trim();
+                newEmployee.Street = tbStreet.Text.Trim();
+                newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
+                newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
+                newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
+                newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
+                db.Employees.Add(newEmployee);
+                db.SaveChanges();
+                MessageBox.Show("Prawidłowo wprowadzono pracownika");
             }
-            
         }
 
         private void lblFirstName_Click(object sender, EventArgs e)

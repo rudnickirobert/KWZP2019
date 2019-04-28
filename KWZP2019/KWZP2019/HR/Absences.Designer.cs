@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewAbsences = new System.Windows.Forms.DataGridView();
+            this.dgvAbsences = new System.Windows.Forms.DataGridView();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.cbAbsenceType = new System.Windows.Forms.ComboBox();
@@ -42,29 +42,22 @@
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeOfAbsence = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAbsences)).BeginInit();
+            this.tbSearchAbsence = new System.Windows.Forms.TextBox();
+            this.lblSearchSurname = new System.Windows.Forms.Label();
+            this.lblSearchName = new System.Windows.Forms.Label();
+            this.tbSearchName = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewAbsences
+            // dgvAbsences
             // 
-            this.dataGridViewAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAbsences.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FirstName,
-            this.LastName,
-            this.TypeOfAbsence,
-            this.FirstDay,
-            this.LastDay});
-            this.dataGridViewAbsences.Location = new System.Drawing.Point(31, 29);
-            this.dataGridViewAbsences.Name = "dataGridViewAbsences";
-            this.dataGridViewAbsences.RowHeadersVisible = false;
-            this.dataGridViewAbsences.RowTemplate.Height = 24;
-            this.dataGridViewAbsences.Size = new System.Drawing.Size(481, 368);
-            this.dataGridViewAbsences.TabIndex = 0;
+            this.dgvAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAbsences.Location = new System.Drawing.Point(31, 54);
+            this.dgvAbsences.Name = "dgvAbsences";
+            this.dgvAbsences.RowHeadersVisible = false;
+            this.dgvAbsences.RowTemplate.Height = 24;
+            this.dgvAbsences.Size = new System.Drawing.Size(481, 343);
+            this.dgvAbsences.TabIndex = 0;
             // 
             // buttonAdd
             // 
@@ -174,36 +167,49 @@
             this.lblLastName.TabIndex = 13;
             this.lblLastName.Text = "Nazwisko";
             // 
-            // FirstName
+            // tbSearchAbsence
             // 
-            this.FirstName.HeaderText = "Imię";
-            this.FirstName.Name = "FirstName";
+            this.tbSearchAbsence.Location = new System.Drawing.Point(31, 26);
+            this.tbSearchAbsence.Name = "tbSearchAbsence";
+            this.tbSearchAbsence.Size = new System.Drawing.Size(226, 22);
+            this.tbSearchAbsence.TabIndex = 14;
+            this.tbSearchAbsence.TextChanged += new System.EventHandler(this.tbSearchAbsence_TextChanged);
             // 
-            // LastName
+            // lblSearchSurname
             // 
-            this.LastName.HeaderText = "Nazwisko";
-            this.LastName.Name = "LastName";
+            this.lblSearchSurname.AutoSize = true;
+            this.lblSearchSurname.Location = new System.Drawing.Point(28, 6);
+            this.lblSearchSurname.Name = "lblSearchSurname";
+            this.lblSearchSurname.Size = new System.Drawing.Size(67, 17);
+            this.lblSearchSurname.TabIndex = 15;
+            this.lblSearchSurname.Text = "Nazwisko";
             // 
-            // TypeOfAbsence
+            // lblSearchName
             // 
-            this.TypeOfAbsence.HeaderText = "Typ nieobecności";
-            this.TypeOfAbsence.Name = "TypeOfAbsence";
+            this.lblSearchName.AutoSize = true;
+            this.lblSearchName.Location = new System.Drawing.Point(283, 6);
+            this.lblSearchName.Name = "lblSearchName";
+            this.lblSearchName.Size = new System.Drawing.Size(33, 17);
+            this.lblSearchName.TabIndex = 16;
+            this.lblSearchName.Text = "Imię";
             // 
-            // FirstDay
+            // tbSearchName
             // 
-            this.FirstDay.HeaderText = "Pierwszy dzień";
-            this.FirstDay.Name = "FirstDay";
-            // 
-            // LastDay
-            // 
-            this.LastDay.HeaderText = "Ostatni dzień";
-            this.LastDay.Name = "LastDay";
+            this.tbSearchName.Location = new System.Drawing.Point(286, 26);
+            this.tbSearchName.Name = "tbSearchName";
+            this.tbSearchName.Size = new System.Drawing.Size(226, 22);
+            this.tbSearchName.TabIndex = 17;
+            this.tbSearchName.TextChanged += new System.EventHandler(this.tbSearchName_TextChanged);
             // 
             // Absences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbSearchName);
+            this.Controls.Add(this.lblSearchName);
+            this.Controls.Add(this.lblSearchSurname);
+            this.Controls.Add(this.tbSearchAbsence);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.tbFirstName);
@@ -217,10 +223,11 @@
             this.Controls.Add(this.cbAbsenceType);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.dataGridViewAbsences);
+            this.Controls.Add(this.dgvAbsences);
             this.Name = "Absences";
             this.Text = "Absences";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAbsences)).EndInit();
+            this.Load += new System.EventHandler(this.Absences_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,7 +235,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewAbsences;
+        private System.Windows.Forms.DataGridView dgvAbsences;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cbAbsenceType;
@@ -242,10 +249,9 @@
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeOfAbsence;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastDay;
+        private System.Windows.Forms.TextBox tbSearchAbsence;
+        private System.Windows.Forms.Label lblSearchSurname;
+        private System.Windows.Forms.Label lblSearchName;
+        private System.Windows.Forms.TextBox tbSearchName;
     }
 }

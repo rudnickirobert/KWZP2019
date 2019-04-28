@@ -29,111 +29,58 @@
         private void InitializeComponent()
         {
             this.tbEmployeeSearching = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.dataGridViewEmloyees = new System.Windows.Forms.DataGridView();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PESEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Warnings = new System.Windows.Forms.ListBox();
+            this.dgvEmloyees = new System.Windows.Forms.DataGridView();
+            this.lbWarningsExamination = new System.Windows.Forms.ListBox();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnExamination = new System.Windows.Forms.Button();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.btnTraining = new System.Windows.Forms.Button();
             this.btnAbsences = new System.Windows.Forms.Button();
             this.btnPayChecks = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmloyees)).BeginInit();
+            this.btnContracts = new System.Windows.Forms.Button();
+            this.lbWarningsContracts = new System.Windows.Forms.ListBox();
+            this.btnAddContract = new System.Windows.Forms.Button();
+            this.btnEducationLevel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmloyees)).BeginInit();
             this.SuspendLayout();
             // 
             // tbEmployeeSearching
             // 
-            this.tbEmployeeSearching.Location = new System.Drawing.Point(31, 20);
-            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeSearching.Location = new System.Drawing.Point(11, 11);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
-            this.tbEmployeeSearching.Size = new System.Drawing.Size(221, 20);
+            this.tbEmployeeSearching.Size = new System.Drawing.Size(692, 22);
             this.tbEmployeeSearching.TabIndex = 0;
+            this.tbEmployeeSearching.TextChanged += new System.EventHandler(this.tbEmployeeSearching_TextChanged);
             // 
-            // btnSearch
+            // dgvEmloyees
             // 
-            this.btnSearch.Location = new System.Drawing.Point(265, 20);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(84, 26);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Szukaj";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.dgvEmloyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmloyees.Location = new System.Drawing.Point(12, 43);
+            this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEmloyees.Name = "dgvEmloyees";
+            this.dgvEmloyees.RowHeadersVisible = false;
+            this.dgvEmloyees.RowTemplate.Height = 24;
+            this.dgvEmloyees.Size = new System.Drawing.Size(691, 327);
+            this.dgvEmloyees.TabIndex = 2;
             // 
-            // dataGridViewEmloyees
+            // lbWarningsExamination
             // 
-            this.dataGridViewEmloyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmloyees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FirstName,
-            this.LastName,
-            this.Position,
-            this.PhoneNumber,
-            this.Address,
-            this.PESEL});
-            this.dataGridViewEmloyees.Location = new System.Drawing.Point(8, 64);
-            this.dataGridViewEmloyees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridViewEmloyees.Name = "dataGridViewEmloyees";
-            this.dataGridViewEmloyees.RowHeadersVisible = false;
-            this.dataGridViewEmloyees.RowTemplate.Height = 24;
-            this.dataGridViewEmloyees.Size = new System.Drawing.Size(358, 265);
-            this.dataGridViewEmloyees.TabIndex = 2;
-            // 
-            // FirstName
-            // 
-            this.FirstName.DataPropertyName = "EmployeeName";
-            this.FirstName.HeaderText = "Imię";
-            this.FirstName.Name = "FirstName";
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "EmployeeSurname";
-            this.LastName.HeaderText = "Nazwisko";
-            this.LastName.Name = "LastName";
-            // 
-            // Position
-            // 
-            this.Position.DataPropertyName = "Position";
-            this.Position.HeaderText = "Stanowisko";
-            this.Position.Name = "Position";
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.DataPropertyName = "PhoneNumber";
-            this.PhoneNumber.HeaderText = "Numer telefonu";
-            this.PhoneNumber.Name = "PhoneNumber";
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "City,HouseNumber";
-            this.Address.HeaderText = "Adres";
-            this.Address.Name = "Address";
-            // 
-            // PESEL
-            // 
-            this.PESEL.DataPropertyName = "PESEL";
-            this.PESEL.HeaderText = "PESEL";
-            this.PESEL.Name = "PESEL";
-            // 
-            // Warnings
-            // 
-            this.Warnings.FormattingEnabled = true;
-            this.Warnings.Location = new System.Drawing.Point(385, 287);
-            this.Warnings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Warnings.Name = "Warnings";
-            this.Warnings.Size = new System.Drawing.Size(160, 43);
-            this.Warnings.TabIndex = 3;
+            this.lbWarningsExamination.FormattingEnabled = true;
+            this.lbWarningsExamination.ItemHeight = 16;
+            this.lbWarningsExamination.Location = new System.Drawing.Point(11, 374);
+            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbWarningsExamination.Name = "lbWarningsExamination";
+            this.lbWarningsExamination.Size = new System.Drawing.Size(466, 36);
+            this.lbWarningsExamination.TabIndex = 3;
+            this.lbWarningsExamination.DoubleClick += new System.EventHandler(this.lbWarningsExamination_DoubleClick);
             // 
             // btnDetails
             // 
-            this.btnDetails.Location = new System.Drawing.Point(439, 20);
-            this.btnDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDetails.Location = new System.Drawing.Point(749, 11);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(90, 26);
+            this.btnDetails.Size = new System.Drawing.Size(120, 32);
             this.btnDetails.TabIndex = 4;
             this.btnDetails.Text = "Szczegóły";
             this.btnDetails.UseVisualStyleBackColor = true;
@@ -141,10 +88,10 @@
             // 
             // btnExamination
             // 
-            this.btnExamination.Location = new System.Drawing.Point(439, 51);
-            this.btnExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExamination.Location = new System.Drawing.Point(749, 47);
+            this.btnExamination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExamination.Name = "btnExamination";
-            this.btnExamination.Size = new System.Drawing.Size(90, 30);
+            this.btnExamination.Size = new System.Drawing.Size(120, 37);
             this.btnExamination.TabIndex = 5;
             this.btnExamination.Text = "Badania";
             this.btnExamination.UseVisualStyleBackColor = true;
@@ -152,10 +99,10 @@
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(439, 86);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddEmployee.Location = new System.Drawing.Point(614, 389);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(90, 41);
+            this.btnAddEmployee.Size = new System.Drawing.Size(120, 50);
             this.btnAddEmployee.TabIndex = 6;
             this.btnAddEmployee.Text = "Dodaj pracownika";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
@@ -163,10 +110,10 @@
             // 
             // btnTraining
             // 
-            this.btnTraining.Location = new System.Drawing.Point(439, 132);
-            this.btnTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTraining.Location = new System.Drawing.Point(749, 88);
+            this.btnTraining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTraining.Name = "btnTraining";
-            this.btnTraining.Size = new System.Drawing.Size(90, 35);
+            this.btnTraining.Size = new System.Drawing.Size(120, 37);
             this.btnTraining.TabIndex = 7;
             this.btnTraining.Text = "Szkolenia";
             this.btnTraining.UseVisualStyleBackColor = true;
@@ -174,10 +121,10 @@
             // 
             // btnAbsences
             // 
-            this.btnAbsences.Location = new System.Drawing.Point(439, 172);
-            this.btnAbsences.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAbsences.Location = new System.Drawing.Point(749, 129);
+            this.btnAbsences.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAbsences.Name = "btnAbsences";
-            this.btnAbsences.Size = new System.Drawing.Size(90, 30);
+            this.btnAbsences.Size = new System.Drawing.Size(120, 58);
             this.btnAbsences.TabIndex = 8;
             this.btnAbsences.Text = "Nieobecności";
             this.btnAbsences.UseVisualStyleBackColor = true;
@@ -185,33 +132,79 @@
             // 
             // btnPayChecks
             // 
-            this.btnPayChecks.Location = new System.Drawing.Point(439, 207);
-            this.btnPayChecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPayChecks.Location = new System.Drawing.Point(749, 191);
+            this.btnPayChecks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPayChecks.Name = "btnPayChecks";
-            this.btnPayChecks.Size = new System.Drawing.Size(90, 35);
+            this.btnPayChecks.Size = new System.Drawing.Size(120, 37);
             this.btnPayChecks.TabIndex = 9;
             this.btnPayChecks.Text = "Wypłaty";
             this.btnPayChecks.UseVisualStyleBackColor = true;
             // 
+            // btnContracts
+            // 
+            this.btnContracts.Location = new System.Drawing.Point(749, 233);
+            this.btnContracts.Name = "btnContracts";
+            this.btnContracts.Size = new System.Drawing.Size(120, 37);
+            this.btnContracts.TabIndex = 10;
+            this.btnContracts.Text = "Umowy";
+            this.btnContracts.UseVisualStyleBackColor = true;
+            this.btnContracts.Click += new System.EventHandler(this.btnContracts_Click);
+            // 
+            // lbWarningsContracts
+            // 
+            this.lbWarningsContracts.FormattingEnabled = true;
+            this.lbWarningsContracts.ItemHeight = 16;
+            this.lbWarningsContracts.Location = new System.Drawing.Point(11, 414);
+            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbWarningsContracts.Name = "lbWarningsContracts";
+            this.lbWarningsContracts.Size = new System.Drawing.Size(466, 36);
+            this.lbWarningsContracts.TabIndex = 11;
+            this.lbWarningsContracts.DoubleClick += new System.EventHandler(this.lbWarningsContracts_DoubleClick);
+            // 
+            // btnAddContract
+            // 
+            this.btnAddContract.Location = new System.Drawing.Point(749, 389);
+            this.btnAddContract.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddContract.Name = "btnAddContract";
+            this.btnAddContract.Size = new System.Drawing.Size(120, 50);
+            this.btnAddContract.TabIndex = 12;
+            this.btnAddContract.Text = "Dodaj umowę";
+            this.btnAddContract.UseVisualStyleBackColor = true;
+            this.btnAddContract.Click += new System.EventHandler(this.btnAddContract_Click);
+            // 
+            // btnEducationLevel
+            // 
+            this.btnEducationLevel.Location = new System.Drawing.Point(749, 276);
+            this.btnEducationLevel.Name = "btnEducationLevel";
+            this.btnEducationLevel.Size = new System.Drawing.Size(120, 37);
+            this.btnEducationLevel.TabIndex = 13;
+            this.btnEducationLevel.Text = "Wykształcenie";
+            this.btnEducationLevel.UseVisualStyleBackColor = true;
+            this.btnEducationLevel.Click += new System.EventHandler(this.btnEducationLevel_Click);
+            // 
             // HR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(881, 450);
+            this.Controls.Add(this.btnEducationLevel);
+            this.Controls.Add(this.btnAddContract);
+            this.Controls.Add(this.lbWarningsContracts);
+            this.Controls.Add(this.btnContracts);
             this.Controls.Add(this.btnPayChecks);
             this.Controls.Add(this.btnAbsences);
             this.Controls.Add(this.btnTraining);
             this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.btnExamination);
             this.Controls.Add(this.btnDetails);
-            this.Controls.Add(this.Warnings);
-            this.Controls.Add(this.dataGridViewEmloyees);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.lbWarningsExamination);
+            this.Controls.Add(this.dgvEmloyees);
             this.Controls.Add(this.tbEmployeeSearching);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HR";
             this.Text = "Kadry";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmloyees)).EndInit();
+            this.Load += new System.EventHandler(this.HR_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmloyees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,20 +213,17 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbEmployeeSearching;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dataGridViewEmloyees;
-        private System.Windows.Forms.ListBox Warnings;
+        private System.Windows.Forms.DataGridView dgvEmloyees;
+        private System.Windows.Forms.ListBox lbWarningsExamination;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.Button btnExamination;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Button btnTraining;
         private System.Windows.Forms.Button btnAbsences;
         private System.Windows.Forms.Button btnPayChecks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PESEL;
+        private System.Windows.Forms.Button btnContracts;
+        private System.Windows.Forms.ListBox lbWarningsContracts;
+        private System.Windows.Forms.Button btnAddContract;
+        private System.Windows.Forms.Button btnEducationLevel;
     }
 }
