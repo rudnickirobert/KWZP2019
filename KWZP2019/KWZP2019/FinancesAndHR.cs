@@ -17,7 +17,7 @@ namespace KWZP2019
         public FinancesAndHR(RoofingCompanyEntities db, StartForm startform)
         {
             this.db = db;
-            this.startForm = startForm;
+            this.startForm = startform;
             InitializeComponent();
         }
 
