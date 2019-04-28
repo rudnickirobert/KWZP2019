@@ -34,5 +34,7 @@ namespace KWZP2019
             db.Products.Add(product);
             db.SaveChanges();
         }
+
+       
     }
 }
