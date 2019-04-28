@@ -12,11 +12,8 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vCustomerWithOrder
+    public partial class vSuccesfullyProcess
     {
-        public string CustomerName { get; set; }
-        public int IdOrderCustomer { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public decimal Cost { get; set; }
+        public int IdProcess { get; set; }
     }
 }

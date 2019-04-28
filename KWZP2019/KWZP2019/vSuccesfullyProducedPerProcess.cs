@@ -12,14 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class EntranceControlView
+    public partial class vSuccesfullyProducedPerProcess
     {
-        public int IdSfDetail { get; set; }
-        public string SfCode { get; set; }
-        public Nullable<double> Thickness { get; set; }
-        public Nullable<double> Width { get; set; }
-        public Nullable<double> SfWeight { get; set; }
-        public string Color { get; set; }
-        public string ChemicalComposition { get; set; }
+        public int IdProcess { get; set; }
+        public Nullable<int> SuccesfullProduced { get; set; }
+        public int QuantityToBeProducted { get; set; }
     }
 }
