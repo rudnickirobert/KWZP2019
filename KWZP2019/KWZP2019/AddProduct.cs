@@ -35,6 +35,17 @@ namespace KWZP2019
             db.SaveChanges();
         }
 
-       
+        private void AddProduct_Load(object sender, EventArgs e)
+        {
+            cBSemiFinished.ValueMember = "IdSemiFinished";
+            cBSemiFinished.DisplayMember = "SfCode";
+            cBSemiFinished.DataSource = db.SemiFinisheds.Distinct().ToList();
+            cBSemiFinished.Invalidate();
+
+            cBTechnology.ValueMember = "IdTechnology";
+            cBTechnology.DisplayMember = "TechnologyName";
+            cBTechnology.DataSource = db.Technologies.Distinct().ToList();
+            cBTechnology.Invalidate();
+        }
     }
 }

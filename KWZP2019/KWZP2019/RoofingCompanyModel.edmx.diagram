@@ -53,7 +53,7 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControl" Width="1.5" PointX="3.75" PointY="51.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.SafetyTraining" Width="1.5" PointX="3.75" PointY="55" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinished" Width="1.5" PointX="1.5" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinishedOrder" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinishedOrder" Width="1.75" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.SfOrderDetail" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.SkillsForMachine" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Staff" Width="1.5" PointX="6.75" PointY="35.25" IsExpanded="true" />

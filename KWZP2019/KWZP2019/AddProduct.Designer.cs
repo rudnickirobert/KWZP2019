@@ -28,27 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox cBSemiFinished;
-            System.Windows.Forms.ComboBox cBTechnology;
             this.btAddConfirm = new System.Windows.Forms.Button();
             this.btCloseAddProduct = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBProductCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            cBSemiFinished = new System.Windows.Forms.ComboBox();
-            cBTechnology = new System.Windows.Forms.ComboBox();
+            this.cBSemiFinished = new System.Windows.Forms.ComboBox();
+            this.cBTechnology = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // cBSemiFinished
-            // 
-            cBSemiFinished.FormattingEnabled = true;
-            cBSemiFinished.Location = new System.Drawing.Point(310, 123);
-            cBSemiFinished.Name = "cBSemiFinished";
-            cBSemiFinished.Size = new System.Drawing.Size(215, 21);
-            cBSemiFinished.TabIndex = 2;
             // 
             // btAddConfirm
             // 
@@ -70,12 +60,12 @@
             this.btCloseAddProduct.UseVisualStyleBackColor = true;
             this.btCloseAddProduct.Click += new System.EventHandler(this.btCloseAddProduct_Click);
             // 
-            // textBox1
+            // tBProductCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(310, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 20);
-            this.textBox1.TabIndex = 3;
+            this.tBProductCode.Location = new System.Drawing.Point(310, 159);
+            this.tBProductCode.Name = "tBProductCode";
+            this.tBProductCode.Size = new System.Drawing.Size(214, 20);
+            this.tBProductCode.TabIndex = 3;
             // 
             // label1
             // 
@@ -104,14 +94,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Technologia";
             // 
-            // cBTechnology
-            // 
-            cBTechnology.FormattingEnabled = true;
-            cBTechnology.Location = new System.Drawing.Point(310, 193);
-            cBTechnology.Name = "cBTechnology";
-            cBTechnology.Size = new System.Drawing.Size(215, 21);
-            cBTechnology.TabIndex = 7;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(310, 229);
@@ -128,23 +110,40 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Data dodania";
             // 
+            // cBSemiFinished
+            // 
+            this.cBSemiFinished.FormattingEnabled = true;
+            this.cBSemiFinished.Location = new System.Drawing.Point(310, 118);
+            this.cBSemiFinished.Name = "cBSemiFinished";
+            this.cBSemiFinished.Size = new System.Drawing.Size(215, 21);
+            this.cBSemiFinished.TabIndex = 10;
+            // 
+            // cBTechnology
+            // 
+            this.cBTechnology.FormattingEnabled = true;
+            this.cBTechnology.Location = new System.Drawing.Point(310, 194);
+            this.cBTechnology.Name = "cBTechnology";
+            this.cBTechnology.Size = new System.Drawing.Size(213, 21);
+            this.cBTechnology.TabIndex = 11;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cBTechnology);
+            this.Controls.Add(this.cBSemiFinished);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(cBTechnology);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(cBSemiFinished);
+            this.Controls.Add(this.tBProductCode);
             this.Controls.Add(this.btCloseAddProduct);
             this.Controls.Add(this.btAddConfirm);
             this.Name = "AddProduct";
             this.Text = "AddProduct";
+            this.Load += new System.EventHandler(this.AddProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,11 +153,13 @@
 
         private System.Windows.Forms.Button btAddConfirm;
         private System.Windows.Forms.Button btCloseAddProduct;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBProductCode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cBSemiFinished;
+        private System.Windows.Forms.ComboBox cBTechnology;
     }
 }
