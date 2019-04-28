@@ -21,6 +21,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Finances));
             this.btnPayments = new System.Windows.Forms.Button();
             this.btnCountPayments = new System.Windows.Forms.Button();
             this.btnCosts = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             // 
             // btnCountPayments
             // 
-            this.btnCountPayments.Location = new System.Drawing.Point(365, 326);
+            this.btnCountPayments.Location = new System.Drawing.Point(365, 310);
             this.btnCountPayments.Name = "btnCountPayments";
             this.btnCountPayments.Size = new System.Drawing.Size(290, 160);
             this.btnCountPayments.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             // btnEarnings
             // 
-            this.btnEarnings.Location = new System.Drawing.Point(787, 326);
+            this.btnEarnings.Location = new System.Drawing.Point(787, 310);
             this.btnEarnings.Name = "btnEarnings";
             this.btnEarnings.Size = new System.Drawing.Size(290, 160);
             this.btnEarnings.TabIndex = 3;
@@ -75,7 +76,7 @@
             // 
             // btnFinancialStatement
             // 
-            this.btnFinancialStatement.Location = new System.Drawing.Point(787, 534);
+            this.btnFinancialStatement.Location = new System.Drawing.Point(787, 502);
             this.btnFinancialStatement.Name = "btnFinancialStatement";
             this.btnFinancialStatement.Size = new System.Drawing.Size(290, 160);
             this.btnFinancialStatement.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             // btnAddInvoice
             // 
-            this.btnAddInvoice.Location = new System.Drawing.Point(365, 534);
+            this.btnAddInvoice.Location = new System.Drawing.Point(365, 502);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(290, 160);
             this.btnAddInvoice.TabIndex = 5;
@@ -114,12 +115,21 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReturn.Location = new System.Drawing.Point(31, 32);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(208, 118);
             this.btnReturn.TabIndex = 8;
             this.btnReturn.Text = "Powrót";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // btnReturnMain
             // 
