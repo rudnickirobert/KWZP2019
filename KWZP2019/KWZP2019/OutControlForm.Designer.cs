@@ -245,15 +245,22 @@
             // 
             // btnSMeasures
             // 
-            this.btnSMeasures.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSMeasures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnSMeasures.Font = new System.Drawing.Font("Matura MT Script Capitals", 18.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSMeasures.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMeasures.BackgroundImage")));
+            this.btnSMeasures.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSMeasures.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnSMeasures.FlatAppearance.BorderSize = 3;
+            this.btnSMeasures.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSMeasures.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnSMeasures.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSMeasures.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSMeasures.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSMeasures.Location = new System.Drawing.Point(821, 359);
+            this.btnSMeasures.Location = new System.Drawing.Point(863, 541);
             this.btnSMeasures.Name = "btnSMeasures";
-            this.btnSMeasures.Size = new System.Drawing.Size(193, 74);
+            this.btnSMeasures.Size = new System.Drawing.Size(200, 120);
             this.btnSMeasures.TabIndex = 54;
-            this.btnSMeasures.Text = "Uruchom Pomiary";
+            this.btnSMeasures.Text = "Pomiar";
+            this.btnSMeasures.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSMeasures.UseCompatibleTextRendering = true;
             this.btnSMeasures.UseVisualStyleBackColor = false;
             this.btnSMeasures.Click += new System.EventHandler(this.btnSMeasures_Click);

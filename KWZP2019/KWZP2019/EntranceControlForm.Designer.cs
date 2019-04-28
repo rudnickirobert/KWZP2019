@@ -66,12 +66,14 @@ namespace KWZP2019
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.btnApproval = new System.Windows.Forms.Button();
+            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -125,7 +127,7 @@ namespace KWZP2019
             this.lblFormTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(509, 126);
+            this.lblFormTitle.Location = new System.Drawing.Point(497, 126);
             this.lblFormTitle.Name = "lblFormTitle";
             this.lblFormTitle.Size = new System.Drawing.Size(486, 56);
             this.lblFormTitle.TabIndex = 2;
@@ -137,7 +139,7 @@ namespace KWZP2019
             this.lblControlDate.BackColor = System.Drawing.Color.Transparent;
             this.lblControlDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlDate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblControlDate.Location = new System.Drawing.Point(464, 396);
+            this.lblControlDate.Location = new System.Drawing.Point(468, 379);
             this.lblControlDate.Name = "lblControlDate";
             this.lblControlDate.Size = new System.Drawing.Size(160, 26);
             this.lblControlDate.TabIndex = 3;
@@ -273,7 +275,7 @@ namespace KWZP2019
             this.lblParameterCheck.BackColor = System.Drawing.Color.Transparent;
             this.lblParameterCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblParameterCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblParameterCheck.Location = new System.Drawing.Point(452, 482);
+            this.lblParameterCheck.Location = new System.Drawing.Point(652, 319);
             this.lblParameterCheck.Name = "lblParameterCheck";
             this.lblParameterCheck.Size = new System.Drawing.Size(200, 26);
             this.lblParameterCheck.TabIndex = 28;
@@ -327,7 +329,7 @@ namespace KWZP2019
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxEmployeeId.Location = new System.Drawing.Point(578, 318);
+            this.textBoxEmployeeId.Location = new System.Drawing.Point(577, 319);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(58, 26);
             this.textBoxEmployeeId.TabIndex = 31;
@@ -341,7 +343,7 @@ namespace KWZP2019
             this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeId.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblEmployeeId.Location = new System.Drawing.Point(432, 321);
+            this.lblEmployeeId.Location = new System.Drawing.Point(434, 318);
             this.lblEmployeeId.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmployeeId.Name = "lblEmployeeId";
             this.lblEmployeeId.Size = new System.Drawing.Size(128, 20);
@@ -409,7 +411,7 @@ namespace KWZP2019
             this.lblIdSfOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIdSfOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIdSfOrder.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblIdSfOrder.Location = new System.Drawing.Point(424, 235);
+            this.lblIdSfOrder.Location = new System.Drawing.Point(429, 235);
             this.lblIdSfOrder.Margin = new System.Windows.Forms.Padding(0);
             this.lblIdSfOrder.Name = "lblIdSfOrder";
             this.lblIdSfOrder.Size = new System.Drawing.Size(131, 20);
@@ -520,7 +522,7 @@ namespace KWZP2019
             this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
             this.picBoxControlStatus.Image = global::KWZP2019.Properties.Resources.new_80px;
             this.picBoxControlStatus.InitialImage = null;
-            this.picBoxControlStatus.Location = new System.Drawing.Point(472, 511);
+            this.picBoxControlStatus.Location = new System.Drawing.Point(669, 348);
             this.picBoxControlStatus.Name = "picBoxControlStatus";
             this.picBoxControlStatus.Size = new System.Drawing.Size(169, 158);
             this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -530,6 +532,7 @@ namespace KWZP2019
             // btnApproval
             // 
             this.btnApproval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnApproval.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnApproval.BackgroundImage")));
             this.btnApproval.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnApproval.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnApproval.FlatAppearance.BorderSize = 3;
@@ -539,13 +542,25 @@ namespace KWZP2019
             this.btnApproval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnApproval.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnApproval.Location = new System.Drawing.Point(663, 378);
+            this.btnApproval.Location = new System.Drawing.Point(451, 557);
             this.btnApproval.Name = "btnApproval";
-            this.btnApproval.Size = new System.Drawing.Size(170, 114);
+            this.btnApproval.Size = new System.Drawing.Size(200, 120);
             this.btnApproval.TabIndex = 29;
-            this.btnApproval.Text = "Kliknij, aby potwierdzić wyniki";
+            this.btnApproval.Text = "Potwierdź";
+            this.btnApproval.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnApproval.UseVisualStyleBackColor = false;
             this.btnApproval.Click += new System.EventHandler(this.btnApproval_Click);
+            // 
+            // pictureBoxForm
+            // 
+            this.pictureBoxForm.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxForm.BackgroundImage")));
+            this.pictureBoxForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxForm.Location = new System.Drawing.Point(311, 12);
+            this.pictureBoxForm.Name = "pictureBoxForm";
+            this.pictureBoxForm.Size = new System.Drawing.Size(861, 737);
+            this.pictureBoxForm.TabIndex = 38;
+            this.pictureBoxForm.TabStop = false;
             // 
             // EntranceControlForm
             // 
@@ -591,6 +606,7 @@ namespace KWZP2019
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.pictureBoxForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -605,6 +621,7 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -649,5 +666,6 @@ namespace KWZP2019
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
         private System.Windows.Forms.PictureBox picBoxControlStatus;
         private System.Windows.Forms.Button btnApproval;
+        private System.Windows.Forms.PictureBox pictureBoxForm;
     }
 }
