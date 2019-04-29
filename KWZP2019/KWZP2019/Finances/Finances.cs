@@ -12,9 +12,9 @@ namespace KWZP2019
 {
     public partial class Finances : Form
     {
-        RoofingCompanyEntities db;
-        StartForm startForm;
-        FinancesAndHR finanseIHR;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private FinancesAndHR finanseIHR;
         public Finances(RoofingCompanyEntities db, StartForm startForm, FinancesAndHR finanseIHR)
         {
             this.db = db;
@@ -36,18 +36,19 @@ namespace KWZP2019
         }
         private void btnCosts_Click(object sender, EventArgs e)
         {
-            Costs costs = new Costs(db);
+            AllExpenses costs = new AllExpenses(db);
             costs.ShowDialog();
         }
         private void btnEarnings_Click(object sender, EventArgs e)
         {
-            Profits profits = new Profits(db);
-            profits.ShowDialog();
+            AllIncomes allCosts = new AllIncomes(db, startForm, this);
+            allCosts.ShowDialog();
         }
         private void btnFinancialStatement_Click(object sender, EventArgs e)
         {
-            AllCosts allCosts = new AllCosts(db);
-            allCosts.ShowDialog();
+            Profits profits = new Profits(db);
+            profits.ShowDialog();
+
         }
         private void Finances_FormClosed(object sender, FormClosedEventArgs e)
         {

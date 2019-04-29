@@ -311,7 +311,7 @@
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
             this.Name = "Profits";
-            this.Text = "Zyski i bilans finansowy";
+            this.Text = "Bilans finansowy";
             this.Load += new System.EventHandler(this.Profits_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
