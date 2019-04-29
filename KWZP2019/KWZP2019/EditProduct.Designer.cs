@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 73);
+            this.label1.Location = new System.Drawing.Point(156, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 0;
@@ -51,35 +51,49 @@
             // 
             // tBNumberProd
             // 
-            this.tBNumberProd.Location = new System.Drawing.Point(286, 70);
+            this.tBNumberProd.Location = new System.Drawing.Point(256, 112);
             this.tBNumberProd.Name = "tBNumberProd";
-            this.tBNumberProd.Size = new System.Drawing.Size(62, 20);
+            this.tBNumberProd.Size = new System.Drawing.Size(50, 20);
             this.tBNumberProd.TabIndex = 1;
             // 
             // btEditConfirm
             // 
-            this.btEditConfirm.Location = new System.Drawing.Point(592, 24);
+            this.btEditConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btEditConfirm.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btEditConfirm.FlatAppearance.BorderSize = 3;
+            this.btEditConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btEditConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btEditConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btEditConfirm.Location = new System.Drawing.Point(478, 42);
             this.btEditConfirm.Name = "btEditConfirm";
-            this.btEditConfirm.Size = new System.Drawing.Size(162, 36);
+            this.btEditConfirm.Size = new System.Drawing.Size(290, 160);
             this.btEditConfirm.TabIndex = 2;
             this.btEditConfirm.Text = "Zatwierdź";
-            this.btEditConfirm.UseVisualStyleBackColor = true;
+            this.btEditConfirm.UseVisualStyleBackColor = false;
             this.btEditConfirm.Click += new System.EventHandler(this.btEditConfirm_Click);
             // 
             // btEditBack
             // 
-            this.btEditBack.Location = new System.Drawing.Point(587, 83);
+            this.btEditBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btEditBack.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btEditBack.FlatAppearance.BorderSize = 3;
+            this.btEditBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btEditBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btEditBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btEditBack.Location = new System.Drawing.Point(478, 248);
             this.btEditBack.Name = "btEditBack";
-            this.btEditBack.Size = new System.Drawing.Size(166, 42);
+            this.btEditBack.Size = new System.Drawing.Size(290, 160);
             this.btEditBack.TabIndex = 3;
             this.btEditBack.Text = "Powrót";
-            this.btEditBack.UseVisualStyleBackColor = true;
+            this.btEditBack.UseVisualStyleBackColor = false;
             this.btEditBack.Click += new System.EventHandler(this.btEditBack_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 209);
+            this.label2.Location = new System.Drawing.Point(156, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 4;
@@ -88,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 244);
+            this.label3.Location = new System.Drawing.Point(156, 290);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 5;
@@ -97,7 +111,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 106);
+            this.label4.Location = new System.Drawing.Point(156, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 6;
@@ -105,31 +119,32 @@
             // 
             // tBProductCode
             // 
-            this.tBProductCode.Location = new System.Drawing.Point(286, 103);
+            this.tBProductCode.Location = new System.Drawing.Point(256, 145);
             this.tBProductCode.Name = "tBProductCode";
-            this.tBProductCode.Size = new System.Drawing.Size(109, 20);
+            this.tBProductCode.Size = new System.Drawing.Size(150, 20);
             this.tBProductCode.TabIndex = 7;
             // 
             // cBEditSemiFinished
             // 
             this.cBEditSemiFinished.FormattingEnabled = true;
-            this.cBEditSemiFinished.Location = new System.Drawing.Point(286, 206);
+            this.cBEditSemiFinished.Location = new System.Drawing.Point(256, 248);
             this.cBEditSemiFinished.Name = "cBEditSemiFinished";
-            this.cBEditSemiFinished.Size = new System.Drawing.Size(119, 21);
+            this.cBEditSemiFinished.Size = new System.Drawing.Size(150, 21);
             this.cBEditSemiFinished.TabIndex = 8;
             // 
             // cBEditTechnology
             // 
             this.cBEditTechnology.FormattingEnabled = true;
-            this.cBEditTechnology.Location = new System.Drawing.Point(286, 244);
+            this.cBEditTechnology.Location = new System.Drawing.Point(256, 286);
             this.cBEditTechnology.Name = "cBEditTechnology";
-            this.cBEditTechnology.Size = new System.Drawing.Size(119, 21);
+            this.cBEditTechnology.Size = new System.Drawing.Size(150, 21);
             this.cBEditTechnology.TabIndex = 9;
             // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cBEditTechnology);
             this.Controls.Add(this.cBEditSemiFinished);
@@ -142,6 +157,7 @@
             this.Controls.Add(this.tBNumberProd);
             this.Controls.Add(this.label1);
             this.Name = "EditProduct";
+            this.ShowInTaskbar = false;
             this.Text = "EditProduct";
             this.Load += new System.EventHandler(this.EditProduct_Load);
             this.ResumeLayout(false);
