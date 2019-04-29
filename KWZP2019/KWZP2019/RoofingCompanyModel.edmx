@@ -4273,11 +4273,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <
-        
-        
-        
-        Mapping StorageEntityContainer="RoofingCompanyModelStoreContainer" CdmEntityContainer="RoofingCompanyEntities">
+        <EntityContainerMapping StorageEntityContainer="RoofingCompanyModelStoreContainer" CdmEntityContainer="RoofingCompanyEntities">        
+        <Mapping StorageEntityContainer="RoofingCompanyModelStoreContainer" CdmEntityContainer="RoofingCompanyEntities">
           <EntitySetMapping Name="Absences">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Absence">
               <MappingFragment StoreEntitySet="Absence">
