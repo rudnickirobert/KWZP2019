@@ -96,24 +96,43 @@ namespace KWZP2019
                 btnSave.Enabled = true;
             }
         }
+        private bool editPlan()
+        {
+            int currentPlanId = Convert.ToInt32(tBoxPlanNr.Text.Trim());
+            return db.PlannedProductions.Count() >= currentPlanId;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (employeesQuantity == 0)
+            if (editPlan())
             {
-                MessageBox.Show("Nie przydzielono pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                PlannedProduction existingPlan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
+                existingPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
+                existingPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+                existingPlan.PlannedStartd = dateTimeStart.Value;
+                existingPlan.PlannedEndd = dateTimeEnd.Value;
+                existingPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
+                db.SaveChanges();
+                MessageBox.Show("Dokonano edycji planu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            {
-                PlannedProduction newPlan = new PlannedProduction();
-                newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-                newPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
-                newPlan.PlannedStartd = dateTimeStart.Value;
-                newPlan.PlannedEndd = dateTimeEnd.Value;
-                newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
-                db.PlannedProductions.Add(newPlan);
-                db.SaveChanges();
-                MessageBox.Show("Dodano nowy plan!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnSave.Enabled = false;
+            {           
+                if (employeesQuantity == 0)
+                {
+                    MessageBox.Show("Nie przydzielono pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    PlannedProduction newPlan = new PlannedProduction();
+                    newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
+                    newPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+                    newPlan.PlannedStartd = dateTimeStart.Value;
+                    newPlan.PlannedEndd = dateTimeEnd.Value;
+                    newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
+                    db.PlannedProductions.Add(newPlan);
+                    db.SaveChanges();
+                    MessageBox.Show("Dodano nowy plan!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSave.Enabled = false;
+                }
             }
         }
         private void btnNewPlan_Click(object sender, EventArgs e)
