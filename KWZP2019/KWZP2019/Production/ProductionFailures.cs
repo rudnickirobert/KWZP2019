@@ -24,26 +24,10 @@ namespace KWZP2019
         {
             Close();
         }
-
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ProductionFailures_Load(object sender, EventArgs e)
         {
-            dgv_failures.DataSource = db.Failures.ToList();
-            newId = dgv_failures.RowCount + 1;
+            gridViewFailures.DataSource = db.Failures.ToList();
+            newId = gridViewFailures.RowCount + 1;
         }
     }
 }
