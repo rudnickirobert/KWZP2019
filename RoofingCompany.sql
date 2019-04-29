@@ -1,6 +1,6 @@
 ﻿use master;
 go
-drop database RoofingCompany;
+drop database if exists RoofingCompany;
 create database RoofingCompany;
 go
 use RoofingCompany;
@@ -621,6 +621,17 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment;
 
+go
+create view ViewSemiFinishedOrder as
+select SfOrderDetail.IdSfOrder as [Numer zamówienia], SemiFinished.SfCode as [Kod półfabrykatu], SemiFinishedOrder.SfDeliveryDate as [Data dostarczenia]
+from
+SfOrderDetail
+join
+SemiFinishedOrder
+on
+SfOrderDetail.IdSfOrder = SemiFinishedOrder.IdSfOrder
+join SemiFinished
+on SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished;
 
 /*====SALES DEPARTMENT===*/
 
