@@ -748,9 +748,9 @@ GO
 /*====PRODUCTION===*/
 CREATE VIEW vUnhandledOrderDetails
 AS
-SELECT OrderDetail.IdDetail,OrderDetail.Quantity,Product.ProductCode
+SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
 FROM OrderDetail
 JOIN Product
-ON OrderDetail.IdProduct=Product.IdProduct
-WHERE NOT EXISTS (SELECT *FROM PlannedProduction WHERE PlannedProduction.IdDetail=OrderDetail.IdDetail )
+ON OrderDetail.IdProduct = Product.IdProduct
+WHERE NOT EXISTS (SELECT *FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
 GO
