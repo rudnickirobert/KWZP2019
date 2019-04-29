@@ -1,4 +1,4 @@
-﻿use master;
+use master;
 go
 drop database RoofingCompany;
 create database RoofingCompany;
@@ -750,17 +750,16 @@ GO
 
 CREATE VIEW vAbsences
 AS
-SELECT TOP 100 PERCENT EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
 FROM Absence
 INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
 INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
 ORDER BY EmployeeSurname;
 
 GO
-
 CREATE VIEW	vAddTraining
 AS
-SELECT TOP 100 PERCENT EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
 FROM dbo.Employee 
 INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee
 ORDER BY Employee.EmployeeSurname;
@@ -769,14 +768,14 @@ GO
 
 CREATE VIEW vEmployeeList
 AS
-SELECT Employee.EmployeeSurname, Employee.EmployeeName 
+SELECT Employee.IdEmployee, Employee.EmployeeSurname, Employee.EmployeeName 
 FROM Employee;
 
 GO
 
 CREATE VIEW vContracts
 AS
-SELECT TOP 100 PERCENT EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, HealTestDate, Workplace
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, HealTestDate, Workplace
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
@@ -786,7 +785,7 @@ GO
 
 CREATE VIEW vEducationForm
 AS
-SELECT TOP 100 PERCENT EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
 FROM dbo.Employee
 INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
 INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel
@@ -796,7 +795,7 @@ GO
 
 CREATE VIEW vEmployeeDetails
 AS
-SELECT TOP 100 PERCENT EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, HealTestDate, WorkplaceTrainingDate, Date 
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, HealTestDate, WorkplaceTrainingDate, Date 
 FROM dbo.Contract
 INNER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
 INNER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
@@ -809,7 +808,7 @@ GO
 
 CREATE VIEW vExamination
 AS
-SELECT TOP 100 PERCENT EmployeeSurname, EmployeeName, Date
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeSurname, EmployeeName, Date
 FROM Employee
 INNER JOIN RoofingCompany.dbo.MedicalExamination
 ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee
@@ -819,7 +818,7 @@ GO
 
 CREATE VIEW vHR
 AS
-SELECT TOP 100 PERCENT EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
+SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
