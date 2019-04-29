@@ -1,4 +1,5 @@
-﻿use master;
+﻿
+use master;
 go
 drop database RoofingCompany;
 create database RoofingCompany;
@@ -743,6 +744,16 @@ JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
+GO
+/*====PRODUCTION===*/
+CREATE VIEW vUnhandledOrderDetails
+AS
+SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
+FROM OrderDetail
+JOIN Product
+ON OrderDetail.IdProduct = Product.IdProduct
+WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
+
 GO
 CREATE VIEW SafetyControlHistoryView 
 AS
