@@ -538,6 +538,8 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vPredictedPriceForCustomer.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -766,6 +768,7 @@
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>
     <None Include="Technology.datasource" />
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
