@@ -14,14 +14,16 @@ namespace KWZP2019
     {
         RoofingCompanyEntities db;
         int IDProd;
+        Product product = new Product();
         public EditProduct(RoofingCompanyEntities db , int IDprod)
         {
             this.IDProd = IDprod;
             this.db = db;
             InitializeComponent();
             tBNumberProd.Text = Convert.ToString(IDProd);
-            //tBProductCode.Text = dorobic wyswietlanie kodu produktu
-        }
+            product = db.Products.Where(t => t.IdProduct == IDProd).First();
+            tBProductCode.Text = (string)product.ProductCode;
+         }
 
         private void btEditConfirm_Click(object sender, EventArgs e)
         {
@@ -39,11 +41,13 @@ namespace KWZP2019
             cBEditSemiFinished.DisplayMember = "SfCode";
             cBEditSemiFinished.DataSource = db.SemiFinisheds.Distinct().ToList();
             cBEditSemiFinished.Invalidate();
+            cBEditSemiFinished.SelectedValue = (int)product.IdSemiFinished;
 
             cBEditTechnology.ValueMember = "IdTechnology";
             cBEditTechnology.DisplayMember = "TechnologyName";
             cBEditTechnology.DataSource = db.Technologies.Distinct().ToList();
             cBEditTechnology.Invalidate();
+            cBEditTechnology.SelectedValue = (int)product.IdTechnology;
         }
     }
 }

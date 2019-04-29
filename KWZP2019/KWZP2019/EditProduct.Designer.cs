@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 136);
+            this.label2.Location = new System.Drawing.Point(186, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 4;
@@ -88,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 171);
+            this.label3.Location = new System.Drawing.Point(186, 244);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 5;
@@ -113,7 +113,7 @@
             // cBEditSemiFinished
             // 
             this.cBEditSemiFinished.FormattingEnabled = true;
-            this.cBEditSemiFinished.Location = new System.Drawing.Point(286, 133);
+            this.cBEditSemiFinished.Location = new System.Drawing.Point(286, 206);
             this.cBEditSemiFinished.Name = "cBEditSemiFinished";
             this.cBEditSemiFinished.Size = new System.Drawing.Size(119, 21);
             this.cBEditSemiFinished.TabIndex = 8;
@@ -121,7 +121,7 @@
             // cBEditTechnology
             // 
             this.cBEditTechnology.FormattingEnabled = true;
-            this.cBEditTechnology.Location = new System.Drawing.Point(286, 171);
+            this.cBEditTechnology.Location = new System.Drawing.Point(286, 244);
             this.cBEditTechnology.Name = "cBEditTechnology";
             this.cBEditTechnology.Size = new System.Drawing.Size(119, 21);
             this.cBEditTechnology.TabIndex = 9;
