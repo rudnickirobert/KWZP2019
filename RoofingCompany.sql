@@ -77,7 +77,7 @@ create table SemiFinished(
 
 create table TechnicalProductData(
 	IdTechnicalProductData int primary key identity(1,1) not null,
-	IdProduct int,
+	IdProduct int not null,
 	Pattern image not null,
 	Width float not null,
 	WeightPerMeter float not null,
