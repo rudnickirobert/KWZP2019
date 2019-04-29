@@ -576,6 +576,9 @@
     <EmbeddedResource Include="AddNewSupplierForm.resx">
       <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
