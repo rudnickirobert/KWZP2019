@@ -96,5 +96,10 @@ namespace KWZP2019
         public virtual DbSet<vOrderDetail> vOrderDetail { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomer { get; set; }
         public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryView { get; set; }
+        public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcess { get; set; }
+        public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcess { get; set; }
+        public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcess { get; set; }
+        public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcess { get; set; }
+        public virtual DbSet<vUnfinishedProcess> vUnfinishedProcess { get; set; }
     }
 }
