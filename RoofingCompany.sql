@@ -752,7 +752,7 @@ SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
 FROM OrderDetail
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
-WHERE NOT EXISTS (SELECT *FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
+WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
 
 GO
 CREATE VIEW SafetyControlHistoryView 

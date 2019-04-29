@@ -64,6 +64,12 @@
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntranceControlView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -576,6 +582,9 @@
     <EmbeddedResource Include="AddNewSupplierForm.resx">
       <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -603,6 +612,9 @@
     <Compile Include="vUnhandledOrderDetails.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
     </EmbeddedResource>
@@ -744,6 +756,8 @@
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Failure.datasource" />
+    <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\OrderCustomer.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Production\PlannedProduction.datasource" />
     <None Include="Production\PlannedProductionEmployeeDetail.datasource" />

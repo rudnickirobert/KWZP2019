@@ -21,7 +21,7 @@ namespace KWZP2019
 
         private void customerBtn_Click(object sender, EventArgs e)
         {
-            CustomerForm customerForm = new CustomerForm();
+            CustomerForm customerForm = new CustomerForm(db);
             customerForm.ShowDialog();
         }
 
@@ -47,6 +47,11 @@ namespace KWZP2019
         {
             OutsourcingForm outsourcingForm = new OutsourcingForm();
             outsourcingForm.ShowDialog();
+        }
+
+        private void returnToMainBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
