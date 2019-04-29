@@ -39,9 +39,12 @@
             this.tpExpirationDate = new System.Windows.Forms.TabPage();
             this.tbSearchEmployee = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tpValidity.SuspendLayout();
             this.tpExpirationDate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpNextExaminationDate
@@ -124,7 +127,7 @@
             this.tpExpirationDate.Location = new System.Drawing.Point(4, 25);
             this.tpExpirationDate.Name = "tpExpirationDate";
             this.tpExpirationDate.Padding = new System.Windows.Forms.Padding(3);
-            this.tpExpirationDate.Size = new System.Drawing.Size(329, 261);
+            this.tpExpirationDate.Size = new System.Drawing.Size(329, 121);
             this.tpExpirationDate.TabIndex = 1;
             this.tpExpirationDate.Text = "Termin następnego badania";
             this.tpExpirationDate.UseVisualStyleBackColor = true;
@@ -145,11 +148,29 @@
             this.checkedListBox1.Size = new System.Drawing.Size(240, 242);
             this.checkedListBox1.TabIndex = 9;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(597, 207);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(48, 153);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 11;
+            // 
             // AddExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.tbSearchEmployee);
             this.Controls.Add(this.tabControl);
@@ -163,6 +184,7 @@
             this.tpValidity.PerformLayout();
             this.tpExpirationDate.ResumeLayout(false);
             this.tpExpirationDate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +203,7 @@
         private System.Windows.Forms.TabPage tpExpirationDate;
         private System.Windows.Forms.TextBox tbSearchEmployee;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

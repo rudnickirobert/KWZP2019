@@ -28,8 +28,6 @@ namespace KWZP2019
                         select d.EmployeeSurname;
             checkedListBox1.Items.AddRange(group.ToArray());*/
 
-
-
             /*SqlCommand cmd = new SqlCommand
                 ("SELECT dbo.Employee.EmployeeSurname, dbo.Employee.EmployeeName FROM dbo.Employee", conn);
             conn.Open();           
@@ -41,7 +39,7 @@ namespace KWZP2019
                         //lista.Columns.Add("Imię", typeof(string));
             while (reader.Read())
             {
-                //lbEmployeeList.Items.Add(String.Format(stddetails, reader["EmployeeSurname"], reader["EmployeeName"]));
+                lbEmployeeList.Items.Add(String.Format(stddetails, reader["EmployeeSurname"], reader["EmployeeName"]));
             }
             conn.Close();
             checkedListBox1. = lista;*/
@@ -52,7 +50,10 @@ namespace KWZP2019
             MedicalExamination newMedicalExamination = new MedicalExamination();
             //MessageBox.Show(lbEmployeeList.SelectedItem());
             //newMedicalExamination.IdEmployee = lbEmployeeList.SelectedItem.ToString();
-            //newMedicalExamination.Date = dtpNextExaminationDate.ToString("yyyy-MM-dd");
+            DataTable dt = new DataTable();
+            newMedicalExamination.Employee.EmployeeSurname = dataGridView1.SelectedRows.ToString();
+            newMedicalExamination.IdEmployee = int.Parse(textBox2.Text);
+            newMedicalExamination.Date = dtpNextExaminationDate.Value;
             db.MedicalExaminations.Add(newMedicalExamination);
             db.SaveChanges();
         }

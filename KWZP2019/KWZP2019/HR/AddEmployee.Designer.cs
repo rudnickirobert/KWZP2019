@@ -71,7 +71,6 @@
             this.lblFirstName.Size = new System.Drawing.Size(33, 17);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "Imię";
-            this.lblFirstName.Click += new System.EventHandler(this.lblFirstName_Click);
             // 
             // lblLastName
             // 

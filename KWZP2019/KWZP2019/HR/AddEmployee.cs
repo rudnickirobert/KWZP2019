@@ -68,10 +68,5 @@ namespace KWZP2019
                 MessageBox.Show("Prawidłowo wprowadzono pracownika");
             }
         }
-
-        private void lblFirstName_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

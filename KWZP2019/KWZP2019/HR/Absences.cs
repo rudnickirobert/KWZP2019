@@ -102,5 +102,23 @@ namespace KWZP2019
             sqlConnection.Close();
             dgvAbsences.DataSource = dtEmployees;
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            Absence newAbsence = new Absence();
+            //newAbsence.Employee.EmployeeSurname = tbLastName.Text.ToString();
+            //newAbsence.Employee.EmployeeName = tbFirstName.Text.ToString();
+            int n = 3;
+            newAbsence.IdEmployee = n;
+            //long d = 12345555;
+            //newAbsence.Employee.PESEL = d;
+            String g = "L4";
+            //newAbsence.AbsenceType.AbscenceReason = g;
+            newAbsence.IdAbsenceType = n;
+            newAbsence.StartOfAbsence = dateTimePickerFirstDay.Value;
+            newAbsence.EndOfAbsence = dateTimePickerLastDay.Value;
+            db.Absences.Add(newAbsence);
+            db.SaveChanges();
+        }
     }
 }
