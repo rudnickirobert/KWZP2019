@@ -38,10 +38,17 @@ create table FEMAnalysis(
 create table OutControl(
 	IdProcess int primary key not null,
 	IdEmployee int not null,
-	ControlDate DateTime not null,
-	ControlStatus bit not null,
-	Comments nvarchar(255),
-	Quantity int not null
+	StartControlDate DateTime not null,
+    EndControlDate DateTime not null,
+    WidthAcceptableDeviation float not null,
+	LenghtAcceptableDeviation float not null
+    );
+
+create table OutputProductMeasurements(
+    IdMeasurement int primary key not null,
+    IdProcess int not null,
+    MeasuredLenght float not null,
+    MeasuredWidth float not null
 	);
 
 create table SafetyControl(
@@ -69,7 +76,8 @@ create table SemiFinished(
 	);
 
 create table TechnicalProductData(
-	IdProduct int primary key not null,
+	IdTechnicalProductData int primary key identity(1,1) not null,
+	IdProduct int,
 	Pattern image not null,
 	Width float not null,
 	WeightPerMeter float not null,
@@ -82,7 +90,8 @@ create table Product(
 	IdSemiFinished int not null,
 	ProductCode nvarchar(50),
 	IdTechnology int not null,
-	InputDate DateTime not null
+	InputDate DateTime not null,
+	InProduction bit
 	);
 
 --============/SALES DEPARTMENT/==============================
@@ -504,6 +513,8 @@ alter table FEMAnalysis add constraint FkFEMAnalysisEmployee foreign key (IdEmpl
 alter table OutControl add constraint FkOutControlEmployee foreign key (IdEmployee) references Employee(IdEmployee);
 alter table OutControl add constraint FkOutControlProcess foreign key (IdProcess) references ProductionProces(IdProces);
 
+alter table OutputProductMeasurements add constraint FkOutputProductMeasurements foreign key (IdProcess) references OutControl(IdProcess);
+
 alter table SafetyControl add constraint FkInspectedEmployee foreign key (IdInspectedEmployee) references Employee(IdEmployee);
 
 alter table SafetyTraining add constraint FkTrainedEmployee foreign key (IdEmployee) references Employee(IdEmployee);
@@ -580,13 +591,6 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
 
-
-go
-create view EntranceControlView as
-select IdSfDetail, SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition from SemiFinished
-Right Join SfOrderDetail
-on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished
-
 go
 create view ViewDailySfDelivery as
 select SemiFinishedOrder.SfDeliveryDate as [Delivery], Supplier.SupplierName, [Material].SfCode, [Material].Quantity
@@ -661,10 +665,53 @@ FROM Customer
 WHERE NIP !=0 AND KRS !=0 ; 
 
 GO
+
+CREATE VIEW vTechnicalProductDataPerProcess
+AS
+SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
+FROM OrderDetail A, Product B, PlannedProduction C, ProductionProces D, OutControl E, TechnicalProductData F
+WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
+
+GO
+
+CREATE VIEW vDevotionsInMeasuremntsPerProcess
+AS
+SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
+FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
+WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
+
+GO
+
+CREATE VIEW vSuccesfullyProducedPerProcess
+AS
+SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced, QuantityToBeProducted
+FROM vDevotionsInMeasuremntsPerProcess
+WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<= WidthAcceptableDeviation
+GROUP BY IdProcess, QuantityToBeProducted
+
+GO
+
+CREATE VIEW vSuccesfullyProcess
+AS
+SELECT IdProcess
+FROM vSuccesfullyProducedPerProcess
+WHERE SuccesfullProduced >= QuantityToBeProducted
+
+GO
+
+CREATE VIEW vUnfinishedProcess
+AS
+SELECT IdProces
+FROM ProductionProces, vSuccesfullyProcess
+WHERE IdProces != IdProcess
+
+GO
+
 CREATE VIEW vOutputMagazine
 AS
-SELECT ProductCode, Quantity, ControlDate
-FROM Product, OutControl;
+SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
+FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
+WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
 CREATE VIEW vInputMagazine
@@ -685,6 +732,7 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
+go
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode

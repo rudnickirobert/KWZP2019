@@ -35,6 +35,7 @@
             this.btEnd = new System.Windows.Forms.Button();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             this.btDeleteProduct.TabIndex = 2;
             this.btDeleteProduct.Text = "Usuń";
             this.btDeleteProduct.UseVisualStyleBackColor = true;
+            this.btDeleteProduct.Click += new System.EventHandler(this.btDeleteProduct_Click);
             // 
             // btEnd
             // 
@@ -91,12 +93,82 @@
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.Size = new System.Drawing.Size(1035, 490);
             this.dataGridProducts.TabIndex = 4;
+            this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);
+            // 
+            // idProductDataGridViewTextBoxColumn
+            // 
+            this.idProductDataGridViewTextBoxColumn.DataPropertyName = "IdProduct";
+            this.idProductDataGridViewTextBoxColumn.HeaderText = "IdProduct";
+            this.idProductDataGridViewTextBoxColumn.Name = "idProductDataGridViewTextBoxColumn";
+            // 
+            // idSemiFinishedDataGridViewTextBoxColumn
+            // 
+            this.idSemiFinishedDataGridViewTextBoxColumn.DataPropertyName = "IdSemiFinished";
+            this.idSemiFinishedDataGridViewTextBoxColumn.HeaderText = "IdSemiFinished";
+            this.idSemiFinishedDataGridViewTextBoxColumn.Name = "idSemiFinishedDataGridViewTextBoxColumn";
+            // 
+            // productCodeDataGridViewTextBoxColumn
+            // 
+            this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "ProductCode";
+            this.productCodeDataGridViewTextBoxColumn.HeaderText = "ProductCode";
+            this.productCodeDataGridViewTextBoxColumn.Name = "productCodeDataGridViewTextBoxColumn";
+            // 
+            // idTechnologyDataGridViewTextBoxColumn
+            // 
+            this.idTechnologyDataGridViewTextBoxColumn.DataPropertyName = "IdTechnology";
+            this.idTechnologyDataGridViewTextBoxColumn.HeaderText = "IdTechnology";
+            this.idTechnologyDataGridViewTextBoxColumn.Name = "idTechnologyDataGridViewTextBoxColumn";
+            // 
+            // inputDateDataGridViewTextBoxColumn
+            // 
+            this.inputDateDataGridViewTextBoxColumn.DataPropertyName = "InputDate";
+            this.inputDateDataGridViewTextBoxColumn.HeaderText = "InputDate";
+            this.inputDateDataGridViewTextBoxColumn.Name = "inputDateDataGridViewTextBoxColumn";
+            // 
+            // orderDetailsDataGridViewTextBoxColumn
+            // 
+            this.orderDetailsDataGridViewTextBoxColumn.DataPropertyName = "OrderDetails";
+            this.orderDetailsDataGridViewTextBoxColumn.HeaderText = "OrderDetails";
+            this.orderDetailsDataGridViewTextBoxColumn.Name = "orderDetailsDataGridViewTextBoxColumn";
+            // 
+            // semiFinishedDataGridViewTextBoxColumn
+            // 
+            this.semiFinishedDataGridViewTextBoxColumn.DataPropertyName = "SemiFinished";
+            this.semiFinishedDataGridViewTextBoxColumn.HeaderText = "SemiFinished";
+            this.semiFinishedDataGridViewTextBoxColumn.Name = "semiFinishedDataGridViewTextBoxColumn";
+            // 
+            // technologyDataGridViewTextBoxColumn
+            // 
+            this.technologyDataGridViewTextBoxColumn.DataPropertyName = "Technology";
+            this.technologyDataGridViewTextBoxColumn.HeaderText = "Technology";
+            this.technologyDataGridViewTextBoxColumn.Name = "technologyDataGridViewTextBoxColumn";
+            // 
+            // technicalProductDataDataGridViewTextBoxColumn
+            // 
+            this.technicalProductDataDataGridViewTextBoxColumn.DataPropertyName = "TechnicalProductData";
+            this.technicalProductDataDataGridViewTextBoxColumn.HeaderText = "TechnicalProductData";
+            this.technicalProductDataDataGridViewTextBoxColumn.Name = "technicalProductDataDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(447, 13);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(112, 20);
+            this.btRefresh.TabIndex = 5;
+            this.btRefresh.Text = "Odśwież";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // ProductionProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btRefresh);
             this.Controls.Add(this.dataGridProducts);
             this.Controls.Add(this.btEnd);
             this.Controls.Add(this.btDeleteProduct);
@@ -129,5 +201,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn technologyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn technicalProductDataDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.Button btRefresh;
     }
 }
