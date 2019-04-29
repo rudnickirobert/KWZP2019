@@ -63,5 +63,11 @@ namespace KWZP2019
         {
             refreshProducts();
         }
+
+        private void btEditProduct_Click(object sender, EventArgs e)
+        {
+            EditProduct editProduct = new EditProduct(db, idSelected);
+            editProduct.Show();
+        }
     }
 }

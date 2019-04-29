@@ -18,7 +18,7 @@ namespace KWZP2019
         public Product()
         {
             this.OrderDetails = new HashSet<OrderDetail>();
-            this.TechnicalProductData1 = new HashSet<TechnicalProductData>();
+            this.TechnicalProductDatas = new HashSet<TechnicalProductData>();
         }
     
         public int IdProduct { get; set; }
@@ -33,6 +33,6 @@ namespace KWZP2019
         public virtual SemiFinished SemiFinished { get; set; }
         public virtual Technology Technology { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TechnicalProductData> TechnicalProductData1 { get; set; }
+        public virtual ICollection<TechnicalProductData> TechnicalProductDatas { get; set; }
     }
 }

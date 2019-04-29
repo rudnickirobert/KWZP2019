@@ -31,9 +31,9 @@ namespace KWZP2019
 
         private void ComponentsDataInitialize()
         {
-            txtbProductCode.Text = db.vTechnicalProductDataPerProcess.First(e => e.IdProcess == procesNumber).ProductCode.ToString();
-            txtbLenghtNominal.Text = db.vTechnicalProductDataPerProcess.First(e => e.IdProcess == procesNumber).Lenght.ToString();
-            txtbWidthNominal.Text = db.vTechnicalProductDataPerProcess.First(e => e.IdProcess == procesNumber).Width.ToString();
+            txtbProductCode.Text = db.vTechnicalProductDataPerProcesses.First(e => e.IdProcess == procesNumber).ProductCode.ToString();
+            txtbLenghtNominal.Text = db.vTechnicalProductDataPerProcesses.First(e => e.IdProcess == procesNumber).Lenght.ToString();
+            txtbWidthNominal.Text = db.vTechnicalProductDataPerProcesses.First(e => e.IdProcess == procesNumber).Width.ToString();
         }
 
 

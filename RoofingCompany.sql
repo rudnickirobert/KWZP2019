@@ -1,4 +1,5 @@
-﻿use master;
+﻿
+use master;
 go
 drop database RoofingCompany;
 create database RoofingCompany;
@@ -189,8 +190,8 @@ CREATE TABLE OutsourcingCommitment
 	(IdPlan INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	IdDetail INT NOT NULL,
 	IdMachine INT NOT NULL,
-	PlannedStartd DATE,
-	PlannedEndd DATE,
+	PlannedStartd DATETIME,
+	PlannedEndd DATETIME,
 	Inproduction BIT
 	);
 	
@@ -199,8 +200,8 @@ CREATE TABLE OutsourcingCommitment
 	(IdDetail INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	IdProces INT NOT NULL,
 	IdEmployee INT NOT NULL,
-	StartDate DATE,
-	EndDate DATE,
+	StartDate DATETIME,
+	EndDate DATETIME,
 	);
 
 -- technology table--
@@ -216,7 +217,7 @@ CREATE TABLE OutsourcingCommitment
 	IdFailure INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	IdProces INT NOT NULL,
 	Specification nvarchar(50) NOT NULL, --changed name from description (slq syntax word) to specification
-	FailureDate DATE NOT NULL
+	FailureDate DATETIME NOT NULL
 	);
 	
 	--Production_proces table--  
@@ -224,8 +225,8 @@ CREATE TABLE OutsourcingCommitment
 	(IdProces INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	--zmiana IdPlan z nvarchar na int
 	IdPlan INT NOT NULL,
-	StartDate DATE,
-	EndDate DATE,
+	StartDate DATETIME,
+	EndDate DATETIME,
 	);
 
 
@@ -714,12 +715,14 @@ FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerPro
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
+
 CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
 
 GO
+
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -732,7 +735,7 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
-go
+
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
@@ -743,3 +746,46 @@ JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
+GO
+/*====PRODUCTION===*/
+CREATE VIEW vUnhandledOrderDetails
+AS
+SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
+FROM OrderDetail
+JOIN Product
+ON OrderDetail.IdProduct = Product.IdProduct
+WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
+
+GO
+CREATE VIEW SafetyControlHistoryView 
+AS
+SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
+FROM SafetyControl
+JOIN Employee
+ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
+GO
+
+--Views UR--
+
+CREATE VIEW vPartsView
+AS
+SELECT Part.PartName as [Nazwa części], 
+PartType.partType as [Typ części], 
+Unit.UnitName as [Jednostka], 
+Part.QuantityWarehouse as [Stan magazynowy]
+FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
+ON Unit.IdUnit = Part.IdUnit
+ORDER BY Part.PartName;
+GO
+
+CREATE VIEW vMaintPartsView
+AS
+SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
+Part.PartName as [Nazwa części], MaintPart.PartQuantity as [Ilość], Unit.UnitName as [Jednostka]
+FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart 
+ON Part.IdPart = MaintPart.IdPart) 
+ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
+ON Unit.IdUnit = Part.IdUnit
+ORDER BY Maintenance.DateAcceptOrder DESC;
+GO
+

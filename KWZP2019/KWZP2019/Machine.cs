@@ -17,8 +17,8 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Machine()
         {
-            this.Maintenances = new HashSet<Maintenance>();
             this.SkillsForMachines = new HashSet<SkillsForMachine>();
+            this.Maintenances = new HashSet<Maintenance>();
         }
     
         public int IdMachine { get; set; }
@@ -32,9 +32,9 @@ namespace KWZP2019
         public float MetersPerHour { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SkillsForMachine> SkillsForMachines { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Maintenance> Maintenances { get; set; }
         public virtual MachineType MachineType { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillsForMachine> SkillsForMachines { get; set; }
     }
 }

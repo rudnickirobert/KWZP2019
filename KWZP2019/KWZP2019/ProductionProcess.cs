@@ -17,7 +17,7 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductionProcess()
         {
-            this.Failure = new HashSet<Failure>();
+            this.Failures = new HashSet<Failure>();
         }
     
         public int IdProces { get; set; }
@@ -26,7 +26,7 @@ namespace KWZP2019
         public Nullable<System.DateTime> EndDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Failure> Failure { get; set; }
+        public virtual ICollection<Failure> Failures { get; set; }
         public virtual OutControl OutControl { get; set; }
         public virtual PlannedProduction PlannedProduction { get; set; }
     }
