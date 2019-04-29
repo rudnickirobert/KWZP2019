@@ -119,9 +119,9 @@
             this.lblListofrevenues.AutoSize = true;
             this.lblListofrevenues.Location = new System.Drawing.Point(112, 83);
             this.lblListofrevenues.Name = "lblListofrevenues";
-            this.lblListofrevenues.Size = new System.Drawing.Size(59, 13);
+            this.lblListofrevenues.Size = new System.Drawing.Size(35, 13);
             this.lblListofrevenues.TabIndex = 7;
-            this.lblListofrevenues.Text = "Przychody:";
+            this.lblListofrevenues.Text = "Zyski:";
             // 
             // btnGenerategeneralreport
             // 
@@ -275,9 +275,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(601, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 13);
+            this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 27;
-            this.label6.Text = "Czysty zysk firmy wynosi:";
+            this.label6.Text = "Bilans finansowy:";
             // 
             // Profits
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
             this.Name = "Profits";
-            this.Text = "Zyski";
+            this.Text = "Zyski i bilans finansowy";
             this.Load += new System.EventHandler(this.Profits_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();

@@ -153,7 +153,7 @@
             this.Controls.Add(this.btnQuarterlyreport);
             this.Controls.Add(this.lblGeneratereport);
             this.Name = "AllCosts";
-            this.Text = "Bilans finansowy";
+            this.Text = "Sprawozdania finansowe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

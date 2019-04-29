@@ -40,7 +40,7 @@
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(290, 160);
             this.btnPayments.TabIndex = 0;
-            this.btnPayments.Text = "Wypłaty";
+            this.btnPayments.Text = "Historia Wypłat";
             this.btnPayments.UseVisualStyleBackColor = true;
             this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
@@ -130,6 +130,7 @@
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnReturnMain
             // 
@@ -139,6 +140,7 @@
             this.btnReturnMain.TabIndex = 9;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.UseVisualStyleBackColor = true;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // Finances
             // 

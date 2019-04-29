@@ -119,7 +119,7 @@
             this.Controls.Add(this.btnApprovechoice);
             this.Controls.Add(this.lblSelectdepartmentanddate);
             this.Name = "Costs";
-            this.Text = "Koszty";
+            this.Text = "Raporty według działów";
             this.ResumeLayout(false);
             this.PerformLayout();
 

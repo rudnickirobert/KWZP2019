@@ -28,10 +28,10 @@ namespace KWZP2019
         private void Profits_Load(object sender, EventArgs e)
         {
             SqlCommand sqlCommandProfits = new SqlCommand
-       ("SELECT dbo.Customer.CustomerName, dbo.OrderCustomer.OrderDate, dbo.OrderCustomer.Cost " +
-       "FROM dbo.OrderCustomer " +
-       "INNER JOIN dbo.Customer ON dbo.Customer.IdCustomer = dbo.OrderCustomer.IdCustomer " +
-       "ORDER BY (dbo.Customer.CustomerName)", sqlConnection);
+            ("SELECT dbo.Customer.CustomerName, dbo.OrderCustomer.OrderDate, dbo.OrderCustomer.Cost " +
+            "FROM dbo.OrderCustomer " +
+            "INNER JOIN dbo.Customer ON dbo.Customer.IdCustomer = dbo.OrderCustomer.IdCustomer " +
+            "ORDER BY (dbo.Customer.CustomerName)", sqlConnection);
             sqlConnection.Open();
             SqlDataReader sqlDataReaderProfits = sqlCommandProfits.ExecuteReader();
             DataTable dtCustomer = new DataTable();
@@ -59,7 +59,7 @@ namespace KWZP2019
             dtInvoice.Columns.Add("Nazwa podmiotu", typeof(string));
             while (sqlDataReaderInvoices.Read())
             {
-                dtInvoice.Rows.Add(sqlDataReaderInvoices["Sum"], sqlDataReaderInvoices["Date"], sqlDataReaderInvoices["Type"], sqlDataReaderInvoices["ContractorName"]);
+            dtInvoice.Rows.Add(sqlDataReaderInvoices["Sum"], sqlDataReaderInvoices["Date"], sqlDataReaderInvoices["Type"], sqlDataReaderInvoices["ContractorName"]);
             }
             sqlConnection.Close();
             dgvInvoices.DataSource = dtInvoice;
@@ -158,11 +158,11 @@ namespace KWZP2019
             sqlConnection.Close();
             dgvInvoices.DataSource = dtInvoice;
             SqlCommand sqlCommandPayment = new SqlCommand
-           ("SELECT dbo.Payment.Sum, dbo.Payment.Date, dbo.Payment.Bonus, dbo.Employee.EmployeeName, dbo.Employee.EmployeeSurname " +
-           "FROM dbo.Payment " +
-           "INNER JOIN dbo.Employee ON dbo.Payment.IdEmployee = dbo.Employee.IdEmployee " +
-           "WHERE Date BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
-           "ORDER BY (dbo.Employee.EmployeeSurname)", sqlConnection);
+            ("SELECT dbo.Payment.Sum, dbo.Payment.Date, dbo.Payment.Bonus, dbo.Employee.EmployeeName, dbo.Employee.EmployeeSurname " +
+            "FROM dbo.Payment " +
+            "INNER JOIN dbo.Employee ON dbo.Payment.IdEmployee = dbo.Employee.IdEmployee " +
+            "WHERE Date BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
+            "ORDER BY (dbo.Employee.EmployeeSurname)", sqlConnection);
             sqlConnection.Open();
             SqlDataReader sqlDataReaderPayment = sqlCommandPayment.ExecuteReader();
             DataTable dtPayment = new DataTable();
@@ -178,11 +178,11 @@ namespace KWZP2019
             sqlConnection.Close();
             dgvSalaries.DataSource = dtPayment;
             SqlCommand sqlCommandOrders = new SqlCommand
-           ("SELECT dbo.SemiFinishedOrder.Cost, Cast(dbo.SemiFinishedOrder.SFOrderDate as DATE) as SFOrderDate, dbo.Supplier.SupplierName " +
-           "FROM dbo.SemiFinishedOrder " +
-           "INNER JOIN dbo.Supplier ON dbo.SemiFinishedOrder.IdSupplier = dbo.Supplier.IdSupplier " +
-           "WHERE SFOrderDate BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
-           "ORDER BY (dbo.Supplier.SupplierName)", sqlConnection);
+            ("SELECT dbo.SemiFinishedOrder.Cost, Cast(dbo.SemiFinishedOrder.SFOrderDate as DATE) as SFOrderDate, dbo.Supplier.SupplierName " +
+            "FROM dbo.SemiFinishedOrder " +
+            "INNER JOIN dbo.Supplier ON dbo.SemiFinishedOrder.IdSupplier = dbo.Supplier.IdSupplier " +
+            "WHERE SFOrderDate BETWEEN '" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "' " +
+            "ORDER BY (dbo.Supplier.SupplierName)", sqlConnection);
             sqlConnection.Open();
             SqlDataReader sqlDataReaderOrders = sqlCommandOrders.ExecuteReader();
             DataTable dtOrders = new DataTable();
@@ -259,45 +259,44 @@ namespace KWZP2019
         }
         private void btnGenerategeneralreport_Click(object sender, EventArgs e)
         {
-            PdfPTable pdfTable = new PdfPTable(dgvProfits.ColumnCount);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfTable.DefaultCell.BorderWidth = 1;
-            foreach (DataGridViewColumn column in dgvProfits.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                pdfTable.AddCell(cell);
-            }
-            int row = dgvProfits.Rows.Count;
-            int cell2 = dgvProfits.Rows[1].Cells.Count;
-            for (int i = 0; i < row - 1; i++)
-            {
-                for (int j = 0; j < cell2; j++)
+                PdfPTable pdfTable = new PdfPTable(dgvProfits.ColumnCount);
+                pdfTable.DefaultCell.Padding = 3;
+                pdfTable.WidthPercentage = 30;
+                pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                pdfTable.DefaultCell.BorderWidth = 1;
+                foreach (DataGridViewColumn column in dgvProfits.Columns)
                 {
-                    if (dgvProfits.Rows[i].Cells[j].Value == null)
-                    {
-                        dgvProfits.Rows[i].Cells[j].Value = "null";
-                    }
-                    pdfTable.AddCell(dgvProfits.Rows[i].Cells[j].Value.ToString());
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                    pdfTable.AddCell(cell);
                 }
+                int row = dgvProfits.Rows.Count;
+                int cell2 = dgvProfits.Rows[1].Cells.Count;
+                for (int i = 0; i < row - 1; i++)
+                {
+                    for (int j = 0; j < cell2; j++)
+                    {
+                        if (dgvProfits.Rows[i].Cells[j].Value == null)
+                        {
+                            dgvProfits.Rows[i].Cells[j].Value = "null";
+                        }
+                        pdfTable.AddCell(dgvProfits.Rows[i].Cells[j].Value.ToString());
+                    }
+                }
+                string folderPath = @"C:\Users\mbrominski\Desktop";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                using (FileStream stream = new FileStream(folderPath + "RaportFinansowy.pdf", FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(pdfTable);
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+                MessageBox.Show("Done");
             }
-            string folderPath = @"C:\Users\mbrominski\Desktop";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
-            {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
-            }
-            MessageBox.Show("Done");
         }
     }
-    
-}
