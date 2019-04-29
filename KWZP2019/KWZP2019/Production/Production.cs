@@ -33,7 +33,7 @@ namespace KWZP2019
 
         private void btnFailures_Click(object sender, EventArgs e)
         {
-            ProductionFailures ProductionFailuresForm = new ProductionFailures();
+            ProductionFailures ProductionFailuresForm = new ProductionFailures(db);
             ProductionFailuresForm.Show();
         }
 
