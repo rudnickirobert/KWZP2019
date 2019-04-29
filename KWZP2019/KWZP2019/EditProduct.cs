@@ -27,6 +27,10 @@ namespace KWZP2019
 
         private void btEditConfirm_Click(object sender, EventArgs e)
         {
+            product.IdSemiFinished = Convert.ToInt32(cBEditSemiFinished.SelectedValue);
+            product.IdTechnology = Convert.ToInt32(cBEditTechnology.SelectedValue);
+            db.SaveChanges();
+
             MessageBox.Show("Edytowano!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
