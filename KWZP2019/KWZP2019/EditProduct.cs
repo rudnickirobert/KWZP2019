@@ -20,6 +20,7 @@ namespace KWZP2019
             this.db = db;
             InitializeComponent();
             tBNumberProd.Text = Convert.ToString(IDProd);
+            //tBProductCode.Text = dorobic wyswietlanie kodu produktu
         }
 
         private void btEditConfirm_Click(object sender, EventArgs e)
@@ -30,6 +31,19 @@ namespace KWZP2019
         private void btEditBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void EditProduct_Load(object sender, EventArgs e)
+        {
+            cBEditSemiFinished.ValueMember = "IdSemiFinished";
+            cBEditSemiFinished.DisplayMember = "SfCode";
+            cBEditSemiFinished.DataSource = db.SemiFinisheds.Distinct().ToList();
+            cBEditSemiFinished.Invalidate();
+
+            cBEditTechnology.ValueMember = "IdTechnology";
+            cBEditTechnology.DisplayMember = "TechnologyName";
+            cBEditTechnology.DataSource = db.Technologies.Distinct().ToList();
+            cBEditTechnology.Invalidate();
         }
     }
 }
