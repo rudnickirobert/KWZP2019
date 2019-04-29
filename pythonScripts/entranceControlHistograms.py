@@ -69,14 +69,14 @@ cnxn.close()
 
 # ==================================================
 
-fig, hists = plt.subplots(1, 3, figsize=(12, 6), dpi = 100)
+fig, hists = plt.subplots(1, 3, figsize=(12, 6), dpi = 70)
 # hists[0] - thickness
 # hists[1] - width
 # hists[2] - weight
 
 # ==================================================
 
-nT, binsT, patchesT = hists[0].hist(realThickness, bins='auto', rwidth=0.9)
+nT, binsT, patchesT = hists[0].hist(realThickness, bins='auto', rwidth=0.1)
 
 hists[0].vlines(statistics.mean(realThickness), 0, nT.max(), colors ='r')
 hists[0].vlines([thickness, thickness * 0.95, thickness * 1.05], 0, nT.max())
@@ -85,14 +85,14 @@ hists[0].set_title('Grubość')
 
 # ==================================================
 
-nW, binxW, patchesW = hists[1].hist(realWidth, bins='auto', rwidth=0.9)
+nW, binxW, patchesW = hists[1].hist(realWidth, bins='auto', rwidth=0.1)
 hists[1].vlines(statistics.mean(realWidth), 0, nW.max(), colors ='r')
 hists[1].vlines([width, width * 0.95, width * 1.05], 0, nW.max())
 hists[1].set_title('Szerokość')
 
 # ==================================================
 
-nWe, binsWe, patchesWe = hists[2].hist(realWeight, bins='auto', rwidth=0.9)
+nWe, binsWe, patchesWe = hists[2].hist(realWeight, bins='auto', rwidth=0.1)
 hists[2].vlines(statistics.mean(realWeight), 0, nWe.max(), colors ='r')
 hists[2].vlines([weight, weight * 0.95, weight * 1.05], 0, nWe.max())
 hists[2].set_title('Ciężar')
