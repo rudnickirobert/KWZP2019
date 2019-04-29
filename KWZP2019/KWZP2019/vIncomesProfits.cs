@@ -12,13 +12,11 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vAbsences
+    public partial class vIncomesProfits
     {
-        public int IdEmployee { get; set; }
-        public string EmployeeSurname { get; set; }
-        public Nullable<System.DateTime> StartOfAbsence { get; set; }
-        public Nullable<System.DateTime> EndOfAbsence { get; set; }
-        public string AbscenceReason { get; set; }
-        public string EmployeeName { get; set; }
+        public int IdCustomer { get; set; }
+        public string CustomerName { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public decimal Cost { get; set; }
     }
 }

@@ -613,6 +613,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vAbsences' does not have a prim
             <PropertyRef Name="IdEmployee" />
           </Key>
           <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
           <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="StartOfAbsence" Type="date" />
           <Property Name="EndOfAbsence" Type="date" />
@@ -760,6 +761,59 @@ warning 6002: The table/view 'RoofingCompany.dbo.vExamination' does not have a p
           <Property Name="Date" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExpencesInvoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExpencesInvoices">
+          <Key>
+            <PropertyRef Name="IdInvoice" />
+          </Key>
+          <Property Name="IdInvoice" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Sum" Type="money" />
+          <Property Name="ContractorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExpencesOrders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExpencesOrders">
+          <Key>
+            <PropertyRef Name="IdSfOrder" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="SfOrderDate" />
+            <PropertyRef Name="SupplierName" />
+          </Key>
+          <Property Name="IdSfOrder" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="SfOrderDate" Type="datetime" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExpencesOutsourcing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExpencesOutsourcing">
+          <Key>
+            <PropertyRef Name="IdOutsourcing" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="EndCommitmentDate" />
+            <PropertyRef Name="CompanyName" />
+          </Key>
+          <Property Name="IdOutsourcing" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="EndCommitmentDate" Type="datetime" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExpencesPayment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExpencesPayment">
+          <Key>
+            <PropertyRef Name="IdPayment" />
+          </Key>
+          <Property Name="IdPayment" Type="int" Nullable="false" />
+          <Property Name="Sum" Type="money" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Bonus" Type="money" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vHR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vHR">
           <Key>
@@ -800,6 +854,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have 
           <Property Name="EndDate" Type="date" />
           <Property Name="TrainingDate" Type="datetime" Nullable="false" />
           <Property Name="ValidityOfOshTraining" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vIncomesProfits' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vIncomesProfits">
+          <Key>
+            <PropertyRef Name="IdCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+          </Key>
+          <Property Name="IdCustomer" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vIndividualCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -897,6 +965,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not 
           <Property Name="NIP" Type="float" Nullable="false" />
           <Property Name="KRS" Type="float" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPaymentHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPaymentHistory">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="PESEL" Type="bigint" />
+          <Property Name="Bonus" Type="money" />
+          <Property Name="Sum" Type="money" />
+          <Property Name="Date" Type="date" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1843,6 +1925,7 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
           <EntitySet Name="vAbsences" EntityType="Self.vAbsences" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vAbsences].[IdEmployee] AS [IdEmployee], 
+    [vAbsences].[EmployeeName] AS [EmployeeName], 
     [vAbsences].[EmployeeSurname] AS [EmployeeSurname], 
     [vAbsences].[StartOfAbsence] AS [StartOfAbsence], 
     [vAbsences].[EndOfAbsence] AS [EndOfAbsence], 
@@ -1951,6 +2034,41 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
     [vExamination].[Date] AS [Date]
     FROM [dbo].[vExamination] AS [vExamination]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vExpencesInvoices" EntityType="Self.vExpencesInvoices" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExpencesInvoices].[IdInvoice] AS [IdInvoice], 
+    [vExpencesInvoices].[Date] AS [Date], 
+    [vExpencesInvoices].[Sum] AS [Sum], 
+    [vExpencesInvoices].[ContractorName] AS [ContractorName], 
+    [vExpencesInvoices].[Type] AS [Type]
+    FROM [dbo].[vExpencesInvoices] AS [vExpencesInvoices]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vExpencesOrders" EntityType="Self.vExpencesOrders" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExpencesOrders].[IdSfOrder] AS [IdSfOrder], 
+    [vExpencesOrders].[Cost] AS [Cost], 
+    [vExpencesOrders].[SfOrderDate] AS [SfOrderDate], 
+    [vExpencesOrders].[SupplierName] AS [SupplierName]
+    FROM [dbo].[vExpencesOrders] AS [vExpencesOrders]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vExpencesOutsourcing" EntityType="Self.vExpencesOutsourcing" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExpencesOutsourcing].[IdOutsourcing] AS [IdOutsourcing], 
+    [vExpencesOutsourcing].[Cost] AS [Cost], 
+    [vExpencesOutsourcing].[EndCommitmentDate] AS [EndCommitmentDate], 
+    [vExpencesOutsourcing].[CompanyName] AS [CompanyName]
+    FROM [dbo].[vExpencesOutsourcing] AS [vExpencesOutsourcing]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vExpencesPayment" EntityType="Self.vExpencesPayment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExpencesPayment].[IdPayment] AS [IdPayment], 
+    [vExpencesPayment].[Sum] AS [Sum], 
+    [vExpencesPayment].[Date] AS [Date], 
+    [vExpencesPayment].[Bonus] AS [Bonus], 
+    [vExpencesPayment].[EmployeeName] AS [EmployeeName], 
+    [vExpencesPayment].[EmployeeSurname] AS [EmployeeSurname]
+    FROM [dbo].[vExpencesPayment] AS [vExpencesPayment]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vHR" EntityType="Self.vHR" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vHR].[IdEmployee] AS [IdEmployee], 
@@ -1979,6 +2097,14 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
     [ViewOshTraining].[TrainingDate] AS [TrainingDate], 
     [ViewOshTraining].[ValidityOfOshTraining] AS [ValidityOfOshTraining]
     FROM [dbo].[ViewOshTraining] AS [ViewOshTraining]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vIncomesProfits" EntityType="Self.vIncomesProfits" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vIncomesProfits].[IdCustomer] AS [IdCustomer], 
+    [vIncomesProfits].[CustomerName] AS [CustomerName], 
+    [vIncomesProfits].[OrderDate] AS [OrderDate], 
+    [vIncomesProfits].[Cost] AS [Cost]
+    FROM [dbo].[vIncomesProfits] AS [vIncomesProfits]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vIndividualCustomer" EntityType="Self.vIndividualCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2036,6 +2162,17 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
     [vOutsourcingWithType].[KRS] AS [KRS], 
     [vOutsourcingWithType].[Description] AS [Description]
     FROM [dbo].[vOutsourcingWithType] AS [vOutsourcingWithType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPaymentHistory" EntityType="Self.vPaymentHistory" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPaymentHistory].[EmployeeName] AS [EmployeeName], 
+    [vPaymentHistory].[EmployeeSurname] AS [EmployeeSurname], 
+    [vPaymentHistory].[PESEL] AS [PESEL], 
+    [vPaymentHistory].[Bonus] AS [Bonus], 
+    [vPaymentHistory].[Sum] AS [Sum], 
+    [vPaymentHistory].[Date] AS [Date], 
+    [vPaymentHistory].[IdEmployee] AS [IdEmployee]
+    FROM [dbo].[vPaymentHistory] AS [vPaymentHistory]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vPredictedPriceForCustomer" EntityType="Self.vPredictedPriceForCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4115,6 +4252,12 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
           <EntitySet Name="vEmployeeList" EntityType="RoofingCompanyModel.vEmployeeList" />
           <EntitySet Name="vExamination" EntityType="RoofingCompanyModel.vExamination" />
           <EntitySet Name="vHR" EntityType="RoofingCompanyModel.vHR" />
+          <EntitySet Name="vExpencesInvoices" EntityType="RoofingCompanyModel.vExpencesInvoices" />
+          <EntitySet Name="vExpencesOrders" EntityType="RoofingCompanyModel.vExpencesOrders" />
+          <EntitySet Name="vExpencesOutsourcing" EntityType="RoofingCompanyModel.vExpencesOutsourcing" />
+          <EntitySet Name="vExpencesPayment" EntityType="RoofingCompanyModel.vExpencesPayment" />
+          <EntitySet Name="vIncomesProfits" EntityType="RoofingCompanyModel.vIncomesProfits" />
+          <EntitySet Name="vPaymentHistory" EntityType="RoofingCompanyModel.vPaymentHistory" />
         </EntityContainer>
         <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
           <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
@@ -4474,6 +4617,7 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
           <Property Name="StartOfAbsence" Type="DateTime" Precision="0" />
           <Property Name="EndOfAbsence" Type="DateTime" Precision="0" />
           <Property Name="AbscenceReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vAddTraining">
           <Key>
@@ -4565,6 +4709,75 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExpencesInvoices">
+          <Key>
+            <PropertyRef Name="IdInvoice" />
+          </Key>
+          <Property Name="IdInvoice" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Sum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ContractorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExpencesOrders">
+          <Key>
+            <PropertyRef Name="IdSfOrder" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="SfOrderDate" />
+            <PropertyRef Name="SupplierName" />
+          </Key>
+          <Property Name="IdSfOrder" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SfOrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExpencesOutsourcing">
+          <Key>
+            <PropertyRef Name="IdOutsourcing" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="EndCommitmentDate" />
+            <PropertyRef Name="CompanyName" />
+          </Key>
+          <Property Name="IdOutsourcing" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="EndCommitmentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExpencesPayment">
+          <Key>
+            <PropertyRef Name="IdPayment" />
+          </Key>
+          <Property Name="IdPayment" Type="Int32" Nullable="false" />
+          <Property Name="Sum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Bonus" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vIncomesProfits">
+          <Key>
+            <PropertyRef Name="IdCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+          </Key>
+          <Property Name="IdCustomer" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vPaymentHistory">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="Int64" />
+          <Property Name="Bonus" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5441,6 +5654,7 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
           <EntitySetMapping Name="vAbsences">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vAbsences">
               <MappingFragment StoreEntitySet="vAbsences">
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
                 <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
                 <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
@@ -5544,6 +5758,72 @@ warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the stor
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExpencesInvoices">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExpencesInvoices">
+              <MappingFragment StoreEntitySet="vExpencesInvoices">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+                <ScalarProperty Name="Sum" ColumnName="Sum" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IdInvoice" ColumnName="IdInvoice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExpencesOrders">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExpencesOrders">
+              <MappingFragment StoreEntitySet="vExpencesOrders">
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SfOrderDate" ColumnName="SfOrderDate" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="IdSfOrder" ColumnName="IdSfOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExpencesOutsourcing">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExpencesOutsourcing">
+              <MappingFragment StoreEntitySet="vExpencesOutsourcing">
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="EndCommitmentDate" ColumnName="EndCommitmentDate" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="IdOutsourcing" ColumnName="IdOutsourcing" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExpencesPayment">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExpencesPayment">
+              <MappingFragment StoreEntitySet="vExpencesPayment">
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Sum" ColumnName="Sum" />
+                <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vIncomesProfits">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vIncomesProfits">
+              <MappingFragment StoreEntitySet="vIncomesProfits">
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPaymentHistory">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPaymentHistory">
+              <MappingFragment StoreEntitySet="vPaymentHistory">
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Sum" ColumnName="Sum" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
