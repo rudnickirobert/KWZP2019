@@ -39,11 +39,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualC" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Data.Services.Design" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Workflow.ComponentModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +66,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Absence.cs">
@@ -85,8 +100,11 @@
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntranceControlView.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    <Compile Include="Finances\AddNewCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finances\AddNewCompany.Designer.cs">
+      <DependentUpon>AddNewCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="HR\Absences.cs">
       <SubType>Form</SubType>
@@ -136,11 +154,11 @@
     <Compile Include="HR\AddTraining.Designer.cs">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finances\AllCosts.cs">
+    <Compile Include="Finances\FinancialReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\AllCosts.Designer.cs">
-      <DependentUpon>AllCosts.cs</DependentUpon>
+    <Compile Include="Finances\FinancialReports.Designer.cs">
+      <DependentUpon>FinancialReports.cs</DependentUpon>
     </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
@@ -157,11 +175,11 @@
     <Compile Include="Contractor.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Finances\Costs.cs">
+    <Compile Include="Finances\ReportsByDepartments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Costs.Designer.cs">
-      <DependentUpon>Costs.cs</DependentUpon>
+    <Compile Include="Finances\ReportsByDepartments.Designer.cs">
+      <DependentUpon>ReportsByDepartments.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -308,10 +326,10 @@
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewProductionPlan.cs">
+    <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewProductionPlan.Designer.cs">
+    <Compile Include="Production\NewProductionPlan.Designer.cs">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderCustomer.cs">
@@ -401,16 +419,16 @@
     <Compile Include="Product.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Production.cs">
+    <Compile Include="Production\Production.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production.Designer.cs">
+    <Compile Include="Production\Production.Designer.cs">
       <DependentUpon>Production.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionFailures.cs">
+    <Compile Include="Production\ProductionFailures.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionFailures.Designer.cs">
+    <Compile Include="Production\ProductionFailures.Designer.cs">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionHistory.cs">
@@ -419,31 +437,31 @@
     <Compile Include="ProductionHistory.Designer.cs">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionPlanned.cs">
+    <Compile Include="Production\ProductionPlanned.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionPlanned.Designer.cs">
+    <Compile Include="Production\ProductionPlanned.Designer.cs">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionProce.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Finances\Profits.cs">
+    <Compile Include="Finances\ProfitsAndFinancialBalance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Profits.Designer.cs">
-      <DependentUpon>Profits.cs</DependentUpon>
+    <Compile Include="Finances\ProfitsAndFinancialBalance.Designer.cs">
+      <DependentUpon>ProfitsAndFinancialBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionProcess.cs">
+    <Compile Include="Production\ProductionProcess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionProcess.Designer.cs">
+    <Compile Include="Production\ProductionProcess.Designer.cs">
       <DependentUpon>ProductionProcess.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionProducts.cs">
+    <Compile Include="Production\ProductionProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionProducts.Designer.cs">
+    <Compile Include="Production\ProductionProducts.Designer.cs">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionSelection.cs">
@@ -452,10 +470,10 @@
     <Compile Include="ProductionSelection.Designer.cs">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductionTechnology.cs">
+    <Compile Include="Production\ProductionTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductionTechnology.Designer.cs">
+    <Compile Include="Production\ProductionTechnology.Designer.cs">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -493,17 +511,17 @@
     <Compile Include="SalesDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Salaries.cs">
+    <Compile Include="Finances\PaymentHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Salaries.Designer.cs">
-      <DependentUpon>Salaries.cs</DependentUpon>
+    <Compile Include="Finances\PaymentHistory.Designer.cs">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finances\Salariessummary.cs">
+    <Compile Include="Finances\SalariesAbsencesSummary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\Salariessummary.Designer.cs">
-      <DependentUpon>Salariessummary.cs</DependentUpon>
+    <Compile Include="Finances\SalariesAbsencesSummary.Designer.cs">
+      <DependentUpon>SalariesAbsencesSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesDepartmentForm.designer.cs">
       <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
@@ -568,9 +586,6 @@
     <Compile Include="vCompany.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vCustomerWithOrder.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewDailySfDelivery.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -589,12 +604,9 @@
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vSupplierPart.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vSupplierSemi.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Finances\AddNewCompany.resx">
+      <DependentUpon>AddNewCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
     </EmbeddedResource>
@@ -607,11 +619,11 @@
     <EmbeddedResource Include="HR\AddTraining.resx">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\AllCosts.resx">
-      <DependentUpon>AllCosts.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\FinancialReports.resx">
+      <DependentUpon>FinancialReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\Costs.resx">
-      <DependentUpon>Costs.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\ReportsByDepartments.resx">
+      <DependentUpon>ReportsByDepartments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\Contracts.resx">
       <DependentUpon>Contracts.cs</DependentUpon>
@@ -655,7 +667,7 @@
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewProductionPlan.resx">
+    <EmbeddedResource Include="Production\NewProductionPlan.resx">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
@@ -667,28 +679,28 @@
     <EmbeddedResource Include="PartsForm.resx">
       <DependentUpon>PartsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production.resx">
+    <EmbeddedResource Include="Production\Production.resx">
       <DependentUpon>Production.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionFailures.resx">
+    <EmbeddedResource Include="Production\ProductionFailures.resx">
       <DependentUpon>ProductionFailures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionHistory.resx">
       <DependentUpon>ProductionHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionPlanned.resx">
+    <EmbeddedResource Include="Production\ProductionPlanned.resx">
       <DependentUpon>ProductionPlanned.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionProcess.resx">
+    <EmbeddedResource Include="Production\ProductionProcess.resx">
       <DependentUpon>ProductionProcess.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionProducts.resx">
+    <EmbeddedResource Include="Production\ProductionProducts.resx">
       <DependentUpon>ProductionProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionSelection.resx">
       <DependentUpon>ProductionSelection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductionTechnology.resx">
+    <EmbeddedResource Include="Production\ProductionTechnology.resx">
       <DependentUpon>ProductionTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OutControlForm.resx">
@@ -700,8 +712,8 @@
     <EmbeddedResource Include="OutsourcingForm.resx">
       <DependentUpon>OutsourcingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\Profits.resx">
-      <DependentUpon>Profits.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\ProfitsAndFinancialBalance.resx">
+      <DependentUpon>ProfitsAndFinancialBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -713,11 +725,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Finances\Salaries.resx">
-      <DependentUpon>Salaries.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\PaymentHistory.resx">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\Salariessummary.resx">
-      <DependentUpon>Salariessummary.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\SalariesAbsencesSummary.resx">
+      <DependentUpon>SalariesAbsencesSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QualityControl.resx">
       <DependentUpon>QualityControl.cs</DependentUpon>
@@ -735,17 +747,18 @@
     <None Include="Maintenance.datasource" />
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\InvoiceType.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
-    <None Include="PlannedProduction.datasource" />
-    <None Include="PlannedProductionEmployeeDetail.datasource" />
-    <None Include="Product.datasource" />
-    <None Include="Production.datasource" />
-    <None Include="ProductionFailures.datasource" />
-    <None Include="ProductionPlanned.datasource" />
-    <None Include="ProductionProce.datasource" />
-    <None Include="ProductionProcess.datasource" />
-    <None Include="ProductionProducts.datasource" />
-    <None Include="ProductionTechnology.datasource" />
+    <None Include="Production\PlannedProduction.datasource" />
+    <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
+    <None Include="Production\Product.datasource" />
+    <None Include="Production\Production.datasource" />
+    <None Include="Production\ProductionFailures.datasource" />
+    <None Include="Production\ProductionPlanned.datasource" />
+    <None Include="Production\ProductionProce.datasource" />
+    <None Include="Production\ProductionProcess.datasource" />
+    <None Include="Production\ProductionProducts.datasource" />
+    <None Include="Production\ProductionTechnology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -773,6 +786,15 @@
     <None Include="Resources\53062472_302328053765523_8291849142804676608_n.png" />
     <None Include="Resources\icons8-euro-money-80.png" />
     <None Include="Resources\icons8-user-groups-80 %281%29.png" />
+    <None Include="Resources\cancel_48px.png" />
+    <None Include="Resources\good_quality_40px.png" />
+    <None Include="Resources\help_40px.png" />
+    <None Include="Resources\new_40px.png" />
+    <None Include="Resources\ok_48px.png" />
+    <None Include="Resources\poor_quality_40px.png" />
+    <None Include="Resources\new_80px.png" />
+    <None Include="Resources\good_quality_80px.png" />
+    <None Include="Resources\poor_quality_80px.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

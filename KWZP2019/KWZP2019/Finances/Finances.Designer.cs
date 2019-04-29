@@ -36,79 +36,136 @@
             // 
             // btnPayments
             // 
+            this.btnPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnPayments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPayments.Image = ((System.Drawing.Image)(resources.GetObject("btnPayments.Image")));
             this.btnPayments.Location = new System.Drawing.Point(365, 116);
+            this.btnPayments.Margin = new System.Windows.Forms.Padding(0);
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(290, 160);
-            this.btnPayments.TabIndex = 0;
-            this.btnPayments.Text = "Wypłaty";
-            this.btnPayments.UseVisualStyleBackColor = true;
+            this.btnPayments.TabIndex = 4;
+            this.btnPayments.Text = "Historia Wypłat";
+            this.btnPayments.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPayments.UseVisualStyleBackColor = false;
             this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
             // btnCountPayments
             // 
+            this.btnCountPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnCountPayments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCountPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCountPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnCountPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCountPayments.Image = ((System.Drawing.Image)(resources.GetObject("btnCountPayments.Image")));
             this.btnCountPayments.Location = new System.Drawing.Point(365, 310);
+            this.btnCountPayments.Margin = new System.Windows.Forms.Padding(0);
             this.btnCountPayments.Name = "btnCountPayments";
             this.btnCountPayments.Size = new System.Drawing.Size(290, 160);
-            this.btnCountPayments.TabIndex = 1;
+            this.btnCountPayments.TabIndex = 5;
             this.btnCountPayments.Text = "Podlicz wypłaty";
-            this.btnCountPayments.UseVisualStyleBackColor = true;
+            this.btnCountPayments.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCountPayments.UseVisualStyleBackColor = false;
             this.btnCountPayments.Click += new System.EventHandler(this.btnCountPayments_Click);
             // 
             // btnCosts
             // 
+            this.btnCosts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnCosts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnCosts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCosts.Image = ((System.Drawing.Image)(resources.GetObject("btnCosts.Image")));
             this.btnCosts.Location = new System.Drawing.Point(787, 116);
+            this.btnCosts.Margin = new System.Windows.Forms.Padding(0);
             this.btnCosts.Name = "btnCosts";
             this.btnCosts.Size = new System.Drawing.Size(290, 160);
-            this.btnCosts.TabIndex = 2;
+            this.btnCosts.TabIndex = 8;
             this.btnCosts.Text = "Koszty";
-            this.btnCosts.UseVisualStyleBackColor = true;
+            this.btnCosts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCosts.UseVisualStyleBackColor = false;
             this.btnCosts.Click += new System.EventHandler(this.btnCosts_Click);
             // 
             // btnEarnings
             // 
+            this.btnEarnings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnEarnings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEarnings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEarnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnEarnings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEarnings.Image = ((System.Drawing.Image)(resources.GetObject("btnEarnings.Image")));
             this.btnEarnings.Location = new System.Drawing.Point(787, 310);
+            this.btnEarnings.Margin = new System.Windows.Forms.Padding(0);
             this.btnEarnings.Name = "btnEarnings";
             this.btnEarnings.Size = new System.Drawing.Size(290, 160);
             this.btnEarnings.TabIndex = 3;
             this.btnEarnings.Text = "Zyski";
-            this.btnEarnings.UseVisualStyleBackColor = true;
+            this.btnEarnings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEarnings.UseVisualStyleBackColor = false;
             this.btnEarnings.Click += new System.EventHandler(this.btnEarnings_Click);
             // 
             // btnFinancialStatement
             // 
+            this.btnFinancialStatement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnFinancialStatement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFinancialStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinancialStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnFinancialStatement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFinancialStatement.Image = ((System.Drawing.Image)(resources.GetObject("btnFinancialStatement.Image")));
             this.btnFinancialStatement.Location = new System.Drawing.Point(787, 502);
+            this.btnFinancialStatement.Margin = new System.Windows.Forms.Padding(0);
             this.btnFinancialStatement.Name = "btnFinancialStatement";
             this.btnFinancialStatement.Size = new System.Drawing.Size(290, 160);
             this.btnFinancialStatement.TabIndex = 4;
             this.btnFinancialStatement.Text = "Bilans finansowy";
-            this.btnFinancialStatement.UseVisualStyleBackColor = true;
+            this.btnFinancialStatement.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFinancialStatement.UseVisualStyleBackColor = false;
             this.btnFinancialStatement.Click += new System.EventHandler(this.btnFinancialStatement_Click);
             // 
             // btnAddInvoice
             // 
+            this.btnAddInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAddInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAddInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInvoice.Image")));
             this.btnAddInvoice.Location = new System.Drawing.Point(365, 502);
+            this.btnAddInvoice.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(290, 160);
             this.btnAddInvoice.TabIndex = 5;
             this.btnAddInvoice.Text = "Dodaj fakturę";
-            this.btnAddInvoice.UseVisualStyleBackColor = true;
+            this.btnAddInvoice.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddInvoice.UseVisualStyleBackColor = false;
             this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
             // lblIntroduction
             // 
-            this.lblIntroduction.Location = new System.Drawing.Point(369, 32);
+            this.lblIntroduction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblIntroduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblIntroduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblIntroduction.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblIntroduction.Location = new System.Drawing.Point(365, 32);
             this.lblIntroduction.Margin = new System.Windows.Forms.Padding(0);
             this.lblIntroduction.Name = "lblIntroduction";
-            this.lblIntroduction.Size = new System.Drawing.Size(286, 39);
-            this.lblIntroduction.TabIndex = 6;
+            this.lblIntroduction.Size = new System.Drawing.Size(290, 40);
+            this.lblIntroduction.TabIndex = 3;
             this.lblIntroduction.Text = "WPROWADZANIE";
             this.lblIntroduction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblOtherFunctions
             // 
+            this.lblOtherFunctions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblOtherFunctions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblOtherFunctions.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblOtherFunctions.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblOtherFunctions.Location = new System.Drawing.Point(787, 32);
+            this.lblOtherFunctions.Margin = new System.Windows.Forms.Padding(0);
             this.lblOtherFunctions.Name = "lblOtherFunctions";
-            this.lblOtherFunctions.Size = new System.Drawing.Size(290, 39);
+            this.lblOtherFunctions.Size = new System.Drawing.Size(290, 40);
             this.lblOtherFunctions.TabIndex = 7;
             this.lblOtherFunctions.Text = "POZOSTAŁE FUNKCJE";
             this.lblOtherFunctions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,19 +183,29 @@
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(208, 118);
-            this.btnReturn.TabIndex = 8;
+            this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // btnReturnMain
             // 
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReturnMain.Location = new System.Drawing.Point(31, 157);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(208, 119);
-            this.btnReturnMain.TabIndex = 9;
+            this.btnReturnMain.Size = new System.Drawing.Size(208, 118);
+            this.btnReturnMain.TabIndex = 2;
             this.btnReturnMain.Text = "Menu główne";
-            this.btnReturnMain.UseVisualStyleBackColor = true;
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // Finances
             // 
