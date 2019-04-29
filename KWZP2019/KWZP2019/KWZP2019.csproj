@@ -154,11 +154,11 @@
     <Compile Include="HR\AddTraining.Designer.cs">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finances\FinancialReports.cs">
+    <Compile Include="Finances\AllIncomes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\FinancialReports.Designer.cs">
-      <DependentUpon>FinancialReports.cs</DependentUpon>
+    <Compile Include="Finances\AllIncomes.Designer.cs">
+      <DependentUpon>AllIncomes.cs</DependentUpon>
     </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
@@ -175,11 +175,11 @@
     <Compile Include="Contractor.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Finances\ReportsByDepartments.cs">
+    <Compile Include="Finances\AllExpences.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\ReportsByDepartments.Designer.cs">
-      <DependentUpon>ReportsByDepartments.cs</DependentUpon>
+    <Compile Include="Finances\AllExpences.Designer.cs">
+      <DependentUpon>AllExpences.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -696,11 +696,11 @@
     <EmbeddedResource Include="HR\AddTraining.resx">
       <DependentUpon>AddTraining.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\FinancialReports.resx">
-      <DependentUpon>FinancialReports.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\AllIncomes.resx">
+      <DependentUpon>AllIncomes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finances\ReportsByDepartments.resx">
-      <DependentUpon>ReportsByDepartments.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\AllExpences.resx">
+      <DependentUpon>AllExpences.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\Contracts.resx">
       <DependentUpon>Contracts.cs</DependentUpon>
