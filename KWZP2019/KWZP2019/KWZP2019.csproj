@@ -64,6 +64,12 @@
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevelopmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopmentForm.Designer.cs">
+      <DependentUpon>DevelopmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -609,6 +615,9 @@
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DevelopmentForm.resx">
+      <DependentUpon>DevelopmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="vUnhandledOrderDetails.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
