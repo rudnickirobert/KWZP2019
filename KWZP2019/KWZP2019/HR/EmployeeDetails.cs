@@ -22,8 +22,7 @@ namespace KWZP2019
         }
 
         private void EmployeeDetails_Load(object sender, EventArgs e)
-        {
-            
+        {   
             SqlCommand sqlCommand = new SqlCommand
                 ("SELECT dbo.Employee.EmployeeName, dbo.Employee.EmployeeSurname, dbo.Employee.ZipCode, dbo.Employee.City, dbo.Employee.Street," +
                 " dbo.Employee.HouseNumber, dbo.Employee.ApartmentNum, dbo.Employee.PhoneNumber, dbo.Employee.PESEL, dbo.EducationLevel.EducationLevel," +

@@ -22,8 +22,7 @@ namespace KWZP2019
         }
 
         private void Examination_Load(object sender, EventArgs e)
-        {
-            
+        {    
             SqlCommand sqlCommand = new SqlCommand
                 ("SELECT RoofingCompany.dbo.Employee.EmployeeSurname, RoofingCompany.dbo.Employee.EmployeeName, RoofingCompany.dbo.MedicalExamination.Date " +
                 "FROM RoofingCompany.dbo.Employee " +

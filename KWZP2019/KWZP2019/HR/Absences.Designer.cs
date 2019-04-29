@@ -81,13 +81,13 @@
             this.buttonAdd.Size = new System.Drawing.Size(257, 162);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "Dodaj";
-<<<<<<< HEAD
+
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-=======
+
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAdd.UseVisualStyleBackColor = false;
->>>>>>> 8a90f8f6c2c13f8563f0913ceffedc7b3820bf9f
+
             // 
             // btnDelete
             // 

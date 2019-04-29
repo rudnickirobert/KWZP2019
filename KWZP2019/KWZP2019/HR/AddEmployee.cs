@@ -19,8 +19,7 @@ namespace KWZP2019
             this.db = db;
             clear();
         }
-
-        
+     
         void clear()
         {
             tbFirstName.Text = "";

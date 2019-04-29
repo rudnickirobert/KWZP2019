@@ -60,7 +60,6 @@ namespace KWZP2019
 
         private void HR_Load(object sender, EventArgs e)
         {
-
             //dgvEmployees Part - innitial data
             SqlConnection sqlConnection = new SqlConnection("server =.\\SQLEXPRESS;Database=RoofingCompany;Integrated Security=true");
             SqlCommand sqlCommand = new SqlCommand
