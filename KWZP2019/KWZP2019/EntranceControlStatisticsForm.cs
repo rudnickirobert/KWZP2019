@@ -140,6 +140,24 @@ namespace KWZP2019
 
         // ==================================================
 
+        private void BtnShowPieChart_Click(object sender, EventArgs e)
+        {
+            if (selectedSemiFinishedId <= 0)
+            {
+                MessageBox.Show("Wybierz półfabrykat.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (datePickerDateFrom.Value > datePickerDateTo.Value)
+            {
+                MessageBox.Show("Data \"od\" musi być większa od daty \"do\".", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ShowPieChart(this.selectedSemiFinishedId, datePickerDateFrom.Value, datePickerDateTo.Value);
+            }
+        }
+
+        // ==================================================
+
         private void DataGridViewSemiFinished_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewSemiFinished.SelectedRows[0];
@@ -169,6 +187,34 @@ namespace KWZP2019
             }
 
             if(errors != "")
+            {
+                MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ==================================================
+
+        private void ShowPieChart(int idSemiFinished, DateTime dateFrom, DateTime dateTo)
+        {
+            ProcessStartInfo processStartInfo = new ProcessStartInfo();
+            processStartInfo.FileName = @"C:\Users\bartl\AppData\Local\Programs\Python\Python37-32\python.exe";
+
+            String script = @"D:\entranceControlPieChart.py";
+            processStartInfo.Arguments = $"\"{script}\" \"{idSemiFinished}\" \"{dateFrom}\" \"{dateTo}\"";
+
+            processStartInfo.UseShellExecute = false;
+            processStartInfo.CreateNoWindow = true;
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.RedirectStandardError = true;
+
+            String errors = "";
+
+            using (Process process = Process.Start(processStartInfo))
+            {
+                errors = process.StandardError.ReadToEnd();
+            }
+
+            if (errors != "")
             {
                 MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
