@@ -719,6 +719,7 @@
     <None Include="Maintenance.datasource" />
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Failure.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Production\PlannedProduction.datasource" />
     <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
