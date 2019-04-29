@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e3d5fe5aff5a4694a78024451f3a416c" Name="Diagram1">
+        <EntityTypeShape EntityType="FINANCESmodel.Absence" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.AbsenceType" Width="1.5" PointX="0.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Accident" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Allocation" Width="1.5" PointX="6" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Contract" Width="1.5" PointX="3" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Contractor" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Customer" Width="1.5" PointX="6.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Department" Width="1.5" PointX="3.75" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Education" Width="1.5" PointX="6" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.EducationLevel" Width="1.5" PointX="3.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Employee" Width="1.5" PointX="0.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.EmployeePlan" Width="1.5" PointX="16.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.EntranceControl" Width="1.5" PointX="6" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Expense" Width="1.5" PointX="9.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Failure" Width="1.5" PointX="21" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.FailureMaintenance" Width="1.5" PointX="23.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.FEMAnalysis" Width="1.5" PointX="3" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Invoice" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.InvoiceType" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Machine" Width="1.5" PointX="12" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.MachineType" Width="1.5" PointX="9.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.MaintDescription" Width="1.5" PointX="12" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Maintenance" Width="1.5" PointX="14.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.MaintPart" Width="1.5" PointX="21.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.MaintType" Width="1.5" PointX="12" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.MedicalExamination" Width="1.5" PointX="3" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.OrderCustomer" Width="1.5" PointX="9" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.OrderDetail" Width="1.5" PointX="14.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.OutControl" Width="1.5" PointX="24" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Outsourcing" Width="1.5" PointX="11" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.OutsourcingCommitment" Width="1.5" PointX="13.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.OutsourcingType" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Part" Width="1.5" PointX="19" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PartOrder" Width="1.5" PointX="22" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PartOrderDetail" Width="1.5" PointX="24.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PartOrderRequest" Width="1.5" PointX="23.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PartRequest" Width="1.5" PointX="21.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PartType" Width="1.5" PointX="16.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Payment" Width="1.5" PointX="3" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PlannedProduction" Width="1.5" PointX="16.5" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.PlannedProductionEmployeeDetails" Width="1.5" PointX="11.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Position" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Product" Width="1.5" PointX="12" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.ProductionProces" Width="1.5" PointX="18.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Realization" Width="1.5" PointX="16.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SafetyControl" Width="1.5" PointX="3" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SafetyTraining" Width="1.5" PointX="3" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SemiFinished" Width="1.5" PointX="9.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SemiFinishedOrder" Width="1.5" PointX="1.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SfOrderDetail" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SkillsForMachine" Width="1.5" PointX="14.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Staff" Width="1.5" PointX="6" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Supplier" Width="1.5" PointX="1.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.SupplierType" Width="1.5" PointX="1.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.TechnicalProductData" Width="1.5" PointX="14.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Technology" Width="1.5" PointX="9.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Training" Width="1.5" PointX="3" PointY="54.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FINANCESmodel.Unit" Width="1.5" PointX="16.75" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="FINANCESmodel.FK__Absence__IdAbsen__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Absence__IdEmplo__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKAccidentEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Allocatio__IdDep__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Allocatio__IdEmp__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKPlannedProductionEmployeeDetailsAllocation" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Contract__IdEmpl__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Contract__IdPosi__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Invoice__IdContr__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOrderCustomerCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Expense__IdDepar__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Staff__IdDeparme__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Education__IdEdu__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Education__IdEmp__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__MedicalEx__IdEmp__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Payment__IdEmplo__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Training__IdEmpl__282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKEnteranceControlEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkFEMAnalysisEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkInspectedEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOrderCustomerEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOutControlEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkTrainedEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MaintenanceEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkEntranceControlSfOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKSfDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Expense__IdInvoi__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_FailureFailureMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKProductionProces" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MaintenanceFailureMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Invoice__IdInvoi__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__SkillsFor__IdMac__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MachineMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MachineTypeMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MainDescriptionMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MaintenanceRealization" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_MaintTypeMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_PartMainPart" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOrderDetailOrderCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOrderDetailProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOutControlProcess" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOutsourcingCommitmentOutsourcing" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkOutsourcingOutsourcingType" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_PartPartRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_PartRequestPartOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_PartTypePart" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_UnitPart" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_PartOrderPartOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK_PartRequestPartOrderRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKPlannedProductionEmployeeDetailsPlannedProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FKProductionProcesPlannedProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__SkillsFor__IdPos__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FK__Staff__IdPositio__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkProductIdSF" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkProductIdTech" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkTechProdDataId" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkSfOrderDetailSemiFinished" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkSemiFinishedOrderSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkSfOrderDetailSemiFinishedOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="FINANCESmodel.FkSupplierSupplierType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -47,7 +47,7 @@
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(290, 160);
             this.btnPayments.TabIndex = 4;
-            this.btnPayments.Text = "Wypłaty";
+            this.btnPayments.Text = "Historia Wypłat";
             this.btnPayments.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPayments.UseVisualStyleBackColor = false;
             this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);

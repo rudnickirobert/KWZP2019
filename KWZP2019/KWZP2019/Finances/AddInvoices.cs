@@ -42,10 +42,5 @@ namespace KWZP2019
             db.Invoices.Add(newInvoiceValue);
             db.SaveChanges();
         }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

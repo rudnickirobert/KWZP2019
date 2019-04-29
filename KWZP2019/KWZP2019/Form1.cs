@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class StartForm : Form
     {
-      private RoofingCompanyEntities db;
+        private RoofingCompanyEntities db;
 
         public StartForm()
         {
@@ -50,7 +50,6 @@ namespace KWZP2019
         {
             FinancesAndHR finanseIHR = new FinancesAndHR(db, this);
             finanseIHR.Show();
-            this.Hide();
         }
     }
 }

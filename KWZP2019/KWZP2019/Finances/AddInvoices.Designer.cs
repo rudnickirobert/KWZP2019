@@ -125,7 +125,6 @@
             this.comboBox2.Size = new System.Drawing.Size(200, 21);
             this.comboBox2.TabIndex = 24;
             this.comboBox2.ValueMember = "IdInvoiceType";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // invoiceTypeBindingSource
             // 
