@@ -43,7 +43,7 @@
             this.btnFinances.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnFinances.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFinances.Image = global::KWZP2019.Properties.Resources.icons8_euro_money_80;
-            this.btnFinances.Location = new System.Drawing.Point(450, 300);
+            this.btnFinances.Location = new System.Drawing.Point(452, 294);
             this.btnFinances.Margin = new System.Windows.Forms.Padding(0);
             this.btnFinances.Name = "btnFinances";
             this.btnFinances.Size = new System.Drawing.Size(290, 160);
@@ -62,7 +62,7 @@
             this.btnHR.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnHR.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnHR.Image = global::KWZP2019.Properties.Resources.icons8_user_groups_80__1_;
-            this.btnHR.Location = new System.Drawing.Point(800, 300);
+            this.btnHR.Location = new System.Drawing.Point(815, 294);
             this.btnHR.Margin = new System.Windows.Forms.Padding(0);
             this.btnHR.Name = "btnHR";
             this.btnHR.Size = new System.Drawing.Size(290, 160);
@@ -80,7 +80,7 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(100, 300);
+            this.btnReturnMain.Location = new System.Drawing.Point(89, 294);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(290, 160);
@@ -92,7 +92,7 @@
             // 
             // FinancesAndHR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

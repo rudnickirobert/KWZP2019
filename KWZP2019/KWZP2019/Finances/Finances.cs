@@ -67,5 +67,17 @@ namespace KWZP2019
             addInvoices.ShowDialog();
             this.Hide();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finanseIHR.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
+        }
     }
 }
