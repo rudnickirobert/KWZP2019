@@ -732,7 +732,7 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
-go
+
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
@@ -826,3 +826,50 @@ INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
 ORDER BY (dbo.Employee.EmployeeSurname);
 
 GO
+CREATE VIEW vIncomesProfits
+AS
+SELECT        TOP 100 PERCENT Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
+FROM            Customer INNER JOIN
+                         OrderCustomer ON Customer.IdCustomer = OrderCustomer.IdCustomer
+ORDER BY Customer.CustomerName;
+GO
+
+CREATE VIEW vExpencesInvoices
+AS
+SELECT        TOP 100 PERCENT Invoice.IdInvoice,Invoice.Date, Invoice.Sum, Contractor.ContractorName, InvoiceType.Type
+FROM            InvoiceType INNER JOIN
+                         Invoice ON InvoiceType.IdInvoiceType = Invoice.IdInvoiceType INNER JOIN
+                         Contractor ON Invoice.IdContractor = Contractor.IdContractor
+ORDER BY Contractor.ContractorName;
+GO
+
+CREATE VIEW vExpencesPayment
+AS
+SELECT        TOP 100 PERCENT Payment.IdPayment,Payment.Sum, Payment.Date, Payment.Bonus, Employee.EmployeeName, Employee.EmployeeSurname
+FROM            Payment INNER JOIN
+                         Employee ON Payment.IdEmployee = Employee.IdEmployee
+ORDER BY Employee.EmployeeSurname;
+GO
+
+CREATE VIEW vExpencesOrders
+AS
+SELECT        TOP 100 PERCENT SemiFinishedOrder.IdSfOrder,SemiFinishedOrder.Cost, SemiFinishedOrder.SfOrderDate, Supplier.SupplierName
+FROM            SemiFinishedOrder INNER JOIN
+                         Supplier ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier
+ORDER BY Supplier.SupplierName;
+GO
+
+CREATE VIEW vExpencesOutsourcing
+AS
+SELECT        TOP 100 PERCENT Outsourcing.IdOutsourcing,OutsourcingCommitment.Cost, OutsourcingCommitment.EndCommitmentDate, Outsourcing.CompanyName
+FROM            OutsourcingCommitment INNER JOIN
+                         Outsourcing ON OutsourcingCommitment.IdOutsourcing = Outsourcing.IdOutsourcing
+ORDER BY Outsourcing.CompanyName;
+GO
+
+CREATE VIEW vPaymentHistory
+AS
+SELECT        TOP 100 PERCENT Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Payment.Bonus, Payment.Sum, Payment.Date, Employee.IdEmployee
+FROM            Employee INNER JOIN
+                         Payment ON Employee.IdEmployee = Payment.IdEmployee
+ORDER BY Employee.EmployeeSurname;
