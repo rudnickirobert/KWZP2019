@@ -195,7 +195,6 @@
     </Compile>
     <Compile Include="Education.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="EducationLevel.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -325,6 +324,9 @@
     </Compile>
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutputProductMeasurement.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
@@ -571,7 +573,37 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vAbsences.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vAddTraining.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vContracts.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEducationForm.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEmployeeDetails.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEmployeeList.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vExamination.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vHR.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOrderDetail.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPredictedPriceForCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vSuccesfullyProcess.cs">
@@ -663,6 +695,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntranceControlForm.resx">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\AddExamination.resx">
       <DependentUpon>AddExamination.cs</DependentUpon>

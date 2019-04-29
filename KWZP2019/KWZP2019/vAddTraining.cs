@@ -12,14 +12,14 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class Education
+    public partial class vAddTraining
     {
-        public int IdEducation { get; set; }
-        public Nullable<int> IdEmployee { get; set; }
-        public Nullable<int> IdEducationLevel { get; set; }
-        public Nullable<System.DateTime> GraduationDate { get; set; }
-    
-        public virtual EducationLevel EducationLevel { get; set; }
-        public virtual Employee Employee { get; set; }
+        public int IdEmployee { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeSurname { get; set; }
+        public string TrainingName { get; set; }
+        public Nullable<System.DateTime> TrainingStartDate { get; set; }
+        public Nullable<System.DateTime> TrainingEndDate { get; set; }
+        public Nullable<decimal> TrainingPrice { get; set; }
     }
 }

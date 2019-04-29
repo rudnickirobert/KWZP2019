@@ -12,14 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class Education
+    public partial class vPredictedPriceForCustomer
     {
-        public int IdEducation { get; set; }
-        public Nullable<int> IdEmployee { get; set; }
-        public Nullable<int> IdEducationLevel { get; set; }
-        public Nullable<System.DateTime> GraduationDate { get; set; }
-    
-        public virtual EducationLevel EducationLevel { get; set; }
-        public virtual Employee Employee { get; set; }
+        public int IdOrderCustomer { get; set; }
+        public string CustomerName { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public decimal Cost { get; set; }
+        public double Markup { get; set; }
     }
 }

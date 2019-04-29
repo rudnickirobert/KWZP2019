@@ -306,6 +306,15 @@
           <Property Name="WidthAcceptableDeviation" Type="float" Nullable="false" />
           <Property Name="LenghtAcceptableDeviation" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="OutputProductMeasurements">
+          <Key>
+            <PropertyRef Name="IdMeasurement" />
+          </Key>
+          <Property Name="IdMeasurement" Type="int" Nullable="false" />
+          <Property Name="IdProcess" Type="int" Nullable="false" />
+          <Property Name="MeasuredLenght" Type="float" Nullable="false" />
+          <Property Name="MeasuredWidth" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="Outsourcing">
           <Key>
             <PropertyRef Name="IdOutsourcing" />
@@ -445,6 +454,7 @@
           <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
           <Property Name="IdTechnology" Type="int" Nullable="false" />
           <Property Name="InputDate" Type="datetime" Nullable="false" />
+          <Property Name="InProduction" Type="bit" />
         </EntityType>
         <EntityType Name="ProductionProces">
           <Key>
@@ -559,9 +569,10 @@
         </EntityType>
         <EntityType Name="TechnicalProductData">
           <Key>
-            <PropertyRef Name="IdProduct" />
+            <PropertyRef Name="IdTechnicalProductData" />
           </Key>
-          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="IdTechnicalProductData" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProduct" Type="int" />
           <Property Name="Pattern" Type="image" Nullable="false" />
           <Property Name="Width" Type="float" Nullable="false" />
           <Property Name="WeightPerMeter" Type="float" Nullable="false" />
@@ -596,6 +607,32 @@
           <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vAbsences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vAbsences">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartOfAbsence" Type="date" />
+          <Property Name="EndOfAbsence" Type="date" />
+          <Property Name="AbscenceReason" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vAddTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vAddTraining">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrainingName" Type="nvarchar" MaxLength="200" />
+          <Property Name="TrainingStartDate" Type="date" />
+          <Property Name="TrainingEndDate" Type="date" />
+          <Property Name="TrainingPrice" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vCompany">
           <Key>
@@ -625,6 +662,22 @@ warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a prima
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vContracts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vContracts">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="WorkplaceTrainingDate" Type="date" />
+          <Property Name="HealTestDate" Type="date" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vDevotionsInMeasuremntsPerProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDevotionsInMeasuremntsPerProcess">
           <Key>
@@ -643,6 +696,81 @@ warning 6002: The table/view 'RoofingCompany.dbo.vDevotionsInMeasuremntsPerProce
           <Property Name="WidthDeviation" Type="float" Nullable="false" />
           <Property Name="LenghtAcceptableDeviation" Type="float" Nullable="false" />
           <Property Name="WidthAcceptableDeviation" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vEducationForm' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEducationForm">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="EducationLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="50" />
+          <Property Name="DegreeShort" Type="nvarchar" MaxLength="10" />
+          <Property Name="GraduationDate" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEmployeeDetails">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="HouseNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApartmentNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PESEL" Type="bigint" />
+          <Property Name="EducationLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="DegreeShort" Type="nvarchar" MaxLength="10" />
+          <Property Name="GraduationDate" Type="date" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="HealTestDate" Type="date" />
+          <Property Name="WorkplaceTrainingDate" Type="date" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEmployeeList">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExamination">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vHR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vHR">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -714,6 +842,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.vInputMagazine' does not have a
           <Property Name="ControlDate" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOrderDetail">
+          <Key>
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="IdDetail" />
+          </Key>
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdOrderCustomer" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="IdDetail" Type="int" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOutputMagazine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOutputMagazine">
           <Key>
@@ -754,6 +897,22 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not 
           <Property Name="NIP" Type="float" Nullable="false" />
           <Property Name="KRS" Type="float" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPredictedPriceForCustomer">
+          <Key>
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Markup" />
+          </Key>
+          <Property Name="IdOrderCustomer" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="Markup" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1427,6 +1586,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FkOutputProductMeasurements">
+          <End Role="OutControl" Type="Self.OutControl" Multiplicity="1" />
+          <End Role="OutputProductMeasurements" Type="Self.OutputProductMeasurements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OutControl">
+              <PropertyRef Name="IdProcess" />
+            </Principal>
+            <Dependent Role="OutputProductMeasurements">
+              <PropertyRef Name="IdProcess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FkOutsourcingCommitmentOutsourcing">
           <End Role="Outsourcing" Type="Self.Outsourcing" Multiplicity="1" />
           <End Role="OutsourcingCommitment" Type="Self.OutsourcingCommitment" Multiplicity="*" />
@@ -1535,6 +1706,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+warning 6037: Foreign key constraint 'FKSfDetail' has been omitted from the storage model. Column 'IdSfDetail' of table 'RoofingCompanyModel.Store.EntranceControl' is a foreign key participating in multiple relationships. A one-to-one Entity Model will not validate since data inconsistency is possible.
         <Association Name="FKSfDetail">
           <End Role="SfOrderDetail" Type="Self.SfOrderDetail" Multiplicity="1" />
           <End Role="EntranceControl" Type="Self.EntranceControl" Multiplicity="*" />
@@ -1546,7 +1719,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
               <PropertyRef Name="IdSfDetail" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
+        </Association>-->
         <Association Name="FkSfOrderDetailSemiFinished">
           <End Role="SemiFinished" Type="Self.SemiFinished" Multiplicity="1" />
           <End Role="SfOrderDetail" Type="Self.SfOrderDetail" Multiplicity="*" />
@@ -1584,8 +1757,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FkTechProdDataId">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="TechnicalProductData" Type="Self.TechnicalProductData" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="TechnicalProductData" Type="Self.TechnicalProductData" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="IdProduct" />
@@ -1637,6 +1810,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySet Name="OrderCustomer" EntityType="Self.OrderCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutControl" EntityType="Self.OutControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutputProductMeasurements" EntityType="Self.OutputProductMeasurements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Outsourcing" EntityType="Self.Outsourcing" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutsourcingCommitment" EntityType="Self.OutsourcingCommitment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OutsourcingType" EntityType="Self.OutsourcingType" Schema="dbo" store:Type="Tables" />
@@ -1666,6 +1840,26 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySet Name="Technology" EntityType="Self.Technology" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Training" EntityType="Self.Training" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vAbsences" EntityType="Self.vAbsences" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vAbsences].[IdEmployee] AS [IdEmployee], 
+    [vAbsences].[EmployeeSurname] AS [EmployeeSurname], 
+    [vAbsences].[StartOfAbsence] AS [StartOfAbsence], 
+    [vAbsences].[EndOfAbsence] AS [EndOfAbsence], 
+    [vAbsences].[AbscenceReason] AS [AbscenceReason]
+    FROM [dbo].[vAbsences] AS [vAbsences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vAddTraining" EntityType="Self.vAddTraining" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vAddTraining].[IdEmployee] AS [IdEmployee], 
+    [vAddTraining].[EmployeeName] AS [EmployeeName], 
+    [vAddTraining].[EmployeeSurname] AS [EmployeeSurname], 
+    [vAddTraining].[TrainingName] AS [TrainingName], 
+    [vAddTraining].[TrainingStartDate] AS [TrainingStartDate], 
+    [vAddTraining].[TrainingEndDate] AS [TrainingEndDate], 
+    [vAddTraining].[TrainingPrice] AS [TrainingPrice]
+    FROM [dbo].[vAddTraining] AS [vAddTraining]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vCompany" EntityType="Self.vCompany" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vCompany].[IdCustomer] AS [IdCustomer], 
@@ -1683,6 +1877,19 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vCompany].[Description] AS [Description]
     FROM [dbo].[vCompany] AS [vCompany]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vContracts" EntityType="Self.vContracts" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vContracts].[IdEmployee] AS [IdEmployee], 
+    [vContracts].[EmployeeName] AS [EmployeeName], 
+    [vContracts].[EmployeeSurname] AS [EmployeeSurname], 
+    [vContracts].[StartDate] AS [StartDate], 
+    [vContracts].[EndDate] AS [EndDate], 
+    [vContracts].[Salary] AS [Salary], 
+    [vContracts].[WorkplaceTrainingDate] AS [WorkplaceTrainingDate], 
+    [vContracts].[HealTestDate] AS [HealTestDate], 
+    [vContracts].[Workplace] AS [Workplace]
+    FROM [dbo].[vContracts] AS [vContracts]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vDevotionsInMeasuremntsPerProcess" EntityType="Self.vDevotionsInMeasuremntsPerProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDevotionsInMeasuremntsPerProcess].[IdMeasurement] AS [IdMeasurement], 
@@ -1693,6 +1900,66 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vDevotionsInMeasuremntsPerProcess].[LenghtAcceptableDeviation] AS [LenghtAcceptableDeviation], 
     [vDevotionsInMeasuremntsPerProcess].[WidthAcceptableDeviation] AS [WidthAcceptableDeviation]
     FROM [dbo].[vDevotionsInMeasuremntsPerProcess] AS [vDevotionsInMeasuremntsPerProcess]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEducationForm" EntityType="Self.vEducationForm" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vEducationForm].[IdEmployee] AS [IdEmployee], 
+    [vEducationForm].[EmployeeName] AS [EmployeeName], 
+    [vEducationForm].[EmployeeSurname] AS [EmployeeSurname], 
+    [vEducationForm].[EducationLevel] AS [EducationLevel], 
+    [vEducationForm].[Degree] AS [Degree], 
+    [vEducationForm].[DegreeShort] AS [DegreeShort], 
+    [vEducationForm].[GraduationDate] AS [GraduationDate]
+    FROM [dbo].[vEducationForm] AS [vEducationForm]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployeeDetails" EntityType="Self.vEmployeeDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vEmployeeDetails].[IdEmployee] AS [IdEmployee], 
+    [vEmployeeDetails].[EmployeeName] AS [EmployeeName], 
+    [vEmployeeDetails].[EmployeeSurname] AS [EmployeeSurname], 
+    [vEmployeeDetails].[ZipCode] AS [ZipCode], 
+    [vEmployeeDetails].[City] AS [City], 
+    [vEmployeeDetails].[Street] AS [Street], 
+    [vEmployeeDetails].[HouseNumber] AS [HouseNumber], 
+    [vEmployeeDetails].[ApartmentNum] AS [ApartmentNum], 
+    [vEmployeeDetails].[PhoneNumber] AS [PhoneNumber], 
+    [vEmployeeDetails].[PESEL] AS [PESEL], 
+    [vEmployeeDetails].[EducationLevel] AS [EducationLevel], 
+    [vEmployeeDetails].[DegreeShort] AS [DegreeShort], 
+    [vEmployeeDetails].[GraduationDate] AS [GraduationDate], 
+    [vEmployeeDetails].[Workplace] AS [Workplace], 
+    [vEmployeeDetails].[StartDate] AS [StartDate], 
+    [vEmployeeDetails].[EndDate] AS [EndDate], 
+    [vEmployeeDetails].[Salary] AS [Salary], 
+    [vEmployeeDetails].[HealTestDate] AS [HealTestDate], 
+    [vEmployeeDetails].[WorkplaceTrainingDate] AS [WorkplaceTrainingDate], 
+    [vEmployeeDetails].[Date] AS [Date]
+    FROM [dbo].[vEmployeeDetails] AS [vEmployeeDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployeeList" EntityType="Self.vEmployeeList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vEmployeeList].[IdEmployee] AS [IdEmployee], 
+    [vEmployeeList].[EmployeeSurname] AS [EmployeeSurname], 
+    [vEmployeeList].[EmployeeName] AS [EmployeeName]
+    FROM [dbo].[vEmployeeList] AS [vEmployeeList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vExamination" EntityType="Self.vExamination" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExamination].[IdEmployee] AS [IdEmployee], 
+    [vExamination].[EmployeeSurname] AS [EmployeeSurname], 
+    [vExamination].[EmployeeName] AS [EmployeeName], 
+    [vExamination].[Date] AS [Date]
+    FROM [dbo].[vExamination] AS [vExamination]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vHR" EntityType="Self.vHR" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vHR].[IdEmployee] AS [IdEmployee], 
+    [vHR].[EmployeeSurname] AS [EmployeeSurname], 
+    [vHR].[EmployeeName] AS [EmployeeName], 
+    [vHR].[City] AS [City], 
+    [vHR].[PhoneNumber] AS [PhoneNumber], 
+    [vHR].[Workplace] AS [Workplace]
+    FROM [dbo].[vHR] AS [vHR]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDailySfDelivery" EntityType="Self.ViewDailySfDelivery" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1737,6 +2004,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vInputMagazine].[ControlDate] AS [ControlDate]
     FROM [dbo].[vInputMagazine] AS [vInputMagazine]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOrderDetail].[CustomerName] AS [CustomerName], 
+    [vOrderDetail].[IdOrderCustomer] AS [IdOrderCustomer], 
+    [vOrderDetail].[Quantity] AS [Quantity], 
+    [vOrderDetail].[IdDetail] AS [IdDetail], 
+    [vOrderDetail].[ProductCode] AS [ProductCode]
+    FROM [dbo].[vOrderDetail] AS [vOrderDetail]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vOutputMagazine" EntityType="Self.vOutputMagazine" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vOutputMagazine].[ProductCode] AS [ProductCode], 
@@ -1760,6 +2036,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vOutsourcingWithType].[KRS] AS [KRS], 
     [vOutsourcingWithType].[Description] AS [Description]
     FROM [dbo].[vOutsourcingWithType] AS [vOutsourcingWithType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPredictedPriceForCustomer" EntityType="Self.vPredictedPriceForCustomer" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPredictedPriceForCustomer].[IdOrderCustomer] AS [IdOrderCustomer], 
+    [vPredictedPriceForCustomer].[CustomerName] AS [CustomerName], 
+    [vPredictedPriceForCustomer].[OrderDate] AS [OrderDate], 
+    [vPredictedPriceForCustomer].[Cost] AS [Cost], 
+    [vPredictedPriceForCustomer].[Markup] AS [Markup]
+    FROM [dbo].[vPredictedPriceForCustomer] AS [vPredictedPriceForCustomer]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vSuccesfullyProcess" EntityType="Self.vSuccesfullyProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2010,6 +2295,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             <End Role="ProductionProces" EntitySet="ProductionProces" />
             <End Role="OutControl" EntitySet="OutControl" />
           </AssociationSet>
+          <AssociationSet Name="FkOutputProductMeasurements" Association="Self.FkOutputProductMeasurements">
+            <End Role="OutControl" EntitySet="OutControl" />
+            <End Role="OutputProductMeasurements" EntitySet="OutputProductMeasurements" />
+          </AssociationSet>
           <AssociationSet Name="FkOutsourcingCommitmentOutsourcing" Association="Self.FkOutsourcingCommitmentOutsourcing">
             <End Role="Outsourcing" EntitySet="Outsourcing" />
             <End Role="OutsourcingCommitment" EntitySet="OutsourcingCommitment" />
@@ -2045,10 +2334,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <AssociationSet Name="FkSemiFinishedOrderSupplier" Association="Self.FkSemiFinishedOrderSupplier">
             <End Role="Supplier" EntitySet="Supplier" />
             <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrder" />
-          </AssociationSet>
-          <AssociationSet Name="FKSfDetail" Association="Self.FKSfDetail">
-            <End Role="SfOrderDetail" EntitySet="SfOrderDetail" />
-            <End Role="EntranceControl" EntitySet="EntranceControl" />
           </AssociationSet>
           <AssociationSet Name="FkSfOrderDetailSemiFinished" Association="Self.FkSfOrderDetailSemiFinished">
             <End Role="SemiFinished" EntitySet="SemiFinished" />
@@ -2445,6 +2730,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <Property Name="EndControlDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="WidthAcceptableDeviation" Type="Double" Nullable="false" />
           <Property Name="LenghtAcceptableDeviation" Type="Double" Nullable="false" />
+          <NavigationProperty Name="OutputProductMeasurements" Relationship="RoofingCompanyModel.FkOutputProductMeasurements" FromRole="OutControl" ToRole="OutputProductMeasurement" />
         </EntityType>
         <EntityType Name="Outsourcing">
           <Key>
@@ -2615,7 +2901,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <NavigationProperty Name="OrderDetails" Relationship="Self.OrderDetailProduct" FromRole="Product" ToRole="OrderDetail" />
           <NavigationProperty Name="SemiFinished" Relationship="Self.FkProductIdSF" FromRole="Product" ToRole="SemiFinished" />
           <NavigationProperty Name="Technology" Relationship="Self.FkProductIdTech" FromRole="Product" ToRole="Technology" />
-          <NavigationProperty Name="TechnicalProductData" Relationship="Self.FkTechProdDataId" FromRole="Product" ToRole="TechnicalProductData" />
+          <Property Name="InProduction" Type="Boolean" />
+          <NavigationProperty Name="TechnicalProductDatas" Relationship="RoofingCompanyModel.FkTechProdDataId" FromRole="Product" ToRole="TechnicalProductData" />
         </EntityType>
         <EntityType Name="ProductionProce">
           <Key>
@@ -2751,15 +3038,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
         </EntityType>
         <EntityType Name="TechnicalProductData">
           <Key>
-            <PropertyRef Name="IdProduct" />
+            <PropertyRef Name="IdTechnicalProductData" />
           </Key>
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="IdProduct" Type="Int32" />
           <Property Name="Pattern" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="Width" Type="Double" Nullable="false" />
           <Property Name="WeightPerMeter" Type="Double" Nullable="false" />
           <Property Name="Lenght" Type="Double" Nullable="false" />
           <Property Name="PricePerMeter" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Self.FkTechProdDataId" FromRole="TechnicalProductData" ToRole="Product" />
+          <Property Name="IdTechnicalProductData" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Product" Relationship="RoofingCompanyModel.FkTechProdDataId" FromRole="TechnicalProductData" ToRole="Product" />
         </EntityType>
         <EntityType Name="Technology">
           <Key>
@@ -3451,18 +3739,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FkTechProdDataId">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="TechnicalProductData" Type="Self.TechnicalProductData" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="IdProduct" />
-            </Principal>
-            <Dependent Role="TechnicalProductData">
-              <PropertyRef Name="IdProduct" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="SemiFinishedOrderSupplier">
           <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
           <End Role="SemiFinishedOrder" Type="Self.SemiFinishedOrder" Multiplicity="*" />
@@ -3778,10 +4054,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             <End Role="Technology" EntitySet="Technologies" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FkTechProdDataId" Association="Self.FkTechProdDataId">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="TechnicalProductData" EntitySet="TechnicalProductDatas" />
-          </AssociationSet>
           <AssociationSet Name="SemiFinishedOrderSupplier" Association="Self.SemiFinishedOrderSupplier">
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrders" />
@@ -3824,6 +4096,25 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySet Name="vSuccesfullyProducedPerProcess" EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" />
           <EntitySet Name="vTechnicalProductDataPerProcess" EntityType="RoofingCompanyModel.vTechnicalProductDataPerProcess" />
           <EntitySet Name="vUnfinishedProcess" EntityType="RoofingCompanyModel.vUnfinishedProcess" />
+          <EntitySet Name="vOrderDetails" EntityType="RoofingCompanyModel.vOrderDetail" />
+          <EntitySet Name="vPredictedPriceForCustomers" EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" />
+          <AssociationSet Name="FkTechProdDataId" Association="RoofingCompanyModel.FkTechProdDataId">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="TechnicalProductData" EntitySet="TechnicalProductDatas" />
+          </AssociationSet>
+          <EntitySet Name="OutputProductMeasurements" EntityType="RoofingCompanyModel.OutputProductMeasurement" />
+          <AssociationSet Name="FkOutputProductMeasurements" Association="RoofingCompanyModel.FkOutputProductMeasurements">
+            <End Role="OutControl" EntitySet="OutControls" />
+            <End Role="OutputProductMeasurement" EntitySet="OutputProductMeasurements" />
+          </AssociationSet>
+          <EntitySet Name="vAbsences" EntityType="RoofingCompanyModel.vAbsences" />
+          <EntitySet Name="vAddTraining" EntityType="RoofingCompanyModel.vAddTraining" />
+          <EntitySet Name="vContracts" EntityType="RoofingCompanyModel.vContracts" />
+          <EntitySet Name="vEducationForm" EntityType="RoofingCompanyModel.vEducationForm" />
+          <EntitySet Name="vEmployeeDetails" EntityType="RoofingCompanyModel.vEmployeeDetails" />
+          <EntitySet Name="vEmployeeList" EntityType="RoofingCompanyModel.vEmployeeList" />
+          <EntitySet Name="vExamination" EntityType="RoofingCompanyModel.vExamination" />
+          <EntitySet Name="vHR" EntityType="RoofingCompanyModel.vHR" />
         </EntityContainer>
         <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
           <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
@@ -4112,6 +4403,168 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             <PropertyRef Name="IdProces" />
           </Key>
           <Property Name="IdProces" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vOrderDetail">
+          <Key>
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="IdDetail" />
+          </Key>
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="IdDetail" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vPredictedPriceForCustomer">
+          <Key>
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Markup" />
+          </Key>
+          <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Markup" Type="Double" Nullable="false" />
+        </EntityType>
+        <Association Name="FkTechProdDataId">
+          <End Type="RoofingCompanyModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="RoofingCompanyModel.TechnicalProductData" Role="TechnicalProductData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="TechnicalProductData">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OutputProductMeasurement">
+          <Key>
+            <PropertyRef Name="IdMeasurement" />
+          </Key>
+          <Property Name="IdMeasurement" Type="Int32" Nullable="false" />
+          <Property Name="IdProcess" Type="Int32" Nullable="false" />
+          <Property Name="MeasuredLenght" Type="Double" Nullable="false" />
+          <Property Name="MeasuredWidth" Type="Double" Nullable="false" />
+          <NavigationProperty Name="OutControl" Relationship="RoofingCompanyModel.FkOutputProductMeasurements" FromRole="OutputProductMeasurement" ToRole="OutControl" />
+        </EntityType>
+        <Association Name="FkOutputProductMeasurements">
+          <End Type="RoofingCompanyModel.OutControl" Role="OutControl" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.OutputProductMeasurement" Role="OutputProductMeasurement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OutControl">
+              <PropertyRef Name="IdProcess" />
+            </Principal>
+            <Dependent Role="OutputProductMeasurement">
+              <PropertyRef Name="IdProcess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vAbsences">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartOfAbsence" Type="DateTime" Precision="0" />
+          <Property Name="EndOfAbsence" Type="DateTime" Precision="0" />
+          <Property Name="AbscenceReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vAddTraining">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrainingName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TrainingStartDate" Type="DateTime" Precision="0" />
+          <Property Name="TrainingEndDate" Type="DateTime" Precision="0" />
+          <Property Name="TrainingPrice" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vContracts">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
+          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vEducationForm">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GraduationDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vEmployeeDetails">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApartmentNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="Int64" />
+          <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GraduationDate" Type="DateTime" Precision="0" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
+          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vEmployeeList">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExamination">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vHR">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4595,6 +5048,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="InProduction" ColumnName="InProduction" />
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
                 <ScalarProperty Name="IdSemiFinished" ColumnName="IdSemiFinished" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
@@ -4728,6 +5182,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySetMapping Name="TechnicalProductDatas">
             <EntityTypeMapping TypeName="RoofingCompanyModel.TechnicalProductData">
               <MappingFragment StoreEntitySet="TechnicalProductData">
+                <ScalarProperty Name="IdTechnicalProductData" ColumnName="IdTechnicalProductData" />
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
                 <ScalarProperty Name="Pattern" ColumnName="Pattern" />
                 <ScalarProperty Name="Width" ColumnName="Width" />
@@ -4951,6 +5406,147 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vOrderDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
+              <MappingFragment StoreEntitySet="vOrderDetail">
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPredictedPriceForCustomers">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPredictedPriceForCustomer">
+              <MappingFragment StoreEntitySet="vPredictedPriceForCustomer">
+                <ScalarProperty Name="Markup" ColumnName="Markup" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutputProductMeasurements">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.OutputProductMeasurement">
+              <MappingFragment StoreEntitySet="OutputProductMeasurements">
+                <ScalarProperty Name="MeasuredWidth" ColumnName="MeasuredWidth" />
+                <ScalarProperty Name="MeasuredLenght" ColumnName="MeasuredLenght" />
+                <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+                <ScalarProperty Name="IdMeasurement" ColumnName="IdMeasurement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAbsences">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vAbsences">
+              <MappingFragment StoreEntitySet="vAbsences">
+                <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
+                <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
+                <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAddTraining">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vAddTraining">
+              <MappingFragment StoreEntitySet="vAddTraining">
+                <ScalarProperty Name="TrainingPrice" ColumnName="TrainingPrice" />
+                <ScalarProperty Name="TrainingEndDate" ColumnName="TrainingEndDate" />
+                <ScalarProperty Name="TrainingStartDate" ColumnName="TrainingStartDate" />
+                <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vContracts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vContracts">
+              <MappingFragment StoreEntitySet="vContracts">
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
+                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEducationForm">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEducationForm">
+              <MappingFragment StoreEntitySet="vEducationForm">
+                <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
+                <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeDetails">
+              <MappingFragment StoreEntitySet="vEmployeeDetails">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
+                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
+                <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
+                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeList">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeList">
+              <MappingFragment StoreEntitySet="vEmployeeList">
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExamination">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExamination">
+              <MappingFragment StoreEntitySet="vExamination">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHR">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHR">
+              <MappingFragment StoreEntitySet="vHR">
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -4965,8 +5561,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

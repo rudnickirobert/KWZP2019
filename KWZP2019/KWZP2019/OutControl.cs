@@ -14,6 +14,12 @@ namespace KWZP2019
     
     public partial class OutControl
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public OutControl()
+        {
+            this.OutputProductMeasurements = new HashSet<OutputProductMeasurement>();
+        }
+    
         public int IdProcess { get; set; }
         public int IdEmployee { get; set; }
         public System.DateTime StartControlDate { get; set; }
@@ -23,5 +29,7 @@ namespace KWZP2019
     
         public virtual Employee Employee { get; set; }
         public virtual ProductionProce ProductionProce { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OutputProductMeasurement> OutputProductMeasurements { get; set; }
     }
 }

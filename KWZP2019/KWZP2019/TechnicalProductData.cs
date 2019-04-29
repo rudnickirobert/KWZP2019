@@ -14,12 +14,13 @@ namespace KWZP2019
     
     public partial class TechnicalProductData
     {
-        public int IdProduct { get; set; }
+        public Nullable<int> IdProduct { get; set; }
         public byte[] Pattern { get; set; }
         public double Width { get; set; }
         public double WeightPerMeter { get; set; }
         public double Lenght { get; set; }
         public double PricePerMeter { get; set; }
+        public int IdTechnicalProductData { get; set; }
     
         public virtual Product Product { get; set; }
     }
