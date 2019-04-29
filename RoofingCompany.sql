@@ -753,4 +753,11 @@ FROM OrderDetail
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 WHERE NOT EXISTS (SELECT *FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
+
 GO
+CREATE VIEW SafetyControlHistoryView 
+AS
+SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
+FROM SafetyControl
+JOIN Employee
+ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;

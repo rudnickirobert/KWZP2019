@@ -53,5 +53,12 @@ namespace KWZP2019
             this.Hide();
             oshTrainingForm.Show();
         }
+
+        private void btnOSHControl_Click(object sender, EventArgs e)
+        {
+            OSHControl oshControlForm = new OSHControl(db, startForm, this);
+            this.Hide();
+            oshControlForm.Show();
+        }
     }
 }

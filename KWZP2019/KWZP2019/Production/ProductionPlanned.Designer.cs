@@ -148,7 +148,7 @@
             // 
             // plannedProductionBindingSource
             // 
-            this.plannedProductionBindingSource.DataSource = typeof(KWZP2019.PlannedProduction);
+           // this.plannedProductionBindingSource.DataSource = typeof(KWZP2019.PlannedProduction);--
             // 
             // label1
             // 

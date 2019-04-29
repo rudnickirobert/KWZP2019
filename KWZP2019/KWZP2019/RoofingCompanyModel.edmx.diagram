@@ -137,6 +137,10 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemis" Width="1.5" PointX="23.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="15.75" PointY="23.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.EntranceControlView" Width="1.5" PointX="23.375" PointY="17.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" Width="1.5" PointX="9.375" PointY="22.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControlHistoryView" Width="1.5" PointX="18.375" PointY="23.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" Width="1.5" PointX="23.75" PointY="17.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProcess" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" Width="1.5" PointX="9.75" PointY="0.75" />

@@ -118,6 +118,7 @@
             this.btnOSHControl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnOSHControl.Name = "btnOSHControl";
             this.btnOSHControl.UseVisualStyleBackColor = false;
+            this.btnOSHControl.Click += new System.EventHandler(this.btnOSHControl_Click);
             // 
             // QualityControl
             // 
