@@ -28,8 +28,9 @@ namespace KWZP2019
         }
         private void btnSales_Click(object sender, EventArgs e)
         {
-            SalesDepartment salesDepartment = new SalesDepartment(db);
-            salesDepartment.Show();
+            SalesDepartmentForm salesDepartmentForm = new SalesDepartmentForm(db);
+            salesDepartmentForm.Show();
+            this.Hide();
         }
         private void btnQA_Click(object sender, EventArgs e)
         {
@@ -40,8 +41,9 @@ namespace KWZP2019
 
         private void btnMaintenance_Click(object sender, EventArgs e)
         {
-            MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db);
+            MaintenanceManagement maintenanceManagement = new MaintenanceManagement(db, this);
             maintenanceManagement.Show();
+            this.Hide();
         }
 
         private void btnHR_Click(object sender, EventArgs e)

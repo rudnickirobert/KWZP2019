@@ -16,10 +16,10 @@ namespace KWZP2019
     {
         public int IdProcess { get; set; }
         public int IdEmployee { get; set; }
-        public System.DateTime ControlDate { get; set; }
-        public bool ControlStatus { get; set; }
-        public string Comments { get; set; }
-        public int Quantity { get; set; }
+        public System.DateTime StartControlDate { get; set; }
+        public System.DateTime EndControlDate { get; set; }
+        public double WidthAcceptableDeviation { get; set; }
+        public double LenghtAcceptableDeviation { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual ProductionProce ProductionProce { get; set; }
