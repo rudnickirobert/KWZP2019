@@ -33,17 +33,23 @@ namespace KWZP2019
         }
         private void txtBoxPlanSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int planNumber;
             if (isTxtBoxEmpty(txtBoxPlanSearch))
             {
                 PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
             }
             else
             {
-                planNumber = Convert.ToInt32(txtBoxPlanSearch.Text.Trim());
-                PlannedProductionGridView.DataSource = (from PlannedProduction in db.PlannedProductions
-                                                        where PlannedProduction.IdPlan == planNumber
-                                                        select PlannedProduction).ToList();
+                if (int.TryParse(txtBoxPlanSearch.Text.Trim(), out int planNumber))
+                {
+                    planNumber = Convert.ToInt32(txtBoxPlanSearch.Text.Trim());
+                    PlannedProductionGridView.DataSource = (from PlannedProduction in db.PlannedProductions
+                                                            where PlannedProduction.IdPlan == planNumber
+                                                            select PlannedProduction).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Proszę podać poprawny numer planu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         private void PlannedProductionGridView_SelectionChanged(object sender, EventArgs e)
