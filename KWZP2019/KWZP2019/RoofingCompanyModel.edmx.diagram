@@ -122,13 +122,10 @@
         <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingCommitmentOutsourcing" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingOutsourcingType" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Supplier" Width="1.5" PointX="3" PointY="3" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SupplierType" Width="1.5" PointX="0.75" PointY="4.125" />
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" />
-        <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="20.375" PointY="21.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="22.375" PointY="17.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" Width="1.5" PointX="9.375" PointY="22.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemis" Width="1.5" PointX="22.375" PointY="22.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.OutControl" Width="1.5" PointX="12.75" PointY="25.25" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlEmployee" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess" />
@@ -137,6 +134,9 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vCompany" Width="1.5" PointX="24.375" PointY="8.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vIndividualCustomer" Width="1.5" PointX="17.375" PointY="21.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SupplierType" Width="1.5" PointX="0.75" PointY="4.125" />
+        <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemis" Width="1.5" PointX="22.375" PointY="22.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierParts" Width="1.5" PointX="23.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>

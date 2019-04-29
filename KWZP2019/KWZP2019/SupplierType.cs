@@ -21,7 +21,7 @@ namespace KWZP2019
         }
     
         public int IdSupplierType { get; set; }
-        public string SupplierType1 { get; set; }
+        public string SupplierNameType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Supplier> Supplier { get; set; }

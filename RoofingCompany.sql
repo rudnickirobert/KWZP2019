@@ -127,7 +127,7 @@ CREATE TABLE OrderDetail
 
 CREATE TABLE SupplierType
 	(IdSupplierType int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	SupplierType nvarchar(50) NOT NULL);
+	SupplierNameType nvarchar(50) NOT NULL);
 
 CREATE TABLE Supplier
 	(IdSupplier int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -676,20 +676,20 @@ ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 GO 
 CREATE VIEW vSupplierParts
 AS
-SELECT IdSupplier, SupplierType, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, SupplierDescription
+SELECT IdSupplier, SupplierNameType, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, SupplierDescription
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (SupplierType = 'Części');
+WHERE (SupplierNameType = 'Części');
 
 GO
 CREATE VIEW vSupplierSemis
 AS
-SELECT IdSupplier, SupplierType, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, SupplierDescription 
+SELECT IdSupplier, SupplierNameType, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, SupplierDescription 
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (SupplierType = 'Półfabrykaty');
+WHERE (SupplierNameType = 'Półfabrykaty');
 
 GO
 CREATE VIEW vOutsourcingWithType

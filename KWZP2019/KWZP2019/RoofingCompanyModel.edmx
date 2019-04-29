@@ -556,7 +556,7 @@
             <PropertyRef Name="IdSupplierType" />
           </Key>
           <Property Name="IdSupplierType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SupplierType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SupplierNameType" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="TechnicalProductData">
           <Key>
@@ -771,7 +771,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierParts' does not have a
         <EntityType Name="vSupplierParts">
           <Key>
             <PropertyRef Name="IdSupplier" />
-            <PropertyRef Name="SupplierType" />
+            <PropertyRef Name="SupplierNameType" />
             <PropertyRef Name="SupplierName" />
             <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="Email" />
@@ -784,7 +784,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierParts' does not have a
             <PropertyRef Name="KRS" />
           </Key>
           <Property Name="IdSupplier" Type="int" Nullable="false" />
-          <Property Name="SupplierType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SupplierNameType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -802,7 +802,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
         <EntityType Name="vSupplierSemis">
           <Key>
             <PropertyRef Name="IdSupplier" />
-            <PropertyRef Name="SupplierType" />
+            <PropertyRef Name="SupplierNameType" />
             <PropertyRef Name="SupplierName" />
             <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="Email" />
@@ -815,7 +815,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <PropertyRef Name="KRS" />
           </Key>
           <Property Name="IdSupplier" Type="int" Nullable="false" />
-          <Property Name="SupplierType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SupplierNameType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -1736,7 +1736,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySet Name="vSupplierParts" EntityType="Self.vSupplierParts" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vSupplierParts].[IdSupplier] AS [IdSupplier], 
-    [vSupplierParts].[SupplierType] AS [SupplierType], 
+    [vSupplierParts].[SupplierNameType] AS [SupplierNameType], 
     [vSupplierParts].[SupplierName] AS [SupplierName], 
     [vSupplierParts].[PhoneNumber] AS [PhoneNumber], 
     [vSupplierParts].[Email] AS [Email], 
@@ -1753,7 +1753,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySet Name="vSupplierSemis" EntityType="Self.vSupplierSemis" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vSupplierSemis].[IdSupplier] AS [IdSupplier], 
-    [vSupplierSemis].[SupplierType] AS [SupplierType], 
+    [vSupplierSemis].[SupplierNameType] AS [SupplierNameType], 
     [vSupplierSemis].[SupplierName] AS [SupplierName], 
     [vSupplierSemis].[PhoneNumber] AS [PhoneNumber], 
     [vSupplierSemis].[Email] AS [Email], 
@@ -3548,19 +3548,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <End Role="Outsourcing" EntitySet="Outsourcing" />
           </AssociationSet>
           <EntitySet Name="Supplier" EntityType="RoofingCompanyModel.Supplier" />
-          <EntitySet Name="SupplierType" EntityType="RoofingCompanyModel.SupplierType" />
           <AssociationSet Name="FkSemiFinishedOrderSupplier" Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier">
             <End Role="Supplier" EntitySet="Supplier" />
             <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrders" />
           </AssociationSet>
-          <AssociationSet Name="FkSupplierSupplierType" Association="RoofingCompanyModel.FkSupplierSupplierType">
-            <End Role="SupplierType" EntitySet="SupplierType" />
-            <End Role="Supplier" EntitySet="Supplier" />
-          </AssociationSet>
           <EntitySet Name="vOrderDetail" EntityType="RoofingCompanyModel.vOrderDetail" />
           <EntitySet Name="vOutsourcingWithType" EntityType="RoofingCompanyModel.vOutsourcingWithType" />
           <EntitySet Name="vPredictedPriceForCustomer" EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" />
-          <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemis" />
           <EntitySet Name="OutControl" EntityType="RoofingCompanyModel.OutControl" />
           <AssociationSet Name="FkOutControlEmployee" Association="RoofingCompanyModel.FkOutControlEmployee">
             <End Role="Employee" EntitySet="Employees" />
@@ -3578,6 +3572,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <EntitySet Name="vCompany" EntityType="RoofingCompanyModel.vCompany" />
           <EntitySet Name="vIndividualCustomer" EntityType="RoofingCompanyModel.vIndividualCustomer" />
           <EntitySet Name="vOutputMagazine" EntityType="RoofingCompanyModel.vOutputMagazine" />
+          <EntitySet Name="SupplierType" EntityType="RoofingCompanyModel.SupplierType" />
+          <AssociationSet Name="FkSupplierSupplierType" Association="RoofingCompanyModel.FkSupplierSupplierType">
+            <End Role="SupplierType" EntitySet="SupplierType" />
+            <End Role="Supplier" EntitySet="Supplier" />
+          </AssociationSet>
+          <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemis" />
           <EntitySet Name="vSupplierParts" EntityType="RoofingCompanyModel.vSupplierParts" />
         </EntityContainer>
         <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
@@ -3758,14 +3758,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <NavigationProperty Name="SemiFinishedOrder" Relationship="RoofingCompanyModel.FkSemiFinishedOrderSupplier" FromRole="Supplier" ToRole="SemiFinishedOrder" />
           <NavigationProperty Name="SupplierType" Relationship="RoofingCompanyModel.FkSupplierSupplierType" FromRole="Supplier" ToRole="SupplierType" />
         </EntityType>
-        <EntityType Name="SupplierType">
-          <Key>
-            <PropertyRef Name="IdSupplierType" />
-          </Key>
-          <Property Name="IdSupplierType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SupplierType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Supplier" Relationship="RoofingCompanyModel.FkSupplierSupplierType" FromRole="SupplierType" ToRole="Supplier" />
-        </EntityType>
         <Association Name="FkSemiFinishedOrderSupplier">
           <End Type="RoofingCompanyModel.Supplier" Role="Supplier" Multiplicity="1" />
           <End Type="RoofingCompanyModel.SemiFinishedOrder" Role="SemiFinishedOrder" Multiplicity="*" />
@@ -3775,18 +3767,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             </Principal>
             <Dependent Role="SemiFinishedOrder">
               <PropertyRef Name="IdSupplier" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FkSupplierSupplierType">
-          <End Type="RoofingCompanyModel.SupplierType" Role="SupplierType" Multiplicity="1" />
-          <End Type="RoofingCompanyModel.Supplier" Role="Supplier" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SupplierType">
-              <PropertyRef Name="IdSupplierType" />
-            </Principal>
-            <Dependent Role="Supplier">
-              <PropertyRef Name="IdSupplierType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3845,35 +3825,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Markup" Type="Double" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vSupplierSemis">
-          <Key>
-            <PropertyRef Name="IdSupplier" />
-            <PropertyRef Name="SupplierType" />
-            <PropertyRef Name="SupplierName" />
-            <PropertyRef Name="PhoneNumber" />
-            <PropertyRef Name="Email" />
-            <PropertyRef Name="City" />
-            <PropertyRef Name="ZipCode" />
-            <PropertyRef Name="Street" />
-            <PropertyRef Name="HouseNumber" />
-            <PropertyRef Name="ApartmentNumber" />
-            <PropertyRef Name="NIP" />
-            <PropertyRef Name="KRS" />
-          </Key>
-          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
-          <Property Name="SupplierType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
-          <Property Name="Street" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="HouseNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="ApartmentNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="SupplierDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OutControl">
           <Key>
@@ -3997,10 +3948,30 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
           <Property Name="EndControlDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SuccesfullProduced" Type="Int32" />
         </EntityType>
-        <EntityType Name="vSupplierParts">
+        <EntityType Name="SupplierType">
+          <Key>
+            <PropertyRef Name="IdSupplierType" />
+          </Key>
+          <Property Name="IdSupplierType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierNameType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Supplier" Relationship="RoofingCompanyModel.FkSupplierSupplierType" FromRole="SupplierType" ToRole="Supplier" />
+        </EntityType>
+        <Association Name="FkSupplierSupplierType">
+          <End Type="RoofingCompanyModel.SupplierType" Role="SupplierType" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Supplier" Role="Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierType">
+              <PropertyRef Name="IdSupplierType" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="IdSupplierType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vSupplierSemis">
           <Key>
             <PropertyRef Name="IdSupplier" />
-            <PropertyRef Name="SupplierType" />
+            <PropertyRef Name="SupplierNameType" />
             <PropertyRef Name="SupplierName" />
             <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="Email" />
@@ -4013,7 +3984,36 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <PropertyRef Name="KRS" />
           </Key>
           <Property Name="IdSupplier" Type="Int32" Nullable="false" />
-          <Property Name="SupplierType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierNameType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ApartmentNumber" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSupplierParts">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+            <PropertyRef Name="SupplierNameType" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="ZipCode" />
+            <PropertyRef Name="Street" />
+            <PropertyRef Name="HouseNumber" />
+            <PropertyRef Name="ApartmentNumber" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+          <Property Name="SupplierNameType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -4681,14 +4681,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SupplierType">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.SupplierType">
-              <MappingFragment StoreEntitySet="SupplierType">
-                <ScalarProperty Name="SupplierType1" ColumnName="SupplierType" />
-                <ScalarProperty Name="IdSupplierType" ColumnName="IdSupplierType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vOrderDetail">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
               <MappingFragment StoreEntitySet="vOrderDetail">
@@ -4727,25 +4719,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vSupplierSemis">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemis">
-              <MappingFragment StoreEntitySet="vSupplierSemis">
-                <ScalarProperty Name="SupplierDescription" ColumnName="SupplierDescription" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
-                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
-                <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4821,6 +4794,33 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="SupplierType">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.SupplierType">
+              <MappingFragment StoreEntitySet="SupplierType">
+                <ScalarProperty Name="SupplierNameType" ColumnName="SupplierNameType" />
+                <ScalarProperty Name="IdSupplierType" ColumnName="IdSupplierType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierSemis">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemis">
+              <MappingFragment StoreEntitySet="vSupplierSemis">
+                <ScalarProperty Name="SupplierDescription" ColumnName="SupplierDescription" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierNameType" ColumnName="SupplierNameType" />
+                <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vSupplierParts">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierParts">
               <MappingFragment StoreEntitySet="vSupplierParts">
@@ -4835,7 +4835,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
+                <ScalarProperty Name="SupplierNameType" ColumnName="SupplierNameType" />
                 <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
               </MappingFragment>
             </EntityTypeMapping>

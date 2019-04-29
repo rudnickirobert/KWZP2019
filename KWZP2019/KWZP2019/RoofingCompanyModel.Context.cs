@@ -83,16 +83,16 @@ namespace KWZP2019
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Outsourcing> Outsourcing { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
-        public virtual DbSet<SupplierType> SupplierType { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetail { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithType { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomer { get; set; }
-        public virtual DbSet<vSupplierSemis> vSupplierSemis { get; set; }
         public virtual DbSet<OutControl> OutControl { get; set; }
         public virtual DbSet<TechnicalProductData> TechnicalProductData { get; set; }
         public virtual DbSet<vCompany> vCompany { get; set; }
         public virtual DbSet<vIndividualCustomer> vIndividualCustomer { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazine { get; set; }
+        public virtual DbSet<SupplierType> SupplierType { get; set; }
+        public virtual DbSet<vSupplierSemis> vSupplierSemis { get; set; }
         public virtual DbSet<vSupplierParts> vSupplierParts { get; set; }
     }
 }
