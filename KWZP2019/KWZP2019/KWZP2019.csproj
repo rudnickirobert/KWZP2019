@@ -751,6 +751,7 @@
     <None Include="Production\ProductionProcess.datasource" />
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
+    <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -766,8 +767,6 @@
     </EntityDeploy>
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
-    </None>
-    <None Include="Technology.datasource" />
     </None>
   </ItemGroup>
   <ItemGroup>
