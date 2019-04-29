@@ -26,8 +26,8 @@ namespace KWZP2019
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderForm orderForm = new OrderForm();
-            orderForm.ShowDialog();
+            AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db);
+            addNewOrderForm.ShowDialog();
             this.Close();
         }
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
