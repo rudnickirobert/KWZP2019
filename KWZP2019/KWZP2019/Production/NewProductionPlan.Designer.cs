@@ -32,7 +32,7 @@
             this.btnAddEmp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cBoxMachine = new System.Windows.Forms.ComboBox();
+            this.comboBoxMachine = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tBoxPlanNr = new System.Windows.Forms.TextBox();
             this.dateTimeStart = new System.Windows.Forms.DateTimePicker();
@@ -60,7 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
             this.viewOrderDetail = new System.Windows.Forms.DataGridView();
             this.idDetailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,9 +78,10 @@
             // 
             // btnAddEmp
             // 
-            this.btnAddEmp.Location = new System.Drawing.Point(590, 21);
+            this.btnAddEmp.Location = new System.Drawing.Point(442, 17);
+            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddEmp.Name = "btnAddEmp";
-            this.btnAddEmp.Size = new System.Drawing.Size(91, 34);
+            this.btnAddEmp.Size = new System.Drawing.Size(68, 28);
             this.btnAddEmp.TabIndex = 0;
             this.btnAddEmp.Text = "DODAJ";
             this.btnAddEmp.UseVisualStyleBackColor = true;
@@ -88,85 +89,95 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 126);
+            this.label1.Location = new System.Drawing.Point(15, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 17);
+            this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Szczegół zamówienia";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 300);
+            this.label2.Location = new System.Drawing.Point(15, 244);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 17);
+            this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Przydzielona maszyna";
             // 
-            // cBoxMachine
+            // comboBoxMachine
             // 
-            this.cBoxMachine.FormattingEnabled = true;
-            this.cBoxMachine.Location = new System.Drawing.Point(226, 298);
-            this.cBoxMachine.Name = "cBoxMachine";
-            this.cBoxMachine.Size = new System.Drawing.Size(121, 24);
-            this.cBoxMachine.TabIndex = 3;
+            this.comboBoxMachine.FormattingEnabled = true;
+            this.comboBoxMachine.Location = new System.Drawing.Point(170, 242);
+            this.comboBoxMachine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMachine.Name = "comboBoxMachine";
+            this.comboBoxMachine.Size = new System.Drawing.Size(92, 21);
+            this.comboBoxMachine.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(828, 351);
+            this.label3.Location = new System.Drawing.Point(621, 285);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 17);
+            this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Data zamówienia";
             // 
             // tBoxPlanNr
             // 
             this.tBoxPlanNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tBoxPlanNr.Location = new System.Drawing.Point(477, 12);
+            this.tBoxPlanNr.Location = new System.Drawing.Point(358, 10);
+            this.tBoxPlanNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tBoxPlanNr.Name = "tBoxPlanNr";
-            this.tBoxPlanNr.Size = new System.Drawing.Size(100, 38);
+            this.tBoxPlanNr.Size = new System.Drawing.Size(76, 32);
             this.tBoxPlanNr.TabIndex = 7;
             // 
             // dateTimeStart
             // 
             this.dateTimeStart.AllowDrop = true;
-            this.dateTimeStart.Location = new System.Drawing.Point(1034, 351);
+            this.dateTimeStart.Location = new System.Drawing.Point(776, 285);
+            this.dateTimeStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(264, 22);
+            this.dateTimeStart.Size = new System.Drawing.Size(199, 20);
             this.dateTimeStart.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(828, 399);
+            this.label5.Location = new System.Drawing.Point(621, 324);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 17);
+            this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Szacowana data realizacji";
             // 
             // dateTimeEnd
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(1034, 399);
+            this.dateTimeEnd.Location = new System.Drawing.Point(776, 324);
+            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(264, 22);
+            this.dateTimeEnd.Size = new System.Drawing.Size(199, 20);
             this.dateTimeEnd.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(162, 25);
+            this.label4.Location = new System.Drawing.Point(122, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 25);
+            this.label4.Size = new System.Drawing.Size(192, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Numer planu produkcji:";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(439, 463);
+            this.btnSave.Location = new System.Drawing.Point(329, 376);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 34);
+            this.btnSave.Size = new System.Drawing.Size(68, 28);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "ZAPISZ";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -174,9 +185,10 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(439, 520);
+            this.btnReturn.Location = new System.Drawing.Point(329, 422);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(91, 34);
+            this.btnReturn.Size = new System.Drawing.Size(68, 28);
             this.btnReturn.TabIndex = 14;
             this.btnReturn.Text = "POWRÓT";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -185,18 +197,20 @@
             // cBoxIntoProduction
             // 
             this.cBoxIntoProduction.AutoSize = true;
-            this.cBoxIntoProduction.Location = new System.Drawing.Point(318, 530);
+            this.cBoxIntoProduction.Location = new System.Drawing.Point(238, 431);
+            this.cBoxIntoProduction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxIntoProduction.Name = "cBoxIntoProduction";
-            this.cBoxIntoProduction.Size = new System.Drawing.Size(18, 17);
+            this.cBoxIntoProduction.Size = new System.Drawing.Size(15, 14);
             this.cBoxIntoProduction.TabIndex = 15;
             this.cBoxIntoProduction.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 529);
+            this.label6.Location = new System.Drawing.Point(84, 430);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 17);
+            this.label6.Size = new System.Drawing.Size(130, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "Przekazano do produkcji?";
             // 
@@ -213,10 +227,11 @@
             this.plannedProductionDataGridViewTextBoxColumn,
             this.allocationDataGridViewTextBoxColumn});
             this.viewProcessEmpl.DataSource = this.plannedProductionEmployeeDetailBindingSource;
-            this.viewProcessEmpl.Location = new System.Drawing.Point(804, 111);
+            this.viewProcessEmpl.Location = new System.Drawing.Point(603, 90);
+            this.viewProcessEmpl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewProcessEmpl.Name = "viewProcessEmpl";
             this.viewProcessEmpl.RowTemplate.Height = 24;
-            this.viewProcessEmpl.Size = new System.Drawing.Size(520, 223);
+            this.viewProcessEmpl.Size = new System.Drawing.Size(390, 181);
             this.viewProcessEmpl.TabIndex = 17;
             // 
             // idDetailDataGridViewTextBoxColumn
@@ -275,9 +290,10 @@
             // lblOperators
             // 
             this.lblOperators.AutoSize = true;
-            this.lblOperators.Location = new System.Drawing.Point(801, 80);
+            this.lblOperators.Location = new System.Drawing.Point(601, 65);
+            this.lblOperators.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOperators.Name = "lblOperators";
-            this.lblOperators.Size = new System.Drawing.Size(158, 17);
+            this.lblOperators.Size = new System.Drawing.Size(119, 13);
             this.lblOperators.TabIndex = 18;
             this.lblOperators.Text = "Przydzieleni pracownicy";
             // 
@@ -289,11 +305,13 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dateTimePicker3);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.comboBoxEmployee);
             this.groupBox1.Controls.Add(this.btnAddEmp);
-            this.groupBox1.Location = new System.Drawing.Point(609, 454);
+            this.groupBox1.Location = new System.Drawing.Point(457, 369);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 100);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(544, 81);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodawanie pracowników";
@@ -301,66 +319,74 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 38);
+            this.label7.Location = new System.Drawing.Point(4, 31);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 21;
             this.label7.Text = "Pracownik";
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(590, 59);
+            this.btnRemove.Location = new System.Drawing.Point(442, 48);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(91, 34);
+            this.btnRemove.Size = new System.Drawing.Size(68, 28);
             this.btnRemove.TabIndex = 24;
             this.btnRemove.Text = "USUŃ";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(346, 66);
+            this.dateTimePicker4.Location = new System.Drawing.Point(260, 54);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker4.TabIndex = 23;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(219, 66);
+            this.label9.Location = new System.Drawing.Point(164, 54);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 17);
+            this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 22;
             this.label9.Text = "Data zakończenia";
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(346, 38);
+            this.dateTimePicker3.Location = new System.Drawing.Point(260, 31);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker3.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(219, 38);
+            this.label8.Location = new System.Drawing.Point(164, 31);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 17);
+            this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Data rozpoczęcia";
             // 
-            // comboBox3
+            // comboBoxEmployee
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 59);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(194, 24);
-            this.comboBox3.TabIndex = 5;
+            this.comboBoxEmployee.FormattingEnabled = true;
+            this.comboBoxEmployee.Location = new System.Drawing.Point(4, 48);
+            this.comboBoxEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxEmployee.Name = "comboBoxEmployee";
+            this.comboBoxEmployee.Size = new System.Drawing.Size(146, 21);
+            this.comboBoxEmployee.TabIndex = 5;
             // 
             // btnNewPlan
             // 
-            this.btnNewPlan.Location = new System.Drawing.Point(671, 9);
+            this.btnNewPlan.Location = new System.Drawing.Point(503, 7);
+            this.btnNewPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewPlan.Name = "btnNewPlan";
-            this.btnNewPlan.Size = new System.Drawing.Size(101, 41);
+            this.btnNewPlan.Size = new System.Drawing.Size(76, 33);
             this.btnNewPlan.TabIndex = 21;
             this.btnNewPlan.Text = "NOWY";
             this.btnNewPlan.UseVisualStyleBackColor = true;
@@ -375,10 +401,11 @@
             this.quantityDataGridViewTextBoxColumn,
             this.productCodeDataGridViewTextBoxColumn});
             this.viewOrderDetail.DataSource = this.vUnhandledOrderDetailsBindingSource;
-            this.viewOrderDetail.Location = new System.Drawing.Point(23, 156);
+            this.viewOrderDetail.Location = new System.Drawing.Point(17, 127);
+            this.viewOrderDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewOrderDetail.Name = "viewOrderDetail";
             this.viewOrderDetail.RowTemplate.Height = 24;
-            this.viewOrderDetail.Size = new System.Drawing.Size(554, 101);
+            this.viewOrderDetail.Size = new System.Drawing.Size(416, 82);
             this.viewOrderDetail.TabIndex = 22;
             this.viewOrderDetail.SelectionChanged += new System.EventHandler(this.viewOrderDetail_SelectionChanged);
             // 
@@ -417,9 +444,10 @@
             // 
             // btnEndDateCalculate
             // 
-            this.btnEndDateCalculate.Location = new System.Drawing.Point(549, 387);
+            this.btnEndDateCalculate.Location = new System.Drawing.Point(412, 314);
+            this.btnEndDateCalculate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEndDateCalculate.Name = "btnEndDateCalculate";
-            this.btnEndDateCalculate.Size = new System.Drawing.Size(223, 34);
+            this.btnEndDateCalculate.Size = new System.Drawing.Size(167, 28);
             this.btnEndDateCalculate.TabIndex = 23;
             this.btnEndDateCalculate.Text = "OSZACUJ DATĘ KOŃCOWĄ";
             this.btnEndDateCalculate.UseVisualStyleBackColor = true;
@@ -427,9 +455,9 @@
             // 
             // NewProductionPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 566);
+            this.ClientSize = new System.Drawing.Size(1010, 460);
             this.Controls.Add(this.btnEndDateCalculate);
             this.Controls.Add(this.viewOrderDetail);
             this.Controls.Add(this.btnNewPlan);
@@ -447,8 +475,9 @@
             this.Controls.Add(this.tBoxPlanNr);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cBoxMachine);
+            this.Controls.Add(this.comboBoxMachine);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewProductionPlan";
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
@@ -468,7 +497,7 @@
         private System.Windows.Forms.Button btnAddEmp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cBoxMachine;
+        private System.Windows.Forms.ComboBox comboBoxMachine;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tBoxPlanNr;
         private System.Windows.Forms.DateTimePicker dateTimeStart;
@@ -484,7 +513,7 @@
         private System.Windows.Forms.Label lblOperators;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxEmployee;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;

@@ -22,7 +22,32 @@ namespace KWZP2019
             idNewPlan = newId;
         }
         private void NewProductionPlan_Load(object sender, EventArgs e)
-        {           
+        {
+            comboBoxMachine.DataSource = (from maintenanceForComboBox in db.Maintenances
+                                      join machineForComboBox in db.Machines
+                                      on maintenanceForComboBox.IdMachine equals machineForComboBox.IdMachine
+                                      select new
+                                      {
+                                          machineIdForComboBox = maintenanceForComboBox.IdMachine,
+                                          fullMachineNameForComboBox = machineForComboBox.MachineName + " " + machineForComboBox.CatalogMachineNr
+                                      }).Distinct().ToList();
+            comboBoxMachine.ValueMember = "machineIdForComboBox";
+            comboBoxMachine.DisplayMember = "fullMachineNameForComboBox";
+            comboBoxMachine.Invalidate();
+
+            comboBoxEmployee.DataSource = (from allocationForComboBox in db.Allocations
+                                           join employeeForComboBox in db.Employees
+                                           on allocationForComboBox.IdEmployee equals employeeForComboBox.IdEmployee
+                                           where allocationForComboBox.IdDepartment == 1
+                                           select new
+                                           {
+                                               employeeIdForComboBox = employeeForComboBox.IdEmployee,
+                                               employeeFullNameForComboBox = employeeForComboBox.EmployeeName + " " + employeeForComboBox.EmployeeSurname
+                                           }).ToList();
+            comboBoxEmployee.ValueMember = "employeeIdForComboBox";
+            comboBoxEmployee.DisplayMember = "employeeFullNameForComboBox";
+            comboBoxEmployee.Invalidate();
+
             if (idPlan > 0)
             {
                 PlannedProduction plan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
@@ -32,7 +57,7 @@ namespace KWZP2019
                 if (plan != null)
                 {
                     tBoxPlanNr.Text = Convert.ToString(plan.IdPlan);
-                    cBoxMachine.Text = Convert.ToString(plan.IdMachine);
+                    comboBoxMachine.Text = Convert.ToString(plan.IdMachine);
                     order.IdDetail= plan.IdDetail;
                     order.Quantity = orderDetail.Quantity;
                     order.ProductCode = product.ProductCode;
@@ -63,7 +88,7 @@ namespace KWZP2019
 
         private void btnEndDateCalculate_Click(object sender, EventArgs e)
         {
-            int idMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+            int idMachine = Convert.ToInt32(comboBoxMachine.SelectedValue);
             int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
             double timeInterval;
             OrderDetail orderDetail = db.OrderDetails.First(f => f.IdDetail == idDetail);
@@ -80,7 +105,7 @@ namespace KWZP2019
         {
             PlannedProduction newPlan = new PlannedProduction();
             newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-            newPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+            newPlan.IdMachine = Convert.ToInt32(comboBoxMachine.SelectedValue);
             newPlan.PlannedStartd = dateTimeStart.Value;
             newPlan.PlannedEndd = dateTimeEnd.Value;
             newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
