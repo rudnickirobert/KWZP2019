@@ -766,7 +766,7 @@ ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 GO
 
 --Views UR--
-
+/*
 CREATE VIEW vPartsView
 AS
 SELECT Part.PartName as [Nazwa części], 
@@ -787,5 +787,17 @@ ON Part.IdPart = MaintPart.IdPart)
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
 ORDER BY Maintenance.DateAcceptOrder DESC;
-GO
+GO */
 
+/*====SALES DEPARTMENT===*/
+
+GO
+CREATE VIEW vEmployeeSalesDepartment
+AS
+SELECT EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, DepartmentName, StartDate, EndDate
+FROM Allocation
+JOIN Employee
+ON Allocation.IdEmployee = Employee.IdEmployee
+JOIN Department
+ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (DepartmentName = 'Logistyka');
