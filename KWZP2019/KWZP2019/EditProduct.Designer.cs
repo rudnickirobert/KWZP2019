@@ -72,7 +72,7 @@
             this.btEditConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btEditConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btEditConfirm.Image = global::KWZP2019.Properties.Resources.good_quality_80px;
+            this.btEditConfirm.Image = global::KWZP2019.Properties.Resources.okej;
             this.btEditConfirm.Location = new System.Drawing.Point(78, 228);
             this.btEditConfirm.Name = "btEditConfirm";
             this.btEditConfirm.Size = new System.Drawing.Size(290, 160);
@@ -91,7 +91,7 @@
             this.btEditBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btEditBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btEditBack.Image = global::KWZP2019.Properties.Resources.cancel_48px;
+            this.btEditBack.Image = global::KWZP2019.Properties.Resources.powrott;
             this.btEditBack.Location = new System.Drawing.Point(445, 228);
             this.btEditBack.Name = "btEditBack";
             this.btEditBack.Size = new System.Drawing.Size(290, 160);
