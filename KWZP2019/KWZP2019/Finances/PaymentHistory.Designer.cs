@@ -30,7 +30,7 @@
         {
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.tbSurname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSurnameSearched = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,21 +50,21 @@
             this.tbSurname.TabIndex = 4;
             this.tbSurname.TextChanged += new System.EventHandler(this.tbSurname_KeyUp);
             // 
-            // label1
+            // lblSurnameSearched
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 302);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Poszukiwane nazwisko:";
+            this.lblSurnameSearched.AutoSize = true;
+            this.lblSurnameSearched.Location = new System.Drawing.Point(10, 302);
+            this.lblSurnameSearched.Name = "lblSurnameSearched";
+            this.lblSurnameSearched.Size = new System.Drawing.Size(120, 13);
+            this.lblSurnameSearched.TabIndex = 5;
+            this.lblSurnameSearched.Text = "Poszukiwane nazwisko:";
             // 
             // Salaries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 331);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSurnameSearched);
             this.Controls.Add(this.tbSurname);
             this.Controls.Add(this.dgvHistory);
             this.Name = "Salaries";
@@ -80,6 +80,6 @@
 
         private System.Windows.Forms.DataGridView dgvHistory;
         private System.Windows.Forms.TextBox tbSurname;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSurnameSearched;
     }
 }

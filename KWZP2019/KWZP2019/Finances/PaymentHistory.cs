@@ -21,8 +21,10 @@ namespace KWZP2019
         private Finances Finances;
         public Salaries(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
         {
-            InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.Finances = Finances;
+            InitializeComponent();
         }
         private void Salaries_Load(object sender, EventArgs e)
         {
@@ -39,12 +41,11 @@ namespace KWZP2019
 
         private void tbSurname_KeyUp(object sender, EventArgs e)
         {
-
-            dgvHistory.DataSource = db.vPaymentHistory.ToList().Where(vPaymentHistory =>
+        dgvHistory.DataSource = db.vPaymentHistory.ToList().Where(vPaymentHistory =>
         vPaymentHistory.EmployeeSurname.StartsWith(tbSurname.Text, StringComparison.OrdinalIgnoreCase))
         .Select(vPaymentHistory => new { vPaymentHistory.EmployeeName, vPaymentHistory.EmployeeSurname, vPaymentHistory.PESEL, vPaymentHistory.Bonus, vPaymentHistory.Sum, vPaymentHistory.Date })
         .ToList();
-            dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+        dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
     }
 }

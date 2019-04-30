@@ -37,12 +37,14 @@ namespace KWZP2019
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (tbCompanyName.Text.Trim() == "" || tbNIP.Text.Trim() == "")
+            if (tbCompanyName.Text.Trim() == "" || tbNIP.Text.Trim() == "" || tbPhone.Text.Trim() == "" || tbKRS.Text.Trim() == "")
             {
-                MessageBox.Show("Nazwa i NIP są wymagane");
+                MessageBox.Show("Nazwa, NIP oraz telefon kontaktowy są wymagane!");
+                return;
             }
             Contractor newContractor = new Contractor();
             newContractor.ContractorName = tbCompanyName.Text.Trim();
+            tbPhone.MaxLength = 9;
             newContractor.Phone = int.Parse(tbPhone.Text.Trim());
             newContractor.Email = tbEmail.Text.Trim();
             newContractor.City = tbCity.Text.Trim();

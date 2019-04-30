@@ -2,45 +2,61 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace KWZP2019
 {
     public partial class AddInvoices : Form
     {
-        SqlConnection con = new SqlConnection("server = .\\SQLEXPRESS;Database=RoofingCompany;Integrated Security=true");
-        SqlCommand cmd;
-
-        RoofingCompanyEntities db;
-        public AddInvoices(RoofingCompanyEntities db)
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private Finances Finances;
+        public AddInvoices(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
         {
-            InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.Finances = Finances;
+            InitializeComponent();
         }
-        private void btnAddNewCompany_Click(object sender, EventArgs e)
+        private void AddInvoices_Load(object sender, EventArgs e)
         {
-            AddNewCompany addnewcompany = new AddNewCompany(db);
-            addnewcompany.Show();
-            this.Hide();
+            List<InvoiceType> typeList = db.InvoiceTypes.ToList();
+            foreach (InvoiceType dep in typeList)
+            {
+                cbInvoiceType.Items.Add(dep.Type);
+            }
+            List<Contractor> contractorList = db.Contractors.ToList();
+            foreach (Contractor dep in contractorList)
+            {
+                cbContractors.Items.Add(dep.ContractorName);
+            }
         }
-        void clear()
-        {
-            tbInvoiceValue.Text = "";
-        }
-            private void btnAddNewInvoice_Click(object sender, EventArgs e)
+        private void btnAddNewInvoice_Click(object sender, EventArgs e)
         {
             Invoice newInvoiceValue = new Invoice();
+            int indexInvoice = cbInvoiceType.SelectedIndex;
+            int indexContractor = cbContractors.SelectedIndex;
+            newInvoiceValue.IdInvoiceType = indexInvoice+1;
+            newInvoiceValue.IdContractor = indexContractor+1;
             newInvoiceValue.Sum = decimal.Parse(tbInvoiceValue.Text.Trim());
-            int selectedIndex = comboBox1.SelectedIndex + 1;
-            newInvoiceValue.IdInvoiceType = selectedIndex;
-            newInvoiceValue.Date = DateTime.Parse(dtpDateadded.Value.ToString("yyyy-MM-dd"));
+            newInvoiceValue.Date = DateTime.Parse(dtpDateAdded.Value.ToString("yyyy-MM-dd"));
             db.Invoices.Add(newInvoiceValue);
             db.SaveChanges();
+        }
+
+        private void btnAddNewCompany_Click(object sender, EventArgs e)
+        {
+            AddNewCompany addNewCompany = new AddNewCompany(db);
+            addNewCompany.ShowDialog();
+            this.Hide();
         }
     }
 }

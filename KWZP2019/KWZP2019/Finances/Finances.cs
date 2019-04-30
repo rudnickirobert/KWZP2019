@@ -56,7 +56,7 @@ namespace KWZP2019
         }
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            AddInvoices addInvoices = new AddInvoices(db);
+            AddInvoices addInvoices = new AddInvoices(db, startForm, this);
             addInvoices.ShowDialog();
         }
 
