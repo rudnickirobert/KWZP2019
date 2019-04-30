@@ -64,12 +64,12 @@ namespace KWZP2019
             dgvSalaries.Columns[5].HeaderText = "Nazwisko";
             dgvSalaries.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
-        private void btnAcceptselectedtime_Click(object sender, EventArgs e)
+        private void btSum_Click(object sender, EventArgs e)
         {
             dgvProfits.DataSource = db.vIncomesProfits.ToList().Where(vIncomesProfits =>
-            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
-            .Select(vIncomesProfits => new { vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
-            .ToList();
+     vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
+     .Select(vIncomesProfits => new { vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
+     .ToList();
             dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvInvoices.DataSource = db.vExpencesInvoices.ToList().Where(vExpencesInvoices =>
             vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value)
@@ -91,9 +91,6 @@ namespace KWZP2019
             .Select(vExpencesPayment => new { vExpencesPayment.IdPayment, vExpencesPayment.Date, vExpencesPayment.Sum, vExpencesPayment.Bonus, vExpencesPayment.EmployeeName, vExpencesPayment.EmployeeSurname })
             .ToList();
             dgvSalaries.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-        }
-        private void btSum_Click(object sender, EventArgs e)
-        {
             decimal sumPayment = 0, sumOutsourcing = 0, sumInvoice = 0, sumOrders = 0, sumProfits = 0;
             for (int i = 0; i < dgvProfits.Rows.Count; i++)
             {
