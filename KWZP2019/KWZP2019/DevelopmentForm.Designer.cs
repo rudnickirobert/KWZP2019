@@ -76,6 +76,7 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnReturnMain
             // 
@@ -88,6 +89,7 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // txtboxTeamLeader
             // 
@@ -123,6 +125,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DevelopmentForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DevelopmentForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPattern)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
