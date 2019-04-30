@@ -1,4 +1,4 @@
-use master;
+use master
 go
 drop database RoofingCompany;
 create database RoofingCompany;
@@ -872,3 +872,29 @@ SELECT        TOP 100 PERCENT Employee.EmployeeName, Employee.EmployeeSurname, E
 FROM            Employee INNER JOIN
                          Payment ON Employee.IdEmployee = Payment.IdEmployee
 ORDER BY Employee.EmployeeSurname;
+
+GO
+
+CREATE VIEW vInvoiceType
+as
+SELECT TOP 100 PERCENT IdInvoiceType, Type
+FROM InvoiceType
+ORDER BY Type;
+
+GO
+
+CREATE VIEW vHRContract
+AS
+SELECT IdContract
+FROM Contract
+WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE())
+
+GO
+
+CREATE VIEW vHRExamination
+AS
+SELECT IdMedicalExamination
+FROM MedicalExamination
+WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE())
+
+GO
