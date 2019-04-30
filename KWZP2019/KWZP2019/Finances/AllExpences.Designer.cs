@@ -51,6 +51,11 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.tbExpencesSum = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblPln = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutsourcing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).BeginInit();
@@ -59,31 +64,43 @@
             // 
             // tbSumPayment
             // 
-            this.tbSumPayment.Location = new System.Drawing.Point(371, 101);
+            this.tbSumPayment.Location = new System.Drawing.Point(332, 104);
             this.tbSumPayment.Name = "tbSumPayment";
-            this.tbSumPayment.Size = new System.Drawing.Size(138, 20);
+            this.tbSumPayment.ReadOnly = true;
+            this.tbSumPayment.Size = new System.Drawing.Size(96, 20);
             this.tbSumPayment.TabIndex = 46;
+            this.tbSumPayment.Text = "0";
+            this.tbSumPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumInvoices
             // 
-            this.tbSumInvoices.Location = new System.Drawing.Point(109, 104);
+            this.tbSumInvoices.Location = new System.Drawing.Point(65, 104);
             this.tbSumInvoices.Name = "tbSumInvoices";
-            this.tbSumInvoices.Size = new System.Drawing.Size(138, 20);
+            this.tbSumInvoices.ReadOnly = true;
+            this.tbSumInvoices.Size = new System.Drawing.Size(101, 20);
             this.tbSumInvoices.TabIndex = 45;
+            this.tbSumInvoices.Text = "0";
+            this.tbSumInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumOS
             // 
-            this.tbSumOS.Location = new System.Drawing.Point(371, 288);
+            this.tbSumOS.Location = new System.Drawing.Point(349, 288);
             this.tbSumOS.Name = "tbSumOS";
-            this.tbSumOS.Size = new System.Drawing.Size(138, 20);
+            this.tbSumOS.ReadOnly = true;
+            this.tbSumOS.Size = new System.Drawing.Size(79, 20);
             this.tbSumOS.TabIndex = 44;
+            this.tbSumOS.Text = "0";
+            this.tbSumOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumOrders
             // 
-            this.tbSumOrders.Location = new System.Drawing.Point(109, 288);
+            this.tbSumOrders.Location = new System.Drawing.Point(87, 288);
             this.tbSumOrders.Name = "tbSumOrders";
-            this.tbSumOrders.Size = new System.Drawing.Size(138, 20);
+            this.tbSumOrders.ReadOnly = true;
+            this.tbSumOrders.Size = new System.Drawing.Size(79, 20);
             this.tbSumOrders.TabIndex = 43;
+            this.tbSumOrders.Text = "0";
+            this.tbSumOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btSum
             // 
@@ -93,6 +110,7 @@
             this.btSum.TabIndex = 42;
             this.btSum.Text = "Sumuj wszystkie widoki";
             this.btSum.UseVisualStyleBackColor = true;
+            this.btSum.Click += new System.EventHandler(this.btSum_Click);
             // 
             // dgvOutsourcing
             // 
@@ -179,6 +197,7 @@
             this.btnGenerategeneralreport.TabIndex = 32;
             this.btnGenerategeneralreport.Text = "Generuj raport";
             this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
+            this.btnGenerategeneralreport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
             // 
             // btnAcceptselectedtime
             // 
@@ -188,6 +207,7 @@
             this.btnAcceptselectedtime.TabIndex = 31;
             this.btnAcceptselectedtime.Text = "Zatwierdź wybrany przedzial";
             this.btnAcceptselectedtime.UseVisualStyleBackColor = true;
+            this.btnAcceptselectedtime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
             // 
             // lblSpecifytimerange
             // 
@@ -236,8 +256,11 @@
             // 
             this.tbExpencesSum.Location = new System.Drawing.Point(218, 513);
             this.tbExpencesSum.Name = "tbExpencesSum";
+            this.tbExpencesSum.ReadOnly = true;
             this.tbExpencesSum.Size = new System.Drawing.Size(138, 20);
             this.tbExpencesSum.TabIndex = 48;
+            this.tbExpencesSum.Text = "0";
+            this.tbExpencesSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -248,11 +271,61 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "Suma wydatków:";
             // 
-            // Costs
+            // lblPln
+            // 
+            this.lblPln.AutoSize = true;
+            this.lblPln.Location = new System.Drawing.Point(172, 108);
+            this.lblPln.Name = "lblPln";
+            this.lblPln.Size = new System.Drawing.Size(75, 13);
+            this.lblPln.TabIndex = 49;
+            this.lblPln.Text = "złotych (netto)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(172, 291);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "złotych (netto)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(434, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "złotych (netto)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(434, 291);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "złotych (netto)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(362, 516);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "złotych (netto)";
+            // 
+            // AllExpenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 625);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblPln);
             this.Controls.Add(this.tbExpencesSum);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbSumPayment);
@@ -276,8 +349,9 @@
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
-            this.Name = "Costs";
+            this.Name = "AllExpenses";
             this.Text = "Koszta";
+            this.Load += new System.EventHandler(this.AllExpenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutsourcing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).EndInit();
@@ -312,5 +386,10 @@
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.TextBox tbExpencesSum;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPln;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

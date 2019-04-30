@@ -24,19 +24,19 @@ namespace KWZP2019
         }
         private void btnPayments_Click(object sender, EventArgs e)
         {
-            Salaries salaries = new Salaries(db);
+            Salaries salaries = new Salaries(db, startForm, this);
             salaries.ShowDialog();
             this.Hide();
         }
         private void btnCountPayments_Click(object sender, EventArgs e)
         {
-            SalariesSummary salariesSummary = new SalariesSummary(db);
+            SalariesSummary salariesSummary = new SalariesSummary(db, startForm, this);
             salariesSummary.ShowDialog();
             this.Hide();
         }
         private void btnCosts_Click(object sender, EventArgs e)
         {
-            AllExpenses costs = new AllExpenses(db);
+            AllExpenses costs = new AllExpenses(db, startForm, this);
             costs.ShowDialog();
         }
         private void btnEarnings_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace KWZP2019
         }
         private void btnFinancialStatement_Click(object sender, EventArgs e)
         {
-            Profits profits = new Profits(db);
+            Profits profits = new Profits(db, startForm, this);
             profits.ShowDialog();
 
         }

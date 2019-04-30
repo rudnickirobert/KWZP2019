@@ -39,6 +39,7 @@
             this.lblFrom = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.lblPln = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,8 +47,11 @@
             // 
             this.tbSumIncome.Location = new System.Drawing.Point(12, 109);
             this.tbSumIncome.Name = "tbSumIncome";
-            this.tbSumIncome.Size = new System.Drawing.Size(497, 20);
+            this.tbSumIncome.ReadOnly = true;
+            this.tbSumIncome.Size = new System.Drawing.Size(416, 20);
             this.tbSumIncome.TabIndex = 32;
+            this.tbSumIncome.Text = "0";
+            this.tbSumIncome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btSum
             // 
@@ -139,11 +143,21 @@
             this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
             this.dtpStartDate.TabIndex = 22;
             // 
+            // lblPln
+            // 
+            this.lblPln.AutoSize = true;
+            this.lblPln.Location = new System.Drawing.Point(434, 112);
+            this.lblPln.Name = "lblPln";
+            this.lblPln.Size = new System.Drawing.Size(75, 13);
+            this.lblPln.TabIndex = 33;
+            this.lblPln.Text = "złotych (netto)";
+            // 
             // AllIncomes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 551);
+            this.Controls.Add(this.lblPln);
             this.Controls.Add(this.tbSumIncome);
             this.Controls.Add(this.btSum);
             this.Controls.Add(this.dgvProfits);
@@ -177,5 +191,6 @@
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.Label lblPln;
     }
 }

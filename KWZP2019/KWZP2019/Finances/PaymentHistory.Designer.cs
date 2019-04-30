@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvBonus = new System.Windows.Forms.DataGridView();
+            this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.tbSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBonus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvBonus
+            // dgvHistory
             // 
-            this.dgvBonus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBonus.Location = new System.Drawing.Point(12, 12);
-            this.dgvBonus.Name = "dgvBonus";
-            this.dgvBonus.Size = new System.Drawing.Size(500, 279);
-            this.dgvBonus.TabIndex = 0;
+            this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistory.Location = new System.Drawing.Point(12, 12);
+            this.dgvHistory.Name = "dgvHistory";
+            this.dgvHistory.Size = new System.Drawing.Size(500, 279);
+            this.dgvHistory.TabIndex = 0;
             // 
             // tbSurname
             // 
@@ -66,11 +66,11 @@
             this.ClientSize = new System.Drawing.Size(524, 331);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSurname);
-            this.Controls.Add(this.dgvBonus);
+            this.Controls.Add(this.dgvHistory);
             this.Name = "Salaries";
             this.Text = "Historia wypłat";
             this.Load += new System.EventHandler(this.Salaries_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBonus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,7 +78,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvBonus;
+        private System.Windows.Forms.DataGridView dgvHistory;
         private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.Label label1;
     }

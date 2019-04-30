@@ -36,16 +36,11 @@
             this.btnAcceptselectedtime = new System.Windows.Forms.Button();
             this.lblListofrevenues = new System.Windows.Forms.Label();
             this.btnGenerategeneralreport = new System.Windows.Forms.Button();
-            this.dgvProfits = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvInvoices = new System.Windows.Forms.DataGridView();
-            this.dgvSalaries = new System.Windows.Forms.DataGridView();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.dgvOutsourcing = new System.Windows.Forms.DataGridView();
             this.btSum = new System.Windows.Forms.Button();
             this.tbSumIncome = new System.Windows.Forms.TextBox();
             this.tbSumOrders = new System.Windows.Forms.TextBox();
@@ -54,11 +49,22 @@
             this.tbSumPayment = new System.Windows.Forms.TextBox();
             this.tbPureMoney = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dgvProfits = new System.Windows.Forms.DataGridView();
+            this.dgvOutsourcing = new System.Windows.Forms.DataGridView();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
+            this.dgvSalaries = new System.Windows.Forms.DataGridView();
+            this.dgvInvoices = new System.Windows.Forms.DataGridView();
+            this.lblPln = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutsourcing)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpStartDate
@@ -117,7 +123,7 @@
             // lblListofrevenues
             // 
             this.lblListofrevenues.AutoSize = true;
-            this.lblListofrevenues.Location = new System.Drawing.Point(112, 83);
+            this.lblListofrevenues.Location = new System.Drawing.Point(164, 109);
             this.lblListofrevenues.Name = "lblListofrevenues";
             this.lblListofrevenues.Size = new System.Drawing.Size(35, 13);
             this.lblListofrevenues.TabIndex = 7;
@@ -127,24 +133,16 @@
             // 
             this.btnGenerategeneralreport.Location = new System.Drawing.Point(12, 499);
             this.btnGenerategeneralreport.Name = "btnGenerategeneralreport";
-            this.btnGenerategeneralreport.Size = new System.Drawing.Size(771, 23);
+            this.btnGenerategeneralreport.Size = new System.Drawing.Size(497, 23);
             this.btnGenerategeneralreport.TabIndex = 9;
             this.btnGenerategeneralreport.Text = "Generuj raport";
             this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
             this.btnGenerategeneralreport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
             // 
-            // dgvProfits
-            // 
-            this.dgvProfits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfits.Location = new System.Drawing.Point(12, 122);
-            this.dgvProfits.Name = "dgvProfits";
-            this.dgvProfits.Size = new System.Drawing.Size(267, 342);
-            this.dgvProfits.TabIndex = 10;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(517, 83);
+            this.label1.Location = new System.Drawing.Point(164, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 11;
@@ -153,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(299, 106);
+            this.label2.Location = new System.Drawing.Point(100, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 12;
@@ -162,7 +160,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(550, 106);
+            this.label3.Location = new System.Drawing.Point(100, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 13;
@@ -171,7 +169,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(299, 286);
+            this.label4.Location = new System.Drawing.Point(100, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 14;
@@ -180,49 +178,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(550, 286);
+            this.label5.Location = new System.Drawing.Point(100, 272);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Outsourcing:";
             // 
-            // dgvInvoices
-            // 
-            this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoices.Location = new System.Drawing.Point(302, 122);
-            this.dgvInvoices.Name = "dgvInvoices";
-            this.dgvInvoices.Size = new System.Drawing.Size(230, 155);
-            this.dgvInvoices.TabIndex = 16;
-            // 
-            // dgvSalaries
-            // 
-            this.dgvSalaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalaries.Location = new System.Drawing.Point(553, 122);
-            this.dgvSalaries.Name = "dgvSalaries";
-            this.dgvSalaries.Size = new System.Drawing.Size(230, 155);
-            this.dgvSalaries.TabIndex = 17;
-            // 
-            // dgvOrders
-            // 
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(302, 309);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(230, 155);
-            this.dgvOrders.TabIndex = 18;
-            // 
-            // dgvOutsourcing
-            // 
-            this.dgvOutsourcing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOutsourcing.Location = new System.Drawing.Point(553, 309);
-            this.dgvOutsourcing.Name = "dgvOutsourcing";
-            this.dgvOutsourcing.Size = new System.Drawing.Size(230, 155);
-            this.dgvOutsourcing.TabIndex = 19;
-            // 
             // btSum
             // 
             this.btSum.Location = new System.Drawing.Point(12, 470);
             this.btSum.Name = "btSum";
-            this.btSum.Size = new System.Drawing.Size(771, 23);
+            this.btSum.Size = new System.Drawing.Size(497, 23);
             this.btSum.TabIndex = 20;
             this.btSum.Text = "Sumuj wszystkie widoki";
             this.btSum.UseVisualStyleBackColor = true;
@@ -230,60 +196,183 @@
             // 
             // tbSumIncome
             // 
-            this.tbSumIncome.Location = new System.Drawing.Point(12, 99);
+            this.tbSumIncome.Location = new System.Drawing.Point(103, 125);
             this.tbSumIncome.Name = "tbSumIncome";
+            this.tbSumIncome.ReadOnly = true;
             this.tbSumIncome.Size = new System.Drawing.Size(267, 20);
             this.tbSumIncome.TabIndex = 21;
+            this.tbSumIncome.Text = "0";
+            this.tbSumIncome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumOrders
             // 
-            this.tbSumOrders.Location = new System.Drawing.Point(394, 283);
+            this.tbSumOrders.Location = new System.Drawing.Point(195, 217);
             this.tbSumOrders.Name = "tbSumOrders";
+            this.tbSumOrders.ReadOnly = true;
             this.tbSumOrders.Size = new System.Drawing.Size(138, 20);
             this.tbSumOrders.TabIndex = 22;
+            this.tbSumOrders.Text = "0";
+            this.tbSumOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumOS
             // 
-            this.tbSumOS.Location = new System.Drawing.Point(645, 283);
+            this.tbSumOS.Location = new System.Drawing.Point(195, 269);
             this.tbSumOS.Name = "tbSumOS";
+            this.tbSumOS.ReadOnly = true;
             this.tbSumOS.Size = new System.Drawing.Size(138, 20);
             this.tbSumOS.TabIndex = 23;
+            this.tbSumOS.Text = "0";
+            this.tbSumOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumInvoices
             // 
-            this.tbSumInvoices.Location = new System.Drawing.Point(394, 99);
+            this.tbSumInvoices.Location = new System.Drawing.Point(195, 191);
             this.tbSumInvoices.Name = "tbSumInvoices";
+            this.tbSumInvoices.ReadOnly = true;
             this.tbSumInvoices.Size = new System.Drawing.Size(138, 20);
             this.tbSumInvoices.TabIndex = 24;
+            this.tbSumInvoices.Text = "0";
+            this.tbSumInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumPayment
             // 
-            this.tbSumPayment.Location = new System.Drawing.Point(645, 96);
+            this.tbSumPayment.Location = new System.Drawing.Point(195, 243);
             this.tbSumPayment.Name = "tbSumPayment";
+            this.tbSumPayment.ReadOnly = true;
             this.tbSumPayment.Size = new System.Drawing.Size(138, 20);
             this.tbSumPayment.TabIndex = 25;
+            this.tbSumPayment.Text = "0";
+            this.tbSumPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbPureMoney
             // 
-            this.tbPureMoney.Location = new System.Drawing.Point(553, 46);
+            this.tbPureMoney.Location = new System.Drawing.Point(103, 349);
             this.tbPureMoney.Name = "tbPureMoney";
-            this.tbPureMoney.Size = new System.Drawing.Size(230, 20);
+            this.tbPureMoney.ReadOnly = true;
+            this.tbPureMoney.Size = new System.Drawing.Size(267, 20);
             this.tbPureMoney.TabIndex = 26;
+            this.tbPureMoney.Text = "0";
+            this.tbPureMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(601, 30);
+            this.label6.Location = new System.Drawing.Point(164, 324);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 27;
             this.label6.Text = "Bilans finansowy:";
             // 
+            // dgvProfits
+            // 
+            this.dgvProfits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfits.Location = new System.Drawing.Point(1352, 180);
+            this.dgvProfits.Name = "dgvProfits";
+            this.dgvProfits.Size = new System.Drawing.Size(50, 50);
+            this.dgvProfits.TabIndex = 31;
+            // 
+            // dgvOutsourcing
+            // 
+            this.dgvOutsourcing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOutsourcing.Location = new System.Drawing.Point(1378, 295);
+            this.dgvOutsourcing.Name = "dgvOutsourcing";
+            this.dgvOutsourcing.Size = new System.Drawing.Size(50, 50);
+            this.dgvOutsourcing.TabIndex = 45;
+            // 
+            // dgvOrders
+            // 
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(1319, 295);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.Size = new System.Drawing.Size(50, 50);
+            this.dgvOrders.TabIndex = 44;
+            // 
+            // dgvSalaries
+            // 
+            this.dgvSalaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalaries.Location = new System.Drawing.Point(1378, 236);
+            this.dgvSalaries.Name = "dgvSalaries";
+            this.dgvSalaries.Size = new System.Drawing.Size(50, 50);
+            this.dgvSalaries.TabIndex = 43;
+            // 
+            // dgvInvoices
+            // 
+            this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvoices.Location = new System.Drawing.Point(1319, 236);
+            this.dgvInvoices.Name = "dgvInvoices";
+            this.dgvInvoices.Size = new System.Drawing.Size(50, 50);
+            this.dgvInvoices.TabIndex = 42;
+            // 
+            // lblPln
+            // 
+            this.lblPln.AutoSize = true;
+            this.lblPln.Location = new System.Drawing.Point(376, 128);
+            this.lblPln.Name = "lblPln";
+            this.lblPln.Size = new System.Drawing.Size(75, 13);
+            this.lblPln.TabIndex = 46;
+            this.lblPln.Text = "złotych (netto)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(339, 194);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "złotych (netto)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(339, 220);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "złotych (netto)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(339, 246);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "złotych (netto)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(339, 272);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "złotych (netto)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(376, 352);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 13);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "złotych (netto)";
+            // 
             // Profits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 529);
+            this.ClientSize = new System.Drawing.Size(513, 523);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblPln);
+            this.Controls.Add(this.dgvOutsourcing);
+            this.Controls.Add(this.dgvOrders);
+            this.Controls.Add(this.dgvSalaries);
+            this.Controls.Add(this.dgvInvoices);
+            this.Controls.Add(this.dgvProfits);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbPureMoney);
             this.Controls.Add(this.tbSumPayment);
@@ -292,16 +381,11 @@
             this.Controls.Add(this.tbSumOrders);
             this.Controls.Add(this.tbSumIncome);
             this.Controls.Add(this.btSum);
-            this.Controls.Add(this.dgvOutsourcing);
-            this.Controls.Add(this.dgvOrders);
-            this.Controls.Add(this.dgvSalaries);
-            this.Controls.Add(this.dgvInvoices);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvProfits);
             this.Controls.Add(this.btnGenerategeneralreport);
             this.Controls.Add(this.lblListofrevenues);
             this.Controls.Add(this.btnAcceptselectedtime);
@@ -314,10 +398,10 @@
             this.Text = "Bilans finansowy";
             this.Load += new System.EventHandler(this.Profits_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutsourcing)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,16 +417,11 @@
         private System.Windows.Forms.Button btnAcceptselectedtime;
         private System.Windows.Forms.Label lblListofrevenues;
         private System.Windows.Forms.Button btnGenerategeneralreport;
-        private System.Windows.Forms.DataGridView dgvProfits;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvInvoices;
-        private System.Windows.Forms.DataGridView dgvSalaries;
-        private System.Windows.Forms.DataGridView dgvOrders;
-        private System.Windows.Forms.DataGridView dgvOutsourcing;
         private System.Windows.Forms.Button btSum;
         private System.Windows.Forms.TextBox tbSumIncome;
         private System.Windows.Forms.TextBox tbSumOrders;
@@ -351,5 +430,16 @@
         private System.Windows.Forms.TextBox tbSumPayment;
         private System.Windows.Forms.TextBox tbPureMoney;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dgvProfits;
+        private System.Windows.Forms.DataGridView dgvOutsourcing;
+        private System.Windows.Forms.DataGridView dgvOrders;
+        private System.Windows.Forms.DataGridView dgvSalaries;
+        private System.Windows.Forms.DataGridView dgvInvoices;
+        private System.Windows.Forms.Label lblPln;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

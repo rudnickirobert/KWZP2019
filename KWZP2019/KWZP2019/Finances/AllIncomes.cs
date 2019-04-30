@@ -26,7 +26,6 @@ namespace KWZP2019
             this.Finances = Finances;
             InitializeComponent();
         }
-
         private void AllCosts_Load(object sender, EventArgs e)
         {
             dgvProfits.DataSource = db.vIncomesProfits.ToList();
@@ -36,17 +35,23 @@ namespace KWZP2019
             dgvProfits.Columns[3].HeaderText = "Wartość zamówienia";
             dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
-
+        private void btnAcceptselectedtime_Click(object sender, EventArgs e)
+        {
+            dgvProfits.DataSource = db.vIncomesProfits.ToList().Where(vIncomesProfits =>
+            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
+            .Select(vIncomesProfits => new {vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
+            .ToList();
+            dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+        }
         private void btSum_Click(object sender, EventArgs e)
         {
             decimal sum = 0;
-            for (int i = 0; i < dgvProfits.Rows.Count; ++i)
+            for (int i = 0; i < dgvProfits.Rows.Count; i++)
             {
                 sum += Convert.ToDecimal(dgvProfits.Rows[i].Cells[3].Value);
             }
             tbSumIncome.Text = sum.ToString("0,##");
         }
-
         private void btnGenerategeneralreport_Click(object sender, EventArgs e)
         {
             PdfPTable pdfTable = new PdfPTable(dgvProfits.ColumnCount);
@@ -59,7 +64,6 @@ namespace KWZP2019
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
                 pdfTable.AddCell(cell);
             }
-            
             foreach (DataGridViewRow row in dgvProfits.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -72,7 +76,7 @@ namespace KWZP2019
             {
                 Directory.CreateDirectory(folderPath);
             }
-            using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
+            using (FileStream stream = new FileStream(folderPath + "RaportPrzychodyRoofingCompany.pdf", FileMode.Create))
             {
                 Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
                 PdfWriter.GetInstance(pdfDoc, stream);
@@ -81,17 +85,7 @@ namespace KWZP2019
                 pdfDoc.Close();
                 stream.Close();
             }
-            MessageBox.Show("Done");
-        }
-
-        private void btnAcceptselectedtime_Click(object sender, EventArgs e)
-        {
-           // dgvProfits.DataSource = db.vIncomesProfits.ToList().Where( >  dtpStartDate.Value.ToString("yyyy-MM-dd") &&  < dtpEndDate.Value.ToString("yyyy-MM-dd")); LINQ oraz UKRYCIE KOLUMNY W DRUKU DO PDF
-            this.dgvProfits.Columns["IdCustomer"].Visible = false;
-            dgvProfits.Columns[1].HeaderText = "Nazwa klienta";
-            dgvProfits.Columns[2].HeaderText = "Data zamówienia";
-            dgvProfits.Columns[3].HeaderText = "Wartość zamówienia";
-            dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            MessageBox.Show("Pomyślnie wygenerowano raport.");
         }
     }
 }

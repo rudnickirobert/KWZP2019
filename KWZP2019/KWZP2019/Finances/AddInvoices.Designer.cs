@@ -71,17 +71,20 @@
             // 
             this.tbInvoiceValue.Location = new System.Drawing.Point(186, 82);
             this.tbInvoiceValue.Name = "tbInvoiceValue";
+            this.tbInvoiceValue.ReadOnly = true;
             this.tbInvoiceValue.Size = new System.Drawing.Size(200, 20);
             this.tbInvoiceValue.TabIndex = 18;
+            this.tbInvoiceValue.Text = "0";
+            this.tbInvoiceValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPln
             // 
             this.lblPln.AutoSize = true;
             this.lblPln.Location = new System.Drawing.Point(392, 85);
             this.lblPln.Name = "lblPln";
-            this.lblPln.Size = new System.Drawing.Size(42, 13);
+            this.lblPln.Size = new System.Drawing.Size(75, 13);
             this.lblPln.TabIndex = 19;
-            this.lblPln.Text = "złotych";
+            this.lblPln.Text = "złotych (netto)";
             // 
             // btnAddNewInvoice
             // 

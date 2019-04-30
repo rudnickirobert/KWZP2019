@@ -59,7 +59,6 @@
             this.btSUM.TabIndex = 2;
             this.btSUM.Text = "SUM";
             this.btSUM.UseVisualStyleBackColor = true;
-            this.btSUM.Click += new System.EventHandler(this.btSUM_Click);
             // 
             // SalariesSummary
             // 
@@ -71,7 +70,6 @@
             this.Controls.Add(this.dgvAllAbsencesData);
             this.Name = "SalariesSummary";
             this.Text = "Podlicz wypłaty";
-            this.Load += new System.EventHandler(this.SalariesSummary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllAbsencesData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsencesWorker)).EndInit();
             this.ResumeLayout(false);
