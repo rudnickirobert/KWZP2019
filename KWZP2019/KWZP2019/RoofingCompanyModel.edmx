@@ -827,6 +827,22 @@ warning 6002: The table/view 'RoofingCompany.dbo.vHR' does not have a primary ke
           <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vHRContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vHRContract">
+          <Key>
+            <PropertyRef Name="IdContract" />
+          </Key>
+          <Property Name="IdContract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vHRExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vHRExamination">
+          <Key>
+            <PropertyRef Name="IdMedicalExamination" />
+          </Key>
+          <Property Name="IdMedicalExamination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewDailySfDelivery">
           <Key>
@@ -2085,6 +2101,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vHR].[PhoneNumber] AS [PhoneNumber], 
     [vHR].[Workplace] AS [Workplace]
     FROM [dbo].[vHR] AS [vHR]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vHRContract" EntityType="Self.vHRContract" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vHRContract].[IdContract] AS [IdContract]
+    FROM [dbo].[vHRContract] AS [vHRContract]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vHRExamination" EntityType="Self.vHRExamination" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vHRExamination].[IdMedicalExamination] AS [IdMedicalExamination]
+    FROM [dbo].[vHRExamination] AS [vHRExamination]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDailySfDelivery" EntityType="Self.ViewDailySfDelivery" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4276,6 +4302,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySet Name="vIncomesProfits" EntityType="RoofingCompanyModel.vIncomesProfits" />
           <EntitySet Name="vPaymentHistory" EntityType="RoofingCompanyModel.vPaymentHistory" />
           <EntitySet Name="vInvoiceTypes" EntityType="RoofingCompanyModel.vInvoiceType" />
+          <EntitySet Name="vHRContracts" EntityType="RoofingCompanyModel.vHRContract" />
+          <EntitySet Name="vHRExaminations" EntityType="RoofingCompanyModel.vHRExamination" />
         </EntityContainer>
         <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
           <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
@@ -4803,6 +4831,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           </Key>
           <Property Name="IdInvoiceType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vHRContract">
+          <Key>
+            <PropertyRef Name="IdContract" />
+          </Key>
+          <Property Name="IdContract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="vHRExamination">
+          <Key>
+            <PropertyRef Name="IdMedicalExamination" />
+          </Key>
+          <Property Name="IdMedicalExamination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5857,6 +5897,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
               <MappingFragment StoreEntitySet="vInvoiceType">
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="IdInvoiceType" ColumnName="IdInvoiceType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHRContracts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRContract">
+              <MappingFragment StoreEntitySet="vHRContract">
+                <ScalarProperty Name="IdContract" ColumnName="IdContract" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHRExaminations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
+              <MappingFragment StoreEntitySet="vHRExamination">
+                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

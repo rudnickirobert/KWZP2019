@@ -612,6 +612,12 @@
     <Compile Include="vHR.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vHRContract.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vHRExamination.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vIncomesProfits.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
