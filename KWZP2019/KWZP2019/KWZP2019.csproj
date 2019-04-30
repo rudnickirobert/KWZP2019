@@ -58,11 +58,32 @@
     <Compile Include="Absence.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddNewOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewOrderForm.Designer.cs">
+      <DependentUpon>AddNewOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Development.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Development.Designer.cs">
       <DependentUpon>Development.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevelopmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopmentForm.Designer.cs">
+      <DependentUpon>DevelopmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntranceControlView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="HR\Absences.cs">
       <SubType>Form</SubType>
@@ -277,6 +298,12 @@
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSHControlHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSHControlHistory.Designer.cs">
+      <DependentUpon>OSHControlHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -462,6 +489,9 @@
     <Compile Include="SafetyControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SafetyControlHistoryView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SafetyTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -522,6 +552,12 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vOrderDetail.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPredictedPriceForCustomer.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -552,11 +588,17 @@
     <EmbeddedResource Include="AddNewCustomerForm.resx">
       <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddNewOrderForm.resx">
+      <DependentUpon>AddNewOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewOutsourcingCompanyForm.resx">
       <DependentUpon>AddNewOutsourcingCompanyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewSupplierForm.resx">
       <DependentUpon>AddNewSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
@@ -582,6 +624,15 @@
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DevelopmentForm.resx">
+      <DependentUpon>DevelopmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="vUnhandledOrderDetails.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,6 +683,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewMaintenanceForm.resx">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSHControlHistory.resx">
+      <DependentUpon>OSHControlHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
@@ -719,6 +773,9 @@
     <None Include="Maintenance.datasource" />
     <None Include="OrderDetail.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Failure.datasource" />
+    <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\OrderCustomer.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Production\PlannedProduction.datasource" />
     <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
@@ -730,6 +787,8 @@
     <None Include="Production\ProductionProcess.datasource" />
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
+    <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
+    <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -746,7 +805,6 @@
     <None Include="RoofingCompanyModel.edmx.diagram">
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
     </None>
-    <None Include="Technology.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -764,6 +822,16 @@
     <None Include="Resources\new_80px.png" />
     <None Include="Resources\good_quality_80px.png" />
     <None Include="Resources\poor_quality_80px.png" />
+    <None Include="Resources\icons8-duration-finance-80.png" />
+    <None Include="Resources\icons8-sell-stock-80.png" />
+    <None Include="Resources\icons8-automation-80.png" />
+    <None Include="Resources\icons8-quality-80.png" />
+    <None Include="Resources\icons8-maintenance-80.png" />
+    <None Include="Resources\pobrane.png" />
+    <None Include="Resources\pobrane %282%29.png" />
+    <None Include="Resources\roof.png" />
+    <None Include="Resources\output-onlinepngtools.png" />
+    <None Include="Resources\output-onlinepngtools %281%29.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

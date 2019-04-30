@@ -48,5 +48,10 @@ namespace KWZP2019
             OutsourcingForm outsourcingForm = new OutsourcingForm(db);
             outsourcingForm.ShowDialog();
         }
+
+        private void returnToMainBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
