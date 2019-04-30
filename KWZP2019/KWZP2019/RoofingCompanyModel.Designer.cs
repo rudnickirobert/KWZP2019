@@ -1,4 +1,5 @@
-﻿// T4 code generation is enabled for model 'C:\Studia\SEMESTR_10\KWZP\projekt\KWZP2019-2\newrep\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Ada Artych\Desktop\PROJEKT\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
+// T4 code generation is enabled for model 'C:\Studia\SEMESTR_10\KWZP\projekt\KWZP2019-2\newrep\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
 // T4 code generation is enabled for model 'C:\Users\Bartłomiej\Desktop\KWZP_PROJEKT\najnowsza działająca 18-04-19\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
 // T4 code generation is enabled for model 'C:\Users\bartl\Desktop\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
 // T4 code generation is enabled for model 'C:\Users\Patry\Desktop\ProjektKWZP\KWZP2019\KWZP2019\KWZP2019\RoofingCompanyModel.edmx'. 
