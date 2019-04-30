@@ -185,8 +185,8 @@
             // 
             // OshTrainingForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.lblTrainingDate);
             this.Controls.Add(this.textBoxEmployeeId);

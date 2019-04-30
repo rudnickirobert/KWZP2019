@@ -832,6 +832,15 @@
     <None Include="Resources\roof.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\icons8-return-40.png" />
+    <None Include="Resources\icons8-home-40.png" />
+    <None Include="Resources\icons8-clear-formatting-40.png" />
+    <None Include="Resources\icons8-send-40.png" />
+    <None Include="Resources\icons8-add-image-80.png" />
+    <None Include="Resources\icons8-add-image-801.png" />
+    <None Include="Resources\icons8-add-image-802.png" />
+    <None Include="Resources\icons8-import-40.png" />
+    <None Include="Resources\icons8-puzzled-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
