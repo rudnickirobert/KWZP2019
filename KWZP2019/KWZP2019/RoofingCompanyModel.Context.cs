@@ -114,5 +114,6 @@ namespace KWZP2019
         public virtual DbSet<vExpencesPayment> vExpencesPayment { get; set; }
         public virtual DbSet<vIncomesProfits> vIncomesProfits { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistory { get; set; }
+        public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
     }
 }

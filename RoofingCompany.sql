@@ -872,3 +872,13 @@ SELECT        TOP 100 PERCENT Employee.EmployeeName, Employee.EmployeeSurname, E
 FROM            Employee INNER JOIN
                          Payment ON Employee.IdEmployee = Payment.IdEmployee
 ORDER BY Employee.EmployeeSurname;
+
+GO
+
+CREATE VIEW vInvoiceType
+as
+SELECT TOP 100 PERCENT IdInvoiceType, Type
+FROM InvoiceType
+ORDER BY Type;
+
+GO
