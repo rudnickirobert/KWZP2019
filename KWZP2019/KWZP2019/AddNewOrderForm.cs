@@ -14,10 +14,11 @@ namespace KWZP2019
 
     {
         RoofingCompanyEntities db;
-        public AddNewOrderForm(RoofingCompanyEntities db)
+        public AddNewOrderForm(RoofingCompanyEntities db, object customerName)
         {
             InitializeComponent();
             this.db = db;
+            this.customerNameTb.Text = customerName.ToString();
         }
 
         private void returnBtn_Click(object sender, EventArgs e)
