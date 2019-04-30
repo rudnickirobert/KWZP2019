@@ -596,6 +596,35 @@
           <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.EntranceControlView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EntranceControlView">
+          <Key>
+            <PropertyRef Name="IdSfDetail" />
+          </Key>
+          <Property Name="IdSfDetail" Type="int" Nullable="false" />
+          <Property Name="SfCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="Thickness" Type="float" />
+          <Property Name="Width" Type="float" />
+          <Property Name="SfWeight" Type="float" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChemicalComposition" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.SafetyControlHistoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SafetyControlHistoryView">
+          <Key>
+            <PropertyRef Name="IdInspection" />
+            <PropertyRef Name="IdSafetyEmployee" />
+            <PropertyRef Name="SaftyControlDate" />
+          </Key>
+          <Property Name="IdInspection" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="IdSafetyEmployee" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="SaftyControlDate" Type="datetime" Nullable="false" />
+          <Property Name="InspectedEmpolyee" Type="nvarchar" MaxLength="100" />
+          <Property Name="SafetyControlDescription" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vCompany">
           <Key>
@@ -714,6 +743,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.vInputMagazine' does not have a
           <Property Name="ControlDate" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOrderDetail">
+          <Key>
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="IdDetail" />
+          </Key>
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdOrderCustomer" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="IdDetail" Type="int" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOutputMagazine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOutputMagazine">
           <Key>
@@ -756,6 +800,22 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not 
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPredictedPriceForCustomer">
+          <Key>
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Markup" />
+          </Key>
+          <Property Name="IdOrderCustomer" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="Markup" Type="float" Nullable="false" />
+          </EntityType>
+          <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSuccesfullyProcess">
           <Key>
@@ -863,7 +923,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           </Key>
           <Property Name="IdProces" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Absence__IdAbsen__1332DBDC">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vUnhandledOrderDetails">
+          <Key>
+            <PropertyRef Name="IdDetail" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="IdDetail" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Absence__IdAbsen__114A936A">
           <End Role="AbsenceType" Type="Self.AbsenceType" Multiplicity="0..1" />
           <End Role="Absence" Type="Self.Absence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1666,6 +1737,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <EntitySet Name="Technology" EntityType="Self.Technology" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Training" EntityType="Self.Training" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EntranceControlView" EntityType="Self.EntranceControlView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EntranceControlView].[IdSfDetail] AS [IdSfDetail], 
+    [EntranceControlView].[SfCode] AS [SfCode], 
+    [EntranceControlView].[Thickness] AS [Thickness], 
+    [EntranceControlView].[Width] AS [Width], 
+    [EntranceControlView].[SfWeight] AS [SfWeight], 
+    [EntranceControlView].[Color] AS [Color], 
+    [EntranceControlView].[ChemicalComposition] AS [ChemicalComposition]
+    FROM [dbo].[EntranceControlView] AS [EntranceControlView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SafetyControlHistoryView" EntityType="Self.SafetyControlHistoryView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SafetyControlHistoryView].[IdInspection] AS [IdInspection], 
+    [SafetyControlHistoryView].[CompanyName] AS [CompanyName], 
+    [SafetyControlHistoryView].[IdSafetyEmployee] AS [IdSafetyEmployee], 
+    [SafetyControlHistoryView].[SaftyControlDate] AS [SaftyControlDate], 
+    [SafetyControlHistoryView].[InspectedEmpolyee] AS [InspectedEmpolyee], 
+    [SafetyControlHistoryView].[SafetyControlDescription] AS [SafetyControlDescription]
+    FROM [dbo].[SafetyControlHistoryView] AS [SafetyControlHistoryView]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vCompany" EntityType="Self.vCompany" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vCompany].[IdCustomer] AS [IdCustomer], 
@@ -1737,6 +1829,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vInputMagazine].[ControlDate] AS [ControlDate]
     FROM [dbo].[vInputMagazine] AS [vInputMagazine]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOrderDetail].[CustomerName] AS [CustomerName], 
+    [vOrderDetail].[IdOrderCustomer] AS [IdOrderCustomer], 
+    [vOrderDetail].[Quantity] AS [Quantity], 
+    [vOrderDetail].[IdDetail] AS [IdDetail], 
+    [vOrderDetail].[ProductCode] AS [ProductCode]
+    FROM [dbo].[vOrderDetail] AS [vOrderDetail]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vOutputMagazine" EntityType="Self.vOutputMagazine" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vOutputMagazine].[ProductCode] AS [ProductCode], 
@@ -1760,6 +1861,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vOutsourcingWithType].[KRS] AS [KRS], 
     [vOutsourcingWithType].[Description] AS [Description]
     FROM [dbo].[vOutsourcingWithType] AS [vOutsourcingWithType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPredictedPriceForCustomer" EntityType="Self.vPredictedPriceForCustomer" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPredictedPriceForCustomer].[IdOrderCustomer] AS [IdOrderCustomer], 
+    [vPredictedPriceForCustomer].[CustomerName] AS [CustomerName], 
+    [vPredictedPriceForCustomer].[OrderDate] AS [OrderDate], 
+    [vPredictedPriceForCustomer].[Cost] AS [Cost], 
+    [vPredictedPriceForCustomer].[Markup] AS [Markup]
+    FROM [dbo].[vPredictedPriceForCustomer] AS [vPredictedPriceForCustomer]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vSuccesfullyProcess" EntityType="Self.vSuccesfullyProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1822,7 +1932,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
     [vUnfinishedProcess].[IdProces] AS [IdProces]
     FROM [dbo].[vUnfinishedProcess] AS [vUnfinishedProcess]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Absence__IdAbsen__1332DBDC" Association="Self.FK__Absence__IdAbsen__1332DBDC">
+
+          <EntitySet Name="vUnhandledOrderDetails" EntityType="Self.vUnhandledOrderDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vUnhandledOrderDetails].[IdDetail] AS [IdDetail], 
+    [vUnhandledOrderDetails].[Quantity] AS [Quantity], 
+    [vUnhandledOrderDetails].[ProductCode] AS [ProductCode]
+    FROM [dbo].[vUnhandledOrderDetails] AS [vUnhandledOrderDetails]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Absence__IdAbsen__114A936A" Association="Self.FK__Absence__IdAbsen__114A936A">
             <End Role="AbsenceType" EntitySet="AbsenceType" />
             <End Role="Absence" EntitySet="Absence" />
           </AssociationSet>
@@ -3805,6 +3923,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             <End Role="SemiFinished" EntitySet="SemiFinisheds" />
             <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
           </AssociationSet>
+          <EntitySet Name="vUnhandledOrderDetails" EntityType="RoofingCompanyModel.vUnhandledOrderDetails" />
+
           <EntitySet Name="vCompany" EntityType="RoofingCompanyModel.vCompany" />
           <EntitySet Name="ViewDailySfDelivery" EntityType="RoofingCompanyModel.ViewDailySfDelivery" />
           <EntitySet Name="ViewOshTraining" EntityType="RoofingCompanyModel.ViewOshTraining" />
@@ -3818,6 +3938,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             <End Role="Maintenance" EntitySet="Maintenances" />
             <End Role="PlannedProduction" EntitySet="PlannedProductions" />
           </AssociationSet>
+          <EntitySet Name="EntranceControlView" EntityType="RoofingCompanyModel.EntranceControlView" />
+          <EntitySet Name="vOrderDetail" EntityType="RoofingCompanyModel.vOrderDetail" />
+          <EntitySet Name="vPredictedPriceForCustomer" EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" />
+          <EntitySet Name="SafetyControlHistoryView" EntityType="RoofingCompanyModel.SafetyControlHistoryView" />
           <EntitySet Name="vDevotionsInMeasuremntsPerProcess" EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" />
           <EntitySet Name="vSuccesfullyProcess" EntityType="RoofingCompanyModel.vSuccesfullyProcess" />
           <EntitySet Name="vSuccesfullyProducedPerProcess" EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" />
@@ -4046,6 +4170,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           <Property Name="EndControlDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SuccesfullProduced" Type="Int32" />
         </EntityType>
+
+        <EntityType Name="vUnhandledOrderDetails">
+          <Key>
+            <PropertyRef Name="IdDetail" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="IdDetail" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <Association Name="FkMachine">
           <End Type="RoofingCompanyModel.Maintenance" Role="Maintenance" Multiplicity="1" />
           <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="*" />
@@ -4058,6 +4192,58 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="EntranceControlView">
+          <Key>
+            <PropertyRef Name="IdSfDetail" />
+          </Key>
+          <Property Name="IdSfDetail" Type="Int32" Nullable="false" />
+          <Property Name="SfCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="Double" />
+          <Property Name="Width" Type="Double" />
+          <Property Name="SfWeight" Type="Double" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChemicalComposition" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vOrderDetail">
+          <Key>
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="IdDetail" />
+          </Key>
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="IdDetail" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vPredictedPriceForCustomer">
+          <Key>
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Markup" />
+          </Key>
+          <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Markup" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SafetyControlHistoryView">
+          <Key>
+            <PropertyRef Name="IdInspection" />
+            <PropertyRef Name="IdSafetyEmployee" />
+            <PropertyRef Name="SaftyControlDate" />
+          </Key>
+          <Property Name="IdInspection" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IdSafetyEmployee" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SaftyControlDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SafetyControlDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InspectedEmpolyee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="vDevotionsInMeasuremntsPerProcess">
           <Key>
             <PropertyRef Name="IdMeasurement" />
@@ -4119,332 +4305,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RoofingCompanyModelStoreContainer" CdmEntityContainer="RoofingCompanyEntities">
           <EntitySetMapping Name="Absences">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Absence">
-              <MappingFragment StoreEntitySet="Absence">
-                <ScalarProperty Name="IdAbsence" ColumnName="IdAbsence" />
-                <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
-                <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AbsenceTypes">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.AbsenceType">
-              <MappingFragment StoreEntitySet="AbsenceType">
-                <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
-                <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
-                <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Accidents">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Accident">
-              <MappingFragment StoreEntitySet="Accident">
-                <ScalarProperty Name="IdAccident" ColumnName="IdAccident" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="AccidentDate" ColumnName="AccidentDate" />
-                <ScalarProperty Name="AccidentDescription" ColumnName="AccidentDescription" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Allocations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Allocation">
-              <MappingFragment StoreEntitySet="Allocation">
-                <ScalarProperty Name="IdAllocation" ColumnName="IdAllocation" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Contracts">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Contract">
-              <MappingFragment StoreEntitySet="Contract">
-                <ScalarProperty Name="IdContract" ColumnName="IdContract" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
-                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
-                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Contractors">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Contractor">
-              <MappingFragment StoreEntitySet="Contractor">
-                <ScalarProperty Name="IdContractor" ColumnName="IdContractor" />
-                <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
-                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
-                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
-                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Departments">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Department">
-              <MappingFragment StoreEntitySet="Department">
-                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
-                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Educations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Education">
-              <MappingFragment StoreEntitySet="Education">
-                <ScalarProperty Name="IdEducation" ColumnName="IdEducation" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
-                <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EducationLevels">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.EducationLevel">
-              <MappingFragment StoreEntitySet="EducationLevel">
-                <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
-                <ScalarProperty Name="EducationLevel1" ColumnName="EducationLevel" />
-                <ScalarProperty Name="Degree" ColumnName="Degree" />
-                <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Employee">
-              <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
-                <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EmployeePlans">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.EmployeePlan">
-              <MappingFragment StoreEntitySet="EmployeePlan">
-                <ScalarProperty Name="IdEmployeePlan" ColumnName="IdEmployeePlan" />
-                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EntranceControls">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.EntranceControl">
-              <MappingFragment StoreEntitySet="EntranceControl">
-                <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
-                <ScalarProperty Name="RealColor" ColumnName="RealColor" />
-                <ScalarProperty Name="RealWeight" ColumnName="RealWeight" />
-                <ScalarProperty Name="RealWidth" ColumnName="RealWidth" />
-                <ScalarProperty Name="RealThickness" ColumnName="RealThickness" />
-                <ScalarProperty Name="IdEntranceControl" ColumnName="IdEntranceControl" />
-                <ScalarProperty Name="IdSfDetail" ColumnName="IdSfDetail" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
-                <ScalarProperty Name="ControlStatus" ColumnName="ControlStatus" />
-                <ScalarProperty Name="Comments" ColumnName="Comments" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Expenses">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Expense">
-              <MappingFragment StoreEntitySet="Expense">
-                <ScalarProperty Name="IdExpense" ColumnName="IdExpense" />
-                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
-                <ScalarProperty Name="IdInvoice" ColumnName="IdInvoice" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Failures">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Failure">
-              <MappingFragment StoreEntitySet="Failure">
-                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
-                <ScalarProperty Name="IdProces" ColumnName="IdProces" />
-                <ScalarProperty Name="Specification" ColumnName="Specification" />
-                <ScalarProperty Name="FailureDate" ColumnName="FailureDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FailureMaintenances">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.FailureMaintenance">
-              <MappingFragment StoreEntitySet="FailureMaintenance">
-                <ScalarProperty Name="IdFailureMaint" ColumnName="IdFailureMaint" />
-                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
-                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FEMAnalysis">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.FEMAnalysi">
-              <MappingFragment StoreEntitySet="FEMAnalysis">
-                <ScalarProperty Name="IdFEMAnalysis" ColumnName="IdFEMAnalysis" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="NewPattern" ColumnName="NewPattern" />
-                <ScalarProperty Name="AnalysisResults" ColumnName="AnalysisResults" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Invoices">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Invoice">
-              <MappingFragment StoreEntitySet="Invoice">
-                <ScalarProperty Name="IdInvoice" ColumnName="IdInvoice" />
-                <ScalarProperty Name="IdContractor" ColumnName="IdContractor" />
-                <ScalarProperty Name="IdInvoiceType" ColumnName="IdInvoiceType" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Sum" ColumnName="Sum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="InvoiceTypes">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.InvoiceType">
-              <MappingFragment StoreEntitySet="InvoiceType">
-                <ScalarProperty Name="IdInvoiceType" ColumnName="IdInvoiceType" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Machines">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Machine">
-              <MappingFragment StoreEntitySet="Machine">
-                <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
-                <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
-                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
-                <ScalarProperty Name="ProducerMachine" ColumnName="ProducerMachine" />
-                <ScalarProperty Name="ProductionYear" ColumnName="ProductionYear" />
-                <ScalarProperty Name="PowerMachine" ColumnName="PowerMachine" />
-                <ScalarProperty Name="WorkingArea" ColumnName="WorkingArea" />
-                <ScalarProperty Name="CatalogMachineNr" ColumnName="CatalogMachineNr" />
-                <ScalarProperty Name="MetersPerHour" ColumnName="MetersPerHour" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MachineTypes">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.MachineType">
-              <MappingFragment StoreEntitySet="MachineType">
-                <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
-                <ScalarProperty Name="MachineTypeName" ColumnName="MachineTypeName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MaintDescriptions">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.MaintDescription">
-              <MappingFragment StoreEntitySet="MaintDescription">
-                <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
-                <ScalarProperty Name="MaintDescName" ColumnName="MaintDescName" />
-                <ScalarProperty Name="MaintDescription1" ColumnName="MaintDescription" />
-                <ScalarProperty Name="InspectionTimeInterval" ColumnName="InspectionTimeInterval" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Maintenances">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.Maintenance">
-              <MappingFragment StoreEntitySet="Maintenance">
-                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
-                <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
-                <ScalarProperty Name="IdMaintType" ColumnName="IdMaintType" />
-                <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
-                <ScalarProperty Name="DateAcceptOrder" ColumnName="DateAcceptOrder" />
-                <ScalarProperty Name="StartDatePlan" ColumnName="StartDatePlan" />
-                <ScalarProperty Name="EndDatePlan" ColumnName="EndDatePlan" />
-                <ScalarProperty Name="MaintenanceNr" ColumnName="MaintenanceNr" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MaintParts">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.MaintPart">
-              <MappingFragment StoreEntitySet="MaintPart">
-                <ScalarProperty Name="IdMaintPart" ColumnName="IdMaintPart" />
-                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
-                <ScalarProperty Name="IdPart" ColumnName="IdPart" />
-                <ScalarProperty Name="PartQuantity" ColumnName="PartQuantity" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MaintTypes">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.MaintType">
-              <MappingFragment StoreEntitySet="MaintType">
-                <ScalarProperty Name="IdMaintenanceType" ColumnName="IdMaintenanceType" />
-                <ScalarProperty Name="MaintenanceType" ColumnName="MaintenanceType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MedicalExaminations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.MedicalExamination">
-              <MappingFragment StoreEntitySet="MedicalExamination">
-                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderCustomers">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.OrderCustomer">
-              <MappingFragment StoreEntitySet="OrderCustomer">
-                <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
-                <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="Cost" ColumnName="Cost" />
-                <ScalarProperty Name="Markup" ColumnName="Markup" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.OrderDetail">
-              <MappingFragment StoreEntitySet="OrderDetail">
-                <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
-                <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
-                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OutControls">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.OutControl">
-              <MappingFragment StoreEntitySet="OutControl">
-                <ScalarProperty Name="LenghtAcceptableDeviation" ColumnName="LenghtAcceptableDeviation" />
-                <ScalarProperty Name="WidthAcceptableDeviation" ColumnName="WidthAcceptableDeviation" />
-                <ScalarProperty Name="EndControlDate" ColumnName="EndControlDate" />
-                <ScalarProperty Name="StartControlDate" ColumnName="StartControlDate" />
-                <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Absence">
+                <MappingFragment StoreEntitySet="Absence">
+                  <ScalarProperty Name="IdAbsence" ColumnName="IdAbsence" />
+                  <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
+                  <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
                 </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4884,6 +4751,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vUnhandledOrderDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vUnhandledOrderDetails">
+              <MappingFragment StoreEntitySet="vUnhandledOrderDetails">
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vInputMagazine">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vInputMagazine">
               <MappingFragment StoreEntitySet="vInputMagazine">
@@ -4948,8 +4824,877 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
               <MappingFragment StoreEntitySet="vUnfinishedProcess">
                 <ScalarProperty Name="IdProces" ColumnName="IdProces" />
               </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="AbsenceTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.AbsenceType">
+                <MappingFragment StoreEntitySet="AbsenceType">
+                  <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
+                  <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
+                  <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Accidents">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Accident">
+                <MappingFragment StoreEntitySet="Accident">
+                  <ScalarProperty Name="IdAccident" ColumnName="IdAccident" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="AccidentDate" ColumnName="AccidentDate" />
+                  <ScalarProperty Name="AccidentDescription" ColumnName="AccidentDescription" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Allocations">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Allocation">
+                <MappingFragment StoreEntitySet="Allocation">
+                  <ScalarProperty Name="IdAllocation" ColumnName="IdAllocation" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                  <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                  <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Contracts">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Contract">
+                <MappingFragment StoreEntitySet="Contract">
+                  <ScalarProperty Name="IdContract" ColumnName="IdContract" />
+                  <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                  <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                  <ScalarProperty Name="Salary" ColumnName="Salary" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+                  <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
+                  <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Contractors">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Contractor">
+                <MappingFragment StoreEntitySet="Contractor">
+                  <ScalarProperty Name="IdContractor" ColumnName="IdContractor" />
+                  <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+                  <ScalarProperty Name="Phone" ColumnName="Phone" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Customers">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Customer">
+                <MappingFragment StoreEntitySet="Customer">
+                  <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+                  <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Departments">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Department">
+                <MappingFragment StoreEntitySet="Department">
+                  <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                  <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Educations">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Education">
+                <MappingFragment StoreEntitySet="Education">
+                  <ScalarProperty Name="IdEducation" ColumnName="IdEducation" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
+                  <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="EducationLevels">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.EducationLevel">
+                <MappingFragment StoreEntitySet="EducationLevel">
+                  <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
+                  <ScalarProperty Name="EducationLevel1" ColumnName="EducationLevel" />
+                  <ScalarProperty Name="Degree" ColumnName="Degree" />
+                  <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Employees">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Employee">
+                <MappingFragment StoreEntitySet="Employee">
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                  <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="EmployeePlans">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.EmployeePlan">
+                <MappingFragment StoreEntitySet="EmployeePlan">
+                  <ScalarProperty Name="IdEmployeePlan" ColumnName="IdEmployeePlan" />
+                  <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                  <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="EntranceControls">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.EntranceControl">
+                <MappingFragment StoreEntitySet="EntranceControl">
+                  <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
+                  <ScalarProperty Name="RealColor" ColumnName="RealColor" />
+                  <ScalarProperty Name="RealWeight" ColumnName="RealWeight" />
+                  <ScalarProperty Name="RealWidth" ColumnName="RealWidth" />
+                  <ScalarProperty Name="RealThickness" ColumnName="RealThickness" />
+                  <ScalarProperty Name="IdEntranceControl" ColumnName="IdEntranceControl" />
+                  <ScalarProperty Name="IdSfDetail" ColumnName="IdSfDetail" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
+                  <ScalarProperty Name="ControlStatus" ColumnName="ControlStatus" />
+                  <ScalarProperty Name="Comments" ColumnName="Comments" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Expenses">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Expense">
+                <MappingFragment StoreEntitySet="Expense">
+                  <ScalarProperty Name="IdExpense" ColumnName="IdExpense" />
+                  <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                  <ScalarProperty Name="IdInvoice" ColumnName="IdInvoice" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Failures">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Failure">
+                <MappingFragment StoreEntitySet="Failure">
+                  <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+                  <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+                  <ScalarProperty Name="Specification" ColumnName="Specification" />
+                  <ScalarProperty Name="FailureDate" ColumnName="FailureDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="FailureMaintenances">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.FailureMaintenance">
+                <MappingFragment StoreEntitySet="FailureMaintenance">
+                  <ScalarProperty Name="IdFailureMaint" ColumnName="IdFailureMaint" />
+                  <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+                  <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="FEMAnalysis">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.FEMAnalysi">
+                <MappingFragment StoreEntitySet="FEMAnalysis">
+                  <ScalarProperty Name="IdFEMAnalysis" ColumnName="IdFEMAnalysis" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="NewPattern" ColumnName="NewPattern" />
+                  <ScalarProperty Name="AnalysisResults" ColumnName="AnalysisResults" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Invoices">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Invoice">
+                <MappingFragment StoreEntitySet="Invoice">
+                  <ScalarProperty Name="IdInvoice" ColumnName="IdInvoice" />
+                  <ScalarProperty Name="IdContractor" ColumnName="IdContractor" />
+                  <ScalarProperty Name="IdInvoiceType" ColumnName="IdInvoiceType" />
+                  <ScalarProperty Name="Date" ColumnName="Date" />
+                  <ScalarProperty Name="Sum" ColumnName="Sum" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="InvoiceTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.InvoiceType">
+                <MappingFragment StoreEntitySet="InvoiceType">
+                  <ScalarProperty Name="IdInvoiceType" ColumnName="IdInvoiceType" />
+                  <ScalarProperty Name="Type" ColumnName="Type" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Machines">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Machine">
+                <MappingFragment StoreEntitySet="Machine">
+                  <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                  <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
+                  <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                  <ScalarProperty Name="ProducerMachine" ColumnName="ProducerMachine" />
+                  <ScalarProperty Name="ProductionYear" ColumnName="ProductionYear" />
+                  <ScalarProperty Name="PowerMachine" ColumnName="PowerMachine" />
+                  <ScalarProperty Name="WorkingArea" ColumnName="WorkingArea" />
+                  <ScalarProperty Name="CatalogMachineNr" ColumnName="CatalogMachineNr" />
+                  <ScalarProperty Name="MetersPerHour" ColumnName="MetersPerHour" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="MachineTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.MachineType">
+                <MappingFragment StoreEntitySet="MachineType">
+                  <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
+                  <ScalarProperty Name="MachineTypeName" ColumnName="MachineTypeName" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="MaintDescriptions">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.MaintDescription">
+                <MappingFragment StoreEntitySet="MaintDescription">
+                  <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
+                  <ScalarProperty Name="MaintDescName" ColumnName="MaintDescName" />
+                  <ScalarProperty Name="MaintDescription1" ColumnName="MaintDescription" />
+                  <ScalarProperty Name="InspectionTimeInterval" ColumnName="InspectionTimeInterval" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Maintenances">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Maintenance">
+                <MappingFragment StoreEntitySet="Maintenance">
+                  <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                  <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                  <ScalarProperty Name="IdMaintType" ColumnName="IdMaintType" />
+                  <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
+                  <ScalarProperty Name="DateAcceptOrder" ColumnName="DateAcceptOrder" />
+                  <ScalarProperty Name="StartDatePlan" ColumnName="StartDatePlan" />
+                  <ScalarProperty Name="EndDatePlan" ColumnName="EndDatePlan" />
+                  <ScalarProperty Name="MaintenanceNr" ColumnName="MaintenanceNr" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="MaintParts">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.MaintPart">
+                <MappingFragment StoreEntitySet="MaintPart">
+                  <ScalarProperty Name="IdMaintPart" ColumnName="IdMaintPart" />
+                  <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                  <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+                  <ScalarProperty Name="PartQuantity" ColumnName="PartQuantity" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="MaintTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.MaintType">
+                <MappingFragment StoreEntitySet="MaintType">
+                  <ScalarProperty Name="IdMaintenanceType" ColumnName="IdMaintenanceType" />
+                  <ScalarProperty Name="MaintenanceType" ColumnName="MaintenanceType" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="MedicalExaminations">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.MedicalExamination">
+                <MappingFragment StoreEntitySet="MedicalExamination">
+                  <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="Date" ColumnName="Date" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="OrderCustomers">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.OrderCustomer">
+                <MappingFragment StoreEntitySet="OrderCustomer">
+                  <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+                  <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                  <ScalarProperty Name="Cost" ColumnName="Cost" />
+                  <ScalarProperty Name="Markup" ColumnName="Markup" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="OrderDetails">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.OrderDetail">
+                <MappingFragment StoreEntitySet="OrderDetail">
+                  <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+                  <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+                  <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="OutControls">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.OutControl">
+                <MappingFragment StoreEntitySet="OutControl">
+                  <ScalarProperty Name="LenghtAcceptableDeviation" ColumnName="LenghtAcceptableDeviation" />
+                  <ScalarProperty Name="WidthAcceptableDeviation" ColumnName="WidthAcceptableDeviation" />
+                  <ScalarProperty Name="EndControlDate" ColumnName="EndControlDate" />
+                  <ScalarProperty Name="StartControlDate" ColumnName="StartControlDate" />
+                  <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Outsourcings">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Outsourcing">
+                <MappingFragment StoreEntitySet="Outsourcing">
+                  <ScalarProperty Name="IdOutsourcing" ColumnName="IdOutsourcing" />
+                  <ScalarProperty Name="IdOutsourcingType" ColumnName="IdOutsourcingType" />
+                  <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="OutsourcingCommitments">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.OutsourcingCommitment">
+                <MappingFragment StoreEntitySet="OutsourcingCommitment">
+                  <ScalarProperty Name="IdCommitment" ColumnName="IdCommitment" />
+                  <ScalarProperty Name="IdOutsourcing" ColumnName="IdOutsourcing" />
+                  <ScalarProperty Name="EndCommitmentDate" ColumnName="EndCommitmentDate" />
+                  <ScalarProperty Name="Cost" ColumnName="Cost" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="OutsourcingTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.OutsourcingType">
+                <MappingFragment StoreEntitySet="OutsourcingType">
+                  <ScalarProperty Name="IdOutsourcingType" ColumnName="IdOutsourcingType" />
+                  <ScalarProperty Name="OutsourcingType1" ColumnName="OutsourcingType" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Parts">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Part">
+                <MappingFragment StoreEntitySet="Part">
+                  <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+                  <ScalarProperty Name="IdPartType" ColumnName="IdPartType" />
+                  <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+                  <ScalarProperty Name="PartName" ColumnName="PartName" />
+                  <ScalarProperty Name="Producer" ColumnName="Producer" />
+                  <ScalarProperty Name="CatalogPartNr" ColumnName="CatalogPartNr" />
+                  <ScalarProperty Name="QuantityWarehouse" ColumnName="QuantityWarehouse" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PartOrders">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PartOrder">
+                <MappingFragment StoreEntitySet="PartOrder">
+                  <ScalarProperty Name="IdPartOrder" ColumnName="IdPartOrder" />
+                  <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+                  <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                  <ScalarProperty Name="StatusPartOrder" ColumnName="StatusPartOrder" />
+                  <ScalarProperty Name="CostPartOrder" ColumnName="CostPartOrder" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PartOrderDetails">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PartOrderDetail">
+                <MappingFragment StoreEntitySet="PartOrderDetail">
+                  <ScalarProperty Name="IdPartOrderDetail" ColumnName="IdPartOrderDetail" />
+                  <ScalarProperty Name="IdPartOrder" ColumnName="IdPartOrder" />
+                  <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PartOrderRequests">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PartOrderRequest">
+                <MappingFragment StoreEntitySet="PartOrderRequest">
+                  <ScalarProperty Name="IdPartOrderRequest" ColumnName="IdPartOrderRequest" />
+                  <ScalarProperty Name="IdPartOrder" ColumnName="IdPartOrder" />
+                  <ScalarProperty Name="IdPartRequest" ColumnName="IdPartRequest" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PartRequests">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PartRequest">
+                <MappingFragment StoreEntitySet="PartRequest">
+                  <ScalarProperty Name="IdPartRequest" ColumnName="IdPartRequest" />
+                  <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                  <ScalarProperty Name="StatusPart" ColumnName="StatusPart" />
+                  <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PartTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PartType">
+                <MappingFragment StoreEntitySet="PartType">
+                  <ScalarProperty Name="IdPartType" ColumnName="IdPartType" />
+                  <ScalarProperty Name="PartType1" ColumnName="PartType" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Payments">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Payment">
+                <MappingFragment StoreEntitySet="Payment">
+                  <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+                  <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="Date" ColumnName="Date" />
+                  <ScalarProperty Name="Sum" ColumnName="Sum" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PlannedProductions">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PlannedProduction">
+                <MappingFragment StoreEntitySet="PlannedProduction">
+                  <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                  <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+                  <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                  <ScalarProperty Name="PlannedStartd" ColumnName="PlannedStartd" />
+                  <ScalarProperty Name="PlannedEndd" ColumnName="PlannedEndd" />
+                  <ScalarProperty Name="Inproduction" ColumnName="Inproduction" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="PlannedProductionEmployeeDetails">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.PlannedProductionEmployeeDetail">
+                <MappingFragment StoreEntitySet="PlannedProductionEmployeeDetails">
+                  <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+                  <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                  <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Positions">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Position">
+                <MappingFragment StoreEntitySet="Position">
+                  <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+                  <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                  <ScalarProperty Name="ValidityOfOshTraining" ColumnName="ValidityOfOshTraining" />
+                  <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Products">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Product">
+                <MappingFragment StoreEntitySet="Product">
+                  <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                  <ScalarProperty Name="IdSemiFinished" ColumnName="IdSemiFinished" />
+                  <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                  <ScalarProperty Name="IdTechnology" ColumnName="IdTechnology" />
+                  <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="ProductionProces">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.ProductionProce">
+                <MappingFragment StoreEntitySet="ProductionProces">
+                  <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+                  <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                  <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                  <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Realizations">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Realization">
+                <MappingFragment StoreEntitySet="Realization">
+                  <ScalarProperty Name="IdRealization" ColumnName="IdRealization" />
+                  <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="StartRealDate" ColumnName="StartRealDate" />
+                  <ScalarProperty Name="EndRealDate" ColumnName="EndRealDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SafetyControls">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SafetyControl">
+                <MappingFragment StoreEntitySet="SafetyControl">
+                  <ScalarProperty Name="IdInspection" ColumnName="IdInspection" />
+                  <ScalarProperty Name="IdSafetyEmployee" ColumnName="IdSafetyEmployee" />
+                  <ScalarProperty Name="IdInspectedEmployee" ColumnName="IdInspectedEmployee" />
+                  <ScalarProperty Name="SaftyControlDate" ColumnName="SaftyControlDate" />
+                  <ScalarProperty Name="SafetyControlDescription" ColumnName="SafetyControlDescription" />
+                  <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SafetyTrainings">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SafetyTraining">
+                <MappingFragment StoreEntitySet="SafetyTraining">
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="TrainingDate" ColumnName="TrainingDate" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SemiFinisheds">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SemiFinished">
+                <MappingFragment StoreEntitySet="SemiFinished">
+                  <ScalarProperty Name="IdSemiFinished" ColumnName="IdSemiFinished" />
+                  <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+                  <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                  <ScalarProperty Name="Width" ColumnName="Width" />
+                  <ScalarProperty Name="SfWeight" ColumnName="SfWeight" />
+                  <ScalarProperty Name="Color" ColumnName="Color" />
+                  <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SemiFinishedOrders">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SemiFinishedOrder">
+                <MappingFragment StoreEntitySet="SemiFinishedOrder">
+                  <ScalarProperty Name="IdSfOrder" ColumnName="IdSfOrder" />
+                  <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+                  <ScalarProperty Name="SfOrderDate" ColumnName="SfOrderDate" />
+                  <ScalarProperty Name="SfDeliveryDate" ColumnName="SfDeliveryDate" />
+                  <ScalarProperty Name="Cost" ColumnName="Cost" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SfOrderDetails">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SfOrderDetail">
+                <MappingFragment StoreEntitySet="SfOrderDetail">
+                  <ScalarProperty Name="IdSfDetail" ColumnName="IdSfDetail" />
+                  <ScalarProperty Name="IdSfOrder" ColumnName="IdSfOrder" />
+                  <ScalarProperty Name="IdSemiFinished" ColumnName="IdSemiFinished" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SkillsForMachines">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SkillsForMachine">
+                <MappingFragment StoreEntitySet="SkillsForMachine">
+                  <ScalarProperty Name="IdSkill" ColumnName="IdSkill" />
+                  <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                  <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Staffs">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Staff">
+                <MappingFragment StoreEntitySet="Staff">
+                  <ScalarProperty Name="IdStaff" ColumnName="IdStaff" />
+                  <ScalarProperty Name="IdDeparment" ColumnName="IdDeparment" />
+                  <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+                  <ScalarProperty Name="Number" ColumnName="Number" />
+                  <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Suppliers">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Supplier">
+                <MappingFragment StoreEntitySet="Supplier">
+                  <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+                  <ScalarProperty Name="IdSupplierType" ColumnName="IdSupplierType" />
+                  <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SupplierTypes">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SupplierType">
+                <MappingFragment StoreEntitySet="SupplierType">
+                  <ScalarProperty Name="IdSupplierType" ColumnName="IdSupplierType" />
+                  <ScalarProperty Name="Type" ColumnName="Type" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="TechnicalProductDatas">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.TechnicalProductData">
+                <MappingFragment StoreEntitySet="TechnicalProductData">
+                  <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                  <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+                  <ScalarProperty Name="Width" ColumnName="Width" />
+                  <ScalarProperty Name="WeightPerMeter" ColumnName="WeightPerMeter" />
+                  <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+                  <ScalarProperty Name="PricePerMeter" ColumnName="PricePerMeter" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Technologies">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Technology">
+                <MappingFragment StoreEntitySet="Technology">
+                  <ScalarProperty Name="IdTechnology" ColumnName="IdTechnology" />
+                  <ScalarProperty Name="TechnologyName" ColumnName="TechnologyName" />
+                  <ScalarProperty Name="TimePermeter" ColumnName="TimePermeter" />
+                  <ScalarProperty Name="SpeedFactor" ColumnName="SpeedFactor" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Trainings">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Training">
+                <MappingFragment StoreEntitySet="Training">
+                  <ScalarProperty Name="IdTraining" ColumnName="IdTraining" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />
+                  <ScalarProperty Name="TrainingStartDate" ColumnName="TrainingStartDate" />
+                  <ScalarProperty Name="TrainingEndDate" ColumnName="TrainingEndDate" />
+                  <ScalarProperty Name="TrainingPrice" ColumnName="TrainingPrice" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="Units">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.Unit">
+                <MappingFragment StoreEntitySet="Unit">
+                  <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+                  <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vCompany">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vCompany">
+                <MappingFragment StoreEntitySet="vCompany">
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                  <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="ViewDailySfDelivery">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.ViewDailySfDelivery">
+                <MappingFragment StoreEntitySet="ViewDailySfDelivery">
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                  <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+                  <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                  <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="ViewOshTraining">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.ViewOshTraining">
+                <MappingFragment StoreEntitySet="ViewOshTraining">
+                  <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                  <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                  <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                  <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                  <ScalarProperty Name="ValidityOfOshTraining" ColumnName="ValidityOfOshTraining" />
+                  <ScalarProperty Name="TrainingDate" ColumnName="TrainingDate" />
+                  <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vIndividualCustomer">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vIndividualCustomer">
+                <MappingFragment StoreEntitySet="vIndividualCustomer">
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                  <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vOutsourcingWithType">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcingWithType">
+                <MappingFragment StoreEntitySet="vOutsourcingWithType">
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                  <ScalarProperty Name="OutsourcingType" ColumnName="OutsourcingType" />
+                  <ScalarProperty Name="IdOutsourcing" ColumnName="IdOutsourcing" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vSupplierParts">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierParts">
+                <MappingFragment StoreEntitySet="vSupplierParts">
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                  <ScalarProperty Name="Type" ColumnName="Type" />
+                  <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vSupplierSemis">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemis">
+                <MappingFragment StoreEntitySet="vSupplierSemis">
+                  <ScalarProperty Name="Description" ColumnName="Description" />
+                  <ScalarProperty Name="KRS" ColumnName="KRS" />
+                  <ScalarProperty Name="NIP" ColumnName="NIP" />
+                  <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                  <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                  <ScalarProperty Name="Street" ColumnName="Street" />
+                  <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                  <ScalarProperty Name="City" ColumnName="City" />
+                  <ScalarProperty Name="Email" ColumnName="Email" />
+                  <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                  <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                  <ScalarProperty Name="Type" ColumnName="Type" />
+                  <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vInputMagazine">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vInputMagazine">
+                <MappingFragment StoreEntitySet="vInputMagazine">
+                  <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                  <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vOutputMagazine">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vOutputMagazine">
+                <MappingFragment StoreEntitySet="vOutputMagazine">
+                  <ScalarProperty Name="SuccesfullProduced" ColumnName="SuccesfullProduced" />
+                  <ScalarProperty Name="EndControlDate" ColumnName="EndControlDate" />
+                  <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vDevotionsInMeasuremntsPerProcess">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess">
+                <MappingFragment StoreEntitySet="vDevotionsInMeasuremntsPerProcess">
+                  <ScalarProperty Name="WidthAcceptableDeviation" ColumnName="WidthAcceptableDeviation" />
+                  <ScalarProperty Name="LenghtAcceptableDeviation" ColumnName="LenghtAcceptableDeviation" />
+                  <ScalarProperty Name="WidthDeviation" ColumnName="WidthDeviation" />
+                  <ScalarProperty Name="LenghtDeviation" ColumnName="LenghtDeviation" />
+                  <ScalarProperty Name="QuantityToBeProducted" ColumnName="QuantityToBeProducted" />
+                  <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+                  <ScalarProperty Name="IdMeasurement" ColumnName="IdMeasurement" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vSuccesfullyProcess">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vSuccesfullyProcess">
+                <MappingFragment StoreEntitySet="vSuccesfullyProcess">
+                  <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vSuccesfullyProducedPerProcess">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vSuccesfullyProducedPerProcess">
+                <MappingFragment StoreEntitySet="vSuccesfullyProducedPerProcess">
+                  <ScalarProperty Name="QuantityToBeProducted" ColumnName="QuantityToBeProducted" />
+                  <ScalarProperty Name="SuccesfullProduced" ColumnName="SuccesfullProduced" />
+                  <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vTechnicalProductDataPerProcess">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vTechnicalProductDataPerProcess">
+                <MappingFragment StoreEntitySet="vTechnicalProductDataPerProcess">
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                  <ScalarProperty Name="Width" ColumnName="Width" />
+                  <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+                  <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                  <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                  <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vUnfinishedProcess">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vUnfinishedProcess">
+                <MappingFragment StoreEntitySet="vUnfinishedProcess">
+                  <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="EntranceControlView">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.EntranceControlView">
+                <MappingFragment StoreEntitySet="EntranceControlView">
+                  <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
+                  <ScalarProperty Name="Color" ColumnName="Color" />
+                  <ScalarProperty Name="SfWeight" ColumnName="SfWeight" />
+                  <ScalarProperty Name="Width" ColumnName="Width" />
+                  <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                  <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+                  <ScalarProperty Name="IdSfDetail" ColumnName="IdSfDetail" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vOrderDetail">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
+                <MappingFragment StoreEntitySet="vOrderDetail">
+                  <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                  <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+                  <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                  <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+                  <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="vPredictedPriceForCustomer">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.vPredictedPriceForCustomer">
+                <MappingFragment StoreEntitySet="vPredictedPriceForCustomer">
+                  <ScalarProperty Name="Markup" ColumnName="Markup" />
+                  <ScalarProperty Name="Cost" ColumnName="Cost" />
+                  <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                  <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                  <ScalarProperty Name="IdOrderCustomer" ColumnName="IdOrderCustomer" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+            <EntitySetMapping Name="SafetyControlHistoryView">
+              <EntityTypeMapping TypeName="RoofingCompanyModel.SafetyControlHistoryView">
+                <MappingFragment StoreEntitySet="SafetyControlHistoryView">
+                  <ScalarProperty Name="InspectedEmpolyee" ColumnName="InspectedEmpolyee" />
+                  <ScalarProperty Name="SafetyControlDescription" ColumnName="SafetyControlDescription" />
+                  <ScalarProperty Name="SaftyControlDate" ColumnName="SaftyControlDate" />
+                  <ScalarProperty Name="IdSafetyEmployee" ColumnName="IdSafetyEmployee" />
+                  <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                  <ScalarProperty Name="IdInspection" ColumnName="IdInspection" />
+                </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -56,6 +56,11 @@ namespace KWZP2019
             id = Convert.ToInt32(this.PlannedProductionGridView.CurrentRow.Cells[0].Value);
         }
 
+        private void btnRefreshPlanList_Click(object sender, EventArgs e)
+        {
+            PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
+        }
+
         private void btnAddPlan_Click(object sender, EventArgs e)
         {
             NewProductionPlan NewProductionPlanForm = new NewProductionPlan(db, id, newId);
