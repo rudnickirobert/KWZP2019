@@ -14,7 +14,6 @@ namespace KWZP2019
     public partial class EducationForm : Form
     {
         RoofingCompanyEntities db;
-        SqlConnection sqlConnection = new SqlConnection("server =.\\SQLEXPRESS;Database=RoofingCompany;Integrated Security=true");
         public EducationForm(RoofingCompanyEntities db)
         {
             InitializeComponent();
@@ -23,59 +22,29 @@ namespace KWZP2019
 
         private void EducationForm_Load(object sender, EventArgs e)
         {
-            SqlCommand sqlCommand = new SqlCommand
-                ("SELECT dbo.Employee.EmployeeName, dbo.Employee.EmployeeSurname, dbo.EducationLevel.EducationLevel, " +
-                "dbo.EducationLevel.Degree, dbo.EducationLevel.DegreeShort, dbo.Education.GraduationDate " +
-                "FROM dbo.Employee " +
-                "INNER JOIN dbo.Education ON dbo.Employee.IdEmployee = dbo.Education.IdEmployee " +
-                "INNER JOIN dbo.EducationLevel ON dbo.Education.IdEducationLevel = dbo.EducationLevel.IdEducationLevel " +
-                "ORDER BY (dbo.Employee.EmployeeSurname)", sqlConnection);
-            sqlConnection.Open();
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            DataTable dtEmployees = new DataTable();
-            dtEmployees.Columns.Add("Nazwisko", typeof(string));
-            dtEmployees.Columns.Add("Imię", typeof(string));
-            dtEmployees.Columns.Add("Poziom Wykształcenia", typeof(string));
-            dtEmployees.Columns.Add("Dyplom", typeof(string));
-            dtEmployees.Columns.Add("Tytuły Naukowe", typeof(string));
-            dtEmployees.Columns.Add("Data ukończenia studiów", typeof(string));
-
-            while (sqlDataReader.Read())
-            {
-                dtEmployees.Rows.Add(sqlDataReader["EmployeeSurname"], sqlDataReader["EmployeeName"], sqlDataReader["EducationLevel"],
-                    sqlDataReader["Degree"], sqlDataReader["DegreeShort"], sqlDataReader["GraduationDate"]);
-            }
-            sqlConnection.Close();
-            dgvEducation.DataSource = dtEmployees;
+            dgvEducation.DataSource = db.vEducationForm.
+                Select (educationFormSelect => new {
+                        educationFormSelect.EmployeeSurname,
+                        educationFormSelect.EmployeeName,
+                        educationFormSelect.EducationLevel,
+                        educationFormSelect.Degree,
+                        educationFormSelect.DegreeShort,
+                        educationFormSelect.GraduationDate
+                }).ToList();
         }
 
         private void tbEducationSearch_TextChanged(object sender, EventArgs e)
         {
-            SqlCommand sqlCommand = new SqlCommand
-                ("SELECT dbo.Employee.EmployeeName, dbo.Employee.EmployeeSurname, dbo.EducationLevel.EducationLevel, " +
-                "dbo.EducationLevel.Degree, dbo.EducationLevel.DegreeShort, dbo.Education.GraduationDate " +
-                "FROM dbo.Employee " +
-                "INNER JOIN dbo.Education ON dbo.Employee.IdEmployee = dbo.Education.IdEmployee " +
-                "INNER JOIN dbo.EducationLevel ON dbo.Education.IdEducationLevel = dbo.EducationLevel.IdEducationLevel " +
-                "WHERE(dbo.Employee.EmployeeSurname LIKE '" + tbEducationSearch.Text + "%') " +
-                "ORDER BY (dbo.Employee.EmployeeSurname)", sqlConnection);
-            sqlConnection.Open();
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            DataTable dtEmployees = new DataTable();
-            dtEmployees.Columns.Add("Nazwisko", typeof(string));
-            dtEmployees.Columns.Add("Imię", typeof(string));
-            dtEmployees.Columns.Add("Poziom Wykształcenia", typeof(string));
-            dtEmployees.Columns.Add("Dyplom", typeof(string));
-            dtEmployees.Columns.Add("Tytuły Naukowe", typeof(string));
-            dtEmployees.Columns.Add("Data ukończenia studiów", typeof(string));
-
-            while (sqlDataReader.Read())
-            {
-                dtEmployees.Rows.Add(sqlDataReader["EmployeeSurname"], sqlDataReader["EmployeeName"], sqlDataReader["EducationLevel"],
-                    sqlDataReader["Degree"], sqlDataReader["DegreeShort"], sqlDataReader["GraduationDate"]);
-            }
-            sqlConnection.Close();
-            dgvEducation.DataSource = dtEmployees;
+            dgvEducation.DataSource = db.vEducationForm.
+                Where (educationform => educationform.EmployeeSurname.StartsWith(tbEducationSearch.Text)).
+                Select (educationFormSelect => new {
+                        educationFormSelect.EmployeeSurname,
+                        educationFormSelect.EmployeeName,
+                        educationFormSelect.EducationLevel,
+                        educationFormSelect.Degree,
+                        educationFormSelect.DegreeShort,
+                        educationFormSelect.GraduationDate
+                }).ToList();
         }
     }
 }

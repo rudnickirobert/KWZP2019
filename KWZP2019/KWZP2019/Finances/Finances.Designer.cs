@@ -30,8 +30,8 @@
             this.btnAddInvoice = new System.Windows.Forms.Button();
             this.lblIntroduction = new System.Windows.Forms.Label();
             this.lblOtherFunctions = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPayments
@@ -144,7 +144,7 @@
             // 
             // lblIntroduction
             // 
-            this.lblIntroduction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblIntroduction.BackColor = System.Drawing.Color.Transparent;
             this.lblIntroduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIntroduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblIntroduction.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -158,7 +158,7 @@
             // 
             // lblOtherFunctions
             // 
-            this.lblOtherFunctions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblOtherFunctions.BackColor = System.Drawing.Color.Transparent;
             this.lblOtherFunctions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblOtherFunctions.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblOtherFunctions.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -169,24 +169,6 @@
             this.lblOtherFunctions.TabIndex = 7;
             this.lblOtherFunctions.Text = "POZOSTAŁE FUNKCJE";
             this.lblOtherFunctions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturn.Location = new System.Drawing.Point(31, 32);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(208, 118);
-            this.btnReturn.TabIndex = 1;
-            this.btnReturn.Text = "Powrót";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // btnReturnMain
             // 
@@ -207,6 +189,25 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReturn.Location = new System.Drawing.Point(31, 23);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(208, 118);
+            this.btnReturn.TabIndex = 9;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // Finances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,8 +215,8 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 749);
-            this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.lblOtherFunctions);
             this.Controls.Add(this.lblIntroduction);
             this.Controls.Add(this.btnAddInvoice);
@@ -244,8 +245,8 @@
         private System.Windows.Forms.Button btnAddInvoice;
         private System.Windows.Forms.Label lblIntroduction;
         private System.Windows.Forms.Label lblOtherFunctions;
-        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
 

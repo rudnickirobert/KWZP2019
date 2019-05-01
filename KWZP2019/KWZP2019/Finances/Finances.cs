@@ -26,11 +26,13 @@ namespace KWZP2019
         {
             Salaries salaries = new Salaries(db, startForm, this);
             salaries.ShowDialog();
+            this.Hide();
         }
         private void btnCountPayments_Click(object sender, EventArgs e)
         {
             SalariesSummary salariesSummary = new SalariesSummary(db, startForm, this);
             salariesSummary.ShowDialog();
+            this.Hide();
         }
         private void btnCosts_Click(object sender, EventArgs e)
         {
@@ -46,23 +48,25 @@ namespace KWZP2019
         {
             Profits profits = new Profits(db, startForm, this);
             profits.ShowDialog();
+
         }
-        private void Finances_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.startForm.Show();
-        }
+        
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
             AddInvoices addInvoices = new AddInvoices(db, startForm, this);
-            addInvoices.ShowDialog();
-        }
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
+            addInvoices.Show();
             this.Hide();
-            this.finanseIHR.Show();
         }
+
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            this.startForm.Show();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finanseIHR.Show();
             this.Hide();
         }
     }

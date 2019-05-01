@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HR));
             this.tbEmployeeSearching = new System.Windows.Forms.TextBox();
             this.dgvEmloyees = new System.Windows.Forms.DataGridView();
@@ -50,22 +53,48 @@
             // tbEmployeeSearching
             // 
             this.tbEmployeeSearching.Location = new System.Drawing.Point(353, 54);
-            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
             this.tbEmployeeSearching.Size = new System.Drawing.Size(578, 20);
             this.tbEmployeeSearching.TabIndex = 0;
+            this.tbEmployeeSearching.Text = "Wyszukaj po nazwisku";
             this.tbEmployeeSearching.TextChanged += new System.EventHandler(this.tbEmployeeSearching_TextChanged);
             // 
             // dgvEmloyees
             // 
-            this.dgvEmloyees.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmloyees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmloyees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvEmloyees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmloyees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmloyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmloyees.Location = new System.Drawing.Point(353, 101);
+            this.dgvEmloyees.EnableHeadersVisualStyles = false;
+            this.dgvEmloyees.Location = new System.Drawing.Point(353, 94);
             this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmloyees.Name = "dgvEmloyees";
             this.dgvEmloyees.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmloyees.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmloyees.RowTemplate.Height = 24;
-            this.dgvEmloyees.Size = new System.Drawing.Size(578, 417);
+            this.dgvEmloyees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmloyees.Size = new System.Drawing.Size(434, 339);
             this.dgvEmloyees.TabIndex = 2;
             // 
             // lbWarningsExamination
@@ -76,7 +105,7 @@
             this.lbWarningsExamination.FormattingEnabled = true;
             this.lbWarningsExamination.ItemHeight = 18;
             this.lbWarningsExamination.Location = new System.Drawing.Point(11, 496);
-            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2);
+            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbWarningsExamination.Name = "lbWarningsExamination";
             this.lbWarningsExamination.Size = new System.Drawing.Size(320, 22);
             this.lbWarningsExamination.TabIndex = 3;
@@ -203,7 +232,7 @@
             this.lbWarningsContracts.FormattingEnabled = true;
             this.lbWarningsContracts.ItemHeight = 18;
             this.lbWarningsContracts.Location = new System.Drawing.Point(11, 453);
-            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2);
+            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbWarningsContracts.Name = "lbWarningsContracts";
             this.lbWarningsContracts.Size = new System.Drawing.Size(320, 22);
             this.lbWarningsContracts.TabIndex = 11;
@@ -302,7 +331,7 @@
             this.Controls.Add(this.dgvEmloyees);
             this.Controls.Add(this.tbEmployeeSearching);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HR";

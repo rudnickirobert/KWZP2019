@@ -18,12 +18,12 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private StartForm startForm;
-        private Finances Finances;
-        public AddInvoices(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
+        private Finances finances;
+        public AddInvoices(RoofingCompanyEntities db, StartForm startForm, Finances finances)
         {
             this.db = db;
             this.startForm = startForm;
-            this.Finances = Finances;
+            this.finances = finances;
             InitializeComponent();
         }
         private void AddInvoices_Load(object sender, EventArgs e)
@@ -55,6 +55,18 @@ namespace KWZP2019
         {
             AddNewCompany addNewCompany = new AddNewCompany(db);
             addNewCompany.ShowDialog();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finances.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }
