@@ -56,5 +56,17 @@ namespace KWZP2019
             AddNewCompany addNewCompany = new AddNewCompany(db);
             addNewCompany.ShowDialog();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Finances.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
+        }
     }
 }

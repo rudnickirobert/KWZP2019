@@ -14,11 +14,15 @@ namespace KWZP2019
     public partial class Absences : Form
     {
         RoofingCompanyEntities db;
-
-        public Absences(RoofingCompanyEntities db)
+        StartForm startForm;
+        HR hr;
+        SqlConnection sqlConnection = new SqlConnection("server =.\\SQLEXPRESS;Database=RoofingCompany;Integrated Security=true");
+        public Absences(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.hr = hr;
         }
 
         private void Absences_Load(object sender, EventArgs e)
@@ -63,6 +67,18 @@ namespace KWZP2019
             Absence newAbsence = new Absence();
             newAbsence.StartOfAbsence = dateTimePickerFirstDay.Value;
             newAbsence.EndOfAbsence = dateTimePickerLastDay.Value;
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.hr.Show();
+            this.Hide();
         }
     }
 }
