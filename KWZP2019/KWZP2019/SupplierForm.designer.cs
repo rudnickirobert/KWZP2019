@@ -41,6 +41,7 @@
             // radioButtonSupplierSemis
             // 
             this.radioButtonSupplierSemis.AutoSize = true;
+            this.radioButtonSupplierSemis.Checked = true;
             this.radioButtonSupplierSemis.Location = new System.Drawing.Point(4, 28);
             this.radioButtonSupplierSemis.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonSupplierSemis.Name = "radioButtonSupplierSemis";
@@ -59,7 +60,6 @@
             this.radioButtonSupplierParts.Name = "radioButtonSupplierParts";
             this.radioButtonSupplierParts.Size = new System.Drawing.Size(106, 17);
             this.radioButtonSupplierParts.TabIndex = 2;
-            this.radioButtonSupplierParts.TabStop = true;
             this.radioButtonSupplierParts.Text = "Dostawca części";
             this.radioButtonSupplierParts.UseVisualStyleBackColor = true;
             // 

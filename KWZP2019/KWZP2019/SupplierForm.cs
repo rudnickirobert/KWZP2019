@@ -37,6 +37,7 @@ namespace KWZP2019
 
         private void Dostawcapolfabrykatu_rb_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (radioButtonSupplierSemis.Checked)
             {
                 supplierDgv.DataSource = (from db in db.vSupplierSemis
