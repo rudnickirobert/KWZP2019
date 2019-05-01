@@ -87,8 +87,26 @@ namespace KWZP2019
             }
         }
 
-        
-
+        public void handleTextBoxes(int processNumber, bool existing)
+        {
+            if (existing)
+            {
+                OutControl outControl = db.OutControls.First(e => e.IdProcess == processNumber);
+                txtbAcceptableWidthDeviation.Text = outControl.WidthAcceptableDeviation.ToString();
+                txtbAcceptableLenghtDeviation.Text = outControl.LenghtAcceptableDeviation.ToString();
+                txtbStartDate.Text = outControl.EndControlDate.ToShortDateString() + " " + outControl.EndControlDate.ToShortTimeString();
+                txtbEndDate.Text = outControl.EndControlDate.ToShortDateString() + " " + outControl.EndControlDate.ToShortTimeString();
+            }
+            else
+            {
+                txtbAcceptableWidthDeviation.Text = null;
+                txtbAcceptableLenghtDeviation.Text = null;
+                txtbStartDate.Text = null;
+                txtbEndDate.Text = null;
+            }
+            txtbAcceptableWidthDeviation.ReadOnly = existing;
+            txtbAcceptableLenghtDeviation.ReadOnly = existing;
+        }
        
 
         private void cbProcessNumber_SelectionChangeCommitted(object sender, EventArgs e)
@@ -104,16 +122,19 @@ namespace KWZP2019
                     case "Oczekuje na kontrolę":
                         {
                             btnSMeasures.Visible = true;
+                            handleTextBoxes(procesNumber, false);
                             break;
                         }
                     case "W takcie realizacji":
                         {
                             btnSMeasures.Visible = true;
+                            handleTextBoxes(procesNumber, true);
                             break;
                         }
                     case "Proces kontroli zakończony":
                         {
                             btnSMeasures.Visible = false;
+                            handleTextBoxes(procesNumber, true);
                             break;
                         }
                 }

@@ -44,12 +44,12 @@
             this.cbProcessNumber = new System.Windows.Forms.ComboBox();
             this.cbControlerId = new System.Windows.Forms.ComboBox();
             this.lbltextBAcceptableHeightDeviation = new System.Windows.Forms.Label();
-            this.txtbAcceptableHeightDeviation = new System.Windows.Forms.TextBox();
+            this.txtbAcceptableWidthDeviation = new System.Windows.Forms.TextBox();
             this.btnSMeasures = new System.Windows.Forms.Button();
-            this.stpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.txtbOutControlStatus = new System.Windows.Forms.TextBox();
             this.lblOutControlStatus = new System.Windows.Forms.Label();
+            this.txtbStartDate = new System.Windows.Forms.TextBox();
+            this.txtbEndDate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,7 +133,7 @@
             this.lblControlDateStart.BackColor = System.Drawing.Color.Transparent;
             this.lblControlDateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlDateStart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblControlDateStart.Location = new System.Drawing.Point(746, 361);
+            this.lblControlDateStart.Location = new System.Drawing.Point(746, 351);
             this.lblControlDateStart.Name = "lblControlDateStart";
             this.lblControlDateStart.Size = new System.Drawing.Size(160, 26);
             this.lblControlDateStart.TabIndex = 34;
@@ -238,13 +238,13 @@
             this.lbltextBAcceptableHeightDeviation.Text = "Akceptowalna odchyłka wysokości";
             this.lbltextBAcceptableHeightDeviation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtbAcceptableHeightDeviation
+            // txtbAcceptableWidthDeviation
             // 
-            this.txtbAcceptableHeightDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtbAcceptableHeightDeviation.Location = new System.Drawing.Point(566, 405);
-            this.txtbAcceptableHeightDeviation.Name = "txtbAcceptableHeightDeviation";
-            this.txtbAcceptableHeightDeviation.Size = new System.Drawing.Size(160, 26);
-            this.txtbAcceptableHeightDeviation.TabIndex = 43;
+            this.txtbAcceptableWidthDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtbAcceptableWidthDeviation.Location = new System.Drawing.Point(566, 405);
+            this.txtbAcceptableWidthDeviation.Name = "txtbAcceptableWidthDeviation";
+            this.txtbAcceptableWidthDeviation.Size = new System.Drawing.Size(160, 26);
+            this.txtbAcceptableWidthDeviation.TabIndex = 43;
             // 
             // btnSMeasures
             // 
@@ -268,20 +268,6 @@
             this.btnSMeasures.UseVisualStyleBackColor = false;
             this.btnSMeasures.Click += new System.EventHandler(this.btnSMeasures_Click);
             // 
-            // stpStartDate
-            // 
-            this.stpStartDate.Location = new System.Drawing.Point(883, 363);
-            this.stpStartDate.Name = "stpStartDate";
-            this.stpStartDate.Size = new System.Drawing.Size(200, 20);
-            this.stpStartDate.TabIndex = 55;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.Location = new System.Drawing.Point(883, 403);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpEndDate.TabIndex = 55;
-            // 
             // txtbOutControlStatus
             // 
             this.txtbOutControlStatus.Location = new System.Drawing.Point(735, 270);
@@ -302,6 +288,22 @@
             this.lblOutControlStatus.Text = "Status Kontroli";
             this.lblOutControlStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtbStartDate
+            // 
+            this.txtbStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtbStartDate.Location = new System.Drawing.Point(903, 351);
+            this.txtbStartDate.Name = "txtbStartDate";
+            this.txtbStartDate.Size = new System.Drawing.Size(160, 26);
+            this.txtbStartDate.TabIndex = 43;
+            // 
+            // txtbEndDate
+            // 
+            this.txtbEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtbEndDate.Location = new System.Drawing.Point(903, 405);
+            this.txtbEndDate.Name = "txtbEndDate";
+            this.txtbEndDate.Size = new System.Drawing.Size(160, 26);
+            this.txtbEndDate.TabIndex = 43;
+            // 
             // OutControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,12 +312,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.txtbOutControlStatus);
-            this.Controls.Add(this.dtpEndDate);
-            this.Controls.Add(this.stpStartDate);
             this.Controls.Add(this.btnSMeasures);
             this.Controls.Add(this.cbControlerId);
             this.Controls.Add(this.cbProcessNumber);
-            this.Controls.Add(this.txtbAcceptableHeightDeviation);
+            this.Controls.Add(this.txtbAcceptableWidthDeviation);
+            this.Controls.Add(this.txtbEndDate);
+            this.Controls.Add(this.txtbStartDate);
             this.Controls.Add(this.txtbAcceptableLenghtDeviation);
             this.Controls.Add(this.txtbMeasurmentsNumber);
             this.Controls.Add(this.lblControlDateEnd);
@@ -361,11 +363,11 @@
         private System.Windows.Forms.ComboBox cbProcessNumber;
         private System.Windows.Forms.ComboBox cbControlerId;
         private System.Windows.Forms.Label lbltextBAcceptableHeightDeviation;
-        private System.Windows.Forms.TextBox txtbAcceptableHeightDeviation;
+        private System.Windows.Forms.TextBox txtbAcceptableWidthDeviation;
         private System.Windows.Forms.Button btnSMeasures;
-        private System.Windows.Forms.DateTimePicker stpStartDate;
-        private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.TextBox txtbOutControlStatus;
         private System.Windows.Forms.Label lblOutControlStatus;
+        private System.Windows.Forms.TextBox txtbStartDate;
+        private System.Windows.Forms.TextBox txtbEndDate;
     }
 }
