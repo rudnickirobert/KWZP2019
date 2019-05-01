@@ -15,6 +15,8 @@ namespace KWZP2019
         private RoofingCompanyEntities db;
         private StartForm startForm;
         private QualityControl qualityControlForm;
+        private Dictionary<int, String> processStatus = new Dictionary<int, string>();
+        private enum OutControlStatus  { Oczekuje_na_kontrolę, W_takcie_realizacji, Proces_kontroli_zakończony};
 
         public OutControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -27,13 +29,13 @@ namespace KWZP2019
 
         private void ComponentsDataInitialize()
         {
-            cbProcessNumber.DataSource = db.vUnfinishedProcesses.ToList();
+            cbProcessNumber.DataSource = db.ProductionProcesses.ToList();
             cbProcessNumber.DisplayMember = "IdProces";
             cbProcessNumber.ValueMember = "IdProces";
-            cbProcessNumber.Text = "Proszę wybrać numer procesu"
+            cbProcessNumber.SelectedIndex = -1;
+            cbProcessNumber.Text = "Proszę wybrać numer procesu";
             cbControlerId.DataSource = db.Employees.ToList();
             cbControlerId.ValueMember = "IdEmployee";
-            stpStartDate.Value = DateTime.Today;
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -67,6 +69,35 @@ namespace KWZP2019
             string lastname = ((Employee)e.ListItem).EmployeeName;
             string firstname = ((Employee)e.ListItem).EmployeeSurname;
             e.Value = id +" "+ lastname + " " + firstname;
+        }
+
+        private void processStatusDictionaryRefresh()
+        {
+            foreach (ProductionProcess process in db.ProductionProcesses.ToList())
+            {
+                processStatus[process.IdProces] = OutControlStatus.Oczekuje_na_kontrolę.ToString();
+            }
+            foreach (OutControl process in db.OutControls.ToList())
+            {
+                processStatus[process.IdProcess] = OutControlStatus.W_takcie_realizacji.ToString();
+            }
+            foreach (vSuccesfullyProcess process in db.vSuccesfullyProcesses.ToList())
+            {
+                processStatus[process.IdProcess] = OutControlStatus.Proces_kontroli_zakończony.ToString();
+            }
+        }
+
+        
+
+       
+
+        private void cbProcessNumber_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbProcessNumber.SelectedIndex != -1)
+            {
+                processStatusDictionaryRefresh();
+                txtbOutControlStatus.Text = processStatus[Int16.Parse(cbProcessNumber.SelectedValue.ToString())].ToString().Replace('_', ' ');
+            }
         }
     }
 }

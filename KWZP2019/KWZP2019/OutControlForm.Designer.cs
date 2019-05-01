@@ -145,9 +145,9 @@
             this.lblProcesNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblProcesNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblProcesNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblProcesNumber.Location = new System.Drawing.Point(552, 220);
+            this.lblProcesNumber.Location = new System.Drawing.Point(550, 228);
             this.lblProcesNumber.Name = "lblProcesNumber";
-            this.lblProcesNumber.Size = new System.Drawing.Size(200, 36);
+            this.lblProcesNumber.Size = new System.Drawing.Size(200, 28);
             this.lblProcesNumber.TabIndex = 34;
             this.lblProcesNumber.Text = "Numer Procesu";
             this.lblProcesNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,10 +211,11 @@
             // cbProcessNumber
             // 
             this.cbProcessNumber.FormattingEnabled = true;
-            this.cbProcessNumber.Location = new System.Drawing.Point(735, 228);
+            this.cbProcessNumber.Location = new System.Drawing.Point(735, 234);
             this.cbProcessNumber.Name = "cbProcessNumber";
             this.cbProcessNumber.Size = new System.Drawing.Size(200, 21);
             this.cbProcessNumber.TabIndex = 53;
+            this.cbProcessNumber.SelectionChangeCommitted += new System.EventHandler(this.cbProcessNumber_SelectionChangeCommitted);
             // 
             // cbControlerId
             // 
@@ -283,7 +284,7 @@
             // 
             // txtbOutControlStatus
             // 
-            this.txtbOutControlStatus.Location = new System.Drawing.Point(735, 271);
+            this.txtbOutControlStatus.Location = new System.Drawing.Point(735, 270);
             this.txtbOutControlStatus.Name = "txtbOutControlStatus";
             this.txtbOutControlStatus.ReadOnly = true;
             this.txtbOutControlStatus.Size = new System.Drawing.Size(200, 20);
@@ -294,7 +295,7 @@
             this.lblOutControlStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblOutControlStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOutControlStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblOutControlStatus.Location = new System.Drawing.Point(562, 266);
+            this.lblOutControlStatus.Location = new System.Drawing.Point(569, 266);
             this.lblOutControlStatus.Name = "lblOutControlStatus";
             this.lblOutControlStatus.Size = new System.Drawing.Size(160, 26);
             this.lblOutControlStatus.TabIndex = 34;
