@@ -11,13 +11,13 @@ using System.Data.SqlClient;
 
 namespace KWZP2019
 {
-    public partial class Absences : Form
+    public partial class pbAbsences : Form
     {
         RoofingCompanyEntities db;
         StartForm startForm;
         HR hr;
         SqlConnection sqlConnection = new SqlConnection("server =.\\SQLEXPRESS;Database=RoofingCompany;Integrated Security=true");
-        public Absences(RoofingCompanyEntities db, StartForm startForm, HR hr)
+        public pbAbsences(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
             this.db = db;

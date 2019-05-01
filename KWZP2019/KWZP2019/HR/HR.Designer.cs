@@ -53,7 +53,7 @@
             // tbEmployeeSearching
             // 
             this.tbEmployeeSearching.Location = new System.Drawing.Point(353, 54);
-            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
             this.tbEmployeeSearching.Size = new System.Drawing.Size(578, 20);
             this.tbEmployeeSearching.TabIndex = 0;
@@ -94,7 +94,7 @@
             this.dgvEmloyees.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmloyees.RowTemplate.Height = 24;
             this.dgvEmloyees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmloyees.Size = new System.Drawing.Size(434, 339);
+            this.dgvEmloyees.Size = new System.Drawing.Size(578, 424);
             this.dgvEmloyees.TabIndex = 2;
             // 
             // lbWarningsExamination
@@ -105,7 +105,7 @@
             this.lbWarningsExamination.FormattingEnabled = true;
             this.lbWarningsExamination.ItemHeight = 18;
             this.lbWarningsExamination.Location = new System.Drawing.Point(11, 496);
-            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2);
             this.lbWarningsExamination.Name = "lbWarningsExamination";
             this.lbWarningsExamination.Size = new System.Drawing.Size(320, 22);
             this.lbWarningsExamination.TabIndex = 3;
@@ -232,7 +232,7 @@
             this.lbWarningsContracts.FormattingEnabled = true;
             this.lbWarningsContracts.ItemHeight = 18;
             this.lbWarningsContracts.Location = new System.Drawing.Point(11, 453);
-            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2);
             this.lbWarningsContracts.Name = "lbWarningsContracts";
             this.lbWarningsContracts.Size = new System.Drawing.Size(320, 22);
             this.lbWarningsContracts.TabIndex = 11;
@@ -331,7 +331,7 @@
             this.Controls.Add(this.dgvEmloyees);
             this.Controls.Add(this.tbEmployeeSearching);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HR";

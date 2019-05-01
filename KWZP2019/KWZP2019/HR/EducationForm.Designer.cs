@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EducationForm));
             this.dgvEducation = new System.Windows.Forms.DataGridView();
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.tbEmployeeSurname = new System.Windows.Forms.TextBox();
@@ -41,15 +42,16 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tbEducationSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
+            this.pbEducationForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEducationForm)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvEducation
             // 
             this.dgvEducation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEducation.Location = new System.Drawing.Point(190, 145);
-            this.dgvEducation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEducation.Location = new System.Drawing.Point(22, 115);
+            this.dgvEducation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEducation.Name = "dgvEducation";
             this.dgvEducation.RowTemplate.Height = 24;
             this.dgvEducation.Size = new System.Drawing.Size(525, 354);
@@ -57,16 +59,16 @@
             // 
             // tbEmployeeName
             // 
-            this.tbEmployeeName.Location = new System.Drawing.Point(759, 202);
-            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeName.Location = new System.Drawing.Point(795, 230);
+            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmployeeName.Name = "tbEmployeeName";
             this.tbEmployeeName.Size = new System.Drawing.Size(76, 20);
             this.tbEmployeeName.TabIndex = 1;
             // 
             // tbEmployeeSurname
             // 
-            this.tbEmployeeSurname.Location = new System.Drawing.Point(759, 258);
-            this.tbEmployeeSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeSurname.Location = new System.Drawing.Point(795, 267);
+            this.tbEmployeeSurname.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmployeeSurname.Name = "tbEmployeeSurname";
             this.tbEmployeeSurname.Size = new System.Drawing.Size(76, 20);
             this.tbEmployeeSurname.TabIndex = 2;
@@ -74,16 +76,16 @@
             // cbEducationLevel
             // 
             this.cbEducationLevel.FormattingEnabled = true;
-            this.cbEducationLevel.Location = new System.Drawing.Point(759, 307);
-            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEducationLevel.Location = new System.Drawing.Point(795, 304);
+            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(2);
             this.cbEducationLevel.Name = "cbEducationLevel";
             this.cbEducationLevel.Size = new System.Drawing.Size(92, 21);
             this.cbEducationLevel.TabIndex = 4;
             // 
             // dtpGraduationDate
             // 
-            this.dtpGraduationDate.Location = new System.Drawing.Point(759, 380);
-            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpGraduationDate.Location = new System.Drawing.Point(795, 345);
+            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpGraduationDate.Name = "dtpGraduationDate";
             this.dtpGraduationDate.Size = new System.Drawing.Size(202, 20);
             this.dtpGraduationDate.TabIndex = 8;
@@ -91,7 +93,7 @@
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(759, 170);
+            this.lblEmployeeName.Location = new System.Drawing.Point(657, 237);
             this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeName.Name = "lblEmployeeName";
             this.lblEmployeeName.Size = new System.Drawing.Size(26, 13);
@@ -101,7 +103,7 @@
             // lblEmployeeSurname
             // 
             this.lblEmployeeSurname.AutoSize = true;
-            this.lblEmployeeSurname.Location = new System.Drawing.Point(759, 242);
+            this.lblEmployeeSurname.Location = new System.Drawing.Point(657, 270);
             this.lblEmployeeSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeSurname.Name = "lblEmployeeSurname";
             this.lblEmployeeSurname.Size = new System.Drawing.Size(53, 13);
@@ -111,7 +113,7 @@
             // lblEducationLevel
             // 
             this.lblEducationLevel.AutoSize = true;
-            this.lblEducationLevel.Location = new System.Drawing.Point(759, 291);
+            this.lblEducationLevel.Location = new System.Drawing.Point(657, 312);
             this.lblEducationLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEducationLevel.Name = "lblEducationLevel";
             this.lblEducationLevel.Size = new System.Drawing.Size(114, 13);
@@ -121,7 +123,7 @@
             // lblGraduationDate
             // 
             this.lblGraduationDate.AutoSize = true;
-            this.lblGraduationDate.Location = new System.Drawing.Point(760, 351);
+            this.lblGraduationDate.Location = new System.Drawing.Point(657, 351);
             this.lblGraduationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGraduationDate.Name = "lblGraduationDate";
             this.lblGraduationDate.Size = new System.Drawing.Size(127, 13);
@@ -131,7 +133,7 @@
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(63, 541);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(71, 28);
             this.btnClear.TabIndex = 13;
@@ -141,7 +143,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(139, 541);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(73, 28);
             this.btnAdd.TabIndex = 14;
@@ -151,7 +153,7 @@
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(216, 541);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(77, 28);
             this.btnEdit.TabIndex = 15;
@@ -161,22 +163,23 @@
             // tbEducationSearch
             // 
             this.tbEducationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbEducationSearch.Location = new System.Drawing.Point(190, 77);
-            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEducationSearch.Location = new System.Drawing.Point(22, 57);
+            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbEducationSearch.Name = "tbEducationSearch";
             this.tbEducationSearch.Size = new System.Drawing.Size(525, 26);
             this.tbEducationSearch.TabIndex = 16;
             this.tbEducationSearch.TextChanged += new System.EventHandler(this.tbEducationSearch_TextChanged);
             // 
-            // lblSearch
+            // pbEducationForm
             // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblSearch.Location = new System.Drawing.Point(186, 41);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(51, 20);
-            this.lblSearch.TabIndex = 18;
-            this.lblSearch.Text = "label1";
+            this.pbEducationForm.BackColor = System.Drawing.Color.Transparent;
+            this.pbEducationForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEducationForm.BackgroundImage")));
+            this.pbEducationForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbEducationForm.Location = new System.Drawing.Point(576, 17);
+            this.pbEducationForm.Name = "pbEducationForm";
+            this.pbEducationForm.Size = new System.Drawing.Size(581, 716);
+            this.pbEducationForm.TabIndex = 17;
+            this.pbEducationForm.TabStop = false;
             // 
             // EducationForm
             // 
@@ -185,7 +188,6 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 749);
-            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.tbEducationSearch);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -199,8 +201,9 @@
             this.Controls.Add(this.tbEmployeeSurname);
             this.Controls.Add(this.tbEmployeeName);
             this.Controls.Add(this.dgvEducation);
+            this.Controls.Add(this.pbEducationForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EducationForm";
@@ -208,6 +211,7 @@
             this.Text = "EducationForm";
             this.Load += new System.EventHandler(this.EducationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEducationForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +232,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox tbEducationSearch;
-        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.PictureBox pbEducationForm;
     }
 }
