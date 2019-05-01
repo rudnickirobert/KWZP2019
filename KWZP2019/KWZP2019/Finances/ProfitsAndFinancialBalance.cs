@@ -12,7 +12,6 @@ using System.IO;
 using System.Reflection;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using System.IO;
 
 namespace KWZP2019
 {
