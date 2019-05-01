@@ -13,10 +13,14 @@ namespace KWZP2019
     public partial class AddEmployee : Form
     {
         RoofingCompanyEntities db;
-        public AddEmployee(RoofingCompanyEntities db)
+        StartForm startForm;
+        HR hr;
+        public AddEmployee(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.hr = hr;
             clear();
         }
      
@@ -66,6 +70,12 @@ namespace KWZP2019
                 db.SaveChanges();
                 MessageBox.Show("Prawidłowo wprowadzono pracownika");
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.hr.Show();
+            this.Hide();
         }
     }
 }

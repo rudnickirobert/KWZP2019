@@ -28,15 +28,15 @@ namespace KWZP2019
         }
         private void AddInvoices_Load(object sender, EventArgs e)
         {
-            List<InvoiceType> typeList = db.InvoiceTypes.ToList();
-            foreach (InvoiceType dep in typeList)
+            List<InvoiceType> invoice = db.InvoiceTypes.ToList();
+            foreach (InvoiceType typeList in invoice)
             {
-                cbInvoiceType.Items.Add(dep.Type);
+                cbInvoiceType.Items.Add(typeList.Type);
             }
             List<Contractor> contractorList = db.Contractors.ToList();
-            foreach (Contractor dep in contractorList)
+            foreach (Contractor contractor in contractorList)
             {
-                cbContractors.Items.Add(dep.ContractorName);
+                cbContractors.Items.Add(contractor.ContractorName);
             }
         }
         private void btnAddNewInvoice_Click(object sender, EventArgs e)
@@ -53,8 +53,9 @@ namespace KWZP2019
         }
         private void btnAddNewCompany_Click(object sender, EventArgs e)
         {
-            AddNewCompany addNewCompany = new AddNewCompany(db);
-            addNewCompany.ShowDialog();
+            AddNewCompany addNewCompany = new AddNewCompany(db, startForm, this);
+            addNewCompany.Show();
+            this.Hide();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

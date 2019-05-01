@@ -26,7 +26,7 @@ namespace KWZP2019
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            AddEmployee addEmployee = new AddEmployee(db);
+            AddEmployee addEmployee = new AddEmployee(db, startForm, this);
             addEmployee.Show();
             this.Hide();
         }
@@ -46,7 +46,7 @@ namespace KWZP2019
         }
         private void btnAbsences_Click(object sender, EventArgs e)
         {
-            Absences absences = new Absences(db, startForm, this);
+            pbAbsences absences = new pbAbsences(db, startForm, this);
             absences.Show();
             this.Hide();
         }

@@ -42,7 +42,7 @@
             this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPayments.Image = ((System.Drawing.Image)(resources.GetObject("btnPayments.Image")));
-            this.btnPayments.Location = new System.Drawing.Point(365, 116);
+            this.btnPayments.Location = new System.Drawing.Point(370, 116);
             this.btnPayments.Margin = new System.Windows.Forms.Padding(0);
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(290, 160);
@@ -60,7 +60,7 @@
             this.btnCountPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCountPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCountPayments.Image = ((System.Drawing.Image)(resources.GetObject("btnCountPayments.Image")));
-            this.btnCountPayments.Location = new System.Drawing.Point(365, 310);
+            this.btnCountPayments.Location = new System.Drawing.Point(370, 309);
             this.btnCountPayments.Margin = new System.Windows.Forms.Padding(0);
             this.btnCountPayments.Name = "btnCountPayments";
             this.btnCountPayments.Size = new System.Drawing.Size(290, 160);
@@ -78,7 +78,7 @@
             this.btnCosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCosts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCosts.Image = ((System.Drawing.Image)(resources.GetObject("btnCosts.Image")));
-            this.btnCosts.Location = new System.Drawing.Point(787, 116);
+            this.btnCosts.Location = new System.Drawing.Point(786, 116);
             this.btnCosts.Margin = new System.Windows.Forms.Padding(0);
             this.btnCosts.Name = "btnCosts";
             this.btnCosts.Size = new System.Drawing.Size(290, 160);
@@ -96,7 +96,7 @@
             this.btnEarnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnEarnings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEarnings.Image = ((System.Drawing.Image)(resources.GetObject("btnEarnings.Image")));
-            this.btnEarnings.Location = new System.Drawing.Point(787, 310);
+            this.btnEarnings.Location = new System.Drawing.Point(786, 309);
             this.btnEarnings.Margin = new System.Windows.Forms.Padding(0);
             this.btnEarnings.Name = "btnEarnings";
             this.btnEarnings.Size = new System.Drawing.Size(290, 160);
@@ -114,7 +114,7 @@
             this.btnFinancialStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnFinancialStatement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFinancialStatement.Image = ((System.Drawing.Image)(resources.GetObject("btnFinancialStatement.Image")));
-            this.btnFinancialStatement.Location = new System.Drawing.Point(787, 502);
+            this.btnFinancialStatement.Location = new System.Drawing.Point(786, 502);
             this.btnFinancialStatement.Margin = new System.Windows.Forms.Padding(0);
             this.btnFinancialStatement.Name = "btnFinancialStatement";
             this.btnFinancialStatement.Size = new System.Drawing.Size(290, 160);
@@ -132,7 +132,7 @@
             this.btnAddInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInvoice.Image")));
-            this.btnAddInvoice.Location = new System.Drawing.Point(365, 502);
+            this.btnAddInvoice.Location = new System.Drawing.Point(370, 502);
             this.btnAddInvoice.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(290, 160);
@@ -179,7 +179,7 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturnMain.Location = new System.Drawing.Point(31, 157);
+            this.btnReturnMain.Location = new System.Drawing.Point(36, 255);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(208, 118);
@@ -198,7 +198,7 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturn.Location = new System.Drawing.Point(31, 23);
+            this.btnReturn.Location = new System.Drawing.Point(36, 116);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(208, 118);

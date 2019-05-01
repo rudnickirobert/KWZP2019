@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tbSumIncome = new System.Windows.Forms.TextBox();
-            this.btSum = new System.Windows.Forms.Button();
+            this.btnSum = new System.Windows.Forms.Button();
             this.dgvProfits = new System.Windows.Forms.DataGridView();
             this.btnGenerateGeneralReport = new System.Windows.Forms.Button();
             this.lblIncomes = new System.Windows.Forms.Label();
@@ -53,15 +53,15 @@
             this.tbSumIncome.Text = "0";
             this.tbSumIncome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btSum
+            // btnSum
             // 
-            this.btSum.Location = new System.Drawing.Point(12, 480);
-            this.btSum.Name = "btSum";
-            this.btSum.Size = new System.Drawing.Size(497, 23);
-            this.btSum.TabIndex = 31;
-            this.btSum.Text = "Sumuj wszystkie widoki";
-            this.btSum.UseVisualStyleBackColor = true;
-            this.btSum.Click += new System.EventHandler(this.btSum_Click);
+            this.btnSum.Location = new System.Drawing.Point(12, 480);
+            this.btnSum.Name = "btnSum";
+            this.btnSum.Size = new System.Drawing.Size(497, 23);
+            this.btnSum.TabIndex = 31;
+            this.btnSum.Text = "Sumuj wszystkie widoki";
+            this.btnSum.UseVisualStyleBackColor = true;
+            this.btnSum.Click += new System.EventHandler(this.btSum_Click);
             // 
             // dgvProfits
             // 
@@ -79,7 +79,7 @@
             this.btnGenerateGeneralReport.TabIndex = 29;
             this.btnGenerateGeneralReport.Text = "Generuj raport";
             this.btnGenerateGeneralReport.UseVisualStyleBackColor = true;
-            this.btnGenerateGeneralReport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
+            this.btnGenerateGeneralReport.Click += new System.EventHandler(this.btnGenerateGeneralReport_Click);
             // 
             // lblIncomes
             // 
@@ -98,7 +98,7 @@
             this.btnAcceptSelectedTime.TabIndex = 27;
             this.btnAcceptSelectedTime.Text = "Zatwierdź wybrany przedzial";
             this.btnAcceptSelectedTime.UseVisualStyleBackColor = true;
-            this.btnAcceptSelectedTime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
+            this.btnAcceptSelectedTime.Click += new System.EventHandler(this.btnAcceptSelectedTime_Click);
             // 
             // lblSpecifyTimeRange
             // 
@@ -159,7 +159,7 @@
             this.ClientSize = new System.Drawing.Size(523, 551);
             this.Controls.Add(this.lblPln);
             this.Controls.Add(this.tbSumIncome);
-            this.Controls.Add(this.btSum);
+            this.Controls.Add(this.btnSum);
             this.Controls.Add(this.dgvProfits);
             this.Controls.Add(this.btnGenerateGeneralReport);
             this.Controls.Add(this.lblIncomes);
@@ -181,7 +181,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbSumIncome;
-        private System.Windows.Forms.Button btSum;
+        private System.Windows.Forms.Button btnSum;
         private System.Windows.Forms.DataGridView dgvProfits;
         private System.Windows.Forms.Button btnGenerateGeneralReport;
         private System.Windows.Forms.Label lblIncomes;

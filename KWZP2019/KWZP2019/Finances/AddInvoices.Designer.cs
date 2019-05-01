@@ -38,23 +38,23 @@
             this.btnAddNewCompany = new System.Windows.Forms.Button();
             this.cbContractors = new System.Windows.Forms.ComboBox();
             this.cbInvoiceType = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAddInvoices = new System.Windows.Forms.PictureBox();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddInvoices)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDateAdded
             // 
             this.lblDateAdded.AutoSize = true;
             this.lblDateAdded.BackColor = System.Drawing.Color.Transparent;
-            this.lblDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.lblDateAdded.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDateAdded.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblDateAdded.Location = new System.Drawing.Point(441, 298);
+            this.lblDateAdded.Location = new System.Drawing.Point(517, 357);
             this.lblDateAdded.Name = "lblDateAdded";
-            this.lblDateAdded.Size = new System.Drawing.Size(143, 18);
+            this.lblDateAdded.Size = new System.Drawing.Size(162, 20);
             this.lblDateAdded.TabIndex = 9;
             this.lblDateAdded.Text = "Data wystawienia:";
             // 
@@ -64,7 +64,7 @@
             this.lblInvoiceValue.BackColor = System.Drawing.Color.Transparent;
             this.lblInvoiceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblInvoiceValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInvoiceValue.Location = new System.Drawing.Point(441, 339);
+            this.lblInvoiceValue.Location = new System.Drawing.Point(518, 398);
             this.lblInvoiceValue.Name = "lblInvoiceValue";
             this.lblInvoiceValue.Size = new System.Drawing.Size(133, 18);
             this.lblInvoiceValue.TabIndex = 10;
@@ -74,15 +74,15 @@
             // 
             this.dtpDateAdded.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpDateAdded.Location = new System.Drawing.Point(590, 293);
+            this.dtpDateAdded.Location = new System.Drawing.Point(685, 355);
             this.dtpDateAdded.Name = "dtpDateAdded";
-            this.dtpDateAdded.Size = new System.Drawing.Size(248, 23);
+            this.dtpDateAdded.Size = new System.Drawing.Size(255, 23);
             this.dtpDateAdded.TabIndex = 17;
             // 
             // tbInvoiceValue
             // 
             this.tbInvoiceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbInvoiceValue.Location = new System.Drawing.Point(590, 339);
+            this.tbInvoiceValue.Location = new System.Drawing.Point(671, 394);
             this.tbInvoiceValue.Name = "tbInvoiceValue";
             this.tbInvoiceValue.Size = new System.Drawing.Size(165, 23);
             this.tbInvoiceValue.TabIndex = 18;
@@ -93,7 +93,7 @@
             // 
             this.lblPln.AutoSize = true;
             this.lblPln.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPln.Location = new System.Drawing.Point(761, 345);
+            this.lblPln.Location = new System.Drawing.Point(842, 400);
             this.lblPln.Name = "lblPln";
             this.lblPln.Size = new System.Drawing.Size(98, 17);
             this.lblPln.TabIndex = 19;
@@ -104,68 +104,75 @@
             this.btnAddNewInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAddNewInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAddNewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnAddNewInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddNewInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddNewInvoice.Location = new System.Drawing.Point(426, 504);
+            this.btnAddNewInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewInvoice.Image")));
+            this.btnAddNewInvoice.Location = new System.Drawing.Point(634, 473);
             this.btnAddNewInvoice.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddNewInvoice.Name = "btnAddNewInvoice";
-            this.btnAddNewInvoice.Size = new System.Drawing.Size(221, 131);
+            this.btnAddNewInvoice.Size = new System.Drawing.Size(202, 150);
             this.btnAddNewInvoice.TabIndex = 20;
-            this.btnAddNewInvoice.Text = "Dodaj nową fakturę";
+            this.btnAddNewInvoice.Text = "Dodaj fakturę";
+            this.btnAddNewInvoice.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddNewInvoice.UseVisualStyleBackColor = false;
             this.btnAddNewInvoice.Click += new System.EventHandler(this.btnAddNewInvoice_Click);
             // 
             // btnAddNewCompany
             // 
-            this.btnAddNewCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAddNewCompany.Location = new System.Drawing.Point(650, 504);
+            this.btnAddNewCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAddNewCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddNewCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddNewCompany.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddNewCompany.Location = new System.Drawing.Point(745, 243);
+            this.btnAddNewCompany.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddNewCompany.Name = "btnAddNewCompany";
-            this.btnAddNewCompany.Size = new System.Drawing.Size(227, 131);
+            this.btnAddNewCompany.Size = new System.Drawing.Size(195, 28);
             this.btnAddNewCompany.TabIndex = 22;
-            this.btnAddNewCompany.Text = "Dodaj nowy podmiot do listy rozwijanej";
-            this.btnAddNewCompany.UseVisualStyleBackColor = true;
+            this.btnAddNewCompany.Text = "Dodaj nowy podmiot";
+            this.btnAddNewCompany.UseVisualStyleBackColor = false;
             this.btnAddNewCompany.Click += new System.EventHandler(this.btnAddNewCompany_Click);
             // 
             // cbContractors
             // 
-            this.cbContractors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbContractors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbContractors.FormattingEnabled = true;
-            this.cbContractors.Location = new System.Drawing.Point(444, 239);
+            this.cbContractors.Location = new System.Drawing.Point(520, 243);
             this.cbContractors.Name = "cbContractors";
-            this.cbContractors.Size = new System.Drawing.Size(420, 24);
+            this.cbContractors.Size = new System.Drawing.Size(200, 28);
             this.cbContractors.TabIndex = 23;
             this.cbContractors.Text = "wybierz podmiot";
             // 
             // cbInvoiceType
             // 
-            this.cbInvoiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbInvoiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbInvoiceType.FormattingEnabled = true;
-            this.cbInvoiceType.Location = new System.Drawing.Point(444, 384);
+            this.cbInvoiceType.Location = new System.Drawing.Point(520, 304);
             this.cbInvoiceType.Name = "cbInvoiceType";
-            this.cbInvoiceType.Size = new System.Drawing.Size(212, 24);
+            this.cbInvoiceType.Size = new System.Drawing.Size(420, 28);
             this.cbInvoiceType.TabIndex = 25;
             this.cbInvoiceType.Text = "wybierz typ faktury";
             // 
-            // pictureBox1
+            // pbAddInvoices
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(365, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(581, 716);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
+            this.pbAddInvoices.BackColor = System.Drawing.Color.Transparent;
+            this.pbAddInvoices.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAddInvoices.BackgroundImage")));
+            this.pbAddInvoices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAddInvoices.Location = new System.Drawing.Point(443, 12);
+            this.pbAddInvoices.Name = "pbAddInvoices";
+            this.pbAddInvoices.Size = new System.Drawing.Size(581, 716);
+            this.pbAddInvoices.TabIndex = 26;
+            this.pbAddInvoices.TabStop = false;
             // 
             // lblFormTitle
             // 
             this.lblFormTitle.AutoSize = true;
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(562, 139);
+            this.lblFormTitle.Location = new System.Drawing.Point(629, 132);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(206, 25);
+            this.lblFormTitle.Size = new System.Drawing.Size(248, 29);
             this.lblFormTitle.TabIndex = 27;
             this.lblFormTitle.Text = "Wprowadzanie faktury";
             // 
@@ -177,7 +184,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(69, 64);
+            this.btnReturn.Location = new System.Drawing.Point(85, 120);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(247, 154);
@@ -195,7 +202,7 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(69, 298);
+            this.btnReturnMain.Location = new System.Drawing.Point(85, 314);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
@@ -224,7 +231,7 @@
             this.Controls.Add(this.dtpDateAdded);
             this.Controls.Add(this.lblInvoiceValue);
             this.Controls.Add(this.lblDateAdded);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbAddInvoices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -232,7 +239,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj fakturę";
             this.Load += new System.EventHandler(this.AddInvoices_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddInvoices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +255,7 @@
         private System.Windows.Forms.Button btnAddNewCompany;
         private System.Windows.Forms.ComboBox cbContractors;
         private System.Windows.Forms.ComboBox cbInvoiceType;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAddInvoices;
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
