@@ -20,7 +20,7 @@ namespace KWZP2019
             this.EmployeePlans = new HashSet<EmployeePlan>();
             this.FailureMaintenances = new HashSet<FailureMaintenance>();
             this.Realizations = new HashSet<Realization>();
-            this.PlannedProduction = new HashSet<PlannedProduction>();
+            this.PlannedProductions = new HashSet<PlannedProduction>();
         }
     
         public int IdMaintenance { get; set; }
@@ -42,6 +42,6 @@ namespace KWZP2019
         public virtual ICollection<Realization> Realizations { get; set; }
         public virtual MaintType MaintType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlannedProduction> PlannedProduction { get; set; }
+        public virtual ICollection<PlannedProduction> PlannedProductions { get; set; }
     }
 }

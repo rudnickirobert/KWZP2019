@@ -14,6 +14,7 @@ namespace KWZP2019
     
     public partial class TechnicalProductData
     {
+        public int IdTechnicalProductData { get; set; }
         public int IdProduct { get; set; }
         public byte[] Pattern { get; set; }
         public double Width { get; set; }
