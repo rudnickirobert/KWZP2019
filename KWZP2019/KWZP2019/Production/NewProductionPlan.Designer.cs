@@ -405,7 +405,7 @@
             // 
             // vUnhandledOrderDetailsBindingSource
             // 
-            this.vUnhandledOrderDetailsBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetails);
+            this.vUnhandledOrderDetailsBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
             // 
             // entityCommand1
             // 

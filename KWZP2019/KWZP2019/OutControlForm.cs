@@ -27,7 +27,7 @@ namespace KWZP2019
 
         private void ComponentsDataInitialize()
         {
-            cbProcessNumber.DataSource = db.vUnfinishedProcess.ToList();
+            cbProcessNumber.DataSource = db.vUnfinishedProcesses.ToList();
             cbProcessNumber.DisplayMember = "IdProces";
             cbProcessNumber.ValueMember = "IdProces";
             cbControlerId.DataSource = db.Employees.ToList();
