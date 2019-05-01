@@ -132,7 +132,7 @@ namespace KWZP2019
             tbSumOrders.Text = sumOrders.ToString("0,##");
             tbPureMoney.Text = sumAll.ToString("0,##");
         }
-        private void btnGenerategeneralreport_Click(object sender, EventArgs e)
+        private void btnGenerateGeneralReport_Click(object sender, EventArgs e)
         {
             PdfPTable pdfTableInvoices = new PdfPTable(dgvInvoices.ColumnCount);
             pdfTableInvoices.DefaultCell.Padding = 3;

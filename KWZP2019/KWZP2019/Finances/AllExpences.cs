@@ -56,7 +56,7 @@ namespace KWZP2019
             dgvSalaries.Columns[5].HeaderText = "Nazwisko";
             dgvSalaries.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
-        private void btnAcceptselectedtime_Click(object sender, EventArgs e)
+        private void btnAcceptSelectedTime_Click(object sender, EventArgs e)
         {
          dgvInvoices.DataSource = db.vExpencesInvoices.ToList().Where(vExpencesInvoices =>
          vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value)
@@ -105,7 +105,7 @@ namespace KWZP2019
             tbSumOrders.Text = sumOrders.ToString("0,##");
             tbExpencesSum.Text = sumAll.ToString("0,##");
         }
-        private void btnGenerategeneralreport_Click(object sender, EventArgs e)
+        private void btnGenerateGeneralReport_Click(object sender, EventArgs e)
         {
             PdfPTable pdfTableInvoices = new PdfPTable(dgvInvoices.ColumnCount);
             pdfTableInvoices.DefaultCell.Padding = 3;

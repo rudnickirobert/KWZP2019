@@ -35,7 +35,7 @@ namespace KWZP2019
             dgvProfits.Columns[3].HeaderText = "Wartość zamówienia";
             dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
-        private void btnAcceptselectedtime_Click(object sender, EventArgs e)
+        private void btnAcceptSelectedTime_Click(object sender, EventArgs e)
         {
             dgvProfits.DataSource = db.vIncomesProfits.ToList().Where(vIncomesProfits =>
             vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
@@ -52,7 +52,7 @@ namespace KWZP2019
             }
             tbSumIncome.Text = sum.ToString("0,##");
         }
-        private void btnGenerategeneralreport_Click(object sender, EventArgs e)
+        private void btnGenerateGeneralReport_Click(object sender, EventArgs e)
         {
             PdfPTable pdfTable = new PdfPTable(dgvProfits.ColumnCount);
             pdfTable.DefaultCell.Padding = 3;

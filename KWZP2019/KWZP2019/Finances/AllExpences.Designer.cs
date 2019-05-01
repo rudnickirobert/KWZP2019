@@ -32,7 +32,7 @@
             this.tbSumInvoices = new System.Windows.Forms.TextBox();
             this.tbSumOS = new System.Windows.Forms.TextBox();
             this.tbSumOrders = new System.Windows.Forms.TextBox();
-            this.btSum = new System.Windows.Forms.Button();
+            this.btnSum = new System.Windows.Forms.Button();
             this.dgvOutsourcing = new System.Windows.Forms.DataGridView();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.dgvSalaries = new System.Windows.Forms.DataGridView();
@@ -102,15 +102,15 @@
             this.tbSumOrders.Text = "0";
             this.tbSumOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btSum
+            // btnSum
             // 
-            this.btSum.Location = new System.Drawing.Point(12, 560);
-            this.btSum.Name = "btSum";
-            this.btSum.Size = new System.Drawing.Size(497, 23);
-            this.btSum.TabIndex = 42;
-            this.btSum.Text = "Sumuj wszystkie widoki";
-            this.btSum.UseVisualStyleBackColor = true;
-            this.btSum.Click += new System.EventHandler(this.btSum_Click);
+            this.btnSum.Location = new System.Drawing.Point(12, 560);
+            this.btnSum.Name = "btnSum";
+            this.btnSum.Size = new System.Drawing.Size(497, 23);
+            this.btnSum.TabIndex = 42;
+            this.btnSum.Text = "Sumuj wszystkie widoki";
+            this.btnSum.UseVisualStyleBackColor = true;
+            this.btnSum.Click += new System.EventHandler(this.btSum_Click);
             // 
             // dgvOutsourcing
             // 
@@ -197,7 +197,7 @@
             this.btnGenerateGeneralReport.TabIndex = 32;
             this.btnGenerateGeneralReport.Text = "Generuj raport";
             this.btnGenerateGeneralReport.UseVisualStyleBackColor = true;
-            this.btnGenerateGeneralReport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
+            this.btnGenerateGeneralReport.Click += new System.EventHandler(this.btnGenerateGeneralReport_Click);
             // 
             // btnAcceptSelectedTime
             // 
@@ -207,7 +207,7 @@
             this.btnAcceptSelectedTime.TabIndex = 31;
             this.btnAcceptSelectedTime.Text = "Zatwierdź wybrany przedzial";
             this.btnAcceptSelectedTime.UseVisualStyleBackColor = true;
-            this.btnAcceptSelectedTime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
+            this.btnAcceptSelectedTime.Click += new System.EventHandler(this.btnAcceptSelectedTime_Click);
             // 
             // lblSpecifyTimeRange
             // 
@@ -332,7 +332,7 @@
             this.Controls.Add(this.tbSumInvoices);
             this.Controls.Add(this.tbSumOS);
             this.Controls.Add(this.tbSumOrders);
-            this.Controls.Add(this.btSum);
+            this.Controls.Add(this.btnSum);
             this.Controls.Add(this.dgvOutsourcing);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.dgvSalaries);
@@ -367,7 +367,7 @@
         private System.Windows.Forms.TextBox tbSumInvoices;
         private System.Windows.Forms.TextBox tbSumOS;
         private System.Windows.Forms.TextBox tbSumOrders;
-        private System.Windows.Forms.Button btSum;
+        private System.Windows.Forms.Button btnSum;
         private System.Windows.Forms.DataGridView dgvOutsourcing;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.DataGridView dgvSalaries;
