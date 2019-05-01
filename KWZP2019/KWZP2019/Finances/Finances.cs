@@ -60,14 +60,15 @@ namespace KWZP2019
             addInvoices.ShowDialog();
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            this.finanseIHR.Show();
-        }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            this.startForm.Show();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finanseIHR.Show();
             this.Hide();
         }
     }
