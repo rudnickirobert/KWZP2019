@@ -669,9 +669,9 @@ GO
 
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
-SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
-FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, OutControl E, TechnicalProductData F
-WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
+SELECT D.IdProces as IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
+FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, TechnicalProductData F
+WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and F.IdProduct = B.IdProduct
 
 GO
 

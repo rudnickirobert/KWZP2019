@@ -96,7 +96,27 @@ namespace KWZP2019
             if (cbProcessNumber.SelectedIndex != -1)
             {
                 processStatusDictionaryRefresh();
-                txtbOutControlStatus.Text = processStatus[Int16.Parse(cbProcessNumber.SelectedValue.ToString())].ToString().Replace('_', ' ');
+                int procesNumber = Int16.Parse(cbProcessNumber.SelectedValue.ToString());
+                txtbOutControlStatus.Text = processStatus[procesNumber].ToString().Replace('_', ' ');
+                txtbMeasurmentsNumber.Text = db.vTechnicalProductDataPerProcesses.First(i => i.IdProcess == procesNumber).Quantity.ToString();
+                switch (txtbOutControlStatus.Text)
+                {
+                    case "Oczekuje na kontrolę":
+                        {
+                            btnSMeasures.Visible = true;
+                            break;
+                        }
+                    case "W takcie realizacji":
+                        {
+                            btnSMeasures.Visible = true;
+                            break;
+                        }
+                    case "Proces kontroli zakończony":
+                        {
+                            btnSMeasures.Visible = false;
+                            break;
+                        }
+                }
             }
         }
     }
