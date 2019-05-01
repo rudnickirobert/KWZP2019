@@ -32,7 +32,7 @@ namespace KWZP2019
                 if (plan != null)
                 {
                     tBoxPlanNr.Text = Convert.ToString(plan.IdPlan);
-                    cBoxMachine.Text = Convert.ToString(plan.IdMachine);
+                    comboBoxMachine.Text = Convert.ToString(plan.IdMachine);
                     order.IdDetail = plan.IdDetail;
                     order.Quantity = orderDetail.Quantity;
                     order.ProductCode = product.ProductCode;
@@ -70,7 +70,7 @@ namespace KWZP2019
         }
         private void btnEndDateCalculate_Click(object sender, EventArgs e)
         {
-            int idMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+            int idMachine = Convert.ToInt32(comboBoxMachine.Text.Trim());
             int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
             int idPlan = Convert.ToInt32(tBoxPlanNr.Text.Trim());
             double timeInterval;
@@ -112,7 +112,7 @@ namespace KWZP2019
             {
                 PlannedProduction existingPlan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
                 existingPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-                existingPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+                existingPlan.IdMachine = Convert.ToInt32(comboBoxMachine.Text.Trim());
                 existingPlan.PlannedStartd = dateTimeStart.Value;
                 existingPlan.PlannedEndd = dateTimeEnd.Value;
                 existingPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
@@ -129,7 +129,7 @@ namespace KWZP2019
                 {
                     PlannedProduction newPlan = new PlannedProduction();
                     newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-                    newPlan.IdMachine = Convert.ToInt32(cBoxMachine.Text.Trim());
+                    newPlan.IdMachine = Convert.ToInt32(comboBoxMachine.Text.Trim());
                     newPlan.PlannedStartd = dateTimeStart.Value;
                     newPlan.PlannedEndd = dateTimeEnd.Value;
                     newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
@@ -140,6 +140,12 @@ namespace KWZP2019
                 }
             }
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
             if (db.vUnhandledOrderDetails.Any())

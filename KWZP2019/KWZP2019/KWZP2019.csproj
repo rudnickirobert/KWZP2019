@@ -845,6 +845,13 @@
     <None Include="Resources\icons8-pencil-80.png" />
     <None Include="Resources\icons8-repeat-80.png" />
     <None Include="Resources\icons8-return-40.png" />
+    <None Include="Resources\icons8-add-new-40.png" />
+    <None Include="Resources\icons8-add-new-80.png" />
+    <None Include="Resources\icons8-add-user-male-40.png" />
+    <None Include="Resources\icons8-denied-40.png" />
+    <None Include="Resources\icons8-abacus-40.png" />
+    <None Include="Resources\icons8-abacus-80.png" />
+    <None Include="Resources\icons8-save-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

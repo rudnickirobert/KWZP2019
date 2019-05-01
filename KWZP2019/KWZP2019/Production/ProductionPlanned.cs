@@ -33,6 +33,7 @@ namespace KWZP2019
         }
         private void txtBoxPlanSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtBoxDetailSearch.Clear();
             if (isTxtBoxEmpty(txtBoxPlanSearch))
             {
                 PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
@@ -68,6 +69,7 @@ namespace KWZP2019
 
         private void txtBoxDetailSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtBoxPlanSearch.Clear();
             if (isTxtBoxEmpty(txtBoxDetailSearch))
             {
                 PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
