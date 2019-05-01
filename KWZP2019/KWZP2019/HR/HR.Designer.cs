@@ -54,6 +54,7 @@
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
             this.tbEmployeeSearching.Size = new System.Drawing.Size(769, 22);
             this.tbEmployeeSearching.TabIndex = 0;
+            this.tbEmployeeSearching.Text = "Wyszukaj po nazwisku";
             this.tbEmployeeSearching.TextChanged += new System.EventHandler(this.tbEmployeeSearching_TextChanged);
             // 
             // dgvEmloyees
