@@ -46,7 +46,7 @@ namespace KWZP2019
         }
         private void btnAbsences_Click(object sender, EventArgs e)
         {
-            Absences absences = new Absences(db);
+            Absences absences = new Absences(db, startForm, this);
             absences.Show();
             this.Hide();
         }
