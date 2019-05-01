@@ -42,6 +42,7 @@
             this.orderDtp = new System.Windows.Forms.DateTimePicker();
             this.employeeCb = new System.Windows.Forms.ComboBox();
             this.markupTb = new System.Windows.Forms.TextBox();
+            this.markupInfoLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // customerNameLbl
@@ -117,11 +118,12 @@
             // 
             // priceTb
             // 
-            this.priceTb.Location = new System.Drawing.Point(110, 219);
+            this.priceTb.Location = new System.Drawing.Point(109, 219);
             this.priceTb.Margin = new System.Windows.Forms.Padding(2);
             this.priceTb.Name = "priceTb";
             this.priceTb.Size = new System.Drawing.Size(206, 20);
             this.priceTb.TabIndex = 10;
+            this.priceTb.Text = "0";
             // 
             // sentToProductionCb
             // 
@@ -139,6 +141,7 @@
             this.customerNameTb.Location = new System.Drawing.Point(110, 25);
             this.customerNameTb.Margin = new System.Windows.Forms.Padding(2);
             this.customerNameTb.Name = "customerNameTb";
+            this.customerNameTb.ReadOnly = true;
             this.customerNameTb.Size = new System.Drawing.Size(206, 20);
             this.customerNameTb.TabIndex = 12;
             // 
@@ -175,12 +178,24 @@
             this.markupTb.Name = "markupTb";
             this.markupTb.Size = new System.Drawing.Size(206, 20);
             this.markupTb.TabIndex = 16;
+            this.markupTb.Text = "0,3";
+            this.markupTb.TextChanged += new System.EventHandler(this.markupTb_TextChanged);
+            // 
+            // markupInfoLbl
+            // 
+            this.markupInfoLbl.AutoSize = true;
+            this.markupInfoLbl.Location = new System.Drawing.Point(322, 146);
+            this.markupInfoLbl.Name = "markupInfoLbl";
+            this.markupInfoLbl.Size = new System.Drawing.Size(67, 13);
+            this.markupInfoLbl.TabIndex = 17;
+            this.markupInfoLbl.Text = "Preferowana";
             // 
             // AddNewOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.markupInfoLbl);
             this.Controls.Add(this.markupTb);
             this.Controls.Add(this.employeeCb);
             this.Controls.Add(this.orderDtp);
@@ -220,5 +235,6 @@
         private System.Windows.Forms.DateTimePicker orderDtp;
         private System.Windows.Forms.ComboBox employeeCb;
         private System.Windows.Forms.TextBox markupTb;
+        private System.Windows.Forms.Label markupInfoLbl;
     }
 }

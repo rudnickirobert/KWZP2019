@@ -221,6 +221,13 @@
             this.editCustomerBtn.UseVisualStyleBackColor = true;
             this.editCustomerBtn.Click += new System.EventHandler(this.editCustomerBtn_Click);
             // 
+            // endCutstomerFormBtn
+            // 
+            this.endCutstomerFormBtn.Location = new System.Drawing.Point(0, 0);
+            this.endCutstomerFormBtn.Name = "endCutstomerFormBtn";
+            this.endCutstomerFormBtn.Size = new System.Drawing.Size(75, 23);
+            this.endCutstomerFormBtn.TabIndex = 23;
+            // 
             // searchTxt
             // 
             this.searchTxt.Location = new System.Drawing.Point(82, 8);

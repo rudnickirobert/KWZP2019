@@ -15,6 +15,7 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private String customerName;
+        bool isMarkupCorrect = true;
         public AddNewOrderForm(RoofingCompanyEntities db, object customerDgvCell1)
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace KWZP2019
         }
         private void AddNewOrderForm_Load(object sender, EventArgs e)
         {
+            markupTb.BackColor = Color.LightGreen;
             List<Employee> employeeList = db.Employees.ToList();
             employeeCb.BeginUpdate();
             foreach (Employee emp in employeeList)
@@ -32,6 +34,45 @@ namespace KWZP2019
             }
             employeeCb.EndUpdate();
         }
+        private void markupTb_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(markupTb.Text.Trim(), out double isMarkupValueDouble))
+            {
+                if (double.Parse(markupTb.Text.Trim()) < 0 && double.Parse(markupTb.Text.Trim()) > 1)
+                {
+                    markupTb.BackColor = Color.Red;
+                    MessageBox.Show("Wprowadź poprawną wartość");
+                    isMarkupCorrect = false;
+                }
+                else if (double.Parse(markupTb.Text.Trim()) < 0.3)
+                {
+                    markupTb.BackColor = Color.Yellow;
+                    markupInfoLbl.Text = "Poniżej preferowanej";
+                    isMarkupCorrect = true;
+                    
+                }
+                else if (double.Parse(markupTb.Text.Trim()) == 0.3)
+                {
+                    markupTb.BackColor = Color.LightGreen;
+                    markupInfoLbl.Text = "Preferowana";
+                    isMarkupCorrect = true;
+                }
+                else
+                {
+                    markupTb.BackColor = Color.LightGreen;
+                    markupInfoLbl.Text = "Powyżej preferowanej";
+                    isMarkupCorrect = true;
+                }
+            }
+            else
+            {
+                markupTb.BackColor = Color.Red;
+                MessageBox.Show("Możesz wprowadzić tylko liczby");
+                isMarkupCorrect = false;
+            }
+
+        }
+
         //BUTTONS       //Return
         private void returnBtn_Click(object sender, EventArgs e)
         {
@@ -40,38 +81,55 @@ namespace KWZP2019
         private void acceptBtn_Click(object sender, EventArgs e)
         {
             OrderCustomer newOrderCustomer = new OrderCustomer();
-            foreach(Customer cust in db.Customers)
+            //IdCustomer
+            foreach (Customer cust in db.Customers)
             {
                 if (cust.CustomerName == customerName)
                 {
                     newOrderCustomer.IdCustomer = cust.IdCustomer;
                 }
             }
-            foreach(Employee emp in db.Employees)
+            //IdEmployee
+            if (employeeCb.SelectedIndex == -1)
             {
-                if ((emp.EmployeeName + " " + emp.EmployeeSurname).ToString() == employeeCb.Text.ToString())
+                MessageBox.Show("Nie wybrano pracownika");
+                employeeCb.BackColor = Color.Red;
+                return;
+            }
+            else
+            {
+                foreach (Employee emp in db.Employees)
                 {
-                    newOrderCustomer.IdEmployee = emp.IdEmployee;
+                    if ((emp.EmployeeName + " " + emp.EmployeeSurname).ToString() == employeeCb.Text.ToString())
+                    {
+                        newOrderCustomer.IdEmployee = emp.IdEmployee;
+                    }
                 }
             }
-            newOrderCustomer.OrderDate = orderDtp.Value;
-            /*
-            string stringVal = markupTb.Text.Trim();
-            if (stringVal.Contains("."))
+            //OrderDate
+            if (orderDtp.Value.ToShortDateString() == DateTime.Today.ToShortDateString())
             {
-                stringVal = stringVal.Replace(".", ",");
+                MessageBox.Show("Wybrano dzisiejszą datę");
+                orderDtp.CalendarTitleForeColor = Color.Red;
+                return;
             }
-            decimal decVal = System.Convert.ToDecimal(stringVal);
-            double doubleVal = System.Convert.ToDouble(stringVal);
-            float fVal = System.Convert.ToSingle(stringVal);
-            int intVal = System.Convert.ToInt16(stringVal);*/
-            int markup = int.Parse(markupTb.Text.Trim());
-            newOrderCustomer.Markup = markup;
-            newOrderCustomer.Cost = Decimal.Parse(priceTb.Text.Trim());
-
-            db.OrderCustomers.Add(newOrderCustomer);
-            db.SaveChanges();
-                }
-      
+            else
+            {
+                newOrderCustomer.OrderDate = orderDtp.Value;
+            }
+            if (isMarkupCorrect)
+            {
+                newOrderCustomer.Markup = double.Parse(markupTb.Text.Trim());
+                newOrderCustomer.Cost = 0;
+                db.OrderCustomers.Add(newOrderCustomer);
+                db.SaveChanges();
+                this.Hide();
+                MessageBox.Show("Dodaj szczegół zamówienia");
+                AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, newOrderCustomer.IdOrderCustomer);
+                newOrderDetail.ShowDialog();
+                return;
+            }
+            MessageBox.Show("Coś poszło nie tak");
+        }
     }
 }
