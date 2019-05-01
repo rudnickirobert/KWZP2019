@@ -23,10 +23,10 @@ namespace KWZP2019
         private void Examination_Load(object sender, EventArgs e)
         {
             dgvExamination.DataSource = db.vExamination.
-                Select(examinationSource => new {
-                    examinationSource.EmployeeSurname,
-                    examinationSource.EmployeeName,
-                    examinationSource.Date
+                Select (examinationSource => new {
+                        examinationSource.EmployeeSurname,
+                        examinationSource.EmployeeName,
+                        examinationSource.Date
                 }).ToList();
         }
 
@@ -40,26 +40,24 @@ namespace KWZP2019
         {
             dgvExamination.DataSource = db.vExamination.
                 Where (examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
-                && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
-                   Select(examinationSource => new
-                   {
-                       examinationSource.EmployeeSurname,
-                       examinationSource.EmployeeName,
-                       examinationSource.Date
-                   }).ToList();
+                                   && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
+                Select (examinationSource => new {
+                        examinationSource.EmployeeSurname,
+                        examinationSource.EmployeeName,
+                        examinationSource.Date
+                }).ToList();
         }
 
         private void tbSearchEmployeeExaminationName_TextChanged(object sender, EventArgs e)
         {
             dgvExamination.DataSource = db.vExamination.
-                   Where(examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
-                  && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
-                      Select(examinationSource => new
-                      {
-                          examinationSource.EmployeeSurname,
-                          examinationSource.EmployeeName,
-                          examinationSource.Date
-                      }).ToList();
+                   Where (examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
+                                      && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
+                   Select (examinationSource => new {
+                           examinationSource.EmployeeSurname,
+                           examinationSource.EmployeeName,
+                           examinationSource.Date
+                   }).ToList();
         }
     }
 }

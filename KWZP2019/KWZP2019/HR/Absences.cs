@@ -16,7 +16,7 @@ namespace KWZP2019
         RoofingCompanyEntities db;
         StartForm startForm;
         HR hr;
-        SqlConnection sqlConnection = new SqlConnection("server =.\\SQLEXPRESS;Database=RoofingCompany;Integrated Security=true");
+
         public Absences(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
@@ -27,38 +27,39 @@ namespace KWZP2019
 
         private void Absences_Load(object sender, EventArgs e)
         {
-            dgvAbsences.DataSource = db.vAbsences.Select(absencesSelect => new {
-                absencesSelect.EmployeeSurname,
-                absencesSelect.EmployeeName,
-                absencesSelect.AbscenceReason,
-                absencesSelect.StartOfAbsence,
-                absencesSelect.EndOfAbsence
-            }).ToList();
+            dgvAbsences.DataSource = db.vAbsences.
+                Select (absencesSelect => new {
+                        absencesSelect.EmployeeSurname,
+                        absencesSelect.EmployeeName,
+                        absencesSelect.AbscenceReason,
+                        absencesSelect.StartOfAbsence,
+                        absencesSelect.EndOfAbsence
+                }).ToList();
         }
 
         private void tbSearchAbsence_TextChanged(object sender, EventArgs e)
         {
             dgvAbsences.DataSource = db.vAbsences.
-                Where(absences => absences.EmployeeSurname.StartsWith(tbSearchAbsence.Text)).
-                Select(absencesSelect => new {
-                    absencesSelect.EmployeeSurname,
-                    absencesSelect.EmployeeName,
-                    absencesSelect.AbscenceReason,
-                    absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence
+                Where (absences => absences.EmployeeSurname.StartsWith(tbSearchAbsence.Text)).
+                Select (absencesSelect => new {
+                        absencesSelect.EmployeeSurname,
+                        absencesSelect.EmployeeName,
+                        absencesSelect.AbscenceReason,
+                        absencesSelect.StartOfAbsence,
+                        absencesSelect.EndOfAbsence
                 }).ToList();
         }
 
         private void tbSearchName_TextChanged(object sender, EventArgs e)
         {
             dgvAbsences.DataSource = db.vAbsences.
-                Where(absences => absences.EmployeeSurname.StartsWith(tbSearchName.Text)).
-                Select(absencesSelect => new {
-                    absencesSelect.EmployeeSurname,
-                    absencesSelect.EmployeeName,
-                    absencesSelect.AbscenceReason,
-                    absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence
+                Where (absences => absences.EmployeeSurname.StartsWith(tbSearchName.Text)).
+                Select (absencesSelect => new {
+                        absencesSelect.EmployeeSurname,
+                        absencesSelect.EmployeeName,
+                        absencesSelect.AbscenceReason,
+                        absencesSelect.StartOfAbsence,
+                        absencesSelect.EndOfAbsence
                 }).ToList();
         }
 

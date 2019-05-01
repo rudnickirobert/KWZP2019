@@ -38,16 +38,16 @@ namespace KWZP2019
         private void tbSearchContract_TextChanged(object sender, EventArgs e)
         {
             dgvContracts.DataSource = db.vContracts.
-                Where(contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)).
-                Select(contractsSelect => new {
-                       contractsSelect.EmployeeSurname,
-                       contractsSelect.EmployeeName,
-                       contractsSelect.Workplace,
-                       contractsSelect.StartDate,
-                       contractsSelect.EndDate,
-                       contractsSelect.Salary,
-                       contractsSelect.WorkplaceTrainingDate,
-                       contractsSelect.HealTestDate
+                Where (contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)).
+                Select (contractsSelect => new {
+                        contractsSelect.EmployeeSurname,
+                        contractsSelect.EmployeeName,
+                        contractsSelect.Workplace,
+                        contractsSelect.StartDate,
+                        contractsSelect.EndDate,
+                        contractsSelect.Salary,
+                        contractsSelect.WorkplaceTrainingDate,
+                        contractsSelect.HealTestDate
                 }).ToList();
         }
     }

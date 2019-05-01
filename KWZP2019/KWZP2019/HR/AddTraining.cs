@@ -24,43 +24,43 @@ namespace KWZP2019
         private void AddTraining_Load(object sender, EventArgs e)
         {
             dgvTrainings.DataSource = db.vAddTraining.
-                Select(addtrainigSelect => new {
-                       addtrainigSelect.EmployeeSurname,
-                       addtrainigSelect.EmployeeName,
-                       addtrainigSelect.TrainingName,
-                       addtrainigSelect.TrainingStartDate,
-                       addtrainigSelect.TrainingEndDate,
-                       addtrainigSelect.TrainingPrice
+                Select (addtrainigSelect => new {
+                        addtrainigSelect.EmployeeSurname,
+                        addtrainigSelect.EmployeeName,
+                        addtrainigSelect.TrainingName,
+                        addtrainigSelect.TrainingStartDate,
+                        addtrainigSelect.TrainingEndDate,
+                        addtrainigSelect.TrainingPrice
                 }).ToList();
         }
 
         private void tbSearchTraining_TextChanged(object sender, EventArgs e)
         {
             dgvTrainings.DataSource = db.vAddTraining.
-                Where(addtraining => addtraining.EmployeeName.StartsWith(tbSearchTrainingName.Text)
-                                  && addtraining.EmployeeSurname.StartsWith(tbSearchTraining.Text)).
-                Select(addtrainigSelect => new {
-                       addtrainigSelect.EmployeeSurname,
-                       addtrainigSelect.EmployeeName,
-                       addtrainigSelect.TrainingName,
-                       addtrainigSelect.TrainingStartDate,
-                       addtrainigSelect.TrainingEndDate,
-                       addtrainigSelect.TrainingPrice
+                Where (addtraining => addtraining.EmployeeName.StartsWith(tbSearchTrainingName.Text)
+                                   && addtraining.EmployeeSurname.StartsWith(tbSearchTraining.Text)).
+                Select (addtrainigSelect => new {
+                        addtrainigSelect.EmployeeSurname,
+                        addtrainigSelect.EmployeeName,
+                        addtrainigSelect.TrainingName,
+                        addtrainigSelect.TrainingStartDate,
+                        addtrainigSelect.TrainingEndDate,
+                        addtrainigSelect.TrainingPrice
                 }).ToList();
         }
 
         private void tbSearchTrainingName_TextChanged(object sender, EventArgs e)
         {
             dgvTrainings.DataSource = db.vAddTraining.
-                Where(addtraining => addtraining.EmployeeName.StartsWith(tbSearchTrainingName.Text)
-                                  && addtraining.EmployeeSurname.StartsWith(tbSearchTraining.Text)).
-                Select(addtrainigSelect => new {
-                       addtrainigSelect.EmployeeSurname,
-                       addtrainigSelect.EmployeeName,
-                       addtrainigSelect.TrainingName,
-                       addtrainigSelect.TrainingStartDate,
-                       addtrainigSelect.TrainingEndDate,
-                       addtrainigSelect.TrainingPrice
+                Where (addtraining => addtraining.EmployeeName.StartsWith(tbSearchTrainingName.Text)
+                                   && addtraining.EmployeeSurname.StartsWith(tbSearchTraining.Text)).
+                Select (addtrainigSelect => new {
+                        addtrainigSelect.EmployeeSurname,
+                        addtrainigSelect.EmployeeName,
+                        addtrainigSelect.TrainingName,
+                        addtrainigSelect.TrainingStartDate,
+                        addtrainigSelect.TrainingEndDate,
+                        addtrainigSelect.TrainingPrice
                 }).ToList();
         }
     }

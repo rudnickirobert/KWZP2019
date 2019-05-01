@@ -21,19 +21,9 @@ namespace KWZP2019
             this.db = db;
         }
 
-        private void Examination_Load(object sender, EventArgs e)
-        {
-            checkedListBox1.DataSource = db.vEmployeeList.ToList();
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             MedicalExamination newMedicalExamination = new MedicalExamination();
-        }
-
-        private void tbSearchEmployee_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

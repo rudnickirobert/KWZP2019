@@ -33,12 +33,10 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbEmployeeList = new System.Windows.Forms.ListBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpValidity = new System.Windows.Forms.TabPage();
             this.tpExpirationDate = new System.Windows.Forms.TabPage();
             this.tbSearchEmployee = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabControl.SuspendLayout();
             this.tpValidity.SuspendLayout();
             this.tpExpirationDate.SuspendLayout();
@@ -86,15 +84,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Data następnego badania";
             // 
-            // lbEmployeeList
-            // 
-            this.lbEmployeeList.FormattingEnabled = true;
-            this.lbEmployeeList.ItemHeight = 16;
-            this.lbEmployeeList.Location = new System.Drawing.Point(12, 76);
-            this.lbEmployeeList.Name = "lbEmployeeList";
-            this.lbEmployeeList.Size = new System.Drawing.Size(303, 356);
-            this.lbEmployeeList.TabIndex = 5;
-            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tpValidity);
@@ -135,29 +124,17 @@
             this.tbSearchEmployee.Name = "tbSearchEmployee";
             this.tbSearchEmployee.Size = new System.Drawing.Size(302, 22);
             this.tbSearchEmployee.TabIndex = 8;
-            this.tbSearchEmployee.TextChanged += new System.EventHandler(this.tbSearchEmployee_TextChanged);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(339, 193);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(240, 242);
-            this.checkedListBox1.TabIndex = 9;
             // 
             // AddExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 450);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.tbSearchEmployee);
             this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.lbEmployeeList);
             this.Controls.Add(this.btnAdd);
             this.Name = "AddExamination";
             this.Text = "Examination";
-            this.Load += new System.EventHandler(this.Examination_Load);
             this.tabControl.ResumeLayout(false);
             this.tpValidity.ResumeLayout(false);
             this.tpValidity.PerformLayout();
@@ -175,11 +152,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbEmployeeList;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tpValidity;
         private System.Windows.Forms.TabPage tpExpirationDate;
         private System.Windows.Forms.TextBox tbSearchEmployee;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

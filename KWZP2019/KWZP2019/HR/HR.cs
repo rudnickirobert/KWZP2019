@@ -60,32 +60,33 @@ namespace KWZP2019
 
         private void HR_Load(object sender, EventArgs e)
         {
-            dgvEmloyees.DataSource = db.vHR.Select(employeesSelect => new {
-                employeesSelect.EmployeeSurname,
-                employeesSelect.EmployeeName,
-                employeesSelect.Workplace,
-                employeesSelect.PhoneNumber,
-                employeesSelect.City
-            }).ToList();
+            dgvEmloyees.DataSource = db.vHR.
+                Select (employeesSelect => new {
+                        employeesSelect.EmployeeSurname,
+                        employeesSelect.EmployeeName,
+                        employeesSelect.Workplace,
+                        employeesSelect.PhoneNumber,
+                        employeesSelect.City
+                }).ToList();
             String stddetails = "{0, -40}{1, 0}";
 
             lbWarningsContracts.Items.Add(String.Format(stddetails,
                 "Pracownicy, którym kończy się umowa: ", db.vHRContracts.Count()));
 
             lbWarningsExamination.Items.Add(String.Format(stddetails, 
-                "Pracownicy, którym kończą się badania lekarskie: " , db.vHRExaminations.Count().ToString()));
+                "Pracownicy, którym kończą się badania lekarskie: ", db.vHRExaminations.Count()));
         }
 
         private void tbEmployeeSearching_TextChanged(object sender, EventArgs e)
         {
             dgvEmloyees.DataSource = db.vHR.
-                Where(employees => employees.EmployeeSurname.StartsWith(tbEmployeeSearching.Text)).
-                Select(employeesSelect => new {
-                    employeesSelect.EmployeeSurname,
-                    employeesSelect.EmployeeName,
-                    employeesSelect.Workplace,
-                    employeesSelect.PhoneNumber,
-                    employeesSelect.City
+                Where (employees => employees.EmployeeSurname.StartsWith(tbEmployeeSearching.Text)).
+                Select (employeesSelect => new {
+                        employeesSelect.EmployeeSurname,
+                        employeesSelect.EmployeeName,
+                        employeesSelect.Workplace,
+                        employeesSelect.PhoneNumber,
+                        employeesSelect.City
                 }).ToList();
         }
 
