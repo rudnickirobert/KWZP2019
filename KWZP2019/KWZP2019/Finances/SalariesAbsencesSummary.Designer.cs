@@ -30,7 +30,7 @@
         {
             this.dgvAllAbsencesData = new System.Windows.Forms.DataGridView();
             this.dgvAbsencesWorker = new System.Windows.Forms.DataGridView();
-            this.btSUM = new System.Windows.Forms.Button();
+            this.btnSUM = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllAbsencesData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsencesWorker)).BeginInit();
             this.SuspendLayout();
@@ -51,21 +51,21 @@
             this.dgvAbsencesWorker.Size = new System.Drawing.Size(500, 150);
             this.dgvAbsencesWorker.TabIndex = 1;
             // 
-            // btSUM
+            // btnSUM
             // 
-            this.btSUM.Location = new System.Drawing.Point(181, 177);
-            this.btSUM.Name = "btSUM";
-            this.btSUM.Size = new System.Drawing.Size(197, 23);
-            this.btSUM.TabIndex = 2;
-            this.btSUM.Text = "SUM";
-            this.btSUM.UseVisualStyleBackColor = true;
+            this.btnSUM.Location = new System.Drawing.Point(181, 177);
+            this.btnSUM.Name = "btnSUM";
+            this.btnSUM.Size = new System.Drawing.Size(197, 23);
+            this.btnSUM.TabIndex = 2;
+            this.btnSUM.Text = "SUM";
+            this.btnSUM.UseVisualStyleBackColor = true;
             // 
             // SalariesSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 416);
-            this.Controls.Add(this.btSUM);
+            this.Controls.Add(this.btnSUM);
             this.Controls.Add(this.dgvAbsencesWorker);
             this.Controls.Add(this.dgvAllAbsencesData);
             this.Name = "SalariesSummary";
@@ -80,6 +80,6 @@
 
         private System.Windows.Forms.DataGridView dgvAllAbsencesData;
         private System.Windows.Forms.DataGridView dgvAbsencesWorker;
-        private System.Windows.Forms.Button btSUM;
+        private System.Windows.Forms.Button btnSUM;
     }
 }
