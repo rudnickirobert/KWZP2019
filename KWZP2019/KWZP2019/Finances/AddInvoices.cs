@@ -51,12 +51,10 @@ namespace KWZP2019
             db.Invoices.Add(newInvoiceValue);
             db.SaveChanges();
         }
-
         private void btnAddNewCompany_Click(object sender, EventArgs e)
         {
             AddNewCompany addNewCompany = new AddNewCompany(db);
             addNewCompany.ShowDialog();
-            this.Hide();
         }
     }
 }

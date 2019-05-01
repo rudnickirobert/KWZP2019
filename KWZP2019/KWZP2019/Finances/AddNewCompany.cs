@@ -2,23 +2,29 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace KWZP2019
 {
     public partial class AddNewCompany : Form
     {
-        RoofingCompanyEntities db;
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private Finances Finances;
         public AddNewCompany(RoofingCompanyEntities db)
         {
-            InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.Finances = Finances;
+            InitializeComponent();
         }
         void clear()
         {
@@ -34,7 +40,6 @@ namespace KWZP2019
             tbKRS.Text = "";
             tbDescription.Text = "";
         }
-
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (tbCompanyName.Text.Trim() == "" || tbNIP.Text.Trim() == "" || tbPhone.Text.Trim() == "" || tbKRS.Text.Trim() == "")

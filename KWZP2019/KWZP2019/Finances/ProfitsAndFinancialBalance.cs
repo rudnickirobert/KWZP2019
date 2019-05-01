@@ -67,9 +67,9 @@ namespace KWZP2019
         private void btSum_Click(object sender, EventArgs e)
         {
             dgvProfits.DataSource = db.vIncomesProfits.ToList().Where(vIncomesProfits =>
-     vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
-     .Select(vIncomesProfits => new { vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
-     .ToList();
+            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
+            .Select(vIncomesProfits => new { vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
+            .ToList();
             dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvInvoices.DataSource = db.vExpencesInvoices.ToList().Where(vExpencesInvoices =>
             vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value)
