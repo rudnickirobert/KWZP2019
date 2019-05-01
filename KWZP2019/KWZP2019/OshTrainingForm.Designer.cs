@@ -43,6 +43,7 @@
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.lblTrainingDate = new System.Windows.Forms.Label();
             this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
+            this.lblEmployeeFullName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +128,7 @@
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClear.Name = "btnClear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDone
             // 
@@ -140,6 +142,7 @@
             this.btnDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDone.Name = "btnDone";
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // pictureBoxForm
             // 
@@ -169,6 +172,7 @@
             // 
             resources.ApplyResources(this.textBoxEmployeeId, "textBoxEmployeeId");
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
+            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
             // 
             // lblTrainingDate
             // 
@@ -183,10 +187,18 @@
             this.datePickerControlDate.Name = "datePickerControlDate";
             this.datePickerControlDate.Value = new System.DateTime(2019, 4, 16, 20, 35, 51, 0);
             // 
+            // lblEmployeeFullName
+            // 
+            this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblEmployeeFullName, "lblEmployeeFullName");
+            this.lblEmployeeFullName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEmployeeFullName.Name = "lblEmployeeFullName";
+            // 
             // OshTrainingForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblEmployeeFullName);
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.lblTrainingDate);
             this.Controls.Add(this.textBoxEmployeeId);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.TextBox textBoxEmployeeId;
         private System.Windows.Forms.Label lblTrainingDate;
         private System.Windows.Forms.DateTimePicker datePickerControlDate;
+        private System.Windows.Forms.Label lblEmployeeFullName;
     }
 }
