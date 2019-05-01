@@ -833,6 +833,13 @@
     <None Include="Resources\roof.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\powrott.png" />
+    <None Include="Resources\okej.png" />
+    <None Include="Resources\addp.png" />
+    <None Include="Resources\editp.png" />
+    <None Include="Resources\refreshp.png" />
+    <None Include="Resources\deletep.png" />
+    <None Include="Resources\closep.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
