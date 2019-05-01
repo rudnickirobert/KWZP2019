@@ -610,6 +610,7 @@
     <Compile Include="WarehouseForm.designer.cs">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkingDays.cs" />
     <EmbeddedResource Include="AddNewCustomerForm.resx">
       <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
