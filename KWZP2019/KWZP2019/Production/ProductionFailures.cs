@@ -24,10 +24,17 @@ namespace KWZP2019
         {
             Close();
         }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            NewProductionFailure newProductionFailureForm = new NewProductionFailure(db, id, newId);
+            newProductionFailureForm.Show();
+        }
+
         private void ProductionFailures_Load(object sender, EventArgs e)
         {
-            gridViewFailures.DataSource = db.Failures.ToList();
-            newId = gridViewFailures.RowCount + 1;
+           gridViewFailures.DataSource = db.Failures.ToList();
+           newId = gridViewFailures.RowCount + 1;
         }
     }
 }

@@ -295,6 +295,12 @@
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production\NewProductionFailure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\NewProductionFailure.Designer.cs">
+      <DependentUpon>NewProductionFailure.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -670,6 +676,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Production\NewProductionFailure.resx">
+      <DependentUpon>NewProductionFailure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -776,6 +785,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Failure.datasource" />
     <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\KWZP2019.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\KWZP2019.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\OrderCustomer.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Production\PlannedProduction.datasource" />

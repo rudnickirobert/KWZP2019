@@ -30,27 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btn_return = new System.Windows.Forms.Button();
-            this.label_description = new System.Windows.Forms.Label();
-            this.tb_description = new System.Windows.Forms.TextBox();
-            this.dtp_failuredate = new System.Windows.Forms.DateTimePicker();
             this.gridViewFailures = new System.Windows.Forms.DataGridView();
-            this.idFailureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.failureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.failureMaintenancesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionProceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.failureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label_failuredate = new System.Windows.Forms.Label();
             this.productionFailuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_add = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionProcessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.failureBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFailures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionFailuresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_return
             // 
-            this.btn_return.Location = new System.Drawing.Point(12, 429);
+            this.btn_return.Location = new System.Drawing.Point(12, 293);
             this.btn_return.Name = "btn_return";
             this.btn_return.Size = new System.Drawing.Size(101, 42);
             this.btn_return.TabIndex = 0;
@@ -58,110 +57,85 @@
             this.btn_return.UseVisualStyleBackColor = true;
             this.btn_return.Click += new System.EventHandler(this.btn_return_Click);
             // 
-            // label_description
-            // 
-            this.label_description.AutoSize = true;
-            this.label_description.Location = new System.Drawing.Point(37, 317);
-            this.label_description.Name = "label_description";
-            this.label_description.Size = new System.Drawing.Size(37, 17);
-            this.label_description.TabIndex = 1;
-            this.label_description.Text = "Opis";
-            // 
-            // tb_description
-            // 
-            this.tb_description.Location = new System.Drawing.Point(178, 317);
-            this.tb_description.Name = "tb_description";
-            this.tb_description.Size = new System.Drawing.Size(358, 22);
-            this.tb_description.TabIndex = 2;
-            // 
-            // dtp_failuredate
-            // 
-            this.dtp_failuredate.Location = new System.Drawing.Point(336, 372);
-            this.dtp_failuredate.Name = "dtp_failuredate";
-            this.dtp_failuredate.Size = new System.Drawing.Size(200, 22);
-            this.dtp_failuredate.TabIndex = 3;
-            // 
             // gridViewFailures
             // 
             this.gridViewFailures.AutoGenerateColumns = false;
             this.gridViewFailures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewFailures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idFailureDataGridViewTextBoxColumn,
-            this.idProcesDataGridViewTextBoxColumn,
-            this.specificationDataGridViewTextBoxColumn,
-            this.failureDateDataGridViewTextBoxColumn,
-            this.failureMaintenancesDataGridViewTextBoxColumn,
-            this.productionProceDataGridViewTextBoxColumn});
-            this.gridViewFailures.DataSource = this.failureBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.productionProcessDataGridViewTextBoxColumn});
+            this.gridViewFailures.DataSource = this.failureBindingSource1;
             this.gridViewFailures.Location = new System.Drawing.Point(12, 12);
             this.gridViewFailures.Name = "gridViewFailures";
             this.gridViewFailures.RowTemplate.Height = 24;
-            this.gridViewFailures.Size = new System.Drawing.Size(524, 267);
+            this.gridViewFailures.Size = new System.Drawing.Size(475, 264);
             this.gridViewFailures.TabIndex = 4;
             // 
-            // idFailureDataGridViewTextBoxColumn
+            // button_add
             // 
-            this.idFailureDataGridViewTextBoxColumn.DataPropertyName = "IdFailure";
-            this.idFailureDataGridViewTextBoxColumn.HeaderText = "IdFailure";
-            this.idFailureDataGridViewTextBoxColumn.Name = "idFailureDataGridViewTextBoxColumn";
+            this.button_add.Location = new System.Drawing.Point(377, 293);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(100, 42);
+            this.button_add.TabIndex = 9;
+            this.button_add.Text = "Dodaj";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // idProcesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.HeaderText = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdFailure";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Numer awarii";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 111;
             // 
-            // specificationDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.specificationDataGridViewTextBoxColumn.DataPropertyName = "Specification";
-            this.specificationDataGridViewTextBoxColumn.HeaderText = "Specification";
-            this.specificationDataGridViewTextBoxColumn.Name = "specificationDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdProces";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Numer procesu";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // failureDateDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.failureDateDataGridViewTextBoxColumn.DataPropertyName = "FailureDate";
-            this.failureDateDataGridViewTextBoxColumn.HeaderText = "FailureDate";
-            this.failureDateDataGridViewTextBoxColumn.Name = "failureDateDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Specification";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Opis";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // failureMaintenancesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.failureMaintenancesDataGridViewTextBoxColumn.DataPropertyName = "FailureMaintenances";
-            this.failureMaintenancesDataGridViewTextBoxColumn.HeaderText = "FailureMaintenances";
-            this.failureMaintenancesDataGridViewTextBoxColumn.Name = "failureMaintenancesDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "FailureDate";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Data awarii";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // productionProceDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.productionProceDataGridViewTextBoxColumn.DataPropertyName = "ProductionProce";
-            this.productionProceDataGridViewTextBoxColumn.HeaderText = "ProductionProce";
-            this.productionProceDataGridViewTextBoxColumn.Name = "productionProceDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "FailureMaintenances";
+            this.dataGridViewTextBoxColumn5.HeaderText = "FailureMaintenances";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
-            // failureBindingSource
+            // productionProcessDataGridViewTextBoxColumn
             // 
-            this.failureBindingSource.DataSource = typeof(KWZP2019.Failure);
+            this.productionProcessDataGridViewTextBoxColumn.DataPropertyName = "ProductionProcess";
+            this.productionProcessDataGridViewTextBoxColumn.HeaderText = "ProductionProcess";
+            this.productionProcessDataGridViewTextBoxColumn.Name = "productionProcessDataGridViewTextBoxColumn";
+            this.productionProcessDataGridViewTextBoxColumn.Visible = false;
             // 
-            // label_failuredate
+            // failureBindingSource1
             // 
-            this.label_failuredate.AutoSize = true;
-            this.label_failuredate.Location = new System.Drawing.Point(37, 377);
-            this.label_failuredate.Name = "label_failuredate";
-            this.label_failuredate.Size = new System.Drawing.Size(78, 17);
-            this.label_failuredate.TabIndex = 8;
-            this.label_failuredate.Text = "Data awarii";
-            // 
-            // productionFailuresBindingSource
-            // 
-            this.productionFailuresBindingSource.DataSource = typeof(KWZP2019.ProductionFailures);
+            this.failureBindingSource1.DataSource = typeof(KWZP2019.Failure);
             // 
             // ProductionFailures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 514);
-            this.Controls.Add(this.label_failuredate);
+            this.ClientSize = new System.Drawing.Size(499, 354);
+            this.Controls.Add(this.button_add);
             this.Controls.Add(this.gridViewFailures);
-            this.Controls.Add(this.dtp_failuredate);
-            this.Controls.Add(this.tb_description);
-            this.Controls.Add(this.label_description);
             this.Controls.Add(this.btn_return);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductionFailures";
@@ -170,19 +144,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFailures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionFailuresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btn_return;
-        private System.Windows.Forms.Label label_description;
-        private System.Windows.Forms.TextBox tb_description;
-        private System.Windows.Forms.DateTimePicker dtp_failuredate;
         private System.Windows.Forms.DataGridView gridViewFailures;
-        private System.Windows.Forms.Label label_failuredate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFailureDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProcesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specificationDataGridViewTextBoxColumn;
@@ -191,5 +161,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productionProceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource failureBindingSource;
         private System.Windows.Forms.BindingSource productionFailuresBindingSource;
+        private System.Windows.Forms.Button button_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productionProcessDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource failureBindingSource1;
     }
 }
