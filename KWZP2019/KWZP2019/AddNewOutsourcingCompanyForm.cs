@@ -27,24 +27,24 @@ namespace KWZP2019
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {
             //ŻĄDANIE WPROWADZENIA NAZWY FIRMY 
-            if (nameTb.Text.Trim() == "")  //|| typeTb.Text.Trim() == "")
+            if (nameTb.Text.Trim() == "")
             {
-                MessageBox.Show("Nazwa i typ są wymagane");
+                MessageBox.Show("Nazwa jest wymagana");
             }
 
             else
             {
                 //UTWORZENIE NOWEGO OBIEKTU "customer"
                 Outsourcing newOutsourcing = new Outsourcing();
+                OutsourcingType newOutsourcingType = new OutsourcingType();
 
                 //WPRAOWDZENIE DANYCH DOTYCZĄCYCH KLIENTA
 
                 newOutsourcing.CompanyName = nameTb.Text.Trim();
-                //newOutsourcing.OutsourcingType = typeTb.Text.Trim();
-                bool phoneTb2 = int.TryParse(phoneTb.Text.Trim(), out int phoneTb21);
-                if (phoneTb2)
+                bool phoneTextBox = int.TryParse(phoneTb.Text.Trim(), out int phoneTextbox);
+                if (phoneTextBox)
                 {
-                    newOutsourcing.PhoneNumber = phoneTb21;
+                    newOutsourcing.PhoneNumber = phoneTextbox;
                 }
                
                 newOutsourcing.Email = emailTb.Text.Trim();
@@ -52,39 +52,37 @@ namespace KWZP2019
                 newOutsourcing.ZipCode = zipCodeTb.Text.Trim();
                 newOutsourcing.Street = streetTb.Text.Trim();
 
-                bool houseNumberTb2 = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTb21);
-                if (houseNumberTb2)
+                bool houseNumberTextBox = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTextbox);
+                if (houseNumberTextBox)
                 {
-                    newOutsourcing.HouseNumber = houseNumberTb21;
+                    newOutsourcing.HouseNumber = houseNumberTextbox;
                 }
-
                 else
                 {
                     MessageBox.Show("Niewłaściwy format numeru domu");
                 }
-                bool apartmentNumberTb2 = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTb21);
-                if (apartmentNumberTb2)
+                bool apartmentNumberTextBox = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTextbox);
+                if (apartmentNumberTextBox)
                 {
-                    newOutsourcing.ApartmentNumber = apartmentNumberTb21;
+                    newOutsourcing.ApartmentNumber = apartmentNumberTextbox;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format numeru lokalu");
                 }
-                bool nipTb2 = int.TryParse(nipTb.Text.Trim(), out int nipTb21);
-
-                if (nipTb2)
+                bool nipTextBox = int.TryParse(nipTb.Text.Trim(), out int nipTextbox);
+                if (nipTextBox)
                 {
-                    newOutsourcing.NIP = nipTb21;
+                    newOutsourcing.NIP = nipTextbox;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format NIP");
                 }
-                bool krsTb2 = int.TryParse(krsTb.Text.Trim(), out int krsTb21);
-                if (krsTb2)
+                bool krsTextBox = int.TryParse(krsTb.Text.Trim(), out int krsTextbox);
+                if (krsTextBox)
                 {
-                    newOutsourcing.KRS = krsTb21;
+                    newOutsourcing.KRS = krsTextbox;
                 }
                 else
                 {
@@ -93,9 +91,27 @@ namespace KWZP2019
                
                 MessageBox.Show("Czy na pewno chcesz dodać nową fimrę outsourcingową?");
                 db.Outsourcings.Add(newOutsourcing);
-                
+                db.OutsourcingTypes.Add(newOutsourcingType);
+                db.SaveChanges();
             }
-        
+        }
+        private void AddNewOutsourcingCompanyForm_Load(object sender, EventArgs e)
+        {
+            List<OutsourcingType> outsourcingList = db.OutsourcingTypes.ToList();
+            comboBoxOutsourcingType.BeginUpdate();
+
+            foreach (OutsourcingType emp in outsourcingList)
+            {
+                comboBoxOutsourcingType.Items.Add(emp.OutsourcingType1);
+            }
+            comboBoxOutsourcingType.EndUpdate();
+        }
+        private void buttonAddTypeOutsourcing_Click(object sender, EventArgs e)
+        {
+            string typ = textBoxNewTypeOutsourcing.Text;
+            comboBoxOutsourcingType.BeginUpdate();
+            comboBoxOutsourcingType.Items.Add(typ);
+            comboBoxOutsourcingType.EndUpdate();
         }
     }
 }

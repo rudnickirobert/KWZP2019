@@ -55,12 +55,14 @@
             this.addNewOutsourcingCompanyBtn = new System.Windows.Forms.Button();
             this.returnANOFBtn = new System.Windows.Forms.Button();
             this.comboBoxOutsourcingType = new System.Windows.Forms.ComboBox();
+            this.buttonAddTypeOutsourcing = new System.Windows.Forms.Button();
+            this.textBoxNewTypeOutsourcing = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // descriptionTb
             // 
             this.descriptionTb.Location = new System.Drawing.Point(119, 470);
-            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTb.Name = "descriptionTb";
             this.descriptionTb.Size = new System.Drawing.Size(76, 20);
             this.descriptionTb.TabIndex = 46;
@@ -78,7 +80,7 @@
             // krsTb
             // 
             this.krsTb.Location = new System.Drawing.Point(119, 431);
-            this.krsTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.krsTb.Margin = new System.Windows.Forms.Padding(2);
             this.krsTb.Name = "krsTb";
             this.krsTb.Size = new System.Drawing.Size(76, 20);
             this.krsTb.TabIndex = 44;
@@ -96,7 +98,7 @@
             // nipTb
             // 
             this.nipTb.Location = new System.Drawing.Point(119, 392);
-            this.nipTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nipTb.Margin = new System.Windows.Forms.Padding(2);
             this.nipTb.Name = "nipTb";
             this.nipTb.Size = new System.Drawing.Size(76, 20);
             this.nipTb.TabIndex = 42;
@@ -114,7 +116,7 @@
             // apartmentNumberTb
             // 
             this.apartmentNumberTb.Location = new System.Drawing.Point(119, 354);
-            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2);
             this.apartmentNumberTb.Name = "apartmentNumberTb";
             this.apartmentNumberTb.Size = new System.Drawing.Size(76, 20);
             this.apartmentNumberTb.TabIndex = 40;
@@ -122,7 +124,7 @@
             // houseNumberTb
             // 
             this.houseNumberTb.Location = new System.Drawing.Point(119, 315);
-            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2);
             this.houseNumberTb.Name = "houseNumberTb";
             this.houseNumberTb.Size = new System.Drawing.Size(76, 20);
             this.houseNumberTb.TabIndex = 39;
@@ -150,7 +152,7 @@
             // streetTb
             // 
             this.streetTb.Location = new System.Drawing.Point(119, 276);
-            this.streetTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.streetTb.Margin = new System.Windows.Forms.Padding(2);
             this.streetTb.Name = "streetTb";
             this.streetTb.Size = new System.Drawing.Size(76, 20);
             this.streetTb.TabIndex = 36;
@@ -158,7 +160,7 @@
             // zipCodeTb
             // 
             this.zipCodeTb.Location = new System.Drawing.Point(119, 237);
-            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2);
             this.zipCodeTb.Name = "zipCodeTb";
             this.zipCodeTb.Size = new System.Drawing.Size(76, 20);
             this.zipCodeTb.TabIndex = 35;
@@ -186,7 +188,7 @@
             // cityTb
             // 
             this.cityTb.Location = new System.Drawing.Point(119, 199);
-            this.cityTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityTb.Margin = new System.Windows.Forms.Padding(2);
             this.cityTb.Name = "cityTb";
             this.cityTb.Size = new System.Drawing.Size(76, 20);
             this.cityTb.TabIndex = 32;
@@ -194,7 +196,7 @@
             // emailTb
             // 
             this.emailTb.Location = new System.Drawing.Point(119, 160);
-            this.emailTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTb.Margin = new System.Windows.Forms.Padding(2);
             this.emailTb.Name = "emailTb";
             this.emailTb.Size = new System.Drawing.Size(76, 20);
             this.emailTb.TabIndex = 31;
@@ -222,7 +224,7 @@
             // phoneTb
             // 
             this.phoneTb.Location = new System.Drawing.Point(119, 121);
-            this.phoneTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneTb.Margin = new System.Windows.Forms.Padding(2);
             this.phoneTb.Name = "phoneTb";
             this.phoneTb.Size = new System.Drawing.Size(76, 20);
             this.phoneTb.TabIndex = 28;
@@ -230,7 +232,7 @@
             // nameTb
             // 
             this.nameTb.Location = new System.Drawing.Point(119, 82);
-            this.nameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTb.Margin = new System.Windows.Forms.Padding(2);
             this.nameTb.Name = "nameTb";
             this.nameTb.Size = new System.Drawing.Size(76, 20);
             this.nameTb.TabIndex = 27;
@@ -278,7 +280,7 @@
             // addNewOutsourcingCompanyBtn
             // 
             this.addNewOutsourcingCompanyBtn.Location = new System.Drawing.Point(366, 422);
-            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewOutsourcingCompanyBtn.Name = "addNewOutsourcingCompanyBtn";
             this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(197, 22);
             this.addNewOutsourcingCompanyBtn.TabIndex = 50;
@@ -302,14 +304,33 @@
             this.comboBoxOutsourcingType.FormattingEnabled = true;
             this.comboBoxOutsourcingType.Location = new System.Drawing.Point(117, 47);
             this.comboBoxOutsourcingType.Name = "comboBoxOutsourcingType";
-            this.comboBoxOutsourcingType.Size = new System.Drawing.Size(78, 21);
+            this.comboBoxOutsourcingType.Size = new System.Drawing.Size(124, 21);
             this.comboBoxOutsourcingType.TabIndex = 52;
+            // 
+            // buttonAddTypeOutsourcing
+            // 
+            this.buttonAddTypeOutsourcing.Location = new System.Drawing.Point(380, 101);
+            this.buttonAddTypeOutsourcing.Name = "buttonAddTypeOutsourcing";
+            this.buttonAddTypeOutsourcing.Size = new System.Drawing.Size(211, 20);
+            this.buttonAddTypeOutsourcing.TabIndex = 53;
+            this.buttonAddTypeOutsourcing.Text = "Dodaj nowy typ firmy outsourcingowej";
+            this.buttonAddTypeOutsourcing.UseVisualStyleBackColor = true;
+            this.buttonAddTypeOutsourcing.Click += new System.EventHandler(this.buttonAddTypeOutsourcing_Click);
+            // 
+            // textBoxNewTypeOutsourcing
+            // 
+            this.textBoxNewTypeOutsourcing.Location = new System.Drawing.Point(398, 67);
+            this.textBoxNewTypeOutsourcing.Name = "textBoxNewTypeOutsourcing";
+            this.textBoxNewTypeOutsourcing.Size = new System.Drawing.Size(178, 20);
+            this.textBoxNewTypeOutsourcing.TabIndex = 54;
             // 
             // AddNewOutsourcingCompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 518);
+            this.Controls.Add(this.textBoxNewTypeOutsourcing);
+            this.Controls.Add(this.buttonAddTypeOutsourcing);
             this.Controls.Add(this.comboBoxOutsourcingType);
             this.Controls.Add(this.returnANOFBtn);
             this.Controls.Add(this.addNewOutsourcingCompanyBtn);
@@ -337,9 +358,10 @@
             this.Controls.Add(this.nameTb);
             this.Controls.Add(this.phoneLbl);
             this.Controls.Add(this.nameLbl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddNewOutsourcingCompanyForm";
             this.Text = "AddNewOutsourcingCompanyForm";
+            this.Load += new System.EventHandler(this.AddNewOutsourcingCompanyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +396,7 @@
         private System.Windows.Forms.Button addNewOutsourcingCompanyBtn;
         private System.Windows.Forms.Button returnANOFBtn;
         private System.Windows.Forms.ComboBox comboBoxOutsourcingType;
+        private System.Windows.Forms.Button buttonAddTypeOutsourcing;
+        private System.Windows.Forms.TextBox textBoxNewTypeOutsourcing;
     }
 }
