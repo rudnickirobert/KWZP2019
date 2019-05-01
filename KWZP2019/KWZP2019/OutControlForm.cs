@@ -59,8 +59,11 @@ namespace KWZP2019
         {
             int procesNumber = Int32.Parse(cbProcessNumber.SelectedValue.ToString());
 
-            OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this, procesNumber);
-            outControlForm.Show();
+            using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this, procesNumber))
+            {
+                outControlForm.ShowDialog();
+
+            }
         }
 
         private void cbControlerId_Format(object sender, ListControlConvertEventArgs e)
