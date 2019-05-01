@@ -625,7 +625,7 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 	(9,4, '2019-08-15', '2019-09-25'),
 	(10,1, '2019-08-15','2019-09-30');
 
- insert into ProductionProces(IdPlan, StartDate, EndDate)
+ insert into ProductionProcess(IdPlan, StartDate, EndDate)
  values  
 	(1, '2019-03-23','2019-04-23'),
 	(2, '2019-04-23','2019-05-23'),

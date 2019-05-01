@@ -21,8 +21,22 @@ namespace KWZP2019
 
         private void ProductionProcess_Load(object sender, EventArgs e)
         {
-            ProductionProcessGridView.DataSource = db.ProductionProces.
-                Where(ProdProc => ProdProc.EndDate > DateTime.Now).ToList();
+            List<PlannedProduction> plansAddedToProduction = db.PlannedProductions.
+               Where(plannedProductionPlan => !db.ProductionProcesses.
+               Select(productionProcessPlan => productionProcessPlan.IdPlan).
+               Contains(plannedProductionPlan.IdPlan) && plannedProductionPlan.Inproduction.Value).ToList();
+
+            foreach (PlannedProduction plannedProduction in plansAddedToProduction)
+            {   
+                    ProductionProcess newProductionProces = new ProductionProcess();
+                    newProductionProces.IdPlan = plannedProduction.IdPlan;
+                    newProductionProces.StartDate = plannedProduction.PlannedStartd;
+                    newProductionProces.EndDate = plannedProduction.PlannedEndd;
+                    db.ProductionProcesses.Add(newProductionProces);
+            }
+            db.SaveChanges();
+            ProductionProcessGridView.DataSource = db.ProductionProcesses.
+                Where(ProdProc => ProdProc.EndDate >= DateTime.Now).ToList();
         }
     }
 }

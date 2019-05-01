@@ -26,7 +26,7 @@ namespace KWZP2019
             if (idPlan > 0)
             {
                 PlannedProduction plan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
-                vUnhandledOrderDetails order = new vUnhandledOrderDetails();
+                vUnhandledOrderDetail order = new vUnhandledOrderDetail();
                 OrderDetail orderDetail = db.OrderDetails.First(f => f.IdDetail == plan.IdDetail);
                 Product product = db.Products.First(f => f.IdProduct == orderDetail.IdProduct);
                 if (plan != null)
@@ -41,7 +41,7 @@ namespace KWZP2019
                 {
                     MessageBox.Show("Brak planu!","Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
-                List<vUnhandledOrderDetails> handledOrder = new List<vUnhandledOrderDetails>();
+                List<vUnhandledOrderDetail> handledOrder = new List<vUnhandledOrderDetail>();
                 handledOrder.Add(order);
                 viewOrderDetail.DataSource = handledOrder;                      
             }

@@ -18,7 +18,6 @@ namespace KWZP2019
         public OrderDetail()
         {
             this.PlannedProductions = new HashSet<PlannedProduction>();
-            this.PlannedProductions1 = new HashSet<PlannedProduction>();
         }
     
         public int IdDetail { get; set; }
@@ -30,7 +29,5 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlannedProduction> PlannedProductions { get; set; }
         public virtual Product Product { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlannedProduction> PlannedProductions1 { get; set; }
     }
 }

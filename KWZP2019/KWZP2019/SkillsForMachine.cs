@@ -18,7 +18,7 @@ namespace KWZP2019
         public Nullable<int> IdMachine { get; set; }
         public int IdPosition { get; set; }
     
-        public virtual Position Position { get; set; }
         public virtual Machine Machine { get; set; }
+        public virtual Position Position { get; set; }
     }
 }

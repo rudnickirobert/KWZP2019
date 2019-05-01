@@ -12,15 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class Staff
+    public partial class vUnhandledOrderDetail
     {
-        public int IdStaff { get; set; }
-        public Nullable<int> IdDeparment { get; set; }
-        public Nullable<int> IdPosition { get; set; }
-        public Nullable<int> Number { get; set; }
-        public Nullable<System.DateTime> DateFrom { get; set; }
-    
-        public virtual Department Department { get; set; }
-        public virtual Position Position { get; set; }
+        public int IdDetail { get; set; }
+        public int Quantity { get; set; }
+        public string ProductCode { get; set; }
     }
 }
