@@ -52,10 +52,10 @@
             // 
             // tbEmployeeSearching
             // 
-            this.tbEmployeeSearching.Location = new System.Drawing.Point(471, 66);
-            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbEmployeeSearching.Location = new System.Drawing.Point(353, 54);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
-            this.tbEmployeeSearching.Size = new System.Drawing.Size(769, 22);
+            this.tbEmployeeSearching.Size = new System.Drawing.Size(578, 20);
             this.tbEmployeeSearching.TabIndex = 0;
             this.tbEmployeeSearching.Text = "Wyszukaj po nazwisku";
             this.tbEmployeeSearching.TextChanged += new System.EventHandler(this.tbEmployeeSearching_TextChanged);
@@ -81,7 +81,7 @@
             this.dgvEmloyees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmloyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmloyees.EnableHeadersVisualStyles = false;
-            this.dgvEmloyees.Location = new System.Drawing.Point(353, 101);
+            this.dgvEmloyees.Location = new System.Drawing.Point(353, 94);
             this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmloyees.Name = "dgvEmloyees";
             this.dgvEmloyees.RowHeadersVisible = false;
@@ -94,7 +94,7 @@
             this.dgvEmloyees.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmloyees.RowTemplate.Height = 24;
             this.dgvEmloyees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmloyees.Size = new System.Drawing.Size(578, 417);
+            this.dgvEmloyees.Size = new System.Drawing.Size(434, 339);
             this.dgvEmloyees.TabIndex = 2;
             // 
             // lbWarningsExamination
@@ -103,11 +103,11 @@
             this.lbWarningsExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbWarningsExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsExamination.FormattingEnabled = true;
-            this.lbWarningsExamination.ItemHeight = 22;
-            this.lbWarningsExamination.Location = new System.Drawing.Point(15, 610);
-            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbWarningsExamination.ItemHeight = 18;
+            this.lbWarningsExamination.Location = new System.Drawing.Point(11, 496);
+            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbWarningsExamination.Name = "lbWarningsExamination";
-            this.lbWarningsExamination.Size = new System.Drawing.Size(425, 26);
+            this.lbWarningsExamination.Size = new System.Drawing.Size(320, 22);
             this.lbWarningsExamination.TabIndex = 3;
             this.lbWarningsExamination.DoubleClick += new System.EventHandler(this.lbWarningsExamination_DoubleClick);
             // 
@@ -118,10 +118,10 @@
             this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDetails.Location = new System.Drawing.Point(1261, 66);
+            this.btnDetails.Location = new System.Drawing.Point(946, 54);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(0);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(275, 98);
+            this.btnDetails.Size = new System.Drawing.Size(206, 80);
             this.btnDetails.TabIndex = 4;
             this.btnDetails.Text = "Szczegóły";
             this.btnDetails.UseVisualStyleBackColor = false;
@@ -134,10 +134,10 @@
             this.btnExamination.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExamination.Location = new System.Drawing.Point(1261, 185);
+            this.btnExamination.Location = new System.Drawing.Point(946, 150);
             this.btnExamination.Margin = new System.Windows.Forms.Padding(0);
             this.btnExamination.Name = "btnExamination";
-            this.btnExamination.Size = new System.Drawing.Size(275, 98);
+            this.btnExamination.Size = new System.Drawing.Size(206, 80);
             this.btnExamination.TabIndex = 5;
             this.btnExamination.Text = "Badania";
             this.btnExamination.UseVisualStyleBackColor = false;
@@ -151,10 +151,10 @@
             this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
-            this.btnAddEmployee.Location = new System.Drawing.Point(875, 657);
+            this.btnAddEmployee.Location = new System.Drawing.Point(656, 534);
             this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(367, 217);
+            this.btnAddEmployee.Size = new System.Drawing.Size(275, 176);
             this.btnAddEmployee.TabIndex = 6;
             this.btnAddEmployee.Text = "Dodaj pracownika";
             this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -168,10 +168,10 @@
             this.btnTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTraining.Location = new System.Drawing.Point(1261, 303);
+            this.btnTraining.Location = new System.Drawing.Point(946, 246);
             this.btnTraining.Margin = new System.Windows.Forms.Padding(0);
             this.btnTraining.Name = "btnTraining";
-            this.btnTraining.Size = new System.Drawing.Size(275, 98);
+            this.btnTraining.Size = new System.Drawing.Size(206, 80);
             this.btnTraining.TabIndex = 7;
             this.btnTraining.Text = "Szkolenia";
             this.btnTraining.UseVisualStyleBackColor = false;
@@ -184,10 +184,10 @@
             this.btnAbsences.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbsences.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAbsences.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAbsences.Location = new System.Drawing.Point(1261, 421);
+            this.btnAbsences.Location = new System.Drawing.Point(946, 342);
             this.btnAbsences.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbsences.Name = "btnAbsences";
-            this.btnAbsences.Size = new System.Drawing.Size(275, 98);
+            this.btnAbsences.Size = new System.Drawing.Size(206, 80);
             this.btnAbsences.TabIndex = 8;
             this.btnAbsences.Text = "Nieobecności";
             this.btnAbsences.UseVisualStyleBackColor = false;
@@ -200,10 +200,10 @@
             this.btnPayChecks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayChecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnPayChecks.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPayChecks.Location = new System.Drawing.Point(1261, 539);
+            this.btnPayChecks.Location = new System.Drawing.Point(946, 438);
             this.btnPayChecks.Margin = new System.Windows.Forms.Padding(0);
             this.btnPayChecks.Name = "btnPayChecks";
-            this.btnPayChecks.Size = new System.Drawing.Size(275, 98);
+            this.btnPayChecks.Size = new System.Drawing.Size(206, 80);
             this.btnPayChecks.TabIndex = 9;
             this.btnPayChecks.Text = "Wypłaty";
             this.btnPayChecks.UseVisualStyleBackColor = false;
@@ -215,10 +215,10 @@
             this.btnContracts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnContracts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnContracts.Location = new System.Drawing.Point(1261, 657);
+            this.btnContracts.Location = new System.Drawing.Point(946, 534);
             this.btnContracts.Margin = new System.Windows.Forms.Padding(0);
             this.btnContracts.Name = "btnContracts";
-            this.btnContracts.Size = new System.Drawing.Size(275, 98);
+            this.btnContracts.Size = new System.Drawing.Size(206, 80);
             this.btnContracts.TabIndex = 10;
             this.btnContracts.Text = "Umowy";
             this.btnContracts.UseVisualStyleBackColor = false;
@@ -230,11 +230,11 @@
             this.lbWarningsContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbWarningsContracts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsContracts.FormattingEnabled = true;
-            this.lbWarningsContracts.ItemHeight = 22;
-            this.lbWarningsContracts.Location = new System.Drawing.Point(15, 558);
-            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbWarningsContracts.ItemHeight = 18;
+            this.lbWarningsContracts.Location = new System.Drawing.Point(11, 453);
+            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbWarningsContracts.Name = "lbWarningsContracts";
-            this.lbWarningsContracts.Size = new System.Drawing.Size(425, 26);
+            this.lbWarningsContracts.Size = new System.Drawing.Size(320, 22);
             this.lbWarningsContracts.TabIndex = 11;
             this.lbWarningsContracts.DoubleClick += new System.EventHandler(this.lbWarningsContracts_DoubleClick);
             // 
@@ -246,10 +246,10 @@
             this.btnAddContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddContract.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddContract.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContract.Image")));
-            this.btnAddContract.Location = new System.Drawing.Point(471, 657);
+            this.btnAddContract.Location = new System.Drawing.Point(353, 534);
             this.btnAddContract.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddContract.Name = "btnAddContract";
-            this.btnAddContract.Size = new System.Drawing.Size(388, 217);
+            this.btnAddContract.Size = new System.Drawing.Size(291, 176);
             this.btnAddContract.TabIndex = 12;
             this.btnAddContract.Text = "Dodaj umowę";
             this.btnAddContract.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -263,10 +263,10 @@
             this.btnEducationLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEducationLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnEducationLevel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEducationLevel.Location = new System.Drawing.Point(1261, 775);
+            this.btnEducationLevel.Location = new System.Drawing.Point(946, 630);
             this.btnEducationLevel.Margin = new System.Windows.Forms.Padding(0);
             this.btnEducationLevel.Name = "btnEducationLevel";
-            this.btnEducationLevel.Size = new System.Drawing.Size(275, 98);
+            this.btnEducationLevel.Size = new System.Drawing.Size(206, 80);
             this.btnEducationLevel.TabIndex = 13;
             this.btnEducationLevel.Text = "Wykształcenie";
             this.btnEducationLevel.UseVisualStyleBackColor = false;
@@ -280,10 +280,10 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(28, 66);
+            this.btnReturn.Location = new System.Drawing.Point(21, 54);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(349, 192);
+            this.btnReturn.Size = new System.Drawing.Size(262, 156);
             this.btnReturn.TabIndex = 14;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -298,10 +298,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(28, 303);
+            this.btnReturnMain.Location = new System.Drawing.Point(21, 246);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(349, 197);
+            this.btnReturnMain.Size = new System.Drawing.Size(262, 160);
             this.btnReturnMain.TabIndex = 15;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -310,11 +310,11 @@
             // 
             // HR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnEducationLevel);
@@ -331,7 +331,7 @@
             this.Controls.Add(this.dgvEmloyees);
             this.Controls.Add(this.tbEmployeeSearching);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HR";

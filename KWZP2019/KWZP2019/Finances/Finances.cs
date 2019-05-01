@@ -50,14 +50,12 @@ namespace KWZP2019
             profits.ShowDialog();
 
         }
-        private void Finances_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.startForm.Show();
-        }
+        
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
             AddInvoices addInvoices = new AddInvoices(db, startForm, this);
-            addInvoices.ShowDialog();
+            addInvoices.Show();
+            this.Hide();
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
