@@ -48,6 +48,8 @@
             this.btnSMeasures = new System.Windows.Forms.Button();
             this.stpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.txtbOutControlStatus = new System.Windows.Forms.TextBox();
+            this.lblOutControlStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +100,7 @@
             this.pictureBoxForm.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxForm.BackgroundImage")));
             this.pictureBoxForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxForm.Location = new System.Drawing.Point(311, 12);
+            this.pictureBoxForm.Location = new System.Drawing.Point(311, 25);
             this.pictureBoxForm.Name = "pictureBoxForm";
             this.pictureBoxForm.Size = new System.Drawing.Size(861, 737);
             this.pictureBoxForm.TabIndex = 32;
@@ -115,13 +117,13 @@
             this.lblFormTitle.Name = "lblFormTitle";
             this.lblFormTitle.Size = new System.Drawing.Size(493, 56);
             this.lblFormTitle.TabIndex = 33;
-            this.lblFormTitle.Text = "Wprowadź dane kontroli";
+            this.lblFormTitle.Text = "Kontrola wyjściowa";
             this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtbMeasurmentsNumber
             // 
             this.txtbMeasurmentsNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtbMeasurmentsNumber.Location = new System.Drawing.Point(566, 280);
+            this.txtbMeasurmentsNumber.Location = new System.Drawing.Point(566, 308);
             this.txtbMeasurmentsNumber.Name = "txtbMeasurmentsNumber";
             this.txtbMeasurmentsNumber.Size = new System.Drawing.Size(160, 26);
             this.txtbMeasurmentsNumber.TabIndex = 43;
@@ -131,7 +133,7 @@
             this.lblControlDateStart.BackColor = System.Drawing.Color.Transparent;
             this.lblControlDateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlDateStart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblControlDateStart.Location = new System.Drawing.Point(746, 280);
+            this.lblControlDateStart.Location = new System.Drawing.Point(746, 361);
             this.lblControlDateStart.Name = "lblControlDateStart";
             this.lblControlDateStart.Size = new System.Drawing.Size(160, 26);
             this.lblControlDateStart.TabIndex = 34;
@@ -143,9 +145,9 @@
             this.lblProcesNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblProcesNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblProcesNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblProcesNumber.Location = new System.Drawing.Point(408, 240);
+            this.lblProcesNumber.Location = new System.Drawing.Point(552, 220);
             this.lblProcesNumber.Name = "lblProcesNumber";
-            this.lblProcesNumber.Size = new System.Drawing.Size(163, 26);
+            this.lblProcesNumber.Size = new System.Drawing.Size(200, 36);
             this.lblProcesNumber.TabIndex = 34;
             this.lblProcesNumber.Text = "Numer Procesu";
             this.lblProcesNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,7 +157,7 @@
             this.lblControlerId.BackColor = System.Drawing.Color.Transparent;
             this.lblControlerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlerId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblControlerId.Location = new System.Drawing.Point(746, 239);
+            this.lblControlerId.Location = new System.Drawing.Point(746, 309);
             this.lblControlerId.Name = "lblControlerId";
             this.lblControlerId.Size = new System.Drawing.Size(160, 26);
             this.lblControlerId.TabIndex = 34;
@@ -167,7 +169,7 @@
             this.lblMeasurmentsNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblMeasurmentsNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMeasurmentsNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMeasurmentsNumber.Location = new System.Drawing.Point(408, 280);
+            this.lblMeasurmentsNumber.Location = new System.Drawing.Point(408, 308);
             this.lblMeasurmentsNumber.Name = "lblMeasurmentsNumber";
             this.lblMeasurmentsNumber.Size = new System.Drawing.Size(163, 26);
             this.lblMeasurmentsNumber.TabIndex = 34;
@@ -179,7 +181,7 @@
             this.lbltextBAcceptableLenghtDeviation.BackColor = System.Drawing.Color.Transparent;
             this.lbltextBAcceptableLenghtDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbltextBAcceptableLenghtDeviation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbltextBAcceptableLenghtDeviation.Location = new System.Drawing.Point(403, 313);
+            this.lbltextBAcceptableLenghtDeviation.Location = new System.Drawing.Point(403, 341);
             this.lbltextBAcceptableLenghtDeviation.Name = "lbltextBAcceptableLenghtDeviation";
             this.lbltextBAcceptableLenghtDeviation.Size = new System.Drawing.Size(167, 46);
             this.lbltextBAcceptableLenghtDeviation.TabIndex = 34;
@@ -191,7 +193,7 @@
             this.lblControlDateEnd.BackColor = System.Drawing.Color.Transparent;
             this.lblControlDateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlDateEnd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblControlDateEnd.Location = new System.Drawing.Point(746, 320);
+            this.lblControlDateEnd.Location = new System.Drawing.Point(746, 401);
             this.lblControlDateEnd.Name = "lblControlDateEnd";
             this.lblControlDateEnd.Size = new System.Drawing.Size(160, 26);
             this.lblControlDateEnd.TabIndex = 34;
@@ -201,7 +203,7 @@
             // txtbAcceptableLenghtDeviation
             // 
             this.txtbAcceptableLenghtDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtbAcceptableLenghtDeviation.Location = new System.Drawing.Point(566, 324);
+            this.txtbAcceptableLenghtDeviation.Location = new System.Drawing.Point(566, 352);
             this.txtbAcceptableLenghtDeviation.Name = "txtbAcceptableLenghtDeviation";
             this.txtbAcceptableLenghtDeviation.Size = new System.Drawing.Size(160, 26);
             this.txtbAcceptableLenghtDeviation.TabIndex = 43;
@@ -209,15 +211,15 @@
             // cbProcessNumber
             // 
             this.cbProcessNumber.FormattingEnabled = true;
-            this.cbProcessNumber.Location = new System.Drawing.Point(566, 245);
+            this.cbProcessNumber.Location = new System.Drawing.Point(735, 228);
             this.cbProcessNumber.Name = "cbProcessNumber";
-            this.cbProcessNumber.Size = new System.Drawing.Size(160, 21);
+            this.cbProcessNumber.Size = new System.Drawing.Size(200, 21);
             this.cbProcessNumber.TabIndex = 53;
             // 
             // cbControlerId
             // 
             this.cbControlerId.FormattingEnabled = true;
-            this.cbControlerId.Location = new System.Drawing.Point(903, 244);
+            this.cbControlerId.Location = new System.Drawing.Point(903, 311);
             this.cbControlerId.Name = "cbControlerId";
             this.cbControlerId.Size = new System.Drawing.Size(160, 21);
             this.cbControlerId.TabIndex = 53;
@@ -228,7 +230,7 @@
             this.lbltextBAcceptableHeightDeviation.BackColor = System.Drawing.Color.Transparent;
             this.lbltextBAcceptableHeightDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbltextBAcceptableHeightDeviation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbltextBAcceptableHeightDeviation.Location = new System.Drawing.Point(396, 363);
+            this.lbltextBAcceptableHeightDeviation.Location = new System.Drawing.Point(396, 391);
             this.lbltextBAcceptableHeightDeviation.Name = "lbltextBAcceptableHeightDeviation";
             this.lbltextBAcceptableHeightDeviation.Size = new System.Drawing.Size(173, 45);
             this.lbltextBAcceptableHeightDeviation.TabIndex = 34;
@@ -238,7 +240,7 @@
             // txtbAcceptableHeightDeviation
             // 
             this.txtbAcceptableHeightDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtbAcceptableHeightDeviation.Location = new System.Drawing.Point(566, 377);
+            this.txtbAcceptableHeightDeviation.Location = new System.Drawing.Point(566, 405);
             this.txtbAcceptableHeightDeviation.Name = "txtbAcceptableHeightDeviation";
             this.txtbAcceptableHeightDeviation.Size = new System.Drawing.Size(160, 26);
             this.txtbAcceptableHeightDeviation.TabIndex = 43;
@@ -267,17 +269,37 @@
             // 
             // stpStartDate
             // 
-            this.stpStartDate.Location = new System.Drawing.Point(883, 282);
+            this.stpStartDate.Location = new System.Drawing.Point(883, 363);
             this.stpStartDate.Name = "stpStartDate";
             this.stpStartDate.Size = new System.Drawing.Size(200, 20);
             this.stpStartDate.TabIndex = 55;
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(883, 322);
+            this.dtpEndDate.Location = new System.Drawing.Point(883, 403);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEndDate.TabIndex = 55;
+            // 
+            // txtbOutControlStatus
+            // 
+            this.txtbOutControlStatus.Location = new System.Drawing.Point(735, 271);
+            this.txtbOutControlStatus.Name = "txtbOutControlStatus";
+            this.txtbOutControlStatus.ReadOnly = true;
+            this.txtbOutControlStatus.Size = new System.Drawing.Size(200, 20);
+            this.txtbOutControlStatus.TabIndex = 56;
+            // 
+            // lblOutControlStatus
+            // 
+            this.lblOutControlStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblOutControlStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOutControlStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblOutControlStatus.Location = new System.Drawing.Point(562, 266);
+            this.lblOutControlStatus.Name = "lblOutControlStatus";
+            this.lblOutControlStatus.Size = new System.Drawing.Size(160, 26);
+            this.lblOutControlStatus.TabIndex = 34;
+            this.lblOutControlStatus.Text = "Status Kontroli";
+            this.lblOutControlStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OutControlForm
             // 
@@ -286,6 +308,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.txtbOutControlStatus);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.stpStartDate);
             this.Controls.Add(this.btnSMeasures);
@@ -296,6 +319,7 @@
             this.Controls.Add(this.txtbMeasurmentsNumber);
             this.Controls.Add(this.lblControlDateEnd);
             this.Controls.Add(this.lblProcesNumber);
+            this.Controls.Add(this.lblOutControlStatus);
             this.Controls.Add(this.lblControlerId);
             this.Controls.Add(this.lbltextBAcceptableHeightDeviation);
             this.Controls.Add(this.lbltextBAcceptableLenghtDeviation);
@@ -340,5 +364,7 @@
         private System.Windows.Forms.Button btnSMeasures;
         private System.Windows.Forms.DateTimePicker stpStartDate;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.TextBox txtbOutControlStatus;
+        private System.Windows.Forms.Label lblOutControlStatus;
     }
 }

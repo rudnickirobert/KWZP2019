@@ -30,6 +30,7 @@ namespace KWZP2019
             cbProcessNumber.DataSource = db.vUnfinishedProcesses.ToList();
             cbProcessNumber.DisplayMember = "IdProces";
             cbProcessNumber.ValueMember = "IdProces";
+            cbProcessNumber.Text = "Proszę wybrać numer procesu"
             cbControlerId.DataSource = db.Employees.ToList();
             cbControlerId.ValueMember = "IdEmployee";
             stpStartDate.Value = DateTime.Today;
