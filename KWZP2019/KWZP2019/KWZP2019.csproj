@@ -841,6 +841,10 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-pencil-40.png" />
+    <None Include="Resources\icons8-pencil-80.png" />
+    <None Include="Resources\icons8-repeat-80.png" />
+    <None Include="Resources\icons8-return-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

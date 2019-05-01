@@ -173,9 +173,49 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pencil-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pencil-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_quality_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-quality-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_repeat_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-repeat-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_return_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-return-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
