@@ -331,7 +331,6 @@
             this.btnRemove.Size = new System.Drawing.Size(68, 44);
             this.btnRemove.TabIndex = 24;
             this.btnRemove.UseVisualStyleBackColor = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // dateTimeEmployeeEnd
             // 

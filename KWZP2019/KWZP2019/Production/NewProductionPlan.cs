@@ -140,12 +140,6 @@ namespace KWZP2019
                 }
             }
         }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
             if (db.vUnhandledOrderDetails.Any())
