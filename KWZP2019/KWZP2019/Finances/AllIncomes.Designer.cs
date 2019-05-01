@@ -31,10 +31,10 @@
             this.tbSumIncome = new System.Windows.Forms.TextBox();
             this.btSum = new System.Windows.Forms.Button();
             this.dgvProfits = new System.Windows.Forms.DataGridView();
-            this.btnGenerategeneralreport = new System.Windows.Forms.Button();
-            this.lblListofrevenues = new System.Windows.Forms.Label();
-            this.btnAcceptselectedtime = new System.Windows.Forms.Button();
-            this.lblSpecifytimerange = new System.Windows.Forms.Label();
+            this.btnGenerateGeneralReport = new System.Windows.Forms.Button();
+            this.lblIncomes = new System.Windows.Forms.Label();
+            this.btnAcceptSelectedTime = new System.Windows.Forms.Button();
+            this.lblSpecifyTimeRange = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -71,43 +71,43 @@
             this.dgvProfits.Size = new System.Drawing.Size(497, 342);
             this.dgvProfits.TabIndex = 30;
             // 
-            // btnGenerategeneralreport
+            // btnGenerateGeneralReport
             // 
-            this.btnGenerategeneralreport.Location = new System.Drawing.Point(12, 509);
-            this.btnGenerategeneralreport.Name = "btnGenerategeneralreport";
-            this.btnGenerategeneralreport.Size = new System.Drawing.Size(497, 23);
-            this.btnGenerategeneralreport.TabIndex = 29;
-            this.btnGenerategeneralreport.Text = "Generuj raport";
-            this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
-            this.btnGenerategeneralreport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
+            this.btnGenerateGeneralReport.Location = new System.Drawing.Point(12, 509);
+            this.btnGenerateGeneralReport.Name = "btnGenerateGeneralReport";
+            this.btnGenerateGeneralReport.Size = new System.Drawing.Size(497, 23);
+            this.btnGenerateGeneralReport.TabIndex = 29;
+            this.btnGenerateGeneralReport.Text = "Generuj raport";
+            this.btnGenerateGeneralReport.UseVisualStyleBackColor = true;
+            this.btnGenerateGeneralReport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
             // 
-            // lblListofrevenues
+            // lblIncomes
             // 
-            this.lblListofrevenues.AutoSize = true;
-            this.lblListofrevenues.Location = new System.Drawing.Point(251, 93);
-            this.lblListofrevenues.Name = "lblListofrevenues";
-            this.lblListofrevenues.Size = new System.Drawing.Size(35, 13);
-            this.lblListofrevenues.TabIndex = 28;
-            this.lblListofrevenues.Text = "Zyski:";
+            this.lblIncomes.AutoSize = true;
+            this.lblIncomes.Location = new System.Drawing.Point(251, 93);
+            this.lblIncomes.Name = "lblIncomes";
+            this.lblIncomes.Size = new System.Drawing.Size(35, 13);
+            this.lblIncomes.TabIndex = 28;
+            this.lblIncomes.Text = "Zyski:";
             // 
-            // btnAcceptselectedtime
+            // btnAcceptSelectedTime
             // 
-            this.btnAcceptselectedtime.Location = new System.Drawing.Point(12, 56);
-            this.btnAcceptselectedtime.Name = "btnAcceptselectedtime";
-            this.btnAcceptselectedtime.Size = new System.Drawing.Size(497, 23);
-            this.btnAcceptselectedtime.TabIndex = 27;
-            this.btnAcceptselectedtime.Text = "Zatwierdź wybrany przedzial";
-            this.btnAcceptselectedtime.UseVisualStyleBackColor = true;
-            this.btnAcceptselectedtime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
+            this.btnAcceptSelectedTime.Location = new System.Drawing.Point(12, 56);
+            this.btnAcceptSelectedTime.Name = "btnAcceptSelectedTime";
+            this.btnAcceptSelectedTime.Size = new System.Drawing.Size(497, 23);
+            this.btnAcceptSelectedTime.TabIndex = 27;
+            this.btnAcceptSelectedTime.Text = "Zatwierdź wybrany przedzial";
+            this.btnAcceptSelectedTime.UseVisualStyleBackColor = true;
+            this.btnAcceptSelectedTime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
             // 
-            // lblSpecifytimerange
+            // lblSpecifyTimeRange
             // 
-            this.lblSpecifytimerange.AutoSize = true;
-            this.lblSpecifytimerange.Location = new System.Drawing.Point(215, 14);
-            this.lblSpecifytimerange.Name = "lblSpecifytimerange";
-            this.lblSpecifytimerange.Size = new System.Drawing.Size(118, 13);
-            this.lblSpecifytimerange.TabIndex = 26;
-            this.lblSpecifytimerange.Text = "Określ zakres czasowy:";
+            this.lblSpecifyTimeRange.AutoSize = true;
+            this.lblSpecifyTimeRange.Location = new System.Drawing.Point(215, 14);
+            this.lblSpecifyTimeRange.Name = "lblSpecifyTimeRange";
+            this.lblSpecifyTimeRange.Size = new System.Drawing.Size(118, 13);
+            this.lblSpecifyTimeRange.TabIndex = 26;
+            this.lblSpecifyTimeRange.Text = "Określ zakres czasowy:";
             // 
             // lblTo
             // 
@@ -161,10 +161,10 @@
             this.Controls.Add(this.tbSumIncome);
             this.Controls.Add(this.btSum);
             this.Controls.Add(this.dgvProfits);
-            this.Controls.Add(this.btnGenerategeneralreport);
-            this.Controls.Add(this.lblListofrevenues);
-            this.Controls.Add(this.btnAcceptselectedtime);
-            this.Controls.Add(this.lblSpecifytimerange);
+            this.Controls.Add(this.btnGenerateGeneralReport);
+            this.Controls.Add(this.lblIncomes);
+            this.Controls.Add(this.btnAcceptSelectedTime);
+            this.Controls.Add(this.lblSpecifyTimeRange);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.dtpEndDate);
@@ -183,10 +183,10 @@
         private System.Windows.Forms.TextBox tbSumIncome;
         private System.Windows.Forms.Button btSum;
         private System.Windows.Forms.DataGridView dgvProfits;
-        private System.Windows.Forms.Button btnGenerategeneralreport;
-        private System.Windows.Forms.Label lblListofrevenues;
-        private System.Windows.Forms.Button btnAcceptselectedtime;
-        private System.Windows.Forms.Label lblSpecifytimerange;
+        private System.Windows.Forms.Button btnGenerateGeneralReport;
+        private System.Windows.Forms.Label lblIncomes;
+        private System.Windows.Forms.Button btnAcceptSelectedTime;
+        private System.Windows.Forms.Label lblSpecifyTimeRange;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.DateTimePicker dtpEndDate;

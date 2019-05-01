@@ -16,7 +16,7 @@ namespace KWZP2019
     {
         public string EmployeeName { get; set; }
         public System.DateTime TrainingDate { get; set; }
-        public Nullable<byte> ValidityOfOshTraining { get; set; }
+        public Nullable<Int32> ValidityOfOshTraining { get; set; }
         public string DepartmentName { get; set; }
         public int IdEmployee { get; set; }
         public string EmployeeSurname { get; set; }

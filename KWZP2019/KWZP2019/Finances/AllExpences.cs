@@ -35,21 +35,18 @@ namespace KWZP2019
             dgvInvoices.Columns[3].HeaderText = "Nazwa podmiotu";
             dgvInvoices.Columns[4].HeaderText = "Typ faktury";
             dgvInvoices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-
             dgvOrders.DataSource = db.vExpencesOrders.ToList();
             this.dgvOrders.Columns["IdSfOrder"].Visible = false;
             dgvOrders.Columns[1].HeaderText = "Wartość faktury";
             dgvOrders.Columns[2].HeaderText = "Data wystawienia";
             dgvOrders.Columns[3].HeaderText = "Nazwa podmiotu";
             dgvOrders.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-
             dgvOutsourcing.DataSource = db.vExpencesOutsourcing.ToList();
             this.dgvOutsourcing.Columns["IdOutsourcing"].Visible = false;
             dgvOutsourcing.Columns[1].HeaderText = "Wartość";
             dgvOutsourcing.Columns[2].HeaderText = "Data";
             dgvOutsourcing.Columns[3].HeaderText = "Nazwa podmiotu";
             dgvOutsourcing.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-
             dgvSalaries.DataSource = db.vExpencesPayment.ToList();
             this.dgvSalaries.Columns["IdPayment"].Visible = false;
             dgvSalaries.Columns[1].HeaderText = "Podstawa wynagrodzenia";

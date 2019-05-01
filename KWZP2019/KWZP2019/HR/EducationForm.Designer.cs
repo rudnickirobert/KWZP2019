@@ -41,124 +41,151 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tbEducationSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvEducation
             // 
             this.dgvEducation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEducation.Location = new System.Drawing.Point(12, 47);
+            this.dgvEducation.Location = new System.Drawing.Point(190, 145);
+            this.dgvEducation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvEducation.Name = "dgvEducation";
             this.dgvEducation.RowTemplate.Height = 24;
-            this.dgvEducation.Size = new System.Drawing.Size(507, 351);
+            this.dgvEducation.Size = new System.Drawing.Size(525, 354);
             this.dgvEducation.TabIndex = 0;
             // 
             // tbEmployeeName
             // 
-            this.tbEmployeeName.Location = new System.Drawing.Point(598, 69);
+            this.tbEmployeeName.Location = new System.Drawing.Point(759, 202);
+            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmployeeName.Name = "tbEmployeeName";
-            this.tbEmployeeName.Size = new System.Drawing.Size(100, 22);
+            this.tbEmployeeName.Size = new System.Drawing.Size(76, 20);
             this.tbEmployeeName.TabIndex = 1;
             // 
             // tbEmployeeSurname
             // 
-            this.tbEmployeeSurname.Location = new System.Drawing.Point(598, 138);
+            this.tbEmployeeSurname.Location = new System.Drawing.Point(759, 258);
+            this.tbEmployeeSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmployeeSurname.Name = "tbEmployeeSurname";
-            this.tbEmployeeSurname.Size = new System.Drawing.Size(100, 22);
+            this.tbEmployeeSurname.Size = new System.Drawing.Size(76, 20);
             this.tbEmployeeSurname.TabIndex = 2;
             // 
             // cbEducationLevel
             // 
             this.cbEducationLevel.FormattingEnabled = true;
-            this.cbEducationLevel.Location = new System.Drawing.Point(598, 198);
+            this.cbEducationLevel.Location = new System.Drawing.Point(759, 307);
+            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbEducationLevel.Name = "cbEducationLevel";
-            this.cbEducationLevel.Size = new System.Drawing.Size(121, 24);
+            this.cbEducationLevel.Size = new System.Drawing.Size(92, 21);
             this.cbEducationLevel.TabIndex = 4;
             // 
             // dtpGraduationDate
             // 
-            this.dtpGraduationDate.Location = new System.Drawing.Point(588, 267);
-            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpGraduationDate.Location = new System.Drawing.Point(759, 380);
+            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpGraduationDate.Name = "dtpGraduationDate";
-            this.dtpGraduationDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpGraduationDate.Size = new System.Drawing.Size(202, 20);
             this.dtpGraduationDate.TabIndex = 8;
             // 
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(598, 29);
+            this.lblEmployeeName.Location = new System.Drawing.Point(759, 170);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(33, 17);
+            this.lblEmployeeName.Size = new System.Drawing.Size(26, 13);
             this.lblEmployeeName.TabIndex = 9;
             this.lblEmployeeName.Text = "Imię";
             // 
             // lblEmployeeSurname
             // 
             this.lblEmployeeSurname.AutoSize = true;
-            this.lblEmployeeSurname.Location = new System.Drawing.Point(598, 118);
+            this.lblEmployeeSurname.Location = new System.Drawing.Point(759, 242);
+            this.lblEmployeeSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeSurname.Name = "lblEmployeeSurname";
-            this.lblEmployeeSurname.Size = new System.Drawing.Size(67, 17);
+            this.lblEmployeeSurname.Size = new System.Drawing.Size(53, 13);
             this.lblEmployeeSurname.TabIndex = 10;
             this.lblEmployeeSurname.Text = "Nazwisko";
             // 
             // lblEducationLevel
             // 
             this.lblEducationLevel.AutoSize = true;
-            this.lblEducationLevel.Location = new System.Drawing.Point(598, 178);
+            this.lblEducationLevel.Location = new System.Drawing.Point(759, 291);
+            this.lblEducationLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEducationLevel.Name = "lblEducationLevel";
-            this.lblEducationLevel.Size = new System.Drawing.Size(146, 17);
+            this.lblEducationLevel.Size = new System.Drawing.Size(114, 13);
             this.lblEducationLevel.TabIndex = 11;
             this.lblEducationLevel.Text = "Stopień wykształcenia";
             // 
             // lblGraduationDate
             // 
             this.lblGraduationDate.AutoSize = true;
-            this.lblGraduationDate.Location = new System.Drawing.Point(585, 239);
+            this.lblGraduationDate.Location = new System.Drawing.Point(760, 351);
+            this.lblGraduationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGraduationDate.Name = "lblGraduationDate";
-            this.lblGraduationDate.Size = new System.Drawing.Size(165, 17);
+            this.lblGraduationDate.Size = new System.Drawing.Size(127, 13);
             this.lblGraduationDate.TabIndex = 12;
             this.lblGraduationDate.Text = "Data ukończenia studiów";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(491, 404);
+            this.btnClear.Location = new System.Drawing.Point(63, 541);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(95, 34);
+            this.btnClear.Size = new System.Drawing.Size(71, 28);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Wyczyść";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(592, 404);
+            this.btnAdd.Location = new System.Drawing.Point(139, 541);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(97, 34);
+            this.btnAdd.Size = new System.Drawing.Size(73, 28);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(695, 404);
+            this.btnEdit.Location = new System.Drawing.Point(216, 541);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(103, 34);
+            this.btnEdit.Size = new System.Drawing.Size(77, 28);
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "Edytuj";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // tbEducationSearch
             // 
-            this.tbEducationSearch.Location = new System.Drawing.Point(13, 13);
+            this.tbEducationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbEducationSearch.Location = new System.Drawing.Point(190, 77);
+            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEducationSearch.Name = "tbEducationSearch";
-            this.tbEducationSearch.Size = new System.Drawing.Size(506, 22);
+            this.tbEducationSearch.Size = new System.Drawing.Size(525, 26);
             this.tbEducationSearch.TabIndex = 16;
             this.tbEducationSearch.TextChanged += new System.EventHandler(this.tbEducationSearch_TextChanged);
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblSearch.Location = new System.Drawing.Point(186, 41);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(51, 20);
+            this.lblSearch.TabIndex = 18;
+            this.lblSearch.Text = "label1";
+            // 
             // EducationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.tbEducationSearch);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -172,7 +199,12 @@
             this.Controls.Add(this.tbEmployeeSurname);
             this.Controls.Add(this.tbEmployeeName);
             this.Controls.Add(this.dgvEducation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EducationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EducationForm";
             this.Load += new System.EventHandler(this.EducationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).EndInit();
@@ -196,5 +228,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox tbEducationSearch;
+        private System.Windows.Forms.Label lblSearch;
     }
 }

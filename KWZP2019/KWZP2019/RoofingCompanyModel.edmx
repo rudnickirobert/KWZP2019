@@ -3063,8 +3063,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           </Key>
           <Property Name="IdPosition" Type="Int32" Nullable="false" />
           <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ValidityOfOshTraining" Type="Byte" />
-          <Property Name="VailidityOfMedicalExam" Type="Byte" />
+          <Property Name="ValidityOfOshTraining" Type="Int32" />
+          <Property Name="VailidityOfMedicalExam" Type="Int32" />
           <NavigationProperty Name="Contracts" Relationship="Self.FK__Contract__IdPosi__08B54D69" FromRole="Position" ToRole="Contract" />
           <NavigationProperty Name="SkillsForMachines" Relationship="Self.FK__SkillsFor__IdPos__0B91BA14" FromRole="Position" ToRole="SkillsForMachine" />
           <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__IdPositio__1AD3FDA4" FromRole="Position" ToRole="Staff" />
@@ -4387,7 +4387,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not ha
           </Key>
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TrainingDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ValidityOfOshTraining" Type="Byte" />
+          <Property Name="ValidityOfOshTraining" Type="Int32" />
           <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdEmployee" Type="Int32" Nullable="false" />
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />

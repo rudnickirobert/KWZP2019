@@ -32,15 +32,14 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
-            this.lblSpecifytimerange = new System.Windows.Forms.Label();
-            this.btnAcceptselectedtime = new System.Windows.Forms.Button();
-            this.lblListofrevenues = new System.Windows.Forms.Label();
-            this.btnGenerategeneralreport = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblSpecifyTimeRange = new System.Windows.Forms.Label();
+            this.lblIncomes = new System.Windows.Forms.Label();
+            this.btnGenerateGeneralReport = new System.Windows.Forms.Button();
+            this.lblExpences = new System.Windows.Forms.Label();
+            this.lblInvoices = new System.Windows.Forms.Label();
+            this.lblSalaries = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
+            this.lblOutsourcing = new System.Windows.Forms.Label();
             this.btSum = new System.Windows.Forms.Button();
             this.tbSumIncome = new System.Windows.Forms.TextBox();
             this.tbSumOrders = new System.Windows.Forms.TextBox();
@@ -48,18 +47,18 @@
             this.tbSumInvoices = new System.Windows.Forms.TextBox();
             this.tbSumPayment = new System.Windows.Forms.TextBox();
             this.tbPureMoney = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblSumFinancialStatement = new System.Windows.Forms.Label();
             this.dgvProfits = new System.Windows.Forms.DataGridView();
             this.dgvOutsourcing = new System.Windows.Forms.DataGridView();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.dgvSalaries = new System.Windows.Forms.DataGridView();
             this.dgvInvoices = new System.Windows.Forms.DataGridView();
-            this.lblPln = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblIncomesPln = new System.Windows.Forms.Label();
+            this.lblInvoicesPln = new System.Windows.Forms.Label();
+            this.lblOrdersPln = new System.Windows.Forms.Label();
+            this.lblSalariesPln = new System.Windows.Forms.Label();
+            this.lblOutsourcingPln = new System.Windows.Forms.Label();
+            this.lblCurrentFinancialState = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutsourcing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -101,88 +100,78 @@
             this.lblTo.TabIndex = 3;
             this.lblTo.Text = "Do:";
             // 
-            // lblSpecifytimerange
+            // lblSpecifyTimeRange
             // 
-            this.lblSpecifytimerange.AutoSize = true;
-            this.lblSpecifytimerange.Location = new System.Drawing.Point(215, 4);
-            this.lblSpecifytimerange.Name = "lblSpecifytimerange";
-            this.lblSpecifytimerange.Size = new System.Drawing.Size(118, 13);
-            this.lblSpecifytimerange.TabIndex = 4;
-            this.lblSpecifytimerange.Text = "Określ zakres czasowy:";
+            this.lblSpecifyTimeRange.AutoSize = true;
+            this.lblSpecifyTimeRange.Location = new System.Drawing.Point(215, 4);
+            this.lblSpecifyTimeRange.Name = "lblSpecifyTimeRange";
+            this.lblSpecifyTimeRange.Size = new System.Drawing.Size(118, 13);
+            this.lblSpecifyTimeRange.TabIndex = 4;
+            this.lblSpecifyTimeRange.Text = "Określ zakres czasowy:";
             // 
-            // btnAcceptselectedtime
+            // lblIncomes
             // 
-            this.btnAcceptselectedtime.Location = new System.Drawing.Point(12, 46);
-            this.btnAcceptselectedtime.Name = "btnAcceptselectedtime";
-            this.btnAcceptselectedtime.Size = new System.Drawing.Size(497, 23);
-            this.btnAcceptselectedtime.TabIndex = 5;
-            this.btnAcceptselectedtime.Text = "Zatwierdź wybrany przedzial";
-            this.btnAcceptselectedtime.UseVisualStyleBackColor = true;
-            this.btnAcceptselectedtime.Click += new System.EventHandler(this.btnAcceptselectedtime_Click);
+            this.lblIncomes.AutoSize = true;
+            this.lblIncomes.Location = new System.Drawing.Point(146, 92);
+            this.lblIncomes.Name = "lblIncomes";
+            this.lblIncomes.Size = new System.Drawing.Size(35, 13);
+            this.lblIncomes.TabIndex = 7;
+            this.lblIncomes.Text = "Zyski:";
             // 
-            // lblListofrevenues
+            // btnGenerateGeneralReport
             // 
-            this.lblListofrevenues.AutoSize = true;
-            this.lblListofrevenues.Location = new System.Drawing.Point(164, 109);
-            this.lblListofrevenues.Name = "lblListofrevenues";
-            this.lblListofrevenues.Size = new System.Drawing.Size(35, 13);
-            this.lblListofrevenues.TabIndex = 7;
-            this.lblListofrevenues.Text = "Zyski:";
+            this.btnGenerateGeneralReport.Location = new System.Drawing.Point(12, 499);
+            this.btnGenerateGeneralReport.Name = "btnGenerateGeneralReport";
+            this.btnGenerateGeneralReport.Size = new System.Drawing.Size(497, 23);
+            this.btnGenerateGeneralReport.TabIndex = 9;
+            this.btnGenerateGeneralReport.Text = "Generuj raport";
+            this.btnGenerateGeneralReport.UseVisualStyleBackColor = true;
+            this.btnGenerateGeneralReport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
             // 
-            // btnGenerategeneralreport
+            // lblExpences
             // 
-            this.btnGenerategeneralreport.Location = new System.Drawing.Point(12, 499);
-            this.btnGenerategeneralreport.Name = "btnGenerategeneralreport";
-            this.btnGenerategeneralreport.Size = new System.Drawing.Size(497, 23);
-            this.btnGenerategeneralreport.TabIndex = 9;
-            this.btnGenerategeneralreport.Text = "Generuj raport";
-            this.btnGenerategeneralreport.UseVisualStyleBackColor = true;
-            this.btnGenerategeneralreport.Click += new System.EventHandler(this.btnGenerategeneralreport_Click);
+            this.lblExpences.AutoSize = true;
+            this.lblExpences.Location = new System.Drawing.Point(146, 146);
+            this.lblExpences.Name = "lblExpences";
+            this.lblExpences.Size = new System.Drawing.Size(49, 13);
+            this.lblExpences.TabIndex = 11;
+            this.lblExpences.Text = "Wydatki:";
             // 
-            // label1
+            // lblInvoices
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(164, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Wydatki:";
+            this.lblInvoices.AutoSize = true;
+            this.lblInvoices.Location = new System.Drawing.Point(82, 177);
+            this.lblInvoices.Name = "lblInvoices";
+            this.lblInvoices.Size = new System.Drawing.Size(45, 13);
+            this.lblInvoices.TabIndex = 12;
+            this.lblInvoices.Text = "Faktury:";
             // 
-            // label2
+            // lblSalaries
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 194);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Faktury:";
+            this.lblSalaries.AutoSize = true;
+            this.lblSalaries.Location = new System.Drawing.Point(82, 229);
+            this.lblSalaries.Name = "lblSalaries";
+            this.lblSalaries.Size = new System.Drawing.Size(50, 13);
+            this.lblSalaries.TabIndex = 13;
+            this.lblSalaries.Text = "Wypłaty:";
             // 
-            // label3
+            // lblOrders
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 246);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Wypłaty:";
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Location = new System.Drawing.Point(82, 203);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(67, 13);
+            this.lblOrders.TabIndex = 14;
+            this.lblOrders.Text = "Zamówienia:";
             // 
-            // label4
+            // lblOutsourcing
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 220);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Zamówienia:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(100, 272);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Outsourcing:";
+            this.lblOutsourcing.AutoSize = true;
+            this.lblOutsourcing.Location = new System.Drawing.Point(82, 255);
+            this.lblOutsourcing.Name = "lblOutsourcing";
+            this.lblOutsourcing.Size = new System.Drawing.Size(67, 13);
+            this.lblOutsourcing.TabIndex = 15;
+            this.lblOutsourcing.Text = "Outsourcing:";
             // 
             // btSum
             // 
@@ -190,13 +179,13 @@
             this.btSum.Name = "btSum";
             this.btSum.Size = new System.Drawing.Size(497, 23);
             this.btSum.TabIndex = 20;
-            this.btSum.Text = "Sumuj wszystkie widoki";
+            this.btSum.Text = "Oblicz dla wybranego przedziału";
             this.btSum.UseVisualStyleBackColor = true;
             this.btSum.Click += new System.EventHandler(this.btSum_Click);
             // 
             // tbSumIncome
             // 
-            this.tbSumIncome.Location = new System.Drawing.Point(103, 125);
+            this.tbSumIncome.Location = new System.Drawing.Point(85, 108);
             this.tbSumIncome.Name = "tbSumIncome";
             this.tbSumIncome.ReadOnly = true;
             this.tbSumIncome.Size = new System.Drawing.Size(267, 20);
@@ -206,7 +195,7 @@
             // 
             // tbSumOrders
             // 
-            this.tbSumOrders.Location = new System.Drawing.Point(195, 217);
+            this.tbSumOrders.Location = new System.Drawing.Point(177, 200);
             this.tbSumOrders.Name = "tbSumOrders";
             this.tbSumOrders.ReadOnly = true;
             this.tbSumOrders.Size = new System.Drawing.Size(138, 20);
@@ -216,7 +205,7 @@
             // 
             // tbSumOS
             // 
-            this.tbSumOS.Location = new System.Drawing.Point(195, 269);
+            this.tbSumOS.Location = new System.Drawing.Point(177, 252);
             this.tbSumOS.Name = "tbSumOS";
             this.tbSumOS.ReadOnly = true;
             this.tbSumOS.Size = new System.Drawing.Size(138, 20);
@@ -226,7 +215,7 @@
             // 
             // tbSumInvoices
             // 
-            this.tbSumInvoices.Location = new System.Drawing.Point(195, 191);
+            this.tbSumInvoices.Location = new System.Drawing.Point(177, 174);
             this.tbSumInvoices.Name = "tbSumInvoices";
             this.tbSumInvoices.ReadOnly = true;
             this.tbSumInvoices.Size = new System.Drawing.Size(138, 20);
@@ -236,7 +225,7 @@
             // 
             // tbSumPayment
             // 
-            this.tbSumPayment.Location = new System.Drawing.Point(195, 243);
+            this.tbSumPayment.Location = new System.Drawing.Point(177, 226);
             this.tbSumPayment.Name = "tbSumPayment";
             this.tbSumPayment.ReadOnly = true;
             this.tbSumPayment.Size = new System.Drawing.Size(138, 20);
@@ -246,7 +235,7 @@
             // 
             // tbPureMoney
             // 
-            this.tbPureMoney.Location = new System.Drawing.Point(103, 349);
+            this.tbPureMoney.Location = new System.Drawing.Point(85, 332);
             this.tbPureMoney.Name = "tbPureMoney";
             this.tbPureMoney.ReadOnly = true;
             this.tbPureMoney.Size = new System.Drawing.Size(267, 20);
@@ -254,14 +243,14 @@
             this.tbPureMoney.Text = "0";
             this.tbPureMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label6
+            // lblSumFinancialStatement
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(164, 324);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Bilans finansowy:";
+            this.lblSumFinancialStatement.AutoSize = true;
+            this.lblSumFinancialStatement.Location = new System.Drawing.Point(146, 307);
+            this.lblSumFinancialStatement.Name = "lblSumFinancialStatement";
+            this.lblSumFinancialStatement.Size = new System.Drawing.Size(88, 13);
+            this.lblSumFinancialStatement.TabIndex = 27;
+            this.lblSumFinancialStatement.Text = "Bilans finansowy:";
             // 
             // dgvProfits
             // 
@@ -303,77 +292,77 @@
             this.dgvInvoices.Size = new System.Drawing.Size(50, 50);
             this.dgvInvoices.TabIndex = 42;
             // 
-            // lblPln
+            // lblIncomesPln
             // 
-            this.lblPln.AutoSize = true;
-            this.lblPln.Location = new System.Drawing.Point(376, 128);
-            this.lblPln.Name = "lblPln";
-            this.lblPln.Size = new System.Drawing.Size(75, 13);
-            this.lblPln.TabIndex = 46;
-            this.lblPln.Text = "złotych (netto)";
+            this.lblIncomesPln.AutoSize = true;
+            this.lblIncomesPln.Location = new System.Drawing.Point(358, 111);
+            this.lblIncomesPln.Name = "lblIncomesPln";
+            this.lblIncomesPln.Size = new System.Drawing.Size(75, 13);
+            this.lblIncomesPln.TabIndex = 46;
+            this.lblIncomesPln.Text = "złotych (netto)";
             // 
-            // label7
+            // lblInvoicesPln
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(339, 194);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "złotych (netto)";
+            this.lblInvoicesPln.AutoSize = true;
+            this.lblInvoicesPln.Location = new System.Drawing.Point(321, 177);
+            this.lblInvoicesPln.Name = "lblInvoicesPln";
+            this.lblInvoicesPln.Size = new System.Drawing.Size(75, 13);
+            this.lblInvoicesPln.TabIndex = 47;
+            this.lblInvoicesPln.Text = "złotych (netto)";
             // 
-            // label8
+            // lblOrdersPln
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(339, 220);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "złotych (netto)";
+            this.lblOrdersPln.AutoSize = true;
+            this.lblOrdersPln.Location = new System.Drawing.Point(321, 203);
+            this.lblOrdersPln.Name = "lblOrdersPln";
+            this.lblOrdersPln.Size = new System.Drawing.Size(75, 13);
+            this.lblOrdersPln.TabIndex = 48;
+            this.lblOrdersPln.Text = "złotych (netto)";
             // 
-            // label9
+            // lblSalariesPln
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(339, 246);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "złotych (netto)";
+            this.lblSalariesPln.AutoSize = true;
+            this.lblSalariesPln.Location = new System.Drawing.Point(321, 229);
+            this.lblSalariesPln.Name = "lblSalariesPln";
+            this.lblSalariesPln.Size = new System.Drawing.Size(75, 13);
+            this.lblSalariesPln.TabIndex = 49;
+            this.lblSalariesPln.Text = "złotych (netto)";
             // 
-            // label10
+            // lblOutsourcingPln
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(339, 272);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 13);
-            this.label10.TabIndex = 50;
-            this.label10.Text = "złotych (netto)";
+            this.lblOutsourcingPln.AutoSize = true;
+            this.lblOutsourcingPln.Location = new System.Drawing.Point(321, 255);
+            this.lblOutsourcingPln.Name = "lblOutsourcingPln";
+            this.lblOutsourcingPln.Size = new System.Drawing.Size(75, 13);
+            this.lblOutsourcingPln.TabIndex = 50;
+            this.lblOutsourcingPln.Text = "złotych (netto)";
             // 
-            // label11
+            // lblCurrentFinancialState
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(376, 352);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 13);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "złotych (netto)";
+            this.lblCurrentFinancialState.AutoSize = true;
+            this.lblCurrentFinancialState.Location = new System.Drawing.Point(358, 335);
+            this.lblCurrentFinancialState.Name = "lblCurrentFinancialState";
+            this.lblCurrentFinancialState.Size = new System.Drawing.Size(75, 13);
+            this.lblCurrentFinancialState.TabIndex = 51;
+            this.lblCurrentFinancialState.Text = "złotych (netto)";
             // 
             // Profits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 523);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lblPln);
+            this.Controls.Add(this.lblCurrentFinancialState);
+            this.Controls.Add(this.lblOutsourcingPln);
+            this.Controls.Add(this.lblSalariesPln);
+            this.Controls.Add(this.lblOrdersPln);
+            this.Controls.Add(this.lblInvoicesPln);
+            this.Controls.Add(this.lblIncomesPln);
             this.Controls.Add(this.dgvOutsourcing);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.dgvSalaries);
             this.Controls.Add(this.dgvInvoices);
             this.Controls.Add(this.dgvProfits);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblSumFinancialStatement);
             this.Controls.Add(this.tbPureMoney);
             this.Controls.Add(this.tbSumPayment);
             this.Controls.Add(this.tbSumInvoices);
@@ -381,15 +370,14 @@
             this.Controls.Add(this.tbSumOrders);
             this.Controls.Add(this.tbSumIncome);
             this.Controls.Add(this.btSum);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnGenerategeneralreport);
-            this.Controls.Add(this.lblListofrevenues);
-            this.Controls.Add(this.btnAcceptselectedtime);
-            this.Controls.Add(this.lblSpecifytimerange);
+            this.Controls.Add(this.lblOutsourcing);
+            this.Controls.Add(this.lblOrders);
+            this.Controls.Add(this.lblSalaries);
+            this.Controls.Add(this.lblInvoices);
+            this.Controls.Add(this.lblExpences);
+            this.Controls.Add(this.btnGenerateGeneralReport);
+            this.Controls.Add(this.lblIncomes);
+            this.Controls.Add(this.lblSpecifyTimeRange);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.dtpEndDate);
@@ -413,15 +401,14 @@
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Label lblTo;
-        private System.Windows.Forms.Label lblSpecifytimerange;
-        private System.Windows.Forms.Button btnAcceptselectedtime;
-        private System.Windows.Forms.Label lblListofrevenues;
-        private System.Windows.Forms.Button btnGenerategeneralreport;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSpecifyTimeRange;
+        private System.Windows.Forms.Label lblIncomes;
+        private System.Windows.Forms.Button btnGenerateGeneralReport;
+        private System.Windows.Forms.Label lblExpences;
+        private System.Windows.Forms.Label lblInvoices;
+        private System.Windows.Forms.Label lblSalaries;
+        private System.Windows.Forms.Label lblOrders;
+        private System.Windows.Forms.Label lblOutsourcing;
         private System.Windows.Forms.Button btSum;
         private System.Windows.Forms.TextBox tbSumIncome;
         private System.Windows.Forms.TextBox tbSumOrders;
@@ -429,17 +416,17 @@
         private System.Windows.Forms.TextBox tbSumInvoices;
         private System.Windows.Forms.TextBox tbSumPayment;
         private System.Windows.Forms.TextBox tbPureMoney;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSumFinancialStatement;
         private System.Windows.Forms.DataGridView dgvProfits;
         private System.Windows.Forms.DataGridView dgvOutsourcing;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.DataGridView dgvSalaries;
         private System.Windows.Forms.DataGridView dgvInvoices;
-        private System.Windows.Forms.Label lblPln;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblIncomesPln;
+        private System.Windows.Forms.Label lblInvoicesPln;
+        private System.Windows.Forms.Label lblOrdersPln;
+        private System.Windows.Forms.Label lblSalariesPln;
+        private System.Windows.Forms.Label lblOutsourcingPln;
+        private System.Windows.Forms.Label lblCurrentFinancialState;
     }
 }
