@@ -13,7 +13,7 @@ namespace KWZP2019
     public partial class CustomerForm : Form
 
     {
-        RoofingCompanyEntities db;
+        private RoofingCompanyEntities db;
         public CustomerForm(RoofingCompanyEntities db)
         {
             InitializeComponent();
@@ -23,12 +23,27 @@ namespace KWZP2019
         {
             customersDgv.DataSource = db.Customers.ToList();
         }
+        //BUTTONS   //ADD ORDER BUTTON
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value);
             addNewOrderForm.ShowDialog();
             this.Close();
+        }           //ADD ORDER DETAIL BUTTON
+        private void addNewOrderDetailBtn_Click(object sender, EventArgs e)
+        {
+            //EXCEPTION PROTECTION
+            if (ordersDgv.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Wybierz zamówienie");
+            }
+            else
+            {
+                this.Hide();
+                AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, this.ordersDgv.CurrentRow.Cells[0].Value);
+                newOrderDetail.ShowDialog();
+            }
         }
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
         {
@@ -38,14 +53,9 @@ namespace KWZP2019
             RefreshGridCustomer();
             this.Close();
         }
-        //PRZYCISKI
         private void saveBtn_Click(object sender, EventArgs e)
         {
             db.SaveChanges();
-        }
-        private void endCutstomerFormBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
         private void editCustomerBtn_Click(object sender, EventArgs e)
         {
@@ -53,14 +63,15 @@ namespace KWZP2019
             newCustomer.ShowDialog();
             RefreshGridCustomer();
         }
+        //Metoda odświeżania klientów
         private void RefreshGridCustomer()
         {
             int saveRow = 0;
             if (customersDgv.Rows.Count > 0)
 
                 saveRow = customersDgv.FirstDisplayedCell.RowIndex;
-                RoofingCompanyEntities db = new RoofingCompanyEntities();
-                customersDgv.DataSource = db.Customers.ToList();
+            RoofingCompanyEntities db = new RoofingCompanyEntities();
+            customersDgv.DataSource = db.Customers.ToList();
 
             if (saveRow != 0 && saveRow < customersDgv.Rows.Count)
                 customersDgv.FirstDisplayedScrollingRowIndex = saveRow;
@@ -99,6 +110,8 @@ namespace KWZP2019
                                     where OrderCustomer.IdCustomer == id
                                     select OrderCustomer).ToList();
         }
+
+
     }
 }
 

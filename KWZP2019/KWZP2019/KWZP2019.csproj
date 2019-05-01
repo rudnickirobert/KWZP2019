@@ -58,6 +58,12 @@
     <Compile Include="Absence.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddNewOrderDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewOrderDetailForm.Designer.cs">
+      <DependentUpon>AddNewOrderDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +593,9 @@
     </Compile>
     <EmbeddedResource Include="AddNewCustomerForm.resx">
       <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewOrderDetailForm.resx">
+      <DependentUpon>AddNewOrderDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewOrderForm.resx">
       <DependentUpon>AddNewOrderForm.cs</DependentUpon>

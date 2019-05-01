@@ -32,6 +32,20 @@
             this.addNewCustomerBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
             this.customersDgv = new System.Windows.Forms.DataGridView();
+            this.idCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.houseNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apartmentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kRSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameLbl = new System.Windows.Forms.Label();
             this.editCustomerBtn = new System.Windows.Forms.Button();
             this.endCutstomerFormBtn = new System.Windows.Forms.Button();
@@ -47,24 +61,11 @@
             this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.houseNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apartmentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kRSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addNewOrderDetailBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderCustomerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // addNewCustomerBtn
@@ -80,12 +81,12 @@
             // 
             // orderBtn
             // 
-            this.orderBtn.Location = new System.Drawing.Point(548, 6);
+            this.orderBtn.Location = new System.Drawing.Point(35, 196);
             this.orderBtn.Margin = new System.Windows.Forms.Padding(2);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(111, 21);
             this.orderBtn.TabIndex = 12;
-            this.orderBtn.Text = "Zamówienie";
+            this.orderBtn.Text = "Dodaj Zamówienie";
             this.orderBtn.UseVisualStyleBackColor = true;
             this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
@@ -118,6 +119,88 @@
             this.customersDgv.TabIndex = 15;
             this.customersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDgv_CellContentClick);
             // 
+            // idCustomerDataGridViewTextBoxColumn
+            // 
+            this.idCustomerDataGridViewTextBoxColumn.DataPropertyName = "IdCustomer";
+            this.idCustomerDataGridViewTextBoxColumn.HeaderText = "IdCustomer";
+            this.idCustomerDataGridViewTextBoxColumn.Name = "idCustomerDataGridViewTextBoxColumn";
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            // 
+            // zipCodeDataGridViewTextBoxColumn
+            // 
+            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
+            // 
+            // streetDataGridViewTextBoxColumn
+            // 
+            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
+            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
+            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
+            // 
+            // houseNumberDataGridViewTextBoxColumn
+            // 
+            this.houseNumberDataGridViewTextBoxColumn.DataPropertyName = "HouseNumber";
+            this.houseNumberDataGridViewTextBoxColumn.HeaderText = "HouseNumber";
+            this.houseNumberDataGridViewTextBoxColumn.Name = "houseNumberDataGridViewTextBoxColumn";
+            // 
+            // apartmentNumberDataGridViewTextBoxColumn
+            // 
+            this.apartmentNumberDataGridViewTextBoxColumn.DataPropertyName = "ApartmentNumber";
+            this.apartmentNumberDataGridViewTextBoxColumn.HeaderText = "ApartmentNumber";
+            this.apartmentNumberDataGridViewTextBoxColumn.Name = "apartmentNumberDataGridViewTextBoxColumn";
+            // 
+            // peselDataGridViewTextBoxColumn
+            // 
+            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
+            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
+            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
+            // 
+            // nIPDataGridViewTextBoxColumn
+            // 
+            this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
+            this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
+            this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
+            // 
+            // kRSDataGridViewTextBoxColumn
+            // 
+            this.kRSDataGridViewTextBoxColumn.DataPropertyName = "KRS";
+            this.kRSDataGridViewTextBoxColumn.HeaderText = "KRS";
+            this.kRSDataGridViewTextBoxColumn.Name = "kRSDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(KWZP2019.Customer);
+            // 
             // nameLbl
             // 
             this.nameLbl.AutoSize = true;
@@ -137,16 +220,6 @@
             this.editCustomerBtn.Text = "Edytuj klienta";
             this.editCustomerBtn.UseVisualStyleBackColor = true;
             this.editCustomerBtn.Click += new System.EventHandler(this.editCustomerBtn_Click);
-            // 
-            // endCutstomerFormBtn
-            // 
-            this.endCutstomerFormBtn.Location = new System.Drawing.Point(36, 392);
-            this.endCutstomerFormBtn.Name = "endCutstomerFormBtn";
-            this.endCutstomerFormBtn.Size = new System.Drawing.Size(128, 30);
-            this.endCutstomerFormBtn.TabIndex = 17;
-            this.endCutstomerFormBtn.Text = "Koniec";
-            this.endCutstomerFormBtn.UseVisualStyleBackColor = true;
-            this.endCutstomerFormBtn.Click += new System.EventHandler(this.endCutstomerFormBtn_Click);
             // 
             // searchTxt
             // 
@@ -241,93 +314,22 @@
             // 
             this.orderCustomerBindingSource.DataSource = typeof(KWZP2019.OrderCustomer);
             // 
-            // idCustomerDataGridViewTextBoxColumn
+            // addNewOrderDetailBtn
             // 
-            this.idCustomerDataGridViewTextBoxColumn.DataPropertyName = "IdCustomer";
-            this.idCustomerDataGridViewTextBoxColumn.HeaderText = "IdCustomer";
-            this.idCustomerDataGridViewTextBoxColumn.Name = "idCustomerDataGridViewTextBoxColumn";
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            // 
-            // zipCodeDataGridViewTextBoxColumn
-            // 
-            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            // 
-            // streetDataGridViewTextBoxColumn
-            // 
-            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
-            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
-            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            // 
-            // houseNumberDataGridViewTextBoxColumn
-            // 
-            this.houseNumberDataGridViewTextBoxColumn.DataPropertyName = "HouseNumber";
-            this.houseNumberDataGridViewTextBoxColumn.HeaderText = "HouseNumber";
-            this.houseNumberDataGridViewTextBoxColumn.Name = "houseNumberDataGridViewTextBoxColumn";
-            // 
-            // apartmentNumberDataGridViewTextBoxColumn
-            // 
-            this.apartmentNumberDataGridViewTextBoxColumn.DataPropertyName = "ApartmentNumber";
-            this.apartmentNumberDataGridViewTextBoxColumn.HeaderText = "ApartmentNumber";
-            this.apartmentNumberDataGridViewTextBoxColumn.Name = "apartmentNumberDataGridViewTextBoxColumn";
-            // 
-            // peselDataGridViewTextBoxColumn
-            // 
-            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
-            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
-            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
-            // 
-            // nIPDataGridViewTextBoxColumn
-            // 
-            this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
-            this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
-            this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
-            // 
-            // kRSDataGridViewTextBoxColumn
-            // 
-            this.kRSDataGridViewTextBoxColumn.DataPropertyName = "KRS";
-            this.kRSDataGridViewTextBoxColumn.HeaderText = "KRS";
-            this.kRSDataGridViewTextBoxColumn.Name = "kRSDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(KWZP2019.Customer);
+            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(381, 194);
+            this.addNewOrderDetailBtn.Name = "addNewOrderDetailBtn";
+            this.addNewOrderDetailBtn.Size = new System.Drawing.Size(138, 23);
+            this.addNewOrderDetailBtn.TabIndex = 22;
+            this.addNewOrderDetailBtn.Text = "Dodaj szczegół ";
+            this.addNewOrderDetailBtn.UseVisualStyleBackColor = true;
+            this.addNewOrderDetailBtn.Click += new System.EventHandler(this.addNewOrderDetailBtn_Click);
             // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 612);
+            this.Controls.Add(this.addNewOrderDetailBtn);
             this.Controls.Add(this.ordersDgv);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.cancelBtn);
@@ -343,9 +345,9 @@
             this.Text = "CustomerForm";
             this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderCustomerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nIPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kRSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button addNewOrderDetailBtn;
     }
 }
