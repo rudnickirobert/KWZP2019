@@ -37,12 +37,14 @@
             this.btnAddNewCompany = new System.Windows.Forms.Button();
             this.cbContractors = new System.Windows.Forms.ComboBox();
             this.cbInvoiceType = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDateAdded
             // 
             this.lblDateAdded.AutoSize = true;
-            this.lblDateAdded.Location = new System.Drawing.Point(74, 58);
+            this.lblDateAdded.Location = new System.Drawing.Point(407, 276);
             this.lblDateAdded.Name = "lblDateAdded";
             this.lblDateAdded.Size = new System.Drawing.Size(93, 13);
             this.lblDateAdded.TabIndex = 9;
@@ -51,7 +53,7 @@
             // lblInvoiceValue
             // 
             this.lblInvoiceValue.AutoSize = true;
-            this.lblInvoiceValue.Location = new System.Drawing.Point(74, 85);
+            this.lblInvoiceValue.Location = new System.Drawing.Point(407, 303);
             this.lblInvoiceValue.Name = "lblInvoiceValue";
             this.lblInvoiceValue.Size = new System.Drawing.Size(85, 13);
             this.lblInvoiceValue.TabIndex = 10;
@@ -59,14 +61,14 @@
             // 
             // dtpDateAdded
             // 
-            this.dtpDateAdded.Location = new System.Drawing.Point(186, 52);
+            this.dtpDateAdded.Location = new System.Drawing.Point(519, 270);
             this.dtpDateAdded.Name = "dtpDateAdded";
             this.dtpDateAdded.Size = new System.Drawing.Size(200, 20);
             this.dtpDateAdded.TabIndex = 17;
             // 
             // tbInvoiceValue
             // 
-            this.tbInvoiceValue.Location = new System.Drawing.Point(186, 82);
+            this.tbInvoiceValue.Location = new System.Drawing.Point(519, 300);
             this.tbInvoiceValue.Name = "tbInvoiceValue";
             this.tbInvoiceValue.Size = new System.Drawing.Size(200, 20);
             this.tbInvoiceValue.TabIndex = 18;
@@ -76,7 +78,7 @@
             // lblPln
             // 
             this.lblPln.AutoSize = true;
-            this.lblPln.Location = new System.Drawing.Point(392, 85);
+            this.lblPln.Location = new System.Drawing.Point(725, 303);
             this.lblPln.Name = "lblPln";
             this.lblPln.Size = new System.Drawing.Size(75, 13);
             this.lblPln.TabIndex = 19;
@@ -84,9 +86,9 @@
             // 
             // btnAddNewInvoice
             // 
-            this.btnAddNewInvoice.Location = new System.Drawing.Point(12, 145);
+            this.btnAddNewInvoice.Location = new System.Drawing.Point(322, 472);
             this.btnAddNewInvoice.Name = "btnAddNewInvoice";
-            this.btnAddNewInvoice.Size = new System.Drawing.Size(500, 23);
+            this.btnAddNewInvoice.Size = new System.Drawing.Size(500, 47);
             this.btnAddNewInvoice.TabIndex = 20;
             this.btnAddNewInvoice.Text = "Dodaj nową fakturę";
             this.btnAddNewInvoice.UseVisualStyleBackColor = true;
@@ -94,7 +96,7 @@
             // 
             // btnAddNewCompany
             // 
-            this.btnAddNewCompany.Location = new System.Drawing.Point(12, 236);
+            this.btnAddNewCompany.Location = new System.Drawing.Point(322, 546);
             this.btnAddNewCompany.Name = "btnAddNewCompany";
             this.btnAddNewCompany.Size = new System.Drawing.Size(500, 83);
             this.btnAddNewCompany.TabIndex = 22;
@@ -105,7 +107,7 @@
             // cbContractors
             // 
             this.cbContractors.FormattingEnabled = true;
-            this.cbContractors.Location = new System.Drawing.Point(12, 12);
+            this.cbContractors.Location = new System.Drawing.Point(345, 230);
             this.cbContractors.Name = "cbContractors";
             this.cbContractors.Size = new System.Drawing.Size(500, 21);
             this.cbContractors.TabIndex = 23;
@@ -114,17 +116,28 @@
             // cbInvoiceType
             // 
             this.cbInvoiceType.FormattingEnabled = true;
-            this.cbInvoiceType.Location = new System.Drawing.Point(186, 108);
+            this.cbInvoiceType.Location = new System.Drawing.Point(519, 326);
             this.cbInvoiceType.Name = "cbInvoiceType";
             this.cbInvoiceType.Size = new System.Drawing.Size(200, 21);
             this.cbInvoiceType.TabIndex = 25;
             this.cbInvoiceType.Text = "wybierz typ faktury";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(386, 169);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // AddInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 331);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbInvoiceType);
             this.Controls.Add(this.cbContractors);
             this.Controls.Add(this.btnAddNewCompany);
@@ -134,9 +147,14 @@
             this.Controls.Add(this.dtpDateAdded);
             this.Controls.Add(this.lblInvoiceValue);
             this.Controls.Add(this.lblDateAdded);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddInvoices";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj fakturę";
             this.Load += new System.EventHandler(this.AddInvoices_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +170,6 @@
         private System.Windows.Forms.Button btnAddNewCompany;
         private System.Windows.Forms.ComboBox cbContractors;
         private System.Windows.Forms.ComboBox cbInvoiceType;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
