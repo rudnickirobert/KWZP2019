@@ -78,7 +78,7 @@ create table SemiFinished(
 
 create table TechnicalProductData(
 	IdTechnicalProductData int primary key identity(1,1) not null,
-	IdProduct int,
+	IdProduct int not null,
 	Pattern image not null,
 	Width float not null,
 	WeightPerMeter float not null,
@@ -190,8 +190,8 @@ CREATE TABLE OutsourcingCommitment
 	(IdPlan INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	IdDetail INT NOT NULL,
 	IdMachine INT NOT NULL,
-	PlannedStartd DATE,
-	PlannedEndd DATE,
+	PlannedStartd DATETIME,
+	PlannedEndd DATETIME,
 	Inproduction BIT
 	);
 	
@@ -200,8 +200,8 @@ CREATE TABLE OutsourcingCommitment
 	(IdDetail INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	IdProces INT NOT NULL,
 	IdEmployee INT NOT NULL,
-	StartDate DATE,
-	EndDate DATE,
+	StartDate DATETIME,
+	EndDate DATETIME,
 	);
 
 -- technology table--
@@ -217,16 +217,16 @@ CREATE TABLE OutsourcingCommitment
 	IdFailure INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	IdProces INT NOT NULL,
 	Specification nvarchar(50) NOT NULL, --changed name from description (slq syntax word) to specification
-	FailureDate DATE NOT NULL
+	FailureDate DATETIME NOT NULL
 	);
 	
 	--Production_proces table--  
-	CREATE TABLE ProductionProces
+	CREATE TABLE ProductionProcess
 	(IdProces INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	--zmiana IdPlan z nvarchar na int
 	IdPlan INT NOT NULL,
-	StartDate DATE,
-	EndDate DATE,
+	StartDate DATETIME,
+	EndDate DATETIME,
 	);
 
 
@@ -512,7 +512,7 @@ alter table EntranceControl add constraint FKEnteranceControlEmployee foreign ke
 alter table FEMAnalysis add constraint FkFEMAnalysisEmployee foreign key (IdEmployee) references Employee(IdEmployee);
 
 alter table OutControl add constraint FkOutControlEmployee foreign key (IdEmployee) references Employee(IdEmployee);
-alter table OutControl add constraint FkOutControlProcess foreign key (IdProcess) references ProductionProces(IdProces);
+alter table OutControl add constraint FkOutControlProcess foreign key (IdProcess) references ProductionProcess(IdProces);
 
 alter table OutputProductMeasurements add constraint FkOutputProductMeasurements foreign key (IdProcess) references OutControl(IdProcess);
 
@@ -566,10 +566,10 @@ FOREIGN KEY (IdProces) REFERENCES PlannedProduction(IdPlan)
 
 -- Failures FOREIGN KEYS ------
 ALTER TABLE Failure ADD CONSTRAINT FKProductionProces
-FOREIGN KEY (IdProces) REFERENCES ProductionProces(IdProces)
+FOREIGN KEY (IdProces) REFERENCES ProductionProcess(IdProces)
 
 --Production_proces FOREING KEYS--------
-ALTER TABLE ProductionProces ADD CONSTRAINT FKProductionProcesPlannedProduction
+ALTER TABLE ProductionProcess ADD CONSTRAINT FKProductionProcesPlannedProduction
 FOREIGN KEY (IdPlan) REFERENCES PlannedProduction(IdPlan)
 
 --utrzymanie ruchu
@@ -670,7 +670,7 @@ GO
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
 SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
-FROM OrderDetail A, Product B, PlannedProduction C, ProductionProces D, OutControl E, TechnicalProductData F
+FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, OutControl E, TechnicalProductData F
 WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
 
 GO
@@ -703,7 +703,7 @@ GO
 CREATE VIEW vUnfinishedProcess
 AS
 SELECT IdProces
-FROM ProductionProces, vSuccesfullyProcess
+FROM ProductionProcess, vSuccesfullyProcess
 WHERE IdProces != IdProcess
 
 GO

@@ -111,8 +111,6 @@ namespace KWZP2019
         private void btnDelete_Click(object sender, EventArgs e)
         {
             db.Technologies.Remove(technology);
-
-
             db.SaveChanges();
             dataGVtechnology.DataSource = db.Technologies.ToList();
             lblSelectedTechnology.Text = "Wybrana technologia";
