@@ -238,8 +238,9 @@
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(107, 29);
             this.cancelBtn.TabIndex = 19;
-            this.cancelBtn.Text = "Anuluj";
+            this.cancelBtn.Text = "Powrót";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // ordersDgv
             // 
