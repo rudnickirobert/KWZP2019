@@ -1,7 +1,7 @@
 ﻿
 use master;
 go
-drop database RoofingCompany;
+drop database if exists RoofingCompany;
 create database RoofingCompany;
 go
 use RoofingCompany;
@@ -766,7 +766,7 @@ ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 GO
 
 --Views UR--
-
+/*
 CREATE VIEW vPartsView
 AS
 SELECT Part.PartName as [Nazwa części], 
@@ -787,5 +787,5 @@ ON Part.IdPart = MaintPart.IdPart)
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
 ORDER BY Maintenance.DateAcceptOrder DESC;
-GO
+GO*/
 
