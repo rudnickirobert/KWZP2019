@@ -102,5 +102,24 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vAbsence> vAbsences { get; set; }
+        public virtual DbSet<vAddTraining> vAddTrainings { get; set; }
+        public virtual DbSet<vContract> vContracts { get; set; }
+        public virtual DbSet<vEducationForm> vEducationForms { get; set; }
+        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
+        public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
+        public virtual DbSet<vExamination> vExaminations { get; set; }
+        public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
+        public virtual DbSet<vExpencesOrder> vExpencesOrders { get; set; }
+        public virtual DbSet<vExpencesOutsourcing> vExpencesOutsourcings { get; set; }
+        public virtual DbSet<vExpencesPayment> vExpencesPayments { get; set; }
+        public virtual DbSet<vHR> vHRs { get; set; }
+        public virtual DbSet<vHRContract> vHRContracts { get; set; }
+        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
+        public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
+        public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
+        public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
+        public virtual DbSet<vPartsView> vPartsViews { get; set; }
+        public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
     }
 }
