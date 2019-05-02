@@ -22,6 +22,6 @@ namespace KWZP2019
         public double LenghtAcceptableDeviation { get; set; }
     
         public virtual Employee Employee { get; set; }
-        public virtual ProductionProce ProductionProce { get; set; }
+        public virtual ProductionProce ProductionProces { get; set; }
     }
 }

@@ -31,7 +31,6 @@ namespace KWZP2019
         public virtual DbSet<Allocation> Allocations { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Contractor> Contractors { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<EducationLevel> EducationLevels { get; set; }
@@ -53,8 +52,6 @@ namespace KWZP2019
         public virtual DbSet<MedicalExamination> MedicalExaminations { get; set; }
         public virtual DbSet<OrderCustomer> OrderCustomers { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<OutControl> OutControls { get; set; }
-        public virtual DbSet<Outsourcing> Outsourcings { get; set; }
         public virtual DbSet<OutsourcingCommitment> OutsourcingCommitments { get; set; }
         public virtual DbSet<OutsourcingType> OutsourcingTypes { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
@@ -77,12 +74,26 @@ namespace KWZP2019
         public virtual DbSet<SfOrderDetail> SfOrderDetails { get; set; }
         public virtual DbSet<SkillsForMachine> SkillsForMachines { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
-        public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<SupplierType> SupplierTypes { get; set; }
-        public virtual DbSet<TechnicalProductData> TechnicalProductDatas { get; set; }
         public virtual DbSet<Technology> Technologies { get; set; }
         public virtual DbSet<Training> Trainings { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
+        public virtual DbSet<ViewDailySfDelivery> ViewDailySfDeliveries { get; set; }
+        public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
+        public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Outsourcing> Outsourcing { get; set; }
+        public virtual DbSet<Supplier> Supplier { get; set; }
+        public virtual DbSet<vOrderDetail> vOrderDetail { get; set; }
+        public virtual DbSet<vOutsourcingWithType> vOutsourcingWithType { get; set; }
+        public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomer { get; set; }
+        public virtual DbSet<OutControl> OutControl { get; set; }
+        public virtual DbSet<TechnicalProductData> TechnicalProductData { get; set; }
+        public virtual DbSet<vCompany> vCompany { get; set; }
+        public virtual DbSet<vIndividualCustomer> vIndividualCustomer { get; set; }
+        public virtual DbSet<vOutputMagazine> vOutputMagazine { get; set; }
+        public virtual DbSet<SupplierType> SupplierType { get; set; }
+        public virtual DbSet<vSupplierSemis> vSupplierSemis { get; set; }
+        public virtual DbSet<vSupplierParts> vSupplierParts { get; set; }
         public virtual DbSet<vCompany> vCompany { get; set; }
         public virtual DbSet<ViewDailySfDelivery> ViewDailySfDelivery { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTraining { get; set; }

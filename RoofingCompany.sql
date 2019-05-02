@@ -1,5 +1,4 @@
-﻿
-use master;
+﻿use master;
 go
 drop database RoofingCompany;
 create database RoofingCompany;
@@ -78,7 +77,7 @@ create table SemiFinished(
 
 create table TechnicalProductData(
 	IdTechnicalProductData int primary key identity(1,1) not null,
-	IdProduct int,
+	IdProduct int not null,
 	Pattern image not null,
 	Width float not null,
 	WeightPerMeter float not null,
@@ -100,17 +99,17 @@ create table Product(
 CREATE TABLE Customer
 	(IdCustomer int IDENTITY(1,1)  PRIMARY KEY NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	Pesel float NULL,
-	NIP float NULL,
-	KRS float NULL,
-	Description nvarchar(100) NOT NULL); 
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	Pesel nvarchar(11) NULL,
+	NIP nvarchar(10) NULL,
+	KRS nvarchar(10) NULL,
+	CustomerDescription nvarchar(100) NULL); 
 
 CREATE TABLE OrderCustomer
 	(IdOrderCustomer int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -128,22 +127,22 @@ CREATE TABLE OrderDetail
 
 CREATE TABLE SupplierType
 	(IdSupplierType int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Type nvarchar(50) NOT NULL);
+	SupplierNameType nvarchar(50) NOT NULL);
 
 CREATE TABLE Supplier
 	(IdSupplier int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdSupplierType int NOT NULL,
 	SupplierName nvarchar(100) NOT NULL,
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
-	Description nvarchar(100) NOT NULL);
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	NIP nvarchar(10) NOT NULL,
+	KRS nvarchar(10) NOT NULL,
+	SupplierDescription nvarchar(100) NULL);
 
 CREATE TABLE SemiFinishedOrder
 	(IdSfOrder int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -166,16 +165,16 @@ CREATE TABLE Outsourcing
 	(IdOutsourcing int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdOutsourcingType int NOT NULL,
 	CompanyName nvarchar(100) NOT NULL, 
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
-	Description nvarchar(100) NOT NULL);
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	NIP nvarchar(10) NOT NULL,
+	KRS nvarchar(10) NOT NULL,
+	OutsourcingDescription nvarchar(100) NULL);
 
 CREATE TABLE OutsourcingCommitment
 	(IdCommitment int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -622,49 +621,6 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment;
 
-
-/*====SALES DEPARTMENT===*/
-
-GO 
-CREATE VIEW vSupplierParts
-AS
-SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
-FROM Supplier
-JOIN SupplierType
-ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Części');
-
-GO
-CREATE VIEW vSupplierSemis
-AS
-SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
-FROM Supplier
-JOIN SupplierType
-ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Półfabrykaty');
-
-GO
-CREATE VIEW vOutsourcingWithType
-AS
-SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
-FROM Outsourcing
-JOIN OutsourcingType
-ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
-
-GO
-CREATE VIEW vIndividualCustomer
-AS
-SELECT *
-FROM Customer
-WHERE Pesel !=0; 
-
-GO
-CREATE VIEW vCompany
-AS
-SELECT *
-FROM Customer
-WHERE NIP !=0 AND KRS !=0 ; 
-
 GO
 
 CREATE VIEW vTechnicalProductDataPerProcess
@@ -708,6 +664,56 @@ WHERE IdProces != IdProcess
 
 GO
 
+CREATE VIEW SafetyControlHistoryView 
+AS
+SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
+FROM SafetyControl
+JOIN Employee
+ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
+
+/*====SALES DEPARTMENT START===*/
+
+GO 
+CREATE VIEW vSupplierParts
+AS
+SELECT IdSupplier, SupplierNameType, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, SupplierDescription
+FROM Supplier
+JOIN SupplierType
+ON Supplier.IdSupplierType = SupplierType.IdSupplierType
+WHERE (SupplierNameType = 'Części');
+
+GO
+CREATE VIEW vSupplierSemis
+AS
+SELECT IdSupplier, SupplierNameType, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, SupplierDescription 
+FROM Supplier
+JOIN SupplierType
+ON Supplier.IdSupplierType = SupplierType.IdSupplierType
+WHERE (SupplierNameType = 'Półfabrykaty');
+
+GO
+CREATE VIEW vOutsourcingWithType
+AS
+SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, OutsourcingDescription
+FROM Outsourcing
+JOIN OutsourcingType
+ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
+
+GO
+CREATE VIEW vIndividualCustomer
+AS
+SELECT *
+FROM Customer
+WHERE Pesel !=0; 
+
+GO
+CREATE VIEW vCompany
+AS
+SELECT *
+FROM Customer
+WHERE NIP !=0 AND KRS !=0 ; 
+
+GO
 CREATE VIEW vOutputMagazine
 AS
 SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
@@ -715,14 +721,12 @@ FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerPro
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
-
 CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
 
 GO
-
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -735,7 +739,6 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
-
 CREATE VIEW vOrderDetail 
 AS
 SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
@@ -746,6 +749,9 @@ JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
+
+/*====SALES DEPARTMENT END===*/
+
 GO
 /*====PRODUCTION===*/
 CREATE VIEW vUnhandledOrderDetails
