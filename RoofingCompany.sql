@@ -643,18 +643,6 @@ where EntranceControl.ControlStatus = 1
 group by SemiFinished.SfCode;
 
 go
-create view ViewNumberPositiveAndNegativeEntranceControl as
-select pos.SfCode as [Kod_półfabrykatu], 
-iif(pos.Positive is null, 0, pos.Positive) as [Pozytywne], 
-iif(neg.Negative is null, 0, neg.Negative) as [Negatywne]
-from 
-	ViewNumberPositiveEntranceControl as pos
-full outer join
-	ViewNumberNegativeEntranceControl as neg
-on 
-	pos.SfCode = neg.SfCode;
-
-go
 create view ViewEntranceControlResultsBySfCode as
 select SemiFinished.SfCode, EntranceControl.RealThickness, EntranceControl.RealWidth, EntranceControl.RealWeight
 from
