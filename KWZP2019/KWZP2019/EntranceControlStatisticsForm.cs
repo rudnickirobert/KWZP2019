@@ -59,12 +59,14 @@ namespace KWZP2019
             datePickerDateFrom.Value = DateTime.Now.AddMonths(-1);
             datePickerDateTo.Value = DateTime.Now;
 
-            var semiFinishedList = db.SemiFinisheds
-                .Select(semiFinished => new
-                {
-                    Id = semiFinished.IdSemiFinished,
-                    Kod_Produktu = semiFinished.SfCode
-                }).ToList();
+            List<string> semiFinishedList = new List<string>();
+
+            List<SemiFinished> semiFinisheds = db.SemiFinisheds.ToList();
+
+            foreach(SemiFinished semiFinished in semiFinisheds)
+            {
+                semiFinishedList.Add(semiFinished.SfCode);
+            }
 
             dataGridViewSemiFinished.DataSource = semiFinishedList;
         }

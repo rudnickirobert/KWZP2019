@@ -667,6 +667,19 @@ join
 	SfOrderDetail
 on
 	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail;
+
+create view ViewMinAndMaxEntranceControlDate as
+select SemiFinished.SfCode, min(EntranceControl.ControlDate) as [MinControlDate], max(EntranceControl.ControlDate) as[MaxControlDate]
+from
+	EntranceControl
+join
+	SfOrderDetail
+on
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
+join
+	SemiFinished
+on SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+group by SemiFinished.SfCode;
 -- ===BB===
 
 go

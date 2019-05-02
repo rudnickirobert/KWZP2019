@@ -672,6 +672,31 @@ warning 6002: The table/view 'RoofingCompany.dbo.vDevotionsInMeasuremntsPerProce
           <Property Name="WidthAcceptableDeviation" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.ViewEntranceControlHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewEntranceControlHistory">
+          <Key>
+            <PropertyRef Name="IdSfOrder" />
+            <PropertyRef Name="IdSemiFinished" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="RealThickness" />
+            <PropertyRef Name="RealWidth" />
+            <PropertyRef Name="RealWeight" />
+            <PropertyRef Name="RealColor" />
+            <PropertyRef Name="ChemicalComposition" />
+          </Key>
+          <Property Name="IdSfOrder" Type="int" Nullable="false" />
+          <Property Name="IdSemiFinished" Type="int" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="RealThickness" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+          <Property Name="RealWidth" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="RealWeight" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="RealColor" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="ControlStatus" Type="bit" />
+          <Property Name="ChemicalComposition" Type="bit" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewEntranceControlResultsBySfCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewEntranceControlResultsBySfCode">
           <Key>
@@ -684,6 +709,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewEntranceControlResultsBySfC
           <Property Name="RealThickness" Type="decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="RealWidth" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="RealWeight" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.ViewMinAndMaxEntranceControlDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewMinAndMaxEntranceControlDate">
+          <Key>
+            <PropertyRef Name="SfCode" />
+          </Key>
+          <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MinControlDate" Type="datetime" />
+          <Property Name="MaxControlDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewNumberNegativeEntranceControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1818,6 +1853,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vDevotionsInMeasuremntsPerProcess].[WidthAcceptableDeviation] AS [WidthAcceptableDeviation]
     FROM [dbo].[vDevotionsInMeasuremntsPerProcess] AS [vDevotionsInMeasuremntsPerProcess]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ViewEntranceControlHistory" EntityType="Self.ViewEntranceControlHistory" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewEntranceControlHistory].[IdSfOrder] AS [IdSfOrder], 
+    [ViewEntranceControlHistory].[IdSemiFinished] AS [IdSemiFinished], 
+    [ViewEntranceControlHistory].[IdEmployee] AS [IdEmployee], 
+    [ViewEntranceControlHistory].[RealThickness] AS [RealThickness], 
+    [ViewEntranceControlHistory].[RealWidth] AS [RealWidth], 
+    [ViewEntranceControlHistory].[RealWeight] AS [RealWeight], 
+    [ViewEntranceControlHistory].[RealColor] AS [RealColor], 
+    [ViewEntranceControlHistory].[Quantity] AS [Quantity], 
+    [ViewEntranceControlHistory].[ControlStatus] AS [ControlStatus], 
+    [ViewEntranceControlHistory].[ChemicalComposition] AS [ChemicalComposition], 
+    [ViewEntranceControlHistory].[Comments] AS [Comments]
+    FROM [dbo].[ViewEntranceControlHistory] AS [ViewEntranceControlHistory]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewEntranceControlResultsBySfCode" EntityType="Self.ViewEntranceControlResultsBySfCode" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ViewEntranceControlResultsBySfCode].[SfCode] AS [SfCode], 
@@ -1825,6 +1875,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [ViewEntranceControlResultsBySfCode].[RealWidth] AS [RealWidth], 
     [ViewEntranceControlResultsBySfCode].[RealWeight] AS [RealWeight]
     FROM [dbo].[ViewEntranceControlResultsBySfCode] AS [ViewEntranceControlResultsBySfCode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewMinAndMaxEntranceControlDate" EntityType="Self.ViewMinAndMaxEntranceControlDate" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewMinAndMaxEntranceControlDate].[SfCode] AS [SfCode], 
+    [ViewMinAndMaxEntranceControlDate].[MinControlDate] AS [MinControlDate], 
+    [ViewMinAndMaxEntranceControlDate].[MaxControlDate] AS [MaxControlDate]
+    FROM [dbo].[ViewMinAndMaxEntranceControlDate] AS [ViewMinAndMaxEntranceControlDate]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewNumberNegativeEntranceControl" EntityType="Self.ViewNumberNegativeEntranceControl" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2581,6 +2638,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="ViewNumberNegativeEntranceControls" EntityType="RoofingCompanyModel.ViewNumberNegativeEntranceControl" />
           <EntitySet Name="ViewNumberPositiveEntranceControls" EntityType="RoofingCompanyModel.ViewNumberPositiveEntranceControl" />
           <EntitySet Name="ViewSemiFinishedOrders" EntityType="RoofingCompanyModel.ViewSemiFinishedOrder" />
+          <EntitySet Name="ViewEntranceControlHistories" EntityType="RoofingCompanyModel.ViewEntranceControlHistory" />
+          <EntitySet Name="ViewMinAndMaxEntranceControlDates" EntityType="RoofingCompanyModel.ViewMinAndMaxEntranceControlDate" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -4381,6 +4440,37 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="Dostawca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Dostarczono" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="ViewEntranceControlHistory">
+          <Key>
+            <PropertyRef Name="IdSfOrder" />
+            <PropertyRef Name="IdSemiFinished" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="RealThickness" />
+            <PropertyRef Name="RealWidth" />
+            <PropertyRef Name="RealWeight" />
+            <PropertyRef Name="RealColor" />
+            <PropertyRef Name="ChemicalComposition" />
+          </Key>
+          <Property Name="IdSfOrder" Type="Int32" Nullable="false" />
+          <Property Name="IdSemiFinished" Type="Int32" Nullable="false" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="RealThickness" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="RealWidth" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="RealWeight" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="RealColor" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="ControlStatus" Type="Boolean" />
+          <Property Name="ChemicalComposition" Type="Boolean" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewMinAndMaxEntranceControlDate">
+          <Key>
+            <PropertyRef Name="SfCode" />
+          </Key>
+          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MinControlDate" Type="DateTime" Precision="3" />
+          <Property Name="MaxControlDate" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5298,6 +5388,32 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="Dostawca" ColumnName="Dostawca" />
                 <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod_półfabrykatu" />
                 <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr_zamówienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewEntranceControlHistories">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewEntranceControlHistory">
+              <MappingFragment StoreEntitySet="ViewEntranceControlHistory">
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
+                <ScalarProperty Name="ControlStatus" ColumnName="ControlStatus" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RealColor" ColumnName="RealColor" />
+                <ScalarProperty Name="RealWeight" ColumnName="RealWeight" />
+                <ScalarProperty Name="RealWidth" ColumnName="RealWidth" />
+                <ScalarProperty Name="RealThickness" ColumnName="RealThickness" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdSemiFinished" ColumnName="IdSemiFinished" />
+                <ScalarProperty Name="IdSfOrder" ColumnName="IdSfOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewMinAndMaxEntranceControlDates">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewMinAndMaxEntranceControlDate">
+              <MappingFragment StoreEntitySet="ViewMinAndMaxEntranceControlDate">
+                <ScalarProperty Name="MaxControlDate" ColumnName="MaxControlDate" />
+                <ScalarProperty Name="MinControlDate" ColumnName="MinControlDate" />
+                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

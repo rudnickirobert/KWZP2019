@@ -565,6 +565,9 @@
     <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewEntranceControlHistory.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewEntranceControlResultsBySfCode.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>

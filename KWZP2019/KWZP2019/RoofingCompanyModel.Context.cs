@@ -105,5 +105,7 @@ namespace KWZP2019
         public virtual DbSet<ViewNumberNegativeEntranceControl> ViewNumberNegativeEntranceControls { get; set; }
         public virtual DbSet<ViewNumberPositiveEntranceControl> ViewNumberPositiveEntranceControls { get; set; }
         public virtual DbSet<ViewSemiFinishedOrder> ViewSemiFinishedOrders { get; set; }
+        public virtual DbSet<ViewEntranceControlHistory> ViewEntranceControlHistories { get; set; }
+        public virtual DbSet<ViewMinAndMaxEntranceControlDate> ViewMinAndMaxEntranceControlDates { get; set; }
     }
 }

@@ -299,24 +299,7 @@ namespace KWZP2019
         {
             // Changed text boxes style depending on if selected control exist in database and return true if exist and false if not
             // var because it's anonymouse type
-            var selectedControl = db.EntranceControls
-                .Join(db.SfOrderDetails,
-                ec => ec.IdSfDetail,
-                order => order.IdSfDetail,
-                (ec, order) => new
-                {
-                    order.IdSfOrder,
-                    order.IdSemiFinished,
-                    ec.IdEmployee,
-                    ec.RealThickness,
-                    ec.RealWidth,
-                    ec.RealWeight,
-                    ec.RealColor,
-                    ec.Quantity,
-                    ec.ControlStatus,
-                    ec.ChemicalComposition,
-                    ec.Comments
-                })
+            ViewEntranceControlHistory selectedControl = db.ViewEntranceControlHistories
                 .Where(check => 
                 check.IdSfOrder == selectedOrderId && 
                 check.IdSemiFinished == selectedSfId)

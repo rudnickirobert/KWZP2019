@@ -612,150 +612,150 @@ insert into SfOrderDetail values(1, 5, 8);
 insert into SfOrderDetail values(2, 5, 7);
 insert into SfOrderDetail values(2, 3, 7);
 insert into SfOrderDetail values(2, 4, 3);
-insert into SfOrderDetail values(3, 1, 10);
+insert into SfOrderDetail values(3, 1, 10);--5
 insert into SfOrderDetail values(3, 1, 9);
 insert into SfOrderDetail values(3, 4, 3);
 insert into SfOrderDetail values(4, 4, 3);
 insert into SfOrderDetail values(5, 5, 7);
-insert into SfOrderDetail values(5, 3, 7);
+insert into SfOrderDetail values(5, 3, 7);--10
 insert into SfOrderDetail values(5, 4, 9);
 insert into SfOrderDetail values(6, 4, 3);
 insert into SfOrderDetail values(6, 3, 3);
 insert into SfOrderDetail values(7, 1, 9);
-insert into SfOrderDetail values(8, 5, 8);
+insert into SfOrderDetail values(8, 5, 8);--15
 insert into SfOrderDetail values(9, 3, 4);
 insert into SfOrderDetail values(9, 2, 6);
 insert into SfOrderDetail values(10, 3, 10);
 insert into SfOrderDetail values(10, 4, 8);
-insert into SfOrderDetail values(10, 1, 5);
+insert into SfOrderDetail values(10, 1, 5);--20
 insert into SfOrderDetail values(11, 3, 8);
 insert into SfOrderDetail values(12, 5, 10);
 insert into SfOrderDetail values(13, 1, 3);
 insert into SfOrderDetail values(14, 3, 7);
-insert into SfOrderDetail values(14, 5, 7);
+insert into SfOrderDetail values(14, 5, 7);--25
 insert into SfOrderDetail values(14, 5, 8);
 insert into SfOrderDetail values(15, 5, 6);
 insert into SfOrderDetail values(16, 3, 8);
 insert into SfOrderDetail values(16, 4, 7);
-insert into SfOrderDetail values(17, 3, 8);
+insert into SfOrderDetail values(17, 3, 8);--30
 insert into SfOrderDetail values(17, 1, 5);
 insert into SfOrderDetail values(17, 3, 6);
 insert into SfOrderDetail values(18, 3, 6);
 insert into SfOrderDetail values(19, 5, 6);
-insert into SfOrderDetail values(19, 3, 4);
+insert into SfOrderDetail values(19, 3, 4);--35
 insert into SfOrderDetail values(19, 4, 5);
 insert into SfOrderDetail values(20, 4, 9);
 insert into SfOrderDetail values(20, 2, 9);
 insert into SfOrderDetail values(20, 3, 6);
-insert into SfOrderDetail values(21, 2, 4);
+insert into SfOrderDetail values(21, 2, 4);--40
 insert into SfOrderDetail values(21, 2, 6);
 insert into SfOrderDetail values(21, 5, 9);
 insert into SfOrderDetail values(22, 2, 9);
 insert into SfOrderDetail values(22, 5, 5);
-insert into SfOrderDetail values(22, 3, 10);
+insert into SfOrderDetail values(22, 3, 10);--45
 insert into SfOrderDetail values(23, 3, 4);
 insert into SfOrderDetail values(23, 4, 9);
 insert into SfOrderDetail values(23, 2, 6);
 insert into SfOrderDetail values(24, 1, 8);
-insert into SfOrderDetail values(24, 5, 7);
+insert into SfOrderDetail values(24, 5, 7);--50
 insert into SfOrderDetail values(25, 4, 10);
 insert into SfOrderDetail values(26, 4, 6);
 insert into SfOrderDetail values(27, 4, 10);
 insert into SfOrderDetail values(27, 1, 4);
-insert into SfOrderDetail values(27, 2, 6);
+insert into SfOrderDetail values(27, 2, 6);--55
 insert into SfOrderDetail values(28, 5, 5);
 insert into SfOrderDetail values(28, 4, 10);
 insert into SfOrderDetail values(28, 3, 10);
 insert into SfOrderDetail values(29, 2, 10);
-insert into SfOrderDetail values(30, 2, 4);
+insert into SfOrderDetail values(30, 2, 4);--60
 insert into SfOrderDetail values(30, 1, 7);
 insert into SfOrderDetail values(31, 3, 10);
 insert into SfOrderDetail values(31, 5, 10);
 insert into SfOrderDetail values(31, 1, 6);
-insert into SfOrderDetail values(32, 1, 4);
+insert into SfOrderDetail values(32, 1, 4);--65
 insert into SfOrderDetail values(32, 4, 10);
 insert into SfOrderDetail values(33, 5, 3);
 insert into SfOrderDetail values(33, 4, 4);
 insert into SfOrderDetail values(34, 5, 4);
-insert into SfOrderDetail values(34, 3, 4);
+insert into SfOrderDetail values(34, 3, 4);--70
 insert into SfOrderDetail values(35, 5, 7);
 insert into SfOrderDetail values(35, 4, 9);
 insert into SfOrderDetail values(35, 5, 7);
 insert into SfOrderDetail values(36, 3, 10);
-insert into SfOrderDetail values(36, 1, 5);
+insert into SfOrderDetail values(36, 1, 5);--75
 insert into SfOrderDetail values(36, 5, 4);
 insert into SfOrderDetail values(37, 1, 5);
 insert into SfOrderDetail values(37, 5, 8);
 insert into SfOrderDetail values(38, 4, 10);
-insert into SfOrderDetail values(38, 3, 4);
+insert into SfOrderDetail values(38, 3, 4);--80
 insert into SfOrderDetail values(39, 3, 10);
 insert into SfOrderDetail values(39, 5, 10);
 insert into SfOrderDetail values(39, 3, 8);
 insert into SfOrderDetail values(40, 1, 6);
-insert into SfOrderDetail values(40, 2, 8);
+insert into SfOrderDetail values(40, 2, 8);--85
 insert into SfOrderDetail values(41, 5, 4);
 insert into SfOrderDetail values(42, 3, 10);
 insert into SfOrderDetail values(43, 5, 7);
 insert into SfOrderDetail values(44, 3, 3);
-insert into SfOrderDetail values(45, 4, 3);
+insert into SfOrderDetail values(45, 4, 3);--90
 insert into SfOrderDetail values(46, 5, 9);
 insert into SfOrderDetail values(47, 2, 9);
 insert into SfOrderDetail values(48, 5, 3);
 insert into SfOrderDetail values(48, 2, 3);
-insert into SfOrderDetail values(49, 1, 5);
+insert into SfOrderDetail values(49, 1, 5);--95
 insert into SfOrderDetail values(49, 4, 8);
 insert into SfOrderDetail values(49, 3, 10);
 insert into SfOrderDetail values(50, 2, 7);
 
 --EntranceControl
 insert into EntranceControl (IdSfDetail, IdEmployee, ControlDate, ControlStatus, Comments, Quantity, RealThickness, RealWidth, RealWeight, RealColor, ChemicalComposition) values
-		(1, 8, '2019-02-25 16:10', 1, 'Brak wad', 8, 1.22, 1005.68, 1476.1, 'brąz', 1),
-		(2, 7, '2019-02-22 11:40', 1, 'Brak wad', 7, 1.31, 945.12, 1469.58, 'brąz', 1),
-		(3, 7, '2019-02-22 11:40', 1, 'Brak wad', 7, 0.75, 1033.02, 740.45, 'cegła', 1),
-		(4, 8, '2019-02-22 11:40', 1, 'Brak wad', 3, 0.98, 1034.83, 1016.03, 'wiśnia', 1),
+		(1, 8, '2019-02-25 16:10', 0, 'Zła masa', 8, 1.22, 1005.68, 1476.1, 'brąz', 1),
+		(2, 7, '2019-02-22 11:40', 0, 'Zła szerokość', 7, 1.31, 945.12, 1469.58, 'brąz', 1),
+		(3, 7, '2019-02-22 11:40', 0, 'Zła grubość', 7, 0.75, 1033.02, 740.45, 'cegła', 1),
+		(4, 8, '2019-02-22 11:40', 0, 'Zła masa', 3, 0.98, 1034.83, 1016.03, 'wiśnia', 1),
 		(5, 8, '2019-02-23 10:50', 1, 'Brak wad', 10, 0.48, 977.89, 588.9, 'cegła', 1),
 		(6, 7, '2019-02-23 10:50', 1, 'Brak wad', 9, 0.52, 982.52, 578.33, 'cegła', 1),
 		(7, 7, '2019-02-23 10:50', 1, 'Brak wad', 3, 0.99, 1008.65, 929.9, 'wiśnia', 1),
-		(8, 8, '2019-02-24 16:20', 1, 'Brak wad', 3, 1.01, 941.64, 937.8, 'wiśnia', 1),
+		(8, 8, '2019-02-24 16:20', 0, 'Zła szerokość', 3, 1.01, 941.64, 937.8, 'wiśnia', 1),
 		(9, 7, '2019-03-01 08:10', 1, 'Brak wad', 7, 1.2, 1044.12, 1383.46, 'brąz', 1),
-		(10, 7, '2019-03-01 08:10', 1, 'Brak wad', 7, 0.71, 1053.29, 707.24, 'cegła', 1),
+		(10, 7, '2019-03-01 08:10', 0, 'Zła szerokość i masa', 7, 0.71, 1053.29, 707.24, 'cegła', 1),
 		(11, 8, '2019-03-01 08:10', 1, 'Brak wad', 9, 0.97, 1004.72, 959.66, 'wiśnia', 1),
-		(12, 8, '2019-03-03 15:50', 1, 'Brak wad', 3, 0.93, 1060.3, 940.93, 'wiśnia', 1),
+		(12, 8, '2019-03-03 15:50', 0, 'Zła grubość i szerokość', 3, 0.93, 1060.3, 940.93, 'wiśnia', 1),
 		(13, 7, '2019-03-03 15:50', 1, 'Brak wad', 3, 0.7, 956.55, 745.29, 'cegła', 1),
 		(14, 8, '2019-03-08 10:20', 1, 'Brak wad', 9, 0.48, 985.9, 562.35, 'cegła', 1),
-		(15, 7, '2019-03-05 08:40', 1, 'Brak wad', 8, 1.34, 975.18, 1343.0, 'brąz', 1),
+		(15, 7, '2019-03-05 08:40', 0, 'Zła grubość', 8, 1.34, 975.18, 1343.0, 'brąz', 1),
 		(16, 7, '2019-03-05 08:40', 1, 'Brak wad', 4, 0.72, 1005.07, 736.68, 'cegła', 1),
-		(17, 7, '2019-03-05 08:40', 1, 'Brak wad', 6, 0.47, 958.29, 586.26, 'grafit', 1),
+		(17, 7, '2019-03-05 08:40', 0, 'Zła grubość', 6, 0.47, 958.29, 586.26, 'grafit', 1),
 		(18, 7, '2019-03-08 09:30', 1, 'Brak wad', 10, 0.73, 1031.05, 747.89, 'cegła', 1),
 		(19, 8, '2019-03-08 09:30', 1, 'Brak wad', 8, 0.99, 980.95, 965.49, 'wiśnia', 1),
-		(20, 8, '2019-03-08 09:30', 1, 'Brak wad', 5, 0.47, 1010.37, 585.26, 'cegła', 1),
-		(21, 8, '2019-03-12 13:20', 1, 'Brak wad', 8, 0.69, 945.53, 759.13, 'cegła', 1),
-		(22, 7, '2019-03-11 11:50', 1, 'Brak wad', 10, 1.33, 950.78, 1448.12, 'brąz', 1),
+		(20, 8, '2019-03-08 09:30', 0, 'Zła grubość', 5, 0.47, 1010.37, 585.26, 'cegła', 1),
+		(21, 8, '2019-03-12 13:20', 0, 'Zła szerokość', 8, 0.69, 945.53, 759.13, 'cegła', 1),
+		(22, 7, '2019-03-11 11:50', 0, 'Zła grubość', 10, 1.33, 950.78, 1448.12, 'brąz', 1),
 		(23, 8, '2019-03-08 10:20', 1, 'Brak wad', 3, 0.5, 1016.74, 555.22, 'cegła', 1),
-		(24, 8, '2019-03-16 09:30', 1, 'Brak wad', 7, 0.7, 1060.16, 704.8, 'cegła', 1),
+		(24, 8, '2019-03-16 09:30', 0, 'Zła szerokość i masa', 7, 0.7, 1060.16, 704.8, 'cegła', 1),
 		(25, 8, '2019-03-16 09:30', 1, 'Brak wad', 7, 1.2, 994.53, 1340.64, 'brąz', 1),
 		(26, 8, '2019-03-16 09:30', 1, 'Brak wad', 8, 1.26, 1066.32, 1445.42, 'brąz', 1),
-		(27, 7, '2019-03-18 12:20', 1, 'Brak wad', 6, 1.32, 972.67, 1413.31, 'brąz', 1),
+		(27, 7, '2019-03-18 12:20', 0, 'Zła grubość', 6, 1.32, 972.67, 1413.31, 'brąz', 1),
 		(28, 8, '2019-03-15 08:00', 1, 'Brak wad', 8, 0.68, 1033.39, 716.77, 'cegła', 1),
 		(29, 8, '2019-03-15 08:00', 1, 'Brak wad', 7, 1.01, 995.41, 975.86, 'wiśnia', 1),
-		(30, 7, '2019-03-16 14:30', 1, 'Brak wad', 8, 0.75, 979.03, 699.67, 'cegła', 1),
-		(31, 8, '2019-03-16 14:30', 1, 'Brak wad', 5, 0.53, 969.74, 607.06, 'cegła', 1),
-		(32, 8, '2019-03-16 14:30', 1, 'Brak wad', 6, 0.66, 1057.57, 756.52, 'cegła', 1),
+		(30, 7, '2019-03-16 14:30', 0, 'Zła grubość i masa', 8, 0.75, 979.03, 699.67, 'cegła', 1),
+		(31, 8, '2019-03-16 14:30', 0, 'Zła grubość', 5, 0.53, 969.74, 607.06, 'cegła', 1),
+		(32, 8, '2019-03-16 14:30', 0, 'Zła grubość i masa', 6, 0.66, 1057.57, 756.52, 'cegła', 1),
 		(33, 8, '2019-03-23 12:10', 1, 'Brak wad', 6, 0.72, 1005.93, 779.73, 'cegła', 1),
-		(34, 8, '2019-03-18 14:00', 1, 'Brak wad', 6, 1.2, 972.37, 1321.92, 'brąz', 1),
+		(34, 8, '2019-03-18 14:00', 0, 'Zła masa', 6, 1.2, 972.37, 1321.92, 'brąz', 1),
 		(35, 7, '2019-03-18 14:00', 1, 'Brak wad', 4, 0.72, 1022.78, 758.95, 'cegła', 1),
-		(36, 8, '2019-03-18 14:00', 1, 'Brak wad', 5, 1.01, 939.86, 936.75, 'wiśnia', 1),
-		(37, 7, '2019-03-22 15:30', 1, 'Brak wad', 9, 0.99, 942.89, 911.86, 'wiśnia', 1),
-		(38, 8, '2019-03-22 15:30', 1, 'Brak wad', 9, 0.48, 944.58, 583.09, 'grafit', 1),
-		(39, 7, '2019-03-22 15:30', 1, 'Brak wad', 6, 0.65, 938.57, 708.58, 'cegła', 1),
-		(40, 8, '2019-03-23 11:10', 1, 'Brak wad', 4, 0.48, 935.47, 545.69, 'grafit', 1),
+		(36, 8, '2019-03-18 14:00', 0, 'Zła szerokość', 5, 1.01, 939.86, 936.75, 'wiśnia', 1),
+		(37, 7, '2019-03-22 15:30', 0, 'Zła szerokość', 9, 0.99, 942.89, 911.86, 'wiśnia', 1),
+		(38, 8, '2019-03-22 15:30', 0, 'Zła szerokość', 9, 0.48, 944.58, 583.09, 'grafit', 1),
+		(39, 7, '2019-03-22 15:30', 0, 'Zła grubość, szerokość i masa', 6, 0.65, 938.57, 708.58, 'cegła', 1),
+		(40, 8, '2019-03-23 11:10', 0, 'Zła szerokość i masa', 4, 0.48, 935.47, 545.69, 'grafit', 1),
 		(41, 7, '2019-03-23 11:10', 1, 'Brak wad', 6, 0.51, 1060.3, 548.56, 'grafit', 1),
-		(42, 7, '2019-03-23 11:10', 1, 'Brak wad', 9, 1.27, 1056.36, 1392.3, 'brąz', 1),
+		(42, 7, '2019-03-23 11:10', 0, 'Zła szerokość', 9, 1.27, 1056.36, 1392.3, 'brąz', 1),
 		(43, 7, '2019-03-30 08:00', 1, 'Brak wad', 9, 0.51, 984.02, 552.09, 'grafit', 1),
 		(44, 7, '2019-03-30 08:00', 1, 'Brak wad', 5, 1.18, 1036.33, 1451.39, 'brąz', 1),
 		(45, 8, '2019-03-30 08:00', 1, 'Brak wad', 10, 0.69, 1038.09, 781.46, 'cegła', 1),
 		(46, 8, '2019-03-24 10:50', 1, 'Brak wad', 4, 0.7, 969.59, 732.2, 'cegła', 1),
-		(47, 7, '2019-03-24 10:50', 1, 'Brak wad', 9, 1.06, 1015.83, 883.8, 'wiśnia', 1),
+		(47, 7, '2019-03-24 10:50', 0, 'Zła grubość i masa', 9, 1.06, 1015.83, 883.8, 'wiśnia', 1),
 		(48, 7, '2019-03-24 10:50', 1, 'Brak wad', 6, 0.49, 1019.59, 553.04, 'grafit', 1),
 		(49, 8, '2019-04-01 13:10', 1, 'Brak wad', 8, 0.51, 1031.54, 596.88, 'cegła', 1),
 		(50, 7, '2019-04-01 13:10', 1, 'Brak wad', 7, 1.19, 1033.83, 1381.56, 'brąz', 1),
