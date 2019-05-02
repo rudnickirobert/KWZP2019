@@ -98,5 +98,6 @@ namespace KWZP2019
                 db.Customers.Add(newCustomer);
             }
         }
+
     }
 }

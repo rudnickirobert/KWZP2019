@@ -113,5 +113,15 @@ namespace KWZP2019
             comboBoxOutsourcingType.Items.Add(typ);
             comboBoxOutsourcingType.EndUpdate();
         }
+
+        private void emailTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cityLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
