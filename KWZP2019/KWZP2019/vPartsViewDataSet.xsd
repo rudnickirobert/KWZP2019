@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="vPartsViewDataSet" targetNamespace="http://tempuri.org/vPartsViewDataSet.xsd" xmlns:mstns="http://tempuri.org/vPartsViewDataSet.xsd" xmlns="http://tempuri.org/vPartsViewDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=FABRI_LAPTOP\SQLEXPRESS;Initial Catalog=RoofingCompany;Persist Security Info=True;User ID=sa" IsAppSettingsProperty="false" Modifier="Assembly" Name="fabri_laptop\sqlexpress.RoofingCompany.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vPartsViewTableAdapter" GeneratorDataComponentClassName="vPartsViewTableAdapter" Name="vPartsView" UserDataComponentName="vPartsViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="fabri_laptop\sqlexpress.RoofingCompany.dbo" DbObjectName="RoofingCompany.dbo.vPartsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PartName, PartType, Producer, CatalogPartNr, QuantityWarehouse, UnitName FROM dbo.vPartsView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PartName" DataSetColumn="PartName" />
+              <Mapping SourceColumn="PartType" DataSetColumn="PartType" />
+              <Mapping SourceColumn="Producer" DataSetColumn="Producer" />
+              <Mapping SourceColumn="CatalogPartNr" DataSetColumn="CatalogPartNr" />
+              <Mapping SourceColumn="QuantityWarehouse" DataSetColumn="QuantityWarehouse" />
+              <Mapping SourceColumn="UnitName" DataSetColumn="UnitName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="vPartsViewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="vPartsViewDataSet" msprop:Generator_UserDSName="vPartsViewDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vPartsView" msprop:Generator_TableClassName="vPartsViewDataTable" msprop:Generator_TableVarName="tablevPartsView" msprop:Generator_TablePropName="vPartsView" msprop:Generator_RowDeletingName="vPartsViewRowDeleting" msprop:Generator_RowChangingName="vPartsViewRowChanging" msprop:Generator_RowEvHandlerName="vPartsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="vPartsViewRowDeleted" msprop:Generator_UserTableName="vPartsView" msprop:Generator_RowChangedName="vPartsViewRowChanged" msprop:Generator_RowEvArgName="vPartsViewRowChangeEvent" msprop:Generator_RowClassName="vPartsViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PartName" msprop:Generator_ColumnVarNameInTable="columnPartName" msprop:Generator_ColumnPropNameInRow="PartName" msprop:Generator_ColumnPropNameInTable="PartNameColumn" msprop:Generator_UserColumnName="PartName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PartType" msprop:Generator_ColumnVarNameInTable="columnPartType" msprop:Generator_ColumnPropNameInRow="PartType" msprop:Generator_ColumnPropNameInTable="PartTypeColumn" msprop:Generator_UserColumnName="PartType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Producer" msprop:Generator_ColumnVarNameInTable="columnProducer" msprop:Generator_ColumnPropNameInRow="Producer" msprop:Generator_ColumnPropNameInTable="ProducerColumn" msprop:Generator_UserColumnName="Producer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CatalogPartNr" msprop:Generator_ColumnVarNameInTable="columnCatalogPartNr" msprop:Generator_ColumnPropNameInRow="CatalogPartNr" msprop:Generator_ColumnPropNameInTable="CatalogPartNrColumn" msprop:Generator_UserColumnName="CatalogPartNr" type="xs:int" />
+              <xs:element name="QuantityWarehouse" msprop:Generator_ColumnVarNameInTable="columnQuantityWarehouse" msprop:Generator_ColumnPropNameInRow="QuantityWarehouse" msprop:Generator_ColumnPropNameInTable="QuantityWarehouseColumn" msprop:Generator_UserColumnName="QuantityWarehouse" type="xs:int" />
+              <xs:element name="UnitName" msprop:Generator_ColumnVarNameInTable="columnUnitName" msprop:Generator_ColumnPropNameInRow="UnitName" msprop:Generator_ColumnPropNameInTable="UnitNameColumn" msprop:Generator_UserColumnName="UnitName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

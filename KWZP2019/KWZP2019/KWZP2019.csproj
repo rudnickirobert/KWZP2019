@@ -356,8 +356,8 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductionProcess.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
       <SubType>Form</SubType>
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
@@ -478,8 +478,8 @@
       <DependentUpon>RoofingCompanyModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="RoofingCompanyModel.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RoofingCompanyModel.Designer.cs">
@@ -571,6 +571,9 @@
     <Compile Include="vInputMagazine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vMaintPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -579,6 +582,14 @@
     </Compile>
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPartsViewDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vPartsViewDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="vPredictedPriceForCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -792,6 +803,13 @@
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
+    <EntityDeploy Include="RoofingCompanyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RoofingCompanyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RoofingCompanyModel.edmx.diagram">
+      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
+    </None>
     <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -802,12 +820,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="RoofingCompanyModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RoofingCompanyModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="RoofingCompanyModel.edmx.diagram">
-      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
+    <None Include="vPartsViewDataSet.xsc">
+      <DependentUpon>vPartsViewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vPartsViewDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vPartsViewDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vPartsViewDataSet.xss">
+      <DependentUpon>vPartsViewDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -843,10 +865,15 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
+      <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="RoofingCompanyModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -854,9 +881,5 @@
       <LastGenOutput>RoofingCompanyModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
