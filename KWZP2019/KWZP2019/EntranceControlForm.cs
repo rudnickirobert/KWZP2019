@@ -20,8 +20,9 @@ namespace KWZP2019
         private bool doControlExist;
         private bool doResultsChecked;
         private bool wholeControlStatus;
-        private String selectedOrderId;
+        private Nullable<int> selectedOrderId;
         private int selectedSfId;
+        DataGridViewRow selectedRow;
 
         // ==================================================
 
@@ -108,9 +109,7 @@ namespace KWZP2019
 
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
-			// Polish names only for displaying into dataGridView in form
-            // var because it's an anonymouse type
-			var orders = db.ViewSemiFinishedOrders
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
 				.OrderBy(orderBy => orderBy.Dostarczono)
 				.ToList();
 
@@ -121,28 +120,35 @@ namespace KWZP2019
         private void DataGVEntranceControl_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 			
-            DataGridViewRow selectedRow = dataGridViewEntranceControl.SelectedRows[0];
-            selectedOrderId = selectedRow.Cells["Nr_zamówienia"].Value.ToString();
-            lblOrderIdShow.Text = selectedOrderId;
+            selectedRow = dataGridViewEntranceControl.SelectedRows[0];
+            selectedOrderId = (int)selectedRow.Cells["Nr_zamówienia"].Value;
+            lblOrderIdShow.Text = selectedOrderId.ToString();
 			String selectedSfCode = selectedRow.Cells["Kod_półfabrykatu"].Value.ToString();
 			lblSfIdShow.Text = selectedSfCode;
 			
 			SemiFinished sfBySelectedCode = db.SemiFinisheds.Where(check => check.SfCode == selectedSfCode).First();
 
             selectedSfId = sfBySelectedCode.IdSemiFinished;
-            
-            if (ChangeTextBoxesDependingOnExistedSelectedControl())
+
+            if ((DateTime)selectedRow.Cells["Dostarczono"].Value < DateTime.Now)
             {
-                this.doControlExist = true;
-                lblDelayTime.Text = "";
+                if (ChangeTextBoxesDependingOnExistedSelectedControl())
+                {
+                    this.doControlExist = true;
+                    lblDelayTime.Text = "";
+                }
+                else
+                {
+                    this.doResultsChecked = false;
+                    this.doResultsApproved = false;
+                    this.doControlExist = false;
+                    int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Dostarczono"].Value).TotalMinutes, 0);
+                    lblDelayTime.Text = minutesOfDelay > 0 ? $"{minutesOfDelay / 1440} dni, {(minutesOfDelay % 1440) / 60} godzin i {(minutesOfDelay % 1440) % 60} minut opóźnienia" : "";
+                }
             }
             else
             {
-                this.doResultsChecked = false;
-                this.doResultsApproved = false;
-                this.doControlExist = false;
-                int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Dostarczono"].Value).TotalMinutes, 0);
-                lblDelayTime.Text = $"{minutesOfDelay / 1440} dni, {(minutesOfDelay % 1440) / 60} godzin i {(minutesOfDelay % 1440) % 60} minut opóźnienia";
+                MessageBox.Show("Data dostarczenia jest wcześniejsza od chwili obecnej.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -237,10 +243,9 @@ namespace KWZP2019
             
             if(doResultsApproved)
             {
-                // var because it's anonymouse type
                 SfOrderDetail idSfDetail = db.SfOrderDetails
                     .Where(check =>
-                    check.IdSfOrder.ToString() == selectedOrderId
+                    check.IdSfOrder == selectedOrderId
                     && check.IdSemiFinished == selectedSfId).First();
 
 
@@ -313,7 +318,7 @@ namespace KWZP2019
                     ec.Comments
                 })
                 .Where(check => 
-                check.IdSfOrder.ToString() == selectedOrderId && 
+                check.IdSfOrder == selectedOrderId && 
                 check.IdSemiFinished == selectedSfId)
                 .FirstOrDefault();
 
@@ -468,7 +473,7 @@ namespace KWZP2019
                 {
                     SfOrderDetail quantitySfOrder = db.SfOrderDetails
                         .Where(check =>
-                        check.IdSfOrder.ToString() == selectedOrderId
+                        check.IdSfOrder == selectedOrderId
                         && check.IdSemiFinished == selectedSfId)
                         .FirstOrDefault();
 
@@ -507,9 +512,7 @@ namespace KWZP2019
 
         private void ShowControlsFromDate(DateTime selectedDate)
         {
-			// Polish names only for displaying into dataGridView in form
-            // var because it's an anonymouse type
-			var orders = db.ViewSemiFinishedOrders
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
 				.Where(check =>
 				check.Dostarczono.Year == selectedDate.Year
 				&& check.Dostarczono.Month == selectedDate.Month
@@ -524,9 +527,7 @@ namespace KWZP2019
 
         private void ShowControlsFromDate(int month, int year)
         {
-			// Polish names only for displaying into dataGridView in form
-            // var because it's an anonymouse type
-            var orders = db.ViewSemiFinishedOrders
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
 				.Where(check =>
 				check.Dostarczono.Year == year
 				&& check.Dostarczono.Month == month)
@@ -540,9 +541,7 @@ namespace KWZP2019
 
         private void ShowControlsFromDate(int year)
         {
-			// Polish names only for displaying into dataGridView in form
-            // var because it's an anonymouse type
-            var orders = db.ViewSemiFinishedOrders
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
 				.Where(check =>
 				check.Dostarczono.Year == year)
 				.OrderBy(orderBy => orderBy.Dostarczono)

@@ -655,6 +655,18 @@ join
 	SemiFinished
 on
 	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished;
+	
+go
+create view ViewEntranceControlHistory as
+select SfOrderDetail.IdSfOrder, SfOrderDetail.IdSemiFinished, EntranceControl.IdEmployee, EntranceControl.RealThickness,
+EntranceControl.RealWidth, EntranceControl.RealWeight, EntranceControl.RealColor, EntranceControl.Quantity, EntranceControl.ControlStatus,
+EntranceControl.ChemicalComposition, EntranceControl.Comments
+from
+	EntranceControl
+join
+	SfOrderDetail
+on
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail;
 -- ===BB===
 
 go
