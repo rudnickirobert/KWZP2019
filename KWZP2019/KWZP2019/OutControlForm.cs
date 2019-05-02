@@ -59,7 +59,7 @@ namespace KWZP2019
 
         private void btnSMeasures_Click(object sender, EventArgs e)
         {
-            if(processStatus[procesNumber].Equals(OutControlStatus.Oczekuje_na_kontrolę))
+            if(processStatus[procesNumber].Equals(OutControlStatus.Oczekuje_na_kontrolę.ToString()))
             {
                 OutControl outControl = new OutControl();
                 outControl.IdEmployee = Int16.Parse(cbControlerId.SelectedValue.ToString());
@@ -68,13 +68,14 @@ namespace KWZP2019
                 outControl.WidthAcceptableDeviation = Int16.Parse(txtbAcceptableWidthDeviation.Text);
                 outControl.StartControlDate = DateTime.Now;
                 outControl.EndControlDate = null;
+                db.OutControls.Add(outControl);
                 db.SaveChanges();
             }
 
             using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this))
             {
                 outControlForm.ShowDialog();
-                
+                refreshingData(procesNumber);
             }
         }
 
@@ -123,9 +124,8 @@ namespace KWZP2019
             txtbAcceptableWidthDeviation.ReadOnly = existing;
             txtbAcceptableLenghtDeviation.ReadOnly = existing;
         }
-       
 
-        private void cbProcessNumber_SelectionChangeCommitted(object sender, EventArgs e)
+        private void refreshingData(int processNumber)
         {
             if (cbProcessNumber.SelectedIndex != -1)
             {
@@ -137,12 +137,14 @@ namespace KWZP2019
                 {
                     case "Oczekuje na kontrolę":
                         {
+                            txtbOutControlStatus.BackColor = Color.Yellow;
                             btnSMeasures.Visible = true;
                             handleTextBoxes(procesNumber, false);
                             break;
                         }
                     case "W takcie realizacji":
                         {
+                            txtbOutControlStatus.BackColor = Color.YellowGreen;
                             btnSMeasures.Visible = true;
                             handleTextBoxes(procesNumber, true);
                             break;
@@ -151,10 +153,17 @@ namespace KWZP2019
                         {
                             btnSMeasures.Visible = false;
                             handleTextBoxes(procesNumber, true);
+                            txtbOutControlStatus.BackColor = Color.Green;
                             break;
                         }
                 }
             }
+        }
+       
+
+        private void cbProcessNumber_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            refreshingData(Int16.Parse(cbProcessNumber.SelectedValue.ToString()));
         }
     }
 }

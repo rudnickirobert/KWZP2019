@@ -67,8 +67,8 @@ namespace KWZP2019
         public virtual ICollection<SafetyControl> SafetyControls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderCustomer> OrderCustomers { get; set; }
+        public virtual SafetyTraining SafetyTraining { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OutControl> OutControls { get; set; }
-        public virtual SafetyTraining SafetyTraining { get; set; }
     }
 }

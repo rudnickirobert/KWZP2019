@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="72">
+      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="46">
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess1" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Absence" Width="1.5" PointX="3" PointY="21.125" />
         <EntityTypeShape EntityType="RoofingCompanyModel.AbsenceType" Width="1.5" PointX="0.75" PointY="19.375" />
@@ -34,8 +34,6 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.MedicalExamination" Width="1.5" PointX="3" PointY="51.375" />
         <EntityTypeShape EntityType="RoofingCompanyModel.OrderCustomer" Width="1.5" PointX="6" PointY="23.875" />
         <EntityTypeShape EntityType="RoofingCompanyModel.OrderDetail" Width="1.5" PointX="8.25" PointY="24.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OutControl" Width="1.5" PointX="15" PointY="23.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OutputProductMeasurement" Width="1.5" PointX="17.25" PointY="24.25" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Outsourcing" Width="1.5" PointX="13" PointY="12.875" />
         <EntityTypeShape EntityType="RoofingCompanyModel.OutsourcingCommitment" Width="1.5" PointX="15.25" PointY="13.875" />
         <EntityTypeShape EntityType="RoofingCompanyModel.OutsourcingType" Width="1.5" PointX="10.75" PointY="14.125" />
@@ -73,7 +71,6 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vIndividualCustomer" Width="1.5" PointX="12.75" PointY="17.625" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="17.75" PointY="1.625" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="17.75" PointY="4.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="17.75" PointY="7.625" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="17.75" PointY="10.625" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" Width="1.5" PointX="17.75" PointY="15.625" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProcess" Width="1.5" PointX="17.75" PointY="18.625" />
@@ -104,7 +101,6 @@
         <AssociationConnector Association="RoofingCompanyModel.FkFEMAnalysisEmployee" />
         <AssociationConnector Association="RoofingCompanyModel.FkInspectedEmployee" />
         <AssociationConnector Association="RoofingCompanyModel.FkOrderCustomerEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutControlEmployee" />
         <AssociationConnector Association="RoofingCompanyModel.FkTrainedEmployee" />
         <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceEmployee" />
         <AssociationConnector Association="RoofingCompanyModel.FkEntranceControlSfOrderDetail" />
@@ -125,8 +121,6 @@
         <AssociationConnector Association="RoofingCompanyModel.FkOrderDetailOrderCustomer" />
         <AssociationConnector Association="RoofingCompanyModel.FkOrderDetail" />
         <AssociationConnector Association="RoofingCompanyModel.FkOrderDetailProduct" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutputProductMeasurements" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingCommitmentOutsourcing" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingOutsourcingType" />
         <AssociationConnector Association="RoofingCompanyModel.FK_PartPartRequest" />
@@ -146,6 +140,12 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutControl" Width="1.5" PointX="15" PointY="24" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutputProductMeasurement" Width="1.5" PointX="17.25" PointY="24.375" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutControlEmployee" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutputProductMeasurements" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="10.375" PointY="8.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

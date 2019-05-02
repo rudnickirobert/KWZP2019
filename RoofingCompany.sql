@@ -710,7 +710,7 @@ GO
 
 CREATE VIEW vOutputMagazine
 AS
-SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
+SELECT A.IdProcess, A.ProductCode, B.EndControlDate, C.SuccesfullProduced
 FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 

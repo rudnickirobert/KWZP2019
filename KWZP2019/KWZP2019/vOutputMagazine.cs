@@ -14,8 +14,9 @@ namespace KWZP2019
     
     public partial class vOutputMagazine
     {
+        public int IdProcess { get; set; }
         public string ProductCode { get; set; }
-        public System.DateTime EndControlDate { get; set; }
+        public Nullable<System.DateTime> EndControlDate { get; set; }
         public Nullable<int> SuccesfullProduced { get; set; }
     }
 }
