@@ -1,7 +1,6 @@
-﻿
-use master;
+﻿use master;
 go
-drop database RoofingCompany;
+drop database if exists RoofingCompany;
 create database RoofingCompany;
 go
 use RoofingCompany;
@@ -74,6 +73,7 @@ create table SemiFinished(
 	SfWeight float not null,
 	Color nvarchar(50) not null,
 	ChemicalComposition nvarchar(255) not null,
+	RollLength int not null -- wartość w metrach
 	);
 
 create table TechnicalProductData(
@@ -592,20 +592,82 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
 
+-- ===BB===
 go
-create view ViewDailySfDelivery as
-select SemiFinishedOrder.SfDeliveryDate as [Delivery], Supplier.SupplierName, [Material].SfCode, [Material].Quantity
-from SemiFinishedOrder
+create view ViewSemiFinishedOrder as
+select SfOrderDetail.IdSfOrder as [Nr_zamówienia], SemiFinished.SfCode as [Kod_półfabrykatu], Supplier.SupplierName as [Dostawca], SemiFinishedOrder.SfDeliveryDate as [Dostarczono]
+from
+	SfOrderDetail
 join
-Supplier
-on SemiFinishedOrder.IdSupplier = Supplier.IdSupplier
+	SemiFinishedOrder
+on SfOrderDetail.IdSfOrder = SemiFinishedOrder.IdSfOrder
 join
-(select SemiFinished.SfCode, SfOrderDetail.Quantity, SfOrderDetail.IdSfOrder
-from SfOrderDetail
+	SemiFinished
+on
+	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
 join
-SemiFinished
-on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished) as [Material]
-on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
+	Supplier
+on
+	SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
+
+go
+create view ViewNumberNegativeEntranceControl as
+select SemiFinished.SfCode, count(EntranceControl.ControlStatus) as Negative
+from
+	EntranceControl
+join
+	SfOrderDetail
+on
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
+join
+	SemiFinished
+on
+	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+where EntranceControl.ControlStatus = 0
+group by SemiFinished.SfCode;
+
+go
+create view ViewNumberPositiveEntranceControl as
+select SemiFinished.SfCode, count(EntranceControl.ControlStatus) as Positive
+from
+	EntranceControl
+join
+	SfOrderDetail
+on
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
+join
+	SemiFinished
+on
+	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+where EntranceControl.ControlStatus = 1
+group by SemiFinished.SfCode;
+
+go
+create view ViewNumberPositiveAndNegativeEntranceControl as
+select pos.SfCode as [Kod_półfabrykatu], 
+iif(pos.Positive is null, 0, pos.Positive) as [Pozytywne], 
+iif(neg.Negative is null, 0, neg.Negative) as [Negatywne]
+from 
+	ViewNumberPositiveEntranceControl as pos
+full outer join
+	ViewNumberNegativeEntranceControl as neg
+on 
+	pos.SfCode = neg.SfCode;
+
+go
+create view ViewEntranceControlResultsBySfCode as
+select SemiFinished.SfCode, EntranceControl.RealThickness, EntranceControl.RealWidth, EntranceControl.RealWeight
+from
+	EntranceControl
+join
+	SfOrderDetail
+on 
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
+join
+	SemiFinished
+on
+	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished;
+-- ===BB===
 
 go
 create view ViewOshTraining as
@@ -766,7 +828,7 @@ ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 GO
 
 --Views UR--
-
+/*
 CREATE VIEW vPartsView
 AS
 SELECT Part.PartName as [Nazwa części], 
@@ -787,5 +849,5 @@ ON Part.IdPart = MaintPart.IdPart)
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
 ORDER BY Maintenance.DateAcceptOrder DESC;
-GO
+GO*/
 
