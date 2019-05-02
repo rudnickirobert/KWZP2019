@@ -102,5 +102,6 @@ namespace KWZP2019
         public virtual DbSet<OutControl> OutControls { get; set; }
         public virtual DbSet<OutputProductMeasurement> OutputProductMeasurements { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
+        public virtual DbSet<vTotalNumberOfMeasuresPerProcess> vTotalNumberOfMeasuresPerProcesses { get; set; }
     }
 }

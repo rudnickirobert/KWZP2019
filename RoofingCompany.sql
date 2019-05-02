@@ -692,6 +692,14 @@ GROUP BY IdProcess, QuantityToBeProducted
 
 GO
 
+CREATE VIEW vTotalNumberOfMeasuresPerProcess
+AS
+SELECT IdProcess, COUNT(IdMeasurement) as Produced, QuantityToBeProducted
+FROM vDevotionsInMeasuremntsPerProcess
+GROUP BY IdProcess, QuantityToBeProducted
+
+GO
+
 CREATE VIEW vSuccesfullyProcess
 AS
 SELECT IdProcess

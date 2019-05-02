@@ -40,8 +40,8 @@
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblLenght = new System.Windows.Forms.Label();
             this.lblNominal = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSuccesfull = new System.Windows.Forms.Label();
+            this.txtbSuccesful = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtbWidthMeasure
@@ -164,25 +164,25 @@
             this.lblNominal.TabIndex = 0;
             this.lblNominal.Text = "Wartość \r\nnominalna :";
             // 
-            // label1
+            // lblSuccesfull
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(56, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Przeszło kontrole:\r\n";
+            this.lblSuccesfull.AutoSize = true;
+            this.lblSuccesfull.BackColor = System.Drawing.Color.Transparent;
+            this.lblSuccesfull.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSuccesfull.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSuccesfull.Location = new System.Drawing.Point(56, 46);
+            this.lblSuccesfull.Name = "lblSuccesfull";
+            this.lblSuccesfull.Size = new System.Drawing.Size(133, 23);
+            this.lblSuccesfull.TabIndex = 0;
+            this.lblSuccesfull.Text = "Przeszło kontrole:\r\n";
             // 
-            // textBox1
+            // txtbSuccesful
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtbSuccesful.Location = new System.Drawing.Point(216, 51);
+            this.txtbSuccesful.Name = "txtbSuccesful";
+            this.txtbSuccesful.ReadOnly = true;
+            this.txtbSuccesful.Size = new System.Drawing.Size(100, 20);
+            this.txtbSuccesful.TabIndex = 1;
             // 
             // OutMeasures
             // 
@@ -190,9 +190,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
-            this.ClientSize = new System.Drawing.Size(384, 269);
+            this.ClientSize = new System.Drawing.Size(507, 377);
             this.Controls.Add(this.txtbLenghtNominal);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbSuccesful);
             this.Controls.Add(this.txtbMeasureNumber);
             this.Controls.Add(this.txtbProductCode);
             this.Controls.Add(this.txtbLenghtMeasure);
@@ -202,7 +202,7 @@
             this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.lblNominal);
             this.Controls.Add(this.lblMeasure);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSuccesfull);
             this.Controls.Add(this.lblProductCode);
             this.Controls.Add(this.lblMeasureNumber);
             this.MaximizeBox = false;
@@ -228,7 +228,7 @@
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.Label lblLenght;
         private System.Windows.Forms.Label lblNominal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblSuccesfull;
+        private System.Windows.Forms.TextBox txtbSuccesful;
     }
 }

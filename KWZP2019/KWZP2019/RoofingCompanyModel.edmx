@@ -914,6 +914,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vTechnicalProductDataPerProcess
           <Property Name="Quantity" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vTotalNumberOfMeasuresPerProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vTotalNumberOfMeasuresPerProcess">
+          <Key>
+            <PropertyRef Name="IdProcess" />
+            <PropertyRef Name="QuantityToBeProducted" />
+          </Key>
+          <Property Name="IdProcess" Type="int" Nullable="false" />
+          <Property Name="Produced" Type="int" />
+          <Property Name="QuantityToBeProducted" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vUnfinishedProcess">
           <Key>
@@ -1928,6 +1939,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vTechnicalProductDataPerProcess].[Quantity] AS [Quantity]
     FROM [dbo].[vTechnicalProductDataPerProcess] AS [vTechnicalProductDataPerProcess]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vTotalNumberOfMeasuresPerProcess" EntityType="Self.vTotalNumberOfMeasuresPerProcess" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vTotalNumberOfMeasuresPerProcess].[IdProcess] AS [IdProcess], 
+    [vTotalNumberOfMeasuresPerProcess].[Produced] AS [Produced], 
+    [vTotalNumberOfMeasuresPerProcess].[QuantityToBeProducted] AS [QuantityToBeProducted]
+    FROM [dbo].[vTotalNumberOfMeasuresPerProcess] AS [vTotalNumberOfMeasuresPerProcess]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vUnfinishedProcess" EntityType="Self.vUnfinishedProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vUnfinishedProcess].[IdProces] AS [IdProces]
@@ -2527,6 +2545,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="OutputProductMeasurement" EntitySet="OutputProductMeasurements" />
           </AssociationSet>
           <EntitySet Name="vOutputMagazines" EntityType="RoofingCompanyModel.vOutputMagazine" />
+          <EntitySet Name="vTotalNumberOfMeasuresPerProcesses" EntityType="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -4301,6 +4320,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="EndControlDate" Type="DateTime" Precision="3" />
           <Property Name="SuccesfullProduced" Type="Int32" />
         </EntityType>
+        <EntityType Name="vTotalNumberOfMeasuresPerProcess">
+          <Key>
+            <PropertyRef Name="IdProcess" />
+            <PropertyRef Name="QuantityToBeProducted" />
+          </Key>
+          <Property Name="IdProcess" Type="Int32" Nullable="false" />
+          <Property Name="Produced" Type="Int32" />
+          <Property Name="QuantityToBeProducted" Type="Int32" Nullable="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5191,6 +5219,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="SuccesfullProduced" ColumnName="SuccesfullProduced" />
                 <ScalarProperty Name="EndControlDate" ColumnName="EndControlDate" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vTotalNumberOfMeasuresPerProcesses">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess">
+              <MappingFragment StoreEntitySet="vTotalNumberOfMeasuresPerProcess">
+                <ScalarProperty Name="QuantityToBeProducted" ColumnName="QuantityToBeProducted" />
+                <ScalarProperty Name="Produced" ColumnName="Produced" />
                 <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -146,6 +146,7 @@
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess" />
         <AssociationConnector Association="RoofingCompanyModel.FkOutputProductMeasurements" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="10.375" PointY="8.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess" Width="1.5" PointX="17.375" PointY="20.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
