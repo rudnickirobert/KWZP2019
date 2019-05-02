@@ -583,6 +583,9 @@
     <Compile Include="vPredictedPriceForCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vProductionProcessFullData.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vSuccesfullyProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -791,6 +794,7 @@
     <None Include="Production\ProductionProcess.datasource" />
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
+    <None Include="Properties\DataSources\vProductionProcessFullData.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
     <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
@@ -843,6 +847,10 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-return-40.png" />
+    <None Include="Resources\icons8-home-40.png" />
+    <None Include="Resources\icons8-filter-40.png" />
+    <None Include="Resources\icons8-clear-filters-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

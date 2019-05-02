@@ -813,6 +813,25 @@ warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' doe
           <Property Name="Markup" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vProductionProcessFullData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vProductionProcessFullData">
+          <Key>
+            <PropertyRef Name="IdProces" />
+            <PropertyRef Name="IdPlan" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="CatalogMachineNr" />
+          </Key>
+          <Property Name="IdProces" Type="int" Nullable="false" />
+          <Property Name="IdPlan" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineName" Type="varchar" MaxLength="50" />
+          <Property Name="CatalogMachineNr" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSuccesfullyProcess">
           <Key>
@@ -1870,6 +1889,19 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vPredictedPriceForCustomer].[Markup] AS [Markup]
     FROM [dbo].[vPredictedPriceForCustomer] AS [vPredictedPriceForCustomer]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vProductionProcessFullData" EntityType="Self.vProductionProcessFullData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vProductionProcessFullData].[IdProces] AS [IdProces], 
+    [vProductionProcessFullData].[IdPlan] AS [IdPlan], 
+    [vProductionProcessFullData].[StartDate] AS [StartDate], 
+    [vProductionProcessFullData].[EndDate] AS [EndDate], 
+    [vProductionProcessFullData].[IdEmployee] AS [IdEmployee], 
+    [vProductionProcessFullData].[EmployeeName] AS [EmployeeName], 
+    [vProductionProcessFullData].[EmployeeSurname] AS [EmployeeSurname], 
+    [vProductionProcessFullData].[MachineName] AS [MachineName], 
+    [vProductionProcessFullData].[CatalogMachineNr] AS [CatalogMachineNr]
+    FROM [dbo].[vProductionProcessFullData] AS [vProductionProcessFullData]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vSuccesfullyProcess" EntityType="Self.vSuccesfullyProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vSuccesfullyProcess].[IdProcess] AS [IdProcess]
@@ -2525,6 +2557,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <EntitySet Name="vProductionProcessFullDatas" EntityType="RoofingCompanyModel.vProductionProcessFullData" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -4298,6 +4331,23 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vProductionProcessFullData">
+          <Key>
+            <PropertyRef Name="IdProces" />
+            <PropertyRef Name="IdPlan" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="CatalogMachineNr" />
+          </Key>
+          <Property Name="IdProces" Type="Int32" Nullable="false" />
+          <Property Name="IdPlan" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CatalogMachineNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5188,6 +5238,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vProductionProcessFullDatas">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vProductionProcessFullData">
+              <MappingFragment StoreEntitySet="vProductionProcessFullData">
+                <ScalarProperty Name="CatalogMachineNr" ColumnName="CatalogMachineNr" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                <ScalarProperty Name="IdProces" ColumnName="IdProces" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
