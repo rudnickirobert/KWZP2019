@@ -2890,7 +2890,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdProcess" Type="Int32" Nullable="false" />
           <Property Name="IdEmployee" Type="Int32" Nullable="false" />
           <Property Name="StartControlDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EndControlDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndControlDate" Type="DateTime" Nullable="true" Precision="3" />
           <Property Name="WidthAcceptableDeviation" Type="Double" Nullable="false" />
           <Property Name="LenghtAcceptableDeviation" Type="Double" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="RoofingCompanyModel.FkOutControlEmployee" FromRole="OutControl" ToRole="Employee" />

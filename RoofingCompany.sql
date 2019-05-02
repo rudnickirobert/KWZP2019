@@ -40,7 +40,7 @@ create table OutControl(
 	IdProcess int primary key not null,
 	IdEmployee int not null,
 	StartControlDate DateTime not null,
-    EndControlDate DateTime not null,
+    EndControlDate DateTime,
     WidthAcceptableDeviation float not null,
 	LenghtAcceptableDeviation float not null
     );

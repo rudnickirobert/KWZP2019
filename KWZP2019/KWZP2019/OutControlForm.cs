@@ -15,8 +15,9 @@ namespace KWZP2019
         private RoofingCompanyEntities db;
         private StartForm startForm;
         private QualityControl qualityControlForm;
-        private Dictionary<int, String> processStatus = new Dictionary<int, string>();
-        private enum OutControlStatus  { Oczekuje_na_kontrolę, W_takcie_realizacji, Proces_kontroli_zakończony};
+        public Dictionary<int, String> processStatus = new Dictionary<int, string>();
+        public enum OutControlStatus  { Oczekuje_na_kontrolę, W_takcie_realizacji, Proces_kontroli_zakończony};
+        public int procesNumber;
 
         public OutControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -36,6 +37,7 @@ namespace KWZP2019
             cbProcessNumber.Text = "Proszę wybrać numer procesu";
             cbControlerId.DataSource = db.Employees.ToList();
             cbControlerId.ValueMember = "IdEmployee";
+            btnSMeasures.Visible = false;
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -57,12 +59,22 @@ namespace KWZP2019
 
         private void btnSMeasures_Click(object sender, EventArgs e)
         {
-            int procesNumber = Int32.Parse(cbProcessNumber.SelectedValue.ToString());
+            if(processStatus[procesNumber].Equals(OutControlStatus.Oczekuje_na_kontrolę))
+            {
+                OutControl outControl = new OutControl();
+                outControl.IdEmployee = Int16.Parse(cbControlerId.SelectedValue.ToString());
+                outControl.IdProcess = procesNumber;
+                outControl.LenghtAcceptableDeviation = Int16.Parse(txtbAcceptableLenghtDeviation.Text);
+                outControl.WidthAcceptableDeviation = Int16.Parse(txtbAcceptableWidthDeviation.Text);
+                outControl.StartControlDate = DateTime.Now;
+                outControl.EndControlDate = null;
+                db.SaveChanges();
+            }
 
-            using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this, procesNumber))
+            using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this))
             {
                 outControlForm.ShowDialog();
-
+                
             }
         }
 
@@ -71,7 +83,7 @@ namespace KWZP2019
             int id = ((Employee)e.ListItem).IdEmployee;
             string lastname = ((Employee)e.ListItem).EmployeeName;
             string firstname = ((Employee)e.ListItem).EmployeeSurname;
-            e.Value = id +" "+ lastname + " " + firstname;
+            e.Value = lastname + " " + firstname + " | NumerID: " + id;
         }
 
         private void processStatusDictionaryRefresh()
@@ -97,8 +109,9 @@ namespace KWZP2019
                 OutControl outControl = db.OutControls.First(e => e.IdProcess == processNumber);
                 txtbAcceptableWidthDeviation.Text = outControl.WidthAcceptableDeviation.ToString();
                 txtbAcceptableLenghtDeviation.Text = outControl.LenghtAcceptableDeviation.ToString();
-                txtbStartDate.Text = outControl.EndControlDate.ToShortDateString() + " " + outControl.EndControlDate.ToShortTimeString();
-                txtbEndDate.Text = outControl.EndControlDate.ToShortDateString() + " " + outControl.EndControlDate.ToShortTimeString();
+                txtbStartDate.Text = outControl.StartControlDate.ToString();
+                txtbEndDate.Text = outControl.EndControlDate.ToString();
+                
             }
             else
             {
@@ -117,7 +130,7 @@ namespace KWZP2019
             if (cbProcessNumber.SelectedIndex != -1)
             {
                 processStatusDictionaryRefresh();
-                int procesNumber = Int16.Parse(cbProcessNumber.SelectedValue.ToString());
+                procesNumber = Int16.Parse(cbProcessNumber.SelectedValue.ToString());
                 txtbOutControlStatus.Text = processStatus[procesNumber].ToString().Replace('_', ' ');
                 txtbMeasurmentsNumber.Text = db.vTechnicalProductDataPerProcesses.First(i => i.IdProcess == procesNumber).Quantity.ToString();
                 switch (txtbOutControlStatus.Text)
