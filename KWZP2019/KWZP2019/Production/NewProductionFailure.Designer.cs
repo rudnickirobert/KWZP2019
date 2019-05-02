@@ -45,13 +45,20 @@
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(182, 180);
-            this.button_save.Margin = new System.Windows.Forms.Padding(2);
+            this.button_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.button_save.BackgroundImage = global::KWZP2019.Properties.Resources.addp;
+            this.button_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_save.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_save.Location = new System.Drawing.Point(319, 225);
+            this.button_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(134, 100);
+            this.button_save.Size = new System.Drawing.Size(181, 132);
             this.button_save.TabIndex = 0;
             this.button_save.Text = "Zapisz";
-            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // cBidproces
@@ -60,10 +67,10 @@
             this.cBidproces.DataSource = this.productionProcessBindingSource;
             this.cBidproces.DisplayMember = "IdProces";
             this.cBidproces.FormattingEnabled = true;
-            this.cBidproces.Location = new System.Drawing.Point(120, 43);
-            this.cBidproces.Margin = new System.Windows.Forms.Padding(2);
+            this.cBidproces.Location = new System.Drawing.Point(255, 57);
+            this.cBidproces.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cBidproces.Name = "cBidproces";
-            this.cBidproces.Size = new System.Drawing.Size(185, 21);
+            this.cBidproces.Size = new System.Drawing.Size(245, 24);
             this.cBidproces.TabIndex = 1;
             this.cBidproces.ValueMember = "IdProces";
             // 
@@ -73,60 +80,73 @@
             // 
             // dateTimePicker_Failure
             // 
-            this.dateTimePicker_Failure.Location = new System.Drawing.Point(120, 85);
-            this.dateTimePicker_Failure.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker_Failure.Location = new System.Drawing.Point(255, 109);
+            this.dateTimePicker_Failure.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_Failure.Name = "dateTimePicker_Failure";
-            this.dateTimePicker_Failure.Size = new System.Drawing.Size(185, 20);
+            this.dateTimePicker_Failure.Size = new System.Drawing.Size(245, 22);
             this.dateTimePicker_Failure.TabIndex = 2;
             // 
             // label_idProces
             // 
             this.label_idProces.AutoSize = true;
-            this.label_idProces.Location = new System.Drawing.Point(30, 50);
-            this.label_idProces.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_idProces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label_idProces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_idProces.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_idProces.Location = new System.Drawing.Point(40, 57);
             this.label_idProces.Name = "label_idProces";
-            this.label_idProces.Size = new System.Drawing.Size(79, 13);
+            this.label_idProces.Size = new System.Drawing.Size(130, 20);
             this.label_idProces.TabIndex = 3;
             this.label_idProces.Text = "Numer procesu";
             // 
             // tBdescription
             // 
             this.tBdescription.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.tBdescription.Location = new System.Drawing.Point(120, 127);
-            this.tBdescription.Margin = new System.Windows.Forms.Padding(2);
+            this.tBdescription.Location = new System.Drawing.Point(255, 160);
+            this.tBdescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tBdescription.Name = "tBdescription";
-            this.tBdescription.Size = new System.Drawing.Size(185, 20);
+            this.tBdescription.Size = new System.Drawing.Size(245, 22);
             this.tBdescription.TabIndex = 4;
             // 
             // label_failureDate
             // 
             this.label_failureDate.AutoSize = true;
-            this.label_failureDate.Location = new System.Drawing.Point(30, 90);
-            this.label_failureDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_failureDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label_failureDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_failureDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_failureDate.Location = new System.Drawing.Point(40, 109);
             this.label_failureDate.Name = "label_failureDate";
-            this.label_failureDate.Size = new System.Drawing.Size(60, 13);
+            this.label_failureDate.Size = new System.Drawing.Size(99, 20);
             this.label_failureDate.TabIndex = 5;
             this.label_failureDate.Text = "Data awarii";
             // 
             // label_description
             // 
             this.label_description.AutoSize = true;
-            this.label_description.Location = new System.Drawing.Point(30, 132);
-            this.label_description.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_description.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_description.Location = new System.Drawing.Point(40, 162);
             this.label_description.Name = "label_description";
-            this.label_description.Size = new System.Drawing.Size(28, 13);
+            this.label_description.Size = new System.Drawing.Size(45, 20);
             this.label_description.TabIndex = 6;
             this.label_description.Text = "Opis";
             // 
             // button_Back
             // 
-            this.button_Back.Location = new System.Drawing.Point(22, 180);
-            this.button_Back.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.button_Back.BackgroundImage = global::KWZP2019.Properties.Resources.powrott;
+            this.button_Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Back.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_Back.Location = new System.Drawing.Point(44, 224);
+            this.button_Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Back.Name = "button_Back";
-            this.button_Back.Size = new System.Drawing.Size(141, 100);
+            this.button_Back.Size = new System.Drawing.Size(183, 132);
             this.button_Back.TabIndex = 7;
             this.button_Back.Text = "Powrót";
-            this.button_Back.UseVisualStyleBackColor = true;
+            this.button_Back.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_Back.UseVisualStyleBackColor = false;
             this.button_Back.Click += new System.EventHandler(this.button_abort_Click);
             // 
             // productionFailuresBindingSource
@@ -135,10 +155,10 @@
             // 
             // NewProductionFailure
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
-            this.ClientSize = new System.Drawing.Size(336, 287);
+            this.ClientSize = new System.Drawing.Size(550, 405);
             this.Controls.Add(this.button_Back);
             this.Controls.Add(this.label_description);
             this.Controls.Add(this.label_failureDate);
@@ -148,7 +168,7 @@
             this.Controls.Add(this.cBidproces);
             this.Controls.Add(this.button_save);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NewProductionFailure";
             this.Text = "NewProductionFailure";
             this.Load += new System.EventHandler(this.NewProductionFailure_Load);
