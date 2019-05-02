@@ -84,25 +84,6 @@ namespace KWZP2019
         public virtual DbSet<Technology> Technologies { get; set; }
         public virtual DbSet<Training> Trainings { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
-        public virtual DbSet<vUnhandledOrderDetails> vUnhandledOrderDetails { get; set; }
-        public virtual DbSet<vCompany> vCompany { get; set; }
-        public virtual DbSet<ViewDailySfDelivery> ViewDailySfDelivery { get; set; }
-        public virtual DbSet<ViewOshTraining> ViewOshTraining { get; set; }
-        public virtual DbSet<vIndividualCustomer> vIndividualCustomer { get; set; }
-        public virtual DbSet<vOutsourcingWithType> vOutsourcingWithType { get; set; }
-        public virtual DbSet<vSupplierParts> vSupplierParts { get; set; }
-        public virtual DbSet<vSupplierSemis> vSupplierSemis { get; set; }
-        public virtual DbSet<vInputMagazine> vInputMagazine { get; set; }
-        public virtual DbSet<vOutputMagazine> vOutputMagazine { get; set; }
-        public virtual DbSet<EntranceControlView> EntranceControlView { get; set; }
-        public virtual DbSet<vOrderDetail> vOrderDetail { get; set; }
-        public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomer { get; set; }
-        public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryView { get; set; }
-        public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcess { get; set; }
-        public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcess { get; set; }
-        public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcess { get; set; }
-        public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcess { get; set; }
-        public virtual DbSet<vUnfinishedProcess> vUnfinishedProcess { get; set; }
         public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryViews { get; set; }
         public virtual DbSet<vCompany> vCompanies { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
@@ -121,5 +102,7 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
+        public virtual DbSet<vPartsView> vPartsViews { get; set; }
     }
 }
