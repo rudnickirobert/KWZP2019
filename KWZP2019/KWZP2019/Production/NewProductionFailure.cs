@@ -32,15 +32,12 @@ namespace KWZP2019
         private void button_save_Click(object sender, EventArgs e)
         {
             Failure failure = new Failure();
-            if (failure != null)
-            {
-                failure.IdProces = Convert.ToInt32(cBidproces.SelectedValue);
-                failure.FailureDate = dateTimePicker_Failure.Value;
-                failure.Specification = tBdescription.Text;
-                db.Failures.Add(failure);
-                db.SaveChanges();
-                MessageBox.Show("Dodano awarie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            failure.IdProces = Convert.ToInt32(cBidproces.SelectedValue);
+            failure.FailureDate = dateTimePicker_Failure.Value;
+            failure.Specification = tBdescription.Text;
+            db.Failures.Add(failure);
+            db.SaveChanges();
+            MessageBox.Show("Dodano awarie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
