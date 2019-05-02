@@ -31,7 +31,7 @@ namespace KWZP2019
 
         private void OSHControlHistory_Load(object sender, EventArgs e)
         {
-            dGVControlHistory.DataSource = db.SafetyControlHistoryView.ToList();
+            dGVControlHistory.DataSource = db.SafetyControlHistoryViews.ToList();
         }
     }
 }

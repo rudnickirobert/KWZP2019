@@ -14,12 +14,12 @@ namespace KWZP2019
     
     public partial class ViewOshTraining
     {
-        public string EmployeeName { get; set; }
-        public System.DateTime TrainingDate { get; set; }
-        public Nullable<byte> ValidityOfOshTraining { get; set; }
-        public string DepartmentName { get; set; }
         public int IdEmployee { get; set; }
+        public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
+        public string DepartmentName { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public System.DateTime TrainingDate { get; set; }
+        public Nullable<int> ValidityOfOshTraining { get; set; }
     }
 }

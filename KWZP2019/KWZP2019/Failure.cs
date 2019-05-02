@@ -27,6 +27,6 @@ namespace KWZP2019
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FailureMaintenance> FailureMaintenances { get; set; }
-        public virtual ProductionProce ProductionProce { get; set; }
+        public virtual ProductionProcess ProductionProcess { get; set; }
     }
 }
