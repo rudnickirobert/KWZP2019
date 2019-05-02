@@ -13,11 +13,15 @@ namespace KWZP2019
     public partial class ProductionFailures : Form
     {
         RoofingCompanyEntities db;
-        int id, newId;
         public ProductionFailures(RoofingCompanyEntities db)
         {
             InitializeComponent();
             this.db = db;
+        }
+
+        private void refreshFailures()
+        {
+            gridViewFailures.DataSource = db.Failures.ToList();
         }
 
         private void btn_return_Click(object sender, EventArgs e)
@@ -27,14 +31,18 @@ namespace KWZP2019
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            NewProductionFailure newProductionFailureForm = new NewProductionFailure(db, id, newId);
+            NewProductionFailure newProductionFailureForm = new NewProductionFailure(db);
             newProductionFailureForm.Show();
         }
 
         private void ProductionFailures_Load(object sender, EventArgs e)
         {
-           gridViewFailures.DataSource = db.Failures.ToList();
-           newId = gridViewFailures.RowCount + 1;
+            refreshFailures();
+        }
+
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            refreshFailures();
         }
     }
 }
