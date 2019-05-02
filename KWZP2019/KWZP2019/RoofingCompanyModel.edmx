@@ -504,6 +504,7 @@
           <Property Name="SfWeight" Type="float" Nullable="false" />
           <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ChemicalComposition" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RollLength" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="SemiFinishedOrder">
           <Key>
@@ -671,18 +672,36 @@ warning 6002: The table/view 'RoofingCompany.dbo.vDevotionsInMeasuremntsPerProce
           <Property Name="WidthAcceptableDeviation" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ViewDailySfDelivery">
+warning 6002: The table/view 'RoofingCompany.dbo.ViewEntranceControlResultsBySfCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewEntranceControlResultsBySfCode">
           <Key>
-            <PropertyRef Name="Delivery" />
-            <PropertyRef Name="SupplierName" />
             <PropertyRef Name="SfCode" />
-            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="RealThickness" />
+            <PropertyRef Name="RealWidth" />
+            <PropertyRef Name="RealWeight" />
           </Key>
-          <Property Name="Delivery" Type="datetime" Nullable="false" />
-          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="RealThickness" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+          <Property Name="RealWidth" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="RealWeight" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.ViewNumberNegativeEntranceControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewNumberNegativeEntranceControl">
+          <Key>
+            <PropertyRef Name="SfCode" />
+          </Key>
+          <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Negative" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.ViewNumberPositiveEntranceControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewNumberPositiveEntranceControl">
+          <Key>
+            <PropertyRef Name="SfCode" />
+          </Key>
+          <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Positive" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -698,6 +717,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have 
           <Property Name="EndDate" Type="date" />
           <Property Name="TrainingDate" Type="datetime" Nullable="false" />
           <Property Name="ValidityOfOshTraining" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.ViewSemiFinishedOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewSemiFinishedOrder">
+          <Key>
+            <PropertyRef Name="Nr_zamówienia" />
+            <PropertyRef Name="Kod_półfabrykatu" />
+            <PropertyRef Name="Dostawca" />
+            <PropertyRef Name="Dostarczono" />
+          </Key>
+          <Property Name="Nr_zamówienia" Type="int" Nullable="false" />
+          <Property Name="Kod_półfabrykatu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Dostawca" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dostarczono" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vIndividualCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1785,13 +1818,25 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vDevotionsInMeasuremntsPerProcess].[WidthAcceptableDeviation] AS [WidthAcceptableDeviation]
     FROM [dbo].[vDevotionsInMeasuremntsPerProcess] AS [vDevotionsInMeasuremntsPerProcess]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ViewDailySfDelivery" EntityType="Self.ViewDailySfDelivery" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="ViewEntranceControlResultsBySfCode" EntityType="Self.ViewEntranceControlResultsBySfCode" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [ViewDailySfDelivery].[Delivery] AS [Delivery], 
-    [ViewDailySfDelivery].[SupplierName] AS [SupplierName], 
-    [ViewDailySfDelivery].[SfCode] AS [SfCode], 
-    [ViewDailySfDelivery].[Quantity] AS [Quantity]
-    FROM [dbo].[ViewDailySfDelivery] AS [ViewDailySfDelivery]</DefiningQuery>
+    [ViewEntranceControlResultsBySfCode].[SfCode] AS [SfCode], 
+    [ViewEntranceControlResultsBySfCode].[RealThickness] AS [RealThickness], 
+    [ViewEntranceControlResultsBySfCode].[RealWidth] AS [RealWidth], 
+    [ViewEntranceControlResultsBySfCode].[RealWeight] AS [RealWeight]
+    FROM [dbo].[ViewEntranceControlResultsBySfCode] AS [ViewEntranceControlResultsBySfCode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewNumberNegativeEntranceControl" EntityType="Self.ViewNumberNegativeEntranceControl" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewNumberNegativeEntranceControl].[SfCode] AS [SfCode], 
+    [ViewNumberNegativeEntranceControl].[Negative] AS [Negative]
+    FROM [dbo].[ViewNumberNegativeEntranceControl] AS [ViewNumberNegativeEntranceControl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewNumberPositiveEntranceControl" EntityType="Self.ViewNumberPositiveEntranceControl" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewNumberPositiveEntranceControl].[SfCode] AS [SfCode], 
+    [ViewNumberPositiveEntranceControl].[Positive] AS [Positive]
+    FROM [dbo].[ViewNumberPositiveEntranceControl] AS [ViewNumberPositiveEntranceControl]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewOshTraining" EntityType="Self.ViewOshTraining" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1803,6 +1848,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [ViewOshTraining].[TrainingDate] AS [TrainingDate], 
     [ViewOshTraining].[ValidityOfOshTraining] AS [ValidityOfOshTraining]
     FROM [dbo].[ViewOshTraining] AS [ViewOshTraining]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewSemiFinishedOrder" EntityType="Self.ViewSemiFinishedOrder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewSemiFinishedOrder].[Nr_zamówienia] AS [Nr_zamówienia], 
+    [ViewSemiFinishedOrder].[Kod_półfabrykatu] AS [Kod_półfabrykatu], 
+    [ViewSemiFinishedOrder].[Dostawca] AS [Dostawca], 
+    [ViewSemiFinishedOrder].[Dostarczono] AS [Dostarczono]
+    FROM [dbo].[ViewSemiFinishedOrder] AS [ViewSemiFinishedOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vIndividualCustomer" EntityType="Self.vIndividualCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2258,7 +2311,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="SafetyControlHistoryViews" EntityType="RoofingCompanyModel.SafetyControlHistoryView" />
           <EntitySet Name="vCompanies" EntityType="RoofingCompanyModel.vCompany" />
           <EntitySet Name="vDevotionsInMeasuremntsPerProcesses" EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" />
-          <EntitySet Name="ViewDailySfDeliveries" EntityType="RoofingCompanyModel.ViewDailySfDelivery" />
           <EntitySet Name="ViewOshTrainings" EntityType="RoofingCompanyModel.ViewOshTraining" />
           <EntitySet Name="vIndividualCustomers" EntityType="RoofingCompanyModel.vIndividualCustomer" />
           <EntitySet Name="vInputMagazines" EntityType="RoofingCompanyModel.vInputMagazine" />
@@ -2525,6 +2577,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <EntitySet Name="ViewEntranceControlResultsBySfCodes" EntityType="RoofingCompanyModel.ViewEntranceControlResultsBySfCode" />
+          <EntitySet Name="ViewNumberNegativeEntranceControls" EntityType="RoofingCompanyModel.ViewNumberNegativeEntranceControl" />
+          <EntitySet Name="ViewNumberPositiveEntranceControls" EntityType="RoofingCompanyModel.ViewNumberPositiveEntranceControl" />
+          <EntitySet Name="ViewSemiFinishedOrders" EntityType="RoofingCompanyModel.ViewSemiFinishedOrder" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -3134,6 +3190,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="ChemicalComposition" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="RoofingCompanyModel.FkProductIdSF" FromRole="SemiFinished" ToRole="Product" />
           <NavigationProperty Name="SfOrderDetails" Relationship="RoofingCompanyModel.FkSfOrderDetailSemiFinished" FromRole="SemiFinished" ToRole="SfOrderDetail" />
+          <Property Name="RollLength" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="SemiFinishedOrder">
           <Key>
@@ -3310,18 +3367,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="WidthDeviation" Type="Double" Nullable="false" />
           <Property Name="LenghtAcceptableDeviation" Type="Double" Nullable="false" />
           <Property Name="WidthAcceptableDeviation" Type="Double" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ViewDailySfDelivery">
-          <Key>
-            <PropertyRef Name="Delivery" />
-            <PropertyRef Name="SupplierName" />
-            <PropertyRef Name="SfCode" />
-            <PropertyRef Name="Quantity" />
-          </Key>
-          <Property Name="Delivery" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewOshTraining">
           <Key>
@@ -4298,6 +4343,44 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ViewEntranceControlResultsBySfCode">
+          <Key>
+            <PropertyRef Name="SfCode" />
+            <PropertyRef Name="RealThickness" />
+            <PropertyRef Name="RealWidth" />
+            <PropertyRef Name="RealWeight" />
+          </Key>
+          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="RealThickness" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="RealWidth" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+          <Property Name="RealWeight" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
+        </EntityType>
+        <EntityType Name="ViewNumberNegativeEntranceControl">
+          <Key>
+            <PropertyRef Name="SfCode" />
+          </Key>
+          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Negative" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ViewNumberPositiveEntranceControl">
+          <Key>
+            <PropertyRef Name="SfCode" />
+          </Key>
+          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Positive" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ViewSemiFinishedOrder">
+          <Key>
+            <PropertyRef Name="Nr_zamówienia" />
+            <PropertyRef Name="Kod_półfabrykatu" />
+            <PropertyRef Name="Dostawca" />
+            <PropertyRef Name="Dostarczono" />
+          </Key>
+          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
+          <Property Name="Kod_półfabrykatu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Dostawca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Dostarczono" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4843,6 +4926,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="SemiFinisheds">
             <EntityTypeMapping TypeName="RoofingCompanyModel.SemiFinished">
               <MappingFragment StoreEntitySet="SemiFinished">
+                <ScalarProperty Name="RollLength" ColumnName="RollLength" />
                 <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="SfWeight" ColumnName="SfWeight" />
@@ -5005,16 +5089,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="QuantityToBeProducted" ColumnName="QuantityToBeProducted" />
                 <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
                 <ScalarProperty Name="IdMeasurement" ColumnName="IdMeasurement" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ViewDailySfDeliveries">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewDailySfDelivery">
-              <MappingFragment StoreEntitySet="ViewDailySfDelivery">
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5188,6 +5262,42 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewEntranceControlResultsBySfCodes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewEntranceControlResultsBySfCode">
+              <MappingFragment StoreEntitySet="ViewEntranceControlResultsBySfCode">
+                <ScalarProperty Name="RealWeight" ColumnName="RealWeight" />
+                <ScalarProperty Name="RealWidth" ColumnName="RealWidth" />
+                <ScalarProperty Name="RealThickness" ColumnName="RealThickness" />
+                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewNumberNegativeEntranceControls">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewNumberNegativeEntranceControl">
+              <MappingFragment StoreEntitySet="ViewNumberNegativeEntranceControl">
+                <ScalarProperty Name="Negative" ColumnName="Negative" />
+                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewNumberPositiveEntranceControls">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewNumberPositiveEntranceControl">
+              <MappingFragment StoreEntitySet="ViewNumberPositiveEntranceControl">
+                <ScalarProperty Name="Positive" ColumnName="Positive" />
+                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewSemiFinishedOrders">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewSemiFinishedOrder">
+              <MappingFragment StoreEntitySet="ViewSemiFinishedOrder">
+                <ScalarProperty Name="Dostarczono" ColumnName="Dostarczono" />
+                <ScalarProperty Name="Dostawca" ColumnName="Dostawca" />
+                <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod_półfabrykatu" />
+                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr_zamówienia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

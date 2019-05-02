@@ -12,11 +12,9 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class ViewDailySfDelivery
+    public partial class ViewNumberPositiveEntranceControl
     {
-        public System.DateTime Delivery { get; set; }
-        public string SupplierName { get; set; }
         public string SfCode { get; set; }
-        public int Quantity { get; set; }
+        public Nullable<int> Positive { get; set; }
     }
 }

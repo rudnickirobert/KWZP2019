@@ -87,7 +87,6 @@ namespace KWZP2019
         public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryViews { get; set; }
         public virtual DbSet<vCompany> vCompanies { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
-        public virtual DbSet<ViewDailySfDelivery> ViewDailySfDeliveries { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
         public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
@@ -102,5 +101,9 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<ViewEntranceControlResultsBySfCode> ViewEntranceControlResultsBySfCodes { get; set; }
+        public virtual DbSet<ViewNumberNegativeEntranceControl> ViewNumberNegativeEntranceControls { get; set; }
+        public virtual DbSet<ViewNumberPositiveEntranceControl> ViewNumberPositiveEntranceControls { get; set; }
+        public virtual DbSet<ViewSemiFinishedOrder> ViewSemiFinishedOrders { get; set; }
     }
 }

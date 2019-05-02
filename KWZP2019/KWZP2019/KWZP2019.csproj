@@ -559,10 +559,19 @@
     <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewDailySfDelivery.cs">
+    <Compile Include="ViewEntranceControlResultsBySfCode.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNumberNegativeEntranceControl.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNumberPositiveEntranceControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewOshTraining.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSemiFinishedOrder.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vIndividualCustomer.cs">
