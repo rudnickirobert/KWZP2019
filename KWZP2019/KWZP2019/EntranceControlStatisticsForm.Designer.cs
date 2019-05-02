@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceControlStatisticsForm));
             this.dataGridViewSemiFinished = new System.Windows.Forms.DataGridView();
             this.btnReturnMain = new System.Windows.Forms.Button();
@@ -44,6 +44,10 @@
             this.lblDateFrom = new System.Windows.Forms.Label();
             this.lblDateTo = new System.Windows.Forms.Label();
             this.btnAllTime = new System.Windows.Forms.Button();
+            this.pieChartNumberOfPositiveAndNegativeControl = new LiveCharts.WinForms.PieChart();
+            this.histogramThickness = new LiveCharts.WinForms.CartesianChart();
+            this.histogramWidth = new LiveCharts.WinForms.CartesianChart();
+            this.histogramWeight = new LiveCharts.WinForms.CartesianChart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSemiFinished)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,55 +55,55 @@
             // 
             this.dataGridViewSemiFinished.AllowUserToAddRows = false;
             this.dataGridViewSemiFinished.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewSemiFinished.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSemiFinished.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewSemiFinished.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dataGridViewSemiFinished.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSemiFinished.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSemiFinished.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSemiFinished.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewSemiFinished.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSemiFinished.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSemiFinished.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewSemiFinished.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewSemiFinished.Location = new System.Drawing.Point(12, 150);
+            this.dataGridViewSemiFinished.Location = new System.Drawing.Point(200, 12);
             this.dataGridViewSemiFinished.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewSemiFinished.MultiSelect = false;
             this.dataGridViewSemiFinished.Name = "dataGridViewSemiFinished";
             this.dataGridViewSemiFinished.ReadOnly = true;
             this.dataGridViewSemiFinished.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSemiFinished.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSemiFinished.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dataGridViewSemiFinished.ShowEditingIcon = false;
-            this.dataGridViewSemiFinished.Size = new System.Drawing.Size(244, 398);
+            this.dataGridViewSemiFinished.Size = new System.Drawing.Size(180, 206);
             this.dataGridViewSemiFinished.TabIndex = 39;
-            this.dataGridViewSemiFinished.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSemiFinished_RowHeaderMouseDoubleClick);
+            this.dataGridViewSemiFinished.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSemiFinished_RowHeaderMouseClick);
             // 
             // btnReturnMain
             // 
@@ -137,7 +141,7 @@
             this.btnShowPieChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowPieChart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShowPieChart.Image = global::KWZP2019.Properties.Resources.icons8_fraction_40;
-            this.btnShowPieChart.Location = new System.Drawing.Point(337, 448);
+            this.btnShowPieChart.Location = new System.Drawing.Point(16, 446);
             this.btnShowPieChart.Name = "btnShowPieChart";
             this.btnShowPieChart.Size = new System.Drawing.Size(200, 100);
             this.btnShowPieChart.TabIndex = 1;
@@ -160,7 +164,7 @@
             this.btnShowHistograms.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowHistograms.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShowHistograms.Image = global::KWZP2019.Properties.Resources.icons8_bar_chart_40;
-            this.btnShowHistograms.Location = new System.Drawing.Point(562, 448);
+            this.btnShowHistograms.Location = new System.Drawing.Point(241, 446);
             this.btnShowHistograms.Name = "btnShowHistograms";
             this.btnShowHistograms.Size = new System.Drawing.Size(200, 100);
             this.btnShowHistograms.TabIndex = 1;
@@ -183,7 +187,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(198, 12);
+            this.btnReturn.Location = new System.Drawing.Point(12, 118);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(180, 100);
             this.btnReturn.TabIndex = 1;
@@ -197,7 +201,7 @@
             // 
             this.datePickerDateFrom.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.datePickerDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerDateFrom.Location = new System.Drawing.Point(462, 360);
+            this.datePickerDateFrom.Location = new System.Drawing.Point(96, 248);
             this.datePickerDateFrom.Margin = new System.Windows.Forms.Padding(0);
             this.datePickerDateFrom.Name = "datePickerDateFrom";
             this.datePickerDateFrom.Size = new System.Drawing.Size(285, 26);
@@ -208,7 +212,7 @@
             // 
             this.datePickerDateTo.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.datePickerDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerDateTo.Location = new System.Drawing.Point(462, 405);
+            this.datePickerDateTo.Location = new System.Drawing.Point(96, 285);
             this.datePickerDateTo.Margin = new System.Windows.Forms.Padding(0);
             this.datePickerDateTo.Name = "datePickerDateTo";
             this.datePickerDateTo.Size = new System.Drawing.Size(286, 26);
@@ -220,9 +224,9 @@
             this.lblDateFrom.BackColor = System.Drawing.Color.Transparent;
             this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDateFrom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDateFrom.Location = new System.Drawing.Point(361, 360);
+            this.lblDateFrom.Location = new System.Drawing.Point(12, 249);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(91, 26);
+            this.lblDateFrom.Size = new System.Drawing.Size(79, 26);
             this.lblDateFrom.TabIndex = 43;
             this.lblDateFrom.Text = "Data od";
             this.lblDateFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -232,9 +236,9 @@
             this.lblDateTo.BackColor = System.Drawing.Color.Transparent;
             this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDateTo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDateTo.Location = new System.Drawing.Point(360, 404);
+            this.lblDateTo.Location = new System.Drawing.Point(11, 285);
             this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(91, 26);
+            this.lblDateTo.Size = new System.Drawing.Size(79, 26);
             this.lblDateTo.TabIndex = 43;
             this.lblDateTo.Text = "Data do";
             this.lblDateTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,14 +256,50 @@
             this.btnAllTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAllTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAllTime.Image = global::KWZP2019.Properties.Resources.icons8_date_span_40;
-            this.btnAllTime.Location = new System.Drawing.Point(462, 285);
+            this.btnAllTime.Location = new System.Drawing.Point(12, 344);
             this.btnAllTime.Name = "btnAllTime";
-            this.btnAllTime.Size = new System.Drawing.Size(285, 60);
+            this.btnAllTime.Size = new System.Drawing.Size(369, 60);
             this.btnAllTime.TabIndex = 1;
             this.btnAllTime.Text = "Cały okres czasu";
             this.btnAllTime.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAllTime.UseVisualStyleBackColor = false;
             this.btnAllTime.Click += new System.EventHandler(this.BtnAllTime_Click);
+            // 
+            // pieChartNumberOfPositiveAndNegativeControl
+            // 
+            this.pieChartNumberOfPositiveAndNegativeControl.BackColorTransparent = true;
+            this.pieChartNumberOfPositiveAndNegativeControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pieChartNumberOfPositiveAndNegativeControl.Location = new System.Drawing.Point(390, 12);
+            this.pieChartNumberOfPositiveAndNegativeControl.Name = "pieChartNumberOfPositiveAndNegativeControl";
+            this.pieChartNumberOfPositiveAndNegativeControl.Size = new System.Drawing.Size(206, 206);
+            this.pieChartNumberOfPositiveAndNegativeControl.TabIndex = 44;
+            // 
+            // histogramThickness
+            // 
+            this.histogramThickness.BackColorTransparent = true;
+            this.histogramThickness.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.histogramThickness.Location = new System.Drawing.Point(612, 12);
+            this.histogramThickness.Name = "histogramThickness";
+            this.histogramThickness.Size = new System.Drawing.Size(206, 206);
+            this.histogramThickness.TabIndex = 45;
+            // 
+            // histogramWidth
+            // 
+            this.histogramWidth.BackColorTransparent = true;
+            this.histogramWidth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.histogramWidth.Location = new System.Drawing.Point(390, 234);
+            this.histogramWidth.Name = "histogramWidth";
+            this.histogramWidth.Size = new System.Drawing.Size(206, 206);
+            this.histogramWidth.TabIndex = 45;
+            // 
+            // histogramWeight
+            // 
+            this.histogramWeight.BackColorTransparent = true;
+            this.histogramWeight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.histogramWeight.Location = new System.Drawing.Point(612, 234);
+            this.histogramWeight.Name = "histogramWeight";
+            this.histogramWeight.Size = new System.Drawing.Size(206, 206);
+            this.histogramWeight.TabIndex = 45;
             // 
             // EntranceControlStatisticsForm
             // 
@@ -267,7 +307,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(836, 561);
+            this.Controls.Add(this.histogramWeight);
+            this.Controls.Add(this.histogramWidth);
+            this.Controls.Add(this.histogramThickness);
+            this.Controls.Add(this.pieChartNumberOfPositiveAndNegativeControl);
             this.Controls.Add(this.lblDateTo);
             this.Controls.Add(this.lblDateFrom);
             this.Controls.Add(this.datePickerDateTo);
@@ -303,5 +347,9 @@
         private System.Windows.Forms.Label lblDateFrom;
         private System.Windows.Forms.Label lblDateTo;
         private System.Windows.Forms.Button btnAllTime;
+        private LiveCharts.WinForms.PieChart pieChartNumberOfPositiveAndNegativeControl;
+        private LiveCharts.WinForms.CartesianChart histogramThickness;
+        private LiveCharts.WinForms.CartesianChart histogramWidth;
+        private LiveCharts.WinForms.CartesianChart histogramWeight;
     }
 }

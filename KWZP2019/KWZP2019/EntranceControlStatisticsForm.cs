@@ -59,17 +59,12 @@ namespace KWZP2019
             datePickerDateFrom.Value = DateTime.Now.AddMonths(-1);
             datePickerDateTo.Value = DateTime.Now;
 
-            List<string> semiFinishedList = new List<string>();
+            var semiFinishedList = db.SemiFinisheds
+                .Select(select => new { Kod_półfabrykatu = select.SfCode }).ToList();
 
-            List<SemiFinished> semiFinisheds = db.SemiFinisheds.ToList();
-
-            foreach(SemiFinished semiFinished in semiFinisheds)
-            {
-                semiFinishedList.Add(semiFinished.SfCode);
-            }
-            
             dataGridViewSemiFinished.DataSource = semiFinishedList;
-            dataGridViewSemiFinished.Columns[0].HeaderText = "Kod półfabrykatu";
+            dataGridViewSemiFinished.Rows[0].Selected = true;
+            selectedSemiFinishedCode = dataGridViewSemiFinished.Rows[0].Cells[0].Value.ToString();
         }
 
         // ==================================================
@@ -135,10 +130,10 @@ namespace KWZP2019
 
         // ==================================================
 
-        private void DataGridViewSemiFinished_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewSemiFinished_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewSemiFinished.SelectedRows[0];
-            selectedSemiFinishedCode = selectedRow.Cells["Kod półfabrykatu"].Value.ToString();
+            selectedSemiFinishedCode = selectedRow.Cells["Kod_półfabrykatu"].Value.ToString();
         }
 
         // ==================================================
