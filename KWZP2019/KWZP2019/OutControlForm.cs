@@ -132,7 +132,7 @@ namespace KWZP2019
                 processStatusDictionaryRefresh();
                 procesNumber = Int16.Parse(cbProcessNumber.SelectedValue.ToString());
                 txtbOutControlStatus.Text = processStatus[procesNumber].ToString().Replace('_', ' ');
-                txtbMeasurmentsNumber.Text = db.vTechnicalProductDataPerProcesses.First(i => i.IdProcess == procesNumber).Quantity.ToString();
+                txtbToProduceNumber.Text = db.vTechnicalProductDataPerProcesses.First(i => i.IdProcess == procesNumber).Quantity.ToString();
                 switch (txtbOutControlStatus.Text)
                 {
                     case "Oczekuje na kontrolę":

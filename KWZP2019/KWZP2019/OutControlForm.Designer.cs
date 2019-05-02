@@ -33,7 +33,7 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.lblFormTitle = new System.Windows.Forms.Label();
-            this.txtbMeasurmentsNumber = new System.Windows.Forms.TextBox();
+            this.txtbToProduceNumber = new System.Windows.Forms.TextBox();
             this.lblControlDateStart = new System.Windows.Forms.Label();
             this.lblProcesNumber = new System.Windows.Forms.Label();
             this.lblControlerId = new System.Windows.Forms.Label();
@@ -120,13 +120,13 @@
             this.lblFormTitle.Text = "Kontrola wyjściowa";
             this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtbMeasurmentsNumber
+            // txtbToProduceNumber
             // 
-            this.txtbMeasurmentsNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtbMeasurmentsNumber.Location = new System.Drawing.Point(549, 315);
-            this.txtbMeasurmentsNumber.Name = "txtbMeasurmentsNumber";
-            this.txtbMeasurmentsNumber.Size = new System.Drawing.Size(93, 26);
-            this.txtbMeasurmentsNumber.TabIndex = 43;
+            this.txtbToProduceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtbToProduceNumber.Location = new System.Drawing.Point(549, 315);
+            this.txtbToProduceNumber.Name = "txtbToProduceNumber";
+            this.txtbToProduceNumber.Size = new System.Drawing.Size(93, 26);
+            this.txtbToProduceNumber.TabIndex = 43;
             // 
             // lblControlDateStart
             // 
@@ -173,7 +173,7 @@
             this.lblMeasurmentsNumber.Name = "lblMeasurmentsNumber";
             this.lblMeasurmentsNumber.Size = new System.Drawing.Size(163, 26);
             this.lblMeasurmentsNumber.TabIndex = 34;
-            this.lblMeasurmentsNumber.Text = "Liczba Pomiarów";
+            this.lblMeasurmentsNumber.Text = "Ilość zamówiona";
             this.lblMeasurmentsNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbltextBAcceptableLenghtDeviation
@@ -319,7 +319,7 @@
             this.Controls.Add(this.txtbEndDate);
             this.Controls.Add(this.txtbStartDate);
             this.Controls.Add(this.txtbAcceptableLenghtDeviation);
-            this.Controls.Add(this.txtbMeasurmentsNumber);
+            this.Controls.Add(this.txtbToProduceNumber);
             this.Controls.Add(this.lblControlDateEnd);
             this.Controls.Add(this.lblProcesNumber);
             this.Controls.Add(this.lblOutControlStatus);
@@ -352,7 +352,7 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.Label lblFormTitle;
-        private System.Windows.Forms.TextBox txtbMeasurmentsNumber;
+        private System.Windows.Forms.TextBox txtbToProduceNumber;
         private System.Windows.Forms.Label lblControlDateStart;
         private System.Windows.Forms.Label lblProcesNumber;
         private System.Windows.Forms.Label lblControlerId;
