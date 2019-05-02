@@ -53,10 +53,6 @@ namespace KWZP2019
             RefreshGridCustomer();
             this.Close();
         }
-        private void saveBtn_Click(object sender, EventArgs e)
-        {
-            db.SaveChanges();
-        }
         private void editCustomerBtn_Click(object sender, EventArgs e)
         {
             AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
@@ -105,12 +101,18 @@ namespace KWZP2019
         {
             //zadeklarowanie zmiennej "id" typu int i ustalenie wartości na podstawie pierwszej [0] kolumny w customerDgv
             int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells[0].Value);
-
             ordersDgv.DataSource = (from OrderCustomer in db.OrderCustomers
                                     where OrderCustomer.IdCustomer == id
                                     select OrderCustomer).ToList();
         }
-
+        private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(ordersDgv.CurrentRow.Cells[0].Value);
+            orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
+                                          where OrderDetail.IdOrderCustomer == id
+                                          select OrderDetail).ToList();
+            orderDetailsDgv.Columns[1].Visible = false;
+        }
 
     }
 }
