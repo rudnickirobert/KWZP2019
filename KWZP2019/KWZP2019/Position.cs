@@ -24,8 +24,8 @@ namespace KWZP2019
     
         public int IdPosition { get; set; }
         public string Workplace { get; set; }
-        public Nullable<byte> ValidityOfOshTraining { get; set; }
-        public Nullable<byte> VailidityOfMedicalExam { get; set; }
+        public Nullable<int> ValidityOfOshTraining { get; set; }
+        public Nullable<int> VailidityOfMedicalExam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contract> Contracts { get; set; }

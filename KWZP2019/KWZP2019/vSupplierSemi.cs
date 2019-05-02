@@ -12,7 +12,7 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vSupplierParts
+    public partial class vSupplierSemi
     {
         public int IdSupplier { get; set; }
         public string Type { get; set; }

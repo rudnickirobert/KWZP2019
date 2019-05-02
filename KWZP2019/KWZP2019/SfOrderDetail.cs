@@ -30,7 +30,7 @@ namespace KWZP2019
         public virtual ICollection<EntranceControl> EntranceControls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntranceControl> EntranceControls1 { get; set; }
-        public virtual SemiFinishedOrder SemiFinishedOrder { get; set; }
         public virtual SemiFinished SemiFinished { get; set; }
+        public virtual SemiFinishedOrder SemiFinishedOrder { get; set; }
     }
 }

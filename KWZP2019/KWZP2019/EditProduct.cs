@@ -29,6 +29,7 @@ namespace KWZP2019
         {
             product.IdSemiFinished = Convert.ToInt32(cBEditSemiFinished.SelectedValue);
             product.IdTechnology = Convert.ToInt32(cBEditTechnology.SelectedValue);
+            product.ProductCode = Convert.ToString(tBProductCode.Text);
             db.SaveChanges();
 
             MessageBox.Show("Edytowano!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);

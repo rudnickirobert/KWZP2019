@@ -25,7 +25,7 @@ namespace KWZP2019
         public int IdEmployee { get; set; }
         public System.DateTime OrderDate { get; set; }
         public decimal Cost { get; set; }
-        public int Markup { get; set; }
+        public double Markup { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }

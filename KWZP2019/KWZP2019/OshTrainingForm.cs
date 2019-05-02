@@ -53,7 +53,7 @@ namespace KWZP2019
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            dataGVOshTraining.DataSource = db.ViewOshTraining.
+            dataGVOshTraining.DataSource = db.ViewOshTrainings.
                 Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
                 && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining * 365) <= DbFunctions.AddDays(DateTime.Now, 45)
                 && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))
