@@ -21,8 +21,10 @@ namespace KWZP2019
 
         private void customerBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CustomerForm customerForm = new CustomerForm(db, this);
             customerForm.ShowDialog();
+            this.Close();
         }
 
         private void orderBtn_Click(object sender, EventArgs e)

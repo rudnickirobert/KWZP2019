@@ -24,7 +24,7 @@ namespace KWZP2019
             this.customerNameTb.Text = customerName;
         }
         private void AddNewOrderForm_Load(object sender, EventArgs e)
-        {
+        {//INSERTS EMPLOYEES TO COMBOBOX
             markupTb.BackColor = Color.LightGreen;
             List<Employee> employeeList = db.Employees.ToList();
             employeeCb.BeginUpdate();
@@ -33,7 +33,7 @@ namespace KWZP2019
                 employeeCb.Items.Add(emp.EmployeeName + " " + emp.EmployeeSurname);
             }
             employeeCb.EndUpdate();
-        }
+        }//MARKUP INSERT PROTECTION
         private void markupTb_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(markupTb.Text.Trim(), out double isMarkupValueDouble))
@@ -73,11 +73,14 @@ namespace KWZP2019
 
         }
 
-        //BUTTONS       //Return
+        //BUTTONS      
         private void returnBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            CustomerForm customerForm = new CustomerForm(db);
+            customerForm.ShowDialog();
             this.Close();
-        }               //Accept
+        }               
         private void acceptBtn_Click(object sender, EventArgs e)
         {
             OrderCustomer newOrderCustomer = new OrderCustomer();
@@ -127,6 +130,7 @@ namespace KWZP2019
                 MessageBox.Show("Dodaj szczegół zamówienia");
                 AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, newOrderCustomer.IdOrderCustomer);
                 newOrderDetail.ShowDialog();
+                this.Close();
                 return;
             }
             MessageBox.Show("Coś poszło nie tak");

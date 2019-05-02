@@ -15,6 +15,11 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private SalesDepartmentForm previousForm;
+        public CustomerForm(RoofingCompanyEntities db)
+        {
+            InitializeComponent();
+            this.db = db;
+        }//OVERRIDE CONSTRUCTOR 
         public CustomerForm(RoofingCompanyEntities db, SalesDepartmentForm previousForm)
         {
             InitializeComponent();
@@ -49,14 +54,14 @@ namespace KWZP2019
             }//END OF ALGORITHM
             customersDgv.DataSource = db.Customers.ToList();
         }
-        //BUTTONS   //ADD ORDER BUTTON
+        //BUTTONS  
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value);
             addNewOrderForm.ShowDialog();
             this.Close();
-        }           //ADD ORDER DETAIL BUTTON
+        }       
         private void addNewOrderDetailBtn_Click(object sender, EventArgs e)
         {
             //EXCEPTION PROTECTION
@@ -70,12 +75,11 @@ namespace KWZP2019
                 AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, this.ordersDgv.CurrentRow.Cells[0].Value);
                 newOrderDetail.ShowDialog();
             }
-        }           //RETURN BUTTON
-        private void cancelBtn_Click(object sender, EventArgs e)
+        }          
+        private void returnBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SalesDepartmentForm salesDepartmentForm = new SalesDepartmentForm(db);
-            salesDepartmentForm.Show();
+            previousForm.Show();
             this.Close();
         }
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
@@ -83,14 +87,7 @@ namespace KWZP2019
             this.Hide();
             AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
             newCustomer.ShowDialog();
-            RefreshGridCustomer();
             this.Close();
-        }
-        private void editCustomerBtn_Click(object sender, EventArgs e)
-        {
-            AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
-            newCustomer.ShowDialog();
-            RefreshGridCustomer();
         }
         //Metoda odświeżania klientów
         private void RefreshGridCustomer()

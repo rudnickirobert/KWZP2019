@@ -47,9 +47,8 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameLbl = new System.Windows.Forms.Label();
-            this.editCustomerBtn = new System.Windows.Forms.Button();
             this.searchTxt = new System.Windows.Forms.TextBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
+            this.returnBtn = new System.Windows.Forms.Button();
             this.ordersDgv = new System.Windows.Forms.DataGridView();
             this.idOrderCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -213,16 +212,6 @@
             this.nameLbl.TabIndex = 13;
             this.nameLbl.Text = "Nazwa";
             // 
-            // editCustomerBtn
-            // 
-            this.editCustomerBtn.Location = new System.Drawing.Point(356, 7);
-            this.editCustomerBtn.Name = "editCustomerBtn";
-            this.editCustomerBtn.Size = new System.Drawing.Size(145, 21);
-            this.editCustomerBtn.TabIndex = 16;
-            this.editCustomerBtn.Text = "Edytuj klienta";
-            this.editCustomerBtn.UseVisualStyleBackColor = true;
-            this.editCustomerBtn.Click += new System.EventHandler(this.editCustomerBtn_Click);
-            // 
             // searchTxt
             // 
             this.searchTxt.Location = new System.Drawing.Point(82, 8);
@@ -231,16 +220,16 @@
             this.searchTxt.TabIndex = 18;
             this.searchTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTxt_KeyPress);
             // 
-            // cancelBtn
+            // returnBtn
             // 
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(35, 720);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(107, 29);
-            this.cancelBtn.TabIndex = 19;
-            this.cancelBtn.Text = "Powrót";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.returnBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.returnBtn.Location = new System.Drawing.Point(35, 720);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(107, 29);
+            this.returnBtn.TabIndex = 19;
+            this.returnBtn.Text = "Powrót";
+            this.returnBtn.UseVisualStyleBackColor = true;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // ordersDgv
             // 
@@ -337,9 +326,8 @@
             this.Controls.Add(this.orderDetailsDgv);
             this.Controls.Add(this.addNewOrderDetailBtn);
             this.Controls.Add(this.ordersDgv);
-            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.searchTxt);
-            this.Controls.Add(this.editCustomerBtn);
             this.Controls.Add(this.customersDgv);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.orderBtn);
@@ -364,9 +352,8 @@
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.DataGridView customersDgv;
         private System.Windows.Forms.Label nameLbl;
-        private System.Windows.Forms.Button editCustomerBtn;
         private System.Windows.Forms.TextBox searchTxt;
-        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.DataGridView ordersDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrderCustomerDataGridViewTextBoxColumn;

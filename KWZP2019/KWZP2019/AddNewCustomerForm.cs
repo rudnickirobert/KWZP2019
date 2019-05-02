@@ -20,7 +20,10 @@ namespace KWZP2019
         }
         private void returnBtn_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            CustomerForm customerForm = new CustomerForm(db);
+            customerForm.ShowDialog();
+            this.Close();
         }
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
         {
