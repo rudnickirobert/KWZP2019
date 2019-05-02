@@ -12,14 +12,16 @@ namespace KWZP2019
 {
     public partial class OrderForm : Form
     {
-        public OrderForm()
+        RoofingCompanyEntities db;
+        public OrderForm(RoofingCompanyEntities db)
         {
             InitializeComponent();
+            this.db = db;
         }
         private void transportBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OutsourcingForm outsourcingForm = new OutsourcingForm();
+            OutsourcingForm outsourcingForm = new OutsourcingForm(db);
             outsourcingForm.ShowDialog();
             this.Close();
         }

@@ -788,6 +788,9 @@
     <None Include="Properties\DataSources\KWZP2019.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\KWZP2019.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\OrderCustomer.datasource" />
+    <None Include="Properties\DataSources\Outsourcing.datasource" />
+    <None Include="Properties\DataSources\OutsourcingCommitment.datasource" />
+    <None Include="Properties\DataSources\OutsourcingType.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Production\PlannedProduction.datasource" />
     <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
