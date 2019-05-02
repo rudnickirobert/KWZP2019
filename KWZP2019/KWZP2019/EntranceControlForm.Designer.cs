@@ -68,19 +68,23 @@ namespace KWZP2019
             this.picBoxQuantityStatus = new System.Windows.Forms.PictureBox();
             this.picBoxControlStatus = new System.Windows.Forms.PictureBox();
             this.btnApproval = new System.Windows.Forms.Button();
-            this.dataGVEntranceControl = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEntranceControl = new System.Windows.Forms.DataGridView();
             this.lblSelectedControl = new System.Windows.Forms.Label();
             this.lblOrderIdShow = new System.Windows.Forms.Label();
             this.lblSfIdShow = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
-            this.btnShowFromDate = new System.Windows.Forms.Button();
+            this.btnShowFromDay = new System.Windows.Forms.Button();
+            this.btnShowFromMonth = new System.Windows.Forms.Button();
+            this.btnShowFromYear = new System.Windows.Forms.Button();
+            this.btnShowFromToday = new System.Windows.Forms.Button();
+            this.btnStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxColorStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMassStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWidhtStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntranceControl)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -96,12 +100,13 @@ namespace KWZP2019
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(67, 186);
+            this.btnReturnMain.Location = new System.Drawing.Point(12, 12);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(200, 120);
+            this.btnReturnMain.Size = new System.Drawing.Size(180, 100);
             this.btnReturnMain.TabIndex = 0;
             this.btnReturnMain.Text = "Menu Główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.BtnReturnMain_Click);
             // 
@@ -118,12 +123,13 @@ namespace KWZP2019
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(67, 32);
+            this.btnReturn.Location = new System.Drawing.Point(198, 12);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(200, 120);
+            this.btnReturn.Size = new System.Drawing.Size(180, 100);
             this.btnReturn.TabIndex = 0;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
@@ -146,7 +152,7 @@ namespace KWZP2019
             this.lblThickness.BackColor = System.Drawing.Color.Transparent;
             this.lblThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblThickness.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblThickness.Location = new System.Drawing.Point(868, 107);
+            this.lblThickness.Location = new System.Drawing.Point(891, 107);
             this.lblThickness.Name = "lblThickness";
             this.lblThickness.Size = new System.Drawing.Size(91, 26);
             this.lblThickness.TabIndex = 4;
@@ -158,7 +164,7 @@ namespace KWZP2019
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWidth.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWidth.Location = new System.Drawing.Point(856, 151);
+            this.lblWidth.Location = new System.Drawing.Point(879, 151);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(104, 26);
             this.lblWidth.TabIndex = 5;
@@ -170,7 +176,7 @@ namespace KWZP2019
             this.lblMass.BackColor = System.Drawing.Color.Transparent;
             this.lblMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMass.Location = new System.Drawing.Point(897, 192);
+            this.lblMass.Location = new System.Drawing.Point(920, 192);
             this.lblMass.Name = "lblMass";
             this.lblMass.Size = new System.Drawing.Size(61, 26);
             this.lblMass.TabIndex = 6;
@@ -182,7 +188,7 @@ namespace KWZP2019
             this.lblComment.BackColor = System.Drawing.Color.Transparent;
             this.lblComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblComment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblComment.Location = new System.Drawing.Point(832, 350);
+            this.lblComment.Location = new System.Drawing.Point(832, 341);
             this.lblComment.Name = "lblComment";
             this.lblComment.Size = new System.Drawing.Size(114, 26);
             this.lblComment.TabIndex = 9;
@@ -192,10 +198,10 @@ namespace KWZP2019
             // txtboxThickness
             // 
             this.txtboxThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxThickness.Location = new System.Drawing.Point(962, 107);
+            this.txtboxThickness.Location = new System.Drawing.Point(986, 107);
             this.txtboxThickness.Margin = new System.Windows.Forms.Padding(0);
             this.txtboxThickness.Name = "txtboxThickness";
-            this.txtboxThickness.Size = new System.Drawing.Size(160, 26);
+            this.txtboxThickness.Size = new System.Drawing.Size(140, 26);
             this.txtboxThickness.TabIndex = 22;
             this.txtboxThickness.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtboxThickness.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
@@ -203,9 +209,9 @@ namespace KWZP2019
             // txtboxWidth
             // 
             this.txtboxWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxWidth.Location = new System.Drawing.Point(962, 150);
+            this.txtboxWidth.Location = new System.Drawing.Point(986, 150);
             this.txtboxWidth.Name = "txtboxWidth";
-            this.txtboxWidth.Size = new System.Drawing.Size(160, 26);
+            this.txtboxWidth.Size = new System.Drawing.Size(140, 26);
             this.txtboxWidth.TabIndex = 23;
             this.txtboxWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtboxWidth.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
@@ -213,9 +219,9 @@ namespace KWZP2019
             // txtboxMass
             // 
             this.txtboxMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxMass.Location = new System.Drawing.Point(962, 192);
+            this.txtboxMass.Location = new System.Drawing.Point(986, 192);
             this.txtboxMass.Name = "txtboxMass";
-            this.txtboxMass.Size = new System.Drawing.Size(160, 26);
+            this.txtboxMass.Size = new System.Drawing.Size(140, 26);
             this.txtboxMass.TabIndex = 24;
             this.txtboxMass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtboxMass.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
@@ -223,7 +229,7 @@ namespace KWZP2019
             // txtboxComment
             // 
             this.txtboxComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxComment.Location = new System.Drawing.Point(812, 384);
+            this.txtboxComment.Location = new System.Drawing.Point(812, 375);
             this.txtboxComment.Multiline = true;
             this.txtboxComment.Name = "txtboxComment";
             this.txtboxComment.Size = new System.Drawing.Size(357, 137);
@@ -234,7 +240,7 @@ namespace KWZP2019
             this.checkBoxComposition.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxComposition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxComposition.Location = new System.Drawing.Point(962, 321);
+            this.checkBoxComposition.Location = new System.Drawing.Point(997, 320);
             this.checkBoxComposition.Name = "checkBoxComposition";
             this.checkBoxComposition.Size = new System.Drawing.Size(170, 46);
             this.checkBoxComposition.TabIndex = 26;
@@ -246,7 +252,7 @@ namespace KWZP2019
             this.lblParameterCheck.BackColor = System.Drawing.Color.Transparent;
             this.lblParameterCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblParameterCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblParameterCheck.Location = new System.Drawing.Point(993, 542);
+            this.lblParameterCheck.Location = new System.Drawing.Point(1008, 563);
             this.lblParameterCheck.Name = "lblParameterCheck";
             this.lblParameterCheck.Size = new System.Drawing.Size(159, 26);
             this.lblParameterCheck.TabIndex = 28;
@@ -266,12 +272,13 @@ namespace KWZP2019
             this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnCheck.Image")));
-            this.btnCheck.Location = new System.Drawing.Point(67, 458);
+            this.btnCheck.Location = new System.Drawing.Point(826, 586);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(200, 120);
+            this.btnCheck.Size = new System.Drawing.Size(170, 80);
             this.btnCheck.TabIndex = 29;
             this.btnCheck.Text = "Sprawdź";
             this.btnCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
             // 
@@ -288,21 +295,22 @@ namespace KWZP2019
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDone.Image = ((System.Drawing.Image)(resources.GetObject("btnDone.Image")));
-            this.btnDone.Location = new System.Drawing.Point(67, 614);
+            this.btnDone.Location = new System.Drawing.Point(826, 671);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(200, 120);
+            this.btnDone.Size = new System.Drawing.Size(170, 80);
             this.btnDone.TabIndex = 30;
             this.btnDone.Text = "Zatwierdź";
             this.btnDone.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDone.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDone.UseVisualStyleBackColor = false;
             this.btnDone.Click += new System.EventHandler(this.BtnDone_Click);
             // 
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxEmployeeId.Location = new System.Drawing.Point(794, 209);
+            this.textBoxEmployeeId.Location = new System.Drawing.Point(774, 186);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
-            this.textBoxEmployeeId.Size = new System.Drawing.Size(58, 26);
+            this.textBoxEmployeeId.Size = new System.Drawing.Size(90, 26);
             this.textBoxEmployeeId.TabIndex = 31;
             this.textBoxEmployeeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.TextBoxEmployeeId_TextChanged);
@@ -314,12 +322,12 @@ namespace KWZP2019
             this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeId.ForeColor = System.Drawing.Color.White;
-            this.lblEmployeeId.Location = new System.Drawing.Point(653, 211);
+            this.lblEmployeeId.Location = new System.Drawing.Point(644, 189);
             this.lblEmployeeId.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmployeeId.Name = "lblEmployeeId";
-            this.lblEmployeeId.Size = new System.Drawing.Size(128, 20);
+            this.lblEmployeeId.Size = new System.Drawing.Size(127, 20);
             this.lblEmployeeId.TabIndex = 32;
-            this.lblEmployeeId.Text = "ID pracownika:";
+            this.lblEmployeeId.Text = "Nr pracownika:";
             // 
             // lblEmployeeFullName
             // 
@@ -327,7 +335,7 @@ namespace KWZP2019
             this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeFullName.ForeColor = System.Drawing.Color.White;
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(646, 235);
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(660, 212);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
             this.lblEmployeeFullName.Size = new System.Drawing.Size(13, 20);
             this.lblEmployeeFullName.TabIndex = 33;
@@ -340,7 +348,7 @@ namespace KWZP2019
             this.lblDelayTime.BackColor = System.Drawing.Color.Transparent;
             this.lblDelayTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDelayTime.ForeColor = System.Drawing.Color.White;
-            this.lblDelayTime.Location = new System.Drawing.Point(351, 148);
+            this.lblDelayTime.Location = new System.Drawing.Point(487, 254);
             this.lblDelayTime.Name = "lblDelayTime";
             this.lblDelayTime.Size = new System.Drawing.Size(13, 20);
             this.lblDelayTime.TabIndex = 33;
@@ -351,7 +359,7 @@ namespace KWZP2019
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
             this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblColor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblColor.Location = new System.Drawing.Point(900, 235);
+            this.lblColor.Location = new System.Drawing.Point(923, 235);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(58, 26);
             this.lblColor.TabIndex = 6;
@@ -361,20 +369,21 @@ namespace KWZP2019
             // txtBoxColor
             // 
             this.txtBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxColor.Location = new System.Drawing.Point(962, 235);
+            this.txtBoxColor.Location = new System.Drawing.Point(986, 235);
             this.txtBoxColor.Name = "txtBoxColor";
-            this.txtBoxColor.Size = new System.Drawing.Size(160, 26);
+            this.txtBoxColor.Size = new System.Drawing.Size(140, 26);
             this.txtBoxColor.TabIndex = 24;
             this.txtBoxColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxColor.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // datePickerSelectedControlsDate
             // 
-            this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(344, 173);
+            this.datePickerSelectedControlsDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerSelectedControlsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.datePickerSelectedControlsDate.Location = new System.Drawing.Point(30, 248);
             this.datePickerSelectedControlsDate.Margin = new System.Windows.Forms.Padding(0);
             this.datePickerSelectedControlsDate.Name = "datePickerSelectedControlsDate";
-            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(302, 26);
+            this.datePickerSelectedControlsDate.Size = new System.Drawing.Size(450, 29);
             this.datePickerSelectedControlsDate.TabIndex = 35;
             this.datePickerSelectedControlsDate.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
             // 
@@ -385,12 +394,12 @@ namespace KWZP2019
             this.lblIdSfOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIdSfOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIdSfOrder.ForeColor = System.Drawing.Color.White;
-            this.lblIdSfOrder.Location = new System.Drawing.Point(653, 148);
+            this.lblIdSfOrder.Location = new System.Drawing.Point(642, 130);
             this.lblIdSfOrder.Margin = new System.Windows.Forms.Padding(0);
             this.lblIdSfOrder.Name = "lblIdSfOrder";
-            this.lblIdSfOrder.Size = new System.Drawing.Size(131, 20);
+            this.lblIdSfOrder.Size = new System.Drawing.Size(130, 20);
             this.lblIdSfOrder.TabIndex = 32;
-            this.lblIdSfOrder.Text = "ID zamówienia:";
+            this.lblIdSfOrder.Text = "Nr zamówienia:";
             // 
             // lblIdSf
             // 
@@ -399,12 +408,12 @@ namespace KWZP2019
             this.lblIdSf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIdSf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIdSf.ForeColor = System.Drawing.Color.White;
-            this.lblIdSf.Location = new System.Drawing.Point(646, 179);
+            this.lblIdSf.Location = new System.Drawing.Point(621, 160);
             this.lblIdSf.Margin = new System.Windows.Forms.Padding(0);
             this.lblIdSf.Name = "lblIdSf";
-            this.lblIdSf.Size = new System.Drawing.Size(138, 20);
+            this.lblIdSf.Size = new System.Drawing.Size(150, 20);
             this.lblIdSf.TabIndex = 32;
-            this.lblIdSf.Text = "ID półfabrykatu:";
+            this.lblIdSf.Text = "Kod półfabrykatu:";
             // 
             // picBoxColorStatus
             // 
@@ -452,7 +461,7 @@ namespace KWZP2019
             this.lblControlNotExist.BackColor = System.Drawing.Color.Transparent;
             this.lblControlNotExist.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblControlNotExist.ForeColor = System.Drawing.Color.Red;
-            this.lblControlNotExist.Location = new System.Drawing.Point(421, 64);
+            this.lblControlNotExist.Location = new System.Drawing.Point(156, 154);
             this.lblControlNotExist.Name = "lblControlNotExist";
             this.lblControlNotExist.Size = new System.Drawing.Size(16, 24);
             this.lblControlNotExist.TabIndex = 33;
@@ -464,7 +473,7 @@ namespace KWZP2019
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(902, 280);
+            this.label1.Location = new System.Drawing.Point(925, 280);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 26);
             this.label1.TabIndex = 6;
@@ -474,9 +483,9 @@ namespace KWZP2019
             // txtBoxQuantity
             // 
             this.txtBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxQuantity.Location = new System.Drawing.Point(962, 278);
+            this.txtBoxQuantity.Location = new System.Drawing.Point(986, 278);
             this.txtBoxQuantity.Name = "txtBoxQuantity";
-            this.txtBoxQuantity.Size = new System.Drawing.Size(160, 26);
+            this.txtBoxQuantity.Size = new System.Drawing.Size(140, 26);
             this.txtBoxQuantity.TabIndex = 24;
             this.txtBoxQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxQuantity.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
@@ -496,7 +505,7 @@ namespace KWZP2019
             this.picBoxControlStatus.BackColor = System.Drawing.Color.Transparent;
             this.picBoxControlStatus.Image = global::KWZP2019.Properties.Resources.new_80px;
             this.picBoxControlStatus.InitialImage = null;
-            this.picBoxControlStatus.Location = new System.Drawing.Point(988, 570);
+            this.picBoxControlStatus.Location = new System.Drawing.Point(1003, 591);
             this.picBoxControlStatus.Name = "picBoxControlStatus";
             this.picBoxControlStatus.Size = new System.Drawing.Size(169, 158);
             this.picBoxControlStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -515,26 +524,29 @@ namespace KWZP2019
             this.btnApproval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApproval.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnApproval.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnApproval.Location = new System.Drawing.Point(812, 570);
+            this.btnApproval.Image = global::KWZP2019.Properties.Resources.icons8_checkmark_40;
+            this.btnApproval.Location = new System.Drawing.Point(672, 586);
             this.btnApproval.Name = "btnApproval";
-            this.btnApproval.Size = new System.Drawing.Size(170, 158);
+            this.btnApproval.Size = new System.Drawing.Size(150, 165);
             this.btnApproval.TabIndex = 29;
             this.btnApproval.Text = "Kliknij, aby potwierdzić wyniki";
+            this.btnApproval.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnApproval.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnApproval.UseVisualStyleBackColor = false;
             this.btnApproval.Click += new System.EventHandler(this.BtnApproval_Click);
             // 
-            // dataGVEntranceControl
+            // dataGridViewEntranceControl
             // 
-            this.dataGVEntranceControl.AllowUserToAddRows = false;
-            this.dataGVEntranceControl.AllowUserToDeleteRows = false;
+            this.dataGridViewEntranceControl.AllowUserToAddRows = false;
+            this.dataGridViewEntranceControl.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVEntranceControl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGVEntranceControl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGVEntranceControl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGVEntranceControl.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.dataGVEntranceControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGVEntranceControl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewEntranceControl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEntranceControl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEntranceControl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridViewEntranceControl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dataGridViewEntranceControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewEntranceControl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -542,8 +554,8 @@ namespace KWZP2019
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGVEntranceControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGVEntranceControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEntranceControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewEntranceControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -551,14 +563,14 @@ namespace KWZP2019
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGVEntranceControl.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGVEntranceControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGVEntranceControl.Location = new System.Drawing.Point(344, 262);
-            this.dataGVEntranceControl.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGVEntranceControl.MultiSelect = false;
-            this.dataGVEntranceControl.Name = "dataGVEntranceControl";
-            this.dataGVEntranceControl.ReadOnly = true;
-            this.dataGVEntranceControl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewEntranceControl.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewEntranceControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewEntranceControl.Location = new System.Drawing.Point(30, 280);
+            this.dataGridViewEntranceControl.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridViewEntranceControl.MultiSelect = false;
+            this.dataGridViewEntranceControl.Name = "dataGridViewEntranceControl";
+            this.dataGridViewEntranceControl.ReadOnly = true;
+            this.dataGridViewEntranceControl.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -566,23 +578,23 @@ namespace KWZP2019
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGVEntranceControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewEntranceControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVEntranceControl.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGVEntranceControl.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGVEntranceControl.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVEntranceControl.ShowEditingIcon = false;
-            this.dataGVEntranceControl.Size = new System.Drawing.Size(447, 466);
-            this.dataGVEntranceControl.TabIndex = 38;
-            this.dataGVEntranceControl.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGVEntranceControl_RowHeaderMouseDoubleClick);
+            this.dataGridViewEntranceControl.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewEntranceControl.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewEntranceControl.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewEntranceControl.ShowEditingIcon = false;
+            this.dataGridViewEntranceControl.Size = new System.Drawing.Size(450, 455);
+            this.dataGridViewEntranceControl.TabIndex = 38;
+            this.dataGridViewEntranceControl.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGVEntranceControl_RowHeaderMouseClick);
             // 
             // lblSelectedControl
             // 
             this.lblSelectedControl.BackColor = System.Drawing.Color.Transparent;
             this.lblSelectedControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSelectedControl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSelectedControl.Location = new System.Drawing.Point(671, 105);
+            this.lblSelectedControl.Location = new System.Drawing.Point(671, 92);
             this.lblSelectedControl.Name = "lblSelectedControl";
             this.lblSelectedControl.Size = new System.Drawing.Size(161, 26);
             this.lblSelectedControl.TabIndex = 4;
@@ -594,10 +606,10 @@ namespace KWZP2019
             this.lblOrderIdShow.BackColor = System.Drawing.SystemColors.Window;
             this.lblOrderIdShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOrderIdShow.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblOrderIdShow.Location = new System.Drawing.Point(794, 143);
+            this.lblOrderIdShow.Location = new System.Drawing.Point(774, 127);
             this.lblOrderIdShow.Margin = new System.Windows.Forms.Padding(0);
             this.lblOrderIdShow.Name = "lblOrderIdShow";
-            this.lblOrderIdShow.Size = new System.Drawing.Size(58, 26);
+            this.lblOrderIdShow.Size = new System.Drawing.Size(90, 26);
             this.lblOrderIdShow.TabIndex = 6;
             this.lblOrderIdShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -606,10 +618,10 @@ namespace KWZP2019
             this.lblSfIdShow.BackColor = System.Drawing.SystemColors.Window;
             this.lblSfIdShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSfIdShow.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblSfIdShow.Location = new System.Drawing.Point(794, 175);
+            this.lblSfIdShow.Location = new System.Drawing.Point(774, 157);
             this.lblSfIdShow.Margin = new System.Windows.Forms.Padding(0);
             this.lblSfIdShow.Name = "lblSfIdShow";
-            this.lblSfIdShow.Size = new System.Drawing.Size(58, 26);
+            this.lblSfIdShow.Size = new System.Drawing.Size(90, 26);
             this.lblSfIdShow.TabIndex = 6;
             this.lblSfIdShow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -617,36 +629,133 @@ namespace KWZP2019
             // 
             this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnShowAll.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowAll.FlatAppearance.BorderSize = 3;
             this.btnShowAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnShowAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowAll.Location = new System.Drawing.Point(455, 206);
+            this.btnShowAll.Image = global::KWZP2019.Properties.Resources.icons8_date_span_40;
+            this.btnShowAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowAll.Location = new System.Drawing.Point(487, 520);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(191, 50);
+            this.btnShowAll.Size = new System.Drawing.Size(235, 55);
             this.btnShowAll.TabIndex = 39;
             this.btnShowAll.Text = "Pokaż wszystko";
+            this.btnShowAll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShowAll.UseVisualStyleBackColor = false;
-            this.btnShowAll.Click += new System.EventHandler(this.BtnShow_Click);
+            this.btnShowAll.Click += new System.EventHandler(this.BtnShowAll_Click);
             // 
-            // btnShowFromDate
+            // btnShowFromDay
             // 
-            this.btnShowFromDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnShowFromDate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnShowFromDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnShowFromDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnShowFromDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnShowFromDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowFromDate.Location = new System.Drawing.Point(344, 206);
-            this.btnShowFromDate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnShowFromDate.Name = "btnShowFromDate";
-            this.btnShowFromDate.Size = new System.Drawing.Size(106, 50);
-            this.btnShowFromDate.TabIndex = 39;
-            this.btnShowFromDate.Text = "Pokaż z";
-            this.btnShowFromDate.UseVisualStyleBackColor = false;
-            this.btnShowFromDate.Click += new System.EventHandler(this.BtnShowFromDate_Click);
+            this.btnShowFromDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowFromDay.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowFromDay.FlatAppearance.BorderSize = 3;
+            this.btnShowFromDay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowFromDay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowFromDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFromDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowFromDay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowFromDay.Image = global::KWZP2019.Properties.Resources.icons8_calendar_13_40;
+            this.btnShowFromDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromDay.Location = new System.Drawing.Point(487, 340);
+            this.btnShowFromDay.Margin = new System.Windows.Forms.Padding(0);
+            this.btnShowFromDay.Name = "btnShowFromDay";
+            this.btnShowFromDay.Size = new System.Drawing.Size(235, 55);
+            this.btnShowFromDay.TabIndex = 39;
+            this.btnShowFromDay.Text = "Pokaż z dnia";
+            this.btnShowFromDay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowFromDay.UseVisualStyleBackColor = false;
+            this.btnShowFromDay.Click += new System.EventHandler(this.BtnShowFromDay_Click);
+            // 
+            // btnShowFromMonth
+            // 
+            this.btnShowFromMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowFromMonth.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowFromMonth.FlatAppearance.BorderSize = 3;
+            this.btnShowFromMonth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowFromMonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowFromMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFromMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowFromMonth.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowFromMonth.Image = global::KWZP2019.Properties.Resources.icons8_month_view_40;
+            this.btnShowFromMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromMonth.Location = new System.Drawing.Point(487, 400);
+            this.btnShowFromMonth.Margin = new System.Windows.Forms.Padding(0);
+            this.btnShowFromMonth.Name = "btnShowFromMonth";
+            this.btnShowFromMonth.Size = new System.Drawing.Size(235, 55);
+            this.btnShowFromMonth.TabIndex = 39;
+            this.btnShowFromMonth.Text = "Pokaż z miesiąca";
+            this.btnShowFromMonth.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowFromMonth.UseVisualStyleBackColor = false;
+            this.btnShowFromMonth.Click += new System.EventHandler(this.BtnShowFromMonth_Click);
+            // 
+            // btnShowFromYear
+            // 
+            this.btnShowFromYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowFromYear.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowFromYear.FlatAppearance.BorderSize = 3;
+            this.btnShowFromYear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowFromYear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowFromYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFromYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowFromYear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowFromYear.Image = global::KWZP2019.Properties.Resources.icons8_calendar_plus_40;
+            this.btnShowFromYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromYear.Location = new System.Drawing.Point(487, 460);
+            this.btnShowFromYear.Margin = new System.Windows.Forms.Padding(0);
+            this.btnShowFromYear.Name = "btnShowFromYear";
+            this.btnShowFromYear.Size = new System.Drawing.Size(235, 55);
+            this.btnShowFromYear.TabIndex = 39;
+            this.btnShowFromYear.Text = "Pokaż z roku";
+            this.btnShowFromYear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowFromYear.UseVisualStyleBackColor = false;
+            this.btnShowFromYear.Click += new System.EventHandler(this.BtnShowFromYear_Click);
+            // 
+            // btnShowFromToday
+            // 
+            this.btnShowFromToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnShowFromToday.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnShowFromToday.FlatAppearance.BorderSize = 3;
+            this.btnShowFromToday.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnShowFromToday.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnShowFromToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowFromToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowFromToday.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowFromToday.Image = global::KWZP2019.Properties.Resources.icons8_calendar_1_40;
+            this.btnShowFromToday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFromToday.Location = new System.Drawing.Point(487, 280);
+            this.btnShowFromToday.Margin = new System.Windows.Forms.Padding(0);
+            this.btnShowFromToday.Name = "btnShowFromToday";
+            this.btnShowFromToday.Size = new System.Drawing.Size(235, 55);
+            this.btnShowFromToday.TabIndex = 39;
+            this.btnShowFromToday.Text = "Pokaż z dziś";
+            this.btnShowFromToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowFromToday.UseVisualStyleBackColor = false;
+            this.btnShowFromToday.Click += new System.EventHandler(this.BtnShowFromToday_Click);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnStatistics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnStatistics.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnStatistics.FlatAppearance.BorderSize = 3;
+            this.btnStatistics.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnStatistics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStatistics.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnStatistics.Image = global::KWZP2019.Properties.Resources.icons8_statistics_40;
+            this.btnStatistics.Location = new System.Drawing.Point(384, 12);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(180, 100);
+            this.btnStatistics.TabIndex = 0;
+            this.btnStatistics.Text = "Wykresy";
+            this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.BtnStatistics_Click);
             // 
             // EntranceControlForm
             // 
@@ -655,7 +764,10 @@ namespace KWZP2019
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
-            this.Controls.Add(this.btnShowFromDate);
+            this.Controls.Add(this.btnShowFromYear);
+            this.Controls.Add(this.btnShowFromMonth);
+            this.Controls.Add(this.btnShowFromToday);
+            this.Controls.Add(this.btnShowFromDay);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.picBoxControlStatus);
             this.Controls.Add(this.datePickerSelectedControlsDate);
@@ -692,9 +804,10 @@ namespace KWZP2019
             this.Controls.Add(this.lblSelectedControl);
             this.Controls.Add(this.lblThickness);
             this.Controls.Add(this.lblFormTitle);
+            this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
-            this.Controls.Add(this.dataGVEntranceControl);
+            this.Controls.Add(this.dataGridViewEntranceControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -709,7 +822,7 @@ namespace KWZP2019
             ((System.ComponentModel.ISupportInitialize)(this.picBoxThicknessStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxQuantityStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxControlStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVEntranceControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntranceControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -751,11 +864,15 @@ namespace KWZP2019
         private System.Windows.Forms.PictureBox picBoxQuantityStatus;
         private System.Windows.Forms.PictureBox picBoxControlStatus;
         private System.Windows.Forms.Button btnApproval;
-        private System.Windows.Forms.DataGridView dataGVEntranceControl;
+        private System.Windows.Forms.DataGridView dataGridViewEntranceControl;
         private System.Windows.Forms.Label lblSelectedControl;
         private System.Windows.Forms.Label lblOrderIdShow;
         private System.Windows.Forms.Label lblSfIdShow;
         private System.Windows.Forms.Button btnShowAll;
-        private System.Windows.Forms.Button btnShowFromDate;
+        private System.Windows.Forms.Button btnShowFromDay;
+        private System.Windows.Forms.Button btnShowFromMonth;
+        private System.Windows.Forms.Button btnShowFromYear;
+        private System.Windows.Forms.Button btnShowFromToday;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }

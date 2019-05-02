@@ -118,6 +118,12 @@
     <Compile Include="EntranceControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntranceControlStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntranceControlStatisticsForm.Designer.cs">
+      <DependentUpon>EntranceControlStatisticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -643,6 +649,9 @@
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EntranceControlStatisticsForm.resx">
+      <DependentUpon>EntranceControlStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
     </EmbeddedResource>
@@ -852,6 +861,17 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-bar-chart-40.png" />
+    <None Include="Resources\icons8-calendar-1-40.png" />
+    <None Include="Resources\icons8-calendar-13-40.png" />
+    <None Include="Resources\icons8-calendar-plus-40.png" />
+    <None Include="Resources\icons8-checkmark-40.png" />
+    <None Include="Resources\icons8-date-from-40.png" />
+    <None Include="Resources\icons8-date-span-40.png" />
+    <None Include="Resources\icons8-date-to-40.png" />
+    <None Include="Resources\icons8-fraction-40.png" />
+    <None Include="Resources\icons8-month-view-40.png" />
+    <None Include="Resources\icons8-statistics-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

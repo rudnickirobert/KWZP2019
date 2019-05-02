@@ -21,7 +21,7 @@ namespace KWZP2019
         private bool doResultsChecked;
         private bool wholeControlStatus;
         private String selectedOrderId;
-        private String selectedSfId;
+        private int selectedSfId;
 
         // ==================================================
 
@@ -52,6 +52,15 @@ namespace KWZP2019
 
         // ==================================================
 
+        private void BtnStatistics_Click(object sender, EventArgs e)
+        {
+            EntranceControlStatisticsForm statisticsForm = new EntranceControlStatisticsForm(db, startForm, this);
+            statisticsForm.Show();
+            this.Hide();
+        }
+
+        // ==================================================
+
         private void EntranceControlForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.startForm.Show();
@@ -68,40 +77,60 @@ namespace KWZP2019
 
         // ==================================================
 
-        private void BtnShowFromDate_Click(object sender, EventArgs e)
+        private void BtnShowFromToday_Click(object sender, EventArgs e)
+        {
+            datePickerSelectedControlsDate.Value = DateTime.Now;
+            ShowControlsFromDate(DateTime.Now);
+        }
+
+        // ==================================================
+
+        private void BtnShowFromDay_Click(object sender, EventArgs e)
         {
             ShowControlsFromDate(datePickerSelectedControlsDate.Value);
         }
 
         // ==================================================
 
-        private void BtnShow_Click(object sender, EventArgs e)
+        private void BtnShowFromMonth_Click(object sender, EventArgs e)
         {
-            // Polish names only for displaying into dataGridView in form
-            // var because it's an anonymouse type
-            var orders = db.SfOrderDetails
-                .Join(db.SemiFinishedOrders,
-                sfOrderDetail => sfOrderDetail.IdSfOrder,
-                sfOrder => sfOrder.IdSfOrder,
-                (sfOrderDetail, sfOrder) => new {
-                    ID_zamówienia = sfOrderDetail.IdSfOrder,
-                    ID_półfabrykatu = sfOrderDetail.IdSemiFinished,
-                    Data_dostarczenia = sfOrder.SfDeliveryDate
-                })
-                .OrderBy(orderBy =>
-                orderBy.Data_dostarczenia)
-                .ToList();
-            dataGVEntranceControl.DataSource = orders;
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value.Month, datePickerSelectedControlsDate.Value.Year);
         }
 
         // ==================================================
-        private void DataGVEntranceControl_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void BtnShowFromYear_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGVEntranceControl.SelectedRows[0];
-            selectedOrderId = selectedRow.Cells["ID_zamówienia"].Value.ToString();
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value.Year);
+        }
+
+        // ==================================================
+
+        private void BtnShowAll_Click(object sender, EventArgs e)
+        {
+			// Polish names only for displaying into dataGridView in form
+            // var because it's an anonymouse type
+			var orders = db.ViewSemiFinishedOrders
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+
+            dataGridViewEntranceControl.DataSource = orders;
+        }
+
+        // ==================================================
+        private void DataGVEntranceControl_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+			
+            DataGridViewRow selectedRow = dataGridViewEntranceControl.SelectedRows[0];
+            selectedOrderId = selectedRow.Cells["Nr_zamówienia"].Value.ToString();
             lblOrderIdShow.Text = selectedOrderId;
-            selectedSfId = selectedRow.Cells["ID_półfabrykatu"].Value.ToString();
-            lblSfIdShow.Text = selectedSfId;
+			String selectedSfCode = selectedRow.Cells["Kod_półfabrykatu"].Value.ToString();
+			lblSfIdShow.Text = selectedSfCode;
+			
+			SemiFinished sfBySelectedCode = db.SemiFinisheds.Where(check => check.SfCode == selectedSfCode).First();
+
+            selectedSfId = sfBySelectedCode.IdSemiFinished;
+            
             if (ChangeTextBoxesDependingOnExistedSelectedControl())
             {
                 this.doControlExist = true;
@@ -112,7 +141,7 @@ namespace KWZP2019
                 this.doResultsChecked = false;
                 this.doResultsApproved = false;
                 this.doControlExist = false;
-                int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Data_dostarczenia"].Value).TotalMinutes, 0);
+                int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Dostarczono"].Value).TotalMinutes, 0);
                 lblDelayTime.Text = $"{minutesOfDelay / 1440} dni, {(minutesOfDelay % 1440) / 60} godzin i {(minutesOfDelay % 1440) % 60} minut opóźnienia";
             }
         }
@@ -128,7 +157,7 @@ namespace KWZP2019
 
             lblEmployeeFullName.Text = employee != null ? 
                 $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : 
-                "Brak pracownika z takim ID";
+                "Brak pracownika z takim numerem";
         }
 
         // ================================================== 
@@ -145,18 +174,18 @@ namespace KWZP2019
         {
             if (selectedOrderId == null)
             {
-                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (this.doControlExist)
             {
-                MessageBox.Show("Ta kontrola już istnieje w bazie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ta kontrola już istnieje w bazie!", "Wiadomość", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (lblOrderIdShow.Text == "" || lblSfIdShow.Text == "" 
                 || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
                 || txtboxWidth.Text == "" || txtboxMass.Text == ""
                 || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
-                MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (lblOrderIdShow.Text == "")
                 {
                     lblOrderIdShow.BackColor = Color.Red;
@@ -212,7 +241,7 @@ namespace KWZP2019
                 SfOrderDetail idSfDetail = db.SfOrderDetails
                     .Where(check =>
                     check.IdSfOrder.ToString() == selectedOrderId
-                    && check.IdSemiFinished.ToString() == selectedSfId).First();
+                    && check.IdSemiFinished == selectedSfId).First();
 
 
                 EntranceControl entranceControl = new EntranceControl();
@@ -285,7 +314,7 @@ namespace KWZP2019
                 })
                 .Where(check => 
                 check.IdSfOrder.ToString() == selectedOrderId && 
-                check.IdSemiFinished.ToString() == selectedSfId)
+                check.IdSemiFinished == selectedSfId)
                 .FirstOrDefault();
 
             if (selectedControl == null)
@@ -351,7 +380,7 @@ namespace KWZP2019
             }
             else
             {
-                SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished.ToString() == selectedSfId);
+                SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished == selectedSfId);
 
                 bool flagThickness = false;
                 bool flagWidth = false;
@@ -440,7 +469,7 @@ namespace KWZP2019
                     SfOrderDetail quantitySfOrder = db.SfOrderDetails
                         .Where(check =>
                         check.IdSfOrder.ToString() == selectedOrderId
-                        && check.IdSemiFinished.ToString() == selectedSfId)
+                        && check.IdSemiFinished == selectedSfId)
                         .FirstOrDefault();
 
                     if (int.TryParse(txtBoxQuantity.Text, out int quantity))
@@ -478,31 +507,48 @@ namespace KWZP2019
 
         private void ShowControlsFromDate(DateTime selectedDate)
         {
+			// Polish names only for displaying into dataGridView in form
             // var because it's an anonymouse type
-            var orders = db.SfOrderDetails
-                .Join(db.SemiFinishedOrders,
-                sfOrderDetail => sfOrderDetail.IdSfOrder,
-                sfOrder => sfOrder.IdSfOrder,
-                (sfOrderDetail, sfOrder) => new
-                {
-                    sfOrderDetail,
-                    sfOrder
-                })
-                .Where(check =>
-                check.sfOrder.SfDeliveryDate.Year == selectedDate.Year
-                && check.sfOrder.SfDeliveryDate.Month == selectedDate.Month
-                && check.sfOrder.SfDeliveryDate.Day == selectedDate.Day)
-                .Select(sfOrderDetailJoinSfOrder => new
-                {
-                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
-                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
-                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
-                })
-                .OrderBy(orderBy =>
-                orderBy.Data_dostarczenia)
-                .ToList();
-            // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
+			var orders = db.ViewSemiFinishedOrders
+				.Where(check =>
+				check.Dostarczono.Year == selectedDate.Year
+				&& check.Dostarczono.Month == selectedDate.Month
+				&& check.Dostarczono.Day == selectedDate.Day)
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+            
+            dataGridViewEntranceControl.DataSource = orders;
+        }
+
+        // ==================================================
+
+        private void ShowControlsFromDate(int month, int year)
+        {
+			// Polish names only for displaying into dataGridView in form
+            // var because it's an anonymouse type
+            var orders = db.ViewSemiFinishedOrders
+				.Where(check =>
+				check.Dostarczono.Year == year
+				&& check.Dostarczono.Month == month)
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+            
+            dataGridViewEntranceControl.DataSource = orders;
+        }
+
+        // ==================================================
+
+        private void ShowControlsFromDate(int year)
+        {
+			// Polish names only for displaying into dataGridView in form
+            // var because it's an anonymouse type
+            var orders = db.ViewSemiFinishedOrders
+				.Where(check =>
+				check.Dostarczono.Year == year)
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+            
+            dataGridViewEntranceControl.DataSource = orders;
         }
     }
 }
