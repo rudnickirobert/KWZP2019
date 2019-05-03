@@ -118,7 +118,8 @@ CREATE TABLE OrderCustomer
 	IdEmployee int NOT NULL,
 	OrderDate datetime NOT NULL,
 	Cost money NOT NULL,
-	Markup float NOT NULL);
+	Markup float NOT NULL,
+	NewOrderInfo bit NULL);
 
 CREATE TABLE OrderDetail
 	(IdDetail int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -661,7 +662,7 @@ ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentN
 FROM Customer;
  
 /*====SALES DEPARTMENT END===*/
-
+GO
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
 SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
@@ -741,6 +742,7 @@ ON OrderDetail.IdProduct = Product.IdProduct;
 /*====SALES DEPARTMENT END===*/ 
 
 /*====PRODUCTION===*/
+GO
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
@@ -768,7 +770,7 @@ Unit.UnitName as [Jednostka],
 Part.QuantityWarehouse as [Stan magazynowy]
 FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
 ON Unit.IdUnit = Part.IdUnit
-ORDER BY Part.PartName;
+--ORDER BY Part.PartName;
 GO
 
 CREATE VIEW vMaintPartsView
@@ -779,7 +781,7 @@ FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
-ORDER BY Maintenance.DateAcceptOrder DESC;
+--ORDER BY Maintenance.DateAcceptOrder DESC;
 GO
 
 /*====SALES DEPARTMENT START===*/
