@@ -18,12 +18,12 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private StartForm startForm;
-        private Finances Finances;
-        public Salaries(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
+        private Finances finances;
+        public Salaries(RoofingCompanyEntities db, StartForm startForm, Finances finances)
         {
             this.db = db;
             this.startForm = startForm;
-            this.Finances = Finances;
+            this.finances = finances;
             InitializeComponent();
         }
         private void Salaries_Load(object sender, EventArgs e)
@@ -46,6 +46,18 @@ namespace KWZP2019
         .Select(vPaymentHistory => new { vPaymentHistory.EmployeeName, vPaymentHistory.EmployeeSurname, vPaymentHistory.PESEL, vPaymentHistory.Bonus, vPaymentHistory.Sum, vPaymentHistory.Date })
         .ToList();
         dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finances.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

@@ -18,12 +18,12 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private StartForm startForm;
-        private Finances Finances;
-        public AllExpenses(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
+        private Finances finances;
+        public AllExpenses(RoofingCompanyEntities db, StartForm startForm, Finances finances)
         {
             this.db = db;
             this.startForm = startForm;
-            this.Finances = Finances;
+            this.finances = finances;
             InitializeComponent();
         }
         private void AllExpenses_Load(object sender, EventArgs e)
@@ -193,6 +193,58 @@ namespace KWZP2019
                 stream.Close();
             }
             MessageBox.Show("Pomyślnie wygenerowano raport.");
+        }
+
+        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblOrdersPln_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSumOS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSumOrders_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblOutsourcingPln_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvOutsourcing_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblOutsourcing_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblOrders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finances.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }
