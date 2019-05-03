@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace KWZP2019
 {
@@ -70,9 +69,9 @@ namespace KWZP2019
                 }).ToList();
             String stddetails = "{0, -40}{1, 0}";
 
-            lbWarningsContracts.Items.Add(String.Format(stddetails, "Pracownicy, którym kończy się umowa: ",db.vHRContracts.Count()));
+            lbWarningsContracts.Items.Add(String.Format(stddetails, "Pracownicy, którym kończy się umowa: ", db.vHRContracts.Count()));
 
-           lbWarningsExamination.Items.Add(String.Format(stddetails, "Pracownicy, którym kończą się badania lekarskie: ",db.vHRExaminations.Count()));
+            lbWarningsExamination.Items.Add(String.Format(stddetails, "Pracownicy, którym kończą się badania lekarskie: ", db.vHRExaminations.Count()));
         }
 
         private void tbEmployeeSearching_TextChanged(object sender, EventArgs e)
