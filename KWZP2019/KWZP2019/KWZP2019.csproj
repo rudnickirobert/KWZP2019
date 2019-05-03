@@ -938,6 +938,8 @@
     <None Include="Resources\roof.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\icons8-download-80.png" />
+    <None Include="Resources\icons8-download-801.png" />
     <None Include="Resources\powrott.png" />
     <None Include="Resources\okej.png" />
     <None Include="Resources\addp.png" />

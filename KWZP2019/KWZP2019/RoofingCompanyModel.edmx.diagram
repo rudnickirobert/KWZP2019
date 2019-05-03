@@ -143,6 +143,10 @@
         <AssociationConnector Association="RoofingCompanyModel.FkProductIdTech" />
         <AssociationConnector Association="RoofingCompanyModel.FkTechProdDataId" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinished" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vUnhandledOrderDetails" Width="1.5" PointX="9.375" PointY="22.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierParts" Width="1.5" PointX="21.375" PointY="18.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemis" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.EntranceControlView" Width="1.5" PointX="23.375" PointY="17.75" />
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
