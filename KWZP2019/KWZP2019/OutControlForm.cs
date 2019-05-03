@@ -181,7 +181,6 @@ namespace KWZP2019
             chartWidth.Visible = true;
             chartSuccesfullFailCount.Visible = true;
             List<OutputProductMeasurement> outputProductMeasurements = db.OutputProductMeasurements.Where(e => e.IdProcess == procesNumber).ToList();
-
             foreach(OutputProductMeasurement outputProduct in outputProductMeasurements)
             {
                 chartLenght.Series["Lenght Measures"].Points.Add(outputProduct.MeasuredLenght);
