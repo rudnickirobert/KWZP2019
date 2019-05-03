@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceControlStatisticsForm));
             this.dataGridViewSemiFinished = new System.Windows.Forms.DataGridView();
             this.btnReturnMain = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.histogramThickness = new LiveCharts.WinForms.CartesianChart();
             this.histogramWidth = new LiveCharts.WinForms.CartesianChart();
             this.histogramWeight = new LiveCharts.WinForms.CartesianChart();
+            this.btnRefreshCharts = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSemiFinished)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,31 +54,31 @@
             // 
             this.dataGridViewSemiFinished.AllowUserToAddRows = false;
             this.dataGridViewSemiFinished.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewSemiFinished.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSemiFinished.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewSemiFinished.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dataGridViewSemiFinished.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSemiFinished.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSemiFinished.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSemiFinished.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewSemiFinished.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSemiFinished.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSemiFinished.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewSemiFinished.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewSemiFinished.Location = new System.Drawing.Point(200, 12);
             this.dataGridViewSemiFinished.Margin = new System.Windows.Forms.Padding(0);
@@ -85,17 +86,17 @@
             this.dataGridViewSemiFinished.Name = "dataGridViewSemiFinished";
             this.dataGridViewSemiFinished.ReadOnly = true;
             this.dataGridViewSemiFinished.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSemiFinished.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewSemiFinished.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSemiFinished.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewSemiFinished.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewSemiFinished.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dataGridViewSemiFinished.ShowEditingIcon = false;
@@ -153,7 +154,7 @@
             // 
             this.datePickerDateFrom.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.datePickerDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerDateFrom.Location = new System.Drawing.Point(96, 248);
+            this.datePickerDateFrom.Location = new System.Drawing.Point(95, 234);
             this.datePickerDateFrom.Margin = new System.Windows.Forms.Padding(0);
             this.datePickerDateFrom.Name = "datePickerDateFrom";
             this.datePickerDateFrom.Size = new System.Drawing.Size(285, 26);
@@ -165,7 +166,7 @@
             // 
             this.datePickerDateTo.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.datePickerDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.datePickerDateTo.Location = new System.Drawing.Point(96, 285);
+            this.datePickerDateTo.Location = new System.Drawing.Point(95, 271);
             this.datePickerDateTo.Margin = new System.Windows.Forms.Padding(0);
             this.datePickerDateTo.Name = "datePickerDateTo";
             this.datePickerDateTo.Size = new System.Drawing.Size(286, 26);
@@ -178,7 +179,7 @@
             this.lblDateFrom.BackColor = System.Drawing.Color.Transparent;
             this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDateFrom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDateFrom.Location = new System.Drawing.Point(12, 249);
+            this.lblDateFrom.Location = new System.Drawing.Point(11, 235);
             this.lblDateFrom.Name = "lblDateFrom";
             this.lblDateFrom.Size = new System.Drawing.Size(79, 26);
             this.lblDateFrom.TabIndex = 43;
@@ -190,7 +191,7 @@
             this.lblDateTo.BackColor = System.Drawing.Color.Transparent;
             this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDateTo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDateTo.Location = new System.Drawing.Point(11, 285);
+            this.lblDateTo.Location = new System.Drawing.Point(10, 271);
             this.lblDateTo.Name = "lblDateTo";
             this.lblDateTo.Size = new System.Drawing.Size(79, 26);
             this.lblDateTo.TabIndex = 43;
@@ -210,9 +211,9 @@
             this.btnAllTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAllTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAllTime.Image = global::KWZP2019.Properties.Resources.icons8_date_span_40;
-            this.btnAllTime.Location = new System.Drawing.Point(12, 344);
+            this.btnAllTime.Location = new System.Drawing.Point(12, 306);
             this.btnAllTime.Name = "btnAllTime";
-            this.btnAllTime.Size = new System.Drawing.Size(369, 60);
+            this.btnAllTime.Size = new System.Drawing.Size(370, 60);
             this.btnAllTime.TabIndex = 1;
             this.btnAllTime.Text = "Cały okres czasu";
             this.btnAllTime.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -223,6 +224,7 @@
             // 
             this.pieChartNumberOfPositiveAndNegativeControl.BackColorTransparent = true;
             this.pieChartNumberOfPositiveAndNegativeControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pieChartNumberOfPositiveAndNegativeControl.ForeColor = System.Drawing.Color.White;
             this.pieChartNumberOfPositiveAndNegativeControl.Location = new System.Drawing.Point(390, 12);
             this.pieChartNumberOfPositiveAndNegativeControl.Name = "pieChartNumberOfPositiveAndNegativeControl";
             this.pieChartNumberOfPositiveAndNegativeControl.Size = new System.Drawing.Size(206, 206);
@@ -255,6 +257,28 @@
             this.histogramWeight.Size = new System.Drawing.Size(206, 206);
             this.histogramWeight.TabIndex = 45;
             // 
+            // btnRefreshCharts
+            // 
+            this.btnRefreshCharts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnRefreshCharts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefreshCharts.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnRefreshCharts.FlatAppearance.BorderSize = 3;
+            this.btnRefreshCharts.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefreshCharts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefreshCharts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnRefreshCharts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshCharts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRefreshCharts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefreshCharts.Image = global::KWZP2019.Properties.Resources.icons8_date_span_40;
+            this.btnRefreshCharts.Location = new System.Drawing.Point(12, 374);
+            this.btnRefreshCharts.Name = "btnRefreshCharts";
+            this.btnRefreshCharts.Size = new System.Drawing.Size(370, 60);
+            this.btnRefreshCharts.TabIndex = 1;
+            this.btnRefreshCharts.Text = "Odśwież wykresy";
+            this.btnRefreshCharts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefreshCharts.UseVisualStyleBackColor = false;
+            this.btnRefreshCharts.Click += new System.EventHandler(this.BtnRefreshCharts_Click);
+            // 
             // EntranceControlStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +296,7 @@
             this.Controls.Add(this.datePickerDateFrom);
             this.Controls.Add(this.dataGridViewSemiFinished);
             this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.btnRefreshCharts);
             this.Controls.Add(this.btnAllTime);
             this.Controls.Add(this.btnReturn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -301,5 +326,6 @@
         private LiveCharts.WinForms.CartesianChart histogramThickness;
         private LiveCharts.WinForms.CartesianChart histogramWidth;
         private LiveCharts.WinForms.CartesianChart histogramWeight;
+        private System.Windows.Forms.Button btnRefreshCharts;
     }
 }
