@@ -463,6 +463,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QualityControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -571,6 +576,9 @@
     <Compile Include="vInputMagazine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vMaintPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -578,6 +586,9 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOutsourcingWithType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vPredictedPriceForCustomer.cs">
@@ -745,14 +756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Finances\Salaries.resx">
       <DependentUpon>Salaries.cs</DependentUpon>
     </EmbeddedResource>
@@ -778,6 +784,9 @@
     <None Include="Properties\DataSources\Failure.datasource" />
     <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\DataSources\OrderCustomer.datasource" />
+    <None Include="Properties\DataSources\Outsourcing.datasource" />
+    <None Include="Properties\DataSources\OutsourcingCommitment.datasource" />
+    <None Include="Properties\DataSources\OutsourcingType.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Production\PlannedProduction.datasource" />
     <None Include="Production\PlannedProductionEmployeeDetail.datasource" />
@@ -834,6 +843,8 @@
     <None Include="Resources\roof.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\icons8-download-80.png" />
+    <None Include="Resources\icons8-download-801.png" />
     <None Include="Resources\powrott.png" />
     <None Include="Resources\okej.png" />
     <None Include="Resources\addp.png" />
