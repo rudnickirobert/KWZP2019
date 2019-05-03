@@ -611,40 +611,8 @@ on
 	SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
 
 go
-create view ViewNumberNegativeEntranceControl as
-select SemiFinished.SfCode, count(EntranceControl.ControlStatus) as Negative
-from
-	EntranceControl
-join
-	SfOrderDetail
-on
-	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
-join
-	SemiFinished
-on
-	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
-where EntranceControl.ControlStatus = 0
-group by SemiFinished.SfCode;
-
-go
-create view ViewNumberPositiveEntranceControl as
-select SemiFinished.SfCode, count(EntranceControl.ControlStatus) as Positive
-from
-	EntranceControl
-join
-	SfOrderDetail
-on
-	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
-join
-	SemiFinished
-on
-	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
-where EntranceControl.ControlStatus = 1
-group by SemiFinished.SfCode;
-
-go
 create view ViewEntranceControlResultsBySfCode as
-select SemiFinished.SfCode, EntranceControl.RealThickness, EntranceControl.RealWidth, EntranceControl.RealWeight
+select SemiFinished.SfCode, EntranceControl.ControlDate, EntranceControl.ControlStatus, EntranceControl.RealThickness, EntranceControl.RealWidth, EntranceControl.RealWeight
 from
 	EntranceControl
 join
@@ -668,6 +636,7 @@ join
 on
 	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail;
 
+go
 create view ViewMinAndMaxEntranceControlDate as
 select SemiFinished.SfCode, min(EntranceControl.ControlDate) as [MinControlDate], max(EntranceControl.ControlDate) as[MaxControlDate]
 from
