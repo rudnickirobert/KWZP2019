@@ -233,6 +233,26 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_download_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-download-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_download_801 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-download-801", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_duration_finance_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-duration-finance-80", resourceCulture);
