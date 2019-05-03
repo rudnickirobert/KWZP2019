@@ -80,6 +80,9 @@
             // 
             // tBProductCode
             // 
+            this.tBProductCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tBProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tBProductCode.ForeColor = System.Drawing.SystemColors.Window;
             this.tBProductCode.Location = new System.Drawing.Point(140, 187);
             this.tBProductCode.Name = "tBProductCode";
             this.tBProductCode.Size = new System.Drawing.Size(214, 20);
@@ -135,6 +138,9 @@
             // 
             // cBSemiFinished
             // 
+            this.cBSemiFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cBSemiFinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cBSemiFinished.ForeColor = System.Drawing.SystemColors.Window;
             this.cBSemiFinished.FormattingEnabled = true;
             this.cBSemiFinished.Location = new System.Drawing.Point(140, 130);
             this.cBSemiFinished.Name = "cBSemiFinished";
@@ -143,6 +149,9 @@
             // 
             // cBTechnology
             // 
+            this.cBTechnology.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cBTechnology.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cBTechnology.ForeColor = System.Drawing.SystemColors.Window;
             this.cBTechnology.FormattingEnabled = true;
             this.cBTechnology.Location = new System.Drawing.Point(140, 243);
             this.cBTechnology.Name = "cBTechnology";
@@ -151,6 +160,9 @@
             // 
             // dTPAddTime
             // 
+            this.dTPAddTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dTPAddTime.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dTPAddTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dTPAddTime.Location = new System.Drawing.Point(140, 300);
             this.dTPAddTime.Name = "dTPAddTime";
             this.dTPAddTime.Size = new System.Drawing.Size(213, 20);

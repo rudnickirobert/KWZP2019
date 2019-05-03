@@ -54,10 +54,10 @@
             // 
             // tBNumberProd
             // 
-            this.tBNumberProd.BackColor = System.Drawing.Color.White;
+            this.tBNumberProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tBNumberProd.Enabled = false;
-            this.tBNumberProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tBNumberProd.ForeColor = System.Drawing.Color.Black;
+            this.tBNumberProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tBNumberProd.ForeColor = System.Drawing.Color.White;
             this.tBNumberProd.Location = new System.Drawing.Point(149, 142);
             this.tBNumberProd.Name = "tBNumberProd";
             this.tBNumberProd.Size = new System.Drawing.Size(80, 22);
@@ -139,9 +139,9 @@
             // 
             // tBProductCode
             // 
-            this.tBProductCode.BackColor = System.Drawing.Color.White;
-            this.tBProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tBProductCode.ForeColor = System.Drawing.Color.Black;
+            this.tBProductCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tBProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tBProductCode.ForeColor = System.Drawing.Color.White;
             this.tBProductCode.Location = new System.Drawing.Point(148, 194);
             this.tBProductCode.Name = "tBProductCode";
             this.tBProductCode.Size = new System.Drawing.Size(215, 22);
@@ -149,9 +149,9 @@
             // 
             // cBEditSemiFinished
             // 
-            this.cBEditSemiFinished.BackColor = System.Drawing.Color.White;
-            this.cBEditSemiFinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cBEditSemiFinished.ForeColor = System.Drawing.Color.Black;
+            this.cBEditSemiFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cBEditSemiFinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cBEditSemiFinished.ForeColor = System.Drawing.Color.White;
             this.cBEditSemiFinished.FormattingEnabled = true;
             this.cBEditSemiFinished.Location = new System.Drawing.Point(148, 246);
             this.cBEditSemiFinished.Name = "cBEditSemiFinished";
@@ -160,9 +160,9 @@
             // 
             // cBEditTechnology
             // 
-            this.cBEditTechnology.BackColor = System.Drawing.Color.White;
-            this.cBEditTechnology.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cBEditTechnology.ForeColor = System.Drawing.Color.Black;
+            this.cBEditTechnology.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cBEditTechnology.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cBEditTechnology.ForeColor = System.Drawing.Color.White;
             this.cBEditTechnology.FormattingEnabled = true;
             this.cBEditTechnology.Location = new System.Drawing.Point(148, 300);
             this.cBEditTechnology.Name = "cBEditTechnology";
