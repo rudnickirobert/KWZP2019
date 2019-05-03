@@ -13,7 +13,7 @@ namespace KWZP2019
     using System.Collections.Generic;
     
     public partial class vMaintPartsView
-    {
+    {   
         public string MaintenanceNr { get; set; }
         public System.DateTime DateAcceptOrder { get; set; }
         public string PartName { get; set; }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -2249,6 +2249,340 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RoofingCompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RoofingCompanyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Absences" EntityType="Self.Absence" />
+          <EntitySet Name="AbsenceTypes" EntityType="Self.AbsenceType" />
+          <EntitySet Name="Accidents" EntityType="Self.Accident" />
+          <EntitySet Name="Allocations" EntityType="Self.Allocation" />
+          <EntitySet Name="Contracts" EntityType="Self.Contract" />
+          <EntitySet Name="Contractors" EntityType="Self.Contractor" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Educations" EntityType="Self.Education" />
+          <EntitySet Name="EducationLevels" EntityType="Self.EducationLevel" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeePlans" EntityType="Self.EmployeePlan" />
+          <EntitySet Name="EntranceControls" EntityType="Self.EntranceControl" />
+          <EntitySet Name="Expenses" EntityType="Self.Expense" />
+          <EntitySet Name="Failures" EntityType="Self.Failure" />
+          <EntitySet Name="FailureMaintenances" EntityType="Self.FailureMaintenance" />
+          <EntitySet Name="FEMAnalysis" EntityType="Self.FEMAnalysi" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="InvoiceTypes" EntityType="Self.InvoiceType" />
+          <EntitySet Name="Machines" EntityType="Self.Machine" />
+          <EntitySet Name="MachineTypes" EntityType="Self.MachineType" />
+          <EntitySet Name="MaintDescriptions" EntityType="Self.MaintDescription" />
+          <EntitySet Name="Maintenances" EntityType="Self.Maintenance" />
+          <EntitySet Name="MaintParts" EntityType="Self.MaintPart" />
+          <EntitySet Name="MaintTypes" EntityType="Self.MaintType" />
+          <EntitySet Name="MedicalExaminations" EntityType="Self.MedicalExamination" />
+          <EntitySet Name="OrderCustomers" EntityType="Self.OrderCustomer" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="OutControls" EntityType="Self.OutControl" />
+          <EntitySet Name="OutputProductMeasurements" EntityType="Self.OutputProductMeasurement" />
+          <EntitySet Name="Outsourcings" EntityType="Self.Outsourcing" />
+          <EntitySet Name="OutsourcingCommitments" EntityType="Self.OutsourcingCommitment" />
+          <EntitySet Name="OutsourcingTypes" EntityType="Self.OutsourcingType" />
+          <EntitySet Name="Parts" EntityType="Self.Part" />
+          <EntitySet Name="PartOrders" EntityType="Self.PartOrder" />
+          <EntitySet Name="PartOrderDetails" EntityType="Self.PartOrderDetail" />
+          <EntitySet Name="PartOrderRequests" EntityType="Self.PartOrderRequest" />
+          <EntitySet Name="PartRequests" EntityType="Self.PartRequest" />
+          <EntitySet Name="PartTypes" EntityType="Self.PartType" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="PlannedProductions" EntityType="Self.PlannedProduction" />
+          <EntitySet Name="PlannedProductionEmployeeDetails" EntityType="Self.PlannedProductionEmployeeDetail" />
+          <EntitySet Name="Positions" EntityType="Self.Position" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductionProcesses" EntityType="Self.ProductionProcess" />
+          <EntitySet Name="Realizations" EntityType="Self.Realization" />
+          <EntitySet Name="SafetyControls" EntityType="Self.SafetyControl" />
+          <EntitySet Name="SafetyTrainings" EntityType="Self.SafetyTraining" />
+          <EntitySet Name="SemiFinisheds" EntityType="Self.SemiFinished" />
+          <EntitySet Name="SemiFinishedOrders" EntityType="Self.SemiFinishedOrder" />
+          <EntitySet Name="SfOrderDetails" EntityType="Self.SfOrderDetail" />
+          <EntitySet Name="SkillsForMachines" EntityType="Self.SkillsForMachine" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="SupplierTypes" EntityType="Self.SupplierType" />
+          <EntitySet Name="TechnicalProductDatas" EntityType="Self.TechnicalProductData" />
+          <EntitySet Name="Technologies" EntityType="Self.Technology" />
+          <EntitySet Name="Trainings" EntityType="Self.Training" />
+          <EntitySet Name="Units" EntityType="Self.Unit" />
+          <EntitySet Name="SafetyControlHistoryViews" EntityType="Self.SafetyControlHistoryView" />
+          <EntitySet Name="vCompanies" EntityType="Self.vCompany" />
+          <EntitySet Name="vDevotionsInMeasuremntsPerProcesses" EntityType="Self.vDevotionsInMeasuremntsPerProcess" />
+          <EntitySet Name="ViewDailySfDeliveries" EntityType="Self.ViewDailySfDelivery" />
+          <EntitySet Name="ViewOshTrainings" EntityType="Self.ViewOshTraining" />
+          <EntitySet Name="vIndividualCustomers" EntityType="Self.vIndividualCustomer" />
+          <EntitySet Name="vInputMagazines" EntityType="Self.vInputMagazine" />
+          <EntitySet Name="vMaintPartsViews" EntityType="Self.vMaintPartsView" />
+          <EntitySet Name="vOrderDetails" EntityType="Self.vOrderDetail" />
+          <EntitySet Name="vOutputMagazines" EntityType="Self.vOutputMagazine" />
+          <EntitySet Name="vOutsourcingWithTypes" EntityType="Self.vOutsourcingWithType" />
+          <EntitySet Name="vPartsViews" EntityType="Self.vPartsView" />
+          <EntitySet Name="vPredictedPriceForCustomers" EntityType="Self.vPredictedPriceForCustomer" />
+          <EntitySet Name="vSuccesfullyProcesses" EntityType="Self.vSuccesfullyProcess" />
+          <EntitySet Name="vSuccesfullyProducedPerProcesses" EntityType="Self.vSuccesfullyProducedPerProcess" />
+          <EntitySet Name="vSupplierParts" EntityType="Self.vSupplierPart" />
+          <EntitySet Name="vSupplierSemis" EntityType="Self.vSupplierSemi" />
+          <EntitySet Name="vTechnicalProductDataPerProcesses" EntityType="Self.vTechnicalProductDataPerProcess" />
+          <EntitySet Name="vUnfinishedProcesses" EntityType="Self.vUnfinishedProcess" />
+          <EntitySet Name="vUnhandledOrderDetails" EntityType="Self.vUnhandledOrderDetail" />
+          <AssociationSet Name="FK__Absence__IdAbsen__1332DBDC" Association="Self.FK__Absence__IdAbsen__1332DBDC">
+            <End Role="AbsenceType" EntitySet="AbsenceTypes" />
+            <End Role="Absence" EntitySet="Absences" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Absence__IdEmplo__14270015" Association="Self.FK__Absence__IdEmplo__14270015">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Absence" EntitySet="Absences" />
+          </AssociationSet>
+          <AssociationSet Name="FKAccidentEmployee" Association="Self.FKAccidentEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Accident" EntitySet="Accidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Allocatio__IdDep__2180FB33" Association="Self.FK__Allocatio__IdDep__2180FB33">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Allocation" EntitySet="Allocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Allocatio__IdEmp__208CD6FA" Association="Self.FK__Allocatio__IdEmp__208CD6FA">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Allocation" EntitySet="Allocations" />
+          </AssociationSet>
+          <AssociationSet Name="FKPlannedProductionEmployeeDetailsAllocation" Association="Self.FKPlannedProductionEmployeeDetailsAllocation">
+            <End Role="Allocation" EntitySet="Allocations" />
+            <End Role="PlannedProductionEmployeeDetails" EntitySet="PlannedProductionEmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contract__IdEmpl__09A971A2" Association="Self.FK__Contract__IdEmpl__09A971A2">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Contract" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contract__IdPosi__0A9D95DB" Association="Self.FK__Contract__IdPosi__0A9D95DB">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Contract" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__IdContr__339FAB6E" Association="Self.FK__Invoice__IdContr__339FAB6E">
+            <End Role="Contractor" EntitySet="Contractors" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FkOrderCustomerCustomer" Association="Self.FkOrderCustomerCustomer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="OrderCustomer" EntitySet="OrderCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Expense__IdDepar__37703C52" Association="Self.FK__Expense__IdDepar__37703C52">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Expense" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__IdDeparme__1CBC4616" Association="Self.FK__Staff__IdDeparme__1CBC4616">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Education__IdEdu__2739D489" Association="Self.FK__Education__IdEdu__2739D489">
+            <End Role="EducationLevel" EntitySet="EducationLevels" />
+            <End Role="Education" EntitySet="Educations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Education__IdEmp__2645B050" Association="Self.FK__Education__IdEmp__2645B050">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Education" EntitySet="Educations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MedicalEx__IdEmp__2CF2ADDF" Association="Self.FK__MedicalEx__IdEmp__2CF2ADDF">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="MedicalExamination" EntitySet="MedicalExaminations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__IdEmplo__17F790F9" Association="Self.FK__Payment__IdEmplo__17F790F9">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Training__IdEmpl__2A164134" Association="Self.FK__Training__IdEmpl__2A164134">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Training" EntitySet="Trainings" />
+          </AssociationSet>
+          <AssociationSet Name="FKEnteranceControlEmployee" Association="Self.FKEnteranceControlEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EntranceControl" EntitySet="EntranceControls" />
+          </AssociationSet>
+          <AssociationSet Name="FkFEMAnalysisEmployee" Association="Self.FkFEMAnalysisEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="FEMAnalysis" EntitySet="FEMAnalysis" />
+          </AssociationSet>
+          <AssociationSet Name="FkInspectedEmployee" Association="Self.FkInspectedEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="SafetyControl" EntitySet="SafetyControls" />
+          </AssociationSet>
+          <AssociationSet Name="FkOrderCustomerEmployee" Association="Self.FkOrderCustomerEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="OrderCustomer" EntitySet="OrderCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FkOutControlEmployee" Association="Self.FkOutControlEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="OutControl" EntitySet="OutControls" />
+          </AssociationSet>
+          <AssociationSet Name="FkTrainedEmployee" Association="Self.FkTrainedEmployee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="SafetyTraining" EntitySet="SafetyTrainings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaintenanceEmployee" Association="Self.FK_MaintenanceEmployee">
+            <End Role="Maintenance" EntitySet="Maintenances" />
+            <End Role="EmployeePlan" EntitySet="EmployeePlans" />
+          </AssociationSet>
+          <AssociationSet Name="FkEntranceControlSfOrderDetail" Association="Self.FkEntranceControlSfOrderDetail">
+            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
+            <End Role="EntranceControl" EntitySet="EntranceControls" />
+          </AssociationSet>
+          <AssociationSet Name="FKSfDetail" Association="Self.FKSfDetail">
+            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
+            <End Role="EntranceControl" EntitySet="EntranceControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Expense__IdInvoi__3864608B" Association="Self.FK__Expense__IdInvoi__3864608B">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="Expense" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FailureFailureMaintenance" Association="Self.FK_FailureFailureMaintenance">
+            <End Role="Failure" EntitySet="Failures" />
+            <End Role="FailureMaintenance" EntitySet="FailureMaintenances" />
+          </AssociationSet>
+          <AssociationSet Name="FKProductionProces" Association="Self.FKProductionProces">
+            <End Role="ProductionProcesses" EntitySet="ProductionProcesses" />
+            <End Role="Failure" EntitySet="Failures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaintenanceFailureMaintenance" Association="Self.FK_MaintenanceFailureMaintenance">
+            <End Role="Maintenance" EntitySet="Maintenances" />
+            <End Role="FailureMaintenance" EntitySet="FailureMaintenances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__IdInvoi__3493CFA7" Association="Self.FK__Invoice__IdInvoi__3493CFA7">
+            <End Role="InvoiceType" EntitySet="InvoiceTypes" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SkillsFor__IdMac__0D7A0286" Association="Self.FK__SkillsFor__IdMac__0D7A0286">
+            <End Role="Machine" EntitySet="Machines" />
+            <End Role="SkillsForMachine" EntitySet="SkillsForMachines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MachineMaintenance" Association="Self.FK_MachineMaintenance">
+            <End Role="Machine" EntitySet="Machines" />
+            <End Role="Maintenance" EntitySet="Maintenances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MachineTypeMachine" Association="Self.FK_MachineTypeMachine">
+            <End Role="MachineType" EntitySet="MachineTypes" />
+            <End Role="Machine" EntitySet="Machines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MainDescriptionMaintenance" Association="Self.FK_MainDescriptionMaintenance">
+            <End Role="MaintDescription" EntitySet="MaintDescriptions" />
+            <End Role="Maintenance" EntitySet="Maintenances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaintenanceRealization" Association="Self.FK_MaintenanceRealization">
+            <End Role="Maintenance" EntitySet="Maintenances" />
+            <End Role="Realization" EntitySet="Realizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaintTypeMaintenance" Association="Self.FK_MaintTypeMaintenance">
+            <End Role="MaintType" EntitySet="MaintTypes" />
+            <End Role="Maintenance" EntitySet="Maintenances" />
+          </AssociationSet>
+          <AssociationSet Name="FkMachine" Association="Self.FkMachine">
+            <End Role="Maintenance" EntitySet="Maintenances" />
+            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartMainPart" Association="Self.FK_PartMainPart">
+            <End Role="Part" EntitySet="Parts" />
+            <End Role="MaintPart" EntitySet="MaintParts" />
+          </AssociationSet>
+          <AssociationSet Name="FkOrderDetailOrderCustomer" Association="Self.FkOrderDetailOrderCustomer">
+            <End Role="OrderCustomer" EntitySet="OrderCustomers" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FkOrderDetail" Association="Self.FkOrderDetail">
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
+          </AssociationSet>
+          <AssociationSet Name="FkOrderDetailProduct" Association="Self.FkOrderDetailProduct">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FkOutControlProcess" Association="Self.FkOutControlProcess">
+            <End Role="ProductionProcesses" EntitySet="ProductionProcesses" />
+            <End Role="OutControl" EntitySet="OutControls" />
+          </AssociationSet>
+          <AssociationSet Name="FkOutputProductMeasurements" Association="Self.FkOutputProductMeasurements">
+            <End Role="OutControl" EntitySet="OutControls" />
+            <End Role="OutputProductMeasurements" EntitySet="OutputProductMeasurements" />
+          </AssociationSet>
+          <AssociationSet Name="FkOutsourcingCommitmentOutsourcing" Association="Self.FkOutsourcingCommitmentOutsourcing">
+            <End Role="Outsourcing" EntitySet="Outsourcings" />
+            <End Role="OutsourcingCommitment" EntitySet="OutsourcingCommitments" />
+          </AssociationSet>
+          <AssociationSet Name="FkOutsourcingOutsourcingType" Association="Self.FkOutsourcingOutsourcingType">
+            <End Role="OutsourcingType" EntitySet="OutsourcingTypes" />
+            <End Role="Outsourcing" EntitySet="Outsourcings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartPartRequest" Association="Self.FK_PartPartRequest">
+            <End Role="Part" EntitySet="Parts" />
+            <End Role="PartRequest" EntitySet="PartRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartRequestPartOrderDetail" Association="Self.FK_PartRequestPartOrderDetail">
+            <End Role="Part" EntitySet="Parts" />
+            <End Role="PartOrderDetail" EntitySet="PartOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartTypePart" Association="Self.FK_PartTypePart">
+            <End Role="PartType" EntitySet="PartTypes" />
+            <End Role="Part" EntitySet="Parts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UnitPart" Association="Self.FK_UnitPart">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="Part" EntitySet="Parts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartOrderPartOrderDetail" Association="Self.FK_PartOrderPartOrderDetail">
+            <End Role="PartOrder" EntitySet="PartOrders" />
+            <End Role="PartOrderDetail" EntitySet="PartOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartRequestPartOrderRequest" Association="Self.FK_PartRequestPartOrderRequest">
+            <End Role="PartRequest" EntitySet="PartRequests" />
+            <End Role="PartOrderRequest" EntitySet="PartOrderRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FKPlannedProductionEmployeeDetailsPlannedProduction" Association="Self.FKPlannedProductionEmployeeDetailsPlannedProduction">
+            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
+            <End Role="PlannedProductionEmployeeDetails" EntitySet="PlannedProductionEmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FKProductionProcesPlannedProduction" Association="Self.FKProductionProcesPlannedProduction">
+            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
+            <End Role="ProductionProcesses" EntitySet="ProductionProcesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SkillsFor__IdPos__0E6E26BF" Association="Self.FK__SkillsFor__IdPos__0E6E26BF">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="SkillsForMachine" EntitySet="SkillsForMachines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__IdPositio__1DB06A4F" Association="Self.FK__Staff__IdPositio__1DB06A4F">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FkProductIdSF" Association="Self.FkProductIdSF">
+            <End Role="SemiFinished" EntitySet="SemiFinisheds" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FkProductIdTech" Association="Self.FkProductIdTech">
+            <End Role="Technology" EntitySet="Technologies" />
+            <End Role="Product" EntitySet="Products" />
+/AssociationSet>
+          <AssociationSet Name="FkTechProdDataId" Association="Self.FkTechProdDataId">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="TechnicalProductData" EntitySet="TechnicalProductDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FkSfOrderDetailSemiFinished" Association="Self.FkSfOrderDetailSemiFinished">
+            <End Role="SemiFinished" EntitySet="SemiFinisheds" />
+            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FkSemiFinishedOrderSupplier" Association="Self.FkSemiFinishedOrderSupplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FkSfOrderDetailSemiFinishedOrder" Association="Self.FkSfOrderDetailSemiFinishedOrder">
+            <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrders" />
+            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FkSupplierSupplierType" Association="Self.FkSupplierSupplierType">
+            <End Role="SupplierType" EntitySet="SupplierTypes" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
         <EntityType Name="Absence">
           <Key>
             <PropertyRef Name="IdAbsence" />
@@ -4051,350 +4385,170 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RoofingCompanyEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Absences" EntityType="Self.Absence" />
-          <EntitySet Name="AbsenceTypes" EntityType="Self.AbsenceType" />
-          <EntitySet Name="Accidents" EntityType="Self.Accident" />
-          <EntitySet Name="Allocations" EntityType="Self.Allocation" />
-          <EntitySet Name="Contracts" EntityType="Self.Contract" />
-          <EntitySet Name="Contractors" EntityType="Self.Contractor" />
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Departments" EntityType="Self.Department" />
-          <EntitySet Name="Educations" EntityType="Self.Education" />
-          <EntitySet Name="EducationLevels" EntityType="Self.EducationLevel" />
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
-          <EntitySet Name="EmployeePlans" EntityType="Self.EmployeePlan" />
-          <EntitySet Name="EntranceControls" EntityType="Self.EntranceControl" />
-          <EntitySet Name="Expenses" EntityType="Self.Expense" />
-          <EntitySet Name="Failures" EntityType="Self.Failure" />
-          <EntitySet Name="FailureMaintenances" EntityType="Self.FailureMaintenance" />
-          <EntitySet Name="FEMAnalysis" EntityType="Self.FEMAnalysi" />
-          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
-          <EntitySet Name="InvoiceTypes" EntityType="Self.InvoiceType" />
-          <EntitySet Name="Machines" EntityType="Self.Machine" />
-          <EntitySet Name="MachineTypes" EntityType="Self.MachineType" />
-          <EntitySet Name="MaintDescriptions" EntityType="Self.MaintDescription" />
-          <EntitySet Name="Maintenances" EntityType="Self.Maintenance" />
-          <EntitySet Name="MaintParts" EntityType="Self.MaintPart" />
-          <EntitySet Name="MaintTypes" EntityType="Self.MaintType" />
-          <EntitySet Name="MedicalExaminations" EntityType="Self.MedicalExamination" />
-          <EntitySet Name="OrderCustomers" EntityType="Self.OrderCustomer" />
-          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
-          <EntitySet Name="OutControls" EntityType="Self.OutControl" />
-          <EntitySet Name="OutputProductMeasurements" EntityType="Self.OutputProductMeasurement" />
-          <EntitySet Name="Outsourcings" EntityType="Self.Outsourcing" />
-          <EntitySet Name="OutsourcingCommitments" EntityType="Self.OutsourcingCommitment" />
-          <EntitySet Name="OutsourcingTypes" EntityType="Self.OutsourcingType" />
-          <EntitySet Name="Parts" EntityType="Self.Part" />
-          <EntitySet Name="PartOrders" EntityType="Self.PartOrder" />
-          <EntitySet Name="PartOrderDetails" EntityType="Self.PartOrderDetail" />
-          <EntitySet Name="PartOrderRequests" EntityType="Self.PartOrderRequest" />
-          <EntitySet Name="PartRequests" EntityType="Self.PartRequest" />
-          <EntitySet Name="PartTypes" EntityType="Self.PartType" />
-          <EntitySet Name="Payments" EntityType="Self.Payment" />
-          <EntitySet Name="PlannedProductions" EntityType="Self.PlannedProduction" />
-          <EntitySet Name="PlannedProductionEmployeeDetails" EntityType="Self.PlannedProductionEmployeeDetail" />
-          <EntitySet Name="Positions" EntityType="Self.Position" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="ProductionProcesses" EntityType="Self.ProductionProcess" />
-          <EntitySet Name="Realizations" EntityType="Self.Realization" />
-          <EntitySet Name="SafetyControls" EntityType="Self.SafetyControl" />
-          <EntitySet Name="SafetyTrainings" EntityType="Self.SafetyTraining" />
-          <EntitySet Name="SemiFinisheds" EntityType="Self.SemiFinished" />
-          <EntitySet Name="SemiFinishedOrders" EntityType="Self.SemiFinishedOrder" />
-          <EntitySet Name="SfOrderDetails" EntityType="Self.SfOrderDetail" />
-          <EntitySet Name="SkillsForMachines" EntityType="Self.SkillsForMachine" />
-          <EntitySet Name="Staffs" EntityType="Self.Staff" />
-          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
-          <EntitySet Name="SupplierTypes" EntityType="Self.SupplierType" />
-          <EntitySet Name="TechnicalProductDatas" EntityType="Self.TechnicalProductData" />
-          <EntitySet Name="Technologies" EntityType="Self.Technology" />
-          <EntitySet Name="Trainings" EntityType="Self.Training" />
-          <EntitySet Name="Units" EntityType="Self.Unit" />
-          <EntitySet Name="SafetyControlHistoryViews" EntityType="Self.SafetyControlHistoryView" />
-          <EntitySet Name="vCompanies" EntityType="Self.vCompany" />
-          <EntitySet Name="vDevotionsInMeasuremntsPerProcesses" EntityType="Self.vDevotionsInMeasuremntsPerProcess" />
-          <EntitySet Name="ViewDailySfDeliveries" EntityType="Self.ViewDailySfDelivery" />
-          <EntitySet Name="ViewOshTrainings" EntityType="Self.ViewOshTraining" />
-          <EntitySet Name="vIndividualCustomers" EntityType="Self.vIndividualCustomer" />
-          <EntitySet Name="vInputMagazines" EntityType="Self.vInputMagazine" />
-          <EntitySet Name="vMaintPartsViews" EntityType="Self.vMaintPartsView" />
-          <EntitySet Name="vOrderDetails" EntityType="Self.vOrderDetail" />
-          <EntitySet Name="vOutputMagazines" EntityType="Self.vOutputMagazine" />
-          <EntitySet Name="vOutsourcingWithTypes" EntityType="Self.vOutsourcingWithType" />
-          <EntitySet Name="vPartsViews" EntityType="Self.vPartsView" />
-          <EntitySet Name="vPredictedPriceForCustomers" EntityType="Self.vPredictedPriceForCustomer" />
-          <EntitySet Name="vSuccesfullyProcesses" EntityType="Self.vSuccesfullyProcess" />
-          <EntitySet Name="vSuccesfullyProducedPerProcesses" EntityType="Self.vSuccesfullyProducedPerProcess" />
-          <EntitySet Name="vSupplierParts" EntityType="Self.vSupplierPart" />
-          <EntitySet Name="vSupplierSemis" EntityType="Self.vSupplierSemi" />
-          <EntitySet Name="vTechnicalProductDataPerProcesses" EntityType="Self.vTechnicalProductDataPerProcess" />
-          <EntitySet Name="vUnfinishedProcesses" EntityType="Self.vUnfinishedProcess" />
-          <EntitySet Name="vUnhandledOrderDetails" EntityType="Self.vUnhandledOrderDetail" />
-          <AssociationSet Name="FK__Absence__IdAbsen__1332DBDC" Association="Self.FK__Absence__IdAbsen__1332DBDC">
-            <End Role="AbsenceType" EntitySet="AbsenceTypes" />
-            <End Role="Absence" EntitySet="Absences" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Absence__IdEmplo__14270015" Association="Self.FK__Absence__IdEmplo__14270015">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Absence" EntitySet="Absences" />
-          </AssociationSet>
-          <AssociationSet Name="FKAccidentEmployee" Association="Self.FKAccidentEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Accident" EntitySet="Accidents" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Allocatio__IdDep__2180FB33" Association="Self.FK__Allocatio__IdDep__2180FB33">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="Allocation" EntitySet="Allocations" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Allocatio__IdEmp__208CD6FA" Association="Self.FK__Allocatio__IdEmp__208CD6FA">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Allocation" EntitySet="Allocations" />
-          </AssociationSet>
-          <AssociationSet Name="FKPlannedProductionEmployeeDetailsAllocation" Association="Self.FKPlannedProductionEmployeeDetailsAllocation">
-            <End Role="Allocation" EntitySet="Allocations" />
-            <End Role="PlannedProductionEmployeeDetails" EntitySet="PlannedProductionEmployeeDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Contract__IdEmpl__09A971A2" Association="Self.FK__Contract__IdEmpl__09A971A2">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Contract" EntitySet="Contracts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Contract__IdPosi__0A9D95DB" Association="Self.FK__Contract__IdPosi__0A9D95DB">
-            <End Role="Position" EntitySet="Positions" />
-            <End Role="Contract" EntitySet="Contracts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Invoice__IdContr__339FAB6E" Association="Self.FK__Invoice__IdContr__339FAB6E">
-            <End Role="Contractor" EntitySet="Contractors" />
-            <End Role="Invoice" EntitySet="Invoices" />
-          </AssociationSet>
-          <AssociationSet Name="FkOrderCustomerCustomer" Association="Self.FkOrderCustomerCustomer">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="OrderCustomer" EntitySet="OrderCustomers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Expense__IdDepar__37703C52" Association="Self.FK__Expense__IdDepar__37703C52">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="Expense" EntitySet="Expenses" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Staff__IdDeparme__1CBC4616" Association="Self.FK__Staff__IdDeparme__1CBC4616">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="Staff" EntitySet="Staffs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Education__IdEdu__2739D489" Association="Self.FK__Education__IdEdu__2739D489">
-            <End Role="EducationLevel" EntitySet="EducationLevels" />
-            <End Role="Education" EntitySet="Educations" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Education__IdEmp__2645B050" Association="Self.FK__Education__IdEmp__2645B050">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Education" EntitySet="Educations" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MedicalEx__IdEmp__2CF2ADDF" Association="Self.FK__MedicalEx__IdEmp__2CF2ADDF">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="MedicalExamination" EntitySet="MedicalExaminations" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Payment__IdEmplo__17F790F9" Association="Self.FK__Payment__IdEmplo__17F790F9">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Payment" EntitySet="Payments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Training__IdEmpl__2A164134" Association="Self.FK__Training__IdEmpl__2A164134">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Training" EntitySet="Trainings" />
-          </AssociationSet>
-          <AssociationSet Name="FKEnteranceControlEmployee" Association="Self.FKEnteranceControlEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="EntranceControl" EntitySet="EntranceControls" />
-          </AssociationSet>
-          <AssociationSet Name="FkFEMAnalysisEmployee" Association="Self.FkFEMAnalysisEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="FEMAnalysis" EntitySet="FEMAnalysis" />
-          </AssociationSet>
-          <AssociationSet Name="FkInspectedEmployee" Association="Self.FkInspectedEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="SafetyControl" EntitySet="SafetyControls" />
-          </AssociationSet>
-          <AssociationSet Name="FkOrderCustomerEmployee" Association="Self.FkOrderCustomerEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="OrderCustomer" EntitySet="OrderCustomers" />
-          </AssociationSet>
-          <AssociationSet Name="FkOutControlEmployee" Association="Self.FkOutControlEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="OutControl" EntitySet="OutControls" />
-          </AssociationSet>
-          <AssociationSet Name="FkTrainedEmployee" Association="Self.FkTrainedEmployee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="SafetyTraining" EntitySet="SafetyTrainings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MaintenanceEmployee" Association="Self.FK_MaintenanceEmployee">
-            <End Role="Maintenance" EntitySet="Maintenances" />
-            <End Role="EmployeePlan" EntitySet="EmployeePlans" />
-          </AssociationSet>
-          <AssociationSet Name="FkEntranceControlSfOrderDetail" Association="Self.FkEntranceControlSfOrderDetail">
-            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
-            <End Role="EntranceControl" EntitySet="EntranceControls" />
-          </AssociationSet>
-          <AssociationSet Name="FKSfDetail" Association="Self.FKSfDetail">
-            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
-            <End Role="EntranceControl" EntitySet="EntranceControls" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Expense__IdInvoi__3864608B" Association="Self.FK__Expense__IdInvoi__3864608B">
-            <End Role="Invoice" EntitySet="Invoices" />
-            <End Role="Expense" EntitySet="Expenses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FailureFailureMaintenance" Association="Self.FK_FailureFailureMaintenance">
-            <End Role="Failure" EntitySet="Failures" />
-            <End Role="FailureMaintenance" EntitySet="FailureMaintenances" />
-          </AssociationSet>
-          <AssociationSet Name="FKProductionProces" Association="Self.FKProductionProces">
-            <End Role="ProductionProcesses" EntitySet="ProductionProcesses" />
-            <End Role="Failure" EntitySet="Failures" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MaintenanceFailureMaintenance" Association="Self.FK_MaintenanceFailureMaintenance">
-            <End Role="Maintenance" EntitySet="Maintenances" />
-            <End Role="FailureMaintenance" EntitySet="FailureMaintenances" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Invoice__IdInvoi__3493CFA7" Association="Self.FK__Invoice__IdInvoi__3493CFA7">
-            <End Role="InvoiceType" EntitySet="InvoiceTypes" />
-            <End Role="Invoice" EntitySet="Invoices" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SkillsFor__IdMac__0D7A0286" Association="Self.FK__SkillsFor__IdMac__0D7A0286">
-            <End Role="Machine" EntitySet="Machines" />
-            <End Role="SkillsForMachine" EntitySet="SkillsForMachines" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MachineMaintenance" Association="Self.FK_MachineMaintenance">
-            <End Role="Machine" EntitySet="Machines" />
-            <End Role="Maintenance" EntitySet="Maintenances" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MachineTypeMachine" Association="Self.FK_MachineTypeMachine">
-            <End Role="MachineType" EntitySet="MachineTypes" />
-            <End Role="Machine" EntitySet="Machines" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MainDescriptionMaintenance" Association="Self.FK_MainDescriptionMaintenance">
-            <End Role="MaintDescription" EntitySet="MaintDescriptions" />
-            <End Role="Maintenance" EntitySet="Maintenances" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MaintenanceRealization" Association="Self.FK_MaintenanceRealization">
-            <End Role="Maintenance" EntitySet="Maintenances" />
-            <End Role="Realization" EntitySet="Realizations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MaintTypeMaintenance" Association="Self.FK_MaintTypeMaintenance">
-            <End Role="MaintType" EntitySet="MaintTypes" />
-            <End Role="Maintenance" EntitySet="Maintenances" />
-          </AssociationSet>
-          <AssociationSet Name="FkMachine" Association="Self.FkMachine">
-            <End Role="Maintenance" EntitySet="Maintenances" />
-            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PartMainPart" Association="Self.FK_PartMainPart">
-            <End Role="Part" EntitySet="Parts" />
-            <End Role="MaintPart" EntitySet="MaintParts" />
-          </AssociationSet>
-          <AssociationSet Name="FkOrderDetailOrderCustomer" Association="Self.FkOrderDetailOrderCustomer">
-            <End Role="OrderCustomer" EntitySet="OrderCustomers" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FkOrderDetail" Association="Self.FkOrderDetail">
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
-          </AssociationSet>
-          <AssociationSet Name="FkOrderDetailProduct" Association="Self.FkOrderDetailProduct">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FkOutControlProcess" Association="Self.FkOutControlProcess">
-            <End Role="ProductionProcesses" EntitySet="ProductionProcesses" />
-            <End Role="OutControl" EntitySet="OutControls" />
-          </AssociationSet>
-          <AssociationSet Name="FkOutputProductMeasurements" Association="Self.FkOutputProductMeasurements">
-            <End Role="OutControl" EntitySet="OutControls" />
-            <End Role="OutputProductMeasurements" EntitySet="OutputProductMeasurements" />
-          </AssociationSet>
-          <AssociationSet Name="FkOutsourcingCommitmentOutsourcing" Association="Self.FkOutsourcingCommitmentOutsourcing">
-            <End Role="Outsourcing" EntitySet="Outsourcings" />
-            <End Role="OutsourcingCommitment" EntitySet="OutsourcingCommitments" />
-          </AssociationSet>
-          <AssociationSet Name="FkOutsourcingOutsourcingType" Association="Self.FkOutsourcingOutsourcingType">
-            <End Role="OutsourcingType" EntitySet="OutsourcingTypes" />
-            <End Role="Outsourcing" EntitySet="Outsourcings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PartPartRequest" Association="Self.FK_PartPartRequest">
-            <End Role="Part" EntitySet="Parts" />
-            <End Role="PartRequest" EntitySet="PartRequests" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PartRequestPartOrderDetail" Association="Self.FK_PartRequestPartOrderDetail">
-            <End Role="Part" EntitySet="Parts" />
-            <End Role="PartOrderDetail" EntitySet="PartOrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PartTypePart" Association="Self.FK_PartTypePart">
-            <End Role="PartType" EntitySet="PartTypes" />
-            <End Role="Part" EntitySet="Parts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UnitPart" Association="Self.FK_UnitPart">
-            <End Role="Unit" EntitySet="Units" />
-            <End Role="Part" EntitySet="Parts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PartOrderPartOrderDetail" Association="Self.FK_PartOrderPartOrderDetail">
-            <End Role="PartOrder" EntitySet="PartOrders" />
-            <End Role="PartOrderDetail" EntitySet="PartOrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PartRequestPartOrderRequest" Association="Self.FK_PartRequestPartOrderRequest">
-            <End Role="PartRequest" EntitySet="PartRequests" />
-            <End Role="PartOrderRequest" EntitySet="PartOrderRequests" />
-          </AssociationSet>
-          <AssociationSet Name="FKPlannedProductionEmployeeDetailsPlannedProduction" Association="Self.FKPlannedProductionEmployeeDetailsPlannedProduction">
-            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
-            <End Role="PlannedProductionEmployeeDetails" EntitySet="PlannedProductionEmployeeDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FKProductionProcesPlannedProduction" Association="Self.FKProductionProcesPlannedProduction">
-            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
-            <End Role="ProductionProcesses" EntitySet="ProductionProcesses" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SkillsFor__IdPos__0E6E26BF" Association="Self.FK__SkillsFor__IdPos__0E6E26BF">
-            <End Role="Position" EntitySet="Positions" />
-            <End Role="SkillsForMachine" EntitySet="SkillsForMachines" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Staff__IdPositio__1DB06A4F" Association="Self.FK__Staff__IdPositio__1DB06A4F">
-            <End Role="Position" EntitySet="Positions" />
-            <End Role="Staff" EntitySet="Staffs" />
-          </AssociationSet>
-          <AssociationSet Name="FkProductIdSF" Association="Self.FkProductIdSF">
-            <End Role="SemiFinished" EntitySet="SemiFinisheds" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="FkProductIdTech" Association="Self.FkProductIdTech">
-            <End Role="Technology" EntitySet="Technologies" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="FkTechProdDataId" Association="Self.FkTechProdDataId">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="TechnicalProductData" EntitySet="TechnicalProductDatas" />
-          </AssociationSet>
-          <AssociationSet Name="FkSfOrderDetailSemiFinished" Association="Self.FkSfOrderDetailSemiFinished">
-            <End Role="SemiFinished" EntitySet="SemiFinisheds" />
-            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FkSemiFinishedOrderSupplier" Association="Self.FkSemiFinishedOrderSupplier">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrders" />
-          </AssociationSet>
-          <AssociationSet Name="FkSfOrderDetailSemiFinishedOrder" Association="Self.FkSfOrderDetailSemiFinishedOrder">
-            <End Role="SemiFinishedOrder" EntitySet="SemiFinishedOrders" />
-            <End Role="SfOrderDetail" EntitySet="SfOrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FkSupplierSupplierType" Association="Self.FkSupplierSupplierType">
-            <End Role="SupplierType" EntitySet="SupplierTypes" />
-            <End Role="Supplier" EntitySet="Suppliers" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RoofingCompanyModelStoreContainer" CdmEntityContainer="RoofingCompanyEntities">
-          <EntitySetMapping Name="Absences">
+            <EntitySetMapping Name="Absences">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Absence">
               <MappingFragment StoreEntitySet="Absence">
-                <ScalarProperty Name="IdAbsence" ColumnName="IdAbsence" />
+                <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
+                <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
+                <ScalarProperty Name="IdAbsence" ColumnName="IdAbsence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AbsenceTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.AbsenceType">
+              <MappingFragment StoreEntitySet="AbsenceType">
+                <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+                <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
+                <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accidents">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Accident">
+              <MappingFragment StoreEntitySet="Accident">
+                <ScalarProperty Name="AccidentDescription" ColumnName="AccidentDescription" />
+                <ScalarProperty Name="AccidentDate" ColumnName="AccidentDate" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdAccident" ColumnName="IdAccident" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Allocations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Allocation">
+              <MappingFragment StoreEntitySet="Allocation">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdAllocation" ColumnName="IdAllocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Contract">
+              <MappingFragment StoreEntitySet="Contract">
+                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
+                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
+                <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IdContract" ColumnName="IdContract" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contractors">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Contractor">
+              <MappingFragment StoreEntitySet="Contractor">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+                <ScalarProperty Name="IdContractor" ColumnName="IdContractor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
+                <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdEducation" ColumnName="IdEducation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationLevels">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.EducationLevel">
+              <MappingFragment StoreEntitySet="EducationLevel">
+                <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="EducationLevel1" ColumnName="EducationLevel" />
+                <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePlans">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.EmployeePlan">
+              <MappingFragment StoreEntitySet="EmployeePlan">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                <ScalarProperty Name="IdEmployeePlan" ColumnName="IdEmployeePlan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntranceControls">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.EntranceControl">
+              <MappingFragment StoreEntitySet="EntranceControl">
+                <ScalarProperty Name="ChemicalComposition" ColumnName="ChemicalComposition" />
+                <ScalarProperty Name="RealColor" ColumnName="RealColor" />
+                <ScalarProperty Name="RealWeight" ColumnName="RealWeight" />
+                <ScalarProperty Name="RealWidth" ColumnName="RealWidth" />
+                <ScalarProperty Name="RealThickness" ColumnName="RealThickness" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="ControlStatus" ColumnName="ControlStatus" />
+                <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
                 <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
@@ -5297,6 +5451,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vMaintPartsViews">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintPartsView">
+              <MappingFragment StoreEntitySet="vMaintPartsView">
+                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
+                <ScalarProperty Name="Data_przyjęcia" ColumnName="Data przyjęcia" />
+                <ScalarProperty Name="Nr_Obsługi" ColumnName="Nr Obsługi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPartsViews">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPartsView">
+              <MappingFragment StoreEntitySet="vPartsView">
+                <ScalarProperty Name="Stan_magazynowy" ColumnName="Stan magazynowy" />
+                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
+                <ScalarProperty Name="Typ_części" ColumnName="Typ części" />
+                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
