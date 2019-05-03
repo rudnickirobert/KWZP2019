@@ -142,6 +142,7 @@
             this.cbContractors.Size = new System.Drawing.Size(200, 28);
             this.cbContractors.TabIndex = 23;
             this.cbContractors.Text = "wybierz podmiot";
+            this.cbContractors.Click += new System.EventHandler(this.cbContractors_Click);
             // 
             // cbInvoiceType
             // 
