@@ -50,7 +50,6 @@ namespace KWZP2019
         {
             var semiFinishedList = db.SemiFinisheds
                 .Select(select => new { Kod_półfabrykatu = select.SfCode }).ToList();
-
             dataGridViewSemiFinished.DataSource = semiFinishedList;
             dataGridViewSemiFinished.Rows[0].Selected = true;
             selectedSemiFinishedCode = dataGridViewSemiFinished.Rows[0].Cells[0].Value.ToString();

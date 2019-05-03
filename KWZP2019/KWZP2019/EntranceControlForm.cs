@@ -109,6 +109,9 @@ namespace KWZP2019
 
             if ((DateTime)selectedRow.Cells["Dostarczono"].Value < DateTime.Now)
             {
+                btnApproval.Enabled = true;
+                btnCheck.Enabled = true;
+                btnDone.Enabled = true;
                 if (ChangeTextBoxesDependingOnExistedSelectedControl())
                 {
                     this.doControlExist = true;
@@ -126,6 +129,27 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Data dostarczenia jest wcześniejsza od chwili obecnej.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnApproval.Enabled = false;
+                btnCheck.Enabled = false;
+                btnDone.Enabled = false;
+                this.ResetAllCheckedPicBox();
+                textBoxEmployeeId.Text = "";
+                textBoxEmployeeId.Enabled = false;
+                txtboxThickness.Text = "";
+                txtboxThickness.Enabled = false;
+                txtboxWidth.Text = "";
+                txtboxWidth.Enabled = false;
+                txtboxMass.Text = "";
+                txtboxMass.Enabled = false;
+                txtBoxColor.Text = "";
+                txtBoxColor.Enabled = false;
+                txtBoxQuantity.Text = "";
+                txtBoxQuantity.Enabled = false;
+                checkBoxComposition.Checked = false;
+                checkBoxComposition.Enabled = false;
+                txtboxComment.Text = "";
+                txtboxComment.Enabled = false;
+                picBoxControlStatus.Image = Properties.Resources.new_80px;
             }
         }
         // ==================================================
@@ -261,8 +285,6 @@ namespace KWZP2019
         // ==================================================
         private bool ChangeTextBoxesDependingOnExistedSelectedControl()
         {
-            // Changed text boxes style depending on if selected control exist in database and return true if exist and false if not
-            // var because it's anonymouse type
             ViewEntranceControlHistory selectedControl = db.ViewEntranceControlHistories
                 .Where(check => 
                 check.IdSfOrder == selectedOrderId && 
