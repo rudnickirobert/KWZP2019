@@ -30,70 +30,70 @@ namespace KWZP2019
             if (nameSupplierTb.Text.Trim() == "")
             {
                 MessageBox.Show("Nazwa jest wymagana");
+                return;
             }
+            //UTWORZENIE NOWEGO OBIEKTU "supplier"
+            Supplier newSupplier = new Supplier();
+            SupplierType newsupplierType = new SupplierType();
 
+            //WPRAOWDZENIE DANYCH DOTYCZĄCYCH Dostawcy
+
+            newSupplier.SupplierName = nameSupplierTb.Text.Trim();
+            bool phoneTextBox = int.TryParse(phoneSupplierTb.Text.Trim(), out int phoneTextbox);
+            if (phoneTextBox)
+            {
+                newSupplier.PhoneNumber = phoneTextbox;
+            }
+            newSupplier.Email = emailSupplierTb.Text.Trim();
+            newSupplier.City = citySupplierTb.Text.Trim();
+            newSupplier.ZipCode = zipCodeSupplierTb.Text.Trim();
+            newSupplier.Street = streetSupplierTb.Text.Trim();
+
+            bool houseNumberTextBox = int.TryParse(houseNumberSupplierTb.Text.Trim(), out int houseNumberTextbox);
+            if (houseNumberTextBox)
+            {
+                newSupplier.HouseNumber = houseNumberTextbox;
+            }
             else
             {
-                //UTWORZENIE NOWEGO OBIEKTU "supplier"
-                Supplier newSupplier = new Supplier();
-                SupplierType newsupplierType = new SupplierType();
-
-                //WPRAOWDZENIE DANYCH DOTYCZĄCYCH Dostawcy
-
-                newSupplier.SupplierName = nameSupplierTb.Text.Trim();
-                bool phoneTextBox = int.TryParse(phoneSupplierTb.Text.Trim(), out int phoneTextbox);
-                if (phoneTextBox)
-                {
-                    newSupplier.PhoneNumber = phoneTextbox;
-                }
-
-                newSupplier.Email = emailSupplierTb.Text.Trim();
-                newSupplier.City = citySupplierTb.Text.Trim();
-                newSupplier.ZipCode = zipCodeSupplierTb.Text.Trim();
-                newSupplier.Street = streetSupplierTb.Text.Trim();
-
-                bool houseNumberTextBox = int.TryParse(houseNumberSupplierTb.Text.Trim(), out int houseNumberTextbox);
-                if (houseNumberTextBox)
-                {
-                    newSupplier.HouseNumber = houseNumberTextbox;
-                }
-                else
-                {
-                    MessageBox.Show("Niewłaściwy format numeru domu");
-                }
-                bool apartmentNumberTextBox = int.TryParse(apartmentNumberSupplierTb.Text.Trim(), out int apartmentNumberTextbox);
-                if (apartmentNumberTextBox)
-                {
-                    newSupplier.ApartmentNumber = apartmentNumberTextbox;
-                }
-                else
-                {
-                    MessageBox.Show("Niewłaściwy format numeru lokalu");
-                }
-                bool nipTextBox = int.TryParse(nipSupplierTb.Text.Trim(), out int nipTextbox);
-                if (nipTextBox)
-                {
-                    newSupplier.NIP = nipTextbox;
-                }
-                else
-                {
-                    MessageBox.Show("Niewłaściwy format NIP");
-                }
-                bool krsTextBox = int.TryParse(krsSupplierTb.Text.Trim(), out int krsTextbox);
-                if (krsTextBox)
-                {
-                    newSupplier.KRS = krsTextbox;
-                }
-                else
-                {
-                    MessageBox.Show("Niewłaściwy format KRS");
-                }
-                newSupplier.Description = descriptionSupplierTb.Text.Trim();
-                MessageBox.Show("Czy na pewno chcesz dodać nowego dostawcę?");
-                db.Suppliers.Add(newSupplier);
-                db.SupplierTypes.Add(newsupplierType);
-                db.SaveChanges();
+                MessageBox.Show("Niewłaściwy format numeru domu");
+                return;
             }
+            bool apartmentNumberTextBox = int.TryParse(apartmentNumberSupplierTb.Text.Trim(), out int apartmentNumberTextbox);
+            if (apartmentNumberTextBox)
+            {
+                newSupplier.ApartmentNumber = apartmentNumberTextbox;
+            }
+            else
+            {
+                MessageBox.Show("Niewłaściwy format numeru lokalu");
+                return;
+            }
+            bool nipTextBox = int.TryParse(nipSupplierTb.Text.Trim(), out int nipTextbox);
+            if (nipTextBox)
+            {
+                newSupplier.NIP = nipTextbox;
+            }
+            else
+            {
+                MessageBox.Show("Niewłaściwy format NIP");
+                return;
+            }
+            bool krsTextBox = int.TryParse(krsSupplierTb.Text.Trim(), out int krsTextbox);
+            if (krsTextBox)
+            {
+                newSupplier.KRS = krsTextbox;
+            }
+            else
+            {
+                MessageBox.Show("Niewłaściwy format KRS");
+                return;
+            }
+            newSupplier.Description = descriptionSupplierTb.Text.Trim();
+            MessageBox.Show("Czy na pewno chcesz dodać nowego dostawcę?");
+            db.Suppliers.Add(newSupplier);
+            db.SupplierTypes.Add(newsupplierType);
+            db.SaveChanges();
         }
 
         private void buttonAddNewSupplier_Click(object sender, EventArgs e)
