@@ -659,7 +659,8 @@ AS
 SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
 ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, Description as [Opis]
 FROM Customer;
- 
+
+GO 
 /*====SALES DEPARTMENT END===*/
 
 CREATE VIEW vTechnicalProductDataPerProcess
@@ -745,7 +746,7 @@ JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
-
+GO
 /*====SALES DEPARTMENT END===*/ 
 
 /*====PRODUCTION===*/

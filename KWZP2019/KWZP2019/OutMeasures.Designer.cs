@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutMeasures));
             this.txtbWidthMeasure = new System.Windows.Forms.TextBox();
             this.txtbLenghtMeasure = new System.Windows.Forms.TextBox();
             this.txtbWidthNominal = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             this.lblNominal = new System.Windows.Forms.Label();
             this.lblSuccesfull = new System.Windows.Forms.Label();
             this.txtbSuccesful = new System.Windows.Forms.TextBox();
+            this.btnSMeasures = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtbWidthMeasure
@@ -184,13 +186,37 @@
             this.txtbSuccesful.Size = new System.Drawing.Size(100, 20);
             this.txtbSuccesful.TabIndex = 1;
             // 
+            // btnSMeasures
+            // 
+            this.btnSMeasures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnSMeasures.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMeasures.BackgroundImage")));
+            this.btnSMeasures.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSMeasures.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnSMeasures.FlatAppearance.BorderSize = 3;
+            this.btnSMeasures.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSMeasures.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnSMeasures.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSMeasures.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSMeasures.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSMeasures.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSMeasures.Location = new System.Drawing.Point(174, 263);
+            this.btnSMeasures.Name = "btnSMeasures";
+            this.btnSMeasures.Size = new System.Drawing.Size(168, 104);
+            this.btnSMeasures.TabIndex = 55;
+            this.btnSMeasures.Text = "Uruchom ";
+            this.btnSMeasures.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSMeasures.UseCompatibleTextRendering = true;
+            this.btnSMeasures.UseVisualStyleBackColor = false;
+            this.btnSMeasures.Click += new System.EventHandler(this.btnSMeasures_Click);
+            // 
             // OutMeasures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
-            this.ClientSize = new System.Drawing.Size(507, 277);
+            this.ClientSize = new System.Drawing.Size(507, 369);
+            this.Controls.Add(this.btnSMeasures);
             this.Controls.Add(this.txtbLenghtNominal);
             this.Controls.Add(this.txtbSuccesful);
             this.Controls.Add(this.txtbMeasureNumber);
@@ -230,5 +256,6 @@
         private System.Windows.Forms.Label lblNominal;
         private System.Windows.Forms.Label lblSuccesfull;
         private System.Windows.Forms.TextBox txtbSuccesful;
+        private System.Windows.Forms.Button btnSMeasures;
     }
 }

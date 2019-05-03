@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutControlForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
@@ -50,7 +58,11 @@
             this.lblOutControlStatus = new System.Windows.Forms.Label();
             this.txtbStartDate = new System.Windows.Forms.TextBox();
             this.txtbEndDate = new System.Windows.Forms.TextBox();
+            this.chartLenght = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartWidth = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLenght)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -262,7 +274,7 @@
             this.btnSMeasures.Name = "btnSMeasures";
             this.btnSMeasures.Size = new System.Drawing.Size(200, 120);
             this.btnSMeasures.TabIndex = 54;
-            this.btnSMeasures.Text = "Pomiar";
+            this.btnSMeasures.Text = "Pomiary";
             this.btnSMeasures.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSMeasures.UseCompatibleTextRendering = true;
             this.btnSMeasures.UseVisualStyleBackColor = false;
@@ -304,6 +316,42 @@
             this.txtbEndDate.Size = new System.Drawing.Size(189, 26);
             this.txtbEndDate.TabIndex = 43;
             // 
+            // chartLenght
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartLenght.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartLenght.Legends.Add(legend1);
+            this.chartLenght.Location = new System.Drawing.Point(406, 463);
+            this.chartLenght.Name = "chartLenght";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Lenght Measures";
+            this.chartLenght.Series.Add(series1);
+            this.chartLenght.Size = new System.Drawing.Size(267, 213);
+            this.chartLenght.TabIndex = 57;
+            this.chartLenght.Text = "Lenght Measures";
+            title1.Name = "LenghtMeasures";
+            this.chartLenght.Titles.Add(title1);
+            // 
+            // chartWidth
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartWidth.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartWidth.Legends.Add(legend2);
+            this.chartWidth.Location = new System.Drawing.Point(679, 463);
+            this.chartWidth.Name = "chartWidth";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Width Measures";
+            this.chartWidth.Series.Add(series2);
+            this.chartWidth.Size = new System.Drawing.Size(267, 213);
+            this.chartWidth.TabIndex = 57;
+            this.chartWidth.Text = "Width Measures";
+            title2.Name = "LenghtMeasures";
+            this.chartWidth.Titles.Add(title2);
+            // 
             // OutControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +359,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.chartWidth);
+            this.Controls.Add(this.chartLenght);
             this.Controls.Add(this.txtbOutControlStatus);
             this.Controls.Add(this.btnSMeasures);
             this.Controls.Add(this.cbControlerId);
@@ -341,6 +391,8 @@
             this.Text = "Kontrola Wyjściowa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OutControlForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLenght)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +421,7 @@
         private System.Windows.Forms.Label lblOutControlStatus;
         private System.Windows.Forms.TextBox txtbStartDate;
         private System.Windows.Forms.TextBox txtbEndDate;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartLenght;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartWidth;
     }
 }

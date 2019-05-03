@@ -38,6 +38,13 @@ namespace KWZP2019
             cbControlerId.DataSource = db.Employees.ToList();
             cbControlerId.ValueMember = "IdEmployee";
             btnSMeasures.Visible = false;
+            HideCharts();
+        }
+
+        public void HideCharts()
+        {
+            chartLenght.Visible = false;
+            chartWidth.Visible = false;
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -75,6 +82,7 @@ namespace KWZP2019
             using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this))
             {
                 outControlForm.ShowDialog();
+                db = new RoofingCompanyEntities();
                 refreshingData(procesNumber);
             }
         }
@@ -140,6 +148,7 @@ namespace KWZP2019
                             txtbOutControlStatus.BackColor = Color.Yellow;
                             btnSMeasures.Visible = true;
                             handleTextBoxes(procesNumber, false);
+                            HideCharts();
                             break;
                         }
                     case "W takcie realizacji":
@@ -154,12 +163,27 @@ namespace KWZP2019
                             btnSMeasures.Visible = false;
                             handleTextBoxes(procesNumber, true);
                             txtbOutControlStatus.BackColor = Color.Green;
+                            generateCharts();
                             break;
                         }
                 }
             }
         }
-       
+
+        private void generateCharts()
+        {
+            chartLenght.Visible = true;
+            chartWidth.Visible = true;
+            List<OutputProductMeasurement> outputProductMeasurements = db.OutputProductMeasurements.Where(e => e.IdProcess == procesNumber).ToList();
+            foreach(OutputProductMeasurement outputProduct in outputProductMeasurements)
+            {
+                chartLenght.Series["Lenght Measures"].Points.Add(outputProduct.MeasuredLenght);
+            }
+            foreach (OutputProductMeasurement outputProduct in outputProductMeasurements)
+            {
+                chartWidth.Series["Width Measures"].Points.Add(outputProduct.MeasuredWidth);
+            }
+        }
 
         private void cbProcessNumber_SelectionChangeCommitted(object sender, EventArgs e)
         {
