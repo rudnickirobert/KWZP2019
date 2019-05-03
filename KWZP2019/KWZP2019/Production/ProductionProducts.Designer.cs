@@ -128,6 +128,7 @@
             // dataGridProducts
             // 
             this.dataGridProducts.AutoGenerateColumns = false;
+            this.dataGridProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductDataGridViewTextBoxColumn,
@@ -138,6 +139,9 @@
             this.dataGridProducts.DataSource = this.productBindingSource;
             this.dataGridProducts.Location = new System.Drawing.Point(12, 152);
             this.dataGridProducts.Name = "dataGridProducts";
+            this.dataGridProducts.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dataGridProducts.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridProducts.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridProducts.Size = new System.Drawing.Size(776, 286);
             this.dataGridProducts.TabIndex = 4;
             this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);
