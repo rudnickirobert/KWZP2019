@@ -791,6 +791,7 @@
     <None Include="Production\ProductionProcess.datasource" />
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
+    <None Include="Properties\DataSources\SafetyControlHistoryView.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
     <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
