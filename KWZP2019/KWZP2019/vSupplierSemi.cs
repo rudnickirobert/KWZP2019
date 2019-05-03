@@ -14,18 +14,17 @@ namespace KWZP2019
     
     public partial class vSupplierSemi
     {
-        public int IdSupplier { get; set; }
-        public string Type { get; set; }
-        public string SupplierName { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
-        public string Street { get; set; }
-        public int HouseNumber { get; set; }
-        public int ApartmentNumber { get; set; }
+        public string Typ { get; set; }
+        public string Firma { get; set; }
+        public int Telefon { get; set; }
+        public string E_mail { get; set; }
+        public string Miasto { get; set; }
+        public string Kod_pocztowy { get; set; }
+        public string Ulica { get; set; }
+        public int Numer { get; set; }
+        public int Numer_lokalu { get; set; }
         public double NIP { get; set; }
         public double KRS { get; set; }
-        public string Description { get; set; }
+        public string Opis { get; set; }
     }
 }
