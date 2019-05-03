@@ -739,6 +739,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have 
           <Property Name="ValidityOfOshTraining" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.ViewSemiFinishedCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewSemiFinishedCode">
+          <Key>
+            <PropertyRef Name="Kod_półfabrykatu" />
+          </Key>
+          <Property Name="Kod_półfabrykatu" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewSemiFinishedOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewSemiFinishedOrder">
           <Key>
@@ -791,22 +799,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vInputMagazine' does not have a
           <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Quantity" Type="int" />
           <Property Name="ControlDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vMaintPartsView">
-          <Key>
-            <PropertyRef Name="Nr Obsługi" />
-            <PropertyRef Name="Data przyjęcia" />
-            <PropertyRef Name="Nazwa części" />
-            <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Jednostka" />
-          </Key>
-          <Property Name="Nr Obsługi" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Data przyjęcia" Type="datetime" Nullable="false" />
-          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Ilość" Type="int" Nullable="false" />
-          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -864,20 +856,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not 
           <Property Name="NIP" Type="float" Nullable="false" />
           <Property Name="KRS" Type="float" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.vPartsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vPartsView">
-          <Key>
-            <PropertyRef Name="Nazwa części" />
-            <PropertyRef Name="Typ części" />
-            <PropertyRef Name="Jednostka" />
-            <PropertyRef Name="Stan magazynowy" />
-          </Key>
-          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Typ części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Stan magazynowy" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1911,6 +1889,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [ViewOshTraining].[ValidityOfOshTraining] AS [ValidityOfOshTraining]
     FROM [dbo].[ViewOshTraining] AS [ViewOshTraining]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ViewSemiFinishedCode" EntityType="Self.ViewSemiFinishedCode" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewSemiFinishedCode].[Kod_półfabrykatu] AS [Kod_półfabrykatu]
+    FROM [dbo].[ViewSemiFinishedCode] AS [ViewSemiFinishedCode]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ViewSemiFinishedOrder" EntityType="Self.ViewSemiFinishedOrder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ViewSemiFinishedOrder].[Nr_zamówienia] AS [Nr_zamówienia], 
@@ -1942,15 +1925,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vInputMagazine].[Quantity] AS [Quantity], 
     [vInputMagazine].[ControlDate] AS [ControlDate]
     FROM [dbo].[vInputMagazine] AS [vInputMagazine]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vMaintPartsView" EntityType="Self.vMaintPartsView" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vMaintPartsView].[Nr Obsługi] AS [Nr Obsługi], 
-    [vMaintPartsView].[Data przyjęcia] AS [Data przyjęcia], 
-    [vMaintPartsView].[Nazwa części] AS [Nazwa części], 
-    [vMaintPartsView].[Ilość] AS [Ilość], 
-    [vMaintPartsView].[Jednostka] AS [Jednostka]
-    FROM [dbo].[vMaintPartsView] AS [vMaintPartsView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1984,14 +1958,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vOutsourcingWithType].[KRS] AS [KRS], 
     [vOutsourcingWithType].[Description] AS [Description]
     FROM [dbo].[vOutsourcingWithType] AS [vOutsourcingWithType]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vPartsView" EntityType="Self.vPartsView" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vPartsView].[Nazwa części] AS [Nazwa części], 
-    [vPartsView].[Typ części] AS [Typ części], 
-    [vPartsView].[Jednostka] AS [Jednostka], 
-    [vPartsView].[Stan magazynowy] AS [Stan magazynowy]
-    FROM [dbo].[vPartsView] AS [vPartsView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vPredictedPriceForCustomer" EntityType="Self.vPredictedPriceForCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2660,8 +2626,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="ViewSemiFinishedOrders" EntityType="RoofingCompanyModel.ViewSemiFinishedOrder" />
           <EntitySet Name="ViewEntranceControlHistories" EntityType="RoofingCompanyModel.ViewEntranceControlHistory" />
           <EntitySet Name="ViewMinAndMaxEntranceControlDates" EntityType="RoofingCompanyModel.ViewMinAndMaxEntranceControlDate" />
-          <EntitySet Name="vMaintPartsViews" EntityType="RoofingCompanyModel.vMaintPartsView" />
-          <EntitySet Name="vPartsViews" EntityType="RoofingCompanyModel.vPartsView" />
+          <EntitySet Name="ViewSemiFinishedCodes" EntityType="RoofingCompanyModel.ViewSemiFinishedCode" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -4482,31 +4447,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="MinControlDate" Type="DateTime" Precision="3" />
           <Property Name="MaxControlDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="vMaintPartsView">
+        <EntityType Name="ViewSemiFinishedCode">
           <Key>
-            <PropertyRef Name="Nr_Obsługi" />
-            <PropertyRef Name="Data_przyjęcia" />
-            <PropertyRef Name="Nazwa_części" />
-            <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="Kod_półfabrykatu" />
           </Key>
-          <Property Name="Nr_Obsługi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Data_przyjęcia" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Nazwa_części" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
-          <Property Name="Jednostka" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="vPartsView">
-          <Key>
-            <PropertyRef Name="Nazwa_części" />
-            <PropertyRef Name="Typ_części" />
-            <PropertyRef Name="Jednostka" />
-            <PropertyRef Name="Stan_magazynowy" />
-          </Key>
-          <Property Name="Nazwa_części" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Typ_części" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Jednostka" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Stan_magazynowy" Type="Int32" Nullable="false" />
+          <Property Name="Kod_półfabrykatu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -5440,28 +5385,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vMaintPartsViews">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintPartsView">
-              <MappingFragment StoreEntitySet="vMaintPartsView">
-                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
-                <ScalarProperty Name="Data_przyjęcia" ColumnName="Data przyjęcia" />
-                <ScalarProperty Name="Nr_Obsługi" ColumnName="Nr Obsługi" />
+          <EntitySetMapping Name="ViewSemiFinishedCodes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewSemiFinishedCode">
+              <MappingFragment StoreEntitySet="ViewSemiFinishedCode">
+                <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod_półfabrykatu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vPartsViews">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vPartsView">
-              <MappingFragment StoreEntitySet="vPartsView">
-                <ScalarProperty Name="Stan_magazynowy" ColumnName="Stan magazynowy" />
-                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
-                <ScalarProperty Name="Typ_części" ColumnName="Typ części" />
-                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

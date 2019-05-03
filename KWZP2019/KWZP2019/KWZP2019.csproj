@@ -591,6 +591,9 @@
     <Compile Include="ViewOshTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewSemiFinishedCode.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewSemiFinishedOrder.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>

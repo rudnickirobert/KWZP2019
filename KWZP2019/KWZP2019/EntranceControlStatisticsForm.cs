@@ -48,17 +48,15 @@ namespace KWZP2019
         // ==================================================
         private void EntranceControlStatisticsForm_Load(object sender, EventArgs e)
         {
-            var semiFinishedList = db.SemiFinisheds
-                .Select(select => new { Kod_półfabrykatu = select.SfCode }).ToList();
-            dataGridViewSemiFinished.DataSource = semiFinishedList;
+            dataGridViewSemiFinished.DataSource = db.ViewSemiFinishedCodes.ToList();
             dataGridViewSemiFinished.Rows[0].Selected = true;
             selectedSemiFinishedCode = dataGridViewSemiFinished.Rows[0].Cells[0].Value.ToString();
             datePickerDateFrom.Value = DateTime.Now.AddMonths(-1);
             datePickerDateTo.Value = DateTime.Now;
-            ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            ShowHistogramThickness(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            ShowHistogramWidth(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            ShowHistogramWeight(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
+            ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
+            ShowHistogramThickness(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
+            ShowHistogramWidth(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
+            ShowHistogramWeight(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
         }
         // ==================================================
         private void BtnAllTime_Click(object sender, EventArgs e)
@@ -87,8 +85,8 @@ namespace KWZP2019
         {
             List<ViewEntranceControlResultsBySfCode> entranceControlResult = db.ViewEntranceControlResultsBySfCodes
                 .Where(check => check.SfCode == semiFinishedCode
-                && check.ControlDate > dateFrom
-                && check.ControlDate < dateTo).ToList();
+                && check.ControlDate >= dateFrom
+                && check.ControlDate <= dateTo).ToList();
             Dictionary<decimal, decimal> result = new Dictionary<decimal, decimal>();
             switch (parameter)
             {
@@ -267,14 +265,14 @@ namespace KWZP2019
             int numberOfPositiveControl = db.ViewEntranceControlResultsBySfCodes
                 .Where(check => check.SfCode == semiFinishedCode
                 && check.ControlStatus == true
-                && check.ControlDate > dateFrom
-                && check.ControlDate < dateTo).ToList().Count();
+                && check.ControlDate >= dateFrom
+                && check.ControlDate <= dateTo).ToList().Count();
 
             int numberOfNegativeControl = db.ViewEntranceControlResultsBySfCodes
                 .Where(check => check.SfCode == semiFinishedCode
                 && check.ControlStatus == false
-                && check.ControlDate > dateFrom
-                && check.ControlDate < dateTo).ToList().Count();
+                && check.ControlDate >= dateFrom
+                && check.ControlDate <= dateTo).ToList().Count();
 
             SeriesCollection series = new SeriesCollection();
             series.Add(new PieSeries()
@@ -307,7 +305,7 @@ namespace KWZP2019
         // ==================================================
         private void DatePickerDateFrom_ValueChanged(object sender, EventArgs e)
         {
-            if (datePickerDateFrom.Value > datePickerDateTo.Value)
+            if (datePickerDateFrom.Value.Date >= datePickerDateTo.Value.Date)
             {
                 MessageBox.Show("Data \"od\" musi być większa od daty \"do\".", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 datePickerDateFrom.Value = DateTime.Now.AddMonths(-1);
@@ -316,7 +314,7 @@ namespace KWZP2019
         // ==================================================
         private void DatePickerDateTo_ValueChanged(object sender, EventArgs e)
         {
-            if (datePickerDateFrom.Value > datePickerDateTo.Value)
+            if (datePickerDateFrom.Value.Date >= datePickerDateTo.Value.Date)
             {
                 MessageBox.Show("Data \"od\" musi być większa od daty \"do\".", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 datePickerDateTo.Value = DateTime.Now;
@@ -325,7 +323,7 @@ namespace KWZP2019
         // ==================================================
         private void BtnRefreshCharts_Click(object sender, EventArgs e)
         {
-            ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
+            ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
             histogramThickness.Series.RemoveAt(0);
             histogramThickness.AxisX.RemoveAt(0);
             histogramThickness.AxisY.RemoveAt(0);
@@ -335,9 +333,9 @@ namespace KWZP2019
             histogramWeight.Series.RemoveAt(0);
             histogramWeight.AxisX.RemoveAt(0);
             histogramWeight.AxisY.RemoveAt(0);
-            ShowHistogramThickness(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            ShowHistogramWidth(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            ShowHistogramWeight(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
+            ShowHistogramThickness(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
+            ShowHistogramWidth(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
+            ShowHistogramWeight(this.selectedSemiFinishedCode, datePickerDateFrom.Value.Date, datePickerDateTo.Value);
         }
     }
 }

@@ -107,5 +107,6 @@ namespace KWZP2019
         public virtual DbSet<ViewMinAndMaxEntranceControlDate> ViewMinAndMaxEntranceControlDates { get; set; }
         public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
+        public virtual DbSet<ViewSemiFinishedCode> ViewSemiFinishedCodes { get; set; }
     }
 }
