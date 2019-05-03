@@ -153,13 +153,13 @@ namespace KWZP2019
                 DataLabels = false,
                 Values = new ChartValues<decimal>(),
                 LabelPoint = point => point.Y.ToString(),
-                ColumnPadding = 3,
-                MaxColumnWidth = 50,
+                ColumnPadding = 1,
+                MaxColumnWidth = 100,
                 Fill = System.Windows.Media.Brushes.Blue
             };
             Axis axisX = new Axis()
             {
-                Title = "Wartość",
+                Title = "Grubość",
                 Separator = new Separator() { Step = 1, IsEnabled = false},
                 LabelsRotation = -45,
                 Foreground = System.Windows.Media.Brushes.White
@@ -177,6 +177,7 @@ namespace KWZP2019
                 Title = "Prawdopodobieństwo",
                 LabelFormatter = value => value.ToString(),
                 Separator = new Separator(),
+                MinValue = 0,
                 MaxValue = (double)realThickness.Values.Max() + 0.05,
                 Foreground = System.Windows.Media.Brushes.White
             });
@@ -191,14 +192,14 @@ namespace KWZP2019
                 DataLabels = false,
                 Values = new ChartValues<decimal>(),
                 LabelPoint = point => point.Y.ToString(),
-                ColumnPadding = 3,
-                MaxColumnWidth = 50,
+                ColumnPadding = 1,
+                MaxColumnWidth = 100,
                 Fill = System.Windows.Media.Brushes.Blue
             };
             Axis axisX = new Axis()
             {
-                Title = "Wartość",
-                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Title = "Szerokość",
+                Separator = new Separator() { Step = 2, IsEnabled = false },
                 LabelsRotation = -45,
                 Foreground = System.Windows.Media.Brushes.White
             };
@@ -215,8 +216,8 @@ namespace KWZP2019
                 Title = "Prawdopodobieństwo",
                 LabelFormatter = value => value.ToString(),
                 Separator = new Separator(),
-                MinValue = (double)realWidth.Values.Max() / 2,
-                MaxValue = (double)realWidth.Values.Max() + 0.02,
+                MinValue = 0,
+                MaxValue = (double)realWidth.Values.Max() + 0.05,
                 Foreground = System.Windows.Media.Brushes.White
             });
             histogramWidth.DataTooltip.Visibility = System.Windows.Visibility.Hidden;
@@ -230,14 +231,14 @@ namespace KWZP2019
                 DataLabels = false,
                 Values = new ChartValues<decimal>(),
                 LabelPoint = point => point.Y.ToString(),
-                ColumnPadding = 3,
-                MaxColumnWidth = 50,
+                ColumnPadding = 1,
+                MaxColumnWidth = 100,
                 Fill = System.Windows.Media.Brushes.Blue
             };
             Axis axisX = new Axis()
             {
-                Title = "Wartość",
-                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Title = "Masa",
+                Separator = new Separator() { Step = 2, IsEnabled = false },
                 LabelsRotation = -45,
                 Foreground = System.Windows.Media.Brushes.White
             };
@@ -254,8 +255,8 @@ namespace KWZP2019
                 Title = "Prawdopodobieństwo",
                 LabelFormatter = value => value.ToString(),
                 Separator = new Separator(),
-                MinValue = (double)realWeight.Values.Max() / 2,
-                MaxValue = (double)realWeight.Values.Max() + 0.02,
+                MinValue = 0,
+                MaxValue = (double)realWeight.Values.Max() + 0.05,
                 Foreground = System.Windows.Media.Brushes.White
             });
             histogramWeight.DataTooltip.Visibility = System.Windows.Visibility.Hidden;
@@ -278,7 +279,7 @@ namespace KWZP2019
             SeriesCollection series = new SeriesCollection();
             series.Add(new PieSeries()
             {
-                Title = "Pozytywne",
+                Title = $"Pozytywne kontrole: {numberOfPositiveControl}",
                 Values = new ChartValues<int> { numberOfPositiveControl },
                 DataLabels = true,
                 LabelPoint = labelPoint,
@@ -287,7 +288,7 @@ namespace KWZP2019
             });
             series.Add(new PieSeries()
             {
-                Title = "Negatywne",
+                Title = $"Negatywne kontrole: {numberOfNegativeControl}",
                 Values = new ChartValues<int> { numberOfNegativeControl },
                 DataLabels = true,
                 LabelPoint = labelPoint,
