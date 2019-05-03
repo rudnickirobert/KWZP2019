@@ -53,6 +53,8 @@ namespace KWZP2019
         public virtual DbSet<MedicalExamination> MedicalExaminations { get; set; }
         public virtual DbSet<OrderCustomer> OrderCustomers { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<OutControl> OutControls { get; set; }
+ 	public virtual DbSet<OutputProductMeasurement> OutputProductMeasurements { get; set; }
         public virtual DbSet<Outsourcing> Outsourcings { get; set; }
         public virtual DbSet<OutsourcingCommitment> OutsourcingCommitments { get; set; }
         public virtual DbSet<OutsourcingType> OutsourcingTypes { get; set; }
@@ -90,6 +92,7 @@ namespace KWZP2019
         public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
+        public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomers { get; set; }
         public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcesses { get; set; }
@@ -99,9 +102,8 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
-        public virtual DbSet<OutControl> OutControls { get; set; }
-        public virtual DbSet<OutputProductMeasurement> OutputProductMeasurements { get; set; }
-        public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
+        public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
+        public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vTotalNumberOfMeasuresPerProcess> vTotalNumberOfMeasuresPerProcesses { get; set; }
     }
 }

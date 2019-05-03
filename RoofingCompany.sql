@@ -622,13 +622,13 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment;
 
-
-/*====SALES DEPARTMENT===*/
+/*====SALES DEPARTMENT START==*/
 
 GO 
 CREATE VIEW vSupplierParts
 AS
-SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+SELECT Type as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, Description as [Opis]  
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
@@ -637,7 +637,8 @@ WHERE (Type = 'Części');
 GO
 CREATE VIEW vSupplierSemis
 AS
-SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+SELECT Type as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, Description as [Opis]
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
@@ -646,26 +647,20 @@ WHERE (Type = 'Półfabrykaty');
 GO
 CREATE VIEW vOutsourcingWithType
 AS
-SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+SELECT  OutsourcingType as [Typ], CompanyName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, Description as [Opis]
 FROM Outsourcing
 JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
 
 GO
-CREATE VIEW vIndividualCustomer
+CREATE VIEW vCustomer
 AS
-SELECT *
-FROM Customer
-WHERE Pesel !=0; 
-
-GO
-CREATE VIEW vCompany
-AS
-SELECT *
-FROM Customer
-WHERE NIP !=0 AND KRS !=0 ; 
-
-GO
+SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
+ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, Description as [Opis]
+FROM Customer;
+ 
+/*====SALES DEPARTMENT END===*/
 
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
@@ -714,23 +709,22 @@ SELECT IdProces
 FROM ProductionProcess, vSuccesfullyProcess
 WHERE IdProces != IdProcess
 
-GO
+/*====SALES DEPARTMENT START===*/
 
+GO
 CREATE VIEW vOutputMagazine
 AS
-SELECT A.IdProcess, A.ProductCode, B.EndControlDate, C.SuccesfullProduced
+SELECT A.IdProcess, A.ProductCode as [Kod produktu], C.SuccesfullProduced as [Ilość], B.EndControlDate [Data przyjęcia na magazyn] 
 FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
-
 CREATE VIEW vInputMagazine
 AS
-SELECT SfCode, Quantity, ControlDate 
+SELECT SfCode as [Kod Produktu], Quantity as [Ilość], ControlDate as [Data przyjęcia na magazyn]
 FROM EntranceControl, SemiFinished;
 
 GO
-
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -743,18 +737,17 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
-
 CREATE VIEW vOrderDetail 
 AS
-SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
+SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia], Product.ProductCode as [Kod produktu], OrderDetail.Quantity as [Ilość]
 FROM OrderCustomer
-JOIN Customer
-ON Customer.IdCustomer = OrderCustomer.IdCustomer
 JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
-GO
+
+/*====SALES DEPARTMENT END===*/ 
+
 /*====PRODUCTION===*/
 CREATE VIEW vUnhandledOrderDetails
 AS
@@ -797,3 +790,17 @@ ON Unit.IdUnit = Part.IdUnit
 ORDER BY Maintenance.DateAcceptOrder DESC;
 GO
 
+/*====SALES DEPARTMENT START===*/
+
+GO
+CREATE VIEW vOrder
+AS
+SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena],
+Markup as [Marża], EmployeeSurname as [Pracownik odpowiedzialny]
+FROM OrderCustomer
+INNER JOIN OrderDetail
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+INNER JOIN Product
+ON OrderDetail.IdProduct = Product.IdProduct
+INNER JOIN Employee
+ON OrderCustomer.IdEmployee = Employee.IdEmployee;
