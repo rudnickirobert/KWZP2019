@@ -588,12 +588,6 @@
     <Compile Include="ViewMinAndMaxEntranceControlDate.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewNumberNegativeEntranceControl.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ViewNumberPositiveEntranceControl.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewOshTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>

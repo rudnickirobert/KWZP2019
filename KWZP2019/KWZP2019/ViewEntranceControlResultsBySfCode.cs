@@ -18,5 +18,7 @@ namespace KWZP2019
         public decimal RealThickness { get; set; }
         public decimal RealWidth { get; set; }
         public decimal RealWeight { get; set; }
+        public System.DateTime ControlDate { get; set; }
+        public Nullable<bool> ControlStatus { get; set; }
     }
 }

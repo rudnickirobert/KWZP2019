@@ -19,9 +19,7 @@ namespace KWZP2019
         private StartForm startForm;
         private EntranceControlForm entranceControlForm;
         private string selectedSemiFinishedCode;
-
         // ==================================================
-
         public EntranceControlStatisticsForm(RoofingCompanyEntities db, StartForm startForm, EntranceControlForm entranceControlForm)
         {
             InitializeComponent();
@@ -29,33 +27,25 @@ namespace KWZP2019
             this.startForm = startForm;
             this.entranceControlForm = entranceControlForm;
         }
-
         // ==================================================
-
         private void BtnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
             this.entranceControlForm.Close();
             this.Close();
         }
-
         // ==================================================
-
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.entranceControlForm.Show();
             this.Close();
         }
-
         // ==================================================
-
         private void EntranceControlStatisticsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.entranceControlForm.Show();
         }
-
         // ==================================================
-
         private void EntranceControlStatisticsForm_Load(object sender, EventArgs e)
         {
             var semiFinishedList = db.SemiFinisheds
@@ -68,9 +58,7 @@ namespace KWZP2019
             datePickerDateTo.Value = DateTime.Now;
             ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
         }
-
         // ==================================================
-
         private void BtnAllTime_Click(object sender, EventArgs e)
         {
             ViewMinAndMaxEntranceControlDate minAndMaxControlDate = db.ViewMinAndMaxEntranceControlDates
@@ -87,45 +75,7 @@ namespace KWZP2019
                 ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
             }
         }
-
         // ==================================================
-
-        private void BtnShowHistograms_Click(object sender, EventArgs e)
-        {
-            if(selectedSemiFinishedCode == null)
-            {
-                MessageBox.Show("Wybierz półfabrykat.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if(datePickerDateFrom.Value > datePickerDateTo.Value)
-            {
-                MessageBox.Show("Data \"od\" musi być większa od daty \"do\".", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ShowHistograms(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            }
-        }
-
-        // ==================================================
-
-        private void BtnShowPieChart_Click(object sender, EventArgs e)
-        {
-            if (selectedSemiFinishedCode == null)
-            {
-                MessageBox.Show("Wybierz półfabrykat.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (datePickerDateFrom.Value > datePickerDateTo.Value)
-            {
-                MessageBox.Show("Data \"od\" musi być większa od daty \"do\".", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
-            }
-        }
-
-        // ==================================================
-
         private void DataGridViewSemiFinished_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewSemiFinished.SelectedRows[0];
@@ -133,23 +83,25 @@ namespace KWZP2019
 
             ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
         }
-
         // ==================================================
-
         private void ShowHistograms(string semiFinishedCode, DateTime dateFrom, DateTime dateTo)
         {
 
         }
-
         // ==================================================
-
         private void ShowPieChart(string semiFinishedCode, DateTime dateFrom, DateTime dateTo)
         {
-            int numberOfPositiveControl = (int)db.ViewNumberPositiveEntranceControls
-                .Where(check => check.SfCode == semiFinishedCode).First().Positive;
+            int numberOfPositiveControl = db.ViewEntranceControlResultsBySfCodes
+                .Where(check => check.SfCode == semiFinishedCode
+                && check.ControlStatus == true
+                && check.ControlDate > dateFrom
+                && check.ControlDate < dateTo).ToList().Count();
 
-            int numberOfNegativeControl = (int)db.ViewNumberNegativeEntranceControls
-                .Where(check => check.SfCode == semiFinishedCode).First().Negative;
+            int numberOfNegativeControl = db.ViewEntranceControlResultsBySfCodes
+                .Where(check => check.SfCode == semiFinishedCode
+                && check.ControlStatus == false
+                && check.ControlDate > dateFrom
+                && check.ControlDate < dateTo).ToList().Count();
 
             SeriesCollection series = new SeriesCollection();
             series.Add(new PieSeries()
@@ -174,9 +126,9 @@ namespace KWZP2019
             pieChartNumberOfPositiveAndNegativeControl.LegendLocation = LegendLocation.Bottom;
             pieChartNumberOfPositiveAndNegativeControl.DataTooltip.Visibility = System.Windows.Visibility.Hidden;
         }
-
+        // ==================================================
         Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0:P}", chartPoint.Participation);
-
+        // ==================================================
         private void DatePickerDateFrom_ValueChanged(object sender, EventArgs e)
         {
             if (datePickerDateFrom.Value > datePickerDateTo.Value)
@@ -187,7 +139,7 @@ namespace KWZP2019
 
             ShowPieChart(this.selectedSemiFinishedCode, datePickerDateFrom.Value, datePickerDateTo.Value);
         }
-
+        // ==================================================
         private void DatePickerDateTo_ValueChanged(object sender, EventArgs e)
         {
             if (datePickerDateFrom.Value > datePickerDateTo.Value)

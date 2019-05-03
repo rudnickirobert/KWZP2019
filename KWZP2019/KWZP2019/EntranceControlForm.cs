@@ -23,9 +23,7 @@ namespace KWZP2019
         private Nullable<int> selectedOrderId;
         private int selectedSfId;
         DataGridViewRow selectedRow;
-
         // ==================================================
-
         public EntranceControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
             this.db = db;
@@ -33,80 +31,60 @@ namespace KWZP2019
             this.qualityControlForm = qualityControlForm;
             InitializeComponent();
         }
-
         // ==================================================
-
         private void BtnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
             this.qualityControlForm.Close();
             this.Close();
         }
-
         // ==================================================
-
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.qualityControlForm.Show();
             this.Hide();
         }
-
         // ==================================================
-
         private void BtnStatistics_Click(object sender, EventArgs e)
         {
             EntranceControlStatisticsForm statisticsForm = new EntranceControlStatisticsForm(db, startForm, this);
             statisticsForm.Show();
             this.Hide();
         }
-
         // ==================================================
-
         private void EntranceControlForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.startForm.Show();
             this.qualityControlForm.Close();
         }
-
         // ==================================================
-
         private void EntranceControlForm_Load(object sender, EventArgs e)
         {
             datePickerSelectedControlsDate.Value = DateTime.Now;
             ShowControlsFromDate(DateTime.Now);
         }
-
         // ==================================================
-
         private void BtnShowFromToday_Click(object sender, EventArgs e)
         {
             datePickerSelectedControlsDate.Value = DateTime.Now;
             ShowControlsFromDate(DateTime.Now);
         }
-
         // ==================================================
-
         private void BtnShowFromDay_Click(object sender, EventArgs e)
         {
             ShowControlsFromDate(datePickerSelectedControlsDate.Value);
         }
-
         // ==================================================
-
         private void BtnShowFromMonth_Click(object sender, EventArgs e)
         {
             ShowControlsFromDate(datePickerSelectedControlsDate.Value.Month, datePickerSelectedControlsDate.Value.Year);
         }
-
         // ==================================================
-
         private void BtnShowFromYear_Click(object sender, EventArgs e)
         {
             ShowControlsFromDate(datePickerSelectedControlsDate.Value.Year);
         }
-
         // ==================================================
-
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
             List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
@@ -115,7 +93,6 @@ namespace KWZP2019
 
             dataGridViewEntranceControl.DataSource = orders;
         }
-
         // ==================================================
         private void DataGVEntranceControl_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -151,7 +128,6 @@ namespace KWZP2019
                 MessageBox.Show("Data dostarczenia jest wcześniejsza od chwili obecnej.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         // ==================================================
         private void TextBoxEmployeeId_TextChanged(object sender, EventArgs e)
         {
@@ -165,17 +141,13 @@ namespace KWZP2019
                 $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : 
                 "Brak pracownika z takim numerem";
         }
-
         // ================================================== 
-
         private void BtnCheck_Click(object sender, EventArgs e)
         {
             CheckControl();
             this.doResultsChecked = true;
         }
-
         // ==================================================
-
         private void BtnApproval_Click(object sender, EventArgs e)
         {
             if (selectedOrderId == null)
@@ -235,9 +207,7 @@ namespace KWZP2019
                 MessageBox.Show("Najpierw sprawdź wyniki!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         // ==================================================
-
         private void BtnDone_Click(object sender, EventArgs e)
         {
             
@@ -272,18 +242,14 @@ namespace KWZP2019
                 MessageBox.Show("Proszę zatwierdzić wyniki!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         // ==================================================
-
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             (sender as TextBox).BackColor = Color.White;
             ResetAllCheckedPicBox();
             this.doResultsChecked = false;
         }
-
         // ==================================================
-
         private void ResetAllCheckedPicBox()
         {
             picBoxThicknessStatus.Image = Properties.Resources.help_40px;
@@ -292,9 +258,7 @@ namespace KWZP2019
             picBoxColorStatus.Image = Properties.Resources.help_40px;
             picBoxQuantityStatus.Image = Properties.Resources.help_40px;
         }
-
         // ==================================================
-
         private bool ChangeTextBoxesDependingOnExistedSelectedControl()
         {
             // Changed text boxes style depending on if selected control exist in database and return true if exist and false if not
@@ -357,9 +321,7 @@ namespace KWZP2019
                 return true;
             }
         }
-
         // ==================================================
-
         private void CheckControl()
         {
             if (lblOrderIdShow.Text == "")
@@ -490,9 +452,7 @@ namespace KWZP2019
                 }
             }
         }
-
         // ==================================================
-
         private void ShowControlsFromDate(DateTime selectedDate)
         {
             List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
@@ -505,9 +465,7 @@ namespace KWZP2019
             
             dataGridViewEntranceControl.DataSource = orders;
         }
-
         // ==================================================
-
         private void ShowControlsFromDate(int month, int year)
         {
             List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
@@ -519,9 +477,7 @@ namespace KWZP2019
             
             dataGridViewEntranceControl.DataSource = orders;
         }
-
         // ==================================================
-
         private void ShowControlsFromDate(int year)
         {
             List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders

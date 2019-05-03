@@ -701,11 +701,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewEntranceControlResultsBySfC
         <EntityType Name="ViewEntranceControlResultsBySfCode">
           <Key>
             <PropertyRef Name="SfCode" />
+            <PropertyRef Name="ControlDate" />
             <PropertyRef Name="RealThickness" />
             <PropertyRef Name="RealWidth" />
             <PropertyRef Name="RealWeight" />
           </Key>
           <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ControlDate" Type="datetime" Nullable="false" />
+          <Property Name="ControlStatus" Type="bit" />
           <Property Name="RealThickness" Type="decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="RealWidth" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="RealWeight" Type="decimal" Precision="6" Scale="2" Nullable="false" />
@@ -719,24 +722,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewMinAndMaxEntranceControlDat
           <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="MinControlDate" Type="datetime" />
           <Property Name="MaxControlDate" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.ViewNumberNegativeEntranceControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ViewNumberNegativeEntranceControl">
-          <Key>
-            <PropertyRef Name="SfCode" />
-          </Key>
-          <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Negative" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.ViewNumberPositiveEntranceControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ViewNumberPositiveEntranceControl">
-          <Key>
-            <PropertyRef Name="SfCode" />
-          </Key>
-          <Property Name="SfCode" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Positive" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1871,6 +1856,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="ViewEntranceControlResultsBySfCode" EntityType="Self.ViewEntranceControlResultsBySfCode" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ViewEntranceControlResultsBySfCode].[SfCode] AS [SfCode], 
+    [ViewEntranceControlResultsBySfCode].[ControlDate] AS [ControlDate], 
+    [ViewEntranceControlResultsBySfCode].[ControlStatus] AS [ControlStatus], 
     [ViewEntranceControlResultsBySfCode].[RealThickness] AS [RealThickness], 
     [ViewEntranceControlResultsBySfCode].[RealWidth] AS [RealWidth], 
     [ViewEntranceControlResultsBySfCode].[RealWeight] AS [RealWeight]
@@ -1882,18 +1869,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [ViewMinAndMaxEntranceControlDate].[MinControlDate] AS [MinControlDate], 
     [ViewMinAndMaxEntranceControlDate].[MaxControlDate] AS [MaxControlDate]
     FROM [dbo].[ViewMinAndMaxEntranceControlDate] AS [ViewMinAndMaxEntranceControlDate]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ViewNumberNegativeEntranceControl" EntityType="Self.ViewNumberNegativeEntranceControl" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ViewNumberNegativeEntranceControl].[SfCode] AS [SfCode], 
-    [ViewNumberNegativeEntranceControl].[Negative] AS [Negative]
-    FROM [dbo].[ViewNumberNegativeEntranceControl] AS [ViewNumberNegativeEntranceControl]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ViewNumberPositiveEntranceControl" EntityType="Self.ViewNumberPositiveEntranceControl" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ViewNumberPositiveEntranceControl].[SfCode] AS [SfCode], 
-    [ViewNumberPositiveEntranceControl].[Positive] AS [Positive]
-    FROM [dbo].[ViewNumberPositiveEntranceControl] AS [ViewNumberPositiveEntranceControl]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewOshTraining" EntityType="Self.ViewOshTraining" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2635,8 +2610,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
           <EntitySet Name="ViewEntranceControlResultsBySfCodes" EntityType="RoofingCompanyModel.ViewEntranceControlResultsBySfCode" />
-          <EntitySet Name="ViewNumberNegativeEntranceControls" EntityType="RoofingCompanyModel.ViewNumberNegativeEntranceControl" />
-          <EntitySet Name="ViewNumberPositiveEntranceControls" EntityType="RoofingCompanyModel.ViewNumberPositiveEntranceControl" />
           <EntitySet Name="ViewSemiFinishedOrders" EntityType="RoofingCompanyModel.ViewSemiFinishedOrder" />
           <EntitySet Name="ViewEntranceControlHistories" EntityType="RoofingCompanyModel.ViewEntranceControlHistory" />
           <EntitySet Name="ViewMinAndMaxEntranceControlDates" EntityType="RoofingCompanyModel.ViewMinAndMaxEntranceControlDate" />
@@ -4408,25 +4381,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <PropertyRef Name="RealThickness" />
             <PropertyRef Name="RealWidth" />
             <PropertyRef Name="RealWeight" />
+            <PropertyRef Name="ControlDate" />
           </Key>
           <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="RealThickness" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
           <Property Name="RealWidth" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
           <Property Name="RealWeight" Type="Decimal" Nullable="false" Precision="6" Scale="2" />
-        </EntityType>
-        <EntityType Name="ViewNumberNegativeEntranceControl">
-          <Key>
-            <PropertyRef Name="SfCode" />
-          </Key>
-          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Negative" Type="Int32" />
-        </EntityType>
-        <EntityType Name="ViewNumberPositiveEntranceControl">
-          <Key>
-            <PropertyRef Name="SfCode" />
-          </Key>
-          <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Positive" Type="Int32" />
+          <Property Name="ControlDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ControlStatus" Type="Boolean" />
         </EntityType>
         <EntityType Name="ViewSemiFinishedOrder">
           <Key>
@@ -5358,25 +5320,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="ViewEntranceControlResultsBySfCodes">
             <EntityTypeMapping TypeName="RoofingCompanyModel.ViewEntranceControlResultsBySfCode">
               <MappingFragment StoreEntitySet="ViewEntranceControlResultsBySfCode">
+                <ScalarProperty Name="ControlStatus" ColumnName="ControlStatus" />
+                <ScalarProperty Name="ControlDate" ColumnName="ControlDate" />
                 <ScalarProperty Name="RealWeight" ColumnName="RealWeight" />
                 <ScalarProperty Name="RealWidth" ColumnName="RealWidth" />
                 <ScalarProperty Name="RealThickness" ColumnName="RealThickness" />
-                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ViewNumberNegativeEntranceControls">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewNumberNegativeEntranceControl">
-              <MappingFragment StoreEntitySet="ViewNumberNegativeEntranceControl">
-                <ScalarProperty Name="Negative" ColumnName="Negative" />
-                <ScalarProperty Name="SfCode" ColumnName="SfCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ViewNumberPositiveEntranceControls">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.ViewNumberPositiveEntranceControl">
-              <MappingFragment StoreEntitySet="ViewNumberPositiveEntranceControl">
-                <ScalarProperty Name="Positive" ColumnName="Positive" />
                 <ScalarProperty Name="SfCode" ColumnName="SfCode" />
               </MappingFragment>
             </EntityTypeMapping>
