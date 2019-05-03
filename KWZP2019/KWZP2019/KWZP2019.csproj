@@ -205,6 +205,12 @@
     <Compile Include="Finances\Finances.Designer.cs">
       <DependentUpon>Finances.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finances\SalariesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finances\SalariesHistory.Designer.cs">
+      <DependentUpon>SalariesHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Finances\ProfitsAndFinancialBalance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -738,6 +744,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\Finances.resx">
       <DependentUpon>Finances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finances\SalariesHistory.resx">
+      <DependentUpon>SalariesHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\ProfitsAndFinancialBalance.resx">
       <DependentUpon>ProfitsAndFinancialBalance.cs</DependentUpon>

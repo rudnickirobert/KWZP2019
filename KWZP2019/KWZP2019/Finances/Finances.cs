@@ -22,9 +22,11 @@ namespace KWZP2019
             this.finanseIHR = finanseIHR;
             InitializeComponent();
         }
-        private void btnPayments_Click(object sender, EventArgs e)
+        private void btnSalariesHistory_Click(object sender, EventArgs e)
         {
-
+            SalariesHistory salariesHistory = new SalariesHistory(db, startForm, this);
+            salariesHistory.Show();
+            this.Hide();
         }
         private void btnCountPayments_Click(object sender, EventArgs e)
         {
@@ -48,20 +50,17 @@ namespace KWZP2019
             profits.Show();
 
         }
-        
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
             AddInvoices addInvoices = new AddInvoices(db, startForm, this);
             addInvoices.Show();
             this.Hide();
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.startForm.Show();
         }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.finanseIHR.Show();
