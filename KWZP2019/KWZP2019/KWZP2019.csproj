@@ -571,6 +571,9 @@
     <Compile Include="vInputMagazine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vMaintPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -578,6 +581,9 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOutsourcingWithType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vPredictedPriceForCustomer.cs">
@@ -836,6 +842,8 @@
     <None Include="Resources\roof.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\icons8-download-80.png" />
+    <None Include="Resources\icons8-download-801.png" />
     <None Include="Resources\powrott.png" />
     <None Include="Resources\okej.png" />
     <None Include="Resources\addp.png" />
