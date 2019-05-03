@@ -12,20 +12,19 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vIndividualCustomer
+    public partial class vCustomer
     {
-        public int IdCustomer { get; set; }
-        public string CustomerName { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
-        public string Street { get; set; }
-        public int HouseNumber { get; set; }
-        public int ApartmentNumber { get; set; }
+        public string Klient { get; set; }
+        public int Telefon { get; set; }
+        public string E_mail { get; set; }
+        public string Miasto { get; set; }
+        public string Kod_pocztowy { get; set; }
+        public string Ulica { get; set; }
+        public int Numer { get; set; }
+        public int Numer_lokalu { get; set; }
         public Nullable<double> Pesel { get; set; }
         public Nullable<double> NIP { get; set; }
         public Nullable<double> KRS { get; set; }
-        public string Description { get; set; }
+        public string Opis { get; set; }
     }
 }

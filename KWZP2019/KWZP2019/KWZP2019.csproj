@@ -553,7 +553,13 @@
     <Compile Include="Unit.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vCompany.cs">
+    <Compile Include="vComboBoxEmployee.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vComboBoxMachine.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDevotionsInMeasuremntsPerProcess.cs">
@@ -565,10 +571,13 @@
     <Compile Include="ViewOshTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vIndividualCustomer.cs">
+    <Compile Include="vInputMagazine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vInputMagazine.cs">
+    <Compile Include="vMaintPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOrder.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOrderDetail.cs">
@@ -578,6 +587,9 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOutsourcingWithType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vPredictedPriceForCustomer.cs">
@@ -840,6 +852,8 @@
     <None Include="Resources\roof.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\icons8-download-80.png" />
+    <None Include="Resources\icons8-download-801.png" />
     <None Include="Resources\powrott.png" />
     <None Include="Resources\okej.png" />
     <None Include="Resources\addp.png" />
