@@ -37,6 +37,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
@@ -60,9 +63,11 @@
             this.txtbEndDate = new System.Windows.Forms.TextBox();
             this.chartLenght = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartWidth = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSuccesfullFailCount = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLenght)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSuccesfullFailCount)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnMain
@@ -322,13 +327,13 @@
             this.chartLenght.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartLenght.Legends.Add(legend1);
-            this.chartLenght.Location = new System.Drawing.Point(406, 463);
+            this.chartLenght.Location = new System.Drawing.Point(367, 478);
             this.chartLenght.Name = "chartLenght";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Lenght Measures";
             this.chartLenght.Series.Add(series1);
-            this.chartLenght.Size = new System.Drawing.Size(267, 213);
+            this.chartLenght.Size = new System.Drawing.Size(239, 224);
             this.chartLenght.TabIndex = 57;
             this.chartLenght.Text = "Lenght Measures";
             title1.Name = "LenghtMeasures";
@@ -340,17 +345,50 @@
             this.chartWidth.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartWidth.Legends.Add(legend2);
-            this.chartWidth.Location = new System.Drawing.Point(679, 463);
+            this.chartWidth.Location = new System.Drawing.Point(611, 478);
             this.chartWidth.Name = "chartWidth";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Width Measures";
             this.chartWidth.Series.Add(series2);
-            this.chartWidth.Size = new System.Drawing.Size(267, 213);
+            this.chartWidth.Size = new System.Drawing.Size(236, 224);
             this.chartWidth.TabIndex = 57;
             this.chartWidth.Text = "Width Measures";
             title2.Name = "LenghtMeasures";
             this.chartWidth.Titles.Add(title2);
+            // 
+            // chartSuccesfullFailCount
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chartSuccesfullFailCount.ChartAreas.Add(chartArea3);
+            legend3.Alignment = System.Drawing.StringAlignment.Far;
+            legend3.AutoFitMinFontSize = 6;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.IsDockedInsideChartArea = false;
+            legend3.IsEquallySpacedItems = true;
+            legend3.ItemColumnSpacing = 70;
+            legend3.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend3.MaximumAutoSize = 20F;
+            legend3.Name = "Default";
+            legend3.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            legend3.TextWrapThreshold = 90;
+            legend3.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chartSuccesfullFailCount.Legends.Add(legend3);
+            this.chartSuccesfullFailCount.Location = new System.Drawing.Point(851, 478);
+            this.chartSuccesfullFailCount.Name = "chartSuccesfullFailCount";
+            this.chartSuccesfullFailCount.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.CustomProperties = "PieDrawingStyle=Concave, LabelsHorizontalLineSize=2, PieLabelStyle=Disabled, Labe" +
+    "lsRadialLineSize=2";
+            series3.Legend = "Default";
+            series3.Name = "Produkty";
+            series3.SmartLabelStyle.Enabled = false;
+            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.chartSuccesfullFailCount.Series.Add(series3);
+            this.chartSuccesfullFailCount.Size = new System.Drawing.Size(240, 224);
+            this.chartSuccesfullFailCount.TabIndex = 57;
+            this.chartSuccesfullFailCount.Text = "Measures";
             // 
             // OutControlForm
             // 
@@ -359,6 +397,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.chartSuccesfullFailCount);
             this.Controls.Add(this.chartWidth);
             this.Controls.Add(this.chartLenght);
             this.Controls.Add(this.txtbOutControlStatus);
@@ -393,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLenght)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSuccesfullFailCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +463,6 @@
         private System.Windows.Forms.TextBox txtbEndDate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLenght;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWidth;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSuccesfullFailCount;
     }
 }

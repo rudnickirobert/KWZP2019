@@ -45,6 +45,7 @@ namespace KWZP2019
         {
             chartLenght.Visible = false;
             chartWidth.Visible = false;
+            chartSuccesfullFailCount.Visible = false;
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -156,6 +157,7 @@ namespace KWZP2019
                             txtbOutControlStatus.BackColor = Color.YellowGreen;
                             btnSMeasures.Visible = true;
                             handleTextBoxes(procesNumber, true);
+                            HideCharts();
                             break;
                         }
                     case "Proces kontroli zakończony":
@@ -172,17 +174,26 @@ namespace KWZP2019
 
         private void generateCharts()
         {
+            chartLenght.Series["Lenght Measures"].Points.Clear();
+            chartWidth.Series["Width Measures"].Points.Clear();
+            chartSuccesfullFailCount.Series["Produkty"].Points.Clear();
             chartLenght.Visible = true;
             chartWidth.Visible = true;
+            chartSuccesfullFailCount.Visible = true;
             List<OutputProductMeasurement> outputProductMeasurements = db.OutputProductMeasurements.Where(e => e.IdProcess == procesNumber).ToList();
+
             foreach(OutputProductMeasurement outputProduct in outputProductMeasurements)
             {
                 chartLenght.Series["Lenght Measures"].Points.Add(outputProduct.MeasuredLenght);
-            }
-            foreach (OutputProductMeasurement outputProduct in outputProductMeasurements)
-            {
                 chartWidth.Series["Width Measures"].Points.Add(outputProduct.MeasuredWidth);
             }
+            int succesfullyProduced = Int16.Parse(db.vSuccesfullyProducedPerProcesses.First(e => e.IdProcess == procesNumber).SuccesfullProduced.ToString());
+            chartSuccesfullFailCount.Series["Produkty"].Points.AddXY("Spełniające wymagania", succesfullyProduced);
+            chartSuccesfullFailCount.Series["Produkty"].Points.AddXY("Nie spełniające wymagań", outputProductMeasurements.Count() - succesfullyProduced);
+            chartSuccesfullFailCount.Series["Produkty"].SmartLabelStyle.Enabled = false;
+            chartSuccesfullFailCount.Legends["Default"].IsTextAutoFit = true;
+            chartSuccesfullFailCount.Legends["Default"].MaximumAutoSize = 100;
+            chartSuccesfullFailCount.Legends["Default"].IsDockedInsideChartArea = false;
         }
 
         private void cbProcessNumber_SelectionChangeCommitted(object sender, EventArgs e)
