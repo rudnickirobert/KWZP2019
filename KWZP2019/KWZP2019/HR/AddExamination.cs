@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace KWZP2019
 {
-    public partial class Costs : Form
+    public partial class AddExamination : Form
     {
         RoofingCompanyEntities db;
-        public Costs(RoofingCompanyEntities db)
+
+        public AddExamination(RoofingCompanyEntities db)
         {
             InitializeComponent();
             this.db = db;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MedicalExamination newMedicalExamination = new MedicalExamination();
         }
     }
 }

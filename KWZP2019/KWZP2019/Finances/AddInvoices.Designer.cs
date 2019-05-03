@@ -28,256 +28,236 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAdddata = new System.Windows.Forms.Label();
-            this.tbZipcode = new System.Windows.Forms.TextBox();
-            this.lblNameofentity = new System.Windows.Forms.Label();
-            this.llbNip = new System.Windows.Forms.Label();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.lblHousenumber = new System.Windows.Forms.Label();
-            this.lblApartmentnumber = new System.Windows.Forms.Label();
-            this.lblZipcode = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.lblDateadded = new System.Windows.Forms.Label();
-            this.lblValue = new System.Windows.Forms.Label();
-            this.tbCity = new System.Windows.Forms.TextBox();
-            this.tbApartmentnumber = new System.Windows.Forms.TextBox();
-            this.tbHousenumber = new System.Windows.Forms.TextBox();
-            this.tbStreet = new System.Windows.Forms.TextBox();
-            this.tbNip = new System.Windows.Forms.TextBox();
-            this.tbNameofentity = new System.Windows.Forms.TextBox();
-            this.dtpDateadded = new System.Windows.Forms.DateTimePicker();
-            this.tbValue = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddInvoices));
+            this.lblDateAdded = new System.Windows.Forms.Label();
+            this.lblInvoiceValue = new System.Windows.Forms.Label();
+            this.dtpDateAdded = new System.Windows.Forms.DateTimePicker();
+            this.tbInvoiceValue = new System.Windows.Forms.TextBox();
             this.lblPln = new System.Windows.Forms.Label();
-            this.btnAccept = new System.Windows.Forms.Button();
+            this.btnAddNewInvoice = new System.Windows.Forms.Button();
+            this.btnAddNewCompany = new System.Windows.Forms.Button();
+            this.cbContractors = new System.Windows.Forms.ComboBox();
+            this.cbInvoiceType = new System.Windows.Forms.ComboBox();
+            this.pbAddInvoices = new System.Windows.Forms.PictureBox();
+            this.lblFormTitle = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReturnMain = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddInvoices)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblAdddata
+            // lblDateAdded
             // 
-            this.lblAdddata.AutoSize = true;
-            this.lblAdddata.Location = new System.Drawing.Point(12, 9);
-            this.lblAdddata.Name = "lblAdddata";
-            this.lblAdddata.Size = new System.Drawing.Size(152, 13);
-            this.lblAdddata.TabIndex = 0;
-            this.lblAdddata.Text = "Dodawanie danych do faktury:";
+            this.lblDateAdded.AutoSize = true;
+            this.lblDateAdded.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.lblDateAdded.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDateAdded.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblDateAdded.Location = new System.Drawing.Point(517, 357);
+            this.lblDateAdded.Name = "lblDateAdded";
+            this.lblDateAdded.Size = new System.Drawing.Size(162, 20);
+            this.lblDateAdded.TabIndex = 9;
+            this.lblDateAdded.Text = "Data wystawienia:";
             // 
-            // tbZipcode
+            // lblInvoiceValue
             // 
-            this.tbZipcode.Location = new System.Drawing.Point(118, 161);
-            this.tbZipcode.Name = "tbZipcode";
-            this.tbZipcode.Size = new System.Drawing.Size(162, 20);
-            this.tbZipcode.TabIndex = 1;
+            this.lblInvoiceValue.AutoSize = true;
+            this.lblInvoiceValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblInvoiceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblInvoiceValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblInvoiceValue.Location = new System.Drawing.Point(518, 398);
+            this.lblInvoiceValue.Name = "lblInvoiceValue";
+            this.lblInvoiceValue.Size = new System.Drawing.Size(133, 18);
+            this.lblInvoiceValue.TabIndex = 10;
+            this.lblInvoiceValue.Text = "Wartosć faktury:";
             // 
-            // lblNameofentity
+            // dtpDateAdded
             // 
-            this.lblNameofentity.AutoSize = true;
-            this.lblNameofentity.Location = new System.Drawing.Point(14, 34);
-            this.lblNameofentity.Name = "lblNameofentity";
-            this.lblNameofentity.Size = new System.Drawing.Size(89, 13);
-            this.lblNameofentity.TabIndex = 2;
-            this.lblNameofentity.Text = "Nazwa podmiotu:";
+            this.dtpDateAdded.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpDateAdded.Location = new System.Drawing.Point(685, 355);
+            this.dtpDateAdded.Name = "dtpDateAdded";
+            this.dtpDateAdded.Size = new System.Drawing.Size(255, 23);
+            this.dtpDateAdded.TabIndex = 17;
             // 
-            // llbNip
+            // tbInvoiceValue
             // 
-            this.llbNip.AutoSize = true;
-            this.llbNip.Location = new System.Drawing.Point(14, 60);
-            this.llbNip.Name = "llbNip";
-            this.llbNip.Size = new System.Drawing.Size(28, 13);
-            this.llbNip.TabIndex = 3;
-            this.llbNip.Text = "NIP:";
-            // 
-            // lblStreet
-            // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(14, 86);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(34, 13);
-            this.lblStreet.TabIndex = 4;
-            this.lblStreet.Text = "Ulica:";
-            // 
-            // lblHousenumber
-            // 
-            this.lblHousenumber.AutoSize = true;
-            this.lblHousenumber.Location = new System.Drawing.Point(12, 112);
-            this.lblHousenumber.Name = "lblHousenumber";
-            this.lblHousenumber.Size = new System.Drawing.Size(50, 13);
-            this.lblHousenumber.TabIndex = 5;
-            this.lblHousenumber.Text = "Nr domu:";
-            // 
-            // lblApartmentnumber
-            // 
-            this.lblApartmentnumber.AutoSize = true;
-            this.lblApartmentnumber.Location = new System.Drawing.Point(14, 138);
-            this.lblApartmentnumber.Name = "lblApartmentnumber";
-            this.lblApartmentnumber.Size = new System.Drawing.Size(52, 13);
-            this.lblApartmentnumber.TabIndex = 6;
-            this.lblApartmentnumber.Text = "Nr lokalu:";
-            // 
-            // lblZipcode
-            // 
-            this.lblZipcode.AutoSize = true;
-            this.lblZipcode.Location = new System.Drawing.Point(14, 164);
-            this.lblZipcode.Name = "lblZipcode";
-            this.lblZipcode.Size = new System.Drawing.Size(77, 13);
-            this.lblZipcode.TabIndex = 7;
-            this.lblZipcode.Text = "Kod pocztowy:";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(16, 190);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(41, 13);
-            this.lblCity.TabIndex = 8;
-            this.lblCity.Text = "Miasto:";
-            // 
-            // lblDateadded
-            // 
-            this.lblDateadded.AutoSize = true;
-            this.lblDateadded.Location = new System.Drawing.Point(14, 238);
-            this.lblDateadded.Name = "lblDateadded";
-            this.lblDateadded.Size = new System.Drawing.Size(93, 13);
-            this.lblDateadded.TabIndex = 9;
-            this.lblDateadded.Text = "Data wystawienia:";
-            // 
-            // lblValue
-            // 
-            this.lblValue.AutoSize = true;
-            this.lblValue.Location = new System.Drawing.Point(14, 290);
-            this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(85, 13);
-            this.lblValue.TabIndex = 10;
-            this.lblValue.Text = "Wartosć faktury:";
-            // 
-            // tbCity
-            // 
-            this.tbCity.Location = new System.Drawing.Point(118, 187);
-            this.tbCity.Name = "tbCity";
-            this.tbCity.Size = new System.Drawing.Size(162, 20);
-            this.tbCity.TabIndex = 11;
-            // 
-            // tbApartmentnumber
-            // 
-            this.tbApartmentnumber.Location = new System.Drawing.Point(118, 135);
-            this.tbApartmentnumber.Name = "tbApartmentnumber";
-            this.tbApartmentnumber.Size = new System.Drawing.Size(162, 20);
-            this.tbApartmentnumber.TabIndex = 12;
-            // 
-            // tbHousenumber
-            // 
-            this.tbHousenumber.Location = new System.Drawing.Point(118, 109);
-            this.tbHousenumber.Name = "tbHousenumber";
-            this.tbHousenumber.Size = new System.Drawing.Size(162, 20);
-            this.tbHousenumber.TabIndex = 13;
-            // 
-            // tbStreet
-            // 
-            this.tbStreet.Location = new System.Drawing.Point(118, 83);
-            this.tbStreet.Name = "tbStreet";
-            this.tbStreet.Size = new System.Drawing.Size(162, 20);
-            this.tbStreet.TabIndex = 14;
-            // 
-            // tbNip
-            // 
-            this.tbNip.Location = new System.Drawing.Point(118, 57);
-            this.tbNip.Name = "tbNip";
-            this.tbNip.Size = new System.Drawing.Size(162, 20);
-            this.tbNip.TabIndex = 15;
-            // 
-            // tbNameofentity
-            // 
-            this.tbNameofentity.Location = new System.Drawing.Point(118, 31);
-            this.tbNameofentity.Name = "tbNameofentity";
-            this.tbNameofentity.Size = new System.Drawing.Size(394, 20);
-            this.tbNameofentity.TabIndex = 16;
-            // 
-            // dtpDateadded
-            // 
-            this.dtpDateadded.Location = new System.Drawing.Point(118, 232);
-            this.dtpDateadded.Name = "dtpDateadded";
-            this.dtpDateadded.Size = new System.Drawing.Size(200, 20);
-            this.dtpDateadded.TabIndex = 17;
-            // 
-            // tbValue
-            // 
-            this.tbValue.Location = new System.Drawing.Point(105, 287);
-            this.tbValue.Name = "tbValue";
-            this.tbValue.Size = new System.Drawing.Size(162, 20);
-            this.tbValue.TabIndex = 18;
+            this.tbInvoiceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbInvoiceValue.Location = new System.Drawing.Point(671, 394);
+            this.tbInvoiceValue.Name = "tbInvoiceValue";
+            this.tbInvoiceValue.Size = new System.Drawing.Size(165, 23);
+            this.tbInvoiceValue.TabIndex = 18;
+            this.tbInvoiceValue.Text = "0";
+            this.tbInvoiceValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPln
             // 
             this.lblPln.AutoSize = true;
-            this.lblPln.Location = new System.Drawing.Point(273, 290);
+            this.lblPln.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPln.Location = new System.Drawing.Point(842, 400);
             this.lblPln.Name = "lblPln";
-            this.lblPln.Size = new System.Drawing.Size(42, 13);
+            this.lblPln.Size = new System.Drawing.Size(98, 17);
             this.lblPln.TabIndex = 19;
-            this.lblPln.Text = "złotych";
+            this.lblPln.Text = "złotych (netto)";
             // 
-            // btnAccept
+            // btnAddNewInvoice
             // 
-            this.btnAccept.Location = new System.Drawing.Point(409, 238);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(75, 23);
-            this.btnAccept.TabIndex = 20;
-            this.btnAccept.Text = "Dodaj";
-            this.btnAccept.UseVisualStyleBackColor = true;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.btnAddNewInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAddNewInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddNewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAddNewInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddNewInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewInvoice.Image")));
+            this.btnAddNewInvoice.Location = new System.Drawing.Point(634, 473);
+            this.btnAddNewInvoice.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddNewInvoice.Name = "btnAddNewInvoice";
+            this.btnAddNewInvoice.Size = new System.Drawing.Size(202, 150);
+            this.btnAddNewInvoice.TabIndex = 20;
+            this.btnAddNewInvoice.Text = "Dodaj fakturę";
+            this.btnAddNewInvoice.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddNewInvoice.UseVisualStyleBackColor = false;
+            this.btnAddNewInvoice.Click += new System.EventHandler(this.btnAddNewInvoice_Click);
+            // 
+            // btnAddNewCompany
+            // 
+            this.btnAddNewCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAddNewCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddNewCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddNewCompany.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddNewCompany.Location = new System.Drawing.Point(745, 243);
+            this.btnAddNewCompany.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddNewCompany.Name = "btnAddNewCompany";
+            this.btnAddNewCompany.Size = new System.Drawing.Size(195, 28);
+            this.btnAddNewCompany.TabIndex = 22;
+            this.btnAddNewCompany.Text = "Dodaj nowy podmiot";
+            this.btnAddNewCompany.UseVisualStyleBackColor = false;
+            this.btnAddNewCompany.Click += new System.EventHandler(this.btnAddNewCompany_Click);
+            // 
+            // cbContractors
+            // 
+            this.cbContractors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbContractors.FormattingEnabled = true;
+            this.cbContractors.Location = new System.Drawing.Point(520, 243);
+            this.cbContractors.Name = "cbContractors";
+            this.cbContractors.Size = new System.Drawing.Size(200, 28);
+            this.cbContractors.TabIndex = 23;
+            this.cbContractors.Text = "wybierz podmiot";
+            // 
+            // cbInvoiceType
+            // 
+            this.cbInvoiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbInvoiceType.FormattingEnabled = true;
+            this.cbInvoiceType.Location = new System.Drawing.Point(520, 304);
+            this.cbInvoiceType.Name = "cbInvoiceType";
+            this.cbInvoiceType.Size = new System.Drawing.Size(420, 28);
+            this.cbInvoiceType.TabIndex = 25;
+            this.cbInvoiceType.Text = "wybierz typ faktury";
+            // 
+            // pbAddInvoices
+            // 
+            this.pbAddInvoices.BackColor = System.Drawing.Color.Transparent;
+            this.pbAddInvoices.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAddInvoices.BackgroundImage")));
+            this.pbAddInvoices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAddInvoices.Location = new System.Drawing.Point(443, 12);
+            this.pbAddInvoices.Name = "pbAddInvoices";
+            this.pbAddInvoices.Size = new System.Drawing.Size(581, 716);
+            this.pbAddInvoices.TabIndex = 26;
+            this.pbAddInvoices.TabStop = false;
+            // 
+            // lblFormTitle
+            // 
+            this.lblFormTitle.AutoSize = true;
+            this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFormTitle.Location = new System.Drawing.Point(629, 132);
+            this.lblFormTitle.Name = "lblFormTitle";
+            this.lblFormTitle.Size = new System.Drawing.Size(248, 29);
+            this.lblFormTitle.TabIndex = 27;
+            this.lblFormTitle.Text = "Wprowadzanie faktury";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(85, 120);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
+            this.btnReturn.TabIndex = 28;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnReturnMain
+            // 
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.Location = new System.Drawing.Point(85, 314);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturnMain.Name = "btnReturnMain";
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
+            this.btnReturnMain.TabIndex = 29;
+            this.btnReturnMain.Text = "Menu główne";
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // AddInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 331);
-            this.Controls.Add(this.btnAccept);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.lblFormTitle);
+            this.Controls.Add(this.cbInvoiceType);
+            this.Controls.Add(this.cbContractors);
+            this.Controls.Add(this.btnAddNewCompany);
+            this.Controls.Add(this.btnAddNewInvoice);
             this.Controls.Add(this.lblPln);
-            this.Controls.Add(this.tbValue);
-            this.Controls.Add(this.dtpDateadded);
-            this.Controls.Add(this.tbNameofentity);
-            this.Controls.Add(this.tbNip);
-            this.Controls.Add(this.tbStreet);
-            this.Controls.Add(this.tbHousenumber);
-            this.Controls.Add(this.tbApartmentnumber);
-            this.Controls.Add(this.tbCity);
-            this.Controls.Add(this.lblValue);
-            this.Controls.Add(this.lblDateadded);
-            this.Controls.Add(this.lblCity);
-            this.Controls.Add(this.lblZipcode);
-            this.Controls.Add(this.lblApartmentnumber);
-            this.Controls.Add(this.lblHousenumber);
-            this.Controls.Add(this.lblStreet);
-            this.Controls.Add(this.llbNip);
-            this.Controls.Add(this.lblNameofentity);
-            this.Controls.Add(this.tbZipcode);
-            this.Controls.Add(this.lblAdddata);
+            this.Controls.Add(this.tbInvoiceValue);
+            this.Controls.Add(this.dtpDateAdded);
+            this.Controls.Add(this.lblInvoiceValue);
+            this.Controls.Add(this.lblDateAdded);
+            this.Controls.Add(this.pbAddInvoices);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddInvoices";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj fakturę";
+            this.Load += new System.EventHandler(this.AddInvoices_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddInvoices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblAdddata;
-        private System.Windows.Forms.TextBox tbZipcode;
-        private System.Windows.Forms.Label lblNameofentity;
-        private System.Windows.Forms.Label llbNip;
-        private System.Windows.Forms.Label lblStreet;
-        private System.Windows.Forms.Label lblHousenumber;
-        private System.Windows.Forms.Label lblApartmentnumber;
-        private System.Windows.Forms.Label lblZipcode;
-        private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.Label lblDateadded;
-        private System.Windows.Forms.Label lblValue;
-        private System.Windows.Forms.TextBox tbCity;
-        private System.Windows.Forms.TextBox tbApartmentnumber;
-        private System.Windows.Forms.TextBox tbHousenumber;
-        private System.Windows.Forms.TextBox tbStreet;
-        private System.Windows.Forms.TextBox tbNip;
-        private System.Windows.Forms.TextBox tbNameofentity;
-        private System.Windows.Forms.DateTimePicker dtpDateadded;
-        private System.Windows.Forms.TextBox tbValue;
+        private System.Windows.Forms.Label lblDateAdded;
+        private System.Windows.Forms.Label lblInvoiceValue;
+        private System.Windows.Forms.DateTimePicker dtpDateAdded;
+        private System.Windows.Forms.TextBox tbInvoiceValue;
         private System.Windows.Forms.Label lblPln;
-        private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.Button btnAddNewInvoice;
+        private System.Windows.Forms.Button btnAddNewCompany;
+        private System.Windows.Forms.ComboBox cbContractors;
+        private System.Windows.Forms.ComboBox cbInvoiceType;
+        private System.Windows.Forms.PictureBox pbAddInvoices;
+        private System.Windows.Forms.Label lblFormTitle;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnReturnMain;
     }
 }
