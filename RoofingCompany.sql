@@ -659,7 +659,8 @@ AS
 SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
 ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, Description as [Opis]
 FROM Customer;
- 
+
+go
 /*====SALES DEPARTMENT END===*/
 
 CREATE VIEW vTechnicalProductDataPerProcess
@@ -739,7 +740,7 @@ JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
 
 /*====SALES DEPARTMENT END===*/ 
-
+GO
 /*====PRODUCTION===*/
 CREATE VIEW vUnhandledOrderDetails
 AS
@@ -788,19 +789,17 @@ GO
 
 CREATE VIEW vAbsences
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
 FROM Absence
 INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
-INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-ORDER BY EmployeeSurname;
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
 
 GO
 CREATE VIEW	vAddTraining
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
 FROM dbo.Employee 
-INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee
-ORDER BY Employee.EmployeeSurname;
+INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
 
 GO
 
@@ -813,111 +812,99 @@ GO
 
 CREATE VIEW vContracts
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, HealTestDate, Workplace
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, HealTestDate, Workplace
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
-INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
-ORDER BY Employee.EmployeeSurname;
+INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
 
 GO 
 
 CREATE VIEW vEducationForm
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
 FROM dbo.Employee
 INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
-INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel
-ORDER BY (dbo.Employee.EmployeeSurname);
+INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
 
 GO
 
 CREATE VIEW vEmployeeDetails
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, HealTestDate, WorkplaceTrainingDate, Date 
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, HealTestDate, WorkplaceTrainingDate, Date 
 FROM dbo.Contract
 INNER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
 INNER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
 INNER JOIN Education ON Employee.IdEmployee = Education.IdEmployee
-INNER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel
-ORDER BY dbo.Employee.EmployeeSurname;
+INNER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
 
 GO
 
 CREATE VIEW vExamination
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeSurname, EmployeeName, Date
+SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, Date
 FROM Employee
 INNER JOIN RoofingCompany.dbo.MedicalExamination
-ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee
-ORDER BY RoofingCompany.dbo.MedicalExamination.Date;
+ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee;
 
 GO
 
 CREATE VIEW vHR
 AS
-SELECT TOP 100 PERCENT Employee.IdEmployee, EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
+SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
-INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
-ORDER BY (dbo.Employee.EmployeeSurname);
+INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
 
 GO
 CREATE VIEW vIncomesProfits
 AS
-SELECT        TOP 100 PERCENT Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
+SELECT        Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
 FROM            Customer INNER JOIN
-                         OrderCustomer ON Customer.IdCustomer = OrderCustomer.IdCustomer
-ORDER BY Customer.CustomerName;
+                         OrderCustomer ON Customer.IdCustomer = OrderCustomer.IdCustomer;
 GO
 
 CREATE VIEW vExpencesInvoices
 AS
-SELECT        TOP 100 PERCENT Invoice.IdInvoice,Invoice.Date, Invoice.Sum, Contractor.ContractorName, InvoiceType.Type
+SELECT         Invoice.IdInvoice,Invoice.Date, Invoice.Sum, Contractor.ContractorName, InvoiceType.Type
 FROM            InvoiceType INNER JOIN
                          Invoice ON InvoiceType.IdInvoiceType = Invoice.IdInvoiceType INNER JOIN
-                         Contractor ON Invoice.IdContractor = Contractor.IdContractor
-ORDER BY Contractor.ContractorName;
+                         Contractor ON Invoice.IdContractor = Contractor.IdContractor;
 GO
 
 CREATE VIEW vExpencesPayment
 AS
-SELECT        TOP 100 PERCENT Payment.IdPayment,Payment.Sum, Payment.Date, Payment.Bonus, Employee.EmployeeName, Employee.EmployeeSurname
+SELECT        Payment.IdPayment,Payment.Sum, Payment.Date, Payment.Bonus, Employee.EmployeeName, Employee.EmployeeSurname
 FROM            Payment INNER JOIN
-                         Employee ON Payment.IdEmployee = Employee.IdEmployee
-ORDER BY Employee.EmployeeSurname;
+                         Employee ON Payment.IdEmployee = Employee.IdEmployee;
 GO
 
 CREATE VIEW vExpencesOrders
 AS
-SELECT        TOP 100 PERCENT SemiFinishedOrder.IdSfOrder,SemiFinishedOrder.Cost, SemiFinishedOrder.SfOrderDate, Supplier.SupplierName
+SELECT        SemiFinishedOrder.IdSfOrder,SemiFinishedOrder.Cost, SemiFinishedOrder.SfOrderDate, Supplier.SupplierName
 FROM            SemiFinishedOrder INNER JOIN
-                         Supplier ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier
-ORDER BY Supplier.SupplierName;
+                         Supplier ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
 GO
 
 CREATE VIEW vExpencesOutsourcing
 AS
-SELECT        TOP 100 PERCENT Outsourcing.IdOutsourcing,OutsourcingCommitment.Cost, OutsourcingCommitment.EndCommitmentDate, Outsourcing.CompanyName
+SELECT        Outsourcing.IdOutsourcing,OutsourcingCommitment.Cost, OutsourcingCommitment.EndCommitmentDate, Outsourcing.CompanyName
 FROM            OutsourcingCommitment INNER JOIN
-                         Outsourcing ON OutsourcingCommitment.IdOutsourcing = Outsourcing.IdOutsourcing
-ORDER BY Outsourcing.CompanyName;
+                         Outsourcing ON OutsourcingCommitment.IdOutsourcing = Outsourcing.IdOutsourcing;
 GO
 
 CREATE VIEW vPaymentHistory
 AS
-SELECT        TOP 100 PERCENT Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Payment.Bonus, Payment.Sum, Payment.Date, Employee.IdEmployee
+SELECT         Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Payment.Bonus, Payment.Sum, Payment.Date, Employee.IdEmployee
 FROM            Employee INNER JOIN
-                         Payment ON Employee.IdEmployee = Payment.IdEmployee
-ORDER BY Employee.EmployeeSurname;
+                         Payment ON Employee.IdEmployee = Payment.IdEmployee;
 
 GO
 
 CREATE VIEW vInvoiceType
 as
-SELECT TOP 100 PERCENT IdInvoiceType, Type
-FROM InvoiceType
-ORDER BY Type;
+SELECT IdInvoiceType, Type
+FROM InvoiceType;
 
 GO
 
@@ -925,7 +912,7 @@ CREATE VIEW vHRContract
 AS
 SELECT IdContract
 FROM Contract
-WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE())
+WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE());
 
 GO
 
@@ -933,7 +920,7 @@ CREATE VIEW vHRExamination
 AS
 SELECT IdMedicalExamination
 FROM MedicalExamination
-WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE())
+WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE());
 
 GO
 GO
