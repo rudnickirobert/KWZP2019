@@ -1,5 +1,4 @@
-﻿
-use master;
+﻿use master;
 go
 drop database RoofingCompany;
 create database RoofingCompany;
@@ -100,17 +99,17 @@ create table Product(
 CREATE TABLE Customer
 	(IdCustomer int IDENTITY(1,1)  PRIMARY KEY NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	Pesel float NULL,
-	NIP float NULL,
-	KRS float NULL,
-	Description nvarchar(100) NOT NULL); 
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	Pesel nvarchar(11) NULL,
+	NIP nvarchar(10) NULL,
+	KRS nvarchar(10) NULL,
+	CustomerDescription nvarchar(100) NULL); 
 
 CREATE TABLE OrderCustomer
 	(IdOrderCustomer int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -128,22 +127,22 @@ CREATE TABLE OrderDetail
 
 CREATE TABLE SupplierType
 	(IdSupplierType int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Type nvarchar(50) NOT NULL);
+	SupplierNameType nvarchar(50) NOT NULL);
 
 CREATE TABLE Supplier
 	(IdSupplier int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdSupplierType int NOT NULL,
 	SupplierName nvarchar(100) NOT NULL,
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
-	Description nvarchar(100) NOT NULL);
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	NIP nvarchar(10) NOT NULL,
+	KRS nvarchar(10) NOT NULL,
+	SupplierDescription nvarchar(100) NULL);
 
 CREATE TABLE SemiFinishedOrder
 	(IdSfOrder int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -166,16 +165,16 @@ CREATE TABLE Outsourcing
 	(IdOutsourcing int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdOutsourcingType int NOT NULL,
 	CompanyName nvarchar(100) NOT NULL, 
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
-	Description nvarchar(100) NOT NULL);
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	NIP nvarchar(10) NOT NULL,
+	KRS nvarchar(10) NOT NULL,
+	OutsourcingDescription nvarchar(100) NULL);
 
 CREATE TABLE OutsourcingCommitment
 	(IdCommitment int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -662,6 +661,7 @@ FROM Customer;
  
 /*====SALES DEPARTMENT END===*/
 
+GO
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
 SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
@@ -669,7 +669,6 @@ FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, OutCont
 WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
 
 GO
-
 CREATE VIEW vDevotionsInMeasuremntsPerProcess
 AS
 SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
@@ -677,7 +676,6 @@ FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl 
 WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
 
 GO
-
 CREATE VIEW vSuccesfullyProducedPerProcess
 AS
 SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced, QuantityToBeProducted
@@ -686,7 +684,6 @@ WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<=
 GROUP BY IdProcess, QuantityToBeProducted
 
 GO
-
 CREATE VIEW vSuccesfullyProcess
 AS
 SELECT IdProcess
@@ -694,12 +691,19 @@ FROM vSuccesfullyProducedPerProcess
 WHERE SuccesfullProduced >= QuantityToBeProducted
 
 GO
-
 CREATE VIEW vUnfinishedProcess
 AS
 SELECT IdProces
 FROM ProductionProcess, vSuccesfullyProcess
 WHERE IdProces != IdProcess
+
+GO
+CREATE VIEW SafetyControlHistoryView 
+AS
+SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
+FROM SafetyControl
+JOIN Employee
+ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 
 /*====SALES DEPARTMENT START===*/
 
@@ -708,7 +712,7 @@ CREATE VIEW vOutputMagazine
 AS
 SELECT A.ProductCode as [Kod produktu], C.SuccesfullProduced as [Ilość], B.EndControlDate [Data przyjęcia na magazyn] 
 FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
-WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess;
+WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
 CREATE VIEW vInputMagazine
@@ -741,6 +745,8 @@ ON OrderDetail.IdProduct = Product.IdProduct;
 /*====SALES DEPARTMENT END===*/ 
 
 /*====PRODUCTION===*/
+
+GO
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
