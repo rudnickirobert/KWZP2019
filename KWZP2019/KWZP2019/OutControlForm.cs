@@ -136,7 +136,6 @@ namespace KWZP2019
                 txtbAcceptableLenghtDeviation.Text = outControl.LenghtAcceptableDeviation.ToString();
                 txtbStartDate.Text = outControl.StartControlDate.ToString();
                 txtbEndDate.Text = outControl.EndControlDate.ToString();
-                
             }
             else
             {
