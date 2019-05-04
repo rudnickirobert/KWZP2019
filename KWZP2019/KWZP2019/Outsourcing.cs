@@ -17,7 +17,7 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Outsourcing()
         {
-            this.OutsourcingCommitment = new HashSet<OutsourcingCommitment>();
+            this.OutsourcingCommitments = new HashSet<OutsourcingCommitment>();
         }
     
         public int IdOutsourcing { get; set; }
@@ -35,7 +35,7 @@ namespace KWZP2019
         public string OutsourcingDescription { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OutsourcingCommitment> OutsourcingCommitment { get; set; }
+        public virtual ICollection<OutsourcingCommitment> OutsourcingCommitments { get; set; }
         public virtual OutsourcingType OutsourcingType { get; set; }
     }
 }

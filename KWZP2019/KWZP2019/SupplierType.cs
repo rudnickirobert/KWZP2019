@@ -17,13 +17,13 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SupplierType()
         {
-            this.Supplier = new HashSet<Supplier>();
+            this.Suppliers = new HashSet<Supplier>();
         }
     
         public int IdSupplierType { get; set; }
         public string SupplierNameType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Supplier> Supplier { get; set; }
+        public virtual ICollection<Supplier> Suppliers { get; set; }
     }
 }

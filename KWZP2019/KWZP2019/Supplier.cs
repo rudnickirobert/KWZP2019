@@ -17,7 +17,7 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Supplier()
         {
-            this.SemiFinishedOrder = new HashSet<SemiFinishedOrder>();
+            this.SemiFinishedOrders = new HashSet<SemiFinishedOrder>();
         }
     
         public int IdSupplier { get; set; }
@@ -35,7 +35,7 @@ namespace KWZP2019
         public string SupplierDescription { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SemiFinishedOrder> SemiFinishedOrder { get; set; }
+        public virtual ICollection<SemiFinishedOrder> SemiFinishedOrders { get; set; }
         public virtual SupplierType SupplierType { get; set; }
     }
 }

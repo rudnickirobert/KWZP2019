@@ -17,7 +17,7 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.OrderCustomer = new HashSet<OrderCustomer>();
+            this.OrderCustomers = new HashSet<OrderCustomer>();
         }
     
         public int IdCustomer { get; set; }
@@ -35,6 +35,6 @@ namespace KWZP2019
         public string CustomerDescription { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderCustomer> OrderCustomer { get; set; }
+        public virtual ICollection<OrderCustomer> OrderCustomers { get; set; }
     }
 }

@@ -23,6 +23,16 @@ namespace KWZP2019
         }
         private void NewProductionPlan_Load(object sender, EventArgs e)
         {
+            comboBoxMachine.DataSource = db.vComboBoxMachines.ToList();
+            comboBoxMachine.ValueMember = "idMachine";
+            comboBoxMachine.DisplayMember = "machineFullName";
+            comboBoxMachine.Invalidate();
+
+            comboBoxEmployee.DataSource = db.vComboBoxEmployees.ToList();
+            comboBoxEmployee.ValueMember = "idEmployee";
+            comboBoxEmployee.DisplayMember = "employeeFullName";
+            comboBoxEmployee.Invalidate();
+
             if (idPlan > 0)
             {
                 PlannedProduction plan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
@@ -70,7 +80,7 @@ namespace KWZP2019
         }
         private void btnEndDateCalculate_Click(object sender, EventArgs e)
         {
-            int idMachine = Convert.ToInt32(comboBoxMachine.Text.Trim());
+            int idMachine = Convert.ToInt32(comboBoxMachine.SelectedValue);
             int idDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
             int idPlan = Convert.ToInt32(tBoxPlanNr.Text.Trim());
             double timeInterval;
@@ -112,7 +122,7 @@ namespace KWZP2019
             {
                 PlannedProduction existingPlan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
                 existingPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-                existingPlan.IdMachine = Convert.ToInt32(comboBoxMachine.Text.Trim());
+                existingPlan.IdMachine = Convert.ToInt32(comboBoxMachine.SelectedValue);
                 existingPlan.PlannedStartd = dateTimeStart.Value;
                 existingPlan.PlannedEndd = dateTimeEnd.Value;
                 existingPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
@@ -129,7 +139,7 @@ namespace KWZP2019
                 {
                     PlannedProduction newPlan = new PlannedProduction();
                     newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
-                    newPlan.IdMachine = Convert.ToInt32(comboBoxMachine.Text.Trim());
+                    newPlan.IdMachine = Convert.ToInt32(comboBoxMachine.SelectedValue);
                     newPlan.PlannedStartd = dateTimeStart.Value;
                     newPlan.PlannedEndd = dateTimeEnd.Value;
                     newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);

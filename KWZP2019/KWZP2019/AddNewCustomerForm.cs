@@ -39,7 +39,7 @@ namespace KWZP2019
                 bool phoneTb2 = int.TryParse(phoneTb.Text, out int phoneTb21);
                 if (phoneTb2)
                 {
-                    newCustomer.PhoneNumber = phoneTb21;
+                    newCustomer.PhoneNumber = Convert.ToString(phoneTb21);
                 }
                 else
                 {
@@ -52,7 +52,7 @@ namespace KWZP2019
                 bool houseNumberTb2 = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTb21);
                 if (houseNumberTb2)
                 {
-                    newCustomer.HouseNumber = houseNumberTb21;
+                    newCustomer.HouseNumber = Convert.ToString(houseNumberTb21);
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace KWZP2019
                 bool apartmentNumberTb2 = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTb21);
                 if (apartmentNumberTb2)
                 {
-                    newCustomer.ApartmentNumber = apartmentNumberTb21;
+                    newCustomer.ApartmentNumber = Convert.ToString(apartmentNumberTb21);
                 }
                 else
                 {
@@ -70,7 +70,7 @@ namespace KWZP2019
                 bool nipTb2 = float.TryParse(nipTb.Text.Trim(), out float nipTb21);
                 if (nipTb2)
                 {
-                    newCustomer.NIP = nipTb21;
+                    newCustomer.NIP = Convert.ToString(nipTb21);
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace KWZP2019
                 bool krsTb2 = float.TryParse(krsTb.Text.Trim(), out float krsTb21);
                 if (krsTb2)
                 {
-                    newCustomer.KRS = krsTb21;
+                    newCustomer.KRS = Convert.ToString(krsTb21);
                 }
                 else
                 {
@@ -88,7 +88,7 @@ namespace KWZP2019
                 bool peselTb2 = float.TryParse(peselTb.Text.Trim(), out float peselTb21);
                 if (peselTb2)
                 {
-                    newCustomer.Pesel = peselTb21;
+                    newCustomer.Pesel = Convert.ToString(peselTb21);
                 }
                 else
                 {
@@ -97,6 +97,7 @@ namespace KWZP2019
                 MessageBox.Show("Czy na pewno chcesz dodać nowego klienta?");
                 db.Customers.Add(newCustomer);
             }
+            db.SaveChanges();
         }
     }
 }

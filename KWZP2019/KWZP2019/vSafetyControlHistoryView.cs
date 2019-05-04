@@ -12,10 +12,13 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vInputMagazine
+    public partial class vSafetyControlHistoryView
     {
-        public string Kod_Produktu { get; set; }
-        public Nullable<int> Ilość { get; set; }
-        public System.DateTime Data_przyjęcia_na_magazyn { get; set; }
+        public int IdInspection { get; set; }
+        public string CompanyName { get; set; }
+        public string IdSafetyEmployee { get; set; }
+        public System.DateTime SaftyControlDate { get; set; }
+        public string InspectedEmpolyee { get; set; }
+        public string SafetyControlDescription { get; set; }
     }
 }

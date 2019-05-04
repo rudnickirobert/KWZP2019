@@ -14,18 +14,17 @@ namespace KWZP2019
     
     public partial class vOutsourcingWithType
     {
-        public int IdOutsourcing { get; set; }
-        public string OutsourcingType { get; set; }
-        public string CompanyName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
-        public string Street { get; set; }
-        public string HouseNumber { get; set; }
-        public string ApartmentNumber { get; set; }
+        public string Typ { get; set; }
+        public string Firma { get; set; }
+        public string Telefon { get; set; }
+        public string E_mail { get; set; }
+        public string Miasto { get; set; }
+        public string Kod_pocztowy { get; set; }
+        public string Ulica { get; set; }
+        public string Numer { get; set; }
+        public string Numer_lokalu { get; set; }
         public string NIP { get; set; }
         public string KRS { get; set; }
-        public string OutsourcingDescription { get; set; }
+        public string Opis { get; set; }
     }
 }

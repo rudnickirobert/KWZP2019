@@ -12,10 +12,14 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vInputMagazine
+    public partial class vEducationForm
     {
-        public string Kod_Produktu { get; set; }
-        public Nullable<int> Ilość { get; set; }
-        public System.DateTime Data_przyjęcia_na_magazyn { get; set; }
+        public int IdEmployee { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeSurname { get; set; }
+        public string EducationLevel { get; set; }
+        public string Degree { get; set; }
+        public string DegreeShort { get; set; }
+        public Nullable<System.DateTime> GraduationDate { get; set; }
     }
 }
