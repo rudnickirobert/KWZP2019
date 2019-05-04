@@ -839,3 +839,141 @@ ON Allocation.IdEmployee = Employee.IdEmployee
 JOIN Department
 ON Allocation.IdDepartment = Department.IdDepartment
 WHERE (DepartmentName = 'Logistyka');
+GO
+
+CREATE VIEW vAbsences
+AS
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
+FROM Absence
+INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
+
+GO
+CREATE VIEW	vAddTraining
+AS
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
+FROM dbo.Employee 
+INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
+
+GO
+
+CREATE VIEW vEmployeeList
+AS
+SELECT Employee.IdEmployee, Employee.EmployeeSurname, Employee.EmployeeName 
+FROM Employee;
+
+GO
+
+CREATE VIEW vContracts
+AS
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, HealTestDate, Workplace
+FROM Employee
+INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
+
+GO 
+
+CREATE VIEW vEducationForm
+AS
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
+FROM dbo.Employee
+INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
+INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
+
+GO
+
+CREATE VIEW vEmployeeDetails
+AS
+SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, HealTestDate, WorkplaceTrainingDate, Date 
+FROM dbo.Contract
+INNER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
+INNER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
+INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
+INNER JOIN Education ON Employee.IdEmployee = Education.IdEmployee
+INNER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
+
+GO
+
+CREATE VIEW vExamination
+AS
+SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, Date
+FROM Employee
+INNER JOIN RoofingCompany.dbo.MedicalExamination
+ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee;
+
+GO
+
+CREATE VIEW vHR
+AS
+SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
+FROM Employee
+INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
+INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
+
+GO
+CREATE VIEW vIncomesProfits
+AS
+SELECT        Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
+FROM            Customer INNER JOIN
+                         OrderCustomer ON Customer.IdCustomer = OrderCustomer.IdCustomer;
+GO
+
+CREATE VIEW vExpencesInvoices
+AS
+SELECT         Invoice.IdInvoice,Invoice.Date, Invoice.Sum, Contractor.ContractorName, InvoiceType.Type
+FROM            InvoiceType INNER JOIN
+                         Invoice ON InvoiceType.IdInvoiceType = Invoice.IdInvoiceType INNER JOIN
+                         Contractor ON Invoice.IdContractor = Contractor.IdContractor;
+GO
+
+CREATE VIEW vExpencesPayment
+AS
+SELECT        Payment.IdPayment,Payment.Sum, Payment.Date, Payment.Bonus, Employee.EmployeeName, Employee.EmployeeSurname
+FROM            Payment INNER JOIN
+                         Employee ON Payment.IdEmployee = Employee.IdEmployee;
+GO
+
+CREATE VIEW vExpencesOrders
+AS
+SELECT        SemiFinishedOrder.IdSfOrder,SemiFinishedOrder.Cost, SemiFinishedOrder.SfOrderDate, Supplier.SupplierName
+FROM            SemiFinishedOrder INNER JOIN
+                         Supplier ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
+GO
+
+CREATE VIEW vExpencesOutsourcing
+AS
+SELECT        Outsourcing.IdOutsourcing,OutsourcingCommitment.Cost, OutsourcingCommitment.EndCommitmentDate, Outsourcing.CompanyName
+FROM            OutsourcingCommitment INNER JOIN
+                         Outsourcing ON OutsourcingCommitment.IdOutsourcing = Outsourcing.IdOutsourcing;
+GO
+
+CREATE VIEW vPaymentHistory
+AS
+SELECT         Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Payment.Bonus, Payment.Sum, Payment.Date, Employee.IdEmployee
+FROM            Employee INNER JOIN
+                         Payment ON Employee.IdEmployee = Payment.IdEmployee;
+
+GO
+
+CREATE VIEW vInvoiceType
+as
+SELECT IdInvoiceType, Type
+FROM InvoiceType;
+
+GO
+
+CREATE VIEW vHRContract
+AS
+SELECT IdContract
+FROM Contract
+WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE());
+
+GO
+
+CREATE VIEW vHRExamination
+AS
+SELECT IdMedicalExamination
+FROM MedicalExamination
+WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE());
+
+
