@@ -173,6 +173,39 @@ namespace KWZP2019
         {
             return viewProcessEmpl.DataSource == null;
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
+            PlannedProductionEmployeeDetail newEmployee = new PlannedProductionEmployeeDetail();
+            newPlan.IdDetail = 1;
+            newPlan.IdMachine = 1;
+            newPlan.PlannedStartd = DateTime.Now;
+            newPlan.PlannedEndd = DateTime.Now;
+            newPlan.Inproduction = false;
+            newEmployee.IdProces = currentPlanNumber;
+            newEmployee.IdEmployee = Convert.ToInt32(comboBoxEmployee.SelectedValue);
+            newEmployee.StartDate = dateTimeEmployeeStart.Value;
+            newEmployee.EndDate = dateTimeEmployeeEnd.Value;
+            if (isEmptyDataGridViewEmployee())
+            {
+                db.PlannedProductions.Add(newPlan);
+                db.PlannedProductionEmployeeDetails.Add(newEmployee);
+                db.SaveChanges();
+                viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
+                                              where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
+                                              select PlannedProductionEmployeeDetail).ToList();
+            }
+            else
+            {
+                db.PlannedProductionEmployeeDetails.Add(newEmployee);
+                db.SaveChanges();
+                viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
+                                              where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
+                                              select PlannedProductionEmployeeDetail).ToList();
+            }
+        }
+
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
             if (db.vUnhandledOrderDetails.Any())
