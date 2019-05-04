@@ -28,6 +28,7 @@ namespace KWZP2019
         public double LenghtAcceptableDeviation { get; set; }
     
         public virtual Employee Employee { get; set; }
+        public virtual ProductionProce ProductionProces { get; set; }
         public virtual ProductionProcess ProductionProcess { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OutputProductMeasurement> OutputProductMeasurements { get; set; }
