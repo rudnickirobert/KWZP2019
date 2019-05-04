@@ -60,5 +60,12 @@ namespace KWZP2019
             this.Hide();
             oshControlForm.Show();
         }
+
+        private void btnDevelopment_Click(object sender, EventArgs e)
+        {
+            DevelopmentForm developmentForm = new DevelopmentForm(db, startForm, this);
+            this.Hide();
+            developmentForm.Show();
+        }
     }
 }

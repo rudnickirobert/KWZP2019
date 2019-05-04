@@ -1,7 +1,6 @@
-﻿
-use master;
+﻿use master;
 go
-drop database RoofingCompany;
+drop database if exists RoofingCompany;
 create database RoofingCompany;
 go
 use RoofingCompany;
@@ -100,17 +99,17 @@ create table Product(
 CREATE TABLE Customer
 	(IdCustomer int IDENTITY(1,1)  PRIMARY KEY NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	Pesel float NULL,
-	NIP float NULL,
-	KRS float NULL,
-	Description nvarchar(100) NOT NULL); 
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	Pesel nvarchar(11) NULL,
+	NIP nvarchar(10) NULL,
+	KRS nvarchar(10) NULL,
+	CustomerDescription nvarchar(100) NULL); 
 
 CREATE TABLE OrderCustomer
 	(IdOrderCustomer int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -128,22 +127,22 @@ CREATE TABLE OrderDetail
 
 CREATE TABLE SupplierType
 	(IdSupplierType int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Type nvarchar(50) NOT NULL);
+	SupplierNameType nvarchar(50) NOT NULL);
 
 CREATE TABLE Supplier
 	(IdSupplier int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdSupplierType int NOT NULL,
 	SupplierName nvarchar(100) NOT NULL,
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
-	Description nvarchar(100) NOT NULL);
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	NIP nvarchar(10) NOT NULL,
+	KRS nvarchar(10) NOT NULL,
+	SupplierDescription nvarchar(100) NULL);
 
 CREATE TABLE SemiFinishedOrder
 	(IdSfOrder int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -166,16 +165,16 @@ CREATE TABLE Outsourcing
 	(IdOutsourcing int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdOutsourcingType int NOT NULL,
 	CompanyName nvarchar(100) NOT NULL, 
-	PhoneNumber int NOT NULL,
+	PhoneNumber nvarchar(12) NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber int NOT NULL,
-	ApartmentNumber int NOT NULL,
-	NIP float NOT NULL,
-	KRS float NOT NULL,
-	Description nvarchar(100) NOT NULL);
+	HouseNumber nvarchar(5) NOT NULL,
+	ApartmentNumber nvarchar(5) NOT NULL,
+	NIP nvarchar(10) NOT NULL,
+	KRS nvarchar(10) NOT NULL,
+	OutsourcingDescription nvarchar(100) NULL);
 
 CREATE TABLE OutsourcingCommitment
 	(IdCommitment int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -622,51 +621,47 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment;
 
-
-/*====SALES DEPARTMENT===*/
+/*====SALES DEPARTMENT START==*/
 
 GO 
 CREATE VIEW vSupplierParts
 AS
-SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, SupplierDescription as [Opis]  
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Części');
+WHERE (SupplierNameType = 'Części');
 
 GO
 CREATE VIEW vSupplierSemis
 AS
-SELECT IdSupplier, Type, SupplierName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, SupplierDescription as [Opis]
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (Type = 'Półfabrykaty');
+WHERE (SupplierNameType = 'Półfabrykaty');
 
 GO
 CREATE VIEW vOutsourcingWithType
 AS
-SELECT IdOutsourcing, OutsourcingType, CompanyName, PhoneNumber, Email, City, ZipCode, Street, HouseNumber, ApartmentNumber, NIP, KRS, Description 
+SELECT  OutsourcingType as [Typ], CompanyName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, OutsourcingDescription as [Opis]
 FROM Outsourcing
 JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
 
 GO
-CREATE VIEW vIndividualCustomer
+CREATE VIEW vCustomer
 AS
-SELECT *
-FROM Customer
-WHERE Pesel !=0; 
+SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
+ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
+FROM Customer;
+ 
+/*====SALES DEPARTMENT END===*/
 
 GO
-CREATE VIEW vCompany
-AS
-SELECT *
-FROM Customer
-WHERE NIP !=0 AND KRS !=0 ; 
-
-GO
-
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
 SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
@@ -674,7 +669,6 @@ FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, OutCont
 WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
 
 GO
-
 CREATE VIEW vDevotionsInMeasuremntsPerProcess
 AS
 SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
@@ -682,7 +676,6 @@ FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl 
 WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
 
 GO
-
 CREATE VIEW vSuccesfullyProducedPerProcess
 AS
 SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced, QuantityToBeProducted
@@ -691,7 +684,6 @@ WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<=
 GROUP BY IdProcess, QuantityToBeProducted
 
 GO
-
 CREATE VIEW vSuccesfullyProcess
 AS
 SELECT IdProcess
@@ -699,7 +691,6 @@ FROM vSuccesfullyProducedPerProcess
 WHERE SuccesfullProduced >= QuantityToBeProducted
 
 GO
-
 CREATE VIEW vUnfinishedProcess
 AS
 SELECT IdProces
@@ -707,22 +698,29 @@ FROM ProductionProcess, vSuccesfullyProcess
 WHERE IdProces != IdProcess
 
 GO
+CREATE VIEW SafetyControlHistoryView 
+AS
+SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
+FROM SafetyControl
+JOIN Employee
+ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 
+/*====SALES DEPARTMENT START===*/
+
+GO
 CREATE VIEW vOutputMagazine
 AS
-SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
+SELECT A.ProductCode as [Kod produktu], C.SuccesfullProduced as [Ilość], B.EndControlDate [Data przyjęcia na magazyn] 
 FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
 
 GO
-
 CREATE VIEW vInputMagazine
 AS
-SELECT SfCode, Quantity, ControlDate 
+SELECT SfCode as [Kod Produktu], Quantity as [Ilość], ControlDate as [Data przyjęcia na magazyn]
 FROM EntranceControl, SemiFinished;
 
 GO
-
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -735,19 +733,19 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 
 GO
-
 CREATE VIEW vOrderDetail 
 AS
-SELECT Customer.CustomerName, OrderCustomer.IdOrderCustomer, OrderDetail.Quantity, OrderDetail.IdDetail, Product.ProductCode
+SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia], Product.ProductCode as [Kod produktu], OrderDetail.Quantity as [Ilość]
 FROM OrderCustomer
-JOIN Customer
-ON Customer.IdCustomer = OrderCustomer.IdCustomer
 JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
-GO
+
+
 /*====PRODUCTION===*/
+
+GO
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
@@ -757,7 +755,7 @@ ON OrderDetail.IdProduct = Product.IdProduct
 WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
 
 GO
-CREATE VIEW SafetyControlHistoryView 
+CREATE VIEW vSafetyControlHistoryView 
 AS
 SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
 FROM SafetyControl
@@ -765,9 +763,11 @@ JOIN Employee
 ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 GO
 
---Views UR--
 
-CREATE VIEW vPartsView
+/*====SALES DEPARTMENT START===*/
+
+GO
+CREATE VIEW vOrder
 AS
 SELECT TOP 10 PERCENT Part.PartName as [Nazwa części], 
 PartType.partType as [Typ części], 
@@ -776,9 +776,30 @@ Part.QuantityWarehouse as [Stan magazynowy]
 FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
 ON Unit.IdUnit = Part.IdUnit
 ORDER BY Part.PartName;
-GO
+SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena],
+Markup as [Marża], EmployeeSurname as [Pracownik odpowiedzialny]
+FROM OrderCustomer
+INNER JOIN OrderDetail
+ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
+INNER JOIN Product
+ON OrderDetail.IdProduct = Product.IdProduct
+INNER JOIN Employee
+ON OrderCustomer.IdEmployee = Employee.IdEmployee;
 
-CREATE VIEW vMaintPartsView
+GO
+CREATE VIEW vEmployeeSalesDepartment
+AS
+SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko], ZipCode as [Kod pocztowy], City as [Miasto], Street as [Ulica], HouseNumber as [Numer], 
+ApartmentNum as [Numer lokalu], PhoneNumber as [Telefon], PESEL, DepartmentName as [Dział], StartDate as [Data początku], EndDate as [Data końca]
+FROM Allocation
+JOIN Employee
+ON Allocation.IdEmployee = Employee.IdEmployee
+JOIN Department
+ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (DepartmentName = 'Logistyka');
+
+GO 
+CREATE VIEW vEmployeeSD
 AS
 SELECT TOP 10 PERCENT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
 Part.PartName as [Nazwa części], MaintPart.PartQuantity as [Ilość], Unit.UnitName as [Jednostka]
@@ -789,3 +810,10 @@ ON Unit.IdUnit = Part.IdUnit
 ORDER BY Maintenance.DateAcceptOrder DESC;
 GO
 
+SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 
+FROM Allocation
+JOIN Employee
+ON Allocation.IdEmployee = Employee.IdEmployee
+JOIN Department
+ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (DepartmentName = 'Logistyka');

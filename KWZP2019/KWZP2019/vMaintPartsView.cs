@@ -12,14 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class EntranceControlView
+    public partial class vMaintPartsView
     {
-        public int IdSfDetail { get; set; }
-        public string SfCode { get; set; }
-        public Nullable<double> Thickness { get; set; }
-        public Nullable<double> Width { get; set; }
-        public Nullable<double> SfWeight { get; set; }
-        public string Color { get; set; }
-        public string ChemicalComposition { get; set; }
+        public string Nr_Obsługi { get; set; }
+        public System.DateTime Data_przyjęcia { get; set; }
+        public string Nazwa_części { get; set; }
+        public int Ilość { get; set; }
+        public string Jednostka { get; set; }
     }
 }
