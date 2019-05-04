@@ -16,7 +16,6 @@ namespace KWZP2019
         private DataGridViewRow selectedRow;
         private int selectedId;
         private Technology technology;
-        private int selectedRowIndex;
 
         public ProductionTechnology(RoofingCompanyEntities db)
         {
@@ -29,7 +28,35 @@ namespace KWZP2019
             dataGVtechnology.DataSource = db.Technologies.ToList();
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (textBoxSpeedFactor.Text == "" || textBoxTechnologyName.Text == "" || textBoxTimePerMeter.Text == "")
+            {
+                MessageBox.Show("Proszę uzupełnić wszystkie pola!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Technology technology = new Technology();
+                technology.TechnologyName = textBoxTechnologyName.Text;
 
+                bool ifTimePerMeter = int.TryParse(textBoxTimePerMeter.Text, out int timePerMeter);
+                if (ifTimePerMeter)
+                {
+                    // TimePermeter nazywa się pole w tabeli Technology
+                    technology.TimePermeter = timePerMeter;
+                }
+
+                bool ifSpeedFactor = int.TryParse(textBoxSpeedFactor.Text, out int speedFactor);
+                if (ifSpeedFactor)
+                {
+                    technology.SpeedFactor = speedFactor;
+                }
+
+                db.Technologies.Add(technology);
+                db.SaveChanges();
+                dataGVtechnology.DataSource = db.Technologies.ToList();
+            }
+        }
 
         //===========================================================
 
@@ -38,59 +65,58 @@ namespace KWZP2019
             this.Close();
         }
         
-        private void dataGVtechnology_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGVtechnology_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             selectedRow = dataGVtechnology.Rows[dataGVtechnology.SelectedCells[0].RowIndex];
-            selectedRowIndex = selectedRow.Index;
+            lblSelectedTechnology.Text = $"Wybrana technologia {selectedRow.Cells["IdTechnology"].Value.ToString()}";
+            lblTechnologyNameFrom.Text = $"{ selectedRow.Cells["TechnologyName"].Value} zmień na";
             // TimePermeter nazywa się pole w tabeli Technology
+            lblTimePerMeterFrom.Text = $"{selectedRow.Cells["TimePermeter"].Value} zmień na";
+            lblSpeedFactorFrom.Text = $"{selectedRow.Cells["SpeedFactor"].Value} zmień na";
             selectedId = (int)selectedRow.Cells["IdTechnology"].Value;
             technology = db.Technologies.Where(t => t.IdTechnology == selectedId).First();
         }
         //===========================================================
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(technology == null)
+            if (textBoxTechnologyNameTo.Text.Trim() != "")
             {
-                MessageBox.Show("Wybierz technologię", "Wiadomość", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                technology.TechnologyName = textBoxTechnologyNameTo.Text;
+                textBoxTechnologyNameTo.Text = "";
             }
-            else
+
+            if (textBoxTimePerMeterTo.Text.Trim() != "")
             {
-                EditTechnology editTechnology = new EditTechnology(db, technology, this);
-                editTechnology.Show();
-                this.Hide();
+                // TimePermeter nazywa się pole w tabeli Technology
+                technology.TimePermeter = int.Parse(textBoxTimePerMeterTo.Text);
+                textBoxTimePerMeterTo.Text = "";
             }
+
+            if (textBoxSpeedFactorTo.Text.Trim() != "")
+            {
+                technology.SpeedFactor = int.Parse(textBoxSpeedFactorTo.Text);
+                textBoxSpeedFactorTo.Text = "";
+            }
+
+            db.SaveChanges();
+            dataGVtechnology.DataSource = db.Technologies.ToList();
+            lblSelectedTechnology.Text = "Wybrana technologia";
+            lblTechnologyNameFrom.Text = "";
+            lblTimePerMeterFrom.Text = "";
+            lblSpeedFactorFrom.Text = "";
         }
 
         //===========================================================
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(technology != null)
-            {
-                db.Technologies.Remove(technology);
-                db.SaveChanges();
-                refreshDataGridView();
-            }
-         }
-        //===========================================================
-        public void refreshDataGridView()
-        {
+            db.Technologies.Remove(technology);
+            db.SaveChanges();
             dataGVtechnology.DataSource = db.Technologies.ToList();
-            dataGVtechnology.Rows[0].Cells[0].Selected = false;
-            dataGVtechnology.Rows[selectedRowIndex].Selected = true;
-        }
-
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            NewTechnology newTechnology = new NewTechnology(db, this);
-            newTechnology.Show();
-            this.Hide();
-        }
-
-        public void selectRow(int idNewTechnology)
-        {
-            int index = dataGVtechnology.Rows.Count;
-            dataGVtechnology.Rows[index - 1].Selected = true;
+            lblSelectedTechnology.Text = "Wybrana technologia";
+            lblTechnologyNameFrom.Text = "";
+            lblTimePerMeterFrom.Text = "";
+            lblSpeedFactorFrom.Text = "";
         }
     }
 }

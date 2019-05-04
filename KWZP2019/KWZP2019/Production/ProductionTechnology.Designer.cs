@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionTechnology));
             this.dataGVtechnology = new System.Windows.Forms.DataGridView();
+            this.textBoxTechnologyName = new System.Windows.Forms.TextBox();
+            this.textBoxTimePerMeter = new System.Windows.Forms.TextBox();
+            this.textBoxSpeedFactor = new System.Windows.Forms.TextBox();
+            this.lblTechnologyName = new System.Windows.Forms.Label();
+            this.lblTimePerMeter = new System.Windows.Forms.Label();
+            this.lblSpeedFactor = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.lblSpeedFactorFrom = new System.Windows.Forms.Label();
+            this.lblTimePerMeterFrom = new System.Windows.Forms.Label();
+            this.lblTechnologyNameFrom = new System.Windows.Forms.Label();
+            this.textBoxSpeedFactorTo = new System.Windows.Forms.TextBox();
+            this.textBoxTimePerMeterTo = new System.Windows.Forms.TextBox();
+            this.textBoxTechnologyNameTo = new System.Windows.Forms.TextBox();
+            this.lblSelectedTechnology = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVtechnology)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,123 +53,187 @@
             // 
             this.dataGVtechnology.AllowUserToAddRows = false;
             this.dataGVtechnology.AllowUserToDeleteRows = false;
-            this.dataGVtechnology.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGVtechnology.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGVtechnology.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGVtechnology.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGVtechnology.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGVtechnology.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGVtechnology.Location = new System.Drawing.Point(12, 12);
-            this.dataGVtechnology.MultiSelect = false;
             this.dataGVtechnology.Name = "dataGVtechnology";
-            this.dataGVtechnology.Size = new System.Drawing.Size(566, 363);
+            this.dataGVtechnology.Size = new System.Drawing.Size(655, 363);
             this.dataGVtechnology.TabIndex = 0;
-            this.dataGVtechnology.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGVtechnology_RowHeaderMouseClick);
+            this.dataGVtechnology.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGVtechnology_RowHeaderMouseDoubleClick);
+            // 
+            // textBoxTechnologyName
+            // 
+            this.textBoxTechnologyName.Location = new System.Drawing.Point(842, 110);
+            this.textBoxTechnologyName.Name = "textBoxTechnologyName";
+            this.textBoxTechnologyName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTechnologyName.TabIndex = 1;
+            // 
+            // textBoxTimePerMeter
+            // 
+            this.textBoxTimePerMeter.Location = new System.Drawing.Point(842, 160);
+            this.textBoxTimePerMeter.Name = "textBoxTimePerMeter";
+            this.textBoxTimePerMeter.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTimePerMeter.TabIndex = 1;
+            // 
+            // textBoxSpeedFactor
+            // 
+            this.textBoxSpeedFactor.Location = new System.Drawing.Point(842, 211);
+            this.textBoxSpeedFactor.Name = "textBoxSpeedFactor";
+            this.textBoxSpeedFactor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSpeedFactor.TabIndex = 1;
+            // 
+            // lblTechnologyName
+            // 
+            this.lblTechnologyName.AutoSize = true;
+            this.lblTechnologyName.Location = new System.Drawing.Point(750, 116);
+            this.lblTechnologyName.Name = "lblTechnologyName";
+            this.lblTechnologyName.Size = new System.Drawing.Size(92, 13);
+            this.lblTechnologyName.TabIndex = 2;
+            this.lblTechnologyName.Text = "Nazwa technologi";
+            // 
+            // lblTimePerMeter
+            // 
+            this.lblTimePerMeter.AutoSize = true;
+            this.lblTimePerMeter.Location = new System.Drawing.Point(735, 167);
+            this.lblTimePerMeter.Name = "lblTimePerMeter";
+            this.lblTimePerMeter.Size = new System.Drawing.Size(101, 13);
+            this.lblTimePerMeter.TabIndex = 2;
+            this.lblTimePerMeter.Text = "Prędkość produkcji ";
+            // 
+            // lblSpeedFactor
+            // 
+            this.lblSpeedFactor.AutoSize = true;
+            this.lblSpeedFactor.Location = new System.Drawing.Point(712, 218);
+            this.lblSpeedFactor.Name = "lblSpeedFactor";
+            this.lblSpeedFactor.Size = new System.Drawing.Size(124, 13);
+            this.lblSpeedFactor.TabIndex = 2;
+            this.lblSpeedFactor.Text = "Współczynnik prędkości";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(767, 323);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Zapisz";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReturn
             // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnReturn.FlatAppearance.BorderSize = 3;
-            this.btnReturn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(600, 451);
+            this.btnReturn.Location = new System.Drawing.Point(738, 623);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(172, 98);
-            this.btnReturn.TabIndex = 15;
-            this.btnReturn.Text = "Powrót";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 4;
+            this.btnReturn.Text = "POWRÓT";
+            this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnDelete.FlatAppearance.BorderSize = 3;
-            this.btnDelete.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(600, 311);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(172, 98);
-            this.btnDelete.TabIndex = 15;
-            this.btnDelete.Text = "Usuń";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnAdd.FlatAppearance.BorderSize = 3;
-            this.btnAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(600, 71);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(172, 98);
-            this.btnAdd.TabIndex = 15;
-            this.btnAdd.Text = "Dodaj nową ";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.FlatAppearance.BorderSize = 3;
-            this.btnEdit.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(600, 192);
+            this.btnEdit.Location = new System.Drawing.Point(127, 623);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(172, 98);
-            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edycja";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblSpeedFactorFrom
+            // 
+            this.lblSpeedFactorFrom.AutoSize = true;
+            this.lblSpeedFactorFrom.Location = new System.Drawing.Point(44, 520);
+            this.lblSpeedFactorFrom.Name = "lblSpeedFactorFrom";
+            this.lblSpeedFactorFrom.Size = new System.Drawing.Size(124, 13);
+            this.lblSpeedFactorFrom.TabIndex = 10;
+            this.lblSpeedFactorFrom.Text = "Współczynnik prędkości";
+            this.lblSpeedFactorFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblTimePerMeterFrom
+            // 
+            this.lblTimePerMeterFrom.AutoSize = true;
+            this.lblTimePerMeterFrom.Location = new System.Drawing.Point(44, 469);
+            this.lblTimePerMeterFrom.Name = "lblTimePerMeterFrom";
+            this.lblTimePerMeterFrom.Size = new System.Drawing.Size(101, 13);
+            this.lblTimePerMeterFrom.TabIndex = 11;
+            this.lblTimePerMeterFrom.Text = "Prędkość produkcji ";
+            this.lblTimePerMeterFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblTechnologyNameFrom
+            // 
+            this.lblTechnologyNameFrom.AutoSize = true;
+            this.lblTechnologyNameFrom.Location = new System.Drawing.Point(44, 411);
+            this.lblTechnologyNameFrom.Name = "lblTechnologyNameFrom";
+            this.lblTechnologyNameFrom.Size = new System.Drawing.Size(92, 13);
+            this.lblTechnologyNameFrom.TabIndex = 12;
+            this.lblTechnologyNameFrom.Text = "Nazwa technologi";
+            this.lblTechnologyNameFrom.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBoxSpeedFactorTo
+            // 
+            this.textBoxSpeedFactorTo.Location = new System.Drawing.Point(181, 513);
+            this.textBoxSpeedFactorTo.Name = "textBoxSpeedFactorTo";
+            this.textBoxSpeedFactorTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSpeedFactorTo.TabIndex = 7;
+            // 
+            // textBoxTimePerMeterTo
+            // 
+            this.textBoxTimePerMeterTo.Location = new System.Drawing.Point(181, 462);
+            this.textBoxTimePerMeterTo.Name = "textBoxTimePerMeterTo";
+            this.textBoxTimePerMeterTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTimePerMeterTo.TabIndex = 8;
+            // 
+            // textBoxTechnologyNameTo
+            // 
+            this.textBoxTechnologyNameTo.Location = new System.Drawing.Point(181, 411);
+            this.textBoxTechnologyNameTo.Name = "textBoxTechnologyNameTo";
+            this.textBoxTechnologyNameTo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTechnologyNameTo.TabIndex = 9;
+            // 
+            // lblSelectedTechnology
+            // 
+            this.lblSelectedTechnology.AutoSize = true;
+            this.lblSelectedTechnology.Location = new System.Drawing.Point(44, 378);
+            this.lblSelectedTechnology.Name = "lblSelectedTechnology";
+            this.lblSelectedTechnology.Size = new System.Drawing.Size(111, 13);
+            this.lblSelectedTechnology.TabIndex = 13;
+            this.lblSelectedTechnology.Text = "Wybrana technologia ";
+            this.lblSelectedTechnology.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(306, 623);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Usuń";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ProductionTechnology
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnEdit);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.lblSelectedTechnology);
+            this.Controls.Add(this.lblSpeedFactorFrom);
+            this.Controls.Add(this.lblTimePerMeterFrom);
+            this.Controls.Add(this.lblTechnologyNameFrom);
+            this.Controls.Add(this.textBoxSpeedFactorTo);
+            this.Controls.Add(this.textBoxTimePerMeterTo);
+            this.Controls.Add(this.textBoxTechnologyNameTo);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.lblSpeedFactor);
+            this.Controls.Add(this.lblTimePerMeter);
+            this.Controls.Add(this.lblTechnologyName);
+            this.Controls.Add(this.textBoxSpeedFactor);
+            this.Controls.Add(this.textBoxTimePerMeter);
+            this.Controls.Add(this.textBoxTechnologyName);
             this.Controls.Add(this.dataGVtechnology);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -169,15 +244,29 @@
             this.Load += new System.EventHandler(this.ProductionTechnology_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGVtechnology)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGVtechnology;
+        private System.Windows.Forms.TextBox textBoxTechnologyName;
+        private System.Windows.Forms.TextBox textBoxTimePerMeter;
+        private System.Windows.Forms.TextBox textBoxSpeedFactor;
+        private System.Windows.Forms.Label lblTechnologyName;
+        private System.Windows.Forms.Label lblTimePerMeter;
+        private System.Windows.Forms.Label lblSpeedFactor;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label lblSpeedFactorFrom;
+        private System.Windows.Forms.Label lblTimePerMeterFrom;
+        private System.Windows.Forms.Label lblTechnologyNameFrom;
+        private System.Windows.Forms.TextBox textBoxSpeedFactorTo;
+        private System.Windows.Forms.TextBox textBoxTimePerMeterTo;
+        private System.Windows.Forms.TextBox textBoxTechnologyNameTo;
+        private System.Windows.Forms.Label lblSelectedTechnology;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

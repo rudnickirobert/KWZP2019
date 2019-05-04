@@ -80,13 +80,6 @@ namespace KWZP2019
                 db.SafetyControls.Add(safetyControl);
                 db.SaveChanges();
 
-                txtBoxControlerId.Text = "";
-                txtBoxControlingCompany.Text = "";
-                textBoxDescription.Text = "";
-                lblEmployeeFullName.Text = "------------------------";
-                domainUpDownEmployee.Text = "1";
-
-
             }
         }
 

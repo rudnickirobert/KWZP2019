@@ -30,7 +30,6 @@ namespace KWZP2019
             this.SafetyControls = new HashSet<SafetyControl>();
             this.OrderCustomers = new HashSet<OrderCustomer>();
             this.OutControls = new HashSet<OutControl>();
-            this.OutControl = new HashSet<OutControl>();
         }
     
         public int IdEmployee { get; set; }
@@ -71,7 +70,5 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OutControl> OutControls { get; set; }
         public virtual SafetyTraining SafetyTraining { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OutControl> OutControl { get; set; }
     }
 }

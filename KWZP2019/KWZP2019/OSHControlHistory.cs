@@ -32,12 +32,6 @@ namespace KWZP2019
         private void OSHControlHistory_Load(object sender, EventArgs e)
         {
             dGVControlHistory.DataSource = db.SafetyControlHistoryViews.ToList();
-            dGVControlHistory.Columns[0].HeaderText = "Numer kontroli";
-            dGVControlHistory.Columns[1].HeaderText = "Nazwa firmy";
-            dGVControlHistory.Columns[2].HeaderText = "Kontroler";
-            dGVControlHistory.Columns[3].HeaderText = "Data";
-            dGVControlHistory.Columns[4].HeaderText = "Pracownik";
-            dGVControlHistory.Columns[5].HeaderText = "Opis";
         }
     }
 }
