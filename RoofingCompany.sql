@@ -626,28 +626,28 @@ on Department.IdDepartment = Allocation.IdDepartment;
 GO 
 CREATE VIEW vSupplierParts
 AS
-SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
-Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, SupplierDescription as [Opis]  
+SELECT Type as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, Description as [Opis]  
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (SupplierNameType = 'Części');
+WHERE (Type = 'Części');
 
 GO
 CREATE VIEW vSupplierSemis
 AS
-SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
-Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, SupplierDescription as [Opis]
+SELECT Type as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, Description as [Opis]
 FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
-WHERE (SupplierNameType = 'Półfabrykaty');
+WHERE (Type = 'Półfabrykaty');
 
 GO
 CREATE VIEW vOutsourcingWithType
 AS
 SELECT  OutsourcingType as [Typ], CompanyName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City [Miasto], ZipCode as [Kod pocztowy], 
-Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, OutsourcingDescription as [Opis]
+Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NIP, KRS, Description as [Opis]
 FROM Outsourcing
 JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
@@ -656,7 +656,7 @@ GO
 CREATE VIEW vCustomer
 AS
 SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
-ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
+ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, Description as [Opis]
 FROM Customer;
 
 go
@@ -921,19 +921,7 @@ ON OrderCustomer.IdEmployee = Employee.IdEmployee;
 GO
 CREATE VIEW vEmployeeSalesDepartment
 AS
-SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko], ZipCode as [Kod pocztowy], City as [Miasto], Street as [Ulica], HouseNumber as [Numer], 
-ApartmentNum as [Numer lokalu], PhoneNumber as [Telefon], PESEL, DepartmentName as [Dział], StartDate as [Data początku], EndDate as [Data końca]
-FROM Allocation
-JOIN Employee
-ON Allocation.IdEmployee = Employee.IdEmployee
-JOIN Department
-ON Allocation.IdDepartment = Department.IdDepartment
-WHERE (DepartmentName = 'Logistyka');
-
-GO 
-CREATE VIEW vEmployeeSD
-AS
-SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 
+SELECT EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, DepartmentName, StartDate, EndDate
 FROM Allocation
 JOIN Employee
 ON Allocation.IdEmployee = Employee.IdEmployee
