@@ -12,10 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductionProce
+    public partial class ProductionProcess
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductionProce()
+        public ProductionProcess()
         {
             this.Failures = new HashSet<Failure>();
         }
