@@ -16,7 +16,7 @@ namespace KWZP2019
         private StartForm startForm;
         private QualityControl qualityControlForm;
         public Dictionary<int, String> processStatus = new Dictionary<int, string>();
-        public enum OutControlStatus  { Oczekuje_na_kontrolę, W_takcie_realizacji, Proces_kontroli_zakończony};
+        public enum OutControlStatus  { Oczekuje_na_kontrolę, W_trakcie_realizacji, Proces_kontroli_zakończony};
         public int procesNumber;
 
         public OutControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
@@ -104,7 +104,7 @@ namespace KWZP2019
             }
             foreach (OutControl process in db.OutControls.ToList())
             {
-                processStatus[process.IdProcess] = OutControlStatus.W_takcie_realizacji.ToString();
+                processStatus[process.IdProcess] = OutControlStatus.W_trakcie_realizacji.ToString();
             }
             foreach (vSuccesfullyProcess process in db.vSuccesfullyProcesses.ToList())
             {
