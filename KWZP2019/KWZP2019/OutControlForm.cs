@@ -67,24 +67,36 @@ namespace KWZP2019
 
         private void btnSMeasures_Click(object sender, EventArgs e)
         {
-            if(processStatus[procesNumber].Equals(OutControlStatus.Oczekuje_na_kontrolę.ToString()))
+            if (txtbAcceptableLenghtDeviation.Text == "" || txtbAcceptableWidthDeviation.Text == "")
             {
-                OutControl outControl = new OutControl();
-                outControl.IdEmployee = Int16.Parse(cbControlerId.SelectedValue.ToString());
-                outControl.IdProcess = procesNumber;
-                outControl.LenghtAcceptableDeviation = Int16.Parse(txtbAcceptableLenghtDeviation.Text);
-                outControl.WidthAcceptableDeviation = Int16.Parse(txtbAcceptableWidthDeviation.Text);
-                outControl.StartControlDate = DateTime.Now;
-                outControl.EndControlDate = null;
-                db.OutControls.Add(outControl);
-                db.SaveChanges();
+                MessageBox.Show("Proszę wypełnić oba pola określające wielkość dopuszczalnych odchyłek.");
             }
-
-            using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this))
+            else
             {
-                outControlForm.ShowDialog();
-                db = new RoofingCompanyEntities();
-                refreshingData(procesNumber);
+                if (txtbAcceptableLenghtDeviation.Text.Contains(".") || txtbAcceptableWidthDeviation.Text.Contains("."))
+                {
+                    MessageBox.Show("Separatorem wartości dziesiętnej używanym w programie jest przecinek, zamieniono wykryte kropki na przecinki");
+                    txtbAcceptableLenghtDeviation.Text = txtbAcceptableLenghtDeviation.Text.Replace(".", ",");
+                    txtbAcceptableWidthDeviation.Text = txtbAcceptableWidthDeviation.Text.Replace(".", ",");
+                }
+                if (processStatus[procesNumber].Equals(OutControlStatus.Oczekuje_na_kontrolę.ToString()))
+                {
+                    OutControl outControl = new OutControl();
+                    outControl.IdEmployee = Int16.Parse(cbControlerId.SelectedValue.ToString());
+                    outControl.IdProcess = procesNumber;
+                    outControl.LenghtAcceptableDeviation = Double.Parse(txtbAcceptableLenghtDeviation.Text);
+                    outControl.WidthAcceptableDeviation = Double.Parse(txtbAcceptableWidthDeviation.Text);
+                    outControl.StartControlDate = DateTime.Now;
+                    outControl.EndControlDate = null;
+                    db.OutControls.Add(outControl);
+                    db.SaveChanges();
+                    using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this))
+                    {
+                        outControlForm.ShowDialog();
+                        db = new RoofingCompanyEntities();
+                        refreshingData(procesNumber);
+                    }
+                }
             }
         }
 
