@@ -44,8 +44,6 @@
             this.btnShowAll = new System.Windows.Forms.Button();
             this.datePickerSelectedControlsDate = new System.Windows.Forms.DateTimePicker();
             this.picboxNewPattern = new System.Windows.Forms.PictureBox();
-            this.txtboxWidth = new System.Windows.Forms.TextBox();
-            this.txtboxThickness = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTeamLeader = new System.Windows.Forms.Label();
@@ -54,6 +52,10 @@
             this.btnImportPicture = new System.Windows.Forms.Button();
             this.lblResults = new System.Windows.Forms.Label();
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
+            this.lblEmployeeId = new System.Windows.Forms.Label();
+            this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxSurname = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVFEM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxNewPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
@@ -209,16 +211,6 @@
             this.picboxNewPattern.Name = "picboxNewPattern";
             this.picboxNewPattern.TabStop = false;
             // 
-            // txtboxWidth
-            // 
-            resources.ApplyResources(this.txtboxWidth, "txtboxWidth");
-            this.txtboxWidth.Name = "txtboxWidth";
-            // 
-            // txtboxThickness
-            // 
-            resources.ApplyResources(this.txtboxThickness, "txtboxThickness");
-            this.txtboxThickness.Name = "txtboxThickness";
-            // 
             // lblSurname
             // 
             this.lblSurname.BackColor = System.Drawing.Color.Transparent;
@@ -283,17 +275,41 @@
             this.pictureBoxForm.Name = "pictureBoxForm";
             this.pictureBoxForm.TabStop = false;
             // 
+            // lblEmployeeId
+            // 
+            this.lblEmployeeId.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblEmployeeId, "lblEmployeeId");
+            this.lblEmployeeId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmployeeId.Name = "lblEmployeeId";
+            // 
+            // textBoxEmployeeId
+            // 
+            resources.ApplyResources(this.textBoxEmployeeId, "textBoxEmployeeId");
+            this.textBoxEmployeeId.Name = "textBoxEmployeeId";
+            // 
+            // textBoxName
+            // 
+            resources.ApplyResources(this.textBoxName, "textBoxName");
+            this.textBoxName.Name = "textBoxName";
+            // 
+            // textBoxSurname
+            // 
+            resources.ApplyResources(this.textBoxSurname, "textBoxSurname");
+            this.textBoxSurname.Name = "textBoxSurname";
+            // 
             // DevelopmentForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.textBoxSurname);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxEmployeeId);
+            this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.lblResults);
             this.Controls.Add(this.btnImportPicture);
             this.Controls.Add(this.checkBoxNegativeResult);
             this.Controls.Add(this.checkBoxPositiveResult);
-            this.Controls.Add(this.txtboxWidth);
-            this.Controls.Add(this.txtboxThickness);
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTeamLeader);
@@ -332,8 +348,6 @@
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.DateTimePicker datePickerSelectedControlsDate;
         private System.Windows.Forms.PictureBox picboxNewPattern;
-        private System.Windows.Forms.TextBox txtboxWidth;
-        private System.Windows.Forms.TextBox txtboxThickness;
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblTeamLeader;
@@ -342,5 +356,9 @@
         private System.Windows.Forms.Button btnImportPicture;
         private System.Windows.Forms.Label lblResults;
         private System.Windows.Forms.PictureBox pictureBoxForm;
+        private System.Windows.Forms.Label lblEmployeeId;
+        private System.Windows.Forms.TextBox textBoxEmployeeId;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxSurname;
     }
 }
