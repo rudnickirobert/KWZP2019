@@ -673,7 +673,8 @@ GO
 
 CREATE VIEW vDevotionsInMeasuremntsPerProcess
 AS
-SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
+SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, CAST(ROUND((((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100),2) AS NUMERIC (12,2)) as LenghtDeviation, 
+		CAST(ROUND((((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100),2) AS NUMERIC (12,2))  as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
 FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
 WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
 
