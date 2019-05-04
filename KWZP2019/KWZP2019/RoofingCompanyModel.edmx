@@ -841,6 +841,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' doe
           <Property Name="Markup" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vPredictedPriceForCustomer">
           <Key>
@@ -3027,6 +3029,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </Key>
           <Property Name="IdOutsourcingType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OutsourcingType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OutsourcingType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Outsourcing" Relationship="RoofingCompanyModel.FkOutsourcingOutsourcingType" FromRole="OutsourcingType" ToRole="Outsourcing" />
           <Property Name="OutsourcingType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Outsourcings" Relationship="RoofingCompanyModel.FkOutsourcingOutsourcingType" FromRole="OutsourcingType" ToRole="Outsourcing" />
@@ -3158,6 +3161,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdTechnology" Type="Int32" Nullable="false" />
           <Property Name="InputDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InProduction" Type="Boolean" />
+          <NavigationProperty Name="OrderDetails" Relationship="RoofingCompanyModel.FkOrderDetailProduct" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="SemiFinished" Relationship="RoofingCompanyModel.FkProductIdSF" FromRole="Product" ToRole="SemiFinished" />
+          <NavigationProperty Name="Technology" Relationship="RoofingCompanyModel.FkProductIdTech" FromRole="Product" ToRole="Technology" />
+          <NavigationProperty Name="TechnicalProductDatas" Relationship="RoofingCompanyModel.FkTechProdDataId" FromRole="Product" ToRole="TechnicalProductData" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.OrderDetailProduct" FromRole="Product" ToRole="OrderDetail" />
           <NavigationProperty Name="SemiFinished" Relationship="Self.FkProductIdSF" FromRole="Product" ToRole="SemiFinished" />
           <NavigationProperty Name="Technology" Relationship="Self.FkProductIdTech" FromRole="Product" ToRole="Technology" />
@@ -3175,10 +3183,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </Key>
           <Property Name="IdProces" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdPlan" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Failures" Relationship="RoofingCompanyModel.FKProductionProces" FromRole="ProductionProcess" ToRole="Failure" />
+          <NavigationProperty Name="OutControl" Relationship="RoofingCompanyModel.FkOutControlProcess" FromRole="ProductionProcess" ToRole="OutControl" />
+          <NavigationProperty Name="PlannedProduction" Relationship="RoofingCompanyModel.FKProductionProcesPlannedProduction" FromRole="ProductionProcess" ToRole="PlannedProduction" />
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Failures" Relationship="Self.FKProductionProces" FromRole="ProductionProces" ToRole="Failure" />
           <NavigationProperty Name="PlannedProduction" Relationship="Self.FKProductionProcesPlannedProduction" FromRole="ProductionProces" ToRole="PlannedProduction" />
+          <NavigationProperty Name="OutControl" Relationship="RoofingCompanyModel.FkOutControlProcess" FromRole="ProductionProce" ToRole="OutControl" />
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Failures" Relationship="RoofingCompanyModel.FKProductionProces" FromRole="ProductionProcess" ToRole="Failure" />
@@ -4398,6 +4412,270 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </ReferentialConstraint>
         </Association>
         <EntityType Name="vMaintPartsView">
+        <Association Name="FkOrderDetailProduct">
+          <End Type="RoofingCompanyModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkOutControlProcess">
+          <End Type="RoofingCompanyModel.ProductionProcess" Role="ProductionProcess" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.OutControl" Role="OutControl" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ProductionProcess">
+              <PropertyRef Name="IdProces" />
+            </Principal>
+            <Dependent Role="OutControl">
+              <PropertyRef Name="IdProcess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkOutputProductMeasurements">
+          <End Type="RoofingCompanyModel.OutControl" Role="OutControl" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.OutputProductMeasurement" Role="OutputProductMeasurement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OutControl">
+              <PropertyRef Name="IdProcess" />
+            </Principal>
+            <Dependent Role="OutputProductMeasurement">
+              <PropertyRef Name="IdProcess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkOutsourcingCommitmentOutsourcing">
+          <End Type="RoofingCompanyModel.Outsourcing" Role="Outsourcing" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.OutsourcingCommitment" Role="OutsourcingCommitment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outsourcing">
+              <PropertyRef Name="IdOutsourcing" />
+            </Principal>
+            <Dependent Role="OutsourcingCommitment">
+              <PropertyRef Name="IdOutsourcing" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkOutsourcingOutsourcingType">
+          <End Type="RoofingCompanyModel.OutsourcingType" Role="OutsourcingType" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Outsourcing" Role="Outsourcing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OutsourcingType">
+              <PropertyRef Name="IdOutsourcingType" />
+            </Principal>
+            <Dependent Role="Outsourcing">
+              <PropertyRef Name="IdOutsourcingType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartPartRequest">
+          <End Type="RoofingCompanyModel.Part" Role="Part" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PartRequest" Role="PartRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Part">
+              <PropertyRef Name="IdPart" />
+            </Principal>
+            <Dependent Role="PartRequest">
+              <PropertyRef Name="IdPart" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartRequestPartOrderDetail">
+          <End Type="RoofingCompanyModel.Part" Role="Part" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PartOrderDetail" Role="PartOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Part">
+              <PropertyRef Name="IdPart" />
+            </Principal>
+            <Dependent Role="PartOrderDetail">
+              <PropertyRef Name="IdPart" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartTypePart">
+          <End Type="RoofingCompanyModel.PartType" Role="PartType" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Part" Role="Part" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartType">
+              <PropertyRef Name="IdPartType" />
+            </Principal>
+            <Dependent Role="Part">
+              <PropertyRef Name="IdPartType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UnitPart">
+          <End Type="RoofingCompanyModel.Unit" Role="Unit" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Part" Role="Part" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="IdUnit" />
+            </Principal>
+            <Dependent Role="Part">
+              <PropertyRef Name="IdUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartOrderPartOrderDetail">
+          <End Type="RoofingCompanyModel.PartOrder" Role="PartOrder" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PartOrderDetail" Role="PartOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartOrder">
+              <PropertyRef Name="IdPartOrder" />
+            </Principal>
+            <Dependent Role="PartOrderDetail">
+              <PropertyRef Name="IdPartOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartRequestPartOrderRequest">
+          <End Type="RoofingCompanyModel.PartRequest" Role="PartRequest" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PartOrderRequest" Role="PartOrderRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartRequest">
+              <PropertyRef Name="IdPartRequest" />
+            </Principal>
+            <Dependent Role="PartOrderRequest">
+              <PropertyRef Name="IdPartRequest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPlannedProductionEmployeeDetailsPlannedProduction">
+          <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PlannedProductionEmployeeDetail" Role="PlannedProductionEmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlannedProduction">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="PlannedProductionEmployeeDetail">
+              <PropertyRef Name="IdProces" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProductionProcesPlannedProduction">
+          <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.ProductionProcess" Role="ProductionProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlannedProduction">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="ProductionProcess">
+              <PropertyRef Name="IdPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SkillsFor__IdPos__0E6E26BF">
+          <End Type="RoofingCompanyModel.Position" Role="Position" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.SkillsForMachine" Role="SkillsForMachine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="IdPosition" />
+            </Principal>
+            <Dependent Role="SkillsForMachine">
+              <PropertyRef Name="IdPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__IdPositio__1DB06A4F">
+          <End Type="RoofingCompanyModel.Position" Role="Position" Multiplicity="0..1" />
+          <End Type="RoofingCompanyModel.Staff" Role="Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="IdPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="IdPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkProductIdSF">
+          <End Type="RoofingCompanyModel.SemiFinished" Role="SemiFinished" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SemiFinished">
+              <PropertyRef Name="IdSemiFinished" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdSemiFinished" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkProductIdTech">
+          <End Type="RoofingCompanyModel.Technology" Role="Technology" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technology">
+              <PropertyRef Name="IdTechnology" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdTechnology" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkTechProdDataId">
+          <End Type="RoofingCompanyModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.TechnicalProductData" Role="TechnicalProductData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="IdProduct" />
+            </Principal>
+            <Dependent Role="TechnicalProductData">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkSfOrderDetailSemiFinished">
+          <End Type="RoofingCompanyModel.SemiFinished" Role="SemiFinished" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.SfOrderDetail" Role="SfOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SemiFinished">
+              <PropertyRef Name="IdSemiFinished" />
+            </Principal>
+            <Dependent Role="SfOrderDetail">
+              <PropertyRef Name="IdSemiFinished" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkSemiFinishedOrderSupplier">
+          <End Type="RoofingCompanyModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.SemiFinishedOrder" Role="SemiFinishedOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="IdSupplier" />
+            </Principal>
+            <Dependent Role="SemiFinishedOrder">
+              <PropertyRef Name="IdSupplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkSfOrderDetailSemiFinishedOrder">
+          <End Type="RoofingCompanyModel.SemiFinishedOrder" Role="SemiFinishedOrder" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.SfOrderDetail" Role="SfOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SemiFinishedOrder">
+              <PropertyRef Name="IdSfOrder" />
+            </Principal>
+            <Dependent Role="SfOrderDetail">
+              <PropertyRef Name="IdSfOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FkSupplierSupplierType">
+          <End Type="RoofingCompanyModel.SupplierType" Role="SupplierType" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.Supplier" Role="Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierType">
+              <PropertyRef Name="IdSupplierType" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="IdSupplierType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="RoofingCompanyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Absences" EntityType="Self.Absence" />
           <EntitySet Name="AbsenceTypes" EntityType="Self.AbsenceType" />
@@ -4782,6 +5060,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </ReferentialConstraint>
         </Association>
         <EntityType Name="vCompany">
+        <EntityType Name="vMaintPartsView">
           <Key>
             <PropertyRef Name="Nr_Obsługi" />
             <PropertyRef Name="Data_przyjęcia" />
@@ -5378,6 +5657,89 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdProces" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
+        <EntityType Name="vPredictedPriceForCustomer">
+          <Key>
+            <PropertyRef Name="IdOrderCustomer" />
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Markup" />
+          </Key>
+          <Property Name="IdOrderCustomer" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Markup" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SafetyControlHistoryView">
+          <Key>
+            <PropertyRef Name="IdInspection" />
+            <PropertyRef Name="IdSafetyEmployee" />
+            <PropertyRef Name="SaftyControlDate" />
+          </Key>
+          <Property Name="IdInspection" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IdSafetyEmployee" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SaftyControlDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SafetyControlDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InspectedEmpolyee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vDevotionsInMeasuremntsPerProcess">
+          <Key>
+            <PropertyRef Name="IdMeasurement" />
+            <PropertyRef Name="IdProcess" />
+            <PropertyRef Name="QuantityToBeProducted" />
+            <PropertyRef Name="LenghtDeviation" />
+            <PropertyRef Name="WidthDeviation" />
+            <PropertyRef Name="LenghtAcceptableDeviation" />
+            <PropertyRef Name="WidthAcceptableDeviation" />
+          </Key>
+          <Property Name="IdMeasurement" Type="Int32" Nullable="false" />
+          <Property Name="IdProcess" Type="Int32" Nullable="false" />
+          <Property Name="QuantityToBeProducted" Type="Int32" Nullable="false" />
+          <Property Name="LenghtDeviation" Type="Double" Nullable="false" />
+          <Property Name="WidthDeviation" Type="Double" Nullable="false" />
+          <Property Name="LenghtAcceptableDeviation" Type="Double" Nullable="false" />
+          <Property Name="WidthAcceptableDeviation" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vSuccesfullyProcess">
+          <Key>
+            <PropertyRef Name="IdProcess" />
+          </Key>
+          <Property Name="IdProcess" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vSuccesfullyProducedPerProcess">
+          <Key>
+            <PropertyRef Name="IdProcess" />
+            <PropertyRef Name="QuantityToBeProducted" />
+          </Key>
+          <Property Name="IdProcess" Type="Int32" Nullable="false" />
+          <Property Name="SuccesfullProduced" Type="Int32" />
+          <Property Name="QuantityToBeProducted" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vTechnicalProductDataPerProcess">
+          <Key>
+            <PropertyRef Name="IdProcess" />
+            <PropertyRef Name="IdProduct" />
+            <PropertyRef Name="Lenght" />
+            <PropertyRef Name="Width" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="IdProcess" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="Lenght" Type="Double" Nullable="false" />
+          <Property Name="Width" Type="Double" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vUnfinishedProcess">
+          <Key>
+            <PropertyRef Name="IdProces" />
+          </Key>
+          <Property Name="IdProces" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -6163,6 +6525,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="IdTechnology" ColumnName="IdTechnology" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="IdSemiFinished" ColumnName="IdSemiFinished" />
+                <ScalarProperty Name="InProduction" ColumnName="InProduction" />
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
               </MappingFragment>
             </EntityTypeMapping>

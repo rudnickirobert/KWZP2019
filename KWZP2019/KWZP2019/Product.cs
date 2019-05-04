@@ -35,5 +35,7 @@ namespace KWZP2019
         public virtual Technology Technology { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TechnicalProductData> TechnicalProductData { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TechnicalProductData> TechnicalProductDatas { get; set; }
     }
 }

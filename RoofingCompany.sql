@@ -742,7 +742,6 @@ ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
 
-/*====SALES DEPARTMENT END===*/ 
 
 /*====PRODUCTION===*/
 
@@ -756,13 +755,14 @@ ON OrderDetail.IdProduct = Product.IdProduct
 WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
 
 GO
-CREATE VIEW SafetyControlHistoryView 
+CREATE VIEW vSafetyControlHistoryView 
 AS
 SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
 FROM SafetyControl
 JOIN Employee
 ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
 GO
+
 
 /*====SALES DEPARTMENT START===*/
 
@@ -778,3 +778,14 @@ INNER JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 INNER JOIN Employee
 ON OrderCustomer.IdEmployee = Employee.IdEmployee;
+
+GO
+CREATE VIEW vEmployeeSalesDepartment
+AS
+SELECT EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, DepartmentName, StartDate, EndDate
+FROM Allocation
+JOIN Employee
+ON Allocation.IdEmployee = Employee.IdEmployee
+JOIN Department
+ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (DepartmentName = 'Logistyka');
