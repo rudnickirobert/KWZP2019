@@ -43,16 +43,11 @@
             this.btnRequestPart_Delete = new System.Windows.Forms.Button();
             this.dpsRequestDateFrom = new System.Windows.Forms.DateTimePicker();
             this.panelRequestPart_Dates = new System.Windows.Forms.Panel();
-            this.pbDateRange = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbDateAfter = new System.Windows.Forms.PictureBox();
-            this.pbDateEqual = new System.Windows.Forms.PictureBox();
-            this.pbDateBefore = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dpsRequestDateTo = new System.Windows.Forms.DateTimePicker();
             this.lbRequestSearch = new System.Windows.Forms.Label();
-            this.pbDateAll = new System.Windows.Forms.PictureBox();
             this.tbRequestSearch = new System.Windows.Forms.TextBox();
             this.btnRequestPart_Search = new System.Windows.Forms.Button();
             this.toolTipDateAfter = new System.Windows.Forms.ToolTip(this.components);
@@ -69,16 +64,21 @@
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusPartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vPartsRequestViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pbDateRange = new System.Windows.Forms.PictureBox();
+            this.pbDateAfter = new System.Windows.Forms.PictureBox();
+            this.pbDateEqual = new System.Windows.Forms.PictureBox();
+            this.pbDateBefore = new System.Windows.Forms.PictureBox();
+            this.pbDateAll = new System.Windows.Forms.PictureBox();
             this.panelParts.SuspendLayout();
             this.panelRequestPart_Dates.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDateRange)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPartRequestView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vPartsRequestViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDateRange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateAfter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateEqual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateBefore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateAll)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPartRequestView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vPartsRequestViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelParts
@@ -184,20 +184,6 @@
             this.panelRequestPart_Dates.Size = new System.Drawing.Size(739, 113);
             this.panelRequestPart_Dates.TabIndex = 40;
             // 
-            // pbDateRange
-            // 
-            this.pbDateRange.BackColor = System.Drawing.Color.Transparent;
-            this.pbDateRange.Image = ((System.Drawing.Image)(resources.GetObject("pbDateRange.Image")));
-            this.pbDateRange.InitialImage = null;
-            this.pbDateRange.Location = new System.Drawing.Point(265, 58);
-            this.pbDateRange.Name = "pbDateRange";
-            this.pbDateRange.Size = new System.Drawing.Size(31, 29);
-            this.pbDateRange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDateRange.TabIndex = 47;
-            this.pbDateRange.TabStop = false;
-            this.toolTipDateRange.SetToolTip(this.pbDateRange, "Pokaż zapotrzebowania zlecone w wybranym zakresie dat");
-            this.pbDateRange.Click += new System.EventHandler(this.pbDateRange_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
@@ -209,48 +195,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(160, 78);
             this.panel1.TabIndex = 46;
-            // 
-            // pbDateAfter
-            // 
-            this.pbDateAfter.BackColor = System.Drawing.Color.Transparent;
-            this.pbDateAfter.Image = ((System.Drawing.Image)(resources.GetObject("pbDateAfter.Image")));
-            this.pbDateAfter.InitialImage = null;
-            this.pbDateAfter.Location = new System.Drawing.Point(121, 45);
-            this.pbDateAfter.Name = "pbDateAfter";
-            this.pbDateAfter.Size = new System.Drawing.Size(30, 29);
-            this.pbDateAfter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDateAfter.TabIndex = 39;
-            this.pbDateAfter.TabStop = false;
-            this.toolTipDateAfter.SetToolTip(this.pbDateAfter, "Pokaż zapotrzebowania zlecone po dniu");
-            this.pbDateAfter.Click += new System.EventHandler(this.pbDateAfter_Click);
-            // 
-            // pbDateEqual
-            // 
-            this.pbDateEqual.BackColor = System.Drawing.Color.Transparent;
-            this.pbDateEqual.Image = ((System.Drawing.Image)(resources.GetObject("pbDateEqual.Image")));
-            this.pbDateEqual.InitialImage = null;
-            this.pbDateEqual.Location = new System.Drawing.Point(67, 45);
-            this.pbDateEqual.Name = "pbDateEqual";
-            this.pbDateEqual.Size = new System.Drawing.Size(28, 29);
-            this.pbDateEqual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDateEqual.TabIndex = 40;
-            this.pbDateEqual.TabStop = false;
-            this.toolTipDateEqual.SetToolTip(this.pbDateEqual, "Pokaż zapotrzebowania zlecone wybranego dnia");
-            this.pbDateEqual.Click += new System.EventHandler(this.pbDateEqual_Click);
-            // 
-            // pbDateBefore
-            // 
-            this.pbDateBefore.BackColor = System.Drawing.Color.Transparent;
-            this.pbDateBefore.Image = ((System.Drawing.Image)(resources.GetObject("pbDateBefore.Image")));
-            this.pbDateBefore.InitialImage = null;
-            this.pbDateBefore.Location = new System.Drawing.Point(9, 45);
-            this.pbDateBefore.Name = "pbDateBefore";
-            this.pbDateBefore.Size = new System.Drawing.Size(30, 29);
-            this.pbDateBefore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDateBefore.TabIndex = 38;
-            this.pbDateBefore.TabStop = false;
-            this.toolTipDateBefore.SetToolTip(this.pbDateBefore, "Pokaż zapotrzebowania zlecone przed dniem");
-            this.pbDateBefore.Click += new System.EventHandler(this.pbDateBefore_Click);
             // 
             // label2
             // 
@@ -296,20 +240,6 @@
             this.lbRequestSearch.TabIndex = 42;
             this.lbRequestSearch.Text = "Wprowadź nazwę części";
             // 
-            // pbDateAll
-            // 
-            this.pbDateAll.BackColor = System.Drawing.Color.Transparent;
-            this.pbDateAll.Image = ((System.Drawing.Image)(resources.GetObject("pbDateAll.Image")));
-            this.pbDateAll.InitialImage = null;
-            this.pbDateAll.Location = new System.Drawing.Point(375, 58);
-            this.pbDateAll.Name = "pbDateAll";
-            this.pbDateAll.Size = new System.Drawing.Size(32, 29);
-            this.pbDateAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDateAll.TabIndex = 41;
-            this.pbDateAll.TabStop = false;
-            this.toolTipDateAll.SetToolTip(this.pbDateAll, "Pokaż wszystkie zapotrzebowania");
-            this.pbDateAll.Click += new System.EventHandler(this.pbDateAll_Click);
-            // 
             // tbRequestSearch
             // 
             this.tbRequestSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -327,7 +257,6 @@
             this.btnRequestPart_Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRequestPart_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRequestPart_Search.ForeColor = System.Drawing.Color.White;
-            this.btnRequestPart_Search.Image = ((System.Drawing.Image)(resources.GetObject("btnRequestPart_Search.Image")));
             this.btnRequestPart_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRequestPart_Search.Location = new System.Drawing.Point(502, 68);
             this.btnRequestPart_Search.Name = "btnRequestPart_Search";
@@ -451,7 +380,7 @@
             // 
             this.requestDateDataGridViewTextBoxColumn.DataPropertyName = "RequestDate";
             this.requestDateDataGridViewTextBoxColumn.Frozen = true;
-            this.requestDateDataGridViewTextBoxColumn.HeaderText = "Data zamówienia";
+            this.requestDateDataGridViewTextBoxColumn.HeaderText = "Data wysłania zapotrzebowania";
             this.requestDateDataGridViewTextBoxColumn.Name = "requestDateDataGridViewTextBoxColumn";
             this.requestDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.requestDateDataGridViewTextBoxColumn.Width = 170;
@@ -482,6 +411,76 @@
             // 
             this.vPartsRequestViewBindingSource.DataSource = typeof(KWZP2019.vPartsRequestView);
             // 
+            // pbDateRange
+            // 
+            this.pbDateRange.BackColor = System.Drawing.Color.Transparent;
+            this.pbDateRange.Image = ((System.Drawing.Image)(resources.GetObject("pbDateRange.Image")));
+            this.pbDateRange.InitialImage = null;
+            this.pbDateRange.Location = new System.Drawing.Point(265, 58);
+            this.pbDateRange.Name = "pbDateRange";
+            this.pbDateRange.Size = new System.Drawing.Size(31, 29);
+            this.pbDateRange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDateRange.TabIndex = 47;
+            this.pbDateRange.TabStop = false;
+            this.toolTipDateRange.SetToolTip(this.pbDateRange, "Pokaż zapotrzebowania zlecone w wybranym zakresie dat");
+            this.pbDateRange.Click += new System.EventHandler(this.pbDateRange_Click);
+            // 
+            // pbDateAfter
+            // 
+            this.pbDateAfter.BackColor = System.Drawing.Color.Transparent;
+            this.pbDateAfter.Image = ((System.Drawing.Image)(resources.GetObject("pbDateAfter.Image")));
+            this.pbDateAfter.InitialImage = null;
+            this.pbDateAfter.Location = new System.Drawing.Point(121, 45);
+            this.pbDateAfter.Name = "pbDateAfter";
+            this.pbDateAfter.Size = new System.Drawing.Size(30, 29);
+            this.pbDateAfter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDateAfter.TabIndex = 39;
+            this.pbDateAfter.TabStop = false;
+            this.toolTipDateAfter.SetToolTip(this.pbDateAfter, "Pokaż zapotrzebowania zlecone po dniu");
+            this.pbDateAfter.Click += new System.EventHandler(this.pbDateAfter_Click);
+            // 
+            // pbDateEqual
+            // 
+            this.pbDateEqual.BackColor = System.Drawing.Color.Transparent;
+            this.pbDateEqual.Image = ((System.Drawing.Image)(resources.GetObject("pbDateEqual.Image")));
+            this.pbDateEqual.InitialImage = null;
+            this.pbDateEqual.Location = new System.Drawing.Point(67, 45);
+            this.pbDateEqual.Name = "pbDateEqual";
+            this.pbDateEqual.Size = new System.Drawing.Size(28, 29);
+            this.pbDateEqual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDateEqual.TabIndex = 40;
+            this.pbDateEqual.TabStop = false;
+            this.toolTipDateEqual.SetToolTip(this.pbDateEqual, "Pokaż zapotrzebowania zlecone wybranego dnia");
+            this.pbDateEqual.Click += new System.EventHandler(this.pbDateEqual_Click);
+            // 
+            // pbDateBefore
+            // 
+            this.pbDateBefore.BackColor = System.Drawing.Color.Transparent;
+            this.pbDateBefore.Image = ((System.Drawing.Image)(resources.GetObject("pbDateBefore.Image")));
+            this.pbDateBefore.InitialImage = null;
+            this.pbDateBefore.Location = new System.Drawing.Point(9, 45);
+            this.pbDateBefore.Name = "pbDateBefore";
+            this.pbDateBefore.Size = new System.Drawing.Size(30, 29);
+            this.pbDateBefore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDateBefore.TabIndex = 38;
+            this.pbDateBefore.TabStop = false;
+            this.toolTipDateBefore.SetToolTip(this.pbDateBefore, "Pokaż zapotrzebowania zlecone przed dniem");
+            this.pbDateBefore.Click += new System.EventHandler(this.pbDateBefore_Click);
+            // 
+            // pbDateAll
+            // 
+            this.pbDateAll.BackColor = System.Drawing.Color.Transparent;
+            this.pbDateAll.Image = ((System.Drawing.Image)(resources.GetObject("pbDateAll.Image")));
+            this.pbDateAll.InitialImage = null;
+            this.pbDateAll.Location = new System.Drawing.Point(375, 58);
+            this.pbDateAll.Name = "pbDateAll";
+            this.pbDateAll.Size = new System.Drawing.Size(32, 29);
+            this.pbDateAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDateAll.TabIndex = 41;
+            this.pbDateAll.TabStop = false;
+            this.toolTipDateAll.SetToolTip(this.pbDateAll, "Pokaż wszystkie zapotrzebowania");
+            this.pbDateAll.Click += new System.EventHandler(this.pbDateAll_Click);
+            // 
             // PartsRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,14 +503,14 @@
             this.panelParts.PerformLayout();
             this.panelRequestPart_Dates.ResumeLayout(false);
             this.panelRequestPart_Dates.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDateRange)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataPartRequestView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vPartsRequestViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDateRange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateAfter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateEqual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateBefore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateAll)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPartRequestView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vPartsRequestViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
