@@ -349,6 +349,18 @@
     <Compile Include="PartRequest.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartsRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest.Designer.cs" />
+    <Compile Include="PartsRequest_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest_Add.Designer.cs" />
+    <Compile Include="PartsRequest_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest_History.Designer.cs" />
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -654,6 +666,9 @@
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vPartsRequestView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -784,6 +799,9 @@
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartsRequest.resx" />
+    <EmbeddedResource Include="PartsRequest_Add.resx" />
+    <EmbeddedResource Include="PartsRequest_History.resx" />
     <EmbeddedResource Include="Production\NewProductionPlan.resx">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </EmbeddedResource>

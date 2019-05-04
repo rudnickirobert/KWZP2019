@@ -43,7 +43,7 @@ namespace KWZP2019
 
         private void btnParts_Click(object sender, EventArgs e)
         {
-            PartsForm partsForm = new PartsForm(db, startForm, this);
+            PartsForm partsForm = new PartsForm(db, this);
             this.Hide();
             partsForm.Show();
         }

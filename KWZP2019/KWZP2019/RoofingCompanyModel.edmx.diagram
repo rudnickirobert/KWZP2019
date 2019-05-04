@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="42">
+      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="69">
         <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess1" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vUnhandledOrderDetails" Width="1.5" PointX="9.375" PointY="22.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierParts" Width="1.5" PointX="21.375" PointY="18.75" />
@@ -173,6 +173,7 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="26.375" PointY="14.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="14.375" PointY="26.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="26.375" PointY="17.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPartsRequestView" Width="1.5" PointX="26.375" PointY="21.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
