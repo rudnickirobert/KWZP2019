@@ -701,16 +701,16 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="lblControlerId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>701, 227</value>
+    <value>668, 227</value>
   </data>
   <data name="lblControlerId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
+    <value>228, 26</value>
   </data>
   <data name="lblControlerId.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
   <data name="lblControlerId.Text" xml:space="preserve">
-    <value>Id Kontrolera</value>
+    <value>Imię i nazwisko kontrolera</value>
   </data>
   <data name="lblControlerId.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -776,7 +776,7 @@
     <value>40</value>
   </data>
   <data name="lblEmployeeId.Text" xml:space="preserve">
-    <value>Id Pracownika</value>
+    <value>Numer pracownika</value>
   </data>
   <data name="lblEmployeeId.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

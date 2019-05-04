@@ -12,14 +12,13 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class EntranceControlView
+    public partial class vSafetyControlHistoryView
     {
-        public int IdSfDetail { get; set; }
-        public string SfCode { get; set; }
-        public Nullable<double> Thickness { get; set; }
-        public Nullable<double> Width { get; set; }
-        public Nullable<double> SfWeight { get; set; }
-        public string Color { get; set; }
-        public string ChemicalComposition { get; set; }
+        public int IdInspection { get; set; }
+        public string CompanyName { get; set; }
+        public string IdSafetyEmployee { get; set; }
+        public System.DateTime SaftyControlDate { get; set; }
+        public string InspectedEmpolyee { get; set; }
+        public string SafetyControlDescription { get; set; }
     }
 }
