@@ -17,13 +17,13 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public OutsourcingType()
         {
-            this.Outsourcings = new HashSet<Outsourcing>();
+            this.Outsourcing = new HashSet<Outsourcing>();
         }
     
         public int IdOutsourcingType { get; set; }
         public string OutsourcingType1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Outsourcing> Outsourcings { get; set; }
+        public virtual ICollection<Outsourcing> Outsourcing { get; set; }
     }
 }
