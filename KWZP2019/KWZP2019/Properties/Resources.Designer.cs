@@ -240,22 +240,13 @@ namespace KWZP2019.Properties {
             }
         }
         
+        
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_duration_finance_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-duration-finance-80", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_euro_money_80 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_euro_money_80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +267,16 @@ namespace KWZP2019.Properties {
         internal static System.Drawing.Bitmap icons8_home_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-home-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_euro_money_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_euro_money_80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
