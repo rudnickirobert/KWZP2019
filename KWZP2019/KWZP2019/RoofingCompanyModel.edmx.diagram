@@ -155,7 +155,24 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="23.375" PointY="5.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vAbsence" Width="1.5" PointX="23.375" PointY="5.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vAddTraining" Width="1.5" PointX="22.375" PointY="23.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vContract" Width="1.5" PointX="24.375" PointY="8.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEducationForm" Width="1.5" PointX="24.375" PointY="12.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="24.375" PointY="16.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeList" Width="1.5" PointX="24.375" PointY="22.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExamination" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesInvoice" Width="1.5" PointX="25.375" PointY="3.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOrder" Width="1.5" PointX="24.375" PointY="25.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOutsourcing" Width="1.5" PointX="26.375" PointY="6.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesPayment" Width="1.5" PointX="26.375" PointY="9.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHR" Width="1.5" PointX="10.375" PointY="26.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHRContract" Width="1.5" PointX="3.375" PointY="17.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHRExamination" Width="1.5" PointX="26.375" PointY="12.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vIncomesProfit" Width="1.5" PointX="12.375" PointY="26.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="26.375" PointY="14.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="14.375" PointY="26.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="26.375" PointY="17.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
