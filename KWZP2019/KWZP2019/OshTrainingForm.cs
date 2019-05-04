@@ -57,11 +57,7 @@ namespace KWZP2019
         private void btnShow_Click(object sender, EventArgs e)
         {
             dataGVOshTraining.DataSource = db.ViewOshTrainings.
-                Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
-                && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining) <= DbFunctions.AddDays(DateTime.Now, 45)
-                && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))
-                .Select(osh => new { Nr_pracownika = osh.IdEmployee, Imię_pracownika = osh.EmployeeName, Nazwisko_pracownika = osh.EmployeeSurname, Data_wygaśnięcia_szkolenia = DbFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining) })
-                .ToList();
+                Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
         }
 
         private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
@@ -110,12 +106,7 @@ namespace KWZP2019
                 lblEmployeeFullName.Text = "_____________________________________________";
 
                 dataGVOshTraining.DataSource = db.ViewOshTrainings.
-               Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
-               && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining) <= DbFunctions.AddDays(DateTime.Now, 45)
-               && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))
-               .Select(osh => new { Nr_pracownika = osh.IdEmployee, Imię_pracownika = osh.EmployeeName, Nazwisko_pracownika = osh.EmployeeSurname, Data_wygaśnięcia_szkolenia = DbFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining) })
-               .ToList();
-                ;
+                    Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
             }
         }
     }

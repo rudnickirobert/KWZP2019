@@ -78,7 +78,7 @@
             // 
             this.dataGVOshTraining.AllowUserToAddRows = false;
             this.dataGVOshTraining.AllowUserToDeleteRows = false;
-            this.dataGVOshTraining.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGVOshTraining.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGVOshTraining.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGVOshTraining.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGVOshTraining.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;

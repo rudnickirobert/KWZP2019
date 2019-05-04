@@ -608,7 +608,7 @@ on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
 
 go
 create view ViewOshTraining as
-select Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Department.DepartmentName, Contract.EndDate, SafetyTraining.TrainingDate, Position.ValidityOfOshTraining
+select Department.DepartmentName as [Dział], Employee.IdEmployee as [Numer pracownika], Employee.EmployeeName as [Imię], Employee.EmployeeSurname as [Nazwisko], (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate)) as [Data wygaśniecia szkolenia]
 from Employee
 join Contract
 on Employee.IdEmployee = Contract.IdEmployee
@@ -619,7 +619,9 @@ on Position.IdPosition = Contract.IdPosition
 join Allocation
 on Employee.IdEmployee = Allocation.IdEmployee
 join Department
-on Department.IdDepartment = Allocation.IdDepartment;
+on Department.IdDepartment = Allocation.IdDepartment
+where Contract.EndDate > (GETDATE() + 45) and (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate) < (Getdate() + 45));
+
 
 /*====SALES DEPARTMENT START==*/
 

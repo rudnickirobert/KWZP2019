@@ -890,16 +890,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not h
 warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewOshTraining">
           <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="TrainingDate" />
+            <PropertyRef Name="Numer pracownika" />
           </Key>
-          <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
-          <Property Name="EndDate" Type="date" />
-          <Property Name="TrainingDate" Type="datetime" Nullable="false" />
-          <Property Name="ValidityOfOshTraining" Type="int" />
+          <Property Name="Dział" Type="nvarchar" MaxLength="50" />
+          <Property Name="Numer pracownika" Type="int" Nullable="false" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data wygaśniecia szkolenia" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vIncomesProfits' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2221,13 +2218,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="ViewOshTraining" EntityType="Self.ViewOshTraining" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [ViewOshTraining].[IdEmployee] AS [IdEmployee], 
-    [ViewOshTraining].[EmployeeName] AS [EmployeeName], 
-    [ViewOshTraining].[EmployeeSurname] AS [EmployeeSurname], 
-    [ViewOshTraining].[DepartmentName] AS [DepartmentName], 
-    [ViewOshTraining].[EndDate] AS [EndDate], 
-    [ViewOshTraining].[TrainingDate] AS [TrainingDate], 
-    [ViewOshTraining].[ValidityOfOshTraining] AS [ValidityOfOshTraining]
+    [ViewOshTraining].[Dział] AS [Dział], 
+    [ViewOshTraining].[Numer pracownika] AS [Numer pracownika], 
+    [ViewOshTraining].[Imię] AS [Imię], 
+    [ViewOshTraining].[Nazwisko] AS [Nazwisko], 
+    [ViewOshTraining].[Data wygaśniecia szkolenia] AS [Data wygaśniecia szkolenia]
     FROM [dbo].[ViewOshTraining] AS [ViewOshTraining]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vIncomesProfits" EntityType="Self.vIncomesProfits" store:Type="Views" store:Schema="dbo">
@@ -3837,16 +3832,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
         </EntityType>
         <EntityType Name="ViewOshTraining">
           <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="TrainingDate" />
+            <PropertyRef Name="Numer_pracownika" />
           </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="TrainingDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ValidityOfOshTraining" Type="Int32" />
+          <Property Name="Dział" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Numer_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Imię" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data_wygaśniecia_szkolenia" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="vInputMagazine">
           <Key>
@@ -5767,13 +5759,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="ViewOshTrainings">
             <EntityTypeMapping TypeName="RoofingCompanyModel.ViewOshTraining">
               <MappingFragment StoreEntitySet="ViewOshTraining">
-                <ScalarProperty Name="ValidityOfOshTraining" ColumnName="ValidityOfOshTraining" />
-                <ScalarProperty Name="TrainingDate" ColumnName="TrainingDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Data_wygaśniecia_szkolenia" ColumnName="Data wygaśniecia szkolenia" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Numer_pracownika" ColumnName="Numer pracownika" />
+                <ScalarProperty Name="Dział" ColumnName="Dział" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
