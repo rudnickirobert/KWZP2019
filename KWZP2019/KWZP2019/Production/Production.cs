@@ -12,7 +12,7 @@ namespace KWZP2019
 {
     public partial class Production : Form
     {
-        RoofingCompanyEntities db = new RoofingCompanyEntities();
+        RoofingCompanyEntities db;
         public Production(RoofingCompanyEntities db)
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace KWZP2019
 
         private void btnTechnology_Click(object sender, EventArgs e)
         {
-            ProductionTechnology ProductionTechnologyForm = new ProductionTechnology();
+            ProductionTechnology ProductionTechnologyForm = new ProductionTechnology(db);
             ProductionTechnologyForm.Show();
         }
 
