@@ -36,59 +36,61 @@ namespace KWZP2019
 
                 //WPRAOWDZENIE DANYCH DOTYCZĄCYCH KLIENTA
                 newCustomer.CustomerName = nameTb.Text.Trim();
-                bool phoneTb2 = int.TryParse(phoneTb.Text, out int phoneTb21);
-                if (phoneTb2)
+                newCustomer.Email = emailTb.Text.Trim();
+                newCustomer.City = cityTb.Text.Trim();
+                newCustomer.ZipCode = zipCodeTb.Text.Trim();
+                newCustomer.Street = streetTb.Text.Trim();
+                newCustomer.CustomerDescription = descriptionTb.Text.Trim();
+
+                bool phoneTbBool = int.TryParse(phoneTb.Text, out int phoneTbParsed);
+                if (phoneTbBool)
                 {
-                    newCustomer.PhoneNumber = Convert.ToString(phoneTb21);
+                    newCustomer.PhoneNumber = phoneTbParsed;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format numeru telefonu");
                 }
-                newCustomer.Email = emailTb.Text.Trim();
-                newCustomer.City = cityTb.Text.Trim();
-                newCustomer.ZipCode = zipCodeTb.Text.Trim();
-                newCustomer.Street = streetTb.Text.Trim();
-                bool houseNumberTb2 = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTb21);
-                if (houseNumberTb2)
+                bool houseNumberTbBool = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTbParsed);
+                if (houseNumberTbBool)
                 {
-                    newCustomer.HouseNumber = Convert.ToString(houseNumberTb21);
+                    newCustomer.HouseNumber = houseNumberTbParsed;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format numeru domu");
                 }
-                bool apartmentNumberTb2 = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTb21);
-                if (apartmentNumberTb2)
+                bool apartmentNumberTbBool = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTbParsed);
+                if (apartmentNumberTbBool)
                 {
-                    newCustomer.ApartmentNumber = Convert.ToString(apartmentNumberTb21);
+                    newCustomer.ApartmentNumber = apartmentNumberTbParsed;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format numeru lokalu");
                 }
-                bool nipTb2 = float.TryParse(nipTb.Text.Trim(), out float nipTb21);
-                if (nipTb2)
+                bool nipTbBool = float.TryParse(nipTb.Text.Trim(), out float nipTbParsed);
+                if (nipTbBool)
                 {
-                    newCustomer.NIP = Convert.ToString(nipTb21);
+                    newCustomer.NIP = nipTbParsed;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format NIP");
                 }
-                bool krsTb2 = float.TryParse(krsTb.Text.Trim(), out float krsTb21);
-                if (krsTb2)
+                bool krsTbBool = float.TryParse(krsTb.Text.Trim(), out float krsTbParsed);
+                if (krsTbBool)
                 {
-                    newCustomer.KRS = Convert.ToString(krsTb21);
+                    newCustomer.KRS = krsTbParsed;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format KRS");
                 }
-                bool peselTb2 = float.TryParse(peselTb.Text.Trim(), out float peselTb21);
-                if (peselTb2)
+                bool peselTbBool = float.TryParse(peselTb.Text.Trim(), out float peselTbParsed);
+                if (peselTbBool)
                 {
-                    newCustomer.Pesel = Convert.ToString(peselTb21);
+                    newCustomer.Pesel = peselTbParsed;
                 }
                 else
                 {

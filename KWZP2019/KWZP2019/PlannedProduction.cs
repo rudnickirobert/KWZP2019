@@ -28,11 +28,11 @@ namespace KWZP2019
         public Nullable<System.DateTime> PlannedEndd { get; set; }
         public Nullable<bool> Inproduction { get; set; }
     
-        public virtual Maintenance Maintenance { get; set; }
         public virtual OrderDetail OrderDetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductionProcess> ProductionProcesses { get; set; }
+        public virtual Maintenance Maintenance { get; set; }
     }
 }

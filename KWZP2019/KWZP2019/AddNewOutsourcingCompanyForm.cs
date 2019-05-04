@@ -39,23 +39,22 @@ namespace KWZP2019
                 OutsourcingType newOutsourcingType = new OutsourcingType();
 
                 //WPRAOWDZENIE DANYCH DOTYCZĄCYCH KLIENTA
-
                 newOutsourcing.CompanyName = nameTb.Text.Trim();
-                bool phoneTextBox = int.TryParse(phoneTb.Text.Trim(), out int phoneTextbox);
-                if (phoneTextBox)
-                {
-                    newOutsourcing.PhoneNumber = Convert.ToString(phoneTextBox);
-                }
-               
                 newOutsourcing.Email = emailTb.Text.Trim();
                 newOutsourcing.City = cityTb.Text.Trim();
                 newOutsourcing.ZipCode = zipCodeTb.Text.Trim();
                 newOutsourcing.Street = streetTb.Text.Trim();
+                newOutsourcing.OutsourcingDescription = descriptionTb.Text.Trim();
 
+                bool phoneTextBox = int.TryParse(phoneTb.Text.Trim(), out int phoneTextbox);
+                if (phoneTextBox)
+                {
+                    newOutsourcing.PhoneNumber = phoneTextbox;
+                }
                 bool houseNumberTextBox = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTextbox);
                 if (houseNumberTextBox)
                 {
-                    newOutsourcing.HouseNumber = Convert.ToString(houseNumberTextBox);
+                    newOutsourcing.HouseNumber = houseNumberTextbox;
                 }
                 else
                 {
@@ -64,7 +63,7 @@ namespace KWZP2019
                 bool apartmentNumberTextBox = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTextbox);
                 if (apartmentNumberTextBox)
                 {
-                    newOutsourcing.ApartmentNumber = Convert.ToString(apartmentNumberTextBox);
+                    newOutsourcing.ApartmentNumber = apartmentNumberTextbox;
                 }
                 else
                 {
@@ -73,7 +72,7 @@ namespace KWZP2019
                 bool nipTextBox = int.TryParse(nipTb.Text.Trim(), out int nipTextbox);
                 if (nipTextBox)
                 {
-                    newOutsourcing.NIP = Convert.ToString(nipTextbox);
+                    newOutsourcing.NIP = nipTextbox;
                 }
                 else
                 {
@@ -82,13 +81,12 @@ namespace KWZP2019
                 bool krsTextBox = int.TryParse(krsTb.Text.Trim(), out int krsTextbox);
                 if (krsTextBox)
                 {
-                    newOutsourcing.KRS = Convert.ToString(krsTextbox);
+                    newOutsourcing.KRS = krsTextbox;
                 }
                 else
                 {
                     MessageBox.Show("Niewłaściwy format KRS");
                 }
-               
                 MessageBox.Show("Czy na pewno chcesz dodać nową fimrę outsourcingową?");
                 db.Outsourcings.Add(newOutsourcing);
                 db.OutsourcingTypes.Add(newOutsourcingType);

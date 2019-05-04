@@ -99,17 +99,17 @@ create table Product(
 CREATE TABLE Customer
 	(IdCustomer int IDENTITY(1,1)  PRIMARY KEY NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
-	PhoneNumber nvarchar(12) NOT NULL,
+	PhoneNumber int NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber nvarchar(5) NOT NULL,
-	ApartmentNumber nvarchar(5) NOT NULL,
-	Pesel nvarchar(11) NULL,
-	NIP nvarchar(10) NULL,
-	KRS nvarchar(10) NULL,
-	CustomerDescription nvarchar(100) NULL); 
+	HouseNumber int NOT NULL,
+	ApartmentNumber int NOT NULL,
+	Pesel float NULL,
+	NIP float NULL,
+	KRS float NULL,
+	CustomerDescription nvarchar(100) NOT NULL); 
 
 CREATE TABLE OrderCustomer
 	(IdOrderCustomer int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -133,16 +133,16 @@ CREATE TABLE Supplier
 	(IdSupplier int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdSupplierType int NOT NULL,
 	SupplierName nvarchar(100) NOT NULL,
-	PhoneNumber nvarchar(12) NOT NULL,
+	PhoneNumber int NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber nvarchar(5) NOT NULL,
-	ApartmentNumber nvarchar(5) NOT NULL,
-	NIP nvarchar(10) NOT NULL,
-	KRS nvarchar(10) NOT NULL,
-	SupplierDescription nvarchar(100) NULL);
+	HouseNumber int NOT NULL,
+	ApartmentNumber int NOT NULL,
+	NIP float NOT NULL,
+	KRS float NOT NULL,
+	SupplierDescription nvarchar(100) NOT NULL);
 
 CREATE TABLE SemiFinishedOrder
 	(IdSfOrder int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -165,16 +165,16 @@ CREATE TABLE Outsourcing
 	(IdOutsourcing int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	IdOutsourcingType int NOT NULL,
 	CompanyName nvarchar(100) NOT NULL, 
-	PhoneNumber nvarchar(12) NOT NULL,
+	PhoneNumber int NOT NULL,
 	Email nvarchar(50) NOT NULL,
 	City nvarchar(30) NOT NULL,
 	ZipCode nvarchar(7) NOT NULL,
 	Street nvarchar(30) NOT NULL,
-	HouseNumber nvarchar(5) NOT NULL,
-	ApartmentNumber nvarchar(5) NOT NULL,
-	NIP nvarchar(10) NOT NULL,
-	KRS nvarchar(10) NOT NULL,
-	OutsourcingDescription nvarchar(100) NULL);
+	HouseNumber int NOT NULL,
+	ApartmentNumber int NOT NULL,
+	NIP float NOT NULL,
+	KRS float NOT NULL,
+	OutsourcingDescription nvarchar(100) NOT NULL);
 
 CREATE TABLE OutsourcingCommitment
 	(IdCommitment int IDENTITY(1,1) PRIMARY KEY NOT NULL,

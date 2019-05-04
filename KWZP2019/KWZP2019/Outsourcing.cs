@@ -23,15 +23,15 @@ namespace KWZP2019
         public int IdOutsourcing { get; set; }
         public int IdOutsourcingType { get; set; }
         public string CompanyName { get; set; }
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
         public string Street { get; set; }
-        public string HouseNumber { get; set; }
-        public string ApartmentNumber { get; set; }
-        public string NIP { get; set; }
-        public string KRS { get; set; }
+        public int HouseNumber { get; set; }
+        public int ApartmentNumber { get; set; }
+        public double NIP { get; set; }
+        public double KRS { get; set; }
         public string OutsourcingDescription { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

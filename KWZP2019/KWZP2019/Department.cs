@@ -18,8 +18,8 @@ namespace KWZP2019
         public Department()
         {
             this.Allocations = new HashSet<Allocation>();
-            this.Expenses = new HashSet<Expense>();
             this.Staffs = new HashSet<Staff>();
+            this.Expenses = new HashSet<Expense>();
         }
     
         public int IdDepartment { get; set; }
@@ -28,8 +28,8 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Allocation> Allocations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Expense> Expenses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff> Staffs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Expense> Expenses { get; set; }
     }
 }
