@@ -106,6 +106,12 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTechnology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTechnology.Designer.cs">
+      <DependentUpon>EditTechnology.cs</DependentUpon>
+    </Compile>
     <Compile Include="Education.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -345,6 +351,12 @@
     </Compile>
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewTechnology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTechnology.Designer.cs">
+      <DependentUpon>NewTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -700,6 +712,7 @@
     <Compile Include="WarehouseForm.designer.cs">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkingDays.cs" />
     <EmbeddedResource Include="AddNewCustomerForm.resx">
       <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -723,6 +736,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTechnology.resx">
+      <DependentUpon>EditTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntranceControlForm.resx">
       <DependentUpon>EntranceControlForm.cs</DependentUpon>
@@ -783,6 +799,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HR\HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTechnology.resx">
+      <DependentUpon>NewTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
@@ -852,8 +871,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -893,6 +912,7 @@
     <None Include="Production\ProductionProcess.datasource" />
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
+    <None Include="Properties\DataSources\SafetyControlHistoryView.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
     <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
@@ -947,6 +967,17 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-pencil-40.png" />
+    <None Include="Resources\icons8-pencil-80.png" />
+    <None Include="Resources\icons8-repeat-80.png" />
+    <None Include="Resources\icons8-return-40.png" />
+    <None Include="Resources\icons8-add-new-40.png" />
+    <None Include="Resources\icons8-add-new-80.png" />
+    <None Include="Resources\icons8-add-user-male-40.png" />
+    <None Include="Resources\icons8-denied-40.png" />
+    <None Include="Resources\icons8-abacus-40.png" />
+    <None Include="Resources\icons8-abacus-80.png" />
+    <None Include="Resources\icons8-save-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
