@@ -85,16 +85,21 @@ namespace KWZP2019
         public virtual DbSet<Training> Trainings { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryViews { get; set; }
-        public virtual DbSet<vCompany> vCompanies { get; set; }
+        public virtual DbSet<vComboBoxEmployee> vComboBoxEmployees { get; set; }
+        public virtual DbSet<vComboBoxMachine> vComboBoxMachines { get; set; }
+        public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
         public virtual DbSet<ViewDailySfDelivery> ViewDailySfDeliveries { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
-        public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
+        public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
+        public virtual DbSet<vOrder> vOrders { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
+        public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomers { get; set; }
+        public virtual DbSet<vSafetyControlHistoryView> vSafetyControlHistoryViews { get; set; }
         public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcesses { get; set; }
         public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcesses { get; set; }
         public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }
@@ -118,8 +123,6 @@ namespace KWZP2019
         public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
         public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
-        public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
-        public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
     }
 }

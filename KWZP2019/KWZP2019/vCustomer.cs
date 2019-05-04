@@ -12,10 +12,9 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vSupplierSemi
+    public partial class vCustomer
     {
-        public string Typ { get; set; }
-        public string Firma { get; set; }
+        public string Klient { get; set; }
         public string Telefon { get; set; }
         public string E_mail { get; set; }
         public string Miasto { get; set; }
@@ -23,6 +22,7 @@ namespace KWZP2019
         public string Ulica { get; set; }
         public string Numer { get; set; }
         public string Numer_lokalu { get; set; }
+        public string Pesel { get; set; }
         public string NIP { get; set; }
         public string KRS { get; set; }
         public string Opis { get; set; }
