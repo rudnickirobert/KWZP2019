@@ -2737,7 +2737,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="PartTypes" EntityType="RoofingCompanyModel.PartType" />
           <EntitySet Name="Payments" EntityType="RoofingCompanyModel.Payment" />
           <EntitySet Name="PlannedProductions" EntityType="RoofingCompanyModel.PlannedProduction" />
-          <EntitySet Name="PlannedProductionEmployeeDetails" EntityType="RoofingCompanyModel.PlannedProductionEmployeeDetail" />
           <EntitySet Name="Positions" EntityType="RoofingCompanyModel.Position" />
           <EntitySet Name="Products" EntityType="RoofingCompanyModel.Product" />
           <EntitySet Name="ProductionProcesses" EntityType="RoofingCompanyModel.ProductionProcess" />
@@ -2791,10 +2790,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <AssociationSet Name="FK__Allocatio__IdEmp__208CD6FA" Association="RoofingCompanyModel.FK__Allocatio__IdEmp__208CD6FA">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Allocation" EntitySet="Allocations" />
-          </AssociationSet>
-          <AssociationSet Name="FKPlannedProductionEmployeeDetailsAllocation" Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation">
-            <End Role="Allocation" EntitySet="Allocations" />
-            <End Role="PlannedProductionEmployeeDetail" EntitySet="PlannedProductionEmployeeDetails" />
           </AssociationSet>
           <AssociationSet Name="FK__Contract__IdEmpl__09A971A2" Association="RoofingCompanyModel.FK__Contract__IdEmpl__09A971A2">
             <End Role="Employee" EntitySet="Employees" />
@@ -2932,10 +2927,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="PartRequest" EntitySet="PartRequests" />
             <End Role="PartOrderRequest" EntitySet="PartOrderRequests" />
           </AssociationSet>
-          <AssociationSet Name="FKPlannedProductionEmployeeDetailsPlannedProduction" Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction">
-            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
-            <End Role="PlannedProductionEmployeeDetail" EntitySet="PlannedProductionEmployeeDetails" />
-          </AssociationSet>
           <AssociationSet Name="FKProductionProcesPlannedProduction" Association="RoofingCompanyModel.FKProductionProcesPlannedProduction">
             <End Role="PlannedProduction" EntitySet="PlannedProductions" />
             <End Role="ProductionProcess" EntitySet="ProductionProcesses" />
@@ -2970,7 +2961,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </AssociationSet>
           <EntitySet Name="vAbsences" EntityType="RoofingCompanyModel.vAbsence" />
           <EntitySet Name="vAddTrainings" EntityType="RoofingCompanyModel.vAddTraining" />
-          <EntitySet Name="vEducationForms" EntityType="RoofingCompanyModel.vEducationForm" />
+          <EntitySet Name="vContracts" EntityType="RoofingCompanyModel.vContract" />
+          <EntitySet Name="vEmployeeDetails" EntityType="RoofingCompanyModel.vEmployeeDetail" />
           <EntitySet Name="vEmployeeLists" EntityType="RoofingCompanyModel.vEmployeeList" />
           <EntitySet Name="vExaminations" EntityType="RoofingCompanyModel.vExamination" />
           <EntitySet Name="vExpencesInvoices" EntityType="RoofingCompanyModel.vExpencesInvoice" />
@@ -2988,14 +2980,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="Expenses" EntityType="RoofingCompanyModel.Expense" />
           <EntitySet Name="Maintenances" EntityType="RoofingCompanyModel.Maintenance" />
           <EntitySet Name="Outsourcings" EntityType="RoofingCompanyModel.Outsourcing" />
+          <EntitySet Name="PlannedProductionEmployeeDetails" EntityType="RoofingCompanyModel.PlannedProductionEmployeeDetail" />
           <EntitySet Name="Suppliers" EntityType="RoofingCompanyModel.Supplier" />
-          <EntitySet Name="vContracts" EntityType="RoofingCompanyModel.vContract" />
           <EntitySet Name="vCustomers" EntityType="RoofingCompanyModel.vCustomer" />
-          <EntitySet Name="vEmployeeDetails" EntityType="RoofingCompanyModel.vEmployeeDetail" />
+          <EntitySet Name="vEducationForms" EntityType="RoofingCompanyModel.vEducationForm" />
           <EntitySet Name="vOrderDetails" EntityType="RoofingCompanyModel.vOrderDetail" />
           <EntitySet Name="vOutsourcingWithTypes" EntityType="RoofingCompanyModel.vOutsourcingWithType" />
           <EntitySet Name="vSupplierParts" EntityType="RoofingCompanyModel.vSupplierPart" />
           <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemi" />
+          <AssociationSet Name="FKPlannedProductionEmployeeDetailsAllocation" Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation">
+            <End Role="Allocation" EntitySet="Allocations" />
+            <End Role="PlannedProductionEmployeeDetail" EntitySet="PlannedProductionEmployeeDetails" />
+          </AssociationSet>
           <AssociationSet Name="FkOrderCustomerCustomer" Association="RoofingCompanyModel.FkOrderCustomerCustomer">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="OrderCustomer" EntitySet="OrderCustomers" />
@@ -3043,6 +3039,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <AssociationSet Name="FkOutsourcingOutsourcingType" Association="RoofingCompanyModel.FkOutsourcingOutsourcingType">
             <End Role="OutsourcingType" EntitySet="OutsourcingTypes" />
             <End Role="Outsourcing" EntitySet="Outsourcings" />
+          </AssociationSet>
+          <AssociationSet Name="FKPlannedProductionEmployeeDetailsPlannedProduction" Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction">
+            <End Role="PlannedProduction" EntitySet="PlannedProductions" />
+            <End Role="PlannedProductionEmployeeDetail" EntitySet="PlannedProductionEmployeeDetails" />
           </AssociationSet>
           <AssociationSet Name="FkSemiFinishedOrderSupplier" Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier">
             <End Role="Supplier" EntitySet="Suppliers" />
@@ -3493,21 +3493,9 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="PlannedEndd" Type="DateTime" Precision="3" />
           <Property Name="Inproduction" Type="Boolean" />
           <NavigationProperty Name="OrderDetail" Relationship="RoofingCompanyModel.FkOrderDetail" FromRole="PlannedProduction" ToRole="OrderDetail" />
-          <NavigationProperty Name="PlannedProductionEmployeeDetails" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction" FromRole="PlannedProduction" ToRole="PlannedProductionEmployeeDetail" />
           <NavigationProperty Name="ProductionProcesses" Relationship="RoofingCompanyModel.FKProductionProcesPlannedProduction" FromRole="PlannedProduction" ToRole="ProductionProcess" />
           <NavigationProperty Name="Maintenance" Relationship="RoofingCompanyModel.FkMachine" FromRole="PlannedProduction" ToRole="Maintenance" />
-        </EntityType>
-        <EntityType Name="PlannedProductionEmployeeDetail">
-          <Key>
-            <PropertyRef Name="IdDetail" />
-          </Key>
-          <Property Name="IdDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdProces" Type="Int32" Nullable="false" />
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="StartDate" Type="DateTime" Precision="3" />
-          <Property Name="EndDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Allocation" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" FromRole="PlannedProductionEmployeeDetail" ToRole="Allocation" />
-          <NavigationProperty Name="PlannedProduction" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction" FromRole="PlannedProductionEmployeeDetail" ToRole="PlannedProduction" />
+          <NavigationProperty Name="PlannedProductionEmployeeDetails" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction" FromRole="PlannedProduction" ToRole="PlannedProductionEmployeeDetail" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -3949,18 +3937,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
-          <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
-          <End Type="RoofingCompanyModel.PlannedProductionEmployeeDetail" Role="PlannedProductionEmployeeDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Allocation">
-              <PropertyRef Name="IdAllocation" />
-            </Principal>
-            <Dependent Role="PlannedProductionEmployeeDetail">
-              <PropertyRef Name="IdEmployee" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Contract__IdEmpl__09A971A2">
           <End Type="RoofingCompanyModel.Employee" Role="Employee" Multiplicity="0..1" />
           <End Type="RoofingCompanyModel.Contract" Role="Contract" Multiplicity="*" />
@@ -4369,18 +4345,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKPlannedProductionEmployeeDetailsPlannedProduction">
-          <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="1" />
-          <End Type="RoofingCompanyModel.PlannedProductionEmployeeDetail" Role="PlannedProductionEmployeeDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PlannedProduction">
-              <PropertyRef Name="IdPlan" />
-            </Principal>
-            <Dependent Role="PlannedProductionEmployeeDetail">
-              <PropertyRef Name="IdProces" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKProductionProcesPlannedProduction">
           <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="1" />
           <End Type="RoofingCompanyModel.ProductionProcess" Role="ProductionProcess" Multiplicity="*" />
@@ -4500,17 +4464,44 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="TrainingEndDate" Type="DateTime" Precision="0" />
           <Property Name="TrainingPrice" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="vEducationForm">
+        <EntityType Name="vContract">
           <Key>
             <PropertyRef Name="IdEmployee" />
           </Key>
           <Property Name="IdEmployee" Type="Int32" Nullable="false" />
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
+          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vEmployeeDetail">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApartmentNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="Int64" />
           <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="GraduationDate" Type="DateTime" Precision="0" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
+          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="vEmployeeList">
           <Key>
@@ -4714,6 +4705,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <NavigationProperty Name="OutsourcingCommitments" Relationship="RoofingCompanyModel.FkOutsourcingCommitmentOutsourcing" FromRole="Outsourcing" ToRole="OutsourcingCommitment" />
           <NavigationProperty Name="OutsourcingType" Relationship="RoofingCompanyModel.FkOutsourcingOutsourcingType" FromRole="Outsourcing" ToRole="OutsourcingType" />
         </EntityType>
+        <EntityType Name="PlannedProductionEmployeeDetail">
+          <Key>
+            <PropertyRef Name="IdDetail" />
+          </Key>
+          <Property Name="IdDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProces" Type="Int32" Nullable="false" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Allocation" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" FromRole="PlannedProductionEmployeeDetail" ToRole="Allocation" />
+          <NavigationProperty Name="PlannedProduction" Relationship="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction" FromRole="PlannedProductionEmployeeDetail" ToRole="PlannedProduction" />
+        </EntityType>
         <EntityType Name="Supplier">
           <Key>
             <PropertyRef Name="IdSupplier" />
@@ -4733,20 +4736,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="SupplierDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SemiFinishedOrders" Relationship="RoofingCompanyModel.FkSemiFinishedOrderSupplier" FromRole="Supplier" ToRole="SemiFinishedOrder" />
           <NavigationProperty Name="SupplierType" Relationship="RoofingCompanyModel.FkSupplierSupplierType" FromRole="Supplier" ToRole="SupplierType" />
-        </EntityType>
-        <EntityType Name="vContract">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
-          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
-          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vCustomer">
           <Key>
@@ -4773,30 +4762,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="KRS" Type="Double" />
           <Property Name="Opis" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vEmployeeDetail">
+        <EntityType Name="vEducationForm">
           <Key>
             <PropertyRef Name="IdEmployee" />
           </Key>
           <Property Name="IdEmployee" Type="Int32" Nullable="false" />
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ApartmentNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PESEL" Type="Int64" />
           <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="GraduationDate" Type="DateTime" Precision="0" />
-          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
-          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="vOrderDetail">
           <Key>
@@ -4891,6 +4867,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="KRS" Type="Double" Nullable="false" />
           <Property Name="Opis" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <Association Name="FKPlannedProductionEmployeeDetailsAllocation">
+          <End Type="RoofingCompanyModel.Allocation" Role="Allocation" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PlannedProductionEmployeeDetail" Role="PlannedProductionEmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Allocation">
+              <PropertyRef Name="IdAllocation" />
+            </Principal>
+            <Dependent Role="PlannedProductionEmployeeDetail">
+              <PropertyRef Name="IdEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FkOrderCustomerCustomer">
           <End Type="RoofingCompanyModel.Customer" Role="Customer" Multiplicity="1" />
           <End Type="RoofingCompanyModel.OrderCustomer" Role="OrderCustomer" Multiplicity="*" />
@@ -5032,6 +5020,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Principal>
             <Dependent Role="Outsourcing">
               <PropertyRef Name="IdOutsourcingType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPlannedProductionEmployeeDetailsPlannedProduction">
+          <End Type="RoofingCompanyModel.PlannedProduction" Role="PlannedProduction" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.PlannedProductionEmployeeDetail" Role="PlannedProductionEmployeeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlannedProduction">
+              <PropertyRef Name="IdPlan" />
+            </Principal>
+            <Dependent Role="PlannedProductionEmployeeDetail">
+              <PropertyRef Name="IdProces" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5466,17 +5466,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PlannedProductionEmployeeDetails">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.PlannedProductionEmployeeDetail">
-              <MappingFragment StoreEntitySet="PlannedProductionEmployeeDetails">
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="IdProces" ColumnName="IdProces" />
-                <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Positions">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Position">
               <MappingFragment StoreEntitySet="Position">
@@ -5851,13 +5840,41 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vEducationForms">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vEducationForm">
-              <MappingFragment StoreEntitySet="vEducationForm">
+          <EntitySetMapping Name="vContracts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vContract">
+              <MappingFragment StoreEntitySet="vContracts">
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
+                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeDetail">
+              <MappingFragment StoreEntitySet="vEmployeeDetails">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
+                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
                 <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
                 <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
-                <ScalarProperty Name="Degree" ColumnName="Degree" />
                 <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
@@ -6059,6 +6076,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PlannedProductionEmployeeDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.PlannedProductionEmployeeDetail">
+              <MappingFragment StoreEntitySet="PlannedProductionEmployeeDetails">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+                <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Supplier">
               <MappingFragment StoreEntitySet="Supplier">
@@ -6075,21 +6103,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
                 <ScalarProperty Name="IdSupplierType" ColumnName="IdSupplierType" />
                 <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vContracts">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vContract">
-              <MappingFragment StoreEntitySet="vContracts">
-                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
-                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
-                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6111,26 +6124,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vEmployeeDetails">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeDetail">
-              <MappingFragment StoreEntitySet="vEmployeeDetails">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
-                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+          <EntitySetMapping Name="vEducationForms">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEducationForm">
+              <MappingFragment StoreEntitySet="vEducationForm">
                 <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
                 <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
                 <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
-                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
-                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />

@@ -62,7 +62,6 @@ namespace KWZP2019
         public virtual DbSet<PartType> PartTypes { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<PlannedProduction> PlannedProductions { get; set; }
-        public virtual DbSet<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductionProcess> ProductionProcesses { get; set; }
@@ -99,7 +98,8 @@ namespace KWZP2019
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
         public virtual DbSet<vAbsence> vAbsences { get; set; }
         public virtual DbSet<vAddTraining> vAddTrainings { get; set; }
-        public virtual DbSet<vEducationForm> vEducationForms { get; set; }
+        public virtual DbSet<vContract> vContracts { get; set; }
+        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
         public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
@@ -117,10 +117,10 @@ namespace KWZP2019
         public virtual DbSet<Expense> Expenses { get; set; }
         public virtual DbSet<Maintenance> Maintenances { get; set; }
         public virtual DbSet<Outsourcing> Outsourcings { get; set; }
+        public virtual DbSet<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<vContract> vContracts { get; set; }
         public virtual DbSet<vCustomer> vCustomers { get; set; }
-        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
+        public virtual DbSet<vEducationForm> vEducationForms { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
         public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }

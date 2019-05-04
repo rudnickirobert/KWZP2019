@@ -12,47 +12,59 @@ namespace KWZP2019
 {
     public partial class Finances : Form
     {
-        RoofingCompanyEntities db;
-        public Finances(RoofingCompanyEntities db)
+        private RoofingCompanyEntities db;
+        private StartForm startForm;
+        private FinancesAndHR finanseIHR;
+        public Finances(RoofingCompanyEntities db, StartForm startForm, FinancesAndHR finanseIHR)
         {
-            InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.finanseIHR = finanseIHR;
+            InitializeComponent();
         }
-
-        private void btnPayments_Click(object sender, EventArgs e)
+        private void btnSalariesHistory_Click(object sender, EventArgs e)
         {
-            Salaries salaries = new Salaries(db);
-            salaries.ShowDialog();
+            SalariesHistory salariesHistory = new SalariesHistory(db, startForm, this);
+            salariesHistory.Show();
+            this.Hide();
         }
-
         private void btnCountPayments_Click(object sender, EventArgs e)
         {
-            SalariesSummary salariesSummary = new SalariesSummary(db);
-            salariesSummary.ShowDialog();
+            SalariesSummary salariesSummary = new SalariesSummary(db, startForm, this);
+            salariesSummary.Show();
+            this.Hide();
         }
-
         private void btnCosts_Click(object sender, EventArgs e)
         {
-            Costs costs = new Costs(db);
-            costs.ShowDialog();
+            AllExpenses costs = new AllExpenses(db, startForm, this);
+            costs.Show();
         }
-
         private void btnEarnings_Click(object sender, EventArgs e)
         {
-            Profits profits = new Profits(db);
-            profits.ShowDialog();
+            AllIncomes allCosts = new AllIncomes(db, startForm, this);
+            allCosts.Show();
         }
-
         private void btnFinancialStatement_Click(object sender, EventArgs e)
         {
-            AllCosts allCosts = new AllCosts(db);
-            allCosts.ShowDialog();
-        }
+            Profits profits = new Profits(db, startForm, this);
+            profits.Show();
 
+        }
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            AddInvoices addInvoices = new AddInvoices(db);
-            addInvoices.ShowDialog();
+            AddInvoices addInvoices = new AddInvoices(db, startForm, this);
+            addInvoices.Show();
+            this.Hide();
+        }
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.startForm.Show();
+        }
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finanseIHR.Show();
+            this.Hide();
         }
     }
 }

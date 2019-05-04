@@ -17,8 +17,8 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PlannedProduction()
         {
-            this.PlannedProductionEmployeeDetails = new HashSet<PlannedProductionEmployeeDetail>();
             this.ProductionProcesses = new HashSet<ProductionProcess>();
+            this.PlannedProductionEmployeeDetails = new HashSet<PlannedProductionEmployeeDetail>();
         }
     
         public int IdPlan { get; set; }
@@ -30,9 +30,9 @@ namespace KWZP2019
     
         public virtual OrderDetail OrderDetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductionProcess> ProductionProcesses { get; set; }
         public virtual Maintenance Maintenance { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PlannedProductionEmployeeDetail> PlannedProductionEmployeeDetails { get; set; }
     }
 }
