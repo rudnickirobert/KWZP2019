@@ -990,6 +990,11 @@
     <None Include="Resources\icons8-abacus-40.png" />
     <None Include="Resources\icons8-abacus-80.png" />
     <None Include="Resources\icons8-save-40.png" />
+    <None Include="Resources\icons8-euro-money-80.png" />
+    <None Include="Resources\icons8-user-groups-80 %281%29.png" />
+    <Content Include="Resources\icons8-clear-filters-40.png" />
+    <Content Include="Resources\icons8-filter-40.png" />
+    <Content Include="Resources\icons8-home-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
