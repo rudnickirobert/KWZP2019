@@ -781,28 +781,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeList' does not have a 
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'RoofingCompany.dbo.vEmployeeSalesDepartment' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vEmployeeSalesDepartment">
-          <Property Name="Imię" Type="nvarchar" MaxLength="50" />
-          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
-          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="50" />
-          <Property Name="Miasto" Type="nvarchar" MaxLength="50" />
-          <Property Name="Ulica" Type="nvarchar" MaxLength="50" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="50" />
-          <Property Name="Numer lokalu" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
-          <Property Name="PESEL" Type="bigint" />
-          <Property Name="Dział" Type="nvarchar" MaxLength="50" />
-          <Property Name="Data początku" Type="date" />
-          <Property Name="Data końca" Type="date" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'RoofingCompany.dbo.vEmployeeSD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vEmployeeSD">
-          <Property Name="Imię" Type="nvarchar" MaxLength="50" />
-          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vExamination">
           <Key>
@@ -1083,6 +1061,25 @@ warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' doe
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
           <Property Name="Markup" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vProductionProcessFullData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vProductionProcessFullData">
+          <Key>
+            <PropertyRef Name="IdProces" />
+            <PropertyRef Name="IdPlan" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="CatalogMachineNr" />
+          </Key>
+          <Property Name="IdProces" Type="int" Nullable="false" />
+          <Property Name="IdPlan" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineName" Type="varchar" MaxLength="50" />
+          <Property Name="CatalogMachineNr" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSafetyControlHistoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2334,6 +2331,19 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vPredictedPriceForCustomer].[Markup] AS [Markup]
     FROM [dbo].[vPredictedPriceForCustomer] AS [vPredictedPriceForCustomer]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vProductionProcessFullData" EntityType="Self.vProductionProcessFullData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vProductionProcessFullData].[IdProces] AS [IdProces], 
+    [vProductionProcessFullData].[IdPlan] AS [IdPlan], 
+    [vProductionProcessFullData].[StartDate] AS [StartDate], 
+    [vProductionProcessFullData].[EndDate] AS [EndDate], 
+    [vProductionProcessFullData].[IdEmployee] AS [IdEmployee], 
+    [vProductionProcessFullData].[EmployeeName] AS [EmployeeName], 
+    [vProductionProcessFullData].[EmployeeSurname] AS [EmployeeSurname], 
+    [vProductionProcessFullData].[MachineName] AS [MachineName], 
+    [vProductionProcessFullData].[CatalogMachineNr] AS [CatalogMachineNr]
+    FROM [dbo].[vProductionProcessFullData] AS [vProductionProcessFullData]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vSafetyControlHistoryView" EntityType="Self.vSafetyControlHistoryView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vSafetyControlHistoryView].[IdInspection] AS [IdInspection], 
@@ -3017,6 +3027,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vIncomesProfits" EntityType="RoofingCompanyModel.vIncomesProfit" />
           <EntitySet Name="vInvoiceTypes" EntityType="RoofingCompanyModel.vInvoiceType" />
           <EntitySet Name="vPaymentHistories" EntityType="RoofingCompanyModel.vPaymentHistory" />
+          <EntitySet Name="vProductionProcessFullDatas" EntityType="RoofingCompanyModel.vProductionProcessFullData" />
           <EntitySet Name="vInputMagazines" EntityType="RoofingCompanyModel.vInputMagazine" />
           <EntitySet Name="vOrderDetails" EntityType="RoofingCompanyModel.vOrderDetail" />
           <EntitySet Name="vOutputMagazines" EntityType="RoofingCompanyModel.vOutputMagazine" />
@@ -5010,6 +5021,23 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="IdEmployee" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="vProductionProcessFullData">
+          <Key>
+            <PropertyRef Name="IdProces" />
+            <PropertyRef Name="IdPlan" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="CatalogMachineNr" />
+          </Key>
+          <Property Name="IdProces" Type="Int32" Nullable="false" />
+          <Property Name="IdPlan" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CatalogMachineNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="vInputMagazine">
           <Key>
             <PropertyRef Name="Kod_Produktu" />
@@ -6244,6 +6272,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="PESEL" ColumnName="PESEL" />
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vProductionProcessFullDatas">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vProductionProcessFullData">
+              <MappingFragment StoreEntitySet="vProductionProcessFullData">
+                <ScalarProperty Name="CatalogMachineNr" ColumnName="CatalogMachineNr" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
+                <ScalarProperty Name="IdProces" ColumnName="IdProces" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

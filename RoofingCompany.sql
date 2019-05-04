@@ -978,3 +978,19 @@ FROM MedicalExamination
 WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE());
 
 
+GO
+
+CREATE VIEW vProductionProcessFullData
+AS
+SELECT ProductionProcess.IdProces, ProductionProcess.IdPlan, ProductionProcess.StartDate, ProductionProcess.EndDate, PlannedProductionEmployeeDetails.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Machine.MachineName, Machine.CatalogMachineNr
+FROM ProductionProcess
+JOIN PlannedProduction
+ON ProductionProcess.IdPlan = PlannedProduction.IdPlan
+JOIN PlannedProductionEmployeeDetails
+ON PlannedProductionEmployeeDetails.IdDetail = PlannedProduction.IdDetail
+JOIN Employee
+ON PlannedProductionEmployeeDetails.IdEmployee = Employee.IdEmployee
+JOIN Machine
+ON PlannedProduction.IdMachine = Machine.IdMachine
+GO
+

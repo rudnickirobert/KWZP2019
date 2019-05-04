@@ -16,14 +16,5 @@ namespace KWZP2019
         {
             InitializeComponent();
         }
-   
-        private void outWarehouseBtn_Click(object sender, EventArgs e)
-        {
-            outWarehouseGb.Visible = true;
-        }
-        private void entranceWarehouseBtn_Click(object sender, EventArgs e)
-        {
-            entranceWarehouseGb.Visible = true;
-        }
     }
 }

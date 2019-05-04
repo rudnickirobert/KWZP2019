@@ -233,9 +233,39 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_clear_filters_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clear-filters-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_duration_finance_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-duration-finance-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_filter_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-filter-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_home_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-home-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
