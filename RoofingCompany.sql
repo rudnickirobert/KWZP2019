@@ -1,6 +1,6 @@
 ﻿use master;
 go
-drop database RoofingCompany;
+drop database if exists RoofingCompany;
 create database RoofingCompany;
 go
 use RoofingCompany;
@@ -762,30 +762,6 @@ SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSa
 FROM SafetyControl
 JOIN Employee
 ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
-GO
-
---Views UR--
-
-CREATE VIEW vPartsView
-AS
-SELECT Part.PartName as [Nazwa części], 
-PartType.partType as [Typ części], 
-Unit.UnitName as [Jednostka], 
-Part.QuantityWarehouse as [Stan magazynowy]
-FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
-ON Unit.IdUnit = Part.IdUnit
-ORDER BY Part.PartName;
-GO
-
-CREATE VIEW vMaintPartsView
-AS
-SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
-Part.PartName as [Nazwa części], MaintPart.PartQuantity as [Ilość], Unit.UnitName as [Jednostka]
-FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart 
-ON Part.IdPart = MaintPart.IdPart) 
-ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
-ON Unit.IdUnit = Part.IdUnit
-ORDER BY Maintenance.DateAcceptOrder DESC;
 GO
 
 /*====SALES DEPARTMENT START===*/
