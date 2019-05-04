@@ -152,7 +152,7 @@ namespace KWZP2019
                             HideCharts();
                             break;
                         }
-                    case "W takcie realizacji":
+                    case "W trakcie realizacji":
                         {
                             txtbOutControlStatus.BackColor = Color.YellowGreen;
                             btnSMeasures.Visible = true;
