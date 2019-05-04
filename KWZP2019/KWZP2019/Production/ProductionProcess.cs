@@ -38,6 +38,20 @@ namespace KWZP2019
                 newProductionProces.EndDate = plannedProduction.PlannedEndd;
                 db.ProductionProcesses.Add(newProductionProces);
             }
+
+            List<PlannedProduction> plansToUpdate = db.PlannedProductions.
+              Where(plannedProductionPlanToUpdate => db.ProductionProcesses.
+              Select(productionProcessPlanToUpdate => productionProcessPlanToUpdate.IdPlan).
+              Contains(plannedProductionPlanToUpdate.IdPlan) && plannedProductionPlanToUpdate.Inproduction.Value).ToList();
+
+
+            foreach (PlannedProduction plannedProductionToUpdate in plansToUpdate)
+            {
+                ProductionProcess updateProcess = db.ProductionProcesses.Find(plannedProductionToUpdate.IdPlan);
+                updateProcess.StartDate = plannedProductionToUpdate.PlannedStartd;
+                updateProcess.EndDate = plannedProductionToUpdate.PlannedEndd;
+            }
+
             db.SaveChanges();
             ProductionProcessGridView.DataSource = db.vProductionProcessFullDatas.
                 Where(ProdProc => ProdProc.EndDate >= DateTime.Now).ToList();
