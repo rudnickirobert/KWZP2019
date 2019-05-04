@@ -257,7 +257,6 @@
             this.cityLbl.Size = new System.Drawing.Size(130, 24);
             this.cityLbl.TabIndex = 30;
             this.cityLbl.Text = "Miejscowość";
-            this.cityLbl.Click += new System.EventHandler(this.cityLbl_Click);
             // 
             // emailLbl
             // 
