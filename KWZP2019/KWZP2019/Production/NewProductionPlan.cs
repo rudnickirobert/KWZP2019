@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Extensions.DateTime;
 
 namespace KWZP2019
 {
@@ -102,7 +103,11 @@ namespace KWZP2019
                 timeInterval = orderDetail.Quantity * machine.MetersPerHour * 0.3 * technology.TimePermeter * 0.2
                                 / employeesQuantity + orderDetail.Quantity * 0.7;
                 DateTime dateEnd = dateTimeStart.Value.AddMinutes(timeInterval);
-                dateTimeEnd.Value = dateEnd;
+                DateTime dateStart = dateTimeStart.Value;
+                double totalDays = (dateEnd - dateStart).TotalDays;
+                string messageAboutProductionDuration = "Produkcja zajmie: " + Convert.ToString(Math.Round(totalDays, 2)) + " dni roboczych.";
+                MessageBox.Show(messageAboutProductionDuration, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dateTimeEnd.Value = dateStart.AddBusinessDays(totalDays);
                 btnSave.Enabled = true;
             }
         }

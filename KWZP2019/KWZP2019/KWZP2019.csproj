@@ -103,6 +103,12 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTechnology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTechnology.Designer.cs">
+      <DependentUpon>EditTechnology.cs</DependentUpon>
+    </Compile>
     <Compile Include="Education.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -295,6 +301,12 @@
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewTechnology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTechnology.Designer.cs">
+      <DependentUpon>NewTechnology.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -463,6 +475,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QualityControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -598,6 +615,9 @@
     <Compile Include="vProductionProcessFullData.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vSafetyControlHistoryView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vSuccesfullyProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -625,6 +645,7 @@
     <Compile Include="WarehouseForm.designer.cs">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkingDays.cs" />
     <EmbeddedResource Include="AddNewCustomerForm.resx">
       <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -648,6 +669,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTechnology.resx">
+      <DependentUpon>EditTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\Absences.resx">
       <DependentUpon>Absences.cs</DependentUpon>
@@ -684,6 +708,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTechnology.resx">
+      <DependentUpon>NewTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
@@ -759,14 +786,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Finances\Salaries.resx">
       <DependentUpon>Salaries.cs</DependentUpon>
     </EmbeddedResource>
@@ -806,7 +828,7 @@
     <None Include="Production\ProductionProcess.datasource" />
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
-    <None Include="Properties\DataSources\vProductionProcessFullData.datasource" />
+    <None Include="Properties\DataSources\SafetyControlHistoryView.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
     <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
@@ -861,10 +883,17 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-pencil-40.png" />
+    <None Include="Resources\icons8-pencil-80.png" />
+    <None Include="Resources\icons8-repeat-80.png" />
     <None Include="Resources\icons8-return-40.png" />
-    <None Include="Resources\icons8-home-40.png" />
-    <None Include="Resources\icons8-filter-40.png" />
-    <None Include="Resources\icons8-clear-filters-40.png" />
+    <None Include="Resources\icons8-add-new-40.png" />
+    <None Include="Resources\icons8-add-new-80.png" />
+    <None Include="Resources\icons8-add-user-male-40.png" />
+    <None Include="Resources\icons8-denied-40.png" />
+    <None Include="Resources\icons8-abacus-40.png" />
+    <None Include="Resources\icons8-abacus-80.png" />
+    <None Include="Resources\icons8-save-40.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>

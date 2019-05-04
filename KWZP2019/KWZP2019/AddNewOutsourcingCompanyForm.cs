@@ -44,7 +44,7 @@ namespace KWZP2019
                 bool phoneTextBox = int.TryParse(phoneTb.Text.Trim(), out int phoneTextbox);
                 if (phoneTextBox)
                 {
-                    newOutsourcing.PhoneNumber = phoneTextbox;
+                    newOutsourcing.PhoneNumber = Convert.ToString(phoneTextBox);
                 }
                
                 newOutsourcing.Email = emailTb.Text.Trim();
@@ -55,7 +55,7 @@ namespace KWZP2019
                 bool houseNumberTextBox = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTextbox);
                 if (houseNumberTextBox)
                 {
-                    newOutsourcing.HouseNumber = houseNumberTextbox;
+                    newOutsourcing.HouseNumber = Convert.ToString(houseNumberTextBox);
                 }
                 else
                 {
@@ -64,7 +64,7 @@ namespace KWZP2019
                 bool apartmentNumberTextBox = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTextbox);
                 if (apartmentNumberTextBox)
                 {
-                    newOutsourcing.ApartmentNumber = apartmentNumberTextbox;
+                    newOutsourcing.ApartmentNumber = Convert.ToString(apartmentNumberTextBox);
                 }
                 else
                 {
@@ -73,7 +73,7 @@ namespace KWZP2019
                 bool nipTextBox = int.TryParse(nipTb.Text.Trim(), out int nipTextbox);
                 if (nipTextBox)
                 {
-                    newOutsourcing.NIP = nipTextbox;
+                    newOutsourcing.NIP = Convert.ToString(nipTextbox);
                 }
                 else
                 {
@@ -82,7 +82,7 @@ namespace KWZP2019
                 bool krsTextBox = int.TryParse(krsTb.Text.Trim(), out int krsTextbox);
                 if (krsTextBox)
                 {
-                    newOutsourcing.KRS = krsTextbox;
+                    newOutsourcing.KRS = Convert.ToString(krsTextbox);
                 }
                 else
                 {
