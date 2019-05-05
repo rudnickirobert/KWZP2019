@@ -44,7 +44,6 @@
             this.cBoxIntoProduction = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.viewProcessEmpl = new System.Windows.Forms.DataGridView();
-            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblOperators = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,14 +55,21 @@
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
             this.viewOrderDetail = new System.Windows.Forms.DataGridView();
-            this.vUnhandledOrderDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.btnEndDateCalculate = new System.Windows.Forms.Button();
+            this.vUnhandledOrderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddEmployee
@@ -246,6 +252,10 @@
             // 
             this.viewProcessEmpl.AutoGenerateColumns = false;
             this.viewProcessEmpl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewProcessEmpl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
             this.viewProcessEmpl.DataSource = this.plannedProductionEmployeeDetailBindingSource;
             this.viewProcessEmpl.Location = new System.Drawing.Point(455, 127);
             this.viewProcessEmpl.Margin = new System.Windows.Forms.Padding(2);
@@ -390,7 +400,11 @@
             // 
             this.viewOrderDetail.AutoGenerateColumns = false;
             this.viewOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewOrderDetail.DataSource = this.vUnhandledOrderDetailsBindingSource;
+            this.viewOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.viewOrderDetail.DataSource = this.vUnhandledOrderDetailBindingSource;
             this.viewOrderDetail.Location = new System.Drawing.Point(17, 127);
             this.viewOrderDetail.Margin = new System.Windows.Forms.Padding(2);
             this.viewOrderDetail.Name = "viewOrderDetail";
@@ -427,6 +441,56 @@
             this.btnEndDateCalculate.UseVisualStyleBackColor = false;
             this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
             // 
+            // vUnhandledOrderDetailBindingSource
+            // 
+            this.vUnhandledOrderDetailBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
+            // 
+            // plannedProductionEmployeeDetailBindingSource
+            // 
+            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdDetail";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nr szczegółu";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Ilość";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ProductCode";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Kod produktu";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdEmployee";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Numer pracownika";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "StartDate";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Data rozpoczęcia";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "EndDate";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Data zakończenia";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
             // NewProductionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,11 +522,11 @@
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,7 +549,6 @@
         private System.Windows.Forms.CheckBox cBoxIntoProduction;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView viewProcessEmpl;
-        private System.Windows.Forms.BindingSource plannedProductionEmployeeDetailBindingSource;
         private System.Windows.Forms.Label lblOperators;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
@@ -500,7 +563,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDetailDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource vUnhandledOrderDetailsBindingSource;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.Button btnEndDateCalculate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDetailDataGridViewTextBoxColumn;
@@ -510,5 +572,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plannedProductionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vUnhandledOrderDetailBindingSource;
+        private System.Windows.Forms.BindingSource plannedProductionEmployeeDetailBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
