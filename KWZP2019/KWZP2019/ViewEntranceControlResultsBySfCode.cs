@@ -15,10 +15,10 @@ namespace KWZP2019
     public partial class ViewEntranceControlResultsBySfCode
     {
         public string SfCode { get; set; }
+        public System.DateTime ControlDate { get; set; }
+        public Nullable<bool> ControlStatus { get; set; }
         public decimal RealThickness { get; set; }
         public decimal RealWidth { get; set; }
         public decimal RealWeight { get; set; }
-        public System.DateTime ControlDate { get; set; }
-        public Nullable<bool> ControlStatus { get; set; }
     }
 }

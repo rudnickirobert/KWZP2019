@@ -12,11 +12,8 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class ViewDailySfDelivery
+    public partial class vHRExamination
     {
-        public System.DateTime Delivery { get; set; }
-        public string SupplierName { get; set; }
-        public string SfCode { get; set; }
-        public int Quantity { get; set; }
+        public int IdMedicalExamination { get; set; }
     }
 }

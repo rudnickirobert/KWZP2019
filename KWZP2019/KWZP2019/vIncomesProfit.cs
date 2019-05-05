@@ -12,20 +12,11 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vCompany
+    public partial class vIncomesProfit
     {
         public int IdCustomer { get; set; }
         public string CustomerName { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
-        public string Street { get; set; }
-        public int HouseNumber { get; set; }
-        public int ApartmentNumber { get; set; }
-        public Nullable<double> Pesel { get; set; }
-        public Nullable<double> NIP { get; set; }
-        public Nullable<double> KRS { get; set; }
-        public string Description { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public decimal Cost { get; set; }
     }
 }
