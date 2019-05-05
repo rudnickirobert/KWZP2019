@@ -70,6 +70,7 @@ namespace KWZP2019
         {
             dataGVOshTraining.DataSource = db.ViewOshTrainings.
                 Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
+                this.dataGVOshTraining.Columns["Dział"].Visible = false;
         }
 
         void clear()
