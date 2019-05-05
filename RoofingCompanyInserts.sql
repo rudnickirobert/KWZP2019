@@ -485,10 +485,12 @@ insert into Part values (5, 3, 'Łańcuch krzyżakowy', 'Kort', 5735, 5);
 insert into Part values (2, 3, 'Pasek zębaty', 'Oscar', 450, 12);
 
 insert into Maintenance values (2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
-insert into Maintenance values (4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
+insert into Maintenance values (2, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
 insert into Maintenance values (1, 3, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
 insert into Maintenance values (5, 2, 3, '2019-03-13 12:15:54 PM', '2019-03-13 12:20:42 PM', '2019-03-13 12:40:32 PM', 'J4K1EHU1');
 insert into Maintenance values (3, 2, 4, '2019-04-10 08:33:21 AM', '2019-05-20 08:12:47 AM', '2019-05-20 10:53:40 AM', 'T0D3B1L3');
+--insert into Maintenance values (2, 1, 2, '2019-05-11 08:23:32 AM', '2019-05-11 10:14:09 AM', '2019-05-11 12:45:13 AM', '76THR521');
+--insert into Maintenance values (2, 1, 2, '2019-05-14 08:23:32 AM', '2019-05-15 09:14:09 AM', '2019-03-11 11:45:13 AM', 'IUT75BG3');
 
 insert into MaintPart values (1, 5, 2);
 insert into MaintPart values (2, 1, 4);
@@ -672,6 +674,8 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 	(5,'nie dziala','2019-06-23');
 
 insert into FailureMaintenance values (1, 2);
+--insert into FailureMaintenance values (2, 6);
+--insert into FailureMaintenance values (3, 7);
 
 insert into OutControl (IdProcess, IdEmployee, StartControlDate, EndControlDate, WidthAcceptableDeviation, LenghtAcceptableDeviation)
 values

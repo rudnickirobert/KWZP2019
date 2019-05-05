@@ -29,9 +29,9 @@ namespace KWZP2019
 
         private void btnNewMaintenance_Click(object sender, EventArgs e)
         {
-            NewMaintenanceForm newMaintenanceForm = new NewMaintenanceForm(db, startForm, this);
+            FailureListForm failureListForm = new FailureListForm(this.db, startForm, this);
             this.Hide();
-            newMaintenanceForm.Show();
+            failureListForm.Show();
         }
 
         private void btnMachines_Click(object sender, EventArgs e)

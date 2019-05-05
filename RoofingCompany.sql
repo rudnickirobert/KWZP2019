@@ -283,7 +283,7 @@ create table Maintenance (
 IdMaintenance int primary key identity (1,1) not null,
 IdMachine int not null,
 IdMaintType int not null,
-IdMaintDesc int not null,
+IdMaintDesc int  null,
 DateAcceptOrder datetime not null,
 StartDatePlan datetime not null,
 EndDatePlan datetime not null,
@@ -993,3 +993,51 @@ JOIN Machine
 ON PlannedProduction.IdMachine = Machine.IdMachine
 GO
 
+CREATE VIEW vNewFailures
+AS
+SELECT Failure.IdFailure, Failure.Specification, Failure.FailureDate, Machine.MachineName
+FROM   Failure
+INNER JOIN ProductionProcess ON Failure.IdProces = ProductionProcess.IdProces 
+INNER JOIN PlannedProduction ON ProductionProcess.IdPlan = PlannedProduction.IdPlan 
+INNER JOIN Machine ON PlannedProduction.IdMachine = Machine.IdMachine
+WHERE        
+(NOT EXISTS (SELECT IdFailureMaint, IdFailure, IdMaintenance
+FROM FailureMaintenance AS FailureMaintenance_1
+WHERE (IdFailure = Failure.IdFailure)))
+GO
+
+CREATE VIEW vComboboxNewFailures
+AS
+SELECT IdFailure, Specification
+FROM Failure
+WHERE 
+(NOT EXISTS (SELECT IdFailureMaint, IdFailure, IdMaintenance
+FROM FailureMaintenance
+WHERE (IdFailure = Failure.IdFailure)))
+GO
+
+CREATE VIEW vMachineFailure
+AS
+SELECT Failure.IdFailure, Machine.IdMachine, Machine.MachineName
+FROM Failure 
+INNER JOIN ProductionProcess ON Failure.IdProces = ProductionProcess.IdProces 
+INNER JOIN PlannedProduction ON ProductionProcess.IdPlan = PlannedProduction.IdPlan 
+INNER JOIN Machine ON PlannedProduction.IdMachine = Machine.IdMachine
+GO
+
+CREATE VIEW vMaintenanceEmployees
+AS
+SELECT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Department.DepartmentName
+FROM Employee 
+INNER JOIN Allocation ON Employee.IdEmployee = Allocation.IdEmployee 
+INNER JOIN Department ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (Department.DepartmentName = 'Utrzymanie ruchu')
+GO
+
+CREATE VIEW vMaintenanceAssignEmployees
+AS
+SELECT EmployeePlan.IdEmployee, EmployeePlan.IdMaintenance, Employee.EmployeeName, Employee.EmployeeSurname, EmployeePlan.StartDate, EmployeePlan.EndDate
+FROM Employee 
+INNER JOIN Allocation ON Employee.IdEmployee = Allocation.IdEmployee 
+INNER JOIN EmployeePlan ON Employee.IdEmployee = EmployeePlan.IdEmployee
+GO

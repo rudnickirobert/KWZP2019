@@ -101,7 +101,7 @@
             this.btnNewMaintenance.Name = "btnNewMaintenance";
             this.btnNewMaintenance.Size = new System.Drawing.Size(290, 160);
             this.btnNewMaintenance.TabIndex = 7;
-            this.btnNewMaintenance.Text = "Nowe zlecenie";
+            this.btnNewMaintenance.Text = "Lista awarii";
             this.btnNewMaintenance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNewMaintenance.UseVisualStyleBackColor = false;
             this.btnNewMaintenance.Click += new System.EventHandler(this.btnNewMaintenance_Click);
