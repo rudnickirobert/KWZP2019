@@ -33,11 +33,6 @@ namespace KWZP2019
             {
                 cbInvoiceType.Items.Add(typeList.Type);
             }
-            List<Contractor> contractorList = db.Contractors.ToList();
-            foreach (Contractor contractor in contractorList)
-            {
-                cbContractors.Items.Add(contractor.ContractorName);
-            }
         }
         private void btnAddNewInvoice_Click(object sender, EventArgs e)
         {
@@ -68,6 +63,17 @@ namespace KWZP2019
         {
             this.startForm.Show();
             this.Hide();
+        }
+
+        private void cbContractors_Click(object sender, EventArgs e)
+        {
+            List<Contractor> contractorList = db.Contractors.ToList();
+            cbContractors.Items.Clear();
+            foreach (Contractor contractor in contractorList)
+            {
+                cbContractors.Items.Add(contractor.ContractorName);
+            }
+           
         }
     }
 }
