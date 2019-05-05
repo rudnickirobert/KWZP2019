@@ -29,34 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DevelopmentForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDone = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
-            this.dataGVFEM = new System.Windows.Forms.DataGridView();
             this.lblFormTitle = new System.Windows.Forms.Label();
-            this.btnShowFromDate = new System.Windows.Forms.Button();
-            this.btnShowAll = new System.Windows.Forms.Button();
-            this.datePickerSelectedControlsDate = new System.Windows.Forms.DateTimePicker();
             this.picboxNewPattern = new System.Windows.Forms.PictureBox();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTeamLeader = new System.Windows.Forms.Label();
-            this.checkBoxPositiveResult = new System.Windows.Forms.CheckBox();
-            this.checkBoxNegativeResult = new System.Windows.Forms.CheckBox();
             this.btnImportPicture = new System.Windows.Forms.Button();
-            this.lblResults = new System.Windows.Forms.Label();
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.lblEmployeeId = new System.Windows.Forms.Label();
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVFEM)).BeginInit();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxNewPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +65,7 @@
             this.btnDone.Image = global::KWZP2019.Properties.Resources.icons8_send_40;
             this.btnDone.Name = "btnDone";
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // btnCheck
             // 
@@ -101,6 +93,7 @@
             this.btnReturn.Image = global::KWZP2019.Properties.Resources.icons8_return_40;
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnReturnMain
             // 
@@ -114,56 +107,7 @@
             this.btnReturnMain.Image = global::KWZP2019.Properties.Resources.icons8_home_40;
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.UseVisualStyleBackColor = false;
-            // 
-            // dataGVFEM
-            // 
-            this.dataGVFEM.AllowUserToAddRows = false;
-            this.dataGVFEM.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVFEM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGVFEM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGVFEM.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGVFEM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.dataGVFEM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGVFEM.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGVFEM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGVFEM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGVFEM.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGVFEM.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            resources.ApplyResources(this.dataGVFEM, "dataGVFEM");
-            this.dataGVFEM.MultiSelect = false;
-            this.dataGVFEM.Name = "dataGVFEM";
-            this.dataGVFEM.ReadOnly = true;
-            this.dataGVFEM.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGVFEM.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVFEM.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGVFEM.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGVFEM.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGVFEM.ShowEditingIcon = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // lblFormTitle
             // 
@@ -173,36 +117,6 @@
             resources.ApplyResources(this.lblFormTitle, "lblFormTitle");
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFormTitle.Name = "lblFormTitle";
-            // 
-            // btnShowFromDate
-            // 
-            this.btnShowFromDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnShowFromDate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnShowFromDate.FlatAppearance.BorderSize = 3;
-            this.btnShowFromDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnShowFromDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            resources.ApplyResources(this.btnShowFromDate, "btnShowFromDate");
-            this.btnShowFromDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowFromDate.Name = "btnShowFromDate";
-            this.btnShowFromDate.UseVisualStyleBackColor = false;
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnShowAll.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnShowAll.FlatAppearance.BorderSize = 3;
-            this.btnShowAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnShowAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            resources.ApplyResources(this.btnShowAll, "btnShowAll");
-            this.btnShowAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.UseVisualStyleBackColor = false;
-            // 
-            // datePickerSelectedControlsDate
-            // 
-            resources.ApplyResources(this.datePickerSelectedControlsDate, "datePickerSelectedControlsDate");
-            this.datePickerSelectedControlsDate.Name = "datePickerSelectedControlsDate";
-            this.datePickerSelectedControlsDate.Value = new System.DateTime(2019, 4, 24, 21, 29, 8, 0);
             // 
             // picboxNewPattern
             // 
@@ -232,22 +146,6 @@
             this.lblTeamLeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTeamLeader.Name = "lblTeamLeader";
             // 
-            // checkBoxPositiveResult
-            // 
-            this.checkBoxPositiveResult.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.checkBoxPositiveResult, "checkBoxPositiveResult");
-            this.checkBoxPositiveResult.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxPositiveResult.Name = "checkBoxPositiveResult";
-            this.checkBoxPositiveResult.UseVisualStyleBackColor = false;
-            // 
-            // checkBoxNegativeResult
-            // 
-            this.checkBoxNegativeResult.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.checkBoxNegativeResult, "checkBoxNegativeResult");
-            this.checkBoxNegativeResult.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxNegativeResult.Name = "checkBoxNegativeResult";
-            this.checkBoxNegativeResult.UseVisualStyleBackColor = false;
-            // 
             // btnImportPicture
             // 
             this.btnImportPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
@@ -260,13 +158,7 @@
             this.btnImportPicture.Image = global::KWZP2019.Properties.Resources.icons8_import_40;
             this.btnImportPicture.Name = "btnImportPicture";
             this.btnImportPicture.UseVisualStyleBackColor = false;
-            // 
-            // lblResults
-            // 
-            this.lblResults.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.lblResults, "lblResults");
-            this.lblResults.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblResults.Name = "lblResults";
+            this.btnImportPicture.Click += new System.EventHandler(this.btnImportPicture_Click);
             // 
             // pictureBoxForm
             // 
@@ -286,6 +178,7 @@
             // 
             resources.ApplyResources(this.textBoxEmployeeId, "textBoxEmployeeId");
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
+            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
             // 
             // textBoxName
             // 
@@ -297,28 +190,49 @@
             resources.ApplyResources(this.textBoxSurname, "textBoxSurname");
             this.textBoxSurname.Name = "textBoxSurname";
             // 
+            // lblDescription
+            // 
+            resources.ApplyResources(this.lblDescription, "lblDescription");
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDescription.Name = "lblDescription";
+            // 
+            // textBoxDescription
+            // 
+            resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.textBoxDescription.Name = "textBoxDescription";
+            // 
+            // dateTimePicker
+            // 
+            resources.ApplyResources(this.dateTimePicker, "dateTimePicker");
+            this.dateTimePicker.Name = "dateTimePicker";
+            // 
+            // lblDate
+            // 
+            resources.ApplyResources(this.lblDate, "lblDate");
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDate.Name = "lblDate";
+            // 
             // DevelopmentForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.textBoxDescription);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.textBoxSurname);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxEmployeeId);
             this.Controls.Add(this.lblEmployeeId);
-            this.Controls.Add(this.lblResults);
             this.Controls.Add(this.btnImportPicture);
-            this.Controls.Add(this.checkBoxNegativeResult);
-            this.Controls.Add(this.checkBoxPositiveResult);
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTeamLeader);
             this.Controls.Add(this.picboxNewPattern);
-            this.Controls.Add(this.datePickerSelectedControlsDate);
-            this.Controls.Add(this.btnShowFromDate);
-            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.lblFormTitle);
-            this.Controls.Add(this.dataGVFEM);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnReturn);
@@ -328,7 +242,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DevelopmentForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVFEM)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DevelopmentForm_FormClosed);
+            this.Load += new System.EventHandler(this.DevelopmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxNewPattern)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
@@ -342,23 +257,20 @@
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
-        private System.Windows.Forms.DataGridView dataGVFEM;
         private System.Windows.Forms.Label lblFormTitle;
-        private System.Windows.Forms.Button btnShowFromDate;
-        private System.Windows.Forms.Button btnShowAll;
-        private System.Windows.Forms.DateTimePicker datePickerSelectedControlsDate;
         private System.Windows.Forms.PictureBox picboxNewPattern;
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblTeamLeader;
-        private System.Windows.Forms.CheckBox checkBoxPositiveResult;
-        private System.Windows.Forms.CheckBox checkBoxNegativeResult;
         private System.Windows.Forms.Button btnImportPicture;
-        private System.Windows.Forms.Label lblResults;
         private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.Label lblEmployeeId;
         private System.Windows.Forms.TextBox textBoxEmployeeId;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxSurname;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label lblDate;
     }
 }
