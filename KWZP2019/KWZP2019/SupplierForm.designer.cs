@@ -28,98 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButtonSupplierSemis = new System.Windows.Forms.RadioButton();
-            this.radioButtonSupplierParts = new System.Windows.Forms.RadioButton();
-            this.addNewSupplierBtn = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierForm));
+            this.Dostawcapolfabrykatu_rb = new System.Windows.Forms.RadioButton();
+            this.DOstawcaczesci_rb = new System.Windows.Forms.RadioButton();
             this.supplierTypeGb = new System.Windows.Forms.GroupBox();
             this.supplierDgv = new System.Windows.Forms.DataGridView();
-            this.buttonreturnSupplierForm = new System.Windows.Forms.Button();
+            this.addNewSupplierBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.supplierTypeGb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // radioButtonSupplierSemis
+            // Dostawcapolfabrykatu_rb
             // 
-            this.radioButtonSupplierSemis.AutoSize = true;
-            this.radioButtonSupplierSemis.Checked = true;
-            this.radioButtonSupplierSemis.Location = new System.Drawing.Point(4, 28);
-            this.radioButtonSupplierSemis.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonSupplierSemis.Name = "radioButtonSupplierSemis";
-            this.radioButtonSupplierSemis.Size = new System.Drawing.Size(136, 17);
-            this.radioButtonSupplierSemis.TabIndex = 1;
-            this.radioButtonSupplierSemis.TabStop = true;
-            this.radioButtonSupplierSemis.Text = "Dostawca półfabrykatu";
-            this.radioButtonSupplierSemis.UseVisualStyleBackColor = true;
-            this.radioButtonSupplierSemis.CheckedChanged += new System.EventHandler(this.Dostawcapolfabrykatu_rb_CheckedChanged);
+            this.Dostawcapolfabrykatu_rb.AutoSize = true;
+            this.Dostawcapolfabrykatu_rb.Location = new System.Drawing.Point(6, 34);
+            this.Dostawcapolfabrykatu_rb.Name = "Dostawcapolfabrykatu_rb";
+            this.Dostawcapolfabrykatu_rb.Size = new System.Drawing.Size(221, 28);
+            this.Dostawcapolfabrykatu_rb.TabIndex = 1;
+            this.Dostawcapolfabrykatu_rb.TabStop = true;
+            this.Dostawcapolfabrykatu_rb.Text = "Dostawca półfabrykatu";
+            this.Dostawcapolfabrykatu_rb.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSupplierParts
+            // DOstawcaczesci_rb
             // 
-            this.radioButtonSupplierParts.AutoSize = true;
-            this.radioButtonSupplierParts.Location = new System.Drawing.Point(4, 50);
-            this.radioButtonSupplierParts.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonSupplierParts.Name = "radioButtonSupplierParts";
-            this.radioButtonSupplierParts.Size = new System.Drawing.Size(106, 17);
-            this.radioButtonSupplierParts.TabIndex = 2;
-            this.radioButtonSupplierParts.Text = "Dostawca części";
-            this.radioButtonSupplierParts.UseVisualStyleBackColor = true;
-            // 
-            // addNewSupplierBtn
-            // 
-            this.addNewSupplierBtn.Location = new System.Drawing.Point(13, 285);
-            this.addNewSupplierBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.addNewSupplierBtn.Name = "addNewSupplierBtn";
-            this.addNewSupplierBtn.Size = new System.Drawing.Size(123, 50);
-            this.addNewSupplierBtn.TabIndex = 3;
-            this.addNewSupplierBtn.Text = "Dodaj nowego dostawcę";
-            this.addNewSupplierBtn.UseVisualStyleBackColor = true;
-            this.addNewSupplierBtn.Click += new System.EventHandler(this.addNewSupplierBtn_Click);
+            this.DOstawcaczesci_rb.AutoSize = true;
+            this.DOstawcaczesci_rb.Location = new System.Drawing.Point(6, 61);
+            this.DOstawcaczesci_rb.Name = "DOstawcaczesci_rb";
+            this.DOstawcaczesci_rb.Size = new System.Drawing.Size(170, 28);
+            this.DOstawcaczesci_rb.TabIndex = 2;
+            this.DOstawcaczesci_rb.TabStop = true;
+            this.DOstawcaczesci_rb.Text = "Dostawca części";
+            this.DOstawcaczesci_rb.UseVisualStyleBackColor = true;
             // 
             // supplierTypeGb
             // 
-            this.supplierTypeGb.Controls.Add(this.radioButtonSupplierParts);
-            this.supplierTypeGb.Controls.Add(this.radioButtonSupplierSemis);
-            this.supplierTypeGb.Location = new System.Drawing.Point(9, 25);
-            this.supplierTypeGb.Margin = new System.Windows.Forms.Padding(2);
+            this.supplierTypeGb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.supplierTypeGb.Controls.Add(this.DOstawcaczesci_rb);
+            this.supplierTypeGb.Controls.Add(this.Dostawcapolfabrykatu_rb);
+            this.supplierTypeGb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.supplierTypeGb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.supplierTypeGb.Location = new System.Drawing.Point(120, 35);
             this.supplierTypeGb.Name = "supplierTypeGb";
-            this.supplierTypeGb.Padding = new System.Windows.Forms.Padding(2);
-            this.supplierTypeGb.Size = new System.Drawing.Size(151, 83);
+            this.supplierTypeGb.Size = new System.Drawing.Size(265, 102);
             this.supplierTypeGb.TabIndex = 10;
             this.supplierTypeGb.TabStop = false;
             this.supplierTypeGb.Text = "Typ dostawcy";
             // 
             // supplierDgv
             // 
-            this.supplierDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.supplierDgv.Location = new System.Drawing.Point(194, 25);
-            this.supplierDgv.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.supplierDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.supplierDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.supplierDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.supplierDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.supplierDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.supplierDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.supplierDgv.DefaultCellStyle = dataGridViewCellStyle3;
+            this.supplierDgv.EnableHeadersVisualStyles = false;
+            this.supplierDgv.Location = new System.Drawing.Point(120, 178);
+            this.supplierDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.supplierDgv.MultiSelect = false;
             this.supplierDgv.Name = "supplierDgv";
-            this.supplierDgv.RowTemplate.Height = 24;
-            this.supplierDgv.Size = new System.Drawing.Size(466, 128);
-            this.supplierDgv.TabIndex = 11;
+            this.supplierDgv.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.supplierDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.supplierDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.supplierDgv.Size = new System.Drawing.Size(997, 237);
+            this.supplierDgv.TabIndex = 22;
             // 
-            // buttonreturnSupplierForm
+            // addNewSupplierBtn
             // 
-            this.buttonreturnSupplierForm.Location = new System.Drawing.Point(554, 304);
-            this.buttonreturnSupplierForm.Name = "buttonreturnSupplierForm";
-            this.buttonreturnSupplierForm.Size = new System.Drawing.Size(125, 30);
-            this.buttonreturnSupplierForm.TabIndex = 12;
-            this.buttonreturnSupplierForm.Text = "Powrót";
-            this.buttonreturnSupplierForm.UseVisualStyleBackColor = true;
-            this.buttonreturnSupplierForm.Click += new System.EventHandler(this.buttonreturnSupplierForm_Click);
+            this.addNewSupplierBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.addNewSupplierBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.addNewSupplierBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addNewSupplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewSupplierBtn.Image")));
+            this.addNewSupplierBtn.Location = new System.Drawing.Point(341, 489);
+            this.addNewSupplierBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addNewSupplierBtn.Name = "addNewSupplierBtn";
+            this.addNewSupplierBtn.Size = new System.Drawing.Size(267, 148);
+            this.addNewSupplierBtn.TabIndex = 23;
+            this.addNewSupplierBtn.Text = "Dodaj dostawcę";
+            this.addNewSupplierBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.addNewSupplierBtn.UseVisualStyleBackColor = false;
+            this.addNewSupplierBtn.Click += new System.EventHandler(this.addNewSupplierBtn_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.backBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(45, 489);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(267, 148);
+            this.backBtn.TabIndex = 24;
+            this.backBtn.Text = "Powrót";
+            this.backBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.backBtn.UseVisualStyleBackColor = false;
             // 
             // SupplierForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 366);
-            this.Controls.Add(this.buttonreturnSupplierForm);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.addNewSupplierBtn);
             this.Controls.Add(this.supplierDgv);
             this.Controls.Add(this.supplierTypeGb);
-            this.Controls.Add(this.addNewSupplierBtn);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SupplierForm";
             this.Text = "SupplierForm";
-            this.Load += new System.EventHandler(this.SupplierForm_Load);
             this.supplierTypeGb.ResumeLayout(false);
             this.supplierTypeGb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDgv)).EndInit();
@@ -128,11 +177,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.RadioButton radioButtonSupplierSemis;
-        private System.Windows.Forms.RadioButton radioButtonSupplierParts;
-        private System.Windows.Forms.Button addNewSupplierBtn;
+        private System.Windows.Forms.RadioButton Dostawcapolfabrykatu_rb;
+        private System.Windows.Forms.RadioButton DOstawcaczesci_rb;
         private System.Windows.Forms.GroupBox supplierTypeGb;
         private System.Windows.Forms.DataGridView supplierDgv;
-        private System.Windows.Forms.Button buttonreturnSupplierForm;
+        private System.Windows.Forms.Button addNewSupplierBtn;
+        private System.Windows.Forms.Button backBtn;
     }
 }

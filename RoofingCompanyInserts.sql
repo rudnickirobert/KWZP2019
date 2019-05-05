@@ -1,4 +1,4 @@
-use RoofingCompany;
+﻿use RoofingCompany;
 
 --HR
 insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL)
@@ -37,7 +37,7 @@ insert into Employee (EmployeeName, EmployeeSurname, ZipCode, City, Street, Hous
 insert into Position (Workplace, ValidityOfOshTraining, VailidityOfMedicalExam) --Validity in days
 	values
 		('Kierownik', 2190, 730),				--1 All
-		('Kontroler jakości', 730, 730),		--2	Quality control
+		('Kontroler jakości', 365, 730),		--2	Quality control
 		('Inżynier projektant', 730, 730),		--3 Quality control
 		('Operator', 365, 365),					--4	Production
 		('Elektromechanik', 365, 365),			--5	Maintenance
@@ -151,7 +151,7 @@ INSERT INTO Department(DepartmentName)
 		('Utrzymanie ruchu'),
 		('HR i Finanse'),
 		('Logistyka'),
-		('Kontrola jakoci');
+		('Kontrola jakosci');
 
 insert into Staff(IdDeparment, IdPosition, Number, DateFrom)
 	values 
@@ -340,19 +340,44 @@ from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5
 
 --SafetyControl
 insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
-		('Dąbek Jarosław 423452', 1, '2019-01-07 10:20:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dąbek Jarosław 423452', 2, '2019-01-07 10:30:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dąbek Jarosław 423452', 3, '2019-01-07 10:40:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dąbek Jarosław 423452', 4, '2019-01-07 10:50:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF'),
-		('Dąbek Jarosław 423452', 5, '2019-01-07 11:00:00', 'środki ochrony indywidualnej, pozytywnie', 'TBF');
+		('Dąbek Jarosław 423452', 7, '2018-07-07 10:20:00', 'Brak zastosowania środków ochrony indywidualnej', 'TBF'),
+		('Dąbek Jarosław 423452', 11, '2018-08-18 10:30:00', 'Obciążenie przycisku maszyny narzędzdiem i obsługa maszyny jedną ręką zamiast dwiema', 'TBF'),
+		('Dąbek Jarosław 423452', 14, '2019-09-07 10:40:00', 'Pozostawienie włączonej maszyny bez nadzoru', 'TBF'),
+		('Dąbek Jarosław 423452', 15, '2018-10-07 10:50:00', 'Niezabezpieczenie kabli od elektronarzędzia', 'TBF'),
+		('Dąbek Jarosław 423452', 16, '2018-11-07 11:00:00', 'Stosowanie nieodpowiednich narzędzi do wykonywanej pracy', 'TBF'),
+		('Tomanek Jerzy 434444', 27, '2019-01-07 12:00:00', 'Złe ustawienie krzesła przy stanowisku biurowym, grożące wadom kręgosłupa', 'TBF'),
+		('Tomanek Jerzy 434444', 25, '2019-03-07 11:15:00', 'Niezastosowanie okularów wymaganych do pracy z komputerem', 'TBF');
 
 --SafetyTraining
 insert into SafetyTraining (IdEmployee, TrainingDate) values
-		(1, '2019-01-02 08:00:00'),
-		(2, '2019-01-02 08:00:00'),
-		(3, '2019-01-02 08:00:00'),
-		(4, '2019-01-02 08:00:00'),
-		(5, '2019-01-02 08:00:00');
+		(1, '2018-03-22 08:00:00'),
+		(2, '2018-05-06 08:00:00'),
+		(3, '2018-06-13 08:00:00'),
+		(4, '2018-03-16 08:00:00'),
+		(5, '2018-02-15 08:00:00'),
+		(6, '2018-03-22 08:00:00'),
+		(7, '2018-05-06 08:00:00'),
+		(8, '2018-06-13 08:00:00'),
+		(9, '2018-03-16 08:00:00'),
+		(10, '2018-02-15 08:00:00'),
+		(11, '2018-03-22 08:00:00'),
+		(12, '2018-05-06 08:00:00'),
+		(13, '2018-06-13 08:00:00'),
+		(14, '2018-03-16 08:00:00'),
+		(15, '2018-02-15 08:00:00'),
+		(16, '2018-03-22 08:00:00'),
+		(17, '2018-05-06 08:00:00'),
+		(18, '2018-06-13 08:00:00'),
+		(19, '2018-03-16 08:00:00'),
+		(20, '2018-02-15 08:00:00'),
+		(21, '2018-03-22 08:00:00'),
+		(22, '2018-05-06 08:00:00'),
+		(23, '2018-06-13 08:00:00'),
+		(24, '2018-03-16 08:00:00'),
+		(25, '2018-02-15 08:00:00'),
+		(26, '2018-03-22 08:00:00'),
+		(27, '2018-05-06 08:00:00'),
+		(28, '2018-06-13 08:00:00');
 
 --SemiFinished
 /*grubo�ci blachy u Pruszy�skiego: 0,5; 0,7, 1; 1,25
@@ -520,13 +545,13 @@ insert into Customer values('Zdzisław Kręcinai', '602352148', 'zdzisiek58@gmai
 insert into Customer values('Krzysztof Kononowicz', '605987412', 'konon@pocztaonet.pl', 'Białystok',
 '05-813', 'Sosnowa', '43', '', '1021023158', ' ', '', '');
 
-insert into OrderCustomer values('2', '1', '2019-04-05 14:00', '5500', '20');
-insert into OrderCustomer values('2', '2', '2019-04-02 12:00', '6800', '30');
-insert into OrderCustomer values('3', '2', '2019-04-08 10:00', '1200', '40');
-insert into OrderCustomer values('1', '2', '2019-03-28 10:00', '5800', '10');
-insert into OrderCustomer values('5', '1', '2019-03-21 11:00', '9600', '10');
-insert into OrderCustomer values('4', '2', '2019-03-18 09:30', '4580', '50');
-insert into OrderCustomer values('2', '1', '2019-03-12 11:00', '12000', '15');
+insert into OrderCustomer values('2', '1', '2019-04-05 14:00', '5500', '0.2', '1');
+insert into OrderCustomer values('2', '2', '2019-04-02 12:00', '6800', '0.3', '1');
+insert into OrderCustomer values('3', '2', '2019-04-08 10:00', '1200', '0.4', '1');
+insert into OrderCustomer values('1', '2', '2019-03-28 10:00', '5800', '0.4', '1');
+insert into OrderCustomer values('5', '1', '2019-03-21 11:00', '9600', '0.1', '1');
+insert into OrderCustomer values('4', '2', '2019-03-18 09:30', '4580', '0.5', '1');
+insert into OrderCustomer values('2', '1', '2019-03-12 11:00', '12000', '0.15', '1');
 
 insert into OrderDetail values('1', '1', '100');
 insert into OrderDetail values('1', '2', '200');
@@ -767,7 +792,7 @@ values
 	('101', '1', '4993.76', '797.03');
 
 UPDATE OrderCustomer
-SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*(1+OrderCustomer.Markup/100))
+SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*OrderCustomer.Markup)
 FROM OrderDetail
 JOIN OrderCustomer
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer

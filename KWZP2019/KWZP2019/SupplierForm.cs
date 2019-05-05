@@ -38,19 +38,19 @@ namespace KWZP2019
         private void Dostawcapolfabrykatu_rb_CheckedChanged(object sender, EventArgs e)
         {
             
-            if (radioButtonSupplierSemis.Checked)
+            if (Dostawcapolfabrykatu_rb.Checked)
             {
                 supplierDgv.DataSource = (from db in db.vSupplierSemis
                                           where
-                                          db.Type.Contains("Półfabrykaty")
+                                          db.Typ.Contains("Półfabrykaty")
                                           select db).ToList();
             }
 
-            if (radioButtonSupplierParts.Checked)
+            if (DOstawcaczesci_rb.Checked)
             {
                 supplierDgv.DataSource = (from db in db.vSupplierParts
                                           where
-                                          db.Type.Contains("Części")
+                                          db.Typ.Contains("Części")
                                           select db).ToList();
             }
         }

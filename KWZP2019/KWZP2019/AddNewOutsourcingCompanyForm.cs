@@ -24,22 +24,19 @@ namespace KWZP2019
         }
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {
-            //ŻĄDANIE WPROWADZENIA NAZWY FIRMY 
             if (nameTb.Text.Trim() == "")
             {
                 MessageBox.Show("Nazwa jest wymagana");
                 return;
             }
-            //UTWORZENIE NOWEGO OBIEKTU "customer"
             Outsourcing newOutsourcing = new Outsourcing();
             OutsourcingType newOutsourcingType = new OutsourcingType();
 
-            //WPRAOWDZENIE DANYCH DOTYCZĄCYCH KLIENTA
             newOutsourcing.CompanyName = nameTb.Text.Trim();
             bool phoneTextBox = int.TryParse(phoneTb.Text.Trim(), out int phoneTextbox);
             if (phoneTextBox)
             {
-                newOutsourcing.PhoneNumber = phoneTextbox;
+                newOutsourcing.PhoneNumber = Convert.ToString(phoneTextbox);
             }
             newOutsourcing.Email = emailTb.Text.Trim();
             newOutsourcing.City = cityTb.Text.Trim();
@@ -49,7 +46,7 @@ namespace KWZP2019
             bool houseNumberTextBox = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTextbox);
             if (houseNumberTextBox)
             {
-                newOutsourcing.HouseNumber = houseNumberTextbox;
+                newOutsourcing.HouseNumber = Convert.ToString(houseNumberTextbox);
             }
             else
             {
@@ -59,27 +56,27 @@ namespace KWZP2019
             bool apartmentNumberTextBox = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTextbox);
             if (apartmentNumberTextBox)
             {
-                newOutsourcing.ApartmentNumber = apartmentNumberTextbox;
+                newOutsourcing.ApartmentNumber = Convert.ToString(apartmentNumberTextbox);
             }
             else
             {
                 MessageBox.Show("Niewłaściwy format numeru lokalu");
                 return;
             }
-            bool nipTextBox = int.TryParse(nipTb.Text.Trim(), out int nipTextbox);
+            bool nipTextBox = float.TryParse(nipTb.Text.Trim(), out float nipTextbox);
             if (nipTextBox)
             {
-                newOutsourcing.NIP = nipTextbox;
+                newOutsourcing.NIP = Convert.ToString(nipTextbox);
             }
             else
             {
                 MessageBox.Show("Niewłaściwy format NIP");
                 return;
             }
-            bool krsTextBox = int.TryParse(krsTb.Text.Trim(), out int krsTextbox);
+            bool krsTextBox = float.TryParse(krsTb.Text.Trim(), out float krsTextbox);
             if (krsTextBox)
             {
-                newOutsourcing.KRS = krsTextbox;
+                newOutsourcing.KRS = Convert.ToString(krsTextbox);
             }
             else
             {

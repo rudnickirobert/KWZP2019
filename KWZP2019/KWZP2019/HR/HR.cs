@@ -13,40 +13,120 @@ namespace KWZP2019
     public partial class HR : Form
     {
         RoofingCompanyEntities db;
-        public HR(RoofingCompanyEntities db)
+        StartForm startForm;
+        FinancesAndHR finanseIHR;
+        public HR(RoofingCompanyEntities db, StartForm startForm, FinancesAndHR finanseIHR)
         {
-            InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.finanseIHR = finanseIHR;
+            InitializeComponent();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            AddEmployee addEmployee = new AddEmployee(db);
+            AddEmployee addEmployee = new AddEmployee(db, startForm, this);
             addEmployee.Show();
+            this.Hide();
         }
 
         private void btnExamination_Click(object sender, EventArgs e)
         {
             Examination examination = new Examination(db);
             examination.Show();
+            this.Hide();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
             EmployeeDetails employeeDetails = new EmployeeDetails(db);
             employeeDetails.Show();
+            this.Hide();
         }
-
         private void btnAbsences_Click(object sender, EventArgs e)
         {
-            Absences absences = new Absences(db);
+            Absences absences = new Absences(db, startForm, this);
             absences.Show();
+            this.Hide();
         }
 
         private void btnTraining_Click(object sender, EventArgs e)
         {
             AddTraining addTraining = new AddTraining(db);
             addTraining.Show();
+            this.Hide();
+        }
+
+        private void HR_Load(object sender, EventArgs e)
+        {
+            dgvEmloyees.DataSource = db.vHRs.
+                Select (employeesSelect => new {
+                        employeesSelect.EmployeeSurname,
+                        employeesSelect.EmployeeName,
+                        employeesSelect.Workplace,
+                        employeesSelect.PhoneNumber,
+                        employeesSelect.City
+                }).ToList();
+            String stddetails = "{0, -40}{1, 0}";
+
+            lbWarningsContracts.Items.Add(String.Format(stddetails, "Pracownicy, którym kończy się umowa: ", db.vHRContracts.Count()));
+
+            lbWarningsExamination.Items.Add(String.Format(stddetails, "Pracownicy, którym kończą się badania lekarskie: ", db.vHRExaminations.Count()));
+        }
+
+        private void tbEmployeeSearching_TextChanged(object sender, EventArgs e)
+        {
+            dgvEmloyees.DataSource = db.vHRs.
+                Where (employees => employees.EmployeeSurname.StartsWith(tbEmployeeSearching.Text)).
+                Select (employeesSelect => new {
+                        employeesSelect.EmployeeSurname,
+                        employeesSelect.EmployeeName,
+                        employeesSelect.Workplace,
+                        employeesSelect.PhoneNumber,
+                        employeesSelect.City
+                }).ToList();
+        }
+
+        private void btnContracts_Click(object sender, EventArgs e)
+        {
+            Contracts contracts = new Contracts(db);
+            contracts.Show();
+        }
+
+        private void lbWarningsExamination_DoubleClick(object sender, EventArgs e)
+        {
+            Examination examination = new Examination(db);
+            examination.Show();
+        }
+
+        private void lbWarningsContracts_DoubleClick(object sender, EventArgs e)
+        {
+            Contracts contracts = new Contracts(db);
+            contracts.Show();
+        }
+
+        private void btnAddContract_Click(object sender, EventArgs e)
+        {
+            AddContract addContract = new AddContract();
+            addContract.Show();
+        }
+
+        private void btnEducationLevel_Click(object sender, EventArgs e)
+        {
+            EducationForm educationForm = new EducationForm(db);
+            educationForm.Show();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finanseIHR.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }
