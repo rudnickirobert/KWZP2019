@@ -203,6 +203,16 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_clear_filters_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clear-filters-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_denied_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-denied-40", resourceCulture);
@@ -230,15 +240,6 @@ namespace KWZP2019.Properties {
             }
         }
         
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_clear_filters_40 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-clear-filters-40", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
         
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
@@ -266,6 +267,16 @@ namespace KWZP2019.Properties {
         internal static System.Drawing.Bitmap icons8_home_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-home-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_euro_money_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_euro_money_80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +357,16 @@ namespace KWZP2019.Properties {
         internal static System.Drawing.Bitmap icons8_sell_stock_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-sell-stock-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_groups_80__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_groups_80__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

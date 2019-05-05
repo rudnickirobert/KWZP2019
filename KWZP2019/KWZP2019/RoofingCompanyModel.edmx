@@ -285,6 +285,7 @@
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
           <Property Name="Markup" Type="float" Nullable="false" />
+          <Property Name="NewOrderInfo" Type="bit" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -999,6 +1000,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not 
             <PropertyRef Name="Numer lokalu" />
             <PropertyRef Name="NIP" />
             <PropertyRef Name="KRS" />
+            <PropertyRef Name="Opis" />
           </Key>
           <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Firma" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -1125,6 +1127,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierParts' does not have a
             <PropertyRef Name="Numer lokalu" />
             <PropertyRef Name="NIP" />
             <PropertyRef Name="KRS" />
+            <PropertyRef Name="Opis" />
           </Key>
           <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Firma" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -1154,6 +1157,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a
             <PropertyRef Name="Numer lokalu" />
             <PropertyRef Name="NIP" />
             <PropertyRef Name="KRS" />
+            <PropertyRef Name="Opis" />
           </Key>
           <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Firma" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -1204,7 +1208,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__Absence__IdAbsen__1332DBDC">
+        <Association Name="FK__Absence__IdAbsen__6C190EBB">
           <End Role="AbsenceType" Type="Self.AbsenceType" Multiplicity="0..1" />
           <End Role="Absence" Type="Self.Absence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1216,7 +1220,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Absence__IdEmplo__14270015">
+        <Association Name="FK__Absence__IdEmplo__6D0D32F4">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Absence" Type="Self.Absence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1228,7 +1232,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Allocatio__IdDep__2180FB33">
+        <Association Name="FK__Allocatio__IdDep__7A672E12">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Allocation" Type="Self.Allocation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1240,7 +1244,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Allocatio__IdEmp__208CD6FA">
+        <Association Name="FK__Allocatio__IdEmp__797309D9">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Allocation" Type="Self.Allocation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1252,7 +1256,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contract__IdEmpl__09A971A2">
+        <Association Name="FK__Contract__IdEmpl__628FA481">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1264,7 +1268,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contract__IdPosi__0A9D95DB">
+        <Association Name="FK__Contract__IdPosi__6383C8BA">
           <End Role="Position" Type="Self.Position" Multiplicity="1" />
           <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1276,7 +1280,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Education__IdEdu__2739D489">
+        <Association Name="FK__Education__IdEdu__00200768">
           <End Role="EducationLevel" Type="Self.EducationLevel" Multiplicity="0..1" />
           <End Role="Education" Type="Self.Education" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1288,7 +1292,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Education__IdEmp__2645B050">
+        <Association Name="FK__Education__IdEmp__7F2BE32F">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Education" Type="Self.Education" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1300,7 +1304,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Expense__IdDepar__37703C52">
+        <Association Name="FK__Expense__IdDepar__10566F31">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1312,7 +1316,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Expense__IdInvoi__3864608B">
+        <Association Name="FK__Expense__IdInvoi__114A936A">
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1324,7 +1328,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__IdContr__339FAB6E">
+        <Association Name="FK__Invoice__IdContr__0C85DE4D">
           <End Role="Contractor" Type="Self.Contractor" Multiplicity="0..1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1336,7 +1340,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__IdInvoi__3493CFA7">
+        <Association Name="FK__Invoice__IdInvoi__0D7A0286">
           <End Role="InvoiceType" Type="Self.InvoiceType" Multiplicity="0..1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1348,7 +1352,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MedicalEx__IdEmp__2CF2ADDF">
+        <Association Name="FK__MedicalEx__IdEmp__05D8E0BE">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="MedicalExamination" Type="Self.MedicalExamination" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1360,7 +1364,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payment__IdEmplo__17F790F9">
+        <Association Name="FK__Payment__IdEmplo__70DDC3D8">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1372,7 +1376,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SkillsFor__IdMac__0D7A0286">
+        <Association Name="FK__SkillsFor__IdMac__66603565">
           <End Role="Machine" Type="Self.Machine" Multiplicity="0..1" />
           <End Role="SkillsForMachine" Type="Self.SkillsForMachine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1384,7 +1388,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SkillsFor__IdPos__0E6E26BF">
+        <Association Name="FK__SkillsFor__IdPos__6754599E">
           <End Role="Position" Type="Self.Position" Multiplicity="1" />
           <End Role="SkillsForMachine" Type="Self.SkillsForMachine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1396,7 +1400,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Staff__IdDeparme__1CBC4616">
+        <Association Name="FK__Staff__IdDeparme__75A278F5">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1408,7 +1412,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Staff__IdPositio__1DB06A4F">
+        <Association Name="FK__Staff__IdPositio__76969D2E">
           <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
           <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1420,7 +1424,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Training__IdEmpl__2A164134">
+        <Association Name="FK__Training__IdEmpl__02FC7413">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Training" Type="Self.Training" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2411,79 +2415,79 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vUnhandledOrderDetails].[ProductCode] AS [ProductCode]
     FROM [dbo].[vUnhandledOrderDetails] AS [vUnhandledOrderDetails]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Absence__IdAbsen__1332DBDC" Association="Self.FK__Absence__IdAbsen__1332DBDC">
+          <AssociationSet Name="FK__Absence__IdAbsen__6C190EBB" Association="Self.FK__Absence__IdAbsen__6C190EBB">
             <End Role="AbsenceType" EntitySet="AbsenceType" />
             <End Role="Absence" EntitySet="Absence" />
           </AssociationSet>
-          <AssociationSet Name="FK__Absence__IdEmplo__14270015" Association="Self.FK__Absence__IdEmplo__14270015">
+          <AssociationSet Name="FK__Absence__IdEmplo__6D0D32F4" Association="Self.FK__Absence__IdEmplo__6D0D32F4">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Absence" EntitySet="Absence" />
           </AssociationSet>
-          <AssociationSet Name="FK__Allocatio__IdDep__2180FB33" Association="Self.FK__Allocatio__IdDep__2180FB33">
+          <AssociationSet Name="FK__Allocatio__IdDep__7A672E12" Association="Self.FK__Allocatio__IdDep__7A672E12">
             <End Role="Department" EntitySet="Department" />
             <End Role="Allocation" EntitySet="Allocation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Allocatio__IdEmp__208CD6FA" Association="Self.FK__Allocatio__IdEmp__208CD6FA">
+          <AssociationSet Name="FK__Allocatio__IdEmp__797309D9" Association="Self.FK__Allocatio__IdEmp__797309D9">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Allocation" EntitySet="Allocation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contract__IdEmpl__09A971A2" Association="Self.FK__Contract__IdEmpl__09A971A2">
+          <AssociationSet Name="FK__Contract__IdEmpl__628FA481" Association="Self.FK__Contract__IdEmpl__628FA481">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Contract" EntitySet="Contract" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contract__IdPosi__0A9D95DB" Association="Self.FK__Contract__IdPosi__0A9D95DB">
+          <AssociationSet Name="FK__Contract__IdPosi__6383C8BA" Association="Self.FK__Contract__IdPosi__6383C8BA">
             <End Role="Position" EntitySet="Position" />
             <End Role="Contract" EntitySet="Contract" />
           </AssociationSet>
-          <AssociationSet Name="FK__Education__IdEdu__2739D489" Association="Self.FK__Education__IdEdu__2739D489">
+          <AssociationSet Name="FK__Education__IdEdu__00200768" Association="Self.FK__Education__IdEdu__00200768">
             <End Role="EducationLevel" EntitySet="EducationLevel" />
             <End Role="Education" EntitySet="Education" />
           </AssociationSet>
-          <AssociationSet Name="FK__Education__IdEmp__2645B050" Association="Self.FK__Education__IdEmp__2645B050">
+          <AssociationSet Name="FK__Education__IdEmp__7F2BE32F" Association="Self.FK__Education__IdEmp__7F2BE32F">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Education" EntitySet="Education" />
           </AssociationSet>
-          <AssociationSet Name="FK__Expense__IdDepar__37703C52" Association="Self.FK__Expense__IdDepar__37703C52">
+          <AssociationSet Name="FK__Expense__IdDepar__10566F31" Association="Self.FK__Expense__IdDepar__10566F31">
             <End Role="Department" EntitySet="Department" />
             <End Role="Expense" EntitySet="Expense" />
           </AssociationSet>
-          <AssociationSet Name="FK__Expense__IdInvoi__3864608B" Association="Self.FK__Expense__IdInvoi__3864608B">
+          <AssociationSet Name="FK__Expense__IdInvoi__114A936A" Association="Self.FK__Expense__IdInvoi__114A936A">
             <End Role="Invoice" EntitySet="Invoice" />
             <End Role="Expense" EntitySet="Expense" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__IdContr__339FAB6E" Association="Self.FK__Invoice__IdContr__339FAB6E">
+          <AssociationSet Name="FK__Invoice__IdContr__0C85DE4D" Association="Self.FK__Invoice__IdContr__0C85DE4D">
             <End Role="Contractor" EntitySet="Contractor" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__IdInvoi__3493CFA7" Association="Self.FK__Invoice__IdInvoi__3493CFA7">
+          <AssociationSet Name="FK__Invoice__IdInvoi__0D7A0286" Association="Self.FK__Invoice__IdInvoi__0D7A0286">
             <End Role="InvoiceType" EntitySet="InvoiceType" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__MedicalEx__IdEmp__2CF2ADDF" Association="Self.FK__MedicalEx__IdEmp__2CF2ADDF">
+          <AssociationSet Name="FK__MedicalEx__IdEmp__05D8E0BE" Association="Self.FK__MedicalEx__IdEmp__05D8E0BE">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="MedicalExamination" EntitySet="MedicalExamination" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payment__IdEmplo__17F790F9" Association="Self.FK__Payment__IdEmplo__17F790F9">
+          <AssociationSet Name="FK__Payment__IdEmplo__70DDC3D8" Association="Self.FK__Payment__IdEmplo__70DDC3D8">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Payment" EntitySet="Payment" />
           </AssociationSet>
-          <AssociationSet Name="FK__SkillsFor__IdMac__0D7A0286" Association="Self.FK__SkillsFor__IdMac__0D7A0286">
+          <AssociationSet Name="FK__SkillsFor__IdMac__66603565" Association="Self.FK__SkillsFor__IdMac__66603565">
             <End Role="Machine" EntitySet="Machine" />
             <End Role="SkillsForMachine" EntitySet="SkillsForMachine" />
           </AssociationSet>
-          <AssociationSet Name="FK__SkillsFor__IdPos__0E6E26BF" Association="Self.FK__SkillsFor__IdPos__0E6E26BF">
+          <AssociationSet Name="FK__SkillsFor__IdPos__6754599E" Association="Self.FK__SkillsFor__IdPos__6754599E">
             <End Role="Position" EntitySet="Position" />
             <End Role="SkillsForMachine" EntitySet="SkillsForMachine" />
           </AssociationSet>
-          <AssociationSet Name="FK__Staff__IdDeparme__1CBC4616" Association="Self.FK__Staff__IdDeparme__1CBC4616">
+          <AssociationSet Name="FK__Staff__IdDeparme__75A278F5" Association="Self.FK__Staff__IdDeparme__75A278F5">
             <End Role="Department" EntitySet="Department" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
-          <AssociationSet Name="FK__Staff__IdPositio__1DB06A4F" Association="Self.FK__Staff__IdPositio__1DB06A4F">
+          <AssociationSet Name="FK__Staff__IdPositio__76969D2E" Association="Self.FK__Staff__IdPositio__76969D2E">
             <End Role="Position" EntitySet="Position" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
-          <AssociationSet Name="FK__Training__IdEmpl__2A164134" Association="Self.FK__Training__IdEmpl__2A164134">
+          <AssociationSet Name="FK__Training__IdEmpl__02FC7413" Association="Self.FK__Training__IdEmpl__02FC7413">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Training" EntitySet="Training" />
           </AssociationSet>
@@ -2746,8 +2750,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vSafetyControlHistoryViews" EntityType="RoofingCompanyModel.vSafetyControlHistoryView" />
           <EntitySet Name="vSuccesfullyProcesses" EntityType="RoofingCompanyModel.vSuccesfullyProcess" />
           <EntitySet Name="vSuccesfullyProducedPerProcesses" EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" />
-          <EntitySet Name="vSupplierParts" EntityType="RoofingCompanyModel.vSupplierPart" />
-          <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemi" />
           <EntitySet Name="vTechnicalProductDataPerProcesses" EntityType="RoofingCompanyModel.vTechnicalProductDataPerProcess" />
           <EntitySet Name="vUnfinishedProcesses" EntityType="RoofingCompanyModel.vUnfinishedProcess" />
           <EntitySet Name="vUnhandledOrderDetails" EntityType="RoofingCompanyModel.vUnhandledOrderDetail" />
@@ -3021,6 +3023,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vInvoiceTypes" EntityType="RoofingCompanyModel.vInvoiceType" />
           <EntitySet Name="vPaymentHistories" EntityType="RoofingCompanyModel.vPaymentHistory" />
           <EntitySet Name="vProductionProcessFullDatas" EntityType="RoofingCompanyModel.vProductionProcessFullData" />
+          <EntitySet Name="vInputMagazines" EntityType="RoofingCompanyModel.vInputMagazine" />
+          <EntitySet Name="vOrderDetails" EntityType="RoofingCompanyModel.vOrderDetail" />
+          <EntitySet Name="vOutputMagazines" EntityType="RoofingCompanyModel.vOutputMagazine" />
+          <EntitySet Name="vSupplierParts" EntityType="RoofingCompanyModel.vSupplierPart" />
+          <EntitySet Name="vOutsourcingWithTypes" EntityType="RoofingCompanyModel.vOutsourcingWithType" />
+          <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemi" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -3366,6 +3374,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <NavigationProperty Name="Customer" Relationship="RoofingCompanyModel.FkOrderCustomerCustomer" FromRole="OrderCustomer" ToRole="Customer" />
           <NavigationProperty Name="Employee" Relationship="RoofingCompanyModel.FkOrderCustomerEmployee" FromRole="OrderCustomer" ToRole="Employee" />
           <NavigationProperty Name="OrderDetails" Relationship="RoofingCompanyModel.FkOrderDetailOrderCustomer" FromRole="OrderCustomer" ToRole="OrderDetail" />
+          <Property Name="NewOrderInfo" Type="Boolean" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -5021,6 +5030,116 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CatalogMachineNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="vInputMagazine">
+          <Key>
+            <PropertyRef Name="Kod_Produktu" />
+            <PropertyRef Name="Data_przyjęcia_na_magazyn" />
+          </Key>
+          <Property Name="Kod_Produktu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" />
+          <Property Name="Data_przyjęcia_na_magazyn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vOrderDetail">
+          <Key>
+            <PropertyRef Name="Numer_zamówienia" />
+            <PropertyRef Name="Ilość" />
+          </Key>
+          <Property Name="Numer_zamówienia" Type="Int32" Nullable="false" />
+          <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vOutputMagazine">
+          <Key>
+            <PropertyRef Name="Data_przyjęcia_na_magazyn" />
+          </Key>
+          <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" />
+          <Property Name="Data_przyjęcia_na_magazyn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vSupplierPart">
+          <Key>
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Firma" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Numer_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+            <PropertyRef Name="Opis" />
+          </Key>
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Firma" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Numer_lokalu" Type="Int32" Nullable="false" />
+          <Property Name="NIP" Type="Double" Nullable="false" />
+          <Property Name="KRS" Type="Double" Nullable="false" />
+          <Property Name="Opis" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vOutsourcingWithType">
+          <Key>
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Firma" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Numer_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+            <PropertyRef Name="Opis" />
+          </Key>
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Firma" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Numer_lokalu" Type="Int32" Nullable="false" />
+          <Property Name="NIP" Type="Double" Nullable="false" />
+          <Property Name="KRS" Type="Double" Nullable="false" />
+          <Property Name="Opis" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSupplierSemi">
+          <Key>
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Firma" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Numer_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+            <PropertyRef Name="Opis" />
+          </Key>
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Firma" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Numer_lokalu" Type="Int32" Nullable="false" />
+          <Property Name="NIP" Type="Double" Nullable="false" />
+          <Property Name="KRS" Type="Double" Nullable="false" />
+          <Property Name="Opis" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5326,6 +5445,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="OrderCustomers">
             <EntityTypeMapping TypeName="RoofingCompanyModel.OrderCustomer">
               <MappingFragment StoreEntitySet="OrderCustomer">
+                <ScalarProperty Name="NewOrderInfo" ColumnName="NewOrderInfo" />
                 <ScalarProperty Name="Markup" ColumnName="Markup" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
@@ -6157,6 +6277,87 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
                 <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vInputMagazines">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vInputMagazine">
+              <MappingFragment StoreEntitySet="vInputMagazine">
+                <ScalarProperty Name="Data_przyjęcia_na_magazyn" ColumnName="Data przyjęcia na magazyn" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_Produktu" ColumnName="Kod Produktu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOrderDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
+              <MappingFragment StoreEntitySet="vOrderDetail">
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
+                <ScalarProperty Name="Numer_zamówienia" ColumnName="Numer zamówienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutputMagazines">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutputMagazine">
+              <MappingFragment StoreEntitySet="vOutputMagazine">
+                <ScalarProperty Name="Data_przyjęcia_na_magazyn" ColumnName="Data przyjęcia na magazyn" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierParts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierPart">
+              <MappingFragment StoreEntitySet="vSupplierParts">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutsourcingWithTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcingWithType">
+              <MappingFragment StoreEntitySet="vOutsourcingWithType">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierSemis">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemi">
+              <MappingFragment StoreEntitySet="vSupplierSemis">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
