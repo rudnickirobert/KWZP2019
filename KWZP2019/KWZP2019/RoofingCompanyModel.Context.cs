@@ -124,5 +124,6 @@ namespace KWZP2019
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
         public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }
         public virtual DbSet<vSupplierSemi> vSupplierSemis { get; set; }
+        public virtual DbSet<vOrder> vOrders { get; set; }
     }
 }
