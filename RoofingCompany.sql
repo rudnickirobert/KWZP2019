@@ -809,13 +809,6 @@ GO
 GO
 CREATE VIEW vOrder
 AS
-SELECT Part.PartName as [Nazwa części], 
-PartType.partType as [Typ części], 
-Unit.UnitName as [Jednostka], 
-Part.QuantityWarehouse as [Stan magazynowy]
-FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
-ON Unit.IdUnit = Part.IdUnit
-ORDER BY Part.PartName;
 SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena],
 Markup as [Marża], EmployeeSurname as [Pracownik odpowiedzialny]
 FROM OrderCustomer
@@ -847,7 +840,7 @@ FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
-ORDER BY Maintenance.DateAcceptOrder DESC;
+
 GO
 
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 

@@ -102,6 +102,8 @@ namespace KWZP2019
         public virtual DbSet<vSafetyControlHistoryView> vSafetyControlHistoryViews { get; set; }
         public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcesses { get; set; }
         public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcesses { get; set; }
+        public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }
+        public virtual DbSet<vSupplierSemi> vSupplierSemis { get; set; }
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
@@ -125,7 +127,5 @@ namespace KWZP2019
         public virtual DbSet<vProductionProcessFullData> vProductionProcessFullDatas { get; set; }
         public virtual DbSet<vAbsenceType> vAbsenceTypes { get; set; }
         public virtual DbSet<vExpencePartOrder> vExpencePartOrders { get; set; }
-        public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }
-        public virtual DbSet<vSupplierSemi> vSupplierSemis { get; set; }
     }
 }
