@@ -25,6 +25,13 @@ namespace KWZP2019
             this.startForm = startForm;
             this.qualityControlForm = qualityControlForm;
             InitializeComponent();
+            doComboBox();
+        }
+
+        private void doComboBox()
+        {
+            comboBoxTraining.DataSource = db.ViewOshTrainings.ToList();
+            comboBoxTraining.ValueMember = "Numer_pracownika";
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -51,7 +58,9 @@ namespace KWZP2019
             {
                 domainUpDownDepartmentName.Items.Add(dep.DepartmentName);
             }
+
             datePickerControlDate.Value = DateTime.Now;
+            comboBoxTraining.Text = "";
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -60,24 +69,12 @@ namespace KWZP2019
                 Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
         }
 
-        private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
-        {
-            Employee employee = db.Employees
-                .FirstOrDefault(check =>
-                check.IdEmployee.ToString() == textBoxEmployeeId.Text);
-
-            lblEmployeeFullName.Text = employee != null ?
-                $"{employee.EmployeeName} {employee.EmployeeSurname}" :
-                "Brak pracownika o takim numerze!";
-        }
-
         void clear()
         {
-            textBoxEmployeeId.Text = "";
+            comboBoxTraining.Text = "";
             dataGVOshTraining.DataSource = "";
             datePickerControlDate.Value = DateTime.Now;
             domainUpDownDepartmentName.Text = "Wybierz dział";
-            lblEmployeeFullName.Text = "_____________________________________________";
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -85,10 +82,18 @@ namespace KWZP2019
             clear();
         }
 
+                private void comboBoxTraining_Format(object sender, ListControlConvertEventArgs e)
+        {
+            int id = ((ViewOshTraining)e.ListItem).Numer_pracownika;
+            string lastname = ((ViewOshTraining)e.ListItem).Nazwisko;
+            string firstname = ((ViewOshTraining)e.ListItem).Imię;
+            e.Value = firstname + " " + lastname;
+        }
+
         private void btnDone_Click(object sender, EventArgs e)
         {
-            selectedEmployee = Convert.ToInt32(textBoxEmployeeId.Text);
-            if (textBoxEmployeeId.Text == "")
+            selectedEmployee = Convert.ToInt32(comboBoxTraining.ValueMember);
+            if (comboBoxTraining.Text == "")
             {
                 MessageBox.Show("Uzupełnij numer pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -101,9 +106,8 @@ namespace KWZP2019
                 db.SaveChanges();
                 MessageBox.Show("Zmieniono termin wygaśnięcia szkolenia pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGVOshTraining.DataSource = db.ViewOshTrainings.ToList();
-                textBoxEmployeeId.Text = "";
+                comboBoxTraining.Text = "";
                 datePickerControlDate.Value = DateTime.Now;
-                lblEmployeeFullName.Text = "_____________________________________________";
 
                 dataGVOshTraining.DataSource = db.ViewOshTrainings.
                     Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();

@@ -40,10 +40,9 @@
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.lblEmployeeId = new System.Windows.Forms.Label();
-            this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.lblTrainingDate = new System.Windows.Forms.Label();
             this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
-            this.lblEmployeeFullName = new System.Windows.Forms.Label();
+            this.comboBoxTraining = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
@@ -168,12 +167,6 @@
             this.lblEmployeeId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblEmployeeId.Name = "lblEmployeeId";
             // 
-            // textBoxEmployeeId
-            // 
-            resources.ApplyResources(this.textBoxEmployeeId, "textBoxEmployeeId");
-            this.textBoxEmployeeId.Name = "textBoxEmployeeId";
-            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
-            // 
             // lblTrainingDate
             // 
             this.lblTrainingDate.BackColor = System.Drawing.Color.Transparent;
@@ -187,21 +180,21 @@
             this.datePickerControlDate.Name = "datePickerControlDate";
             this.datePickerControlDate.Value = new System.DateTime(2019, 4, 16, 20, 35, 51, 0);
             // 
-            // lblEmployeeFullName
+            // comboBoxTraining
             // 
-            this.lblEmployeeFullName.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.lblEmployeeFullName, "lblEmployeeFullName");
-            this.lblEmployeeFullName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmployeeFullName.Name = "lblEmployeeFullName";
+            this.comboBoxTraining.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxTraining, "comboBoxTraining");
+            this.comboBoxTraining.Name = "comboBoxTraining";
+            this.comboBoxTraining.Sorted = true;
+            this.comboBoxTraining.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.comboBoxTraining_Format);
             // 
             // OshTrainingForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblEmployeeFullName);
+            this.Controls.Add(this.comboBoxTraining);
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.lblTrainingDate);
-            this.Controls.Add(this.textBoxEmployeeId);
             this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnDone);
@@ -239,9 +232,8 @@
         private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.Label lblEmployeeId;
-        private System.Windows.Forms.TextBox textBoxEmployeeId;
         private System.Windows.Forms.Label lblTrainingDate;
         private System.Windows.Forms.DateTimePicker datePickerControlDate;
-        private System.Windows.Forms.Label lblEmployeeFullName;
+        private System.Windows.Forms.ComboBox comboBoxTraining;
     }
 }
