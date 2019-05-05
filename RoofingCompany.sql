@@ -655,6 +655,16 @@ create view ViewSemiFinishedCode as
 select SfCode as [Kod_półfabrykatu]
 from
 	SemiFinished;
+
+go
+create view ViewQualityControlerList as
+select Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname
+from Employee
+join Contract
+on Employee.IdEmployee = Contract.IdEmployee
+join Position
+on Contract.IdPosition = Position.IdPosition
+where Position.IdPosition = 2 and Contract.EndDate > getdate();
 -- ===BB===
 
 go
@@ -886,16 +896,6 @@ ON Allocation.IdDepartment = Department.IdDepartment
 WHERE (DepartmentName = 'Logistyka');
 
 GO 
-CREATE VIEW vEmployeeSD
-AS
-SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 
-FROM Allocation
-JOIN Employee
-ON Allocation.IdEmployee = Employee.IdEmployee
-JOIN Department
-ON Allocation.IdDepartment = Department.IdDepartment
-WHERE (DepartmentName = 'Logistyka');
-GO
 
 CREATE VIEW vAbsences
 AS
