@@ -77,7 +77,7 @@
             this.btnDevelopmentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnDevelopmentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnDevelopmentHistory.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDevelopmentHistory.Image = global::KWZP2019.Properties.Resources.icons8_puzzled_40;
+            this.btnDevelopmentHistory.Image = global::KWZP2019.Properties.Resources.icons8_time_machine_40;
             this.btnDevelopmentHistory.Name = "btnDevelopmentHistory";
             this.btnDevelopmentHistory.UseVisualStyleBackColor = false;
             this.btnDevelopmentHistory.Click += new System.EventHandler(this.btnDevelopmentHistory_Click);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DevelopmentHistoryForm));
             this.lblDevelompentNumber = new System.Windows.Forms.Label();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblEmployeeSurname = new System.Windows.Forms.Label();
@@ -42,131 +43,121 @@
             this.textBoxDevelopmentDate = new System.Windows.Forms.TextBox();
             this.textBoxDevelopmentDescription = new System.Windows.Forms.TextBox();
             this.pictureBoxPattern = new System.Windows.Forms.PictureBox();
+            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
+            this.lblFormTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPattern)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDevelompentNumber
             // 
-            this.lblDevelompentNumber.AutoSize = true;
-            this.lblDevelompentNumber.Location = new System.Drawing.Point(35, 26);
+            resources.ApplyResources(this.lblDevelompentNumber, "lblDevelompentNumber");
+            this.lblDevelompentNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblDevelompentNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDevelompentNumber.Name = "lblDevelompentNumber";
-            this.lblDevelompentNumber.Size = new System.Drawing.Size(80, 13);
-            this.lblDevelompentNumber.TabIndex = 0;
-            this.lblDevelompentNumber.Text = "Numer Badania";
             // 
             // lblEmployeeName
             // 
-            this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(35, 59);
+            resources.ApplyResources(this.lblEmployeeName, "lblEmployeeName");
+            this.lblEmployeeName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(84, 13);
-            this.lblEmployeeName.TabIndex = 1;
-            this.lblEmployeeName.Text = "Imię pracownika";
             // 
             // lblEmployeeSurname
             // 
-            this.lblEmployeeSurname.AutoSize = true;
-            this.lblEmployeeSurname.Location = new System.Drawing.Point(35, 87);
+            resources.ApplyResources(this.lblEmployeeSurname, "lblEmployeeSurname");
+            this.lblEmployeeSurname.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeSurname.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblEmployeeSurname.Name = "lblEmployeeSurname";
-            this.lblEmployeeSurname.Size = new System.Drawing.Size(111, 13);
-            this.lblEmployeeSurname.TabIndex = 2;
-            this.lblEmployeeSurname.Text = "Nazwisko pracownika";
             // 
             // lblEmployeeNumber
             // 
-            this.lblEmployeeNumber.AutoSize = true;
-            this.lblEmployeeNumber.Location = new System.Drawing.Point(35, 120);
+            resources.ApplyResources(this.lblEmployeeNumber, "lblEmployeeNumber");
+            this.lblEmployeeNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblEmployeeNumber.Name = "lblEmployeeNumber";
-            this.lblEmployeeNumber.Size = new System.Drawing.Size(96, 13);
-            this.lblEmployeeNumber.TabIndex = 3;
-            this.lblEmployeeNumber.Text = "Numer pracownika";
             // 
             // lblDevelopmentDate
             // 
-            this.lblDevelopmentDate.AutoSize = true;
-            this.lblDevelopmentDate.Location = new System.Drawing.Point(35, 149);
+            resources.ApplyResources(this.lblDevelopmentDate, "lblDevelopmentDate");
+            this.lblDevelopmentDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDevelopmentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDevelopmentDate.Name = "lblDevelopmentDate";
-            this.lblDevelopmentDate.Size = new System.Drawing.Size(71, 13);
-            this.lblDevelopmentDate.TabIndex = 4;
-            this.lblDevelopmentDate.Text = "Data badania";
             // 
             // lblDevelopmentDescription
             // 
-            this.lblDevelopmentDescription.AutoSize = true;
-            this.lblDevelopmentDescription.Location = new System.Drawing.Point(35, 174);
+            resources.ApplyResources(this.lblDevelopmentDescription, "lblDevelopmentDescription");
+            this.lblDevelopmentDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDevelopmentDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDevelopmentDescription.Name = "lblDevelopmentDescription";
-            this.lblDevelopmentDescription.Size = new System.Drawing.Size(69, 13);
-            this.lblDevelopmentDescription.TabIndex = 5;
-            this.lblDevelopmentDescription.Text = "Opis badania";
             // 
             // lblDevelopmentPicture
             // 
-            this.lblDevelopmentPicture.AutoSize = true;
-            this.lblDevelopmentPicture.Location = new System.Drawing.Point(438, 59);
+            resources.ApplyResources(this.lblDevelopmentPicture, "lblDevelopmentPicture");
+            this.lblDevelopmentPicture.BackColor = System.Drawing.Color.Transparent;
+            this.lblDevelopmentPicture.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDevelopmentPicture.Name = "lblDevelopmentPicture";
-            this.lblDevelopmentPicture.Size = new System.Drawing.Size(42, 13);
-            this.lblDevelopmentPicture.TabIndex = 6;
-            this.lblDevelopmentPicture.Text = "Zdjęcie";
             // 
             // domainUpDownDevelompentNumber
             // 
-            this.domainUpDownDevelompentNumber.Location = new System.Drawing.Point(187, 24);
+            resources.ApplyResources(this.domainUpDownDevelompentNumber, "domainUpDownDevelompentNumber");
             this.domainUpDownDevelompentNumber.Name = "domainUpDownDevelompentNumber";
-            this.domainUpDownDevelompentNumber.Size = new System.Drawing.Size(120, 20);
-            this.domainUpDownDevelompentNumber.TabIndex = 7;
-            this.domainUpDownDevelompentNumber.Text = "domainUpDownDevelopmentNumber";
             this.domainUpDownDevelompentNumber.SelectedItemChanged += new System.EventHandler(this.domainUpDownDevelompentNumber_SelectedItemChanged);
             // 
             // textBoxEmployeeName
             // 
-            this.textBoxEmployeeName.Location = new System.Drawing.Point(187, 59);
+            resources.ApplyResources(this.textBoxEmployeeName, "textBoxEmployeeName");
             this.textBoxEmployeeName.Name = "textBoxEmployeeName";
-            this.textBoxEmployeeName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmployeeName.TabIndex = 8;
             // 
             // textBoxEmployeeSurname
             // 
-            this.textBoxEmployeeSurname.Location = new System.Drawing.Point(187, 87);
+            resources.ApplyResources(this.textBoxEmployeeSurname, "textBoxEmployeeSurname");
             this.textBoxEmployeeSurname.Name = "textBoxEmployeeSurname";
-            this.textBoxEmployeeSurname.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmployeeSurname.TabIndex = 9;
             // 
             // textBoxEmployeeNumber
             // 
-            this.textBoxEmployeeNumber.Location = new System.Drawing.Point(187, 120);
+            resources.ApplyResources(this.textBoxEmployeeNumber, "textBoxEmployeeNumber");
             this.textBoxEmployeeNumber.Name = "textBoxEmployeeNumber";
-            this.textBoxEmployeeNumber.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmployeeNumber.TabIndex = 10;
             // 
             // textBoxDevelopmentDate
             // 
-            this.textBoxDevelopmentDate.Location = new System.Drawing.Point(187, 149);
+            resources.ApplyResources(this.textBoxDevelopmentDate, "textBoxDevelopmentDate");
             this.textBoxDevelopmentDate.Name = "textBoxDevelopmentDate";
-            this.textBoxDevelopmentDate.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDevelopmentDate.TabIndex = 11;
             // 
             // textBoxDevelopmentDescription
             // 
-            this.textBoxDevelopmentDescription.Location = new System.Drawing.Point(187, 175);
-            this.textBoxDevelopmentDescription.Multiline = true;
+            resources.ApplyResources(this.textBoxDevelopmentDescription, "textBoxDevelopmentDescription");
             this.textBoxDevelopmentDescription.Name = "textBoxDevelopmentDescription";
-            this.textBoxDevelopmentDescription.Size = new System.Drawing.Size(278, 157);
-            this.textBoxDevelopmentDescription.TabIndex = 12;
             // 
             // pictureBoxPattern
             // 
-            this.pictureBoxPattern.Location = new System.Drawing.Point(498, 59);
+            this.pictureBoxPattern.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pictureBoxPattern, "pictureBoxPattern");
             this.pictureBoxPattern.Name = "pictureBoxPattern";
-            this.pictureBoxPattern.Size = new System.Drawing.Size(237, 188);
-            this.pictureBoxPattern.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPattern.TabIndex = 13;
             this.pictureBoxPattern.TabStop = false;
+            // 
+            // pictureBoxForm
+            // 
+            this.pictureBoxForm.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pictureBoxForm, "pictureBoxForm");
+            this.pictureBoxForm.Name = "pictureBoxForm";
+            this.pictureBoxForm.TabStop = false;
+            // 
+            // lblFormTitle
+            // 
+            this.lblFormTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblFormTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFormTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.lblFormTitle, "lblFormTitle");
+            this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFormTitle.Name = "lblFormTitle";
             // 
             // DevelopmentHistoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.pictureBoxPattern);
             this.Controls.Add(this.textBoxDevelopmentDescription);
             this.Controls.Add(this.textBoxDevelopmentDate);
@@ -181,11 +172,15 @@
             this.Controls.Add(this.lblEmployeeSurname);
             this.Controls.Add(this.lblEmployeeName);
             this.Controls.Add(this.lblDevelompentNumber);
+            this.Controls.Add(this.pictureBoxForm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DevelopmentHistoryForm";
-            this.Text = "DevelopmentHistoryForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DevelopmentHistoryForm_FormClosed);
             this.Load += new System.EventHandler(this.DevelopmentHistoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPattern)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +202,7 @@
         private System.Windows.Forms.TextBox textBoxDevelopmentDate;
         private System.Windows.Forms.TextBox textBoxDevelopmentDescription;
         private System.Windows.Forms.PictureBox pictureBoxPattern;
+        private System.Windows.Forms.PictureBox pictureBoxForm;
+        private System.Windows.Forms.Label lblFormTitle;
     }
 }

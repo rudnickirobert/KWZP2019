@@ -462,7 +462,7 @@
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
   <data name="btnImportPicture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="btnImportPicture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -483,7 +483,7 @@
     <value>Dodaj wzór</value>
   </data>
   <data name="btnImportPicture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnImportPicture.Name" xml:space="preserve">
     <value>btnImportPicture</value>
@@ -1053,7 +1053,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 749</value>
+    <value>1184, 761</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

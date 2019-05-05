@@ -283,6 +283,16 @@ namespace KWZP2019.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_time_machine_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-time-machine-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap new_80px {
             get {
                 object obj = ResourceManager.GetObject("new_80px", resourceCulture);
