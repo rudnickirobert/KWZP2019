@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewSupplierForm));
             this.supplierTypeLbl = new System.Windows.Forms.Label();
             this.supplierTypeTb = new System.Windows.Forms.TextBox();
             this.nazwaLbl = new System.Windows.Forms.Label();
@@ -53,214 +54,340 @@
             this.krsTb = new System.Windows.Forms.TextBox();
             this.descriptionTb = new System.Windows.Forms.TextBox();
             this.addNewSupplierBtn = new System.Windows.Forms.Button();
+            this.returnBtn = new System.Windows.Forms.Button();
+            this.pictureBoxForm = new System.Windows.Forms.PictureBox();
+            this.addNewSupplierLbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
             // supplierTypeLbl
             // 
             this.supplierTypeLbl.AutoSize = true;
-            this.supplierTypeLbl.Location = new System.Drawing.Point(48, 47);
+            this.supplierTypeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.supplierTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.supplierTypeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.supplierTypeLbl.Location = new System.Drawing.Point(201, 167);
             this.supplierTypeLbl.Name = "supplierTypeLbl";
-            this.supplierTypeLbl.Size = new System.Drawing.Size(94, 17);
+            this.supplierTypeLbl.Size = new System.Drawing.Size(137, 24);
             this.supplierTypeLbl.TabIndex = 0;
             this.supplierTypeLbl.Text = "Typ dostawcy";
             // 
             // supplierTypeTb
             // 
-            this.supplierTypeTb.Location = new System.Drawing.Point(164, 47);
+            this.supplierTypeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.supplierTypeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.supplierTypeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.supplierTypeTb.Location = new System.Drawing.Point(205, 210);
             this.supplierTypeTb.Name = "supplierTypeTb";
-            this.supplierTypeTb.Size = new System.Drawing.Size(192, 22);
+            this.supplierTypeTb.Size = new System.Drawing.Size(192, 28);
             this.supplierTypeTb.TabIndex = 1;
             // 
             // nazwaLbl
             // 
             this.nazwaLbl.AutoSize = true;
-            this.nazwaLbl.Location = new System.Drawing.Point(48, 79);
+            this.nazwaLbl.BackColor = System.Drawing.Color.Transparent;
+            this.nazwaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.nazwaLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nazwaLbl.Location = new System.Drawing.Point(485, 167);
             this.nazwaLbl.Name = "nazwaLbl";
-            this.nazwaLbl.Size = new System.Drawing.Size(50, 17);
+            this.nazwaLbl.Size = new System.Drawing.Size(72, 24);
             this.nazwaLbl.TabIndex = 2;
             this.nazwaLbl.Text = "Nazwa";
             // 
             // nameTb
             // 
-            this.nameTb.Location = new System.Drawing.Point(164, 79);
+            this.nameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.nameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.nameTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nameTb.Location = new System.Drawing.Point(489, 210);
             this.nameTb.Name = "nameTb";
-            this.nameTb.Size = new System.Drawing.Size(192, 22);
+            this.nameTb.Size = new System.Drawing.Size(192, 28);
             this.nameTb.TabIndex = 3;
             // 
             // phoneLbl
             // 
             this.phoneLbl.AutoSize = true;
-            this.phoneLbl.Location = new System.Drawing.Point(48, 111);
+            this.phoneLbl.BackColor = System.Drawing.Color.Transparent;
+            this.phoneLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.phoneLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.phoneLbl.Location = new System.Drawing.Point(787, 167);
             this.phoneLbl.Name = "phoneLbl";
-            this.phoneLbl.Size = new System.Drawing.Size(56, 17);
+            this.phoneLbl.Size = new System.Drawing.Size(81, 24);
             this.phoneLbl.TabIndex = 4;
             this.phoneLbl.Text = "Telefon";
             // 
             // emailLbl
             // 
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(48, 147);
+            this.emailLbl.BackColor = System.Drawing.Color.Transparent;
+            this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.emailLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.emailLbl.Location = new System.Drawing.Point(201, 266);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(47, 17);
+            this.emailLbl.Size = new System.Drawing.Size(69, 24);
             this.emailLbl.TabIndex = 5;
             this.emailLbl.Text = "E-mail";
             // 
             // cityLbl
             // 
             this.cityLbl.AutoSize = true;
-            this.cityLbl.Location = new System.Drawing.Point(48, 182);
+            this.cityLbl.BackColor = System.Drawing.Color.Transparent;
+            this.cityLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.cityLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cityLbl.Location = new System.Drawing.Point(485, 266);
             this.cityLbl.Name = "cityLbl";
-            this.cityLbl.Size = new System.Drawing.Size(86, 17);
+            this.cityLbl.Size = new System.Drawing.Size(130, 24);
             this.cityLbl.TabIndex = 6;
             this.cityLbl.Text = "Miejscowość";
             // 
             // descriptionLbl
             // 
             this.descriptionLbl.AutoSize = true;
-            this.descriptionLbl.Location = new System.Drawing.Point(47, 504);
+            this.descriptionLbl.BackColor = System.Drawing.Color.Transparent;
+            this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.descriptionLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.descriptionLbl.Location = new System.Drawing.Point(787, 472);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(37, 17);
+            this.descriptionLbl.Size = new System.Drawing.Size(53, 24);
             this.descriptionLbl.TabIndex = 30;
             this.descriptionLbl.Text = "Opis";
             // 
             // krsLbl
             // 
             this.krsLbl.AutoSize = true;
-            this.krsLbl.Location = new System.Drawing.Point(47, 457);
+            this.krsLbl.BackColor = System.Drawing.Color.Transparent;
+            this.krsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.krsLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.krsLbl.Location = new System.Drawing.Point(485, 472);
             this.krsLbl.Name = "krsLbl";
-            this.krsLbl.Size = new System.Drawing.Size(36, 17);
+            this.krsLbl.Size = new System.Drawing.Size(50, 24);
             this.krsLbl.TabIndex = 29;
             this.krsLbl.Text = "KRS";
             // 
             // nipLbl
             // 
             this.nipLbl.AutoSize = true;
-            this.nipLbl.Location = new System.Drawing.Point(47, 409);
+            this.nipLbl.BackColor = System.Drawing.Color.Transparent;
+            this.nipLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.nipLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nipLbl.Location = new System.Drawing.Point(215, 472);
             this.nipLbl.Name = "nipLbl";
-            this.nipLbl.Size = new System.Drawing.Size(30, 17);
+            this.nipLbl.Size = new System.Drawing.Size(43, 24);
             this.nipLbl.TabIndex = 28;
             this.nipLbl.Text = "NIP";
             // 
             // apartmentNumberLbl
             // 
             this.apartmentNumberLbl.AutoSize = true;
-            this.apartmentNumberLbl.Location = new System.Drawing.Point(47, 362);
+            this.apartmentNumberLbl.BackColor = System.Drawing.Color.Transparent;
+            this.apartmentNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.apartmentNumberLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.apartmentNumberLbl.Location = new System.Drawing.Point(787, 373);
             this.apartmentNumberLbl.Name = "apartmentNumberLbl";
-            this.apartmentNumberLbl.Size = new System.Drawing.Size(64, 17);
+            this.apartmentNumberLbl.Size = new System.Drawing.Size(93, 24);
             this.apartmentNumberLbl.TabIndex = 27;
             this.apartmentNumberLbl.Text = "Nr lokalu";
             // 
             // houseNumberLbl
             // 
             this.houseNumberLbl.AutoSize = true;
-            this.houseNumberLbl.Location = new System.Drawing.Point(47, 314);
+            this.houseNumberLbl.BackColor = System.Drawing.Color.Transparent;
+            this.houseNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.houseNumberLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.houseNumberLbl.Location = new System.Drawing.Point(485, 373);
             this.houseNumberLbl.Name = "houseNumberLbl";
-            this.houseNumberLbl.Size = new System.Drawing.Size(62, 17);
+            this.houseNumberLbl.Size = new System.Drawing.Size(91, 24);
             this.houseNumberLbl.TabIndex = 26;
             this.houseNumberLbl.Text = "Nr domu";
             // 
             // streetLbl
             // 
             this.streetLbl.AutoSize = true;
-            this.streetLbl.Location = new System.Drawing.Point(48, 261);
+            this.streetLbl.BackColor = System.Drawing.Color.Transparent;
+            this.streetLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.streetLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.streetLbl.Location = new System.Drawing.Point(201, 373);
             this.streetLbl.Name = "streetLbl";
-            this.streetLbl.Size = new System.Drawing.Size(39, 17);
+            this.streetLbl.Size = new System.Drawing.Size(56, 24);
             this.streetLbl.TabIndex = 25;
             this.streetLbl.Text = "Ulica";
             // 
             // zipCodeLbl
             // 
             this.zipCodeLbl.AutoSize = true;
-            this.zipCodeLbl.Location = new System.Drawing.Point(47, 218);
+            this.zipCodeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.zipCodeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.zipCodeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.zipCodeLbl.Location = new System.Drawing.Point(787, 266);
             this.zipCodeLbl.Name = "zipCodeLbl";
-            this.zipCodeLbl.Size = new System.Drawing.Size(95, 17);
+            this.zipCodeLbl.Size = new System.Drawing.Size(140, 24);
             this.zipCodeLbl.TabIndex = 24;
             this.zipCodeLbl.Text = "Kod pocztowy";
             // 
             // phoneTb
             // 
-            this.phoneTb.Location = new System.Drawing.Point(164, 111);
+            this.phoneTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.phoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.phoneTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.phoneTb.Location = new System.Drawing.Point(791, 210);
             this.phoneTb.Name = "phoneTb";
-            this.phoneTb.Size = new System.Drawing.Size(192, 22);
+            this.phoneTb.Size = new System.Drawing.Size(192, 28);
             this.phoneTb.TabIndex = 31;
             // 
             // emailTb
             // 
-            this.emailTb.Location = new System.Drawing.Point(164, 147);
+            this.emailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.emailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.emailTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.emailTb.Location = new System.Drawing.Point(205, 313);
             this.emailTb.Name = "emailTb";
-            this.emailTb.Size = new System.Drawing.Size(192, 22);
+            this.emailTb.Size = new System.Drawing.Size(192, 28);
             this.emailTb.TabIndex = 32;
             // 
             // cityTb
             // 
-            this.cityTb.Location = new System.Drawing.Point(164, 182);
+            this.cityTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cityTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cityTb.Location = new System.Drawing.Point(489, 313);
             this.cityTb.Name = "cityTb";
-            this.cityTb.Size = new System.Drawing.Size(192, 22);
+            this.cityTb.Size = new System.Drawing.Size(192, 28);
             this.cityTb.TabIndex = 33;
             // 
             // apartmentNumberTb
             // 
-            this.apartmentNumberTb.Location = new System.Drawing.Point(164, 357);
+            this.apartmentNumberTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.apartmentNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.apartmentNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.apartmentNumberTb.Location = new System.Drawing.Point(791, 409);
             this.apartmentNumberTb.Name = "apartmentNumberTb";
-            this.apartmentNumberTb.Size = new System.Drawing.Size(192, 22);
+            this.apartmentNumberTb.Size = new System.Drawing.Size(192, 28);
             this.apartmentNumberTb.TabIndex = 34;
             // 
             // houseNumberTb
             // 
-            this.houseNumberTb.Location = new System.Drawing.Point(164, 314);
+            this.houseNumberTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.houseNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.houseNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.houseNumberTb.Location = new System.Drawing.Point(489, 409);
             this.houseNumberTb.Name = "houseNumberTb";
-            this.houseNumberTb.Size = new System.Drawing.Size(192, 22);
+            this.houseNumberTb.Size = new System.Drawing.Size(192, 28);
             this.houseNumberTb.TabIndex = 35;
             // 
             // streetTb
             // 
-            this.streetTb.Location = new System.Drawing.Point(164, 258);
+            this.streetTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.streetTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.streetTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.streetTb.Location = new System.Drawing.Point(205, 409);
             this.streetTb.Name = "streetTb";
-            this.streetTb.Size = new System.Drawing.Size(192, 22);
+            this.streetTb.Size = new System.Drawing.Size(192, 28);
             this.streetTb.TabIndex = 36;
             // 
             // zipCodeTb
             // 
-            this.zipCodeTb.Location = new System.Drawing.Point(164, 218);
+            this.zipCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.zipCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.zipCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.zipCodeTb.Location = new System.Drawing.Point(791, 313);
             this.zipCodeTb.Name = "zipCodeTb";
-            this.zipCodeTb.Size = new System.Drawing.Size(192, 22);
+            this.zipCodeTb.Size = new System.Drawing.Size(192, 28);
             this.zipCodeTb.TabIndex = 37;
             // 
             // nipTb
             // 
-            this.nipTb.Location = new System.Drawing.Point(164, 409);
+            this.nipTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.nipTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.nipTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nipTb.Location = new System.Drawing.Point(205, 499);
             this.nipTb.Name = "nipTb";
-            this.nipTb.Size = new System.Drawing.Size(192, 22);
+            this.nipTb.Size = new System.Drawing.Size(192, 28);
             this.nipTb.TabIndex = 38;
             // 
             // krsTb
             // 
-            this.krsTb.Location = new System.Drawing.Point(164, 457);
+            this.krsTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.krsTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.krsTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.krsTb.Location = new System.Drawing.Point(489, 499);
             this.krsTb.Name = "krsTb";
-            this.krsTb.Size = new System.Drawing.Size(192, 22);
+            this.krsTb.Size = new System.Drawing.Size(192, 28);
             this.krsTb.TabIndex = 39;
             // 
             // descriptionTb
             // 
-            this.descriptionTb.Location = new System.Drawing.Point(164, 504);
+            this.descriptionTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.descriptionTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.descriptionTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.descriptionTb.Location = new System.Drawing.Point(791, 499);
             this.descriptionTb.Name = "descriptionTb";
-            this.descriptionTb.Size = new System.Drawing.Size(192, 22);
+            this.descriptionTb.Size = new System.Drawing.Size(192, 28);
             this.descriptionTb.TabIndex = 40;
             // 
             // addNewSupplierBtn
             // 
-            this.addNewSupplierBtn.Location = new System.Drawing.Point(483, 465);
+            this.addNewSupplierBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.addNewSupplierBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.addNewSupplierBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addNewSupplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewSupplierBtn.Image")));
+            this.addNewSupplierBtn.Location = new System.Drawing.Point(268, 591);
             this.addNewSupplierBtn.Name = "addNewSupplierBtn";
-            this.addNewSupplierBtn.Size = new System.Drawing.Size(247, 61);
+            this.addNewSupplierBtn.Size = new System.Drawing.Size(216, 91);
             this.addNewSupplierBtn.TabIndex = 41;
             this.addNewSupplierBtn.Text = "Zatwierdź";
-            this.addNewSupplierBtn.UseVisualStyleBackColor = true;
+            this.addNewSupplierBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.addNewSupplierBtn.UseVisualStyleBackColor = false;
+            // 
+            // returnBtn
+            // 
+            this.returnBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.returnBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.returnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.returnBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.returnBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnBtn.Image")));
+            this.returnBtn.Location = new System.Drawing.Point(13, 594);
+            this.returnBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(216, 91);
+            this.returnBtn.TabIndex = 42;
+            this.returnBtn.Text = "Powrót";
+            this.returnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.returnBtn.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxForm
+            // 
+            this.pictureBoxForm.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxForm.BackgroundImage")));
+            this.pictureBoxForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxForm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBoxForm.Location = new System.Drawing.Point(64, -7);
+            this.pictureBoxForm.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxForm.Name = "pictureBoxForm";
+            this.pictureBoxForm.Size = new System.Drawing.Size(1086, 591);
+            this.pictureBoxForm.TabIndex = 43;
+            this.pictureBoxForm.TabStop = false;
+            //this.pictureBoxForm.Click += new System.EventHandler(this.pictureBoxForm_Click);
+            // 
+            // addNewSupplierLbl
+            // 
+            this.addNewSupplierLbl.AutoSize = true;
+            this.addNewSupplierLbl.BackColor = System.Drawing.Color.Transparent;
+            this.addNewSupplierLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.addNewSupplierLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addNewSupplierLbl.Location = new System.Drawing.Point(439, 90);
+            this.addNewSupplierLbl.Name = "addNewSupplierLbl";
+            this.addNewSupplierLbl.Size = new System.Drawing.Size(362, 36);
+            this.addNewSupplierLbl.TabIndex = 44;
+            this.addNewSupplierLbl.Text = "Dodaj nowego dostawcę";
             // 
             // AddNewSupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 554);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.addNewSupplierLbl);
+            this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.addNewSupplierBtn);
             this.Controls.Add(this.descriptionTb);
             this.Controls.Add(this.krsTb);
@@ -286,8 +413,11 @@
             this.Controls.Add(this.nazwaLbl);
             this.Controls.Add(this.supplierTypeTb);
             this.Controls.Add(this.supplierTypeLbl);
+            this.Controls.Add(this.pictureBoxForm);
             this.Name = "AddNewSupplierForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewSupplierForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +450,8 @@
         private System.Windows.Forms.TextBox krsTb;
         private System.Windows.Forms.TextBox descriptionTb;
         private System.Windows.Forms.Button addNewSupplierBtn;
+        private System.Windows.Forms.Button returnBtn;
+        private System.Windows.Forms.PictureBox pictureBoxForm;
+        private System.Windows.Forms.Label addNewSupplierLbl;
     }
 }
