@@ -193,7 +193,7 @@ namespace KWZP2019
         private void btnRemoveEmployee_Click(object sender, EventArgs e)
         {
             int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
-            int idEmployeeToRemove = Convert.ToInt32(this.viewProcessEmpl.CurrentRow.Cells["idDetailDataGridViewTextBoxColumn"].Value);
+            int idEmployeeToRemove = Convert.ToInt32(this.viewProcessEmpl.CurrentRow.Cells["idDetail"].Value);
             string messageDuringRemovingEmployee = "Usunięto plan pracownika o numerze: " + Convert.ToString(idEmployeeToRemove + ".");
             MessageBox.Show(messageDuringRemovingEmployee, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             PlannedProductionEmployeeDetail employeeToRemove = db.PlannedProductionEmployeeDetails.First(f => f.IdDetail == idEmployeeToRemove);
