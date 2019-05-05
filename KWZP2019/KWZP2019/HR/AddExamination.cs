@@ -10,13 +10,19 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class Costs : Form
+    public partial class AddExamination : Form
     {
         RoofingCompanyEntities db;
-        public Costs(RoofingCompanyEntities db)
+
+        public AddExamination(RoofingCompanyEntities db)
         {
             InitializeComponent();
             this.db = db;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MedicalExamination newMedicalExamination = new MedicalExamination();
         }
     }
 }
