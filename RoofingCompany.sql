@@ -784,26 +784,24 @@ GO
 
 CREATE VIEW vPartsView
 AS
-SELECT TOP 100 PERCENT Part.PartName, 
-PartType.partType, 
-Part.Producer,
-Part.CatalogPartNr,
-Unit.UnitName, 
-Part.QuantityWarehouse
-FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
+SELECT Part.PartName, PartType.partType, Part.Producer, Part.CatalogPartNr, Unit.UnitName, Part.QuantityWarehouse
+FROM Part 
+JOIN PartType
+ON Part.IdPartType = PartType.IdPartType
+JOIN Unit 
 ON Unit.IdUnit = Part.IdUnit
-ORDER BY Part.PartName;
 GO
 
 CREATE VIEW vMaintPartsView
 AS
-SELECT TOP 100 PERCENT Maintenance.MaintenanceNr, Maintenance.DateAcceptOrder, 
-Part.PartName, MaintPart.PartQuantity, Unit.UnitName
-FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart 
-ON Part.IdPart = MaintPart.IdPart) 
-ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
+SELECT Maintenance.MaintenanceNr, Maintenance.DateAcceptOrder, Part.PartName, MaintPart.PartQuantity, Unit.UnitName
+FROM Maintenance
+JOIN MaintPart
+ON Maintenance.IdMaintenance = MaintPart.IdMaintenance
+JOIN Part
+ON MaintPart.IdPart = Part.IdPart
+JOIN Unit
 ON Unit.IdUnit = Part.IdUnit
-ORDER BY Maintenance.DateAcceptOrder DESC;
 GO
 
 CREATE VIEW vPartsRequestView

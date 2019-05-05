@@ -14,9 +14,9 @@ namespace KWZP2019
     {
         RoofingCompanyEntities db;
         MaintenanceManagement maintenanceManagementForm;
-        private bool hided;
-        private bool updatepanel;
-        private bool deletepanel;
+        private bool hidden;
+        private bool updatePanel;
+        private bool deletePanel;
         private int selectedRow;
         private string selectedName;
         private bool selectedEditPart;
@@ -26,9 +26,9 @@ namespace KWZP2019
         {
             this.db = db;
             this.maintenanceManagementForm = maintenanceManagementForm;
-            hided = true;
-            updatepanel = false;
-            deletepanel = false;
+            hidden = true;
+            updatePanel = false;
+            deletePanel = false;
             InitializeComponent();
             panelPartsList.Show();
             panelSearch.Hide();
@@ -59,13 +59,13 @@ namespace KWZP2019
 
         private void timerMenu_Tick(object sender, EventArgs e)
         {
-            if (hided)
+            if (hidden)
             {
                 menuParts.Width = menuParts.Width + 5;
                 if (menuParts.Width >= 277)
                 {
                     timerMenu.Stop();
-                    hided = false;
+                    hidden = false;
                     this.Refresh();
                 }
             }
@@ -76,7 +76,7 @@ namespace KWZP2019
                 if (menuParts.Width <= 57)
                 {
                     timerMenu.Stop();
-                    hided = true;
+                    hidden = true;
                     this.Refresh();
                 }
             }
@@ -129,8 +129,8 @@ namespace KWZP2019
             panelDelete.Hide();
             panelUpdate.Hide();
             panelSearch.Show();
-            updatepanel = false;
-            deletepanel = false;
+            updatePanel = false;
+            deletePanel = false;
         }
 
         // ==========================================
@@ -144,8 +144,8 @@ namespace KWZP2019
             panelUpdate.Hide();
             panelAdd.Show();
             clear_AddPart();
-            updatepanel = false;
-            deletepanel = false;
+            updatePanel = false;
+            deletePanel = false;
         }
 
         // ==========================================
@@ -158,8 +158,8 @@ namespace KWZP2019
             panelDelete.Hide();
             panelUpdate.Show();
             clear_UpdatePart();
-            updatepanel = true;
-            deletepanel = false;
+            updatePanel = true;
+            deletePanel = false;
             selectedEditPart = false;
         }
 
@@ -172,8 +172,8 @@ namespace KWZP2019
             panelDelete.Show();
             panelUpdate.Hide();
             clear_DelPart();
-            updatepanel = false;
-            deletepanel = true;
+            updatePanel = false;
+            deletePanel = true;
         }
 
         // ==========================================
@@ -190,56 +190,54 @@ namespace KWZP2019
             if (txtBoxSearch.Text == "")
             {
                 MessageBox.Show("Pole wyszukiwania nie może być puste!", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
+
+            if (cbSearch.Text == "Nazwa części")
+            {
+                dataPartsView.DataSource = db.vPartsViews
+                .Where(selectedpart => selectedpart.PartName.Contains(txtBoxSearch.Text)).ToList();
+
+                if (dataPartsView.RowCount == 0)
+                {
+                    MessageBox.Show("Nie znaleziono pasujących wyników", "Wynik wyszukiwania",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    ReloadData();
+                }
+            }
+
+            else if (cbSearch.Text == "Typ części")
+            {
+                dataPartsView.DataSource = db.vPartsViews
+                .Where(selectedpart => selectedpart.partType.Contains(txtBoxSearch.Text)).ToList();
+
+                if (dataPartsView.RowCount == 0)
+                {
+                    MessageBox.Show("Nie znaleziono pasujących wyników", "Wynik wyszukiwania",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    ReloadData();
+                }
+            }
+
+            else if (cbSearch.Text == "Producent")
+            {
+                dataPartsView.DataSource = db.vPartsViews
+                .Where(selectedpart => selectedpart.Producer.Contains(txtBoxSearch.Text)).ToList();
+
+                if (dataPartsView.RowCount == 0)
+                {
+                    MessageBox.Show("Nie znaleziono pasujących wyników", "Wynik wyszukiwania",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    ReloadData();
+                }
             }
 
             else
             {
-                if (cbSearch.Text == "Nazwa części")
-                {
-                    dataPartsView.DataSource = db.vPartsViews
-                    .Where(selectedpart => selectedpart.PartName.Contains(txtBoxSearch.Text)).ToList();
-
-                    if (dataPartsView.RowCount == 0)
-                    {
-                        MessageBox.Show("Nie znaleziono pasujących wyników", "Wynik wyszukiwania",
-                           MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        ReloadData();
-                    }
-                }
-
-                else if (cbSearch.Text == "Typ części")
-                {
-                    dataPartsView.DataSource = db.vPartsViews
-                    .Where(selectedpart => selectedpart.partType.Contains(txtBoxSearch.Text)).ToList();
-
-                    if (dataPartsView.RowCount == 0)
-                    {
-                        MessageBox.Show("Nie znaleziono pasujących wyników", "Wynik wyszukiwania",
-                           MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        ReloadData();
-                    }
-                }
-
-                else if (cbSearch.Text == "Producent")
-                {
-                    dataPartsView.DataSource = db.vPartsViews
-                    .Where(selectedpart => selectedpart.Producer.Contains(txtBoxSearch.Text)).ToList();
-
-                    if (dataPartsView.RowCount == 0)
-                    {
-                        MessageBox.Show("Nie znaleziono pasujących wyników", "Wynik wyszukiwania",
-                           MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        ReloadData();
-                    }
-                }
-
-                else
-                {
-                    MessageBox.Show("Pole 'Wyszukaj wg' nie może być puste!", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show("Pole 'Wyszukaj wg' nie może być puste!", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -413,7 +411,7 @@ namespace KWZP2019
             {
                 DataGridViewRow row = dataPartsView.Rows[selectedRow];
 
-                if (updatepanel)
+                if (updatePanel)
                 {
                     selectedName = row.Cells[0].Value.ToString();
                     tbUpdateName.Text = row.Cells[0].Value.ToString();
@@ -428,7 +426,7 @@ namespace KWZP2019
                     tbUpdateCatalNr.Enabled = true;
                 }
 
-                else if (deletepanel)
+                else if (deletePanel)
                 {
                     selectedName = row.Cells[0].Value.ToString();
                     tbDeleteName.Text = row.Cells[0].Value.ToString();
