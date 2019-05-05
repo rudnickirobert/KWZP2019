@@ -28,254 +28,223 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.entranceWarehouseBtn = new System.Windows.Forms.Button();
-            this.outWarehouseBtn = new System.Windows.Forms.Button();
-            this.entranceWarehouseGb = new System.Windows.Forms.GroupBox();
-            this.Pracownikkontrola_tb = new System.Windows.Forms.TextBox();
-            this.Pracownikzamowienie_tb = new System.Windows.Forms.TextBox();
-            this.Iloscpolfabrykat_tb = new System.Windows.Forms.TextBox();
-            this.Kodpolfabrykatu_tb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PracownikZamowienie_lbl = new System.Windows.Forms.Label();
-            this.Ilosc_lbl = new System.Windows.Forms.Label();
-            this.Kodpolfabrykatu_lbl = new System.Windows.Forms.Label();
-            this.outWarehouseGb = new System.Windows.Forms.GroupBox();
-            this.Pracownikkontrolaproduktu_tb = new System.Windows.Forms.TextBox();
-            this.Przekazanedoprodukcji_tb = new System.Windows.Forms.TextBox();
-            this.Iloscprodukt_tb = new System.Windows.Forms.TextBox();
-            this.Kodproduktu_tb = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Kodproduktu_lbl = new System.Windows.Forms.Label();
-            this.entranceWarehouseGb.SuspendLayout();
-            this.outWarehouseGb.SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WarehouseForm));
+            this.entraceWarehouseDgv = new System.Windows.Forms.DataGridView();
+            this.outWarehouseDgv = new System.Windows.Forms.DataGridView();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.entraceWarehouseLbl = new System.Windows.Forms.Label();
+            this.outWarehouseLbl = new System.Windows.Forms.Label();
+            this.semiFinishedLbl = new System.Windows.Forms.Label();
+            this.productLbl = new System.Windows.Forms.Label();
+            this.semiFinishedCodeTb = new System.Windows.Forms.TextBox();
+            this.productCodeTb = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.entraceWarehouseDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outWarehouseDgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // entranceWarehouseBtn
+            // entraceWarehouseDgv
             // 
-            this.entranceWarehouseBtn.Location = new System.Drawing.Point(42, 60);
-            this.entranceWarehouseBtn.Name = "entranceWarehouseBtn";
-            this.entranceWarehouseBtn.Size = new System.Drawing.Size(155, 43);
-            this.entranceWarehouseBtn.TabIndex = 0;
-            this.entranceWarehouseBtn.Text = "Magazyn wejściowy";
-            this.entranceWarehouseBtn.UseVisualStyleBackColor = true;
-            this.entranceWarehouseBtn.Click += new System.EventHandler(this.entranceWarehouseBtn_Click);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.entraceWarehouseDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.entraceWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.entraceWarehouseDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.entraceWarehouseDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.entraceWarehouseDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.entraceWarehouseDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.entraceWarehouseDgv.EnableHeadersVisualStyles = false;
+            this.entraceWarehouseDgv.Location = new System.Drawing.Point(195, 102);
+            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.entraceWarehouseDgv.MultiSelect = false;
+            this.entraceWarehouseDgv.Name = "entraceWarehouseDgv";
+            this.entraceWarehouseDgv.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.entraceWarehouseDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.entraceWarehouseDgv.RowTemplate.Height = 24;
+            this.entraceWarehouseDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.entraceWarehouseDgv.Size = new System.Drawing.Size(903, 164);
+            this.entraceWarehouseDgv.TabIndex = 16;
             // 
-            // outWarehouseBtn
+            // outWarehouseDgv
             // 
-            this.outWarehouseBtn.Location = new System.Drawing.Point(42, 149);
-            this.outWarehouseBtn.Name = "outWarehouseBtn";
-            this.outWarehouseBtn.Size = new System.Drawing.Size(155, 37);
-            this.outWarehouseBtn.TabIndex = 1;
-            this.outWarehouseBtn.Text = "Magazyn wyjściowy";
-            this.outWarehouseBtn.UseVisualStyleBackColor = true;
-            this.outWarehouseBtn.Click += new System.EventHandler(this.outWarehouseBtn_Click);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.outWarehouseDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.outWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.outWarehouseDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.outWarehouseDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.outWarehouseDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.outWarehouseDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.outWarehouseDgv.EnableHeadersVisualStyles = false;
+            this.outWarehouseDgv.Location = new System.Drawing.Point(195, 411);
+            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.outWarehouseDgv.MultiSelect = false;
+            this.outWarehouseDgv.Name = "outWarehouseDgv";
+            this.outWarehouseDgv.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.outWarehouseDgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.outWarehouseDgv.RowTemplate.Height = 24;
+            this.outWarehouseDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.outWarehouseDgv.Size = new System.Drawing.Size(903, 159);
+            this.outWarehouseDgv.TabIndex = 17;
             // 
-            // entranceWarehouseGb
+            // backBtn
             // 
-            this.entranceWarehouseGb.Controls.Add(this.Pracownikkontrola_tb);
-            this.entranceWarehouseGb.Controls.Add(this.Pracownikzamowienie_tb);
-            this.entranceWarehouseGb.Controls.Add(this.Iloscpolfabrykat_tb);
-            this.entranceWarehouseGb.Controls.Add(this.Kodpolfabrykatu_tb);
-            this.entranceWarehouseGb.Controls.Add(this.label1);
-            this.entranceWarehouseGb.Controls.Add(this.PracownikZamowienie_lbl);
-            this.entranceWarehouseGb.Controls.Add(this.Ilosc_lbl);
-            this.entranceWarehouseGb.Controls.Add(this.Kodpolfabrykatu_lbl);
-            this.entranceWarehouseGb.Location = new System.Drawing.Point(233, 49);
-            this.entranceWarehouseGb.Name = "entranceWarehouseGb";
-            this.entranceWarehouseGb.Size = new System.Drawing.Size(540, 249);
-            this.entranceWarehouseGb.TabIndex = 2;
-            this.entranceWarehouseGb.TabStop = false;
-            this.entranceWarehouseGb.Text = "Magazynwejsciowy";
-            this.entranceWarehouseGb.Visible = false;
+            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.backBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(32, 592);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(267, 148);
+            this.backBtn.TabIndex = 20;
+            this.backBtn.Text = "Powrót";
+            this.backBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.backBtn.UseVisualStyleBackColor = false;
+            //this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // Pracownikkontrola_tb
+            // entraceWarehouseLbl
             // 
-            this.Pracownikkontrola_tb.Location = new System.Drawing.Point(314, 198);
-            this.Pracownikkontrola_tb.Name = "Pracownikkontrola_tb";
-            this.Pracownikkontrola_tb.Size = new System.Drawing.Size(220, 22);
-            this.Pracownikkontrola_tb.TabIndex = 7;
+            this.entraceWarehouseLbl.AutoSize = true;
+            this.entraceWarehouseLbl.BackColor = System.Drawing.Color.Transparent;
+            this.entraceWarehouseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.entraceWarehouseLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.entraceWarehouseLbl.Location = new System.Drawing.Point(28, 9);
+            this.entraceWarehouseLbl.Name = "entraceWarehouseLbl";
+            this.entraceWarehouseLbl.Size = new System.Drawing.Size(194, 24);
+            this.entraceWarehouseLbl.TabIndex = 21;
+            this.entraceWarehouseLbl.Text = "Magazyn wejściowy";
             // 
-            // Pracownikzamowienie_tb
+            // outWarehouseLbl
             // 
-            this.Pracownikzamowienie_tb.Location = new System.Drawing.Point(314, 160);
-            this.Pracownikzamowienie_tb.Name = "Pracownikzamowienie_tb";
-            this.Pracownikzamowienie_tb.Size = new System.Drawing.Size(220, 22);
-            this.Pracownikzamowienie_tb.TabIndex = 6;
+            this.outWarehouseLbl.AutoSize = true;
+            this.outWarehouseLbl.BackColor = System.Drawing.Color.Transparent;
+            this.outWarehouseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.outWarehouseLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.outWarehouseLbl.Location = new System.Drawing.Point(28, 328);
+            this.outWarehouseLbl.Name = "outWarehouseLbl";
+            this.outWarehouseLbl.Size = new System.Drawing.Size(192, 24);
+            this.outWarehouseLbl.TabIndex = 22;
+            this.outWarehouseLbl.Text = "Magazyn wyjściowy";
             // 
-            // Iloscpolfabrykat_tb
+            // semiFinishedLbl
             // 
-            this.Iloscpolfabrykat_tb.Location = new System.Drawing.Point(314, 115);
-            this.Iloscpolfabrykat_tb.Name = "Iloscpolfabrykat_tb";
-            this.Iloscpolfabrykat_tb.Size = new System.Drawing.Size(220, 22);
-            this.Iloscpolfabrykat_tb.TabIndex = 5;
+            this.semiFinishedLbl.AutoSize = true;
+            this.semiFinishedLbl.BackColor = System.Drawing.Color.Transparent;
+            this.semiFinishedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.semiFinishedLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.semiFinishedLbl.Location = new System.Drawing.Point(191, 51);
+            this.semiFinishedLbl.Name = "semiFinishedLbl";
+            this.semiFinishedLbl.Size = new System.Drawing.Size(169, 24);
+            this.semiFinishedLbl.TabIndex = 23;
+            this.semiFinishedLbl.Text = "Kod półfabrykatu";
             // 
-            // Kodpolfabrykatu_tb
+            // productLbl
             // 
-            this.Kodpolfabrykatu_tb.Location = new System.Drawing.Point(314, 66);
-            this.Kodpolfabrykatu_tb.Name = "Kodpolfabrykatu_tb";
-            this.Kodpolfabrykatu_tb.Size = new System.Drawing.Size(220, 22);
-            this.Kodpolfabrykatu_tb.TabIndex = 4;
+            this.productLbl.AutoSize = true;
+            this.productLbl.BackColor = System.Drawing.Color.Transparent;
+            this.productLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.productLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.productLbl.Location = new System.Drawing.Point(191, 366);
+            this.productLbl.Name = "productLbl";
+            this.productLbl.Size = new System.Drawing.Size(135, 24);
+            this.productLbl.TabIndex = 24;
+            this.productLbl.Text = "Kod produktu";
             // 
-            // label1
+            // semiFinishedCodeTb
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 203);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Pracownik odpowiedzialny kontrolę jakości";
+            this.semiFinishedCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.semiFinishedCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.semiFinishedCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.semiFinishedCodeTb.Location = new System.Drawing.Point(387, 47);
+            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.semiFinishedCodeTb.Name = "semiFinishedCodeTb";
+            this.semiFinishedCodeTb.Size = new System.Drawing.Size(360, 28);
+            this.semiFinishedCodeTb.TabIndex = 25;
             // 
-            // PracownikZamowienie_lbl
+            // productCodeTb
             // 
-            this.PracownikZamowienie_lbl.AutoSize = true;
-            this.PracownikZamowienie_lbl.Location = new System.Drawing.Point(6, 165);
-            this.PracownikZamowienie_lbl.Name = "PracownikZamowienie_lbl";
-            this.PracownikZamowienie_lbl.Size = new System.Drawing.Size(268, 17);
-            this.PracownikZamowienie_lbl.TabIndex = 2;
-            this.PracownikZamowienie_lbl.Text = "Pracownik odpowiedzialny za zamówienie";
-            // 
-            // Ilosc_lbl
-            // 
-            this.Ilosc_lbl.AutoSize = true;
-            this.Ilosc_lbl.Location = new System.Drawing.Point(7, 120);
-            this.Ilosc_lbl.Name = "Ilosc_lbl";
-            this.Ilosc_lbl.Size = new System.Drawing.Size(40, 17);
-            this.Ilosc_lbl.TabIndex = 1;
-            this.Ilosc_lbl.Text = "Ilość ";
-            // 
-            // Kodpolfabrykatu_lbl
-            // 
-            this.Kodpolfabrykatu_lbl.AutoSize = true;
-            this.Kodpolfabrykatu_lbl.Location = new System.Drawing.Point(6, 71);
-            this.Kodpolfabrykatu_lbl.Name = "Kodpolfabrykatu_lbl";
-            this.Kodpolfabrykatu_lbl.Size = new System.Drawing.Size(115, 17);
-            this.Kodpolfabrykatu_lbl.TabIndex = 0;
-            this.Kodpolfabrykatu_lbl.Text = "Kod półfabrykatu";
-            // 
-            // outWarehouseGb
-            // 
-            this.outWarehouseGb.Controls.Add(this.Pracownikkontrolaproduktu_tb);
-            this.outWarehouseGb.Controls.Add(this.Przekazanedoprodukcji_tb);
-            this.outWarehouseGb.Controls.Add(this.Iloscprodukt_tb);
-            this.outWarehouseGb.Controls.Add(this.Kodproduktu_tb);
-            this.outWarehouseGb.Controls.Add(this.label2);
-            this.outWarehouseGb.Controls.Add(this.label3);
-            this.outWarehouseGb.Controls.Add(this.label4);
-            this.outWarehouseGb.Controls.Add(this.Kodproduktu_lbl);
-            this.outWarehouseGb.Location = new System.Drawing.Point(236, 304);
-            this.outWarehouseGb.Name = "outWarehouseGb";
-            this.outWarehouseGb.Size = new System.Drawing.Size(540, 249);
-            this.outWarehouseGb.TabIndex = 8;
-            this.outWarehouseGb.TabStop = false;
-            this.outWarehouseGb.Text = "Magazynwyjsciowy";
-            this.outWarehouseGb.Visible = false;
-            // 
-            // Pracownikkontrolaproduktu_tb
-            // 
-            this.Pracownikkontrolaproduktu_tb.Location = new System.Drawing.Point(314, 198);
-            this.Pracownikkontrolaproduktu_tb.Name = "Pracownikkontrolaproduktu_tb";
-            this.Pracownikkontrolaproduktu_tb.Size = new System.Drawing.Size(220, 22);
-            this.Pracownikkontrolaproduktu_tb.TabIndex = 7;
-            // 
-            // Przekazanedoprodukcji_tb
-            // 
-            this.Przekazanedoprodukcji_tb.Location = new System.Drawing.Point(314, 160);
-            this.Przekazanedoprodukcji_tb.Name = "Przekazanedoprodukcji_tb";
-            this.Przekazanedoprodukcji_tb.Size = new System.Drawing.Size(220, 22);
-            this.Przekazanedoprodukcji_tb.TabIndex = 6;
-            // 
-            // Iloscprodukt_tb
-            // 
-            this.Iloscprodukt_tb.Location = new System.Drawing.Point(314, 115);
-            this.Iloscprodukt_tb.Name = "Iloscprodukt_tb";
-            this.Iloscprodukt_tb.Size = new System.Drawing.Size(220, 22);
-            this.Iloscprodukt_tb.TabIndex = 5;
-            // 
-            // Kodproduktu_tb
-            // 
-            this.Kodproduktu_tb.Location = new System.Drawing.Point(314, 66);
-            this.Kodproduktu_tb.Name = "Kodproduktu_tb";
-            this.Kodproduktu_tb.Size = new System.Drawing.Size(220, 22);
-            this.Kodproduktu_tb.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 203);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(274, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Pracownik odpowiedzialny kontrolę jakości";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Czy przekazane do klienta?";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Ilość ";
-            // 
-            // Kodproduktu_lbl
-            // 
-            this.Kodproduktu_lbl.AutoSize = true;
-            this.Kodproduktu_lbl.Location = new System.Drawing.Point(6, 71);
-            this.Kodproduktu_lbl.Name = "Kodproduktu_lbl";
-            this.Kodproduktu_lbl.Size = new System.Drawing.Size(93, 17);
-            this.Kodproduktu_lbl.TabIndex = 0;
-            this.Kodproduktu_lbl.Text = "Kod produktu";
+            this.productCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.productCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.productCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.productCodeTb.Location = new System.Drawing.Point(387, 366);
+            this.productCodeTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.productCodeTb.Name = "productCodeTb";
+            this.productCodeTb.Size = new System.Drawing.Size(360, 28);
+            this.productCodeTb.TabIndex = 26;
             // 
             // WarehouseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 578);
-            this.Controls.Add(this.outWarehouseGb);
-            this.Controls.Add(this.entranceWarehouseGb);
-            this.Controls.Add(this.outWarehouseBtn);
-            this.Controls.Add(this.entranceWarehouseBtn);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.productCodeTb);
+            this.Controls.Add(this.semiFinishedCodeTb);
+            this.Controls.Add(this.productLbl);
+            this.Controls.Add(this.semiFinishedLbl);
+            this.Controls.Add(this.outWarehouseLbl);
+            this.Controls.Add(this.entraceWarehouseLbl);
+            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.outWarehouseDgv);
+            this.Controls.Add(this.entraceWarehouseDgv);
             this.Name = "WarehouseForm";
             this.Text = "WarehouseForm";
-            this.entranceWarehouseGb.ResumeLayout(false);
-            this.entranceWarehouseGb.PerformLayout();
-            this.outWarehouseGb.ResumeLayout(false);
-            this.outWarehouseGb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entraceWarehouseDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outWarehouseDgv)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button entranceWarehouseBtn;
-        private System.Windows.Forms.Button outWarehouseBtn;
-        private System.Windows.Forms.GroupBox entranceWarehouseGb;
-        private System.Windows.Forms.Label Ilosc_lbl;
-        private System.Windows.Forms.Label Kodpolfabrykatu_lbl;
-        private System.Windows.Forms.TextBox Pracownikkontrola_tb;
-        private System.Windows.Forms.TextBox Pracownikzamowienie_tb;
-        private System.Windows.Forms.TextBox Iloscpolfabrykat_tb;
-        private System.Windows.Forms.TextBox Kodpolfabrykatu_tb;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label PracownikZamowienie_lbl;
-        private System.Windows.Forms.GroupBox outWarehouseGb;
-        private System.Windows.Forms.TextBox Pracownikkontrolaproduktu_tb;
-        private System.Windows.Forms.TextBox Przekazanedoprodukcji_tb;
-        private System.Windows.Forms.TextBox Iloscprodukt_tb;
-        private System.Windows.Forms.TextBox Kodproduktu_tb;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label Kodproduktu_lbl;
+        private System.Windows.Forms.DataGridView entraceWarehouseDgv;
+        private System.Windows.Forms.DataGridView outWarehouseDgv;
+        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Label entraceWarehouseLbl;
+        private System.Windows.Forms.Label outWarehouseLbl;
+        private System.Windows.Forms.Label semiFinishedLbl;
+        private System.Windows.Forms.Label productLbl;
+        private System.Windows.Forms.TextBox semiFinishedCodeTb;
+        private System.Windows.Forms.TextBox productCodeTb;
     }
 }

@@ -105,6 +105,7 @@
             this.btnDevelopment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDevelopment.Name = "btnDevelopment";
             this.btnDevelopment.UseVisualStyleBackColor = false;
+            this.btnDevelopment.Click += new System.EventHandler(this.btnDevelopment_Click);
             // 
             // btnOSHControl
             // 

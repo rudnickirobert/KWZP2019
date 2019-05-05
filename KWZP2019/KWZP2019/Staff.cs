@@ -17,7 +17,7 @@ namespace KWZP2019
         public int IdStaff { get; set; }
         public Nullable<int> IdDeparment { get; set; }
         public Nullable<int> IdPosition { get; set; }
-        public Nullable<byte> Number { get; set; }
+        public Nullable<int> Number { get; set; }
         public Nullable<System.DateTime> DateFrom { get; set; }
     
         public virtual Department Department { get; set; }

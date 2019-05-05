@@ -28,66 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dgvExamination = new System.Windows.Forms.DataGridView();
+            this.tbSearchEmployeeExamination = new System.Windows.Forms.TextBox();
+            this.btnAddExamination = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.tbSearchEmployeeExaminationName = new System.Windows.Forms.TextBox();
+            this.lblSearchEmployeeExaminationName = new System.Windows.Forms.Label();
+            this.lblSearchEmployeeExamination = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExamination)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dgvExamination
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(65, 277);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(205, 22);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dgvExamination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExamination.Location = new System.Drawing.Point(12, 61);
+            this.dgvExamination.Name = "dgvExamination";
+            this.dgvExamination.RowTemplate.Height = 24;
+            this.dgvExamination.Size = new System.Drawing.Size(600, 366);
+            this.dgvExamination.TabIndex = 0;
             // 
-            // textBox1
+            // tbSearchEmployeeExamination
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 1;
+            this.tbSearchEmployeeExamination.Location = new System.Drawing.Point(12, 33);
+            this.tbSearchEmployeeExamination.Name = "tbSearchEmployeeExamination";
+            this.tbSearchEmployeeExamination.Size = new System.Drawing.Size(237, 22);
+            this.tbSearchEmployeeExamination.TabIndex = 1;
+            this.tbSearchEmployeeExamination.TextChanged += new System.EventHandler(this.tbSearchEmployeeExamination_TextChanged);
             // 
-            // button1
+            // btnAddExamination
             // 
-            this.button1.Location = new System.Drawing.Point(321, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddExamination.Location = new System.Drawing.Point(641, 244);
+            this.btnAddExamination.Name = "btnAddExamination";
+            this.btnAddExamination.Size = new System.Drawing.Size(106, 55);
+            this.btnAddExamination.TabIndex = 2;
+            this.btnAddExamination.Text = "Dodaj badanie";
+            this.btnAddExamination.UseVisualStyleBackColor = true;
+            this.btnAddExamination.Click += new System.EventHandler(this.btnAddExamination_Click);
             // 
-            // label1
+            // btnEdit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Validity of examination";
+            this.btnEdit.Location = new System.Drawing.Point(641, 176);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(106, 62);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edytuj";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // tbSearchEmployeeExaminationName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Add new examination";
+            this.tbSearchEmployeeExaminationName.Location = new System.Drawing.Point(375, 33);
+            this.tbSearchEmployeeExaminationName.Name = "tbSearchEmployeeExaminationName";
+            this.tbSearchEmployeeExaminationName.Size = new System.Drawing.Size(237, 22);
+            this.tbSearchEmployeeExaminationName.TabIndex = 4;
+            this.tbSearchEmployeeExaminationName.TextChanged += new System.EventHandler(this.tbSearchEmployeeExaminationName_TextChanged);
+            // 
+            // lblSearchEmployeeExaminationName
+            // 
+            this.lblSearchEmployeeExaminationName.AutoSize = true;
+            this.lblSearchEmployeeExaminationName.Location = new System.Drawing.Point(375, 10);
+            this.lblSearchEmployeeExaminationName.Name = "lblSearchEmployeeExaminationName";
+            this.lblSearchEmployeeExaminationName.Size = new System.Drawing.Size(33, 17);
+            this.lblSearchEmployeeExaminationName.TabIndex = 5;
+            this.lblSearchEmployeeExaminationName.Text = "Imię";
+            // 
+            // lblSearchEmployeeExamination
+            // 
+            this.lblSearchEmployeeExamination.AutoSize = true;
+            this.lblSearchEmployeeExamination.Location = new System.Drawing.Point(12, 9);
+            this.lblSearchEmployeeExamination.Name = "lblSearchEmployeeExamination";
+            this.lblSearchEmployeeExamination.Size = new System.Drawing.Size(67, 17);
+            this.lblSearchEmployeeExamination.TabIndex = 6;
+            this.lblSearchEmployeeExamination.Text = "Nazwisko";
             // 
             // Examination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lblSearchEmployeeExamination);
+            this.Controls.Add(this.lblSearchEmployeeExaminationName);
+            this.Controls.Add(this.tbSearchEmployeeExaminationName);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAddExamination);
+            this.Controls.Add(this.tbSearchEmployeeExamination);
+            this.Controls.Add(this.dgvExamination);
             this.Name = "Examination";
             this.Text = "Examination";
+            this.Load += new System.EventHandler(this.Examination_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExamination)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,10 +123,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvExamination;
+        private System.Windows.Forms.TextBox tbSearchEmployeeExamination;
+        private System.Windows.Forms.Button btnAddExamination;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox tbSearchEmployeeExaminationName;
+        private System.Windows.Forms.Label lblSearchEmployeeExaminationName;
+        private System.Windows.Forms.Label lblSearchEmployeeExamination;
     }
 }

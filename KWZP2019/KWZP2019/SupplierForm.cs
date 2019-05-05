@@ -12,7 +12,6 @@ namespace KWZP2019
 {
     public partial class SupplierForm : Form
     {
-        AddNewSupplierForm addnewsupplierForm = new AddNewSupplierForm(); 
         public SupplierForm()
         {
             InitializeComponent();
@@ -20,9 +19,8 @@ namespace KWZP2019
 
         private void addNewSupplierBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            addnewsupplierForm.ShowDialog();
-            this.Close();
+            AddNewSupplierForm addNewSupplierForm = new AddNewSupplierForm();
+            addNewSupplierForm.ShowDialog();
         }
     }
 }

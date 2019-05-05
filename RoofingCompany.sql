@@ -1,4 +1,4 @@
-﻿use master;
+use master;
 go
 drop database if exists RoofingCompany;
 create database RoofingCompany;
@@ -117,7 +117,8 @@ CREATE TABLE OrderCustomer
 	IdEmployee int NOT NULL,
 	OrderDate datetime NOT NULL,
 	Cost money NOT NULL,
-	Markup float NOT NULL);
+	Markup float NOT NULL,
+	NewOrderInfo bit NULL);
 
 CREATE TABLE OrderDetail
 	(IdDetail int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -658,9 +659,8 @@ AS
 SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
 ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
 FROM Customer;
-GO
-/*====SALES DEPARTMENT END===*/
 
+/*====SALES DEPARTMENT END===*/
 GO
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
@@ -746,6 +746,7 @@ GO
 /*====PRODUCTION===*/
 
 GO
+
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
@@ -818,6 +819,7 @@ SELECT Machine.MachineName AS [Nazwa],
 	   Machine.MetersPerHour AS [m/h]
 FROM   MachineType 
 INNER JOIN Machine ON MachineType.IdMachineType = Machine.IdMachineType
+
 GO
 
 /*====SALES DEPARTMENT START===*/
@@ -931,46 +933,45 @@ INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
 GO
 CREATE VIEW vIncomesProfits
 AS
-SELECT        Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
-FROM            Customer INNER JOIN
-                         OrderCustomer ON Customer.IdCustomer = OrderCustomer.IdCustomer;
+SELECT Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
+FROM Customer
+INNER JOIN OrderCustomer ON Customer.IdCustomer = OrderCustomer.IdCustomer;
 GO
 
 CREATE VIEW vExpencesInvoices
 AS
-SELECT         Invoice.IdInvoice,Invoice.Date, Invoice.Sum, Contractor.ContractorName, InvoiceType.Type
-FROM            InvoiceType INNER JOIN
-                         Invoice ON InvoiceType.IdInvoiceType = Invoice.IdInvoiceType INNER JOIN
-                         Contractor ON Invoice.IdContractor = Contractor.IdContractor;
+SELECT Invoice.IdInvoice,Invoice.Date, Invoice.Sum, Contractor.ContractorName, InvoiceType.Type
+FROM InvoiceType
+INNER JOIN Invoice ON InvoiceType.IdInvoiceType = Invoice.IdInvoiceType INNER JOIN
+Contractor ON Invoice.IdContractor = Contractor.IdContractor;
 GO
 
 CREATE VIEW vExpencesPayment
 AS
-SELECT        Payment.IdPayment,Payment.Sum, Payment.Date, Payment.Bonus, Employee.EmployeeName, Employee.EmployeeSurname
-FROM            Payment INNER JOIN
-                         Employee ON Payment.IdEmployee = Employee.IdEmployee;
+SELECT Payment.IdPayment,Payment.Sum, Payment.Date, Payment.Bonus, Employee.EmployeeName, Employee.EmployeeSurname
+FROM Payment
+INNER JOIN Employee ON Payment.IdEmployee = Employee.IdEmployee;
 GO
 
 CREATE VIEW vExpencesOrders
 AS
-SELECT        SemiFinishedOrder.IdSfOrder,SemiFinishedOrder.Cost, SemiFinishedOrder.SfOrderDate, Supplier.SupplierName
-FROM            SemiFinishedOrder INNER JOIN
-                         Supplier ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
+SELECT SemiFinishedOrder.IdSfOrder,SemiFinishedOrder.Cost, SemiFinishedOrder.SfOrderDate, Supplier.SupplierName
+FROM SemiFinishedOrder
+INNER JOIN Supplier ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
 GO
 
 CREATE VIEW vExpencesOutsourcing
 AS
-SELECT        Outsourcing.IdOutsourcing,OutsourcingCommitment.Cost, OutsourcingCommitment.EndCommitmentDate, Outsourcing.CompanyName
-FROM            OutsourcingCommitment INNER JOIN
-                         Outsourcing ON OutsourcingCommitment.IdOutsourcing = Outsourcing.IdOutsourcing;
+SELECT Outsourcing.IdOutsourcing,OutsourcingCommitment.Cost, OutsourcingCommitment.EndCommitmentDate, Outsourcing.CompanyName
+FROM OutsourcingCommitment
+INNER JOIN Outsourcing ON OutsourcingCommitment.IdOutsourcing = Outsourcing.IdOutsourcing;
 GO
 
 CREATE VIEW vPaymentHistory
 AS
-SELECT         Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Payment.Bonus, Payment.Sum, Payment.Date, Employee.IdEmployee
-FROM            Employee INNER JOIN
-                         Payment ON Employee.IdEmployee = Payment.IdEmployee;
-
+SELECT Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Payment.Bonus, Payment.Sum, Payment.Date, Employee.IdEmployee
+FROM Employee
+INNER JOIN Payment ON Employee.IdEmployee = Payment.IdEmployee;
 GO
 
 CREATE VIEW vInvoiceType

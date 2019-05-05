@@ -18,7 +18,7 @@ namespace KWZP2019
         public string CompanyName { get; set; }
         public string IdSafetyEmployee { get; set; }
         public System.DateTime SaftyControlDate { get; set; }
-        public string SafetyControlDescription { get; set; }
         public string InspectedEmpolyee { get; set; }
+        public string SafetyControlDescription { get; set; }
     }
 }

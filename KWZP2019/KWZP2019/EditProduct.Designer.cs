@@ -43,17 +43,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(156, 116);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(145, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Produktu";
+            this.label1.Text = "ID Produktu:";
             // 
             // tBNumberProd
             // 
-            this.tBNumberProd.Location = new System.Drawing.Point(256, 112);
+            this.tBNumberProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tBNumberProd.Enabled = false;
+            this.tBNumberProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tBNumberProd.ForeColor = System.Drawing.Color.White;
+            this.tBNumberProd.Location = new System.Drawing.Point(149, 142);
             this.tBNumberProd.Name = "tBNumberProd";
-            this.tBNumberProd.Size = new System.Drawing.Size(50, 20);
+            this.tBNumberProd.Size = new System.Drawing.Size(80, 22);
             this.tBNumberProd.TabIndex = 1;
             // 
             // btEditConfirm
@@ -65,11 +72,13 @@
             this.btEditConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btEditConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btEditConfirm.Location = new System.Drawing.Point(478, 42);
+            this.btEditConfirm.Image = global::KWZP2019.Properties.Resources.okej;
+            this.btEditConfirm.Location = new System.Drawing.Point(445, 49);
             this.btEditConfirm.Name = "btEditConfirm";
             this.btEditConfirm.Size = new System.Drawing.Size(290, 160);
             this.btEditConfirm.TabIndex = 2;
             this.btEditConfirm.Text = "Zatwierdź";
+            this.btEditConfirm.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditConfirm.UseVisualStyleBackColor = false;
             this.btEditConfirm.Click += new System.EventHandler(this.btEditConfirm_Click);
             // 
@@ -82,62 +91,82 @@
             this.btEditBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btEditBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btEditBack.Location = new System.Drawing.Point(478, 248);
+            this.btEditBack.Image = global::KWZP2019.Properties.Resources.powrott;
+            this.btEditBack.Location = new System.Drawing.Point(445, 228);
             this.btEditBack.Name = "btEditBack";
             this.btEditBack.Size = new System.Drawing.Size(290, 160);
             this.btEditBack.TabIndex = 3;
             this.btEditBack.Text = "Powrót";
+            this.btEditBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditBack.UseVisualStyleBackColor = false;
             this.btEditBack.Click += new System.EventHandler(this.btEditBack_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(156, 252);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(148, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(109, 24);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Półfabrykat";
+            this.label2.Text = "Półfabrykat:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(156, 290);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(148, 273);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(121, 24);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Technologia";
+            this.label3.Text = "Technologia:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(156, 149);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(148, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.Size = new System.Drawing.Size(128, 24);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Kod produktu";
+            this.label4.Text = "Kod produktu:";
             // 
             // tBProductCode
             // 
-            this.tBProductCode.Location = new System.Drawing.Point(256, 145);
+            this.tBProductCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tBProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tBProductCode.ForeColor = System.Drawing.Color.White;
+            this.tBProductCode.Location = new System.Drawing.Point(148, 194);
             this.tBProductCode.Name = "tBProductCode";
-            this.tBProductCode.Size = new System.Drawing.Size(150, 20);
+            this.tBProductCode.Size = new System.Drawing.Size(215, 22);
             this.tBProductCode.TabIndex = 7;
             // 
             // cBEditSemiFinished
             // 
+            this.cBEditSemiFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cBEditSemiFinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cBEditSemiFinished.ForeColor = System.Drawing.Color.White;
             this.cBEditSemiFinished.FormattingEnabled = true;
-            this.cBEditSemiFinished.Location = new System.Drawing.Point(256, 248);
+            this.cBEditSemiFinished.Location = new System.Drawing.Point(148, 246);
             this.cBEditSemiFinished.Name = "cBEditSemiFinished";
-            this.cBEditSemiFinished.Size = new System.Drawing.Size(150, 21);
+            this.cBEditSemiFinished.Size = new System.Drawing.Size(215, 24);
             this.cBEditSemiFinished.TabIndex = 8;
             // 
             // cBEditTechnology
             // 
+            this.cBEditTechnology.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cBEditTechnology.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cBEditTechnology.ForeColor = System.Drawing.Color.White;
             this.cBEditTechnology.FormattingEnabled = true;
-            this.cBEditTechnology.Location = new System.Drawing.Point(256, 286);
+            this.cBEditTechnology.Location = new System.Drawing.Point(148, 300);
             this.cBEditTechnology.Name = "cBEditTechnology";
-            this.cBEditTechnology.Size = new System.Drawing.Size(150, 21);
+            this.cBEditTechnology.Size = new System.Drawing.Size(215, 24);
             this.cBEditTechnology.TabIndex = 9;
             // 
             // EditProduct
