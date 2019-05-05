@@ -97,6 +97,12 @@
     <Compile Include="DevelopmentForm.Designer.cs">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevelopmentHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopmentHistoryForm.Designer.cs">
+      <DependentUpon>DevelopmentHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +636,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevelopmentForm.resx">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevelopmentHistoryForm.resx">
+      <DependentUpon>DevelopmentHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>

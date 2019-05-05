@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DevelopmentForm));
             this.btnDone = new System.Windows.Forms.Button();
-            this.btnCheck = new System.Windows.Forms.Button();
+            this.btnDevelopmentHistory = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.lblFormTitle = new System.Windows.Forms.Label();
@@ -67,19 +67,20 @@
             this.btnDone.UseVisualStyleBackColor = false;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // btnCheck
+            // btnDevelopmentHistory
             // 
-            this.btnCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            resources.ApplyResources(this.btnCheck, "btnCheck");
-            this.btnCheck.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCheck.FlatAppearance.BorderSize = 3;
-            this.btnCheck.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCheck.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCheck.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCheck.Image = global::KWZP2019.Properties.Resources.icons8_puzzled_40;
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnDevelopmentHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnDevelopmentHistory, "btnDevelopmentHistory");
+            this.btnDevelopmentHistory.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDevelopmentHistory.FlatAppearance.BorderSize = 3;
+            this.btnDevelopmentHistory.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDevelopmentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDevelopmentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnDevelopmentHistory.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDevelopmentHistory.Image = global::KWZP2019.Properties.Resources.icons8_puzzled_40;
+            this.btnDevelopmentHistory.Name = "btnDevelopmentHistory";
+            this.btnDevelopmentHistory.UseVisualStyleBackColor = false;
+            this.btnDevelopmentHistory.Click += new System.EventHandler(this.btnDevelopmentHistory_Click);
             // 
             // btnReturn
             // 
@@ -234,7 +235,7 @@
             this.Controls.Add(this.picboxNewPattern);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnDone);
-            this.Controls.Add(this.btnCheck);
+            this.Controls.Add(this.btnDevelopmentHistory);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.pictureBoxForm);
@@ -254,7 +255,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnDone;
-        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Button btnDevelopmentHistory;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Label lblFormTitle;

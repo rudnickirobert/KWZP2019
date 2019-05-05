@@ -159,43 +159,43 @@
   <data name="&gt;&gt;btnDone.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="btnCheck.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="btnDevelopmentHistory.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="btnCheck.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnDevelopmentHistory.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btnCheck.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnDevelopmentHistory.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
-  <data name="btnCheck.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnDevelopmentHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnCheck.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnDevelopmentHistory.Location" type="System.Drawing.Point, System.Drawing">
     <value>67, 458</value>
   </data>
-  <data name="btnCheck.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnDevelopmentHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 120</value>
   </data>
-  <data name="btnCheck.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnDevelopmentHistory.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
-  <data name="btnCheck.Text" xml:space="preserve">
+  <data name="btnDevelopmentHistory.Text" xml:space="preserve">
     <value>Historia badań</value>
   </data>
-  <data name="btnCheck.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btnDevelopmentHistory.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;btnCheck.Name" xml:space="preserve">
-    <value>btnCheck</value>
+  <data name="&gt;&gt;btnDevelopmentHistory.Name" xml:space="preserve">
+    <value>btnDevelopmentHistory</value>
   </data>
-  <data name="&gt;&gt;btnCheck.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnDevelopmentHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnCheck.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnDevelopmentHistory.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnCheck.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnDevelopmentHistory.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="btnReturn.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">

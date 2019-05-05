@@ -47,11 +47,6 @@ namespace KWZP2019
             this.qualityControlForm.Close();
         }
 
-        private void btnShowAll_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DevelopmentForm_Load(object sender, EventArgs e)
         {
             dateTimePicker.Value = DateTime.Now;
@@ -125,6 +120,13 @@ namespace KWZP2019
             {
                 MessageBox.Show("Nie można zatwierdzić tego pliku!\nDokonaj właściwego wyboru", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDevelopmentHistory_Click(object sender, EventArgs e)
+        {
+            DevelopmentHistoryForm developmentHistoryForm = new DevelopmentHistoryForm(db, startForm, this);
+            this.Hide();
+            developmentHistoryForm.Show();
         }
     }
 }
