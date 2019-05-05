@@ -71,7 +71,6 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="0.75" PointY="11.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="15.75" PointY="8.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vMaintPartsView" Width="1.5" PointX="16.75" PointY="12.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOrder" Width="1.5" PointX="16.75" PointY="15.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="18.75" PointY="12.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPartsView" Width="1.5" PointX="18.75" PointY="15.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" Width="1.5" PointX="15.75" PointY="18.75" />
@@ -144,7 +143,10 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vIncomesProfit" Width="1.5" PointX="12.375" PointY="26.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="26.375" PointY="14.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="14.375" PointY="26.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="26.375" PointY="17.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="17.375" PointY="4.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="19.375" PointY="20.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="18.375" PointY="7.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="20.375" PointY="7.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Customer" Width="1.5" PointX="6.75" PointY="15.5" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Expense" Width="1.5" PointX="9.25" PointY="16" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Maintenance" Width="1.5" PointX="11.25" PointY="8.5" />
@@ -153,10 +155,6 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.Supplier" Width="1.5" PointX="3.75" PointY="60.5" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vCustomer" Width="1.5" PointX="11.375" PointY="17.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vEducationForm" Width="1.5" PointX="23.375" PointY="12.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="26.375" PointY="21.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="26.375" PointY="24.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="27.375" PointY="0.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="28.375" PointY="5.75" />
         <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" />
         <AssociationConnector Association="RoofingCompanyModel.FkOrderCustomerCustomer" />
         <AssociationConnector Association="RoofingCompanyModel.FK__Expense__IdDepar__37703C52" />
