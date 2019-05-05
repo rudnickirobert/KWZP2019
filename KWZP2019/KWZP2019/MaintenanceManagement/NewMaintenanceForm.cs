@@ -94,7 +94,6 @@ namespace KWZP2019
                 this.maintenance.StartDatePlan = this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay;
                 this.maintenance.EndDatePlan = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
                 this.maintenance.MaintenanceNr = this.txtMaintenanceNr.Text.Trim();
-
                 using (RoofingCompanyEntities db = new RoofingCompanyEntities())
                 {                 
                     if (maintenance.IdMaintenance == 0)//Instert
