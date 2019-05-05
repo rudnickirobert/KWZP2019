@@ -53,7 +53,7 @@ namespace KWZP2019
 
         private void btnTraining_Click(object sender, EventArgs e)
         {
-            AddTraining addTraining = new AddTraining(db);
+            AddTraining addTraining = new AddTraining(db, startForm, this);
             addTraining.Show();
             this.Hide();
         }

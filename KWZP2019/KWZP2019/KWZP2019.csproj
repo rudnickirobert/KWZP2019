@@ -519,11 +519,11 @@
     <Compile Include="SalesDepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\PaymentHistory.cs">
+    <Compile Include="Finances\SalariesHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finances\PaymentHistory.Designer.cs">
-      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    <Compile Include="Finances\SalariesHistory.Designer.cs">
+      <DependentUpon>SalariesHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Finances\SalariesAbsencesSummary.cs">
       <SubType>Form</SubType>
@@ -815,8 +815,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Finances\PaymentHistory.resx">
-      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    <EmbeddedResource Include="Finances\SalariesHistory.resx">
+      <DependentUpon>SalariesHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\SalariesAbsencesSummary.resx">
       <DependentUpon>SalariesAbsencesSummary.cs</DependentUpon>

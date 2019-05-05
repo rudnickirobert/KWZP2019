@@ -38,6 +38,7 @@ namespace KWZP2019
         {
             AllExpenses costs = new AllExpenses(db, startForm, this);
             costs.Show();
+            this.Hide();
         }
         private void btnEarnings_Click(object sender, EventArgs e)
         {
@@ -48,7 +49,7 @@ namespace KWZP2019
         {
             Profits profits = new Profits(db, startForm, this);
             profits.Show();
-
+            this.Hide();
         }
         
         private void btnAddInvoice_Click(object sender, EventArgs e)
