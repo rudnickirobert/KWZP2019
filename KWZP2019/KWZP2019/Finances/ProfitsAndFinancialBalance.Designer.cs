@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profits));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblFrom = new System.Windows.Forms.Label();
@@ -44,7 +48,7 @@
             this.btnSum = new System.Windows.Forms.Button();
             this.tbSumIncome = new System.Windows.Forms.TextBox();
             this.tbSumOrders = new System.Windows.Forms.TextBox();
-            this.tbSumOS = new System.Windows.Forms.TextBox();
+            this.tbSumOutsourcing = new System.Windows.Forms.TextBox();
             this.tbSumInvoices = new System.Windows.Forms.TextBox();
             this.tbSumPayment = new System.Windows.Forms.TextBox();
             this.tbPureMoney = new System.Windows.Forms.TextBox();
@@ -64,12 +68,17 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.pbProfits = new System.Windows.Forms.PictureBox();
             this.lblFormTitle = new System.Windows.Forms.Label();
+            this.dgvPartOrder = new System.Windows.Forms.DataGridView();
+            this.lblPartOrderPln = new System.Windows.Forms.Label();
+            this.tbPartOrder = new System.Windows.Forms.TextBox();
+            this.lblPartOrder = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutsourcing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpStartDate
@@ -173,7 +182,7 @@
             this.lblInvoices.BackColor = System.Drawing.Color.Transparent;
             this.lblInvoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblInvoices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInvoices.Location = new System.Drawing.Point(593, 462);
+            this.lblInvoices.Location = new System.Drawing.Point(512, 462);
             this.lblInvoices.Name = "lblInvoices";
             this.lblInvoices.Size = new System.Drawing.Size(69, 20);
             this.lblInvoices.TabIndex = 12;
@@ -185,7 +194,7 @@
             this.lblSalaries.BackColor = System.Drawing.Color.Transparent;
             this.lblSalaries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSalaries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSalaries.Location = new System.Drawing.Point(593, 511);
+            this.lblSalaries.Location = new System.Drawing.Point(512, 514);
             this.lblSalaries.Name = "lblSalaries";
             this.lblSalaries.Size = new System.Drawing.Size(72, 20);
             this.lblSalaries.TabIndex = 13;
@@ -197,7 +206,7 @@
             this.lblOrders.BackColor = System.Drawing.Color.Transparent;
             this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOrders.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblOrders.Location = new System.Drawing.Point(593, 488);
+            this.lblOrders.Location = new System.Drawing.Point(512, 488);
             this.lblOrders.Name = "lblOrders";
             this.lblOrders.Size = new System.Drawing.Size(104, 20);
             this.lblOrders.TabIndex = 14;
@@ -209,7 +218,7 @@
             this.lblOutsourcing.BackColor = System.Drawing.Color.Transparent;
             this.lblOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOutsourcing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblOutsourcing.Location = new System.Drawing.Point(593, 537);
+            this.lblOutsourcing.Location = new System.Drawing.Point(512, 540);
             this.lblOutsourcing.Name = "lblOutsourcing";
             this.lblOutsourcing.Size = new System.Drawing.Size(106, 20);
             this.lblOutsourcing.TabIndex = 15;
@@ -252,16 +261,16 @@
             this.tbSumOrders.Text = "0";
             this.tbSumOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tbSumOS
+            // tbSumOutsourcing
             // 
-            this.tbSumOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbSumOS.Location = new System.Drawing.Point(709, 537);
-            this.tbSumOS.Name = "tbSumOS";
-            this.tbSumOS.ReadOnly = true;
-            this.tbSumOS.Size = new System.Drawing.Size(155, 23);
-            this.tbSumOS.TabIndex = 23;
-            this.tbSumOS.Text = "0";
-            this.tbSumOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbSumOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbSumOutsourcing.Location = new System.Drawing.Point(709, 537);
+            this.tbSumOutsourcing.Name = "tbSumOutsourcing";
+            this.tbSumOutsourcing.ReadOnly = true;
+            this.tbSumOutsourcing.Size = new System.Drawing.Size(155, 23);
+            this.tbSumOutsourcing.TabIndex = 23;
+            this.tbSumOutsourcing.Text = "0";
+            this.tbSumOutsourcing.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSumInvoices
             // 
@@ -288,7 +297,7 @@
             // tbPureMoney
             // 
             this.tbPureMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbPureMoney.Location = new System.Drawing.Point(597, 629);
+            this.tbPureMoney.Location = new System.Drawing.Point(597, 637);
             this.tbPureMoney.Name = "tbPureMoney";
             this.tbPureMoney.ReadOnly = true;
             this.tbPureMoney.Size = new System.Drawing.Size(267, 23);
@@ -302,7 +311,7 @@
             this.lblSumFinancialStatement.BackColor = System.Drawing.Color.Transparent;
             this.lblSumFinancialStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSumFinancialStatement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSumFinancialStatement.Location = new System.Drawing.Point(686, 584);
+            this.lblSumFinancialStatement.Location = new System.Drawing.Point(686, 592);
             this.lblSumFinancialStatement.Name = "lblSumFinancialStatement";
             this.lblSumFinancialStatement.Size = new System.Drawing.Size(207, 29);
             this.lblSumFinancialStatement.TabIndex = 27;
@@ -310,6 +319,7 @@
             // 
             // dgvProfits
             // 
+            this.dgvProfits.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgvProfits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfits.Location = new System.Drawing.Point(1352, 180);
             this.dgvProfits.Name = "dgvProfits";
@@ -318,6 +328,7 @@
             // 
             // dgvOutsourcing
             // 
+            this.dgvOutsourcing.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgvOutsourcing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOutsourcing.Location = new System.Drawing.Point(1378, 295);
             this.dgvOutsourcing.Name = "dgvOutsourcing";
@@ -326,6 +337,7 @@
             // 
             // dgvOrders
             // 
+            this.dgvOrders.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Location = new System.Drawing.Point(1319, 295);
             this.dgvOrders.Name = "dgvOrders";
@@ -334,6 +346,7 @@
             // 
             // dgvSalaries
             // 
+            this.dgvSalaries.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgvSalaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalaries.Location = new System.Drawing.Point(1378, 236);
             this.dgvSalaries.Name = "dgvSalaries";
@@ -342,6 +355,7 @@
             // 
             // dgvInvoices
             // 
+            this.dgvInvoices.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoices.Location = new System.Drawing.Point(1319, 236);
             this.dgvInvoices.Name = "dgvInvoices";
@@ -414,7 +428,7 @@
             this.lblCurrentFinancialState.BackColor = System.Drawing.Color.Transparent;
             this.lblCurrentFinancialState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCurrentFinancialState.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCurrentFinancialState.Location = new System.Drawing.Point(870, 632);
+            this.lblCurrentFinancialState.Location = new System.Drawing.Point(870, 640);
             this.lblCurrentFinancialState.Name = "lblCurrentFinancialState";
             this.lblCurrentFinancialState.Size = new System.Drawing.Size(125, 20);
             this.lblCurrentFinancialState.TabIndex = 51;
@@ -479,6 +493,84 @@
             this.lblFormTitle.TabIndex = 55;
             this.lblFormTitle.Text = "Bilans finansowy";
             // 
+            // dgvPartOrder
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvPartOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPartOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPartOrder.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dgvPartOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvPartOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartOrder.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvPartOrder.EnableHeadersVisualStyles = false;
+            this.dgvPartOrder.Location = new System.Drawing.Point(1352, 351);
+            this.dgvPartOrder.Name = "dgvPartOrder";
+            this.dgvPartOrder.RowHeadersVisible = false;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPartOrder.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvPartOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPartOrder.Size = new System.Drawing.Size(50, 50);
+            this.dgvPartOrder.TabIndex = 57;
+            // 
+            // lblPartOrderPln
+            // 
+            this.lblPartOrderPln.AutoSize = true;
+            this.lblPartOrderPln.BackColor = System.Drawing.Color.Transparent;
+            this.lblPartOrderPln.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPartOrderPln.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPartOrderPln.Location = new System.Drawing.Point(870, 566);
+            this.lblPartOrderPln.Name = "lblPartOrderPln";
+            this.lblPartOrderPln.Size = new System.Drawing.Size(125, 20);
+            this.lblPartOrderPln.TabIndex = 60;
+            this.lblPartOrderPln.Text = "złotych (netto)";
+            // 
+            // tbPartOrder
+            // 
+            this.tbPartOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbPartOrder.Location = new System.Drawing.Point(709, 563);
+            this.tbPartOrder.Name = "tbPartOrder";
+            this.tbPartOrder.ReadOnly = true;
+            this.tbPartOrder.Size = new System.Drawing.Size(155, 23);
+            this.tbPartOrder.TabIndex = 59;
+            this.tbPartOrder.Text = "0";
+            this.tbPartOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblPartOrder
+            // 
+            this.lblPartOrder.AutoSize = true;
+            this.lblPartOrder.BackColor = System.Drawing.Color.Transparent;
+            this.lblPartOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPartOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPartOrder.Location = new System.Drawing.Point(512, 566);
+            this.lblPartOrder.Name = "lblPartOrder";
+            this.lblPartOrder.Size = new System.Drawing.Size(191, 20);
+            this.lblPartOrder.TabIndex = 58;
+            this.lblPartOrder.Text = "Zamówienia częściowe";
+            // 
             // Profits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +578,10 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblPartOrderPln);
+            this.Controls.Add(this.tbPartOrder);
+            this.Controls.Add(this.lblPartOrder);
+            this.Controls.Add(this.dgvPartOrder);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
@@ -504,7 +600,7 @@
             this.Controls.Add(this.tbPureMoney);
             this.Controls.Add(this.tbSumPayment);
             this.Controls.Add(this.tbSumInvoices);
-            this.Controls.Add(this.tbSumOS);
+            this.Controls.Add(this.tbSumOutsourcing);
             this.Controls.Add(this.tbSumOrders);
             this.Controls.Add(this.tbSumIncome);
             this.Controls.Add(this.btnSum);
@@ -534,6 +630,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalaries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,7 +653,7 @@
         private System.Windows.Forms.Button btnSum;
         private System.Windows.Forms.TextBox tbSumIncome;
         private System.Windows.Forms.TextBox tbSumOrders;
-        private System.Windows.Forms.TextBox tbSumOS;
+        private System.Windows.Forms.TextBox tbSumOutsourcing;
         private System.Windows.Forms.TextBox tbSumInvoices;
         private System.Windows.Forms.TextBox tbSumPayment;
         private System.Windows.Forms.TextBox tbPureMoney;
@@ -576,5 +673,9 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.PictureBox pbProfits;
         private System.Windows.Forms.Label lblFormTitle;
+        private System.Windows.Forms.DataGridView dgvPartOrder;
+        private System.Windows.Forms.Label lblPartOrderPln;
+        private System.Windows.Forms.TextBox tbPartOrder;
+        private System.Windows.Forms.Label lblPartOrder;
     }
 }
