@@ -635,6 +635,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vAbsences' does not have a prim
           <Property Name="AbscenceReason" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vAbsenceType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vAbsenceType">
+          <Key>
+            <PropertyRef Name="IdAbsenceType" />
+          </Key>
+          <Property Name="IdAbsenceType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AbscenceReason" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vAddTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vAddTraining">
           <Key>
@@ -789,6 +798,22 @@ warning 6002: The table/view 'RoofingCompany.dbo.vExamination' does not have a p
           <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
           <Property Name="Date" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExpencePartOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExpencePartOrder">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="StatusPartOrder" />
+            <PropertyRef Name="CostPartOrder" />
+          </Key>
+          <Property Name="IdSupplier" Type="int" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="StatusPartOrder" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CostPartOrder" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vExpencesInvoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2043,6 +2068,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vAbsences].[AbscenceReason] AS [AbscenceReason]
     FROM [dbo].[vAbsences] AS [vAbsences]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vAbsenceType" EntityType="Self.vAbsenceType" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vAbsenceType].[IdAbsenceType] AS [IdAbsenceType], 
+    [vAbsenceType].[AbscenceReason] AS [AbscenceReason]
+    FROM [dbo].[vAbsenceType] AS [vAbsenceType]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vAddTraining" EntityType="Self.vAddTraining" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vAddTraining].[IdEmployee] AS [IdEmployee], 
@@ -2155,6 +2186,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vExamination].[EmployeeName] AS [EmployeeName], 
     [vExamination].[Date] AS [Date]
     FROM [dbo].[vExamination] AS [vExamination]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vExpencePartOrder" EntityType="Self.vExpencePartOrder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExpencePartOrder].[IdSupplier] AS [IdSupplier], 
+    [vExpencePartOrder].[SupplierName] AS [SupplierName], 
+    [vExpencePartOrder].[OrderDate] AS [OrderDate], 
+    [vExpencePartOrder].[StatusPartOrder] AS [StatusPartOrder], 
+    [vExpencePartOrder].[CostPartOrder] AS [CostPartOrder]
+    FROM [dbo].[vExpencePartOrder] AS [vExpencePartOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vExpencesInvoices" EntityType="Self.vExpencesInvoices" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3026,6 +3066,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vInvoiceTypes" EntityType="RoofingCompanyModel.vInvoiceType" />
           <EntitySet Name="vPaymentHistories" EntityType="RoofingCompanyModel.vPaymentHistory" />
           <EntitySet Name="vProductionProcessFullDatas" EntityType="RoofingCompanyModel.vProductionProcessFullData" />
+          <EntitySet Name="vAbsenceTypes" EntityType="RoofingCompanyModel.vAbsenceType" />
+          <EntitySet Name="vExpencePartOrders" EntityType="RoofingCompanyModel.vExpencePartOrder" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -5029,6 +5071,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CatalogMachineNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="vAbsenceType">
+          <Key>
+            <PropertyRef Name="IdAbsenceType" />
+          </Key>
+          <Property Name="IdAbsenceType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AbscenceReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExpencePartOrder">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="StatusPartOrder" />
+            <PropertyRef Name="CostPartOrder" />
+          </Key>
+          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StatusPartOrder" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CostPartOrder" Type="Int32" Nullable="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6167,6 +6230,25 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="IdPlan" ColumnName="IdPlan" />
                 <ScalarProperty Name="IdProces" ColumnName="IdProces" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAbsenceTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vAbsenceType">
+              <MappingFragment StoreEntitySet="vAbsenceType">
+                <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
+                <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExpencePartOrders">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExpencePartOrder">
+              <MappingFragment StoreEntitySet="vExpencePartOrder">
+                <ScalarProperty Name="CostPartOrder" ColumnName="CostPartOrder" />
+                <ScalarProperty Name="StatusPartOrder" ColumnName="StatusPartOrder" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

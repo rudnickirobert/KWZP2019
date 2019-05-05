@@ -976,6 +976,22 @@ SELECT IdMedicalExamination
 FROM MedicalExamination
 WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE());
 
+GO
+
+CREATE VIEW vAbsenceType
+AS
+SELECT IdAbsenceType, AbscenceReason
+FROM AbsenceType
+
+GO
+
+CREATE VIEW vExpencePartOrder
+AS
+SELECT Supplier.IdSupplier, Supplier.SupplierName, PartOrder.OrderDate, PartOrder.StatusPartOrder, PartOrder.CostPartOrder
+FROM PartOrder 
+INNER JOIN Supplier ON PartOrder.IdSupplier = Supplier.IdSupplier
+
+
 
 GO
 

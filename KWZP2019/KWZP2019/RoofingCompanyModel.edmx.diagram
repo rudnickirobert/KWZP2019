@@ -173,6 +173,8 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="26.375" PointY="14.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="14.375" PointY="26.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="26.375" PointY="17.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vAbsenceType" Width="1.5" PointX="26.375" PointY="21.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencePartOrder" Width="1.5" PointX="26.375" PointY="24.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
