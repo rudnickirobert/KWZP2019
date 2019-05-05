@@ -155,25 +155,10 @@ namespace KWZP2019
                 }
             }
         }
-
-        private void btnRemoveEmployee_Click(object sender, EventArgs e)
-        {
-            int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
-            int idEmployeeToRemove = Convert.ToInt32(this.viewProcessEmpl.CurrentRow.Cells["idDetailDataGridViewTextBoxColumn"].Value);
-            string messageDuringRemovingEmployee = "Usunięto plan pracownika o numerze: " + Convert.ToString(idEmployeeToRemove + ".");
-            MessageBox.Show(messageDuringRemovingEmployee, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            PlannedProductionEmployeeDetail employeeToRemove = db.PlannedProductionEmployeeDetails.First(f => f.IdDetail == idEmployeeToRemove);
-            db.PlannedProductionEmployeeDetails.Remove(employeeToRemove);
-            db.SaveChanges();
-            viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
-                                          where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
-                                          select PlannedProductionEmployeeDetail).ToList();
-        }
         private bool isEmptyDataGridViewEmployee()
         {
             return viewProcessEmpl.DataSource == null;
         }
-
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
@@ -205,7 +190,19 @@ namespace KWZP2019
                                               select PlannedProductionEmployeeDetail).ToList();
             }
         }
-
+        private void btnRemoveEmployee_Click(object sender, EventArgs e)
+        {
+            int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
+            int idEmployeeToRemove = Convert.ToInt32(this.viewProcessEmpl.CurrentRow.Cells["idDetailDataGridViewTextBoxColumn"].Value);
+            string messageDuringRemovingEmployee = "Usunięto plan pracownika o numerze: " + Convert.ToString(idEmployeeToRemove + ".");
+            MessageBox.Show(messageDuringRemovingEmployee, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PlannedProductionEmployeeDetail employeeToRemove = db.PlannedProductionEmployeeDetails.First(f => f.IdDetail == idEmployeeToRemove);
+            db.PlannedProductionEmployeeDetails.Remove(employeeToRemove);
+            db.SaveChanges();
+            viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
+                                          where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
+                                          select PlannedProductionEmployeeDetail).ToList();
+        }
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
             if (db.vUnhandledOrderDetails.Any())

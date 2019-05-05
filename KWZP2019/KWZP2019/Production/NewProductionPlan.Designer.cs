@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnAddEmp = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxMachine = new System.Windows.Forms.ComboBox();
@@ -44,10 +44,11 @@
             this.cBoxIntoProduction = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.viewProcessEmpl = new System.Windows.Forms.DataGridView();
+            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblOperators = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnRemoveEmployee = new System.Windows.Forms.Button();
             this.dateTimeEmployeeEnd = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimeEmployeeStart = new System.Windows.Forms.DateTimePicker();
@@ -55,42 +56,32 @@
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
             this.viewOrderDetail = new System.Windows.Forms.DataGridView();
+            this.vUnhandledOrderDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.btnEndDateCalculate = new System.Windows.Forms.Button();
-            this.idDetailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vUnhandledOrderDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plannedProductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAddEmp
+            // btnAddEmployee
             // 
-            this.btnAddEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnAddEmp.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnAddEmp.FlatAppearance.BorderSize = 3;
-            this.btnAddEmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnAddEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEmp.ForeColor = System.Drawing.Color.White;
-            this.btnAddEmp.Image = global::KWZP2019.Properties.Resources.icons8_add_user_male_40;
-            this.btnAddEmp.Location = new System.Drawing.Point(437, 14);
-            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddEmp.Name = "btnAddEmp";
-            this.btnAddEmp.Size = new System.Drawing.Size(68, 45);
-            this.btnAddEmp.TabIndex = 0;
-            this.btnAddEmp.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAddEmployee.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddEmployee.FlatAppearance.BorderSize = 3;
+            this.btnAddEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnAddEmployee.Image = global::KWZP2019.Properties.Resources.icons8_add_user_male_40;
+            this.btnAddEmployee.Location = new System.Drawing.Point(437, 14);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(68, 45);
+            this.btnAddEmployee.TabIndex = 0;
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // label1
             // 
@@ -255,14 +246,6 @@
             // 
             this.viewProcessEmpl.AutoGenerateColumns = false;
             this.viewProcessEmpl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewProcessEmpl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDetailDataGridViewTextBoxColumn,
-            this.idProcesDataGridViewTextBoxColumn,
-            this.idEmployeeDataGridViewTextBoxColumn,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.plannedProductionDataGridViewTextBoxColumn,
-            this.allocationDataGridViewTextBoxColumn});
             this.viewProcessEmpl.DataSource = this.plannedProductionEmployeeDetailBindingSource;
             this.viewProcessEmpl.Location = new System.Drawing.Point(455, 127);
             this.viewProcessEmpl.Margin = new System.Windows.Forms.Padding(2);
@@ -288,13 +271,13 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnRemove);
+            this.groupBox1.Controls.Add(this.btnRemoveEmployee);
             this.groupBox1.Controls.Add(this.dateTimeEmployeeEnd);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dateTimeEmployeeStart);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBoxEmployee);
-            this.groupBox1.Controls.Add(this.btnAddEmp);
+            this.groupBox1.Controls.Add(this.btnAddEmployee);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(455, 230);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -316,21 +299,22 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Pracownik";
             // 
-            // btnRemove
+            // btnRemoveEmployee
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnRemove.FlatAppearance.BorderSize = 3;
-            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Image = global::KWZP2019.Properties.Resources.icons8_denied_40;
-            this.btnRemove.Location = new System.Drawing.Point(437, 61);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(68, 44);
-            this.btnRemove.TabIndex = 24;
-            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemoveEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnRemoveEmployee.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnRemoveEmployee.FlatAppearance.BorderSize = 3;
+            this.btnRemoveEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnRemoveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveEmployee.Image = global::KWZP2019.Properties.Resources.icons8_denied_40;
+            this.btnRemoveEmployee.Location = new System.Drawing.Point(437, 61);
+            this.btnRemoveEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveEmployee.Name = "btnRemoveEmployee";
+            this.btnRemoveEmployee.Size = new System.Drawing.Size(68, 44);
+            this.btnRemoveEmployee.TabIndex = 24;
+            this.btnRemoveEmployee.UseVisualStyleBackColor = false;
+            this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
             // 
             // dateTimeEmployeeEnd
             // 
@@ -406,10 +390,6 @@
             // 
             this.viewOrderDetail.AutoGenerateColumns = false;
             this.viewOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDetailDataGridViewTextBoxColumn1,
-            this.quantityDataGridViewTextBoxColumn,
-            this.productCodeDataGridViewTextBoxColumn});
             this.viewOrderDetail.DataSource = this.vUnhandledOrderDetailsBindingSource;
             this.viewOrderDetail.Location = new System.Drawing.Point(17, 127);
             this.viewOrderDetail.Margin = new System.Windows.Forms.Padding(2);
@@ -447,84 +427,6 @@
             this.btnEndDateCalculate.UseVisualStyleBackColor = false;
             this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
             // 
-            // idDetailDataGridViewTextBoxColumn1
-            // 
-            this.idDetailDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDetailDataGridViewTextBoxColumn1.DataPropertyName = "IdDetail";
-            this.idDetailDataGridViewTextBoxColumn1.HeaderText = "Nr szczegółu";
-            this.idDetailDataGridViewTextBoxColumn1.Name = "idDetailDataGridViewTextBoxColumn1";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Ilosć";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // productCodeDataGridViewTextBoxColumn
-            // 
-            this.productCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "ProductCode";
-            this.productCodeDataGridViewTextBoxColumn.HeaderText = "Kod produktu";
-            this.productCodeDataGridViewTextBoxColumn.Name = "productCodeDataGridViewTextBoxColumn";
-            // 
-            // vUnhandledOrderDetailsBindingSource
-            // 
-            this.vUnhandledOrderDetailsBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
-            // 
-            // idDetailDataGridViewTextBoxColumn
-            // 
-            this.idDetailDataGridViewTextBoxColumn.DataPropertyName = "IdDetail";
-            this.idDetailDataGridViewTextBoxColumn.HeaderText = "IdDetail";
-            this.idDetailDataGridViewTextBoxColumn.Name = "idDetailDataGridViewTextBoxColumn";
-            this.idDetailDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idProcesDataGridViewTextBoxColumn
-            // 
-            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.HeaderText = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
-            this.idProcesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idEmployeeDataGridViewTextBoxColumn
-            // 
-            this.idEmployeeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IdEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "Numer pracownika";
-            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data rozpoczęcia";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Data zakończenia";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // plannedProductionDataGridViewTextBoxColumn
-            // 
-            this.plannedProductionDataGridViewTextBoxColumn.DataPropertyName = "PlannedProduction";
-            this.plannedProductionDataGridViewTextBoxColumn.HeaderText = "PlannedProduction";
-            this.plannedProductionDataGridViewTextBoxColumn.Name = "plannedProductionDataGridViewTextBoxColumn";
-            this.plannedProductionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // allocationDataGridViewTextBoxColumn
-            // 
-            this.allocationDataGridViewTextBoxColumn.DataPropertyName = "Allocation";
-            this.allocationDataGridViewTextBoxColumn.HeaderText = "Allocation";
-            this.allocationDataGridViewTextBoxColumn.Name = "allocationDataGridViewTextBoxColumn";
-            this.allocationDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // plannedProductionEmployeeDetailBindingSource
-            // 
-            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
-            // 
             // NewProductionPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,11 +458,11 @@
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,7 +470,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAddEmp;
+        private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxMachine;
@@ -591,7 +493,7 @@
         private System.Windows.Forms.DateTimePicker dateTimeEmployeeEnd;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimeEmployeeStart;
-        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnRemoveEmployee;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNewPlan;
         private System.Windows.Forms.DataGridView viewOrderDetail;
