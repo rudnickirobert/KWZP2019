@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace KWZP2019
 {
@@ -69,7 +70,7 @@ namespace KWZP2019
                         employeeDetailsSelect.HealTestDate,
                         employeeDetailsSelect.WorkplaceTrainingDate,
                         employeeDetailsSelect.Date
-                }).ToList();
+            }).ToList();
         }
     }
 }

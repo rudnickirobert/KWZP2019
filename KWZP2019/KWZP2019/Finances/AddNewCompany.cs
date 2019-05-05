@@ -66,7 +66,6 @@ namespace KWZP2019
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.addInvoices.Refresh();
             this.addInvoices.Show();
             this.Hide();
         }

@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace KWZP2019
 {
     public partial class AddTraining : Form
     {
         RoofingCompanyEntities db;
+        StartForm startForm;
+        HR hr;
 
-        public AddTraining(RoofingCompanyEntities db)
+        public AddTraining(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.hr = hr;
         }
 
         private void AddTraining_Load(object sender, EventArgs e)
@@ -61,6 +66,18 @@ namespace KWZP2019
                         addtrainigSelect.TrainingEndDate,
                         addtrainigSelect.TrainingPrice
                 }).ToList();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.hr.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

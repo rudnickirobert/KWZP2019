@@ -69,15 +69,5 @@ namespace KWZP2019
             this.startForm.Show();
             this.Hide();
         }
-
-        private void cbContractors_Click(object sender, EventArgs e)
-        {
-            cbContractors.Items.Clear();
-            List<Contractor> contractorList = db.Contractors.ToList();
-            foreach (Contractor contractor in contractorList)
-            {
-                cbContractors.Items.Add(contractor.ContractorName);
-            }
-        }
     }
 }

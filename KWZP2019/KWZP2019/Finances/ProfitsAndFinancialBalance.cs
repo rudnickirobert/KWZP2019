@@ -19,12 +19,12 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private StartForm startForm;
-        private Finances Finances;
-        public Profits(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
+        private Finances finances;
+        public Profits(RoofingCompanyEntities db, StartForm startForm, Finances finances)
         {
             this.db = db;
             this.startForm = startForm;
-            this.Finances = Finances;
+            this.finances = finances;
             InitializeComponent();
         }
         private void Profits_Load(object sender, EventArgs e)
@@ -237,6 +237,18 @@ namespace KWZP2019
                 stream.Close();
             }
             MessageBox.Show("Pomyślnie wygenerowano raport.");
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finances.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.startForm.Show();
         }
     }
 }
