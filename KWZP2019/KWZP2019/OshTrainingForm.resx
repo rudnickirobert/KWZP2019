@@ -601,11 +601,14 @@
   <data name="&gt;&gt;datePickerControlDate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="comboBoxTraining.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
   <data name="comboBoxTraining.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 532</value>
+    <value>702, 529</value>
   </data>
   <data name="comboBoxTraining.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 21</value>
+    <value>259, 24</value>
   </data>
   <data name="comboBoxTraining.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>

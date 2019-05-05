@@ -18,6 +18,9 @@ namespace KWZP2019
         private QualityControl qualityControlForm;
         private int selectedEmployee;
         private SafetyTraining safetyTraining;
+        private int id;
+        private string firstname;
+        private string lastname;
 
         public OshTrainingForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -82,20 +85,20 @@ namespace KWZP2019
             clear();
         }
 
-                private void comboBoxTraining_Format(object sender, ListControlConvertEventArgs e)
+        private void comboBoxTraining_Format(object sender, ListControlConvertEventArgs e)
         {
-            int id = ((ViewOshTraining)e.ListItem).Numer_pracownika;
-            string lastname = ((ViewOshTraining)e.ListItem).Nazwisko;
-            string firstname = ((ViewOshTraining)e.ListItem).Imię;
-            e.Value = firstname + " " + lastname;
+            id = ((ViewOshTraining)e.ListItem).Numer_pracownika;
+            lastname = ((ViewOshTraining)e.ListItem).Nazwisko;
+            firstname = ((ViewOshTraining)e.ListItem).Imię;
+            e.Value = id + ". " + firstname + " " + lastname;
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            selectedEmployee = Convert.ToInt32(comboBoxTraining.ValueMember);
+            selectedEmployee = Convert.ToInt32(comboBoxTraining.SelectedValue);
             if (comboBoxTraining.Text == "")
             {
-                MessageBox.Show("Uzupełnij numer pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wybierz pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

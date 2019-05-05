@@ -182,10 +182,9 @@
             // 
             // comboBoxTraining
             // 
-            this.comboBoxTraining.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxTraining, "comboBoxTraining");
+            this.comboBoxTraining.FormattingEnabled = true;
             this.comboBoxTraining.Name = "comboBoxTraining";
-            this.comboBoxTraining.Sorted = true;
             this.comboBoxTraining.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.comboBoxTraining_Format);
             // 
             // OshTrainingForm
