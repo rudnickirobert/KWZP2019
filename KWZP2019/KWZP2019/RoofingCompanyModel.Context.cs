@@ -115,8 +115,6 @@ namespace KWZP2019
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
-        public virtual DbSet<vProductionProcessFullData> vProductionProcessFullDatas { get; set; }
-        public virtual DbSet<vPartsRequestView> vPartsRequestViews { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomers { get; set; }
         public virtual DbSet<vSafetyControlHistoryView> vSafetyControlHistoryViews { get; set; }
         public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcesses { get; set; }
@@ -126,5 +124,6 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vPartsRequestView> vPartsRequestViews { get; set; }
     }
 }

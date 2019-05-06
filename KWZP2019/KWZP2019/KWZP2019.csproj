@@ -352,6 +352,18 @@
     <Compile Include="NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartsRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest.Designer.cs">
+      <DependentUpon>PartsRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartsRequest_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest_Add.Designer.cs">
+      <DependentUpon>PartsRequest_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production\NewProductionFailure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,18 +417,6 @@
     </Compile>
     <Compile Include="PartRequest.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PartsRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PartsRequest.Designer.cs">
-      <DependentUpon>PartsRequest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PartsRequest_Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PartsRequest_Add.Designer.cs">
-      <DependentUpon>PartsRequest_Add.cs</DependentUpon>
     </Compile>
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -832,6 +832,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartsRequest.resx">
+      <DependentUpon>PartsRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production\NewProductionFailure.resx">
       <DependentUpon>NewProductionFailure.cs</DependentUpon>
     </EmbeddedResource>
@@ -858,9 +861,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OshTrainingForm.resx">
       <DependentUpon>OshTrainingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PartsRequest.resx">
-      <DependentUpon>PartsRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\NewProductionPlan.resx">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>

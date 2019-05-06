@@ -14,10 +14,10 @@ namespace KWZP2019
     
     public partial class vPartsRequestView
     {
-        public int IdPartRequest { get; set; }
         public string PartName { get; set; }
         public System.DateTime RequestDate { get; set; }
         public int Quantity { get; set; }
         public int StatusPart { get; set; }
+        public int IdPartRequest { get; set; }
     }
 }
