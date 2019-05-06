@@ -1,8 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -142,6 +145,88 @@ namespace KWZP2019
                                           where OrderDetail.Numer_zamówienia == idCustomer
                                           select OrderDetail).ToList();
             orderDetailsDgv.Columns[1].Visible = false;
+        }
+        //REPORT GENERATE ALGORITHM
+        private void generateReportBtn_Click(object sender, EventArgs e)
+        {
+            PdfPCell cell;
+            String customerName = "Klient";
+            //EXCEPTION PROTECTION
+            if (ordersDgv.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Wybierz zamówienie");
+            }
+            else
+            {
+                int idOrder = Convert.ToInt32(ordersDgv.CurrentRow.Cells[0].Value);
+                PdfPTable pdfCustomerReport = new PdfPTable(3);
+                pdfCustomerReport.DefaultCell.Padding = 3;
+                pdfCustomerReport.WidthPercentage = 80;
+                pdfCustomerReport.DefaultCell.BorderWidth = 1;
+                
+                foreach (Customer cust in db.Customers)
+                {
+                    if (cust.IdCustomer == Convert.ToInt32(ordersDgv.CurrentRow.Cells[1].Value))
+                    {
+                        customerName = cust.CustomerName;
+                        cell = new PdfPCell(new Phrase("Klient: " + customerName, FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12,1)));
+                        pdfCustomerReport.AddCell(cell);
+                    }
+                    
+                }
+                cell = new PdfPCell(new Phrase("Zamówienie nr: " + idOrder, FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
+                pdfCustomerReport.AddCell(cell);
+                cell = new PdfPCell(new Phrase("Koszt: " + ordersDgv.CurrentRow.Cells[3].Value + " zl", FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
+                pdfCustomerReport.AddCell(cell);
+                cell = new PdfPCell(new Phrase("Kod produktu:", FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
+                pdfCustomerReport.AddCell(cell);
+                cell = new PdfPCell(new Phrase("Wzór:", FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
+                pdfCustomerReport.AddCell(cell);
+                cell = new PdfPCell(new Phrase("Ilosc:", FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
+                pdfCustomerReport.AddCell(cell);
+
+                foreach (OrderDetail detail in db.OrderDetails)
+                {
+                    if (detail.IdOrderCustomer == idOrder)
+                    {
+                        foreach (Product prod in db.Products)
+                        {
+                            if (detail.IdProduct == prod.IdProduct)
+                            {
+                                pdfCustomerReport.AddCell(prod.ProductCode);
+                                foreach (Technology tech in db.Technologies)
+                                {
+                                    if (prod.IdTechnology == tech.IdTechnology)
+                                    {
+                                        pdfCustomerReport.AddCell(tech.TechnologyName);
+
+                                    }
+                                }
+                            }
+                        }
+                        
+
+                        pdfCustomerReport.AddCell(detail.Quantity.ToString());
+                    }
+                }
+
+
+                string folderPath = @"C:\Users\lotys\Desktop\";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                using (FileStream stream = new FileStream(folderPath + customerName + " zam " + ordersDgv.CurrentRow.Cells[0].Value + ".pdf", FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(pdfCustomerReport);
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+                MessageBox.Show("Pomyślnie wygenerowano raport.");
+            }
         }
     }
 }

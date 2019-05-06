@@ -60,6 +60,7 @@
             this.addNewOrderDetailBtn = new System.Windows.Forms.Button();
             this.orderDetailsDgv = new System.Windows.Forms.DataGridView();
             this.orderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.generateReportBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDgv)).BeginInit();
@@ -300,7 +301,7 @@
             // 
             // addNewOrderDetailBtn
             // 
-            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(858, 363);
+            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(764, 386);
             this.addNewOrderDetailBtn.Name = "addNewOrderDetailBtn";
             this.addNewOrderDetailBtn.Size = new System.Drawing.Size(138, 23);
             this.addNewOrderDetailBtn.TabIndex = 22;
@@ -311,7 +312,7 @@
             // orderDetailsDgv
             // 
             this.orderDetailsDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderDetailsDgv.Location = new System.Drawing.Point(760, 415);
+            this.orderDetailsDgv.Location = new System.Drawing.Point(764, 415);
             this.orderDetailsDgv.Name = "orderDetailsDgv";
             this.orderDetailsDgv.Size = new System.Drawing.Size(420, 289);
             this.orderDetailsDgv.TabIndex = 23;
@@ -320,11 +321,22 @@
             // 
             this.orderDetailBindingSource.DataSource = typeof(KWZP2019.OrderDetail);
             // 
+            // generateReportBtn
+            // 
+            this.generateReportBtn.Location = new System.Drawing.Point(941, 207);
+            this.generateReportBtn.Name = "generateReportBtn";
+            this.generateReportBtn.Size = new System.Drawing.Size(138, 69);
+            this.generateReportBtn.TabIndex = 24;
+            this.generateReportBtn.Text = "Generuj raport";
+            this.generateReportBtn.UseVisualStyleBackColor = true;
+            this.generateReportBtn.Click += new System.EventHandler(this.generateReportBtn_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.generateReportBtn);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.orderDetailsDgv);
             this.Controls.Add(this.addNewOrderDetailBtn);
@@ -383,5 +395,6 @@
         private System.Windows.Forms.Button addNewOrderDetailBtn;
         private System.Windows.Forms.DataGridView orderDetailsDgv;
         private System.Windows.Forms.BindingSource orderDetailBindingSource;
+        private System.Windows.Forms.Button generateReportBtn;
     }
 }
