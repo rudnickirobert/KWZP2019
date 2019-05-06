@@ -360,7 +360,7 @@ EndRealDate datetime null
 
 create table Employee(
 IdEmployee int primary key identity(1,1) not null,
-EmployeeName nvarchar(50) null,
+EmployeeName nvarchar(50) not null,
 EmployeeSurname nvarchar(50) null,
 ZipCode nvarchar(50) null,
 City nvarchar(50) null,
@@ -368,7 +368,7 @@ Street nvarchar(50) null,
 HouseNumber nvarchar(50) null,
 ApartmentNum nvarchar(50) null,
 PhoneNumber nvarchar(50) null,
-PESEL bigint,
+PESEL nvarchar(11),
 );
 
 create table Position(
@@ -592,23 +592,8 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
 
 go
-create view ViewDailySfDelivery as
-select SemiFinishedOrder.SfDeliveryDate as [Delivery], Supplier.SupplierName, [Material].SfCode, [Material].Quantity
-from SemiFinishedOrder
-join
-Supplier
-on SemiFinishedOrder.IdSupplier = Supplier.IdSupplier
-join
-(select SemiFinished.SfCode, SfOrderDetail.Quantity, SfOrderDetail.IdSfOrder
-from SfOrderDetail
-join
-SemiFinished
-on SemiFinished.IdSemiFinished = SfOrderDetail.IdSemiFinished) as [Material]
-on SemiFinishedOrder.IdSfOrder = [Material].IdSfOrder;
-
-go
 create view ViewOshTraining as
-select Department.DepartmentName as [Dział], Employee.IdEmployee as [Numer pracownika], Employee.EmployeeName as [Imię], Employee.EmployeeSurname as [Nazwisko], (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate)) as [Data wygaśniecia szkolenia]
+select Department.DepartmentName as [Dział], Employee.PESEL as [PESEL], Employee.EmployeeName as [Imię], Employee.EmployeeSurname as [Nazwisko], (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate)) as [Data wygaśniecia szkolenia]
 from Employee
 join Contract
 on Employee.IdEmployee = Contract.IdEmployee

@@ -35,7 +35,6 @@ namespace KWZP2019
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<EducationLevel> EducationLevels { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<EmployeePlan> EmployeePlans { get; set; }
         public virtual DbSet<EntranceControl> EntranceControls { get; set; }
         public virtual DbSet<Expense> Expenses { get; set; }
@@ -89,8 +88,6 @@ namespace KWZP2019
         public virtual DbSet<vComboBoxMachine> vComboBoxMachines { get; set; }
         public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
-        public virtual DbSet<ViewDailySfDelivery> ViewDailySfDeliveries { get; set; }
-        public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
         public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
         public virtual DbSet<vOrder> vOrders { get; set; }
@@ -111,7 +108,6 @@ namespace KWZP2019
         public virtual DbSet<vAddTraining> vAddTrainings { get; set; }
         public virtual DbSet<vContract> vContracts { get; set; }
         public virtual DbSet<vEducationForm> vEducationForms { get; set; }
-        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
         public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
@@ -123,7 +119,10 @@ namespace KWZP2019
         public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
         public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
-        public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
         public virtual DbSet<vProductionProcessFullData> vProductionProcessFullDatas { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
+        public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
+        public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
     }
 }

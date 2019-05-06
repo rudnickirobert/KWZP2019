@@ -23,7 +23,7 @@ namespace KWZP2019
         public Nullable<System.DateTime> HealTestDate { get; set; }
         public Nullable<System.DateTime> WorkplaceTrainingDate { get; set; }
     
-        public virtual Employee Employee { get; set; }
         public virtual Position Position { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

@@ -624,9 +624,6 @@
     <Compile Include="vHRExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewDailySfDelivery.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewOshTraining.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>

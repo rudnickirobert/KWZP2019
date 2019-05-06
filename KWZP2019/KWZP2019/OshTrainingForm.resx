@@ -148,7 +148,7 @@
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
   <data name="btnReturn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 32</value>
+    <value>12, 12</value>
   </data>
   <data name="btnReturn.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 120</value>
@@ -163,6 +163,9 @@
   <data name="btnReturn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
+  <data name="btnReturn.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
   <data name="&gt;&gt;btnReturn.Name" xml:space="preserve">
     <value>btnReturn</value>
   </data>
@@ -173,7 +176,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReturn.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="btnReturnMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -206,7 +209,7 @@
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
   <data name="btnReturnMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 186</value>
+    <value>12, 154</value>
   </data>
   <data name="btnReturnMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 120</value>
@@ -220,6 +223,9 @@
   <data name="btnReturnMain.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
+  <data name="btnReturnMain.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
   <data name="&gt;&gt;btnReturnMain.Name" xml:space="preserve">
     <value>btnReturnMain</value>
   </data>
@@ -230,13 +236,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReturnMain.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="dataGVOshTraining.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 277</value>
+    <value>232, 154</value>
   </data>
   <data name="dataGVOshTraining.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 167</value>
+    <value>940, 230</value>
   </data>
   <data name="dataGVOshTraining.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -251,52 +257,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGVOshTraining.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btnShow.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="btnShow.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnShow.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="btnShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1004, 468</value>
-  </data>
-  <data name="btnShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 34</value>
-  </data>
-  <data name="btnShow.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnShow.Text" xml:space="preserve">
-    <value>Pokaż</value>
-  </data>
-  <data name="&gt;&gt;btnShow.Name" xml:space="preserve">
-    <value>btnShow</value>
-  </data>
-  <data name="&gt;&gt;btnShow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnShow.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnShow.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="lblDepartmentName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblDepartmentName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="lblDepartmentName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 226</value>
+    <value>232, 103</value>
   </data>
   <data name="lblDepartmentName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
+    <value>161, 26</value>
   </data>
   <data name="lblDepartmentName.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -314,16 +287,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDepartmentName.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="domainUpDownDepartmentName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
   <data name="domainUpDownDepartmentName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>499, 220</value>
+    <value>399, 102</value>
   </data>
   <data name="domainUpDownDepartmentName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 26</value>
+    <value>239, 29</value>
   </data>
   <data name="domainUpDownDepartmentName.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -344,154 +317,52 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;domainUpDownDepartmentName.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
-  <data name="btnClear.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="btnUpdate.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="btnClear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnUpdate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnUpdate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
-  <data name="btnClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAA8tJREFUWEftmI1L00EYx/0r+h/qzwgiU/OtIiJ7D8oKggwqQgmCUDc1sywtUisi
-        84U0erES1DLd5pxzmjqnY1MXOOcszXd9uud2N36/ef62uZ9TqC98kbt77u7ze+7uUYz5r39KsTntsDe7
-        DdKKO8E+teo3tqPRj/szFLEwSDox2sb9GYpYgV8WbeP+DEUs0aRom6GIJZoQbTMUsUQTom2GIta2v4Oh
-        vuKLFT30xZ190i0c36hVecV65yzEkoX25fpqZuvwjDBuI1blFRd9GaFgWbWD9Kf2o0MYt1EzFLFEE6Qe
-        JsavTM7Xg+XnAiRodXC4yAjDXnnc0OQK1HROwM1qK6SX98DlFz+gtGkUbJ4VWZzIDEUs0QSpP/f/olm7
-        VWuj7WuVA7T9vscri8Njj81pg/NlFsgkmU4rNtG4/Ibg2WYoYgW7g7frhuhGb82TtF1tdNM2Hrc0zuSa
-        h0byMbzdO74IiSTbR+4rrx/RK7ZOLNOjTS0wgI0cIfb1kz7cGN3vXpLF43X4RjJZaRgn99YJKfkGmlVp
-        TKBxf4YillIGqzp82Tp0rwNuVFn9Tr1roP2v9OP+2BbbtP9YMf5SRS/9OKUEoCN6xRkv++gGSWSjFJJF
-        bmxjPz4EHnvuqYVmtWlw2t937JEPmLe/2//AgUIjxJFydf31gL+foYjFgwJtdi3Quocwg55l2Rg/Zjw+
-        09g87UvQ6CDtockfo3PM+usmthEO16o2eaFvYgXSSYavkATgGEMRiy8Y6NLmMbp4Vo38MXBjOcHxElJK
-        sI2vF9vYX/jJSY+bXwUOp2lwwRCbbyXlh0MyFLHWu4NnHpvp4nVmj3D8TZeHjp8q6aJthLhA6h9mEvve
-        WbwU9mRpF4XLqnPCe9sqNDtIzWRrcMh4rb6R4awVbiLdWE232WdkcNxrIMsVIIPVwY16PbiwIQMXVsPB
-        4LhFkPu1unqG5lPg4pG6m/y+PkHKC9bCOx/GhGBSSyH73CsQn6uTP5rADSIxwp0mj+L51xFw/16A4wQ0
-        HMga8xQk5ulmGJpPat1BKRxXOJC5pASR413arWnfxdB8UuMVi+C4QoHEuyqEQ0X6nwUlOC4lyKx6BbhI
-        tUfTuiM5T2evaHYuMpZ1JYJUzJwaSi3QG8uaHEHhuKSQHC4uu20nW059xWva50Y9c2z70ISQBws7Vjcd
-        DpWUp8s4+sA445kOOYnwrMW5SP4SGtl0OC6SicxQIREO7yzeXTY9OgoFcsvguJQgtxyOSwS5beC4OKTL
-        OwdYgrYVHFeSVn81Prd9NqVAbwgfLibmL4G/UtVRJynUAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 458</value>
+  <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>974, 390</value>
   </data>
-  <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 120</value>
+  <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 73</value>
   </data>
-  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Wyczyść dane</value>
+  <data name="btnUpdate.Text" xml:space="preserve">
+    <value>Aktualizuj datę szkolenia</value>
   </data>
-  <data name="btnClear.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="&gt;&gt;btnUpdate.Name" xml:space="preserve">
+    <value>btnUpdate</value>
   </data>
-  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
-    <value>btnClear</value>
-  </data>
-  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnUpdate.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnDone.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="btnDone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnDone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 18pt</value>
-  </data>
-  <data name="btnDone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAoxJREFUWEftlu1LU2EYxtenvvYH9Cf0P9SXmDn6YvTyQcLAwoQgiEEgBRHhy1am
-        hWU1shcqwgxSDCpYULoXj24trTXlbKAT06XDOmTZvNt1PMedtudMl+e458O54IKz57nu+/7xHM45s1my
-        ZMnSFsje5COerGDlhMV4eoULW4CbtS5gaHqJWbCVBoMuYFXrELlfJmh05jez2ExjJmaDQRcwnPxFjX2i
-        HGp/M0ljs+aDYgZmYSZmg0EXUC0SJn/ShecTdKBNoBveKYrOLf/T1AijJ3pjBmZhprq3LqBqf0Kihu4Y
-        HWwXyPNummKpPwWZUo0e6HXomiD3xoz8zIYBVb8Xf5DzcZSOXB+m+4MzNDGfYeaKGTWoRQ/0Qk9WDi4Z
-        ULU3tkinH36i6o4QPQnOkrjAzmmNDLKoQS16sHJa/zeg6lef01TfNUo1t8L0bCRFIiODNewd6wzLWdTk
-        Z/S8aUDVvZF5OuGJUO3tiHz7BuOSbFzX3onIe8iwaovZMEAYJwWI8z3jVHf3I53MnhauscY62Y3YUEAz
-        zBWgqz9RcNJcAWLu2acxGv+We8dyB3i86wvV3xtb+7RWd4zwBXhzKEOnHsXpaOcHCiVX/1EpWDmVFVDI
-        yHb2JLOfwGEayH5lFKyczARE72JWAeFzfXNUdVUge6Nvj4K2KgRZzY1wPsR6vvg6TQ5XQNrX7Dus4PEF
-        CLe8/U77Lwcle7PfuQZopPEkGgpopkoFZN5iM6U9WZa1cA29X1cqXYHFgoekXNICnumeWq50+VN7Lw3s
-        UrbLLxkw+6KueyAuOdxBsaLJv1PZ4kMArPFEJYc7ENzd6t2hLPMjADpaAi8q2vq3K0t8KQt4xUa0Tflp
-        yQTZbH8B2wqe6n2+RmAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnDone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 614</value>
-  </data>
-  <data name="btnDone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 120</value>
-  </data>
-  <data name="btnDone.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="btnDone.Text" xml:space="preserve">
-    <value>Zatwierdź</value>
-  </data>
-  <data name="btnDone.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btnDone.Name" xml:space="preserve">
-    <value>btnDone</value>
-  </data>
-  <data name="&gt;&gt;btnDone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDone.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnDone.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="pictureBoxForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pictureBoxForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 50</value>
-  </data>
-  <data name="pictureBoxForm.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxForm.Name" xml:space="preserve">
-    <value>pictureBoxForm</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxForm.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxForm.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="&gt;&gt;btnUpdate.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblFormTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
   <data name="lblFormTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 72</value>
+    <value>232, 12</value>
   </data>
   <data name="lblFormTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 54</value>
+    <value>940, 54</value>
   </data>
   <data name="lblFormTitle.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -512,46 +383,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFormTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblEmployeeId.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEmployeeId.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="lblEmployeeId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 533</value>
-  </data>
-  <data name="lblEmployeeId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lblEmployeeId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 20</value>
-  </data>
-  <data name="lblEmployeeId.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="lblEmployeeId.Text" xml:space="preserve">
-    <value>Wybór pracownika:</value>
-  </data>
-  <data name="&gt;&gt;lblEmployeeId.Name" xml:space="preserve">
-    <value>lblEmployeeId</value>
-  </data>
-  <data name="&gt;&gt;lblEmployeeId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEmployeeId.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblEmployeeId.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblTrainingDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="lblTrainingDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 602</value>
+    <value>681, 401</value>
   </data>
   <data name="lblTrainingDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 26</value>
@@ -575,16 +413,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTrainingDate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
+  </data>
+  <data name="datePickerControlDate.CalendarFont" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
   <data name="datePickerControlDate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
   <data name="datePickerControlDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>593, 631</value>
+    <value>622, 431</value>
   </data>
   <data name="datePickerControlDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 26</value>
+    <value>346, 29</value>
   </data>
   <data name="datePickerControlDate.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -599,31 +440,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;datePickerControlDate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <data name="comboBoxTraining.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+  <data name="btnShow.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="comboBoxTraining.Location" type="System.Drawing.Point, System.Drawing">
-    <value>702, 529</value>
+  <data name="btnShow.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="comboBoxTraining.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 24</value>
+  <data name="btnShow.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12.75pt, style=Bold</value>
   </data>
-  <data name="comboBoxTraining.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
+  <data name="btnShow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;comboBoxTraining.Name" xml:space="preserve">
-    <value>comboBoxTraining</value>
+  <data name="btnShow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>645, 99</value>
   </data>
-  <data name="&gt;&gt;comboBoxTraining.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 34</value>
   </data>
-  <data name="&gt;&gt;comboBoxTraining.Parent" xml:space="preserve">
+  <data name="btnShow.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnShow.Text" xml:space="preserve">
+    <value>Pokaż</value>
+  </data>
+  <data name="&gt;&gt;btnShow.Name" xml:space="preserve">
+    <value>btnShow</value>
+  </data>
+  <data name="&gt;&gt;btnShow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnShow.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;comboBoxTraining.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;btnShow.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -21711,7 +21564,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 761</value>
+    <value>1184, 511</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -15,7 +15,7 @@ namespace KWZP2019
     public partial class ViewOshTraining
     {
         public string Dział { get; set; }
-        public int Numer_pracownika { get; set; }
+        public string PESEL { get; set; }
         public string Imię { get; set; }
         public string Nazwisko { get; set; }
         public Nullable<System.DateTime> Data_wygaśniecia_szkolenia { get; set; }

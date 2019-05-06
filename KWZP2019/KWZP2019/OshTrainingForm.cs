@@ -18,9 +18,8 @@ namespace KWZP2019
         private QualityControl qualityControlForm;
         private int selectedEmployee;
         private SafetyTraining safetyTraining;
-        private int id;
-        private string firstname;
-        private string lastname;
+        private DataGridViewRow selectedRow;
+        private bool doSelectedRow = false;
 
         public OshTrainingForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -28,13 +27,6 @@ namespace KWZP2019
             this.startForm = startForm;
             this.qualityControlForm = qualityControlForm;
             InitializeComponent();
-            doComboBox();
-        }
-
-        private void doComboBox()
-        {
-            comboBoxTraining.DataSource = db.ViewOshTrainings.ToList();
-            comboBoxTraining.ValueMember = "Numer_pracownika";
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
@@ -57,65 +49,58 @@ namespace KWZP2019
         private void OshTrainingForm_Load(object sender, EventArgs e)
         {
             List<Department> departmentList = db.Departments.ToList();
-            foreach (Department dep in departmentList)
+            foreach (Department department in departmentList)
             {
-                domainUpDownDepartmentName.Items.Add(dep.DepartmentName);
+                domainUpDownDepartmentName.Items.Add(department.DepartmentName);
             }
-
             datePickerControlDate.Value = DateTime.Now;
-            comboBoxTraining.Text = "";
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
             dataGVOshTraining.DataSource = db.ViewOshTrainings.
                 Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
-                this.dataGVOshTraining.Columns["Dział"].Visible = false;
+            dataGVOshTraining.AutoResizeColumns();
         }
 
-        void clear()
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            comboBoxTraining.Text = "";
-            dataGVOshTraining.DataSource = "";
-            datePickerControlDate.Value = DateTime.Now;
-            domainUpDownDepartmentName.Text = "Wybierz dział";
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clear();
-        }
-
-        private void comboBoxTraining_Format(object sender, ListControlConvertEventArgs e)
-        {
-            id = ((ViewOshTraining)e.ListItem).Numer_pracownika;
-            lastname = ((ViewOshTraining)e.ListItem).Nazwisko;
-            firstname = ((ViewOshTraining)e.ListItem).Imię;
-            e.Value = id + ". " + firstname + " " + lastname;
-        }
-
-        private void btnDone_Click(object sender, EventArgs e)
-        {
-            selectedEmployee = Convert.ToInt32(comboBoxTraining.SelectedValue);
-            if (comboBoxTraining.Text == "")
+            if(doSelectedRow)
             {
-                MessageBox.Show("Wybierz pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string pesel = selectedRow.Cells["PESEL"].Value.ToString();
+                int idEmployee = db.Employees
+                    .First(check => check.PESEL == pesel).IdEmployee;
+                SafetyTraining safetyTraining = db.SafetyTrainings
+                    .First(check => check.IdEmployee == idEmployee);
+                safetyTraining.TrainingDate = datePickerControlDate.Value;
+                db.SaveChanges();
+                doSelectedRow = false;
+                MessageBox.Show("Zmiany zostały zapisane!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGVOshTraining.DataSource = db.ViewOshTrainings
+                    .Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
             }
             else
             {
-                safetyTraining = db.SafetyTrainings.Where(s => s.IdEmployee == selectedEmployee).First();
-                safetyTraining.IdEmployee = selectedEmployee;
-                safetyTraining.TrainingDate = datePickerControlDate.Value;
-
-                db.SaveChanges();
-                MessageBox.Show("Zmieniono termin wygaśnięcia szkolenia pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGVOshTraining.DataSource = db.ViewOshTrainings.ToList();
-                comboBoxTraining.Text = "";
-                datePickerControlDate.Value = DateTime.Now;
-
-                dataGVOshTraining.DataSource = db.ViewOshTrainings.
-                    Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
+                MessageBox.Show("Zaznacz wiersz wybranego pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGVOshTraining_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(dataGVOshTraining.SelectedRows.Count == 0)
+            {
+                doSelectedRow = false;
+            }
+            else
+            {
+                selectedRow = dataGVOshTraining.SelectedRows[0];
+                doSelectedRow = true;
+            }
+        }
+
+        private void dataGVOshTraining_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            doSelectedRow = false;
         }
     }
 };
