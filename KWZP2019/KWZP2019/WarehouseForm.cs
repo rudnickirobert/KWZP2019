@@ -12,9 +12,20 @@ namespace KWZP2019
 {
     public partial class WarehouseForm : Form
     {
-        public WarehouseForm()
+        private SalesDepartmentForm previousForm;
+        private RoofingCompanyEntities db;
+        public WarehouseForm(RoofingCompanyEntities db, SalesDepartmentForm form)
         {
+            this.db = db;
+            this.previousForm = form;
             InitializeComponent();
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            previousForm.Show();
+            this.Close();
         }
     }
 }

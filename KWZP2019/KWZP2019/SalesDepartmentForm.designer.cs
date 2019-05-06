@@ -44,10 +44,10 @@
             this.customerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.customerBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
-            this.customerBtn.Location = new System.Drawing.Point(454, 161);
-            this.customerBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.customerBtn.Location = new System.Drawing.Point(340, 131);
+            this.customerBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.customerBtn.Name = "customerBtn";
-            this.customerBtn.Size = new System.Drawing.Size(294, 160);
+            this.customerBtn.Size = new System.Drawing.Size(220, 130);
             this.customerBtn.TabIndex = 0;
             this.customerBtn.Text = "Klient";
             this.customerBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -56,14 +56,13 @@
             // 
             // orderBtn
             // 
-            this.orderBtn.Location = new System.Drawing.Point(1218, 875);
-            this.orderBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.orderBtn.Location = new System.Drawing.Point(914, 711);
+            this.orderBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(125, 25);
+            this.orderBtn.Size = new System.Drawing.Size(94, 20);
             this.orderBtn.TabIndex = 1;
             this.orderBtn.Text = "Zamówienie";
             this.orderBtn.UseVisualStyleBackColor = true;
-            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // warehouseBtn
             // 
@@ -72,10 +71,10 @@
             this.warehouseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.warehouseBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.warehouseBtn.Image = ((System.Drawing.Image)(resources.GetObject("warehouseBtn.Image")));
-            this.warehouseBtn.Location = new System.Drawing.Point(853, 161);
-            this.warehouseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.warehouseBtn.Location = new System.Drawing.Point(640, 131);
+            this.warehouseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.warehouseBtn.Name = "warehouseBtn";
-            this.warehouseBtn.Size = new System.Drawing.Size(294, 160);
+            this.warehouseBtn.Size = new System.Drawing.Size(220, 130);
             this.warehouseBtn.TabIndex = 2;
             this.warehouseBtn.Text = "Magazyn";
             this.warehouseBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -89,10 +88,10 @@
             this.suppliersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.suppliersBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.suppliersBtn.Image = ((System.Drawing.Image)(resources.GetObject("suppliersBtn.Image")));
-            this.suppliersBtn.Location = new System.Drawing.Point(698, 429);
-            this.suppliersBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.suppliersBtn.Location = new System.Drawing.Point(524, 349);
+            this.suppliersBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.suppliersBtn.Name = "suppliersBtn";
-            this.suppliersBtn.Size = new System.Drawing.Size(294, 160);
+            this.suppliersBtn.Size = new System.Drawing.Size(220, 130);
             this.suppliersBtn.TabIndex = 3;
             this.suppliersBtn.Text = "Dostawcy";
             this.suppliersBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -106,10 +105,10 @@
             this.outsourcingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.outsourcingBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.outsourcingBtn.Image = ((System.Drawing.Image)(resources.GetObject("outsourcingBtn.Image")));
-            this.outsourcingBtn.Location = new System.Drawing.Point(219, 429);
-            this.outsourcingBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.outsourcingBtn.Location = new System.Drawing.Point(164, 349);
+            this.outsourcingBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.outsourcingBtn.Name = "outsourcingBtn";
-            this.outsourcingBtn.Size = new System.Drawing.Size(294, 160);
+            this.outsourcingBtn.Size = new System.Drawing.Size(220, 130);
             this.outsourcingBtn.TabIndex = 4;
             this.outsourcingBtn.Text = "Outsourcing";
             this.outsourcingBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -124,10 +123,9 @@
             this.returnToMainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.returnToMainBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.returnToMainBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnToMainBtn.Image")));
-            this.returnToMainBtn.Location = new System.Drawing.Point(30, 161);
-            this.returnToMainBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.returnToMainBtn.Location = new System.Drawing.Point(22, 131);
             this.returnToMainBtn.Name = "returnToMainBtn";
-            this.returnToMainBtn.Size = new System.Drawing.Size(294, 160);
+            this.returnToMainBtn.Size = new System.Drawing.Size(220, 130);
             this.returnToMainBtn.TabIndex = 5;
             this.returnToMainBtn.Text = "Powrót do Menu";
             this.returnToMainBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -136,18 +134,18 @@
             // 
             // SalesDepartmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(886, 612);
             this.Controls.Add(this.returnToMainBtn);
             this.Controls.Add(this.outsourcingBtn);
             this.Controls.Add(this.suppliersBtn);
             this.Controls.Add(this.warehouseBtn);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.customerBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SalesDepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Handlowy";

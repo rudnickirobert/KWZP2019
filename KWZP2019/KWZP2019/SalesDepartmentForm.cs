@@ -29,15 +29,9 @@ namespace KWZP2019
             this.Close();
         }
 
-        private void orderBtn_Click(object sender, EventArgs e)
-        {
-            OrderForm orderForm = new OrderForm(db);
-            orderForm.ShowDialog();
-        }
-
         private void warehouseBtn_Click(object sender, EventArgs e)
         {
-            WarehouseForm warehouseForm = new WarehouseForm();
+            WarehouseForm warehouseForm = new WarehouseForm(db, this);
             warehouseForm.ShowDialog();
         }
 

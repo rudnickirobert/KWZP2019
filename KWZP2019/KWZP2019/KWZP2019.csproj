@@ -440,12 +440,6 @@
     <Compile Include="Production\NewProductionPlan.Designer.cs">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderForm.designer.cs">
-      <DependentUpon>OrderForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="OshTrainingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -831,9 +825,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewTechnology.resx">
       <DependentUpon>NewTechnology.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrderForm.resx">
-      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachinesForm.resx">
       <DependentUpon>MachinesForm.cs</DependentUpon>
