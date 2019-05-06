@@ -681,9 +681,6 @@
     <Compile Include="vMaintPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vOrder.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="vOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
