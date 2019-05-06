@@ -304,6 +304,12 @@
     <Compile Include="Machine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MaintenanceManagement\FailureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceManagement\FailureListForm.Designer.cs">
+      <DependentUpon>FailureListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaintenanceManagement\MachinesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -837,6 +843,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceManagement\FailureListForm.resx">
+      <DependentUpon>FailureListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\NewProductionFailure.resx">
       <DependentUpon>NewProductionFailure.cs</DependentUpon>

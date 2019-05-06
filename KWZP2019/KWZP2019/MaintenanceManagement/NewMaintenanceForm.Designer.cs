@@ -106,12 +106,12 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(950, 500);
+            this.btnReturnMain.Location = new System.Drawing.Point(937, 483);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(194, 153);
+            this.btnReturnMain.Size = new System.Drawing.Size(207, 170);
             this.btnReturnMain.TabIndex = 5;
-            this.btnReturnMain.Text = "Powrót ";
+            this.btnReturnMain.Text = "Zatwierdź i wróć";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);

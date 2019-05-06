@@ -265,14 +265,15 @@ IdUnit int not null,
 PartName varchar (50) not null,
 Producer varchar (50) not null,
 CatalogPartNr int not null,
-QuantityWarehouse int not null
+QuantityWarehouse int not null,
+QuantityMinumum int null
 );
 
 create table MaintPart (
 IdMaintPart int primary key identity (1,1) not null,
 IdMaintenance int not null,
 IdPart int not null,
-PartQuantity int not null
+PartQuantity int not null,
 );
 
 create table PartType (
@@ -284,7 +285,7 @@ create table Maintenance (
 IdMaintenance int primary key identity (1,1) not null,
 IdMachine int not null,
 IdMaintType int not null,
-IdMaintDesc int not null,
+IdMaintDesc int null,
 DateAcceptOrder datetime not null,
 StartDatePlan datetime not null,
 EndDatePlan datetime not null,
@@ -329,7 +330,6 @@ create table MaintDescription (
 IdMaintDesc int primary key identity (1,1) not null,
 MaintDescName varchar (50) not null,
 MaintDescription varchar (50) null,
-InspectionTimeInterval float (2) not null
 );
 
 create table Machine (
@@ -341,7 +341,8 @@ ProductionYear int null,
 PowerMachine float (2) null,
 WorkingArea varchar (50) null,
 CatalogMachineNr varchar (50) not null,
-MetersPerHour float (2) not null
+MetersPerHour float (2) not null,
+InspectionTimeInterval float (2) null
 );
 
 create table MachineType (
@@ -809,13 +810,6 @@ GO
 GO
 CREATE VIEW vOrder
 AS
-SELECT Part.PartName as [Nazwa części], 
-PartType.partType as [Typ części], 
-Unit.UnitName as [Jednostka], 
-Part.QuantityWarehouse as [Stan magazynowy]
-FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
-ON Unit.IdUnit = Part.IdUnit
-ORDER BY Part.PartName;
 SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena],
 Markup as [Marża], EmployeeSurname as [Pracownik odpowiedzialny]
 FROM OrderCustomer
@@ -841,15 +835,6 @@ WHERE (DepartmentName = 'Logistyka');
 GO 
 CREATE VIEW vEmployeeSD
 AS
-SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
-Part.PartName as [Nazwa części], MaintPart.PartQuantity as [Ilość], Unit.UnitName as [Jednostka]
-FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart 
-ON Part.IdPart = MaintPart.IdPart) 
-ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
-ON Unit.IdUnit = Part.IdUnit
-ORDER BY Maintenance.DateAcceptOrder DESC;
-GO
-
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 
 FROM Allocation
 JOIN Employee
@@ -1008,5 +993,72 @@ JOIN Employee
 ON PlannedProductionEmployeeDetails.IdEmployee = Employee.IdEmployee
 JOIN Machine
 ON PlannedProduction.IdMachine = Machine.IdMachine
+GO
+
+CREATE VIEW vNewFailures
+AS
+SELECT Failure.IdFailure, Failure.Specification, Failure.FailureDate, Machine.MachineName
+FROM   Failure
+INNER JOIN ProductionProcess ON Failure.IdProces = ProductionProcess.IdProces 
+INNER JOIN PlannedProduction ON ProductionProcess.IdPlan = PlannedProduction.IdPlan 
+INNER JOIN Machine ON PlannedProduction.IdMachine = Machine.IdMachine
+WHERE        
+(NOT EXISTS (SELECT IdFailureMaint, IdFailure, IdMaintenance
+FROM FailureMaintenance AS FailureMaintenance_1
+WHERE (IdFailure = Failure.IdFailure)))
+GO
+
+CREATE VIEW vComboboxNewFailures
+AS
+SELECT IdFailure, Specification
+FROM Failure
+WHERE 
+(NOT EXISTS (SELECT IdFailureMaint, IdFailure, IdMaintenance
+FROM FailureMaintenance
+WHERE (IdFailure = Failure.IdFailure)))
+GO
+
+CREATE VIEW vMachineFailure
+AS
+SELECT Failure.IdFailure, Machine.IdMachine, Machine.MachineName
+FROM Failure 
+INNER JOIN ProductionProcess ON Failure.IdProces = ProductionProcess.IdProces 
+INNER JOIN PlannedProduction ON ProductionProcess.IdPlan = PlannedProduction.IdPlan 
+INNER JOIN Machine ON PlannedProduction.IdMachine = Machine.IdMachine
+GO
+
+CREATE VIEW vMaintenanceEmployees
+AS
+SELECT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname
+FROM Employee 
+INNER JOIN Allocation ON Employee.IdEmployee = Allocation.IdEmployee 
+INNER JOIN Department ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (Department.DepartmentName = 'Utrzymanie ruchu')
+GO
+
+CREATE VIEW vMaintenanceAssignEmployees
+AS
+SELECT EmployeePlan.IdEmployeePlan, EmployeePlan.IdMaintenance, EmployeePlan.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, 
+EmployeePlan.StartDate, EmployeePlan.EndDate
+FROM Employee 
+INNER JOIN EmployeePlan ON Employee.IdEmployee = EmployeePlan.IdEmployee
+GO
+
+CREATE VIEW vMaintenanceEmployeesCalendar
+AS
+SELECT EmployeePlan.IdEmployee, EmployeePlan.IdMaintenance, Employee.EmployeeName, Employee.EmployeeSurname, 
+EmployeePlan.StartDate, EmployeePlan.EndDate, Maintenance.MaintenanceNr
+FROM Employee 
+INNER JOIN EmployeePlan ON Employee.IdEmployee = EmployeePlan.IdEmployee 
+INNER JOIN Maintenance ON EmployeePlan.IdMaintenance = Maintenance.IdMaintenance
+GO
+
+CREATE VIEW vMaintenanceAssignParts
+AS
+SELECT Maintenance.IdMaintenance, Part.IdPart, Part.PartName, MaintPart.PartQuantity, Part.QuantityWarehouse, Unit.UnitName
+FROM Maintenance 
+INNER JOIN MaintPart ON Maintenance.IdMaintenance = MaintPart.IdMaintenance 
+INNER JOIN Part ON MaintPart.IdPart = Part.IdPart 
+INNER JOIN Unit ON dbo.Part.IdUnit = Unit.IdUnit
 GO
 
