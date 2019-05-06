@@ -436,10 +436,10 @@ from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5
 
 --UR
 
-insert into Unit values ('Szt');
-insert into Unit values ('Litr');
-insert into Unit values ('Metr');
-insert into Unit values ('Kilogram');
+insert into Unit values ('szt.');
+insert into Unit values ('l.');
+insert into Unit values ('m.');
+insert into Unit values ('kg');
 
 insert into MachineType values ('Żłobiarka');
 insert into MachineType values ('Walcarka');
@@ -464,7 +464,6 @@ insert into SkillsForMachine(IdMachine, IdPosition)
  
 insert into MaintType values ('Awaria');
 insert into MaintType values ('Przegląd');
-insert into MaintType values ('Konserwacja');
 
 insert into MaintDescription values ('Smarowanie łańcucha', null, 0.25);
 insert into MaintDescription values ('Wymiana łożysk', null, 6);
@@ -486,7 +485,7 @@ insert into Part values (2, 3, 'Pasek zębaty', 'Oscar', 450, 12);
 
 insert into Maintenance values (2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
 insert into Maintenance values (2, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
-insert into Maintenance values (1, 3, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
+insert into Maintenance values (1, 2, 1, '2019-03-12 08:00:42 AM', '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM', 'P13I1NE1');
 insert into Maintenance values (5, 2, 3, '2019-03-13 12:15:54 PM', '2019-03-13 12:20:42 PM', '2019-03-13 12:40:32 PM', 'J4K1EHU1');
 insert into Maintenance values (3, 2, 4, '2019-04-10 08:33:21 AM', '2019-05-20 08:12:47 AM', '2019-05-20 10:53:40 AM', 'T0D3B1L3');
 --insert into Maintenance values (2, 1, 2, '2019-05-11 08:23:32 AM', '2019-05-11 10:14:09 AM', '2019-05-11 12:45:13 AM', '76THR521');
@@ -528,11 +527,11 @@ insert into Realization values (2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:4
 insert into Realization values (2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
 insert into Realization values (3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
 
-insert into EmployeePlan values (1, 1, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into EmployeePlan values (1, 2, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
-insert into EmployeePlan values (2, 3, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into EmployeePlan values (2, 1, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
-insert into EmployeePlan values (3, 2, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
+insert into EmployeePlan values (1, 3, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into EmployeePlan values (1, 24, '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM');
+insert into EmployeePlan values (2, 23, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into EmployeePlan values (2, 21, '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM');
+insert into EmployeePlan values (3, 22, '2019-03-12 08:36:59 AM', '2019-03-12 09:10:14 AM');
 
 
 --SD
