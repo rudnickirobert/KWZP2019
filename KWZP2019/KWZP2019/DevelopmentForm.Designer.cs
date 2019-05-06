@@ -123,6 +123,7 @@
             // 
             this.picboxNewPattern.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.picboxNewPattern, "picboxNewPattern");
+            this.picboxNewPattern.InitialImage = global::KWZP2019.Properties.Resources.icons8_add_image_80;
             this.picboxNewPattern.Name = "picboxNewPattern";
             this.picboxNewPattern.TabStop = false;
             // 

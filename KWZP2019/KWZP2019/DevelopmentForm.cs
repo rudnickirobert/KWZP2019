@@ -17,8 +17,7 @@ namespace KWZP2019
         private StartForm startForm;
         private QualityControl qualityControlForm;
         private int selectedEmployee;
-        private byte[] newPatternImage = null;
-
+        private byte[] newPatternImage;
 
         public DevelopmentForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -50,6 +49,7 @@ namespace KWZP2019
         private void DevelopmentForm_Load(object sender, EventArgs e)
         {
             dateTimePicker.Value = DateTime.Now;
+            picboxNewPattern.Image = picboxNewPattern.InitialImage;
         }
 
         private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
@@ -80,20 +80,27 @@ namespace KWZP2019
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (textBoxDescription.Text == "" || textBoxEmployeeId.Text == "" || dateTimePicker.Text == "")
+            if (textBoxDescription.Text == "" || textBoxEmployeeId.Text == "" || dateTimePicker.Text == "" |newPatternImage == null )
             {
                 MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                FEMAnalysi fEMAnalysi = new FEMAnalysi();
+                FEMAnalysi FEMAnalysi = new FEMAnalysi();
 
-                fEMAnalysi.AnalysisResults = textBoxDescription.Text;
-                fEMAnalysi.IdEmployee = int.Parse(textBoxEmployeeId.Text);
-                fEMAnalysi.NewPattern = newPatternImage;
+                FEMAnalysi.AnalysisResults = textBoxDescription.Text;
+                FEMAnalysi.IdEmployee = int.Parse(textBoxEmployeeId.Text);
+                FEMAnalysi.NewPattern = newPatternImage;
+                FEMAnalysi.AnalysisDate = dateTimePicker.Value;
 
-                db.FEMAnalysis.Add(fEMAnalysi);
+                db.FEMAnalysis.Add(FEMAnalysi);
                 db.SaveChanges();
+
+                textBoxDescription.Clear();
+                textBoxEmployeeId.Clear();
+                dateTimePicker.Value = DateTime.UtcNow;
+                dateTimePicker.ResetText();
+                picboxNewPattern.Image = picboxNewPattern.InitialImage;
             }
         }
 
@@ -112,7 +119,6 @@ namespace KWZP2019
                     FileStream fileStream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader binaryReader = new BinaryReader(fileStream);
                     newPatternImage = binaryReader.ReadBytes((int)fileStream.Length);
-
                 }
 
             }

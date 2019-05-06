@@ -306,28 +306,8 @@
   <data name="&gt;&gt;lblFormTitle.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="picboxNewPattern.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAA0dJREFUeF7tmIlOE1EUhnk7X81HcIkGjYkoiRE3IFFwA5ewtbLIWhDBfXmBuddz
-        uoRaTvvP9MzQdPi/5EvVzkznfr3TueMIIYQQQgg531y4+CbS9DaznWBtRLvbzHZC6w3SGwZ0woBOGNAJ
-        AzphQCcM6IQBnbgDPtkJpRbBgEAEAwIRDAhEMCAQwYBABAMCEQwIRDAgEMGAQAQDAhEMCEQMJuBuiHOH
-        IX74HuL27xBrfxqv+ve5z433zf16WcQxRUThAaf3Qnz9KcR5GYS+zh6E+PGXDPBvd/X9pzX7eJbP9tMd
-        c0Y+u/1c9Nys47WLKCzgpHzji19D3JOZYA0IuSOzJ01E3Ua3tY6B1HNb+NI4V+vYKiKXgLMyAypyqei3
-        rK/P5ZvWS8c66Syu/ghxSgb39ijEavP4qv5Z/03fW5NtrH2zqMezxnAmAV/JpWCdVF7u9pjBO33O7rS+
-        lLEh3AH1G7M+vAzq2BDugEXPgkGqY0O4A1a/2R9eBisyNoQ7oPXBad2Su6feDPROqidrbTNoEQMJqL8t
-        uujtXD7oj3Z9EWzsMygRZxpQlyUaqT1ap9MSdVnWj9b+yPq67jiJE5sh3lhJZIWQmNtlEVF8QBmUXp66
-        zrKCdfOFrMO2Ut7hdc05JfuMLifx0sL/jq0mrjUporCAun5bklV+lkeyTvUS12PsGcffkLiz+0m8VT0d
-        rdPLi0l9ZvezYkDkHlAfq94fNy5FK0o/6lPBpgTTAPOHSRxfD/UoVqxejspl/e4o22WNyC2gDlAf0ns9
-        V3odW5VwRpis3tsIcf3n6ViWCHdAfRbVx7lJY8BFeF9uENeN37qsXpUZPFNL4H92INwBrUEW7WPxttwc
-        rDBZ1d/QXnd9xFAGbKnLlTxmo/pQjmXd9RFDHbDudoh31hp3WitMFq/Jl9G5dkQMf8CmE1uyDlwJZpis
-        tq8dEaUJ2PKuzMYrOcxGndG6OEeULqD6QGdjJZ/ZiChlwJbj6zIbl+wwaUWUOqD6SGbjzWr/sxHhDth+
-        xyqjCAYEIhgQiGBAIIIBgQgGBCIYEIhgQCDCHfC8w4BOGNAJAzphQCcM6IQBnTCgExiQprOZ7QRrI9rd
-        ZjZCCCGEEHIuGRn5B0QhdxRYdN03AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="picboxNewPattern.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
+    <value>None</value>
   </data>
   <data name="picboxNewPattern.ImageLocation" xml:space="preserve">
     <value />
@@ -343,6 +323,9 @@
   </data>
   <data name="picboxNewPattern.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
+  </data>
+  <data name="picboxNewPattern.WaitOnLoad" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;picboxNewPattern.Name" xml:space="preserve">
     <value>picboxNewPattern</value>

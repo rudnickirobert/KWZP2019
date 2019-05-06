@@ -34,27 +34,25 @@ namespace KWZP2019
 
         private void DevelopmentHistoryForm_Load(object sender, EventArgs e)
         {
-            List<FEMAnalysi> fEMAnalysis = db.FEMAnalysis.ToList();
-            foreach (FEMAnalysi fEMAnalysi in fEMAnalysis)
+            List<FEMAnalysi> fEMAnalysisList = db.FEMAnalysis.ToList();
+            foreach (FEMAnalysi fEMAnalysis in fEMAnalysisList)
             {
-                domainUpDownDevelompentNumber.Items.Add(fEMAnalysi.IdFEMAnalysis);               
+                domainUpDownDevelompentNumber.Items.Add(fEMAnalysis.IdFEMAnalysis);               
             }
         }
 
         private void domainUpDownDevelompentNumber_SelectedItemChanged(object sender, EventArgs e)
         {
             FEMAnalysi fEMAnalysi = db.FEMAnalysis.First(fEMA => fEMA.IdFEMAnalysis.ToString() == domainUpDownDevelompentNumber.Text);
-            // textBoxDevelopmentDate = $"";
+            textBoxDevelopmentDate.Text = $"{fEMAnalysi.AnalysisDate}";
             textBoxEmployeeNumber.Text = $"{fEMAnalysi.IdEmployee}";
             textBoxDevelopmentDescription.Text = $"{fEMAnalysi.AnalysisResults}";
-            //lblEmployeeFullName.Text = $"{employee.EmployeeName} {employee.EmployeeSurname}";
-            //selectedEmployee = Convert.ToInt32(domainUpDownEmployee.Text);
+            Employee employee = db.Employees.First(emp => emp.IdEmployee.ToString() == fEMAnalysi.IdEmployee.ToString());
+            textBoxEmployeeName.Text = $"{employee.EmployeeName}";
+            textBoxEmployeeSurname.Text = $"{employee.EmployeeSurname}";
             selectedDevelopment = Convert.ToInt32(domainUpDownDevelompentNumber.Text);
-            if(fEMAnalysi.IdFEMAnalysis >= 6)
-            {
-                MemoryStream memoryStream = new MemoryStream((byte[])fEMAnalysi.NewPattern);
-                pictureBoxPattern.Image = new Bitmap(memoryStream);
-            }
+            MemoryStream memoryStream = new MemoryStream((byte[])fEMAnalysi.NewPattern);
+            pictureBoxPattern.Image = new Bitmap(memoryStream);
         }
     }
 }

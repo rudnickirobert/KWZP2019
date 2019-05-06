@@ -18,6 +18,7 @@ namespace KWZP2019
         public int IdEmployee { get; set; }
         public byte[] NewPattern { get; set; }
         public string AnalysisResults { get; set; }
+        public System.DateTime AnalysisDate { get; set; }
     
         public virtual Employee Employee { get; set; }
     }

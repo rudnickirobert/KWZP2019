@@ -314,13 +314,13 @@ insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
 
 
 --FEMAnalysis
-insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
-		(2, ' ', 'Wzór nr 1, odporny na duże naciski, idealny na górskie dachy'),
-		(2, ' ', 'Wzór nr 2, nowatorskie tłoczenia'),
-		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta'),
-		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej więźby'),
-		(2, ' ', 'Wzór nr 5, dla montażu o najmniejszym odpadzie');
-
+/*insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults, AnalysisDate) values
+		(2, ' ', 'Wzór nr 1, odporny na duże naciski, idealny na górskie dachy','2018-06-22'),
+		(2, ' ', 'Wzór nr 2, nowatorskie tłoczenia','2018-07-25'),
+		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta','2018-07-30'),
+		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej więźby','2019-01-22'),
+		(2, ' ', 'Wzór nr 5, dla montażu o najmniejszym odpadzie','2019-09-21');
+*/
 /*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
 Select '2', BulkColumn, 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'
 from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
