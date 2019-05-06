@@ -66,7 +66,7 @@ namespace KWZP2019
                         employeesSelect.EmployeeName,
                         employeesSelect.Workplace,
                         employeesSelect.PhoneNumber,
-                        employeesSelect.Cit
+                        employeesSelect.City
                 }).ToList();
 
             dgvEmloyees.Columns[0].HeaderText = "Nazwisko";

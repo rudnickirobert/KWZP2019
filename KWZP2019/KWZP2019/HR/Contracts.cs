@@ -30,7 +30,7 @@ namespace KWZP2019
                         contractsSelect.StartDate,
                         contractsSelect.EndDate,
                         contractsSelect.Salary,
-                        contractsSelect.WorkplaceTrainingDate,
+                        contractsSelect.WorkplaceTrainingDate
                 }).ToList();
 
             dgvContracts.Columns[0].HeaderText = "Nazwisko";
