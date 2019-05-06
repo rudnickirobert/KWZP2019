@@ -322,6 +322,8 @@ namespace KWZP2019
                 check.IdSemiFinished == selectedSfId)
                 .FirstOrDefault();
 
+            Employee employee = db.Employees.First(check => check.IdEmployee == selectedControl.IdEmployee);
+
             if (selectedControl == null)
             {
                 lblControlNotExist.Text = "Brak kontroli\nw bazie!";
@@ -348,7 +350,7 @@ namespace KWZP2019
             else
             {
                 lblControlNotExist.Text = "";
-                textBoxEmployeePESEL.Text = selectedControl.IdEmployee.ToString();
+                textBoxEmployeePESEL.Text = employee.PESEL;
                 txtboxThickness.Text = selectedControl.RealThickness.ToString();
                 txtboxWidth.Text = selectedControl.RealWidth.ToString();
                 txtboxMass.Text = selectedControl.RealWeight.ToString();
