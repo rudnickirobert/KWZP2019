@@ -728,9 +728,6 @@
     <Compile Include="vOutputMagazine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vOutsourcingWithType.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="vPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
