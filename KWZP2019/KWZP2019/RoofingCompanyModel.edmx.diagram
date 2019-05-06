@@ -175,6 +175,7 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="26.375" PointY="17.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vAbsenceType" Width="1.5" PointX="26.375" PointY="21.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencePartOrder" Width="1.5" PointX="26.375" PointY="24.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="27.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
