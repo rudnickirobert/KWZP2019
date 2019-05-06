@@ -65,7 +65,7 @@ namespace KWZP2019
                 newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
                 newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
                 newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
-                newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
+                newEmployee.PESEL = tbPESEL.Text.Trim();
                 db.Employees.Add(newEmployee);
                 db.SaveChanges();
                 MessageBox.Show("Prawidłowo wprowadzono pracownika");

@@ -22,6 +22,7 @@ namespace KWZP2019
         private bool wholeControlStatus;
         private Nullable<int> selectedOrderId;
         private int selectedSfId;
+        private int idControler;
         DataGridViewRow selectedRow;
         // ==================================================
         public EntranceControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
@@ -133,8 +134,8 @@ namespace KWZP2019
                 btnCheck.Enabled = false;
                 btnDone.Enabled = false;
                 this.ResetAllCheckedPicBox();
-                textBoxEmployeeId.Text = "";
-                textBoxEmployeeId.Enabled = false;
+                textBoxEmployeePESEL.Text = "";
+                textBoxEmployeePESEL.Enabled = false;
                 txtboxThickness.Text = "";
                 txtboxThickness.Enabled = false;
                 txtboxWidth.Text = "";
@@ -153,17 +154,43 @@ namespace KWZP2019
             }
         }
         // ==================================================
-        private void TextBoxEmployeeId_TextChanged(object sender, EventArgs e)
+        private void TextBoxEmployeePESEL_TextChanged(object sender, EventArgs e)
         {
-            textBoxEmployeeId.BackColor = Color.White;
-
-            Employee employee = db.Employees
-                .FirstOrDefault(check => 
-                check.IdEmployee.ToString() == textBoxEmployeeId.Text);
-
-            lblEmployeeFullName.Text = employee != null ? 
-                $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : 
-                "Brak pracownika z takim numerem";
+            textBoxEmployeePESEL.BackColor = Color.White;
+            if(textBoxEmployeePESEL.Text.Length < 11)
+            {
+                lblEmployeeFullName.Text = "Za mało cyfr!";
+            }
+            else if(textBoxEmployeePESEL.Text.Length > 11)
+            {
+                lblEmployeeFullName.Text = "Za dużo cyfr!";
+            }
+            if(textBoxEmployeePESEL.Text.Length == 11)
+            {
+                Employee employee = db.Employees
+                .FirstOrDefault(check => check.PESEL == textBoxEmployeePESEL.Text);
+                if(employee == null)
+                {
+                    MessageBox.Show("Brak pracownika o takim numerze PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    idControler = employee.IdEmployee;
+                    ViewQualityControlerList qualityControler = db.ViewQualityControlerLists
+                    .FirstOrDefault(check => check.IdEmployee == idControler);
+                    if (qualityControler == null)
+                    {
+                        MessageBox.Show("Brak pracownika o takim numerze PESEL\nw dziale kontroli jakości", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        lblEmployeeFullName.Text = $"Kontrolował: {qualityControler.EmployeeName} {qualityControler.EmployeeSurname}";
+                        /*lblEmployeeFullName.Text = employee != null ?
+                        $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" :
+                        "Brak pracownika z takim numerem PESEL";*/
+                    }
+                }
+            }
         }
         // ================================================== 
         private void BtnCheck_Click(object sender, EventArgs e)
@@ -183,7 +210,7 @@ namespace KWZP2019
                 MessageBox.Show("Ta kontrola już istnieje w bazie!", "Wiadomość", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (lblOrderIdShow.Text == "" || lblSfIdShow.Text == "" 
-                || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
+                || textBoxEmployeePESEL.Text == "" || txtboxThickness.Text == ""
                 || txtboxWidth.Text == "" || txtboxMass.Text == ""
                 || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
@@ -196,9 +223,9 @@ namespace KWZP2019
                 {
                     lblSfIdShow.BackColor = Color.Red;
                 }
-                if (textBoxEmployeeId.Text == "")
+                if (textBoxEmployeePESEL.Text == "")
                 {
-                    textBoxEmployeeId.BackColor = Color.Red;
+                    textBoxEmployeePESEL.BackColor = Color.Red;
                 }
                 if (txtboxThickness.Text == "")
                 {
@@ -220,6 +247,10 @@ namespace KWZP2019
                 {
                     txtBoxQuantity.BackColor = Color.Red;
                 }
+            }
+            else if (lblEmployeeFullName.Text == "" || lblEmployeeFullName.Text == "Za mało cyfr!" || lblEmployeeFullName.Text == "Za dużo cyfr!")
+            {
+                MessageBox.Show("Nie można zatwierdzić wyników!\nZły pracownik!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(this.doResultsChecked)
             {
@@ -246,7 +277,7 @@ namespace KWZP2019
                 EntranceControl entranceControl = new EntranceControl();
 
                 entranceControl.IdSfDetail = idSfDetail.IdSfDetail;
-                entranceControl.IdEmployee = int.Parse(textBoxEmployeeId.Text);
+                entranceControl.IdEmployee = this.idControler;
                 entranceControl.ControlDate = datePickerSelectedControlsDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
@@ -295,8 +326,8 @@ namespace KWZP2019
             {
                 lblControlNotExist.Text = "Brak kontroli\nw bazie!";
                 this.ResetAllCheckedPicBox();
-                textBoxEmployeeId.Text = "";
-                textBoxEmployeeId.Enabled = true;
+                textBoxEmployeePESEL.Text = "";
+                textBoxEmployeePESEL.Enabled = true;
                 txtboxThickness.Text = "";
                 txtboxThickness.Enabled = true;
                 txtboxWidth.Text = "";
@@ -317,7 +348,7 @@ namespace KWZP2019
             else
             {
                 lblControlNotExist.Text = "";
-                textBoxEmployeeId.Text = selectedControl.IdEmployee.ToString();
+                textBoxEmployeePESEL.Text = selectedControl.IdEmployee.ToString();
                 txtboxThickness.Text = selectedControl.RealThickness.ToString();
                 txtboxWidth.Text = selectedControl.RealWidth.ToString();
                 txtboxMass.Text = selectedControl.RealWeight.ToString();
@@ -328,7 +359,7 @@ namespace KWZP2019
 
                 CheckControl();
 
-                textBoxEmployeeId.Enabled = false;
+                textBoxEmployeePESEL.Enabled = false;
                 txtboxThickness.Enabled = false;
                 txtboxWidth.Enabled = false;
                 txtboxMass.Enabled = false;

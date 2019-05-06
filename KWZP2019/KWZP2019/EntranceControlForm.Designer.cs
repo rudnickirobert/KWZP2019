@@ -49,8 +49,8 @@ namespace KWZP2019
             this.lblParameterCheck = new System.Windows.Forms.Label();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
-            this.lblEmployeeId = new System.Windows.Forms.Label();
+            this.textBoxEmployeePESEL = new System.Windows.Forms.TextBox();
+            this.lblEmployeePESEL = new System.Windows.Forms.Label();
             this.lblEmployeeFullName = new System.Windows.Forms.Label();
             this.lblDelayTime = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
@@ -305,29 +305,29 @@ namespace KWZP2019
             this.btnDone.UseVisualStyleBackColor = false;
             this.btnDone.Click += new System.EventHandler(this.BtnDone_Click);
             // 
-            // textBoxEmployeeId
+            // textBoxEmployeePESEL
             // 
-            this.textBoxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxEmployeeId.Location = new System.Drawing.Point(774, 186);
-            this.textBoxEmployeeId.Name = "textBoxEmployeeId";
-            this.textBoxEmployeeId.Size = new System.Drawing.Size(90, 26);
-            this.textBoxEmployeeId.TabIndex = 31;
-            this.textBoxEmployeeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.TextBoxEmployeeId_TextChanged);
+            this.textBoxEmployeePESEL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxEmployeePESEL.Location = new System.Drawing.Point(718, 186);
+            this.textBoxEmployeePESEL.Name = "textBoxEmployeePESEL";
+            this.textBoxEmployeePESEL.Size = new System.Drawing.Size(146, 26);
+            this.textBoxEmployeePESEL.TabIndex = 31;
+            this.textBoxEmployeePESEL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxEmployeePESEL.TextChanged += new System.EventHandler(this.TextBoxEmployeePESEL_TextChanged);
             // 
-            // lblEmployeeId
+            // lblEmployeePESEL
             // 
-            this.lblEmployeeId.AutoSize = true;
-            this.lblEmployeeId.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmployeeId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmployeeId.ForeColor = System.Drawing.Color.White;
-            this.lblEmployeeId.Location = new System.Drawing.Point(644, 189);
-            this.lblEmployeeId.Margin = new System.Windows.Forms.Padding(0);
-            this.lblEmployeeId.Name = "lblEmployeeId";
-            this.lblEmployeeId.Size = new System.Drawing.Size(127, 20);
-            this.lblEmployeeId.TabIndex = 32;
-            this.lblEmployeeId.Text = "Nr pracownika:";
+            this.lblEmployeePESEL.AutoSize = true;
+            this.lblEmployeePESEL.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeePESEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEmployeePESEL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeePESEL.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeePESEL.Location = new System.Drawing.Point(644, 189);
+            this.lblEmployeePESEL.Margin = new System.Windows.Forms.Padding(0);
+            this.lblEmployeePESEL.Name = "lblEmployeePESEL";
+            this.lblEmployeePESEL.Size = new System.Drawing.Size(71, 20);
+            this.lblEmployeePESEL.TabIndex = 32;
+            this.lblEmployeePESEL.Text = "PESEL:";
             // 
             // lblEmployeeFullName
             // 
@@ -781,8 +781,8 @@ namespace KWZP2019
             this.Controls.Add(this.lblEmployeeFullName);
             this.Controls.Add(this.lblIdSf);
             this.Controls.Add(this.lblIdSfOrder);
-            this.Controls.Add(this.lblEmployeeId);
-            this.Controls.Add(this.textBoxEmployeeId);
+            this.Controls.Add(this.lblEmployeePESEL);
+            this.Controls.Add(this.textBoxEmployeePESEL);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnApproval);
             this.Controls.Add(this.btnCheck);
@@ -845,8 +845,8 @@ namespace KWZP2019
         private System.Windows.Forms.Label lblParameterCheck;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnDone;
-        private System.Windows.Forms.TextBox textBoxEmployeeId;
-        private System.Windows.Forms.Label lblEmployeeId;
+        private System.Windows.Forms.TextBox textBoxEmployeePESEL;
+        private System.Windows.Forms.Label lblEmployeePESEL;
         private System.Windows.Forms.Label lblEmployeeFullName;
         private System.Windows.Forms.Label lblDelayTime;
         private System.Windows.Forms.Label lblColor;
