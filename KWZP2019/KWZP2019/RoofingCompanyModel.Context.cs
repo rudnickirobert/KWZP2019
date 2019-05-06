@@ -25,7 +25,6 @@ namespace KWZP2019
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<vProductionProcessFullData> vProductionProcessFullDatas { get; set; }
         public virtual DbSet<Absence> Absences { get; set; }
         public virtual DbSet<AbsenceType> AbsenceTypes { get; set; }
         public virtual DbSet<Accident> Accidents { get; set; }
@@ -95,6 +94,7 @@ namespace KWZP2019
         public virtual DbSet<vEducationForm> vEducationForms { get; set; }
         public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
+        public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
         public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
         public virtual DbSet<vExpencesOrder> vExpencesOrders { get; set; }
@@ -103,16 +103,26 @@ namespace KWZP2019
         public virtual DbSet<vHR> vHRs { get; set; }
         public virtual DbSet<vHRContract> vHRContracts { get; set; }
         public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
+        public virtual DbSet<ViewEntranceControlHistory> ViewEntranceControlHistories { get; set; }
+        public virtual DbSet<ViewEntranceControlResultsBySfCode> ViewEntranceControlResultsBySfCodes { get; set; }
+        public virtual DbSet<ViewMinAndMaxEntranceControlDate> ViewMinAndMaxEntranceControlDates { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
+        public virtual DbSet<ViewQualityControlerList> ViewQualityControlerLists { get; set; }
+        public virtual DbSet<ViewSemiFinishedCode> ViewSemiFinishedCodes { get; set; }
+        public virtual DbSet<ViewSemiFinishedOrder> ViewSemiFinishedOrders { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
+        public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
         public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
         public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
+        public virtual DbSet<vOrder> vOrders { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
+        public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomers { get; set; }
+        public virtual DbSet<vProductionProcessFullData> vProductionProcessFullDatas { get; set; }
         public virtual DbSet<vSafetyControlHistoryView> vSafetyControlHistoryViews { get; set; }
         public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcesses { get; set; }
         public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcesses { get; set; }
@@ -121,14 +131,5 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
-        public virtual DbSet<ViewEntranceControlHistory> ViewEntranceControlHistories { get; set; }
-        public virtual DbSet<ViewSemiFinishedCode> ViewSemiFinishedCodes { get; set; }
-        public virtual DbSet<ViewSemiFinishedOrder> ViewSemiFinishedOrders { get; set; }
-        public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
-        public virtual DbSet<ViewEntranceControlResultsBySfCode> ViewEntranceControlResultsBySfCodes { get; set; }
-        public virtual DbSet<ViewMinAndMaxEntranceControlDate> ViewMinAndMaxEntranceControlDates { get; set; }
-        public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
-        public virtual DbSet<ViewQualityControlerList> ViewQualityControlerLists { get; set; }
-        public virtual DbSet<vOrder> vOrders { get; set; }
     }
 }

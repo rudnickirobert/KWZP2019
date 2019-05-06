@@ -4,184 +4,177 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="34cb823b227e44198cdc997fc591eca2" Name="Diagram1" ZoomLevel="72">
-        <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess1" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vUnhandledOrderDetails" Width="1.5" PointX="9.375" PointY="22.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierParts" Width="1.5" PointX="21.375" PointY="18.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemis" Width="1.5" PointX="23.375" PointY="0.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.EntranceControlView" Width="1.5" PointX="23.375" PointY="17.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Absence" Width="1.5" PointX="6" PointY="27.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.AbsenceType" Width="1.5" PointX="3.75" PointY="43.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Accident" Width="1.5" PointX="3" PointY="54.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Allocation" Width="1.5" PointX="9" PointY="24.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Contract" Width="1.5" PointX="6" PointY="20.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Contractor" Width="1.5" PointX="8.75" PointY="19.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Customer" Width="1.5" PointX="0.75" PointY="30" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Department" Width="1.5" PointX="6.75" PointY="16.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Education" Width="1.5" PointX="6" PointY="24.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.EducationLevel" Width="1.5" PointX="3.75" PointY="9.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Employee" Width="1.5" PointX="0.75" PointY="23" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.EmployeePlan" Width="1.5" PointX="7.5" PointY="62.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.EntranceControl" Width="1.5" PointX="3" PointY="21.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Expense" Width="1.5" PointX="13.25" PointY="15.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Failure" Width="1.5" PointX="12" PointY="35.25" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.FailureMaintenance" Width="1.5" PointX="14.25" PointY="35.25" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.FEMAnalysi" Width="1.5" PointX="3" PointY="36.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Invoice" Width="1.5" PointX="11" PointY="13.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.InvoiceType" Width="1.5" PointX="8.75" PointY="13.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Machine" Width="1.5" PointX="3" PointY="57.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.MachineType" Width="1.5" PointX="0.75" PointY="58.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.MaintDescription" Width="1.5" PointX="3" PointY="61.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Maintenance" Width="1.5" PointX="5.25" PointY="59.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.MaintPart" Width="1.5" PointX="10.25" PointY="7" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.MaintType" Width="1.5" PointX="3" PointY="64.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.MedicalExamination" Width="1.5" PointX="3" PointY="48.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OrderCustomer" Width="1.5" PointX="3" PointY="30.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OrderDetail" Width="1.5" PointX="5.25" PointY="31.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OutControl" Width="1.5" PointX="12" PointY="28.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OutputProductMeasurement" Width="1.5" PointX="14.25" PointY="28.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Outsourcing" Width="1.5" PointX="15" PointY="2.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OutsourcingCommitment" Width="1.5" PointX="17.25" PointY="3.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.OutsourcingType" Width="1.5" PointX="12.75" PointY="3.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Part" Width="1.5" PointX="8" PointY="5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PartOrder" Width="1.5" PointX="8" PointY="1.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PartOrderDetail" Width="1.5" PointX="10.25" PointY="3.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PartOrderRequest" Width="1.5" PointX="12.5" PointY="10" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PartRequest" Width="1.5" PointX="10.25" PointY="9.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PartType" Width="1.5" PointX="5.75" PointY="5.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Payment" Width="1.5" PointX="3" PointY="16.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PlannedProduction" Width="1.5" PointX="7.5" PointY="31.375" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.PlannedProductionEmployeeDetail" Width="1.5" PointX="11.25" PointY="24.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Position" Width="1.5" PointX="3.75" PointY="12.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Product" Width="1.5" PointX="3" PointY="40.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ProductionProcess" Width="1.5" PointX="9.75" PointY="31.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Realization" Width="1.5" PointX="7.5" PointY="59.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControl" Width="1.5" PointX="3" PointY="26.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyTraining" Width="1.5" PointX="3" PointY="46.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinished" Width="1.5" PointX="1.5" PointY="0.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinishedOrder" Width="1.5" PointX="1.5" PointY="11.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SfOrderDetail" Width="1.5" PointX="0.75" PointY="16.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SkillsForMachine" Width="1.5" PointX="6" PointY="35.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Staff" Width="1.5" PointX="11" PointY="17.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Supplier" Width="1.5" PointX="1.5" PointY="7.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SupplierType" Width="1.5" PointX="1.5" PointY="4.25" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.TechnicalProductData" Width="1.5" PointX="5.25" PointY="40.25" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Technology" Width="1.5" PointX="0.75" PointY="40.625" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Training" Width="1.5" PointX="3" PointY="51.5" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.Unit" Width="1.5" PointX="5.75" PointY="2.875" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControlHistoryView" Width="1.5" PointX="5.75" PointY="9.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vAbsence" Width="1.5" PointX="5.75" PointY="12.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vAddTraining" Width="1.5" PointX="14.75" PointY="7.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vComboBoxEmployee" Width="1.5" PointX="14.75" PointY="11.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vComboBoxMachine" Width="1.5" PointX="15.75" PointY="14.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vContract" Width="1.5" PointX="15.75" PointY="17.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vCustomer" Width="1.5" PointX="16.75" PointY="7.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" Width="1.5" PointX="17.75" PointY="12.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEducationForm" Width="1.5" PointX="17.75" PointY="16.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="18.75" PointY="6.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeList" Width="1.5" PointX="17.75" PointY="20.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vExamination" Width="1.5" PointX="19.75" PointY="2.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesInvoice" Width="1.5" PointX="19.75" PointY="12.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOrder" Width="1.5" PointX="10.75" PointY="21.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOutsourcing" Width="1.5" PointX="12.75" PointY="21.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesPayment" Width="1.5" PointX="19.75" PointY="15.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vHR" Width="1.5" PointX="14.75" PointY="21.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vHRContract" Width="1.5" PointX="19.75" PointY="18.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vHRExamination" Width="1.5" PointX="19.75" PointY="20.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewDailySfDelivery" Width="1.5" PointX="20.75" PointY="5.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="20.75" PointY="8.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vIncomesProfit" Width="1.5" PointX="19.75" PointY="22.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="21.75" PointY="2.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="21.75" PointY="12.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vMaintPartsView" Width="1.5" PointX="21.75" PointY="15.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="21.75" PointY="18.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="16.75" PointY="23.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="21.75" PointY="21.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vPartsView" Width="1.5" PointX="22.75" PointY="5.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="22.75" PointY="8.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" Width="1.5" PointX="13.75" PointY="24.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSafetyControlHistoryView" Width="1.5" PointX="23.75" PointY="2.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProcess" Width="1.5" PointX="23.75" PointY="12.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" Width="1.5" PointX="23.75" PointY="14.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="23.75" PointY="17.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="18.75" PointY="25.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vTechnicalProductDataPerProcess" Width="1.5" PointX="23.75" PointY="22.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vUnfinishedProcess" Width="1.5" PointX="23.75" PointY="25.125" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vUnhandledOrderDetail" Width="1.5" PointX="24.75" PointY="5.125" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Absence__IdAbsen__6C190EBB" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Absence__IdEmplo__6D0D32F4" />
-        <AssociationConnector Association="RoofingCompanyModel.FKAccidentEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Allocatio__IdDep__7A672E12" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Allocatio__IdEmp__797309D9" />
-        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Contract__IdEmpl__628FA481" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Contract__IdPosi__6383C8BA" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Invoice__IdContr__0C85DE4D" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOrderCustomerCustomer" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Expense__IdDepar__10566F31" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Staff__IdDeparme__75A278F5" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Education__IdEdu__00200768" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Education__IdEmp__7F2BE32F" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__MedicalEx__IdEmp__05D8E0BE" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Payment__IdEmplo__70DDC3D8" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Training__IdEmpl__02FC7413" />
-        <AssociationConnector Association="RoofingCompanyModel.FKEnteranceControlEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkFEMAnalysisEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkInspectedEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOrderCustomerEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutControlEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkTrainedEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceEmployee" />
-        <AssociationConnector Association="RoofingCompanyModel.FkEntranceControlSfOrderDetail" />
-        <AssociationConnector Association="RoofingCompanyModel.FKSfDetail" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Expense__IdInvoi__114A936A" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_FailureFailureMaintenance" />
-        <AssociationConnector Association="RoofingCompanyModel.FKProductionProces" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceFailureMaintenance" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Invoice__IdInvoi__0D7A0286" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdMac__66603565" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MachineMaintenance" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MachineTypeMachine" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MainDescriptionMaintenance" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceRealization" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_MaintTypeMaintenance" />
-        <AssociationConnector Association="RoofingCompanyModel.FkMachine" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_PartMainPart" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOrderDetailOrderCustomer" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOrderDetail" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOrderDetailProduct" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutputProductMeasurements" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingCommitmentOutsourcing" />
-        <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingOutsourcingType" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_PartPartRequest" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_PartRequestPartOrderDetail" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_PartTypePart" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_UnitPart" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_PartOrderPartOrderDetail" />
-        <AssociationConnector Association="RoofingCompanyModel.FK_PartRequestPartOrderRequest" />
-        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction" />
-        <AssociationConnector Association="RoofingCompanyModel.FKProductionProcesPlannedProduction" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdPos__6754599E" />
-        <AssociationConnector Association="RoofingCompanyModel.FK__Staff__IdPositio__76969D2E" />
-        <AssociationConnector Association="RoofingCompanyModel.FkProductIdSF" />
-        <AssociationConnector Association="RoofingCompanyModel.FkProductIdTech" />
-        <AssociationConnector Association="RoofingCompanyModel.FkTechProdDataId" />
-        <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinished" />
-        <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" />
-        <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" />
-        <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewEntranceControlHistory" Width="1.5" PointX="26.375" PointY="21.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewSemiFinishedCode" Width="1.5" PointX="26.375" PointY="25.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewSemiFinishedOrder" Width="1.5" PointX="27.375" PointY="0.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vIndividualCustomer" Width="1.5" PointX="26.375" PointY="27.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewEntranceControlResultsBySfCode" Width="1.5" PointX="28.375" PointY="12.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewMinAndMaxEntranceControlDate" Width="1.5" PointX="28.375" PointY="15.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="11.375" PointY="17.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.ViewQualityControlerList" Width="1.5" PointX="21.375" PointY="15.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="28.375" PointY="3.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOrder" Width="1.5" PointX="14.375" PointY="15.75" />
-        </Diagram>
+      <Diagram DiagramId="2ce0ceb4853d481ab2805e3e4bd1867e" Name="Diagram1">
+        <EntityTypeShape EntityType="RoofingCompanyModel.Absence" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.AbsenceType" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Accident" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Allocation" Width="1.5" PointX="6" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Contract" Width="1.5" PointX="3" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Contractor" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Customer" Width="1.5" PointX="6.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Department" Width="1.5" PointX="3.75" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Education" Width="1.5" PointX="6" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.EducationLevel" Width="1.5" PointX="3.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Employee" Width="1.5" PointX="0.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.EmployeePlan" Width="1.5" PointX="16.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.EntranceControl" Width="1.5" PointX="6" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Expense" Width="1.5" PointX="9.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Failure" Width="1.5" PointX="21" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.FailureMaintenance" Width="1.5" PointX="23.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.FEMAnalysi" Width="1.5" PointX="3" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Invoice" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.InvoiceType" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Machine" Width="1.5" PointX="12" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.MachineType" Width="1.5" PointX="9.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.MaintDescription" Width="1.5" PointX="12" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Maintenance" Width="1.5" PointX="14.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.MaintPart" Width="1.5" PointX="21.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.MaintType" Width="1.5" PointX="12" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.MedicalExamination" Width="1.5" PointX="3" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OrderCustomer" Width="1.5" PointX="9" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OrderDetail" Width="1.5" PointX="14.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutControl" Width="1.5" PointX="21" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutputProductMeasurement" Width="1.5" PointX="23.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Outsourcing" Width="1.5" PointX="11" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutsourcingCommitment" Width="1.5" PointX="13.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.OutsourcingType" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Part" Width="1.5" PointX="19" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PartOrder" Width="1.5" PointX="22" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PartOrderDetail" Width="1.5" PointX="24.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PartOrderRequest" Width="1.5" PointX="23.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PartRequest" Width="1.5" PointX="21.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PartType" Width="1.5" PointX="16.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Payment" Width="1.5" PointX="3" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PlannedProduction" Width="1.5" PointX="16.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.PlannedProductionEmployeeDetail" Width="1.5" PointX="11.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Position" Width="1.5" PointX="0.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Product" Width="1.5" PointX="12" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ProductionProcess" Width="1.5" PointX="18.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Realization" Width="1.5" PointX="16.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControl" Width="1.5" PointX="3" PointY="48.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyTraining" Width="1.5" PointX="3" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinished" Width="1.5" PointX="9.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SemiFinishedOrder" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SfOrderDetail" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SkillsForMachine" Width="1.5" PointX="14.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Staff" Width="1.5" PointX="6" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Supplier" Width="1.5" PointX="1.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SupplierType" Width="1.5" PointX="1.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.TechnicalProductData" Width="1.5" PointX="14.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Technology" Width="1.5" PointX="9.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Training" Width="1.5" PointX="3" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.Unit" Width="1.5" PointX="16.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControlHistoryView" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vAbsence" Width="1.5" PointX="5.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vAddTraining" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vComboBoxEmployee" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vComboBoxMachine" Width="1.5" PointX="7.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vContract" Width="1.5" PointX="16.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" Width="1.5" PointX="18.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEducationForm" Width="1.5" PointX="18.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="20.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeList" Width="1.5" PointX="16.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="22.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExamination" Width="1.5" PointX="22.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesInvoice" Width="1.5" PointX="24.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOrder" Width="1.5" PointX="24.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOutsourcing" Width="1.5" PointX="24.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesPayment" Width="1.5" PointX="25.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHR" Width="1.5" PointX="25.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHRContract" Width="1.5" PointX="13.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHRExamination" Width="1.5" PointX="25.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewEntranceControlHistory" Width="1.5" PointX="25.75" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewEntranceControlResultsBySfCode" Width="1.5" PointX="26.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewMinAndMaxEntranceControlDate" Width="1.5" PointX="26.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="8.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewQualityControlerList" Width="1.5" PointX="26.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewSemiFinishedCode" Width="1.5" PointX="10.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.ViewSemiFinishedOrder" Width="1.5" PointX="12.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vIncomesProfit" Width="1.5" PointX="26.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vIndividualCustomer" Width="1.5" PointX="14.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="16.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="18.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vMaintPartsView" Width="1.5" PointX="20.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOrder" Width="1.5" PointX="22.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="24.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="26.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="27.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPartsView" Width="1.5" PointX="27.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="27.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" Width="1.5" PointX="28.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProcessFullData" Width="1.5" PointX="28.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSafetyControlHistoryView" Width="1.5" PointX="28.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProcess" Width="1.5" PointX="28.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" Width="1.5" PointX="28.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="28.75" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="10.75" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vTechnicalProductDataPerProcess" Width="1.5" PointX="29.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vUnfinishedProcess" Width="1.5" PointX="29.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vUnhandledOrderDetail" Width="1.5" PointX="16.75" PointY="31.375" IsExpanded="true" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Absence__IdAbsen__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Absence__IdEmplo__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKAccidentEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Allocatio__IdDep__2180FB33" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Allocatio__IdEmp__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsAllocation" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Contract__IdEmpl__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Contract__IdPosi__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Invoice__IdContr__339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOrderCustomerCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Expense__IdDepar__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Staff__IdDeparme__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Education__IdEdu__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Education__IdEmp__2645B050" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__MedicalEx__IdEmp__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Payment__IdEmplo__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Training__IdEmpl__2A164134" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKEnteranceControlEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkFEMAnalysisEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkInspectedEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOrderCustomerEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutControlEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkTrainedEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkEntranceControlSfOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKSfDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Expense__IdInvoi__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_FailureFailureMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKProductionProces" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceFailureMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Invoice__IdInvoi__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdMac__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MachineMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MachineTypeMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MainDescriptionMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MaintenanceRealization" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_MaintTypeMaintenance" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_PartMainPart" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOrderDetailOrderCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOrderDetailProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutControlProcess" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutputProductMeasurements" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingCommitmentOutsourcing" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkOutsourcingOutsourcingType" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_PartPartRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_PartRequestPartOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_PartTypePart" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_UnitPart" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_PartOrderPartOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK_PartRequestPartOrderRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKPlannedProductionEmployeeDetailsPlannedProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FKProductionProcesPlannedProduction" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__SkillsFor__IdPos__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FK__Staff__IdPositio__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkProductIdSF" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkProductIdTech" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkTechProdDataId" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinished" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
