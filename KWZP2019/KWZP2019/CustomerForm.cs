@@ -18,16 +18,11 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private SalesDepartmentForm previousForm;
-        public CustomerForm(RoofingCompanyEntities db)
-        {
-            InitializeComponent();
-            this.db = db;
-        }//OVERRIDE CONSTRUCTOR 
         public CustomerForm(RoofingCompanyEntities db, SalesDepartmentForm previousForm)
         {
-            InitializeComponent();
             this.db = db;
             this.previousForm = previousForm;
+            InitializeComponent();
         }
         private void CustomerForm_Load(object sender, EventArgs e)
         {
@@ -61,7 +56,7 @@ namespace KWZP2019
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value);
+            AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value, previousForm);
             addNewOrderForm.ShowDialog();
             this.Close();
         }       
@@ -75,7 +70,7 @@ namespace KWZP2019
             else
             {
                 this.Hide();
-                AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, this.ordersDgv.CurrentRow.Cells[0].Value);
+                AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, this.ordersDgv.CurrentRow.Cells[0].Value, previousForm);
                 newOrderDetail.ShowDialog();
             }
         }          
@@ -88,7 +83,7 @@ namespace KWZP2019
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
+            AddNewCustomerForm newCustomer = new AddNewCustomerForm(db, previousForm);
             newCustomer.ShowDialog();
             this.Close();
         }

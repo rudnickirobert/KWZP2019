@@ -14,12 +14,14 @@ namespace KWZP2019
 
     {
         private RoofingCompanyEntities db;
+        private SalesDepartmentForm salesForm;
         private String customerName;
         bool isMarkupCorrect = true;
-        public AddNewOrderForm(RoofingCompanyEntities db, object customerDgvCell1)
+        public AddNewOrderForm(RoofingCompanyEntities db, object customerDgvCell1, SalesDepartmentForm salesForm)
         {
             InitializeComponent();
             this.db = db;
+            this.salesForm = salesForm;
             customerName = customerDgvCell1.ToString();
             this.customerNameTb.Text = customerName;
         }
@@ -77,7 +79,7 @@ namespace KWZP2019
         private void returnBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CustomerForm customerForm = new CustomerForm(db);
+            CustomerForm customerForm = new CustomerForm(db, salesForm);
             customerForm.ShowDialog();
             this.Close();
         }               
@@ -128,7 +130,7 @@ namespace KWZP2019
                 db.SaveChanges();
                 this.Hide();
                 MessageBox.Show("Dodaj szczegół zamówienia");
-                AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, newOrderCustomer.IdOrderCustomer);
+                AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, newOrderCustomer.IdOrderCustomer, salesForm);
                 newOrderDetail.ShowDialog();
                 this.Close();
                 return;

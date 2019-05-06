@@ -26,24 +26,26 @@ namespace KWZP2019
             this.Hide();
             CustomerForm customerForm = new CustomerForm(db, this);
             customerForm.ShowDialog();
-            this.Close();
         }
 
         private void warehouseBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             WarehouseForm warehouseForm = new WarehouseForm(db, this);
             warehouseForm.ShowDialog();
         }
 
         private void suppliersBtn_Click(object sender, EventArgs e)
         {
-            SupplierForm supplierForm = new SupplierForm(db);
+            this.Hide();
+            SupplierForm supplierForm = new SupplierForm(db, this);
             supplierForm.ShowDialog();
         }
 
         private void outsourcingBtn_Click(object sender, EventArgs e)
         {
-            OutsourcingForm outsourcingForm = new OutsourcingForm(db);
+            this.Hide();
+            OutsourcingForm outsourcingForm = new OutsourcingForm(db, this);
             outsourcingForm.ShowDialog();
         }
 

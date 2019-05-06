@@ -12,33 +12,36 @@ namespace KWZP2019
 {
     public partial class SupplierForm : Form
     {
-        RoofingCompanyEntities db;
-        public SupplierForm(RoofingCompanyEntities db)
+        private RoofingCompanyEntities db;
+        private SalesDepartmentForm previousForm;
+        public SupplierForm(RoofingCompanyEntities db, SalesDepartmentForm form)
         {
             InitializeComponent();
             this.db = db;
+            this.previousForm = form;
         }
 
         private void addNewSupplierBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddNewSupplierForm addnewsupplierForm = new AddNewSupplierForm(db);
+            AddNewSupplierForm addnewsupplierForm = new AddNewSupplierForm(db, this);
             addnewsupplierForm.ShowDialog();
-            this.Close();
         }
         private void SupplierForm_Load(object sender, EventArgs e)
         {
             supplierDgv.DataSource = db.Suppliers.ToList();
         }
-        private void buttonreturnSupplierForm_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            previousForm.Show();
+            this.Close();
         }
 
-        private void Dostawcapolfabrykatu_rb_CheckedChanged(object sender, EventArgs e)
+        private void sfSupplierRb_CheckedChanged(object sender, EventArgs e)
         {
             
-            if (Dostawcapolfabrykatu_rb.Checked)
+            if (sfSupplierRb.Checked)
             {
                 supplierDgv.DataSource = (from db in db.vSupplierSemis
                                           where
@@ -46,7 +49,7 @@ namespace KWZP2019
                                           select db).ToList();
             }
 
-            if (DOstawcaczesci_rb.Checked)
+            if (partsSupplierRb.Checked)
             {
                 supplierDgv.DataSource = (from db in db.vSupplierParts
                                           where

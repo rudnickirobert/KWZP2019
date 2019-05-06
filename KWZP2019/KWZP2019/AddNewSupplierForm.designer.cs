@@ -94,7 +94,7 @@
             this.nameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.nameTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nameTb.Location = new System.Drawing.Point(367, 171);
-            this.nameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTb.Margin = new System.Windows.Forms.Padding(2);
             this.nameTb.Name = "nameTb";
             this.nameTb.Size = new System.Drawing.Size(145, 24);
             this.nameTb.TabIndex = 3;
@@ -235,7 +235,7 @@
             this.phoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.phoneTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.phoneTb.Location = new System.Drawing.Point(593, 171);
-            this.phoneTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneTb.Margin = new System.Windows.Forms.Padding(2);
             this.phoneTb.Name = "phoneTb";
             this.phoneTb.Size = new System.Drawing.Size(145, 24);
             this.phoneTb.TabIndex = 31;
@@ -246,7 +246,7 @@
             this.emailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.emailTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.emailTb.Location = new System.Drawing.Point(154, 254);
-            this.emailTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTb.Margin = new System.Windows.Forms.Padding(2);
             this.emailTb.Name = "emailTb";
             this.emailTb.Size = new System.Drawing.Size(145, 24);
             this.emailTb.TabIndex = 32;
@@ -257,7 +257,7 @@
             this.cityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cityTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cityTb.Location = new System.Drawing.Point(367, 254);
-            this.cityTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityTb.Margin = new System.Windows.Forms.Padding(2);
             this.cityTb.Name = "cityTb";
             this.cityTb.Size = new System.Drawing.Size(145, 24);
             this.cityTb.TabIndex = 33;
@@ -268,7 +268,7 @@
             this.apartmentNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.apartmentNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.apartmentNumberTb.Location = new System.Drawing.Point(593, 332);
-            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2);
             this.apartmentNumberTb.Name = "apartmentNumberTb";
             this.apartmentNumberTb.Size = new System.Drawing.Size(145, 24);
             this.apartmentNumberTb.TabIndex = 34;
@@ -279,7 +279,7 @@
             this.houseNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.houseNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.houseNumberTb.Location = new System.Drawing.Point(367, 332);
-            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2);
             this.houseNumberTb.Name = "houseNumberTb";
             this.houseNumberTb.Size = new System.Drawing.Size(145, 24);
             this.houseNumberTb.TabIndex = 35;
@@ -290,7 +290,7 @@
             this.streetTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.streetTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.streetTb.Location = new System.Drawing.Point(154, 332);
-            this.streetTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.streetTb.Margin = new System.Windows.Forms.Padding(2);
             this.streetTb.Name = "streetTb";
             this.streetTb.Size = new System.Drawing.Size(145, 24);
             this.streetTb.TabIndex = 36;
@@ -301,7 +301,7 @@
             this.zipCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.zipCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.zipCodeTb.Location = new System.Drawing.Point(593, 254);
-            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2);
             this.zipCodeTb.Name = "zipCodeTb";
             this.zipCodeTb.Size = new System.Drawing.Size(145, 24);
             this.zipCodeTb.TabIndex = 37;
@@ -312,7 +312,7 @@
             this.nipTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.nipTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nipTb.Location = new System.Drawing.Point(154, 405);
-            this.nipTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nipTb.Margin = new System.Windows.Forms.Padding(2);
             this.nipTb.Name = "nipTb";
             this.nipTb.Size = new System.Drawing.Size(145, 24);
             this.nipTb.TabIndex = 38;
@@ -323,7 +323,7 @@
             this.krsTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.krsTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.krsTb.Location = new System.Drawing.Point(367, 405);
-            this.krsTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.krsTb.Margin = new System.Windows.Forms.Padding(2);
             this.krsTb.Name = "krsTb";
             this.krsTb.Size = new System.Drawing.Size(145, 24);
             this.krsTb.TabIndex = 39;
@@ -334,7 +334,7 @@
             this.descriptionTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.descriptionTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.descriptionTb.Location = new System.Drawing.Point(593, 405);
-            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTb.Name = "descriptionTb";
             this.descriptionTb.Size = new System.Drawing.Size(145, 24);
             this.descriptionTb.TabIndex = 40;
@@ -346,7 +346,7 @@
             this.addNewSupplierBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addNewSupplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewSupplierBtn.Image")));
             this.addNewSupplierBtn.Location = new System.Drawing.Point(201, 480);
-            this.addNewSupplierBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewSupplierBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewSupplierBtn.Name = "addNewSupplierBtn";
             this.addNewSupplierBtn.Size = new System.Drawing.Size(162, 74);
             this.addNewSupplierBtn.TabIndex = 41;
@@ -368,6 +368,7 @@
             this.returnBtn.Text = "Powrót";
             this.returnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.returnBtn.UseVisualStyleBackColor = false;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // pictureBoxForm
             // 
@@ -455,7 +456,7 @@
             this.Controls.Add(this.nazwaLbl);
             this.Controls.Add(this.supplierTypeLbl);
             this.Controls.Add(this.pictureBoxForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddNewSupplierForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewSupplierForm";

@@ -12,13 +12,14 @@ namespace KWZP2019
 {
     public partial class OutsourcingForm : Form
     {
-        RoofingCompanyEntities db;
-        public OutsourcingForm(RoofingCompanyEntities db)
+        private RoofingCompanyEntities db;
+        private SalesDepartmentForm previousForm;
+        public OutsourcingForm(RoofingCompanyEntities db, SalesDepartmentForm form)
         {
-            InitializeComponent();
             this.db = db;
+            this.previousForm = form;
+            InitializeComponent();
         }
-
         private void OutsourcingForm_Load(object sender, EventArgs e)
         {
             outsourcingTypeDgv.DataSource = db.OutsourcingTypes.ToList();
@@ -26,13 +27,14 @@ namespace KWZP2019
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddNewOutsourcingCompanyForm addnewoutsourcingcompanyForm = new AddNewOutsourcingCompanyForm(db);
+            AddNewOutsourcingCompanyForm addnewoutsourcingcompanyForm = new AddNewOutsourcingCompanyForm(db, this);
             addnewoutsourcingcompanyForm.ShowDialog();
-            this.Close();
         }
         private void returnCancelOutBtn_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            previousForm.Show();
+            this.Close();
         }
         private void txtBSerachOutsourcing_KeyPress(object sender, KeyPressEventArgs e)
         { 
