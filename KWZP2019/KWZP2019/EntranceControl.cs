@@ -27,8 +27,8 @@ namespace KWZP2019
         public string RealColor { get; set; }
         public bool ChemicalComposition { get; set; }
     
+        public virtual Employee Employee { get; set; }
         public virtual SfOrderDetail SfOrderDetail { get; set; }
         public virtual SfOrderDetail SfOrderDetail1 { get; set; }
-        public virtual Employee Employee { get; set; }
     }
 }
