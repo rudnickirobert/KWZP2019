@@ -627,7 +627,7 @@ insert into SemiFinishedOrder values(4, '2019-04-19 12:10', '2019-04-29 13:30', 
 insert into SemiFinishedOrder values(4, '2019-04-21 12:10', '2019-04-24 09:30', 4300);
 insert into SemiFinishedOrder values(2, '2019-04-22 12:10', '2019-04-29 16:20', 2800);
 insert into SemiFinishedOrder values(1, '2019-04-24 12:10', '2019-05-03 11:50', 5100);
-insert into SemiFinishedOrder values(2, '2019-04-25 12:10', '2019-05-08 10:00', 4300);
+insert into SemiFinishedOrder values(2, '2019-04-25 12:10', '2019-05-06 10:00', 4300);
 insert into SemiFinishedOrder values(4, '2019-04-26 12:10', '2019-05-08 11:00', 2900);
 insert into SemiFinishedOrder values(3, '2019-04-27 12:10', '2019-05-09 12:20', 6000);
 insert into SemiFinishedOrder values(5, '2019-04-28 12:10', '2019-05-09 08:50', 1100);

@@ -570,7 +570,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RoofingCompanyModel.Designer.cs">
+    <Compile Include="RoofingCompanyModel1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
