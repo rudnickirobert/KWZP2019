@@ -124,5 +124,12 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vComboboxNewFailures> vComboboxNewFailures { get; set; }
+        public virtual DbSet<vMachineFailure> vMachineFailure { get; set; }
+        public virtual DbSet<vMaintenanceAssignEmployees> vMaintenanceAssignEmployees { get; set; }
+        public virtual DbSet<vMaintenanceAssignParts> vMaintenanceAssignParts { get; set; }
+        public virtual DbSet<vMaintenanceEmployees> vMaintenanceEmployees { get; set; }
+        public virtual DbSet<vMaintenanceEmployeesCalendar> vMaintenanceEmployeesCalendar { get; set; }
+        public virtual DbSet<vNewFailures> vNewFailures { get; set; }
     }
 }

@@ -221,6 +221,7 @@
           <Property Name="WorkingArea" Type="varchar" MaxLength="50" />
           <Property Name="CatalogMachineNr" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MetersPerHour" Type="real" Nullable="false" />
+          <Property Name="InspectionTimeInterval" Type="real" />
         </EntityType>
         <EntityType Name="MachineType">
           <Key>
@@ -236,7 +237,6 @@
           <Property Name="IdMaintDesc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaintDescName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MaintDescription" Type="varchar" MaxLength="50" />
-          <Property Name="InspectionTimeInterval" Type="real" Nullable="false" />
         </EntityType>
         <EntityType Name="Maintenance">
           <Key>
@@ -245,7 +245,7 @@
           <Property Name="IdMaintenance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdMachine" Type="int" Nullable="false" />
           <Property Name="IdMaintType" Type="int" Nullable="false" />
-          <Property Name="IdMaintDesc" Type="int" Nullable="false" />
+          <Property Name="IdMaintDesc" Type="int" />
           <Property Name="DateAcceptOrder" Type="datetime" Nullable="false" />
           <Property Name="StartDatePlan" Type="datetime" Nullable="false" />
           <Property Name="EndDatePlan" Type="datetime" Nullable="false" />
@@ -361,6 +361,7 @@
           <Property Name="Producer" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CatalogPartNr" Type="int" Nullable="false" />
           <Property Name="QuantityWarehouse" Type="int" Nullable="false" />
+          <Property Name="QuantityMinumum" Type="int" />
         </EntityType>
         <EntityType Name="PartOrder">
           <Key>
@@ -668,6 +669,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vComboBoxMachine' does not have
           <Property Name="machineFullName" Type="varchar" MaxLength="101" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vComboboxNewFailures' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vComboboxNewFailures">
+          <Key>
+            <PropertyRef Name="IdFailure" />
+            <PropertyRef Name="Specification" />
+          </Key>
+          <Property Name="IdFailure" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vContracts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vContracts">
           <Key>
@@ -937,6 +948,81 @@ warning 6002: The table/view 'RoofingCompany.dbo.vInvoiceType' does not have a p
           <Property Name="Type" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vMachineFailure' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vMachineFailure">
+          <Key>
+            <PropertyRef Name="IdFailure" />
+            <PropertyRef Name="IdMachine" />
+          </Key>
+          <Property Name="IdFailure" Type="int" Nullable="false" />
+          <Property Name="IdMachine" Type="int" Nullable="false" />
+          <Property Name="MachineName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vMaintenanceAssignEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vMaintenanceAssignEmployees">
+          <Key>
+            <PropertyRef Name="IdEmployeePlan" />
+            <PropertyRef Name="IdMaintenance" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+          </Key>
+          <Property Name="IdEmployeePlan" Type="int" Nullable="false" />
+          <Property Name="IdMaintenance" Type="int" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vMaintenanceAssignParts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vMaintenanceAssignParts">
+          <Key>
+            <PropertyRef Name="IdMaintenance" />
+            <PropertyRef Name="IdPart" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="PartQuantity" />
+            <PropertyRef Name="QuantityWarehouse" />
+            <PropertyRef Name="UnitName" />
+          </Key>
+          <Property Name="IdMaintenance" Type="int" Nullable="false" />
+          <Property Name="IdPart" Type="int" Nullable="false" />
+          <Property Name="PartName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PartQuantity" Type="int" Nullable="false" />
+          <Property Name="QuantityWarehouse" Type="int" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vMaintenanceEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vMaintenanceEmployees">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vMaintenanceEmployeesCalendar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vMaintenanceEmployeesCalendar">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="IdMaintenance" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+            <PropertyRef Name="MaintenanceNr" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="IdMaintenance" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="MaintenanceNr" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vMaintPartsView">
           <Key>
@@ -951,6 +1037,19 @@ warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have 
           <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Ilość" Type="int" Nullable="false" />
           <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vNewFailures' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vNewFailures">
+          <Key>
+            <PropertyRef Name="IdFailure" />
+            <PropertyRef Name="Specification" />
+            <PropertyRef Name="FailureDate" />
+          </Key>
+          <Property Name="IdFailure" Type="int" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FailureDate" Type="datetime" Nullable="false" />
+          <Property Name="MachineName" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1193,7 +1292,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__Absence__IdAbsen__6C190EBB">
+        <Association Name="FK__Absence__IdAbsen__1332DBDC">
           <End Role="AbsenceType" Type="Self.AbsenceType" Multiplicity="0..1" />
           <End Role="Absence" Type="Self.Absence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1205,7 +1304,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Absence__IdEmplo__6D0D32F4">
+        <Association Name="FK__Absence__IdEmplo__14270015">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Absence" Type="Self.Absence" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1217,7 +1316,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Allocatio__IdDep__7A672E12">
+        <Association Name="FK__Allocatio__IdDep__2180FB33">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Allocation" Type="Self.Allocation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1229,7 +1328,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Allocatio__IdEmp__797309D9">
+        <Association Name="FK__Allocatio__IdEmp__208CD6FA">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Allocation" Type="Self.Allocation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1241,7 +1340,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contract__IdEmpl__628FA481">
+        <Association Name="FK__Contract__IdEmpl__09A971A2">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1253,7 +1352,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contract__IdPosi__6383C8BA">
+        <Association Name="FK__Contract__IdPosi__0A9D95DB">
           <End Role="Position" Type="Self.Position" Multiplicity="1" />
           <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1265,7 +1364,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Education__IdEdu__00200768">
+        <Association Name="FK__Education__IdEdu__2739D489">
           <End Role="EducationLevel" Type="Self.EducationLevel" Multiplicity="0..1" />
           <End Role="Education" Type="Self.Education" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1277,7 +1376,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Education__IdEmp__7F2BE32F">
+        <Association Name="FK__Education__IdEmp__2645B050">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Education" Type="Self.Education" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1289,7 +1388,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Expense__IdDepar__10566F31">
+        <Association Name="FK__Expense__IdDepar__37703C52">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1301,7 +1400,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Expense__IdInvoi__114A936A">
+        <Association Name="FK__Expense__IdInvoi__3864608B">
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1313,7 +1412,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__IdContr__0C85DE4D">
+        <Association Name="FK__Invoice__IdContr__339FAB6E">
           <End Role="Contractor" Type="Self.Contractor" Multiplicity="0..1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1325,7 +1424,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__IdInvoi__0D7A0286">
+        <Association Name="FK__Invoice__IdInvoi__3493CFA7">
           <End Role="InvoiceType" Type="Self.InvoiceType" Multiplicity="0..1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1337,7 +1436,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MedicalEx__IdEmp__05D8E0BE">
+        <Association Name="FK__MedicalEx__IdEmp__2CF2ADDF">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="MedicalExamination" Type="Self.MedicalExamination" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1349,7 +1448,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payment__IdEmplo__70DDC3D8">
+        <Association Name="FK__Payment__IdEmplo__17F790F9">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1361,7 +1460,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SkillsFor__IdMac__66603565">
+        <Association Name="FK__SkillsFor__IdMac__0D7A0286">
           <End Role="Machine" Type="Self.Machine" Multiplicity="0..1" />
           <End Role="SkillsForMachine" Type="Self.SkillsForMachine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1373,7 +1472,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SkillsFor__IdPos__6754599E">
+        <Association Name="FK__SkillsFor__IdPos__0E6E26BF">
           <End Role="Position" Type="Self.Position" Multiplicity="1" />
           <End Role="SkillsForMachine" Type="Self.SkillsForMachine" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1385,7 +1484,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Staff__IdDeparme__75A278F5">
+        <Association Name="FK__Staff__IdDeparme__1CBC4616">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1397,7 +1496,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Staff__IdPositio__76969D2E">
+        <Association Name="FK__Staff__IdPositio__1DB06A4F">
           <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
           <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1409,7 +1508,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Training__IdEmpl__02FC7413">
+        <Association Name="FK__Training__IdEmpl__2A164134">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Training" Type="Self.Training" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1458,7 +1557,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MainDescriptionMaintenance">
-          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="1" />
+          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="0..1" />
           <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MaintDescription">
@@ -2052,6 +2151,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vComboBoxMachine].[machineFullName] AS [machineFullName]
     FROM [dbo].[vComboBoxMachine] AS [vComboBoxMachine]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vComboboxNewFailures" EntityType="Self.vComboboxNewFailures" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vComboboxNewFailures].[IdFailure] AS [IdFailure], 
+    [vComboboxNewFailures].[Specification] AS [Specification]
+    FROM [dbo].[vComboboxNewFailures] AS [vComboboxNewFailures]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vContracts" EntityType="Self.vContracts" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vContracts].[IdEmployee] AS [IdEmployee], 
@@ -2237,6 +2342,52 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vInvoiceType].[Type] AS [Type]
     FROM [dbo].[vInvoiceType] AS [vInvoiceType]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vMachineFailure" EntityType="Self.vMachineFailure" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vMachineFailure].[IdFailure] AS [IdFailure], 
+    [vMachineFailure].[IdMachine] AS [IdMachine], 
+    [vMachineFailure].[MachineName] AS [MachineName]
+    FROM [dbo].[vMachineFailure] AS [vMachineFailure]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vMaintenanceAssignEmployees" EntityType="Self.vMaintenanceAssignEmployees" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vMaintenanceAssignEmployees].[IdEmployeePlan] AS [IdEmployeePlan], 
+    [vMaintenanceAssignEmployees].[IdMaintenance] AS [IdMaintenance], 
+    [vMaintenanceAssignEmployees].[IdEmployee] AS [IdEmployee], 
+    [vMaintenanceAssignEmployees].[EmployeeName] AS [EmployeeName], 
+    [vMaintenanceAssignEmployees].[EmployeeSurname] AS [EmployeeSurname], 
+    [vMaintenanceAssignEmployees].[StartDate] AS [StartDate], 
+    [vMaintenanceAssignEmployees].[EndDate] AS [EndDate]
+    FROM [dbo].[vMaintenanceAssignEmployees] AS [vMaintenanceAssignEmployees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vMaintenanceAssignParts" EntityType="Self.vMaintenanceAssignParts" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vMaintenanceAssignParts].[IdMaintenance] AS [IdMaintenance], 
+    [vMaintenanceAssignParts].[IdPart] AS [IdPart], 
+    [vMaintenanceAssignParts].[PartName] AS [PartName], 
+    [vMaintenanceAssignParts].[PartQuantity] AS [PartQuantity], 
+    [vMaintenanceAssignParts].[QuantityWarehouse] AS [QuantityWarehouse], 
+    [vMaintenanceAssignParts].[UnitName] AS [UnitName]
+    FROM [dbo].[vMaintenanceAssignParts] AS [vMaintenanceAssignParts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vMaintenanceEmployees" EntityType="Self.vMaintenanceEmployees" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vMaintenanceEmployees].[IdEmployee] AS [IdEmployee], 
+    [vMaintenanceEmployees].[EmployeeName] AS [EmployeeName], 
+    [vMaintenanceEmployees].[EmployeeSurname] AS [EmployeeSurname]
+    FROM [dbo].[vMaintenanceEmployees] AS [vMaintenanceEmployees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vMaintenanceEmployeesCalendar" EntityType="Self.vMaintenanceEmployeesCalendar" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vMaintenanceEmployeesCalendar].[IdEmployee] AS [IdEmployee], 
+    [vMaintenanceEmployeesCalendar].[IdMaintenance] AS [IdMaintenance], 
+    [vMaintenanceEmployeesCalendar].[EmployeeName] AS [EmployeeName], 
+    [vMaintenanceEmployeesCalendar].[EmployeeSurname] AS [EmployeeSurname], 
+    [vMaintenanceEmployeesCalendar].[StartDate] AS [StartDate], 
+    [vMaintenanceEmployeesCalendar].[EndDate] AS [EndDate], 
+    [vMaintenanceEmployeesCalendar].[MaintenanceNr] AS [MaintenanceNr]
+    FROM [dbo].[vMaintenanceEmployeesCalendar] AS [vMaintenanceEmployeesCalendar]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vMaintPartsView" EntityType="Self.vMaintPartsView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vMaintPartsView].[Nr Obsługi] AS [Nr Obsługi], 
@@ -2245,6 +2396,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vMaintPartsView].[Ilość] AS [Ilość], 
     [vMaintPartsView].[Jednostka] AS [Jednostka]
     FROM [dbo].[vMaintPartsView] AS [vMaintPartsView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vNewFailures" EntityType="Self.vNewFailures" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vNewFailures].[IdFailure] AS [IdFailure], 
+    [vNewFailures].[Specification] AS [Specification], 
+    [vNewFailures].[FailureDate] AS [FailureDate], 
+    [vNewFailures].[MachineName] AS [MachineName]
+    FROM [dbo].[vNewFailures] AS [vNewFailures]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2393,79 +2552,79 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vUnhandledOrderDetails].[ProductCode] AS [ProductCode]
     FROM [dbo].[vUnhandledOrderDetails] AS [vUnhandledOrderDetails]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Absence__IdAbsen__6C190EBB" Association="Self.FK__Absence__IdAbsen__6C190EBB">
+          <AssociationSet Name="FK__Absence__IdAbsen__1332DBDC" Association="Self.FK__Absence__IdAbsen__1332DBDC">
             <End Role="AbsenceType" EntitySet="AbsenceType" />
             <End Role="Absence" EntitySet="Absence" />
           </AssociationSet>
-          <AssociationSet Name="FK__Absence__IdEmplo__6D0D32F4" Association="Self.FK__Absence__IdEmplo__6D0D32F4">
+          <AssociationSet Name="FK__Absence__IdEmplo__14270015" Association="Self.FK__Absence__IdEmplo__14270015">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Absence" EntitySet="Absence" />
           </AssociationSet>
-          <AssociationSet Name="FK__Allocatio__IdDep__7A672E12" Association="Self.FK__Allocatio__IdDep__7A672E12">
+          <AssociationSet Name="FK__Allocatio__IdDep__2180FB33" Association="Self.FK__Allocatio__IdDep__2180FB33">
             <End Role="Department" EntitySet="Department" />
             <End Role="Allocation" EntitySet="Allocation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Allocatio__IdEmp__797309D9" Association="Self.FK__Allocatio__IdEmp__797309D9">
+          <AssociationSet Name="FK__Allocatio__IdEmp__208CD6FA" Association="Self.FK__Allocatio__IdEmp__208CD6FA">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Allocation" EntitySet="Allocation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contract__IdEmpl__628FA481" Association="Self.FK__Contract__IdEmpl__628FA481">
+          <AssociationSet Name="FK__Contract__IdEmpl__09A971A2" Association="Self.FK__Contract__IdEmpl__09A971A2">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Contract" EntitySet="Contract" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contract__IdPosi__6383C8BA" Association="Self.FK__Contract__IdPosi__6383C8BA">
+          <AssociationSet Name="FK__Contract__IdPosi__0A9D95DB" Association="Self.FK__Contract__IdPosi__0A9D95DB">
             <End Role="Position" EntitySet="Position" />
             <End Role="Contract" EntitySet="Contract" />
           </AssociationSet>
-          <AssociationSet Name="FK__Education__IdEdu__00200768" Association="Self.FK__Education__IdEdu__00200768">
+          <AssociationSet Name="FK__Education__IdEdu__2739D489" Association="Self.FK__Education__IdEdu__2739D489">
             <End Role="EducationLevel" EntitySet="EducationLevel" />
             <End Role="Education" EntitySet="Education" />
           </AssociationSet>
-          <AssociationSet Name="FK__Education__IdEmp__7F2BE32F" Association="Self.FK__Education__IdEmp__7F2BE32F">
+          <AssociationSet Name="FK__Education__IdEmp__2645B050" Association="Self.FK__Education__IdEmp__2645B050">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Education" EntitySet="Education" />
           </AssociationSet>
-          <AssociationSet Name="FK__Expense__IdDepar__10566F31" Association="Self.FK__Expense__IdDepar__10566F31">
+          <AssociationSet Name="FK__Expense__IdDepar__37703C52" Association="Self.FK__Expense__IdDepar__37703C52">
             <End Role="Department" EntitySet="Department" />
             <End Role="Expense" EntitySet="Expense" />
           </AssociationSet>
-          <AssociationSet Name="FK__Expense__IdInvoi__114A936A" Association="Self.FK__Expense__IdInvoi__114A936A">
+          <AssociationSet Name="FK__Expense__IdInvoi__3864608B" Association="Self.FK__Expense__IdInvoi__3864608B">
             <End Role="Invoice" EntitySet="Invoice" />
             <End Role="Expense" EntitySet="Expense" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__IdContr__0C85DE4D" Association="Self.FK__Invoice__IdContr__0C85DE4D">
+          <AssociationSet Name="FK__Invoice__IdContr__339FAB6E" Association="Self.FK__Invoice__IdContr__339FAB6E">
             <End Role="Contractor" EntitySet="Contractor" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__IdInvoi__0D7A0286" Association="Self.FK__Invoice__IdInvoi__0D7A0286">
+          <AssociationSet Name="FK__Invoice__IdInvoi__3493CFA7" Association="Self.FK__Invoice__IdInvoi__3493CFA7">
             <End Role="InvoiceType" EntitySet="InvoiceType" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK__MedicalEx__IdEmp__05D8E0BE" Association="Self.FK__MedicalEx__IdEmp__05D8E0BE">
+          <AssociationSet Name="FK__MedicalEx__IdEmp__2CF2ADDF" Association="Self.FK__MedicalEx__IdEmp__2CF2ADDF">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="MedicalExamination" EntitySet="MedicalExamination" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payment__IdEmplo__70DDC3D8" Association="Self.FK__Payment__IdEmplo__70DDC3D8">
+          <AssociationSet Name="FK__Payment__IdEmplo__17F790F9" Association="Self.FK__Payment__IdEmplo__17F790F9">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Payment" EntitySet="Payment" />
           </AssociationSet>
-          <AssociationSet Name="FK__SkillsFor__IdMac__66603565" Association="Self.FK__SkillsFor__IdMac__66603565">
+          <AssociationSet Name="FK__SkillsFor__IdMac__0D7A0286" Association="Self.FK__SkillsFor__IdMac__0D7A0286">
             <End Role="Machine" EntitySet="Machine" />
             <End Role="SkillsForMachine" EntitySet="SkillsForMachine" />
           </AssociationSet>
-          <AssociationSet Name="FK__SkillsFor__IdPos__6754599E" Association="Self.FK__SkillsFor__IdPos__6754599E">
+          <AssociationSet Name="FK__SkillsFor__IdPos__0E6E26BF" Association="Self.FK__SkillsFor__IdPos__0E6E26BF">
             <End Role="Position" EntitySet="Position" />
             <End Role="SkillsForMachine" EntitySet="SkillsForMachine" />
           </AssociationSet>
-          <AssociationSet Name="FK__Staff__IdDeparme__75A278F5" Association="Self.FK__Staff__IdDeparme__75A278F5">
+          <AssociationSet Name="FK__Staff__IdDeparme__1CBC4616" Association="Self.FK__Staff__IdDeparme__1CBC4616">
             <End Role="Department" EntitySet="Department" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
-          <AssociationSet Name="FK__Staff__IdPositio__76969D2E" Association="Self.FK__Staff__IdPositio__76969D2E">
+          <AssociationSet Name="FK__Staff__IdPositio__1DB06A4F" Association="Self.FK__Staff__IdPositio__1DB06A4F">
             <End Role="Position" EntitySet="Position" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
-          <AssociationSet Name="FK__Training__IdEmpl__02FC7413" Association="Self.FK__Training__IdEmpl__02FC7413">
+          <AssociationSet Name="FK__Training__IdEmpl__2A164134" Association="Self.FK__Training__IdEmpl__2A164134">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Training" EntitySet="Training" />
           </AssociationSet>
@@ -3002,6 +3161,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <EntitySet Name="vComboboxNewFailures" EntityType="RoofingCompanyModel.vComboboxNewFailures" />
+          <EntitySet Name="vMachineFailure" EntityType="RoofingCompanyModel.vMachineFailure" />
+          <EntitySet Name="vMaintenanceAssignEmployees" EntityType="RoofingCompanyModel.vMaintenanceAssignEmployees" />
+          <EntitySet Name="vMaintenanceAssignParts" EntityType="RoofingCompanyModel.vMaintenanceAssignParts" />
+          <EntitySet Name="vMaintenanceEmployees" EntityType="RoofingCompanyModel.vMaintenanceEmployees" />
+          <EntitySet Name="vMaintenanceEmployeesCalendar" EntityType="RoofingCompanyModel.vMaintenanceEmployeesCalendar" />
+          <EntitySet Name="vNewFailures" EntityType="RoofingCompanyModel.vNewFailures" />
         </EntityContainer>
         <EntityType Name="vProductionProcessFullData">
           <Key>
@@ -3285,6 +3451,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <NavigationProperty Name="SkillsForMachines" Relationship="RoofingCompanyModel.FK__SkillsFor__IdMac__66603565" FromRole="Machine" ToRole="SkillsForMachine" />
           <NavigationProperty Name="Maintenances" Relationship="RoofingCompanyModel.FK_MachineMaintenance" FromRole="Machine" ToRole="Maintenance" />
           <NavigationProperty Name="MachineType" Relationship="RoofingCompanyModel.FK_MachineTypeMachine" FromRole="Machine" ToRole="MachineType" />
+          <Property Name="InspectionTimeInterval" Type="Single" />
         </EntityType>
         <EntityType Name="MachineType">
           <Key>
@@ -3301,7 +3468,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdMaintDesc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaintDescName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MaintDescription1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="InspectionTimeInterval" Type="Single" Nullable="false" />
           <NavigationProperty Name="Maintenances" Relationship="RoofingCompanyModel.FK_MainDescriptionMaintenance" FromRole="MaintDescription" ToRole="Maintenance" />
         </EntityType>
         <EntityType Name="Maintenance">
@@ -3311,7 +3477,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdMaintenance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdMachine" Type="Int32" Nullable="false" />
           <Property Name="IdMaintType" Type="Int32" Nullable="false" />
-          <Property Name="IdMaintDesc" Type="Int32" Nullable="false" />
+          <Property Name="IdMaintDesc" Type="Int32" />
           <Property Name="DateAcceptOrder" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="StartDatePlan" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndDatePlan" Type="DateTime" Nullable="false" Precision="3" />
@@ -3456,6 +3622,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <NavigationProperty Name="PartOrderDetails" Relationship="RoofingCompanyModel.FK_PartRequestPartOrderDetail" FromRole="Part" ToRole="PartOrderDetail" />
           <NavigationProperty Name="PartType" Relationship="RoofingCompanyModel.FK_PartTypePart" FromRole="Part" ToRole="PartType" />
           <NavigationProperty Name="Unit" Relationship="RoofingCompanyModel.FK_UnitPart" FromRole="Part" ToRole="Unit" />
+          <Property Name="QuantityMinumum" Type="Int32" />
         </EntityType>
         <EntityType Name="PartOrder">
           <Key>
@@ -4646,7 +4813,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MainDescriptionMaintenance">
-          <End Type="RoofingCompanyModel.MaintDescription" Role="MaintDescription" Multiplicity="1" />
+          <End Type="RoofingCompanyModel.MaintDescription" Role="MaintDescription" Multiplicity="0..1" />
           <End Type="RoofingCompanyModel.Maintenance" Role="Maintenance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MaintDescription">
@@ -4993,6 +5160,90 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vComboboxNewFailures">
+          <Key>
+            <PropertyRef Name="IdFailure" />
+            <PropertyRef Name="Specification" />
+          </Key>
+          <Property Name="IdFailure" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Specification" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vMachineFailure">
+          <Key>
+            <PropertyRef Name="IdFailure" />
+            <PropertyRef Name="IdMachine" />
+          </Key>
+          <Property Name="IdFailure" Type="Int32" Nullable="false" />
+          <Property Name="IdMachine" Type="Int32" Nullable="false" />
+          <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vMaintenanceAssignEmployees">
+          <Key>
+            <PropertyRef Name="IdEmployeePlan" />
+            <PropertyRef Name="IdMaintenance" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+          </Key>
+          <Property Name="IdEmployeePlan" Type="Int32" Nullable="false" />
+          <Property Name="IdMaintenance" Type="Int32" Nullable="false" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vMaintenanceAssignParts">
+          <Key>
+            <PropertyRef Name="IdMaintenance" />
+            <PropertyRef Name="IdPart" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="PartQuantity" />
+            <PropertyRef Name="QuantityWarehouse" />
+            <PropertyRef Name="UnitName" />
+          </Key>
+          <Property Name="IdMaintenance" Type="Int32" Nullable="false" />
+          <Property Name="IdPart" Type="Int32" Nullable="false" />
+          <Property Name="PartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PartQuantity" Type="Int32" Nullable="false" />
+          <Property Name="QuantityWarehouse" Type="Int32" Nullable="false" />
+          <Property Name="UnitName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vMaintenanceEmployees">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vMaintenanceEmployeesCalendar">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="IdMaintenance" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+            <PropertyRef Name="MaintenanceNr" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="IdMaintenance" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MaintenanceNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vNewFailures">
+          <Key>
+            <PropertyRef Name="IdFailure" />
+            <PropertyRef Name="Specification" />
+            <PropertyRef Name="FailureDate" />
+          </Key>
+          <Property Name="IdFailure" Type="Int32" Nullable="false" />
+          <Property Name="Specification" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FailureDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5239,6 +5490,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="Machines">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Machine">
               <MappingFragment StoreEntitySet="Machine">
+                <ScalarProperty Name="InspectionTimeInterval" ColumnName="InspectionTimeInterval" />
                 <ScalarProperty Name="MetersPerHour" ColumnName="MetersPerHour" />
                 <ScalarProperty Name="CatalogMachineNr" ColumnName="CatalogMachineNr" />
                 <ScalarProperty Name="WorkingArea" ColumnName="WorkingArea" />
@@ -5262,7 +5514,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="MaintDescriptions">
             <EntityTypeMapping TypeName="RoofingCompanyModel.MaintDescription">
               <MappingFragment StoreEntitySet="MaintDescription">
-                <ScalarProperty Name="InspectionTimeInterval" ColumnName="InspectionTimeInterval" />
                 <ScalarProperty Name="MaintDescription1" ColumnName="MaintDescription" />
                 <ScalarProperty Name="MaintDescName" ColumnName="MaintDescName" />
                 <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
@@ -5395,6 +5646,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="Parts">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Part">
               <MappingFragment StoreEntitySet="Part">
+                <ScalarProperty Name="QuantityMinumum" ColumnName="QuantityMinumum" />
                 <ScalarProperty Name="QuantityWarehouse" ColumnName="QuantityWarehouse" />
                 <ScalarProperty Name="CatalogPartNr" ColumnName="CatalogPartNr" />
                 <ScalarProperty Name="Producer" ColumnName="Producer" />
@@ -6124,6 +6376,80 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vComboboxNewFailures">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vComboboxNewFailures">
+              <MappingFragment StoreEntitySet="vComboboxNewFailures">
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vMachineFailure">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vMachineFailure">
+              <MappingFragment StoreEntitySet="vMachineFailure">
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vMaintenanceAssignEmployees">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintenanceAssignEmployees">
+              <MappingFragment StoreEntitySet="vMaintenanceAssignEmployees">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                <ScalarProperty Name="IdEmployeePlan" ColumnName="IdEmployeePlan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vMaintenanceAssignParts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintenanceAssignParts">
+              <MappingFragment StoreEntitySet="vMaintenanceAssignParts">
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="QuantityWarehouse" ColumnName="QuantityWarehouse" />
+                <ScalarProperty Name="PartQuantity" ColumnName="PartQuantity" />
+                <ScalarProperty Name="PartName" ColumnName="PartName" />
+                <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vMaintenanceEmployees">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintenanceEmployees">
+              <MappingFragment StoreEntitySet="vMaintenanceEmployees">
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vMaintenanceEmployeesCalendar">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintenanceEmployeesCalendar">
+              <MappingFragment StoreEntitySet="vMaintenanceEmployeesCalendar">
+                <ScalarProperty Name="MaintenanceNr" ColumnName="MaintenanceNr" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdMaintenance" ColumnName="IdMaintenance" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vNewFailures">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vNewFailures">
+              <MappingFragment StoreEntitySet="vNewFailures">
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="FailureDate" ColumnName="FailureDate" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -6138,7 +6464,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -304,10 +304,10 @@
     <Compile Include="Machine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MachinesForm.cs">
+    <Compile Include="MaintenanceManagement\MachinesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MachinesForm.Designer.cs">
+    <Compile Include="MaintenanceManagement\MachinesForm.Designer.cs">
       <DependentUpon>MachinesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MachineType.cs">
@@ -319,22 +319,22 @@
     <Compile Include="Maintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceCalendarForm.cs">
+    <Compile Include="MaintenanceManagement\MaintenanceCalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceCalendarForm.Designer.cs">
+    <Compile Include="MaintenanceManagement\MaintenanceCalendarForm.Designer.cs">
       <DependentUpon>MaintenanceCalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceEmployeeCalendarForm.cs">
+    <Compile Include="MaintenanceManagement\MaintenanceEmployeeCalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceEmployeeCalendarForm.Designer.cs">
+    <Compile Include="MaintenanceManagement\MaintenanceEmployeeCalendarForm.Designer.cs">
       <DependentUpon>MaintenanceEmployeeCalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceManagement.cs">
+    <Compile Include="MaintenanceManagement\MaintenanceManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceManagement.Designer.cs">
+    <Compile Include="MaintenanceManagement\MaintenanceManagement.Designer.cs">
       <DependentUpon>MaintenanceManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="MaintPart.cs">
@@ -346,10 +346,10 @@
     <Compile Include="MedicalExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewMaintenanceForm.cs">
+    <Compile Include="MaintenanceManagement\NewMaintenanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewMaintenanceForm.Designer.cs">
+    <Compile Include="MaintenanceManagement\NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\NewProductionFailure.cs">
@@ -470,10 +470,10 @@
     <Compile Include="OutsourcingForm.designer.cs">
       <DependentUpon>OutsourcingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PartsForm.cs">
+    <Compile Include="MaintenanceManagement\PartsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartsForm.Designer.cs">
+    <Compile Include="MaintenanceManagement\PartsForm.Designer.cs">
       <DependentUpon>PartsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\Production.cs">
@@ -621,6 +621,9 @@
     <Compile Include="vComboBoxMachine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vComboboxNewFailures.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vContract.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -678,7 +681,25 @@
     <Compile Include="vInvoiceType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vMachineFailure.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceAssignEmployees.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceAssignParts.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceEmployees.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceEmployeesCalendar.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vMaintPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vNewFailures.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOrderDetail.cs">
@@ -826,16 +847,16 @@
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachinesForm.resx">
+    <EmbeddedResource Include="MaintenanceManagement\MachinesForm.resx">
       <DependentUpon>MachinesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenanceCalendarForm.resx">
+    <EmbeddedResource Include="MaintenanceManagement\MaintenanceCalendarForm.resx">
       <DependentUpon>MaintenanceCalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenanceEmployeeCalendarForm.resx">
+    <EmbeddedResource Include="MaintenanceManagement\MaintenanceEmployeeCalendarForm.resx">
       <DependentUpon>MaintenanceEmployeeCalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewMaintenanceForm.resx">
+    <EmbeddedResource Include="MaintenanceManagement\NewMaintenanceForm.resx">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSHControlHistory.resx">
@@ -856,7 +877,7 @@
     <EmbeddedResource Include="OutMeasures.resx">
       <DependentUpon>OutMeasures.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartsForm.resx">
+    <EmbeddedResource Include="MaintenanceManagement\PartsForm.resx">
       <DependentUpon>PartsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\Production.resx">
@@ -886,7 +907,7 @@
     <EmbeddedResource Include="OutControlForm.resx">
       <DependentUpon>OutControlForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenanceManagement.resx">
+    <EmbeddedResource Include="MaintenanceManagement\MaintenanceManagement.resx">
       <DependentUpon>MaintenanceManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OutsourcingForm.resx">

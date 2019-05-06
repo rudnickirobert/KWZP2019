@@ -32,7 +32,6 @@
             this.btnMachines = new System.Windows.Forms.Button();
             this.btnParts = new System.Windows.Forms.Button();
             this.btnNewMaintenance = new System.Windows.Forms.Button();
-            this.btnEmployees = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -101,33 +100,10 @@
             this.btnNewMaintenance.Name = "btnNewMaintenance";
             this.btnNewMaintenance.Size = new System.Drawing.Size(290, 160);
             this.btnNewMaintenance.TabIndex = 7;
-            this.btnNewMaintenance.Text = "Nowe zlecenie";
+            this.btnNewMaintenance.Text = "Lista awarii";
             this.btnNewMaintenance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNewMaintenance.UseVisualStyleBackColor = false;
             this.btnNewMaintenance.Click += new System.EventHandler(this.btnNewMaintenance_Click);
-            // 
-            // btnEmployees
-            // 
-            this.btnEmployees.AutoSize = true;
-            this.btnEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmployees.BackgroundImage")));
-            this.btnEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnEmployees.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEmployees.FlatAppearance.BorderSize = 3;
-            this.btnEmployees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnEmployees.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEmployees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEmployees.Location = new System.Drawing.Point(50, 380);
-            this.btnEmployees.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.Size = new System.Drawing.Size(290, 160);
-            this.btnEmployees.TabIndex = 9;
-            this.btnEmployees.Text = "Pracownicy";
-            this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmployees.UseVisualStyleBackColor = false;
-            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnCalendar
             // 
@@ -184,7 +160,6 @@
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnCalendar);
-            this.Controls.Add(this.btnEmployees);
             this.Controls.Add(this.btnNewMaintenance);
             this.Controls.Add(this.btnParts);
             this.Controls.Add(this.btnMachines);
@@ -203,7 +178,6 @@
         private System.Windows.Forms.Button btnMachines;
         private System.Windows.Forms.Button btnParts;
         private System.Windows.Forms.Button btnNewMaintenance;
-        private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnCalendar;
         private System.Windows.Forms.Button btnReturnMain;
     }
