@@ -35,12 +35,6 @@ namespace KWZP2019
             tbApartmentNumber.Text = "";
             tbPhoneNumber.Text = "";
             tbPESEL.Text = "";
-            tbContractLenght.Text = "";
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
         
         private void btnClear_Click(object sender, EventArgs e)
@@ -50,25 +44,42 @@ namespace KWZP2019
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (tbFirstName.Text.Trim() == "" || tbLastName.Text.Trim() == "")
+            if (tbFirstName.Text.Trim() == "" || tbLastName.Text.Trim() == "" || tbPESEL.Text.Trim() == "")
             {
-                MessageBox.Show("Imię i nazwisko są wymagane");
+                MessageBox.Show("Imię, nazwisko oraz PESEL są wymagane");
             }
             else
             {
-                Employee newEmployee = new Employee();
-                newEmployee.EmployeeName = tbFirstName.Text.Trim();
-                newEmployee.EmployeeSurname = tbLastName.Text.Trim();
-                newEmployee.ZipCode = tbZipCode.Text.Trim();
-                newEmployee.City = tbCity.Text.Trim();
-                newEmployee.Street = tbStreet.Text.Trim();
-                newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
-                newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
-                newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
-                newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
-                db.Employees.Add(newEmployee);
-                db.SaveChanges();
-                MessageBox.Show("Prawidłowo wprowadzono pracownika");
+                bool condition1 = long.TryParse(tbPESEL.Text.Trim(), out long number);
+                bool condition2 = long.TryParse(tbPhoneNumber.Text.Trim(), out long number1);
+                if ( condition1 == false || condition2 == false)
+                {
+                    MessageBox.Show("W polach Numer telefonu i PESEL muszą znajdować się wyłącznie cyfry");
+                }
+                else
+                {
+                    if (tbPESEL.TextLength != 11 || tbPhoneNumber.TextLength != 9)
+                    {
+                        MessageBox.Show("Numer telefonu musi składać się z 9 cyfr a PESEL z 11");
+                    }
+                    else
+                    {
+                        Employee newEmployee = new Employee();
+                        newEmployee.EmployeeName = tbFirstName.Text.Trim();
+                        newEmployee.EmployeeSurname = tbLastName.Text.Trim();
+                        newEmployee.ZipCode = tbZipCode.Text.Trim();
+                        newEmployee.City = tbCity.Text.Trim();
+                        newEmployee.Street = tbStreet.Text.Trim();
+                        newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
+                        newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
+                        newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
+                        newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
+                        db.Employees.Add(newEmployee);
+                        db.SaveChanges();
+                        clear();
+                        MessageBox.Show("Prawidłowo wprowadzono pracownika");
+                    }
+                }
             }
         }
 
@@ -76,6 +87,12 @@ namespace KWZP2019
         {
             this.hr.Show();
             this.Hide();
+        }
+
+        private void AddEmployee_Load(object sender, EventArgs e)
+        {
+            tbPESEL.MaxLength = 11;
+            tbPhoneNumber.MaxLength = 9;
         }
     }
 }

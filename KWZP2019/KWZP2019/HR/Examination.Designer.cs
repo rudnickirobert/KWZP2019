@@ -43,7 +43,9 @@
             this.dgvExamination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExamination.Location = new System.Drawing.Point(12, 61);
             this.dgvExamination.Name = "dgvExamination";
+            this.dgvExamination.RowHeadersVisible = false;
             this.dgvExamination.RowTemplate.Height = 24;
+            this.dgvExamination.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExamination.Size = new System.Drawing.Size(600, 366);
             this.dgvExamination.TabIndex = 0;
             // 

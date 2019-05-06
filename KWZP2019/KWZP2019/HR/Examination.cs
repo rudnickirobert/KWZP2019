@@ -22,12 +22,7 @@ namespace KWZP2019
 
         private void Examination_Load(object sender, EventArgs e)
         {
-            dgvExamination.DataSource = db.vExaminations.
-                Select (examinationSource => new {
-                        examinationSource.EmployeeSurname,
-                        examinationSource.EmployeeName,
-                        examinationSource.Date
-                }).ToList();
+            display();
         }
 
         private void btnAddExamination_Click(object sender, EventArgs e)
@@ -58,6 +53,24 @@ namespace KWZP2019
                            examinationSource.EmployeeName,
                            examinationSource.Date
                    }).ToList();
+        }
+
+        void display()
+        {
+            dgvExamination.DataSource = db.vExaminations.
+                Select(examinationSource => new {
+                    examinationSource.EmployeeSurname,
+                    examinationSource.EmployeeName,
+                    examinationSource.Date
+                }).ToList();
+
+            dgvExamination.Columns[0].HeaderText = "Nazwisko";
+            dgvExamination.Columns[1].HeaderText = "Imię";
+            dgvExamination.Columns[2].HeaderText = "Data ważności badań lekarskich";
+
+            dgvExamination.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvExamination.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvExamination.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
     }
 }

@@ -43,6 +43,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.tbEducationSearch = new System.Windows.Forms.TextBox();
             this.pbEducationForm = new System.Windows.Forms.PictureBox();
+            this.cbEmployeeList = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEducationForm)).BeginInit();
             this.SuspendLayout();
@@ -50,112 +51,111 @@
             // dgvEducation
             // 
             this.dgvEducation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEducation.Location = new System.Drawing.Point(22, 115);
-            this.dgvEducation.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEducation.Location = new System.Drawing.Point(29, 142);
+            this.dgvEducation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEducation.Name = "dgvEducation";
+            this.dgvEducation.RowHeadersVisible = false;
             this.dgvEducation.RowTemplate.Height = 24;
-            this.dgvEducation.Size = new System.Drawing.Size(525, 354);
+            this.dgvEducation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEducation.Size = new System.Drawing.Size(700, 436);
             this.dgvEducation.TabIndex = 0;
             // 
             // tbEmployeeName
             // 
-            this.tbEmployeeName.Location = new System.Drawing.Point(795, 230);
-            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmployeeName.Location = new System.Drawing.Point(1060, 283);
+            this.tbEmployeeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmployeeName.Name = "tbEmployeeName";
-            this.tbEmployeeName.Size = new System.Drawing.Size(76, 20);
+            this.tbEmployeeName.Size = new System.Drawing.Size(100, 22);
             this.tbEmployeeName.TabIndex = 1;
             // 
             // tbEmployeeSurname
             // 
-            this.tbEmployeeSurname.Location = new System.Drawing.Point(795, 267);
-            this.tbEmployeeSurname.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmployeeSurname.Location = new System.Drawing.Point(1060, 329);
+            this.tbEmployeeSurname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmployeeSurname.Name = "tbEmployeeSurname";
-            this.tbEmployeeSurname.Size = new System.Drawing.Size(76, 20);
+            this.tbEmployeeSurname.Size = new System.Drawing.Size(100, 22);
             this.tbEmployeeSurname.TabIndex = 2;
             // 
             // cbEducationLevel
             // 
             this.cbEducationLevel.FormattingEnabled = true;
-            this.cbEducationLevel.Location = new System.Drawing.Point(795, 304);
-            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.cbEducationLevel.Location = new System.Drawing.Point(1060, 374);
+            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEducationLevel.Name = "cbEducationLevel";
-            this.cbEducationLevel.Size = new System.Drawing.Size(92, 21);
+            this.cbEducationLevel.Size = new System.Drawing.Size(121, 24);
             this.cbEducationLevel.TabIndex = 4;
             // 
             // dtpGraduationDate
             // 
-            this.dtpGraduationDate.Location = new System.Drawing.Point(795, 345);
-            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpGraduationDate.Location = new System.Drawing.Point(1060, 425);
+            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpGraduationDate.Name = "dtpGraduationDate";
-            this.dtpGraduationDate.Size = new System.Drawing.Size(202, 20);
+            this.dtpGraduationDate.Size = new System.Drawing.Size(268, 22);
             this.dtpGraduationDate.TabIndex = 8;
             // 
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(657, 237);
-            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmployeeName.Location = new System.Drawing.Point(876, 292);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(26, 13);
+            this.lblEmployeeName.Size = new System.Drawing.Size(33, 17);
             this.lblEmployeeName.TabIndex = 9;
             this.lblEmployeeName.Text = "Imię";
             // 
             // lblEmployeeSurname
             // 
             this.lblEmployeeSurname.AutoSize = true;
-            this.lblEmployeeSurname.Location = new System.Drawing.Point(657, 270);
-            this.lblEmployeeSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmployeeSurname.Location = new System.Drawing.Point(876, 332);
             this.lblEmployeeSurname.Name = "lblEmployeeSurname";
-            this.lblEmployeeSurname.Size = new System.Drawing.Size(53, 13);
+            this.lblEmployeeSurname.Size = new System.Drawing.Size(67, 17);
             this.lblEmployeeSurname.TabIndex = 10;
             this.lblEmployeeSurname.Text = "Nazwisko";
             // 
             // lblEducationLevel
             // 
             this.lblEducationLevel.AutoSize = true;
-            this.lblEducationLevel.Location = new System.Drawing.Point(657, 312);
-            this.lblEducationLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEducationLevel.Location = new System.Drawing.Point(876, 384);
             this.lblEducationLevel.Name = "lblEducationLevel";
-            this.lblEducationLevel.Size = new System.Drawing.Size(114, 13);
+            this.lblEducationLevel.Size = new System.Drawing.Size(146, 17);
             this.lblEducationLevel.TabIndex = 11;
             this.lblEducationLevel.Text = "Stopień wykształcenia";
             // 
             // lblGraduationDate
             // 
             this.lblGraduationDate.AutoSize = true;
-            this.lblGraduationDate.Location = new System.Drawing.Point(657, 351);
-            this.lblGraduationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGraduationDate.Location = new System.Drawing.Point(876, 432);
             this.lblGraduationDate.Name = "lblGraduationDate";
-            this.lblGraduationDate.Size = new System.Drawing.Size(127, 13);
+            this.lblGraduationDate.Size = new System.Drawing.Size(165, 17);
             this.lblGraduationDate.TabIndex = 12;
             this.lblGraduationDate.Text = "Data ukończenia studiów";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(63, 541);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Location = new System.Drawing.Point(84, 666);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(71, 28);
+            this.btnClear.Size = new System.Drawing.Size(95, 34);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Wyczyść";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(825, 513);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(1100, 631);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(73, 28);
+            this.btnAdd.Size = new System.Drawing.Size(97, 34);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(216, 541);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdit.Location = new System.Drawing.Point(288, 666);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(77, 28);
+            this.btnEdit.Size = new System.Drawing.Size(103, 34);
             this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "Edytuj";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -163,10 +163,10 @@
             // tbEducationSearch
             // 
             this.tbEducationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbEducationSearch.Location = new System.Drawing.Point(22, 57);
-            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEducationSearch.Location = new System.Drawing.Point(29, 70);
+            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEducationSearch.Name = "tbEducationSearch";
-            this.tbEducationSearch.Size = new System.Drawing.Size(525, 26);
+            this.tbEducationSearch.Size = new System.Drawing.Size(699, 30);
             this.tbEducationSearch.TabIndex = 16;
             this.tbEducationSearch.TextChanged += new System.EventHandler(this.tbEducationSearch_TextChanged);
             // 
@@ -175,19 +175,33 @@
             this.pbEducationForm.BackColor = System.Drawing.Color.Transparent;
             this.pbEducationForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEducationForm.BackgroundImage")));
             this.pbEducationForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbEducationForm.Location = new System.Drawing.Point(576, 17);
+            this.pbEducationForm.Location = new System.Drawing.Point(768, 21);
+            this.pbEducationForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbEducationForm.Name = "pbEducationForm";
-            this.pbEducationForm.Size = new System.Drawing.Size(581, 716);
+            this.pbEducationForm.Size = new System.Drawing.Size(775, 881);
             this.pbEducationForm.TabIndex = 17;
             this.pbEducationForm.TabStop = false;
             // 
+            // cbEmployeeList
+            // 
+            this.cbEmployeeList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbEmployeeList.FormattingEnabled = true;
+            this.cbEmployeeList.Location = new System.Drawing.Point(1060, 295);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmployeeList.Name = "cbEmployeeList";
+            this.cbEmployeeList.Size = new System.Drawing.Size(344, 30);
+            this.cbEmployeeList.TabIndex = 37;
+            // 
             // EducationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.tbEducationSearch);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -203,7 +217,7 @@
             this.Controls.Add(this.dgvEducation);
             this.Controls.Add(this.pbEducationForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EducationForm";
@@ -233,5 +247,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox tbEducationSearch;
         private System.Windows.Forms.PictureBox pbEducationForm;
+        private System.Windows.Forms.ComboBox cbEmployeeList;
     }
 }

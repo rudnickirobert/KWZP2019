@@ -68,13 +68,26 @@ namespace KWZP2019
                         employeesSelect.PhoneNumber,
                         employeesSelect.City
                 }).ToList();
+
+            dgvEmloyees.Columns[0].HeaderText = "Nazwisko";
+            dgvEmloyees.Columns[1].HeaderText = "Imię";
+            dgvEmloyees.Columns[2].HeaderText = "Stanowisko";
+            dgvEmloyees.Columns[3].HeaderText = "Numer";
+            dgvEmloyees.Columns[4].HeaderText = "Miejsce zamieszkania";
+
+            dgvEmloyees.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmloyees.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmloyees.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmloyees.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmloyees.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             String stddetails = "{0, -40}{1, 0}";
 
             lbWarningsContracts.Items.Add(String.Format(stddetails,
                 "Pracownicy, którym kończy się umowa: ", db.vHRContracts.Count()));
 
             lbWarningsExamination.Items.Add(String.Format(stddetails, 
-                "Pracownicy, którym kończą się badania lekarskie: ", db.vHRExaminations.Count()));
+                "Pracownicy, z krótkim terminem badań lekarskich: ", db.vHRExaminations.Count()));
         }
 
         private void tbEmployeeSearching_TextChanged(object sender, EventArgs e)

@@ -33,12 +33,29 @@ namespace KWZP2019
                         contractsSelect.WorkplaceTrainingDate,
                         contractsSelect.HealTestDate
                 }).ToList();
+
+            dgvContracts.Columns[0].HeaderText = "Nazwisko";
+            dgvContracts.Columns[1].HeaderText = "Imię";
+            dgvContracts.Columns[2].HeaderText = "Pozycja";
+            dgvContracts.Columns[3].HeaderText = "Początek";
+            dgvContracts.Columns[4].HeaderText = "Koniec";
+            dgvContracts.Columns[5].HeaderText = "Pensja";
+            dgvContracts.Columns[6].HeaderText = "Data szkolenia";
+
+            dgvContracts.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvContracts.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvContracts.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvContracts.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvContracts.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvContracts.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvContracts.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void tbSearchContract_TextChanged(object sender, EventArgs e)
         {
             dgvContracts.DataSource = db.vContracts.
-                Where (contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)).
+                Where (contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)
+                                 && contracts.EmployeeName.StartsWith(tbSearchContractName.Text)).
                 Select (contractsSelect => new {
                         contractsSelect.EmployeeSurname,
                         contractsSelect.EmployeeName,
@@ -49,6 +66,29 @@ namespace KWZP2019
                         contractsSelect.WorkplaceTrainingDate,
                         contractsSelect.HealTestDate
                 }).ToList();
+        }
+
+        private void tbSearchContractName_TextChanged(object sender, EventArgs e)
+        {
+            dgvContracts.DataSource = db.vContracts.
+                Where(contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)
+                                && contracts.EmployeeName.StartsWith(tbSearchContractName.Text)).
+                Select(contractsSelect => new {
+                    contractsSelect.EmployeeSurname,
+                    contractsSelect.EmployeeName,
+                    contractsSelect.Workplace,
+                    contractsSelect.StartDate,
+                    contractsSelect.EndDate,
+                    contractsSelect.Salary,
+                    contractsSelect.WorkplaceTrainingDate,
+                    contractsSelect.HealTestDate
+                }).ToList();
+        }
+
+        private void btnAddTraining_Click(object sender, EventArgs e)
+        {
+            AddContract addContract = new AddContract();
+            addContract.Show();
         }
     }
 }
