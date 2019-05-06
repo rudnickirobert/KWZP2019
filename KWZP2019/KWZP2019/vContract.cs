@@ -14,14 +14,13 @@ namespace KWZP2019
     
     public partial class vContract
     {
-        public int IdEmployee { get; set; }
+        public int IdContract { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<decimal> Salary { get; set; }
         public Nullable<System.DateTime> WorkplaceTrainingDate { get; set; }
-        public Nullable<System.DateTime> HealTestDate { get; set; }
         public string Workplace { get; set; }
     }
 }

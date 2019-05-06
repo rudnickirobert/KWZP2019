@@ -15,6 +15,7 @@ namespace KWZP2019
     public partial class vEducationForm
     {
         public int IdEmployee { get; set; }
+        public int IdEducation { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
         public string EducationLevel { get; set; }

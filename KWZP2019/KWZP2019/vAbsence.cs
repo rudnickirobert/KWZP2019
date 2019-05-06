@@ -15,6 +15,7 @@ namespace KWZP2019
     public partial class vAbsence
     {
         public int IdEmployee { get; set; }
+        public int IdAbsence { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
         public Nullable<System.DateTime> StartOfAbsence { get; set; }
