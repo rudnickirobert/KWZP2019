@@ -285,6 +285,7 @@
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
           <Property Name="Markup" Type="float" Nullable="false" />
+          <Property Name="NewOrderInfo" Type="bit" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -808,10 +809,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeSalesDepartment' does 
 warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeSD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vEmployeeSD">
           <Key>
-            <PropertyRef Name="Imię" />
+            <PropertyRef Name="Nr Obsługi" />
+            <PropertyRef Name="Data przyjęcia" />
+            <PropertyRef Name="Nazwa części" />
+            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Jednostka" />
           </Key>
-          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr Obsługi" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Data przyjęcia" Type="datetime" Nullable="false" />
+          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ilość" Type="int" Nullable="false" />
+          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -975,16 +983,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have 
 warning 6002: The table/view 'RoofingCompany.dbo.vOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOrder">
           <Key>
-            <PropertyRef Name="Numer zamówienia" />
-            <PropertyRef Name="Data zamówienia" />
-            <PropertyRef Name="Wycena" />
-            <PropertyRef Name="Marża" />
+            <PropertyRef Name="Nazwa części" />
+            <PropertyRef Name="Typ części" />
+            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="Stan magazynowy" />
           </Key>
-          <Property Name="Numer zamówienia" Type="int" Nullable="false" />
-          <Property Name="Data zamówienia" Type="datetime" Nullable="false" />
-          <Property Name="Wycena" Type="money" Nullable="false" />
-          <Property Name="Marża" Type="float" Nullable="false" />
-          <Property Name="Pracownik odpowiedzialny" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Typ części" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stan magazynowy" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2188,8 +2195,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vEmployeeSD" EntityType="Self.vEmployeeSD" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vEmployeeSD].[Imię] AS [Imię], 
-    [vEmployeeSD].[Nazwisko] AS [Nazwisko]
+    [vEmployeeSD].[Nr Obsługi] AS [Nr Obsługi], 
+    [vEmployeeSD].[Data przyjęcia] AS [Data przyjęcia], 
+    [vEmployeeSD].[Nazwa części] AS [Nazwa części], 
+    [vEmployeeSD].[Ilość] AS [Ilość], 
+    [vEmployeeSD].[Jednostka] AS [Jednostka]
     FROM [dbo].[vEmployeeSD] AS [vEmployeeSD]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vExamination" EntityType="Self.vExamination" store:Type="Views" store:Schema="dbo">
@@ -2296,11 +2306,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vOrder" EntityType="Self.vOrder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vOrder].[Numer zamówienia] AS [Numer zamówienia], 
-    [vOrder].[Data zamówienia] AS [Data zamówienia], 
-    [vOrder].[Wycena] AS [Wycena], 
-    [vOrder].[Marża] AS [Marża], 
-    [vOrder].[Pracownik odpowiedzialny] AS [Pracownik odpowiedzialny]
+    [vOrder].[Nazwa części] AS [Nazwa części], 
+    [vOrder].[Typ części] AS [Typ części], 
+    [vOrder].[Jednostka] AS [Jednostka], 
+    [vOrder].[Stan magazynowy] AS [Stan magazynowy]
     FROM [dbo].[vOrder] AS [vOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
@@ -3049,6 +3058,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Markup" Type="Double" Nullable="false" />
+          <Property Name="NewOrderInfo" Type="Boolean" />
           <NavigationProperty Name="Customer" Relationship="Self.FkOrderCustomerCustomer" FromRole="OrderCustomer" ToRole="Customer" />
           <NavigationProperty Name="Employee" Relationship="Self.FkOrderCustomerEmployee" FromRole="OrderCustomer" ToRole="Employee" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FkOrderDetailOrderCustomer" FromRole="OrderCustomer" ToRole="OrderDetail" />
@@ -3611,10 +3621,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
         </EntityType>
         <EntityType Name="vEmployeeSD">
           <Key>
-            <PropertyRef Name="Imię" />
+            <PropertyRef Name="Nr_Obsługi" />
+            <PropertyRef Name="Data_przyjęcia" />
+            <PropertyRef Name="Nazwa_części" />
+            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Jednostka" />
           </Key>
-          <Property Name="Imię" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_Obsługi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Data_przyjęcia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nazwa_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="Jednostka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="vExamination">
           <Key>
@@ -3750,16 +3767,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
         </EntityType>
         <EntityType Name="vOrder">
           <Key>
-            <PropertyRef Name="Numer_zamówienia" />
-            <PropertyRef Name="Data_zamówienia" />
-            <PropertyRef Name="Wycena" />
-            <PropertyRef Name="Marża" />
+            <PropertyRef Name="Nazwa_części" />
+            <PropertyRef Name="Typ_części" />
+            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="Stan_magazynowy" />
           </Key>
-          <Property Name="Numer_zamówienia" Type="Int32" Nullable="false" />
-          <Property Name="Data_zamówienia" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Wycena" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="Marża" Type="Double" Nullable="false" />
-          <Property Name="Pracownik_odpowiedzialny" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Typ_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Jednostka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Stan_magazynowy" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vOrderDetail">
           <Key>
@@ -5396,6 +5412,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Markup" ColumnName="Markup" />
+                <ScalarProperty Name="NewOrderInfo" ColumnName="NewOrderInfo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5919,8 +5936,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="vEmployeeSDs">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeSD">
               <MappingFragment StoreEntitySet="vEmployeeSD">
-                <ScalarProperty Name="Imię" ColumnName="Imię" />
-                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Nr_Obsługi" ColumnName="Nr Obsługi" />
+                <ScalarProperty Name="Data_przyjęcia" ColumnName="Data przyjęcia" />
+                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6055,11 +6075,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="vOrders">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vOrder">
               <MappingFragment StoreEntitySet="vOrder">
-                <ScalarProperty Name="Numer_zamówienia" ColumnName="Numer zamówienia" />
-                <ScalarProperty Name="Data_zamówienia" ColumnName="Data zamówienia" />
-                <ScalarProperty Name="Wycena" ColumnName="Wycena" />
-                <ScalarProperty Name="Marża" ColumnName="Marża" />
-                <ScalarProperty Name="Pracownik_odpowiedzialny" ColumnName="Pracownik odpowiedzialny" />
+                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
+                <ScalarProperty Name="Typ_części" ColumnName="Typ części" />
+                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
+                <ScalarProperty Name="Stan_magazynowy" ColumnName="Stan magazynowy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
