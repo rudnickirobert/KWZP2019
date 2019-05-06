@@ -12,10 +12,12 @@ namespace KWZP2019
 {
     public partial class SalesDepartmentForm : Form
     {
+        private StartForm previousForm;
         private RoofingCompanyEntities db;
-        public SalesDepartmentForm(RoofingCompanyEntities db)
+        public SalesDepartmentForm(RoofingCompanyEntities db, StartForm form)
         {
             this.db = db;
+            this.previousForm = form;
             InitializeComponent();
         }
 
@@ -53,6 +55,8 @@ namespace KWZP2019
 
         private void returnToMainBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            previousForm.Show();
             this.Close();
         }
     }
