@@ -39,7 +39,7 @@ namespace KWZP2019
 
         private void suppliersBtn_Click(object sender, EventArgs e)
         {
-            SupplierForm supplierForm = new SupplierForm();
+            SupplierForm supplierForm = new SupplierForm(db);
             supplierForm.ShowDialog();
         }
 

@@ -14,9 +14,9 @@ namespace KWZP2019
     
     public partial class vOutputMagazine
     {
-        public int Numer_Procesu_Produkcji { get; set; }
         public string Kod_produktu { get; set; }
         public Nullable<int> Ilość { get; set; }
-        public Nullable<System.DateTime> Data_przyjęcia_na_magazyn { get; set; }
+        public System.DateTime Data_przyjęcia_na_magazyn { get; set; }
+        public int Numer_Procesu_Produkcji { get; set; }
     }
 }

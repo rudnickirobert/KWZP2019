@@ -545,13 +545,13 @@ insert into Customer values('Zdzisław Kręcinai', '602352148', 'zdzisiek58@gmai
 insert into Customer values('Krzysztof Kononowicz', '605987412', 'konon@pocztaonet.pl', 'Białystok',
 '05-813', 'Sosnowa', '43', '', '1021023158', ' ', '', '');
 
-insert into OrderCustomer values('2', '1', '2019-04-05 14:00', '5500', '20.0');
-insert into OrderCustomer values('2', '2', '2019-04-02 12:00', '6800', '30.0');
-insert into OrderCustomer values('3', '2', '2019-04-08 10:00', '1200', '40.0');
-insert into OrderCustomer values('1', '2', '2019-03-28 10:00', '5800', '10.0');
-insert into OrderCustomer values('5', '1', '2019-03-21 11:00', '9600', '10.0');
-insert into OrderCustomer values('4', '2', '2019-03-18 09:30', '4580', '50.0');
-insert into OrderCustomer values('2', '1', '2019-03-12 11:00', '12000', '15.0');
+insert into OrderCustomer values('2', '1', '2019-04-05 14:00', '5500', '0.2', '1');
+insert into OrderCustomer values('2', '2', '2019-04-02 12:00', '6800', '0.3', '1');
+insert into OrderCustomer values('3', '2', '2019-04-08 10:00', '1200', '0.4', '1');
+insert into OrderCustomer values('1', '2', '2019-03-28 10:00', '5800', '0.4', '1');
+insert into OrderCustomer values('5', '1', '2019-03-21 11:00', '9600', '0.1', '1');
+insert into OrderCustomer values('4', '2', '2019-03-18 09:30', '4580', '0.5', '1');
+insert into OrderCustomer values('2', '1', '2019-03-12 11:00', '12000', '0.15', '1');
 
 insert into OrderDetail values('1', '1', '100');
 insert into OrderDetail values('1', '2', '200');
@@ -3807,7 +3807,7 @@ values
 	('3109', '9', '5049.8', '792.77');
 	
 UPDATE OrderCustomer
-SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*(1+OrderCustomer.Markup/100))
+SET Cost = (TechnicalProductData.PricePerMeter*OrderDetail.Quantity*OrderCustomer.Markup)
 FROM OrderDetail
 JOIN OrderCustomer
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer

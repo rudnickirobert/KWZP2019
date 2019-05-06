@@ -92,12 +92,13 @@ namespace KWZP2019
                     db.SaveChanges();
                     using (OutMeasures outControlForm = new OutMeasures(db, startForm, qualityControlForm, this))
                     {
+                        this.Hide();
                         outControlForm.ShowDialog();
                         db.OutControls.First(i => i.IdProcess == procesNumber).EndControlDate = DateTime.Now;
                         db.SaveChanges();
                         db = new RoofingCompanyEntities();
                         refreshingData(procesNumber);
-                        
+                        this.Show();
                     }
                 }
             }
