@@ -31,7 +31,6 @@ namespace KWZP2019
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<decimal> Salary { get; set; }
-        public Nullable<System.DateTime> HealTestDate { get; set; }
         public Nullable<System.DateTime> WorkplaceTrainingDate { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
     }

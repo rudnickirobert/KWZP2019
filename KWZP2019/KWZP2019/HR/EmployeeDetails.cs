@@ -50,7 +50,6 @@ namespace KWZP2019
                         employeeDetailsSelect.StartDate,
                         employeeDetailsSelect.EndDate,
                         employeeDetailsSelect.Salary,
-                        employeeDetailsSelect.HealTestDate,
                         employeeDetailsSelect.WorkplaceTrainingDate,
                         employeeDetailsSelect.Date
             }).ToList();
@@ -75,7 +74,6 @@ namespace KWZP2019
                         employeeDetailsSelect.StartDate,
                         employeeDetailsSelect.EndDate,
                         employeeDetailsSelect.Salary,
-                        employeeDetailsSelect.HealTestDate,
                         employeeDetailsSelect.WorkplaceTrainingDate,
                         employeeDetailsSelect.Date
                     }).ToList();

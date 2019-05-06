@@ -29,13 +29,16 @@ namespace KWZP2019
         {
             display();
 
-            List<vEmployeeList> employeeList = db.vEmployeeLists.
+            /*List<vEmployeeList> employeeList = db.vEmployeeLists.
                 OrderBy(employeeListOrderBy => employeeListOrderBy.EmployeeSurname).ToList();
             foreach (vEmployeeList employee in employeeList)
             {
-                cbEmployeeList.Items.Add(String.Format("{0, -20} {1, -20}",
-                    employee.EmployeeSurname, employee.EmployeeName));
-            }
+                cbEmployeeList.Items.Add(String.Format("{0, 0} {1, 0} {2, 0}",
+                    employee.IdEmployee, employee.EmployeeSurname, employee.EmployeeName));
+            }*/
+
+            /*DataTable tabel = db.vEmployeeLists.ToList();
+            cbEmployeeList.DataSource = db.vEmployeeLists.ToList();*/
 
             List<vAbsenceType> absenceType = db.vAbsenceTypes.ToList();
             foreach (vAbsenceType absenceT in absenceType)
@@ -134,6 +137,7 @@ namespace KWZP2019
             db.Absences.Remove(AbsenceToRemove);
             MessageBox.Show("Rekord został usunięty");
             display();*/
+            MessageBox.Show(dgvAbsences.SelectedRows[0].Cells[1].Value.ToString());
         }
 
         void display()
@@ -144,7 +148,7 @@ namespace KWZP2019
                     absencesSelect.EmployeeName,
                     absencesSelect.AbscenceReason,
                     absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence
+                    absencesSelect.EndOfAbsence,
                 }).
                 OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
                 ToList();
@@ -164,7 +168,8 @@ namespace KWZP2019
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            string number = cbEmployeeList.SelectedItem.ToString();
+            MessageBox.Show(number.Substring(0, 41));
         }
     }
 }

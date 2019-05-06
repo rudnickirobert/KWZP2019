@@ -15,6 +15,7 @@ namespace KWZP2019
     public partial class vExamination
     {
         public int IdEmployee { get; set; }
+        public int IdMedicalExamination { get; set; }
         public string EmployeeSurname { get; set; }
         public string EmployeeName { get; set; }
         public Nullable<System.DateTime> Date { get; set; }

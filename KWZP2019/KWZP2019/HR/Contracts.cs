@@ -34,8 +34,7 @@ namespace KWZP2019
                         contractsSelect.StartDate,
                         contractsSelect.EndDate,
                         contractsSelect.Salary,
-                        contractsSelect.WorkplaceTrainingDate,
-                        contractsSelect.HealTestDate
+                        contractsSelect.WorkplaceTrainingDate
                 }).ToList();
 
             dgvContracts.Columns[0].HeaderText = "Nazwisko";
@@ -68,7 +67,6 @@ namespace KWZP2019
                         contractsSelect.EndDate,
                         contractsSelect.Salary,
                         contractsSelect.WorkplaceTrainingDate,
-                        contractsSelect.HealTestDate
                 }).ToList();
         }
 
@@ -85,7 +83,6 @@ namespace KWZP2019
                     contractsSelect.EndDate,
                     contractsSelect.Salary,
                     contractsSelect.WorkplaceTrainingDate,
-                    contractsSelect.HealTestDate
                 }).ToList();
         }
 
