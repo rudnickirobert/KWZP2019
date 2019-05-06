@@ -116,7 +116,7 @@
             this.acceptBtn.UseVisualStyleBackColor = true;
             this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
-
+            // priceTb
             // 
             this.priceTb.Location = new System.Drawing.Point(109, 219);
             this.priceTb.Margin = new System.Windows.Forms.Padding(2);
@@ -203,6 +203,7 @@
             this.Controls.Add(this.customerNameTb);
             this.Controls.Add(this.sentToProductionCb);
             this.Controls.Add(this.priceTb);
+            this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.priceLbl);
             this.Controls.Add(this.sentToProductionLbl);
             this.Controls.Add(this.markupLbl);

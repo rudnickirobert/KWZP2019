@@ -34,9 +34,12 @@ namespace KWZP2019
         //BUTTONS       //Return
         private void detailReturnBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            CustomerForm customerForm = new CustomerForm(db);
+            customerForm.ShowDialog();
             this.Close();
         }
-                        //Accept
+        //Accept
         private void detailAcceptBtn_Click(object sender, EventArgs e)
         {
             OrderDetail newOrderDetail = new OrderDetail();
@@ -80,7 +83,9 @@ namespace KWZP2019
             db.SaveChanges();
             this.Hide();
             MessageBox.Show("Dodano szczegół zamówienia");
-
+            CustomerForm customerForm = new CustomerForm(db);
+            customerForm.ShowDialog();
+            this.Close();
         }
     }
 }

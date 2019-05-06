@@ -47,6 +47,7 @@
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameLbl = new System.Windows.Forms.Label();
             this.searchTxt = new System.Windows.Forms.TextBox();
+            this.returnBtn = new System.Windows.Forms.Button();
             this.ordersDgv = new System.Windows.Forms.DataGridView();
             this.idOrderCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +82,7 @@
             // 
             // orderBtn
             // 
-            this.orderBtn.Location = new System.Drawing.Point(73, 383);
+            this.orderBtn.Location = new System.Drawing.Point(35, 347);
             this.orderBtn.Margin = new System.Windows.Forms.Padding(2);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(157, 55);
@@ -108,7 +109,7 @@
             this.kRSDataGridViewTextBoxColumn});
             this.customersDgv.DataSource = this.customerBindingSource;
             this.customersDgv.Location = new System.Drawing.Point(42, 67);
-            this.customersDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.customersDgv.Margin = new System.Windows.Forms.Padding(2);
             this.customersDgv.MultiSelect = false;
             this.customersDgv.Name = "customersDgv";
             this.customersDgv.RowTemplate.Height = 24;
@@ -205,11 +206,22 @@
             // searchTxt
             // 
             this.searchTxt.Location = new System.Drawing.Point(107, 0);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(2);
             this.searchTxt.Name = "searchTxt";
             this.searchTxt.Size = new System.Drawing.Size(161, 20);
             this.searchTxt.TabIndex = 18;
             this.searchTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTxt_KeyPress);
+            // 
+            // returnBtn
+            // 
+            this.returnBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.returnBtn.Location = new System.Drawing.Point(35, 720);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(107, 29);
+            this.returnBtn.TabIndex = 19;
+            this.returnBtn.Text = "Powrót";
+            this.returnBtn.UseVisualStyleBackColor = true;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // ordersDgv
             // 
@@ -227,10 +239,9 @@
             this.employeeDataGridViewTextBoxColumn,
             this.orderDetailsDataGridViewTextBoxColumn});
             this.ordersDgv.DataSource = this.orderCustomerBindingSource;
-            this.ordersDgv.Location = new System.Drawing.Point(26, 485);
-            this.ordersDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ordersDgv.Location = new System.Drawing.Point(35, 415);
             this.ordersDgv.Name = "ordersDgv";
-            this.ordersDgv.Size = new System.Drawing.Size(539, 235);
+            this.ordersDgv.Size = new System.Drawing.Size(719, 289);
             this.ordersDgv.TabIndex = 21;
             this.ordersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersDgv_CellContentClick);
             // 
@@ -289,10 +300,9 @@
             // 
             // addNewOrderDetailBtn
             // 
-            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(774, 401);
-            this.addNewOrderDetailBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(858, 363);
             this.addNewOrderDetailBtn.Name = "addNewOrderDetailBtn";
-            this.addNewOrderDetailBtn.Size = new System.Drawing.Size(104, 19);
+            this.addNewOrderDetailBtn.Size = new System.Drawing.Size(138, 23);
             this.addNewOrderDetailBtn.TabIndex = 22;
             this.addNewOrderDetailBtn.Text = "Dodaj szczegół ";
             this.addNewOrderDetailBtn.UseVisualStyleBackColor = true;
@@ -301,10 +311,9 @@
             // orderDetailsDgv
             // 
             this.orderDetailsDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderDetailsDgv.Location = new System.Drawing.Point(718, 485);
-            this.orderDetailsDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.orderDetailsDgv.Location = new System.Drawing.Point(760, 415);
             this.orderDetailsDgv.Name = "orderDetailsDgv";
-            this.orderDetailsDgv.Size = new System.Drawing.Size(315, 235);
+            this.orderDetailsDgv.Size = new System.Drawing.Size(420, 289);
             this.orderDetailsDgv.TabIndex = 23;
             // 
             // orderDetailBindingSource
@@ -320,11 +329,12 @@
             this.Controls.Add(this.orderDetailsDgv);
             this.Controls.Add(this.addNewOrderDetailBtn);
             this.Controls.Add(this.ordersDgv);
+            this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.searchTxt);
             this.Controls.Add(this.customersDgv);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.addNewCustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerForm";
@@ -346,6 +356,7 @@
         private System.Windows.Forms.DataGridView customersDgv;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.TextBox searchTxt;
+        private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.DataGridView ordersDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrderCustomerDataGridViewTextBoxColumn;

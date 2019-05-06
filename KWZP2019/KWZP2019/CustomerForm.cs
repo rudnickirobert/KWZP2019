@@ -14,23 +14,54 @@ namespace KWZP2019
 
     {
         private RoofingCompanyEntities db;
+        private SalesDepartmentForm previousForm;
         public CustomerForm(RoofingCompanyEntities db)
         {
             InitializeComponent();
             this.db = db;
+        }//OVERRIDE CONSTRUCTOR 
+        public CustomerForm(RoofingCompanyEntities db, SalesDepartmentForm previousForm)
+        {
+            InitializeComponent();
+            this.db = db;
+            this.previousForm = previousForm;
         }
         private void CustomerForm_Load(object sender, EventArgs e)
         {
+            //COST CALCULATION ALGORITHM
+            foreach (OrderCustomer order in db.OrderCustomers)
+            {
+                double temporaryCost = 0;
+                foreach (OrderDetail detail in db.OrderDetails)
+                {
+                    double detailCost = 0;
+                    double pricePerMeter = 0;
+                    foreach (TechnicalProductData productData in db.TechnicalProductDatas)
+                    {
+                        if (detail.IdProduct == productData.IdProduct)
+                        {
+                            pricePerMeter = productData.PricePerMeter;
+                            break;
+                        }
+                    }
+                    if (detail.IdOrderCustomer == order.IdOrderCustomer)
+                    {
+                        detailCost = detail.Quantity * pricePerMeter;
+                        temporaryCost = temporaryCost + detailCost;
+                    }
+                }
+                order.Cost = Convert.ToDecimal(temporaryCost * (1 + order.Markup));
+            }//END OF ALGORITHM
             customersDgv.DataSource = db.Customers.ToList();
         }
-        //BUTTONS   //ADD ORDER BUTTON
+        //BUTTONS  
         private void orderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value);
             addNewOrderForm.ShowDialog();
             this.Close();
-        }           //ADD ORDER DETAIL BUTTON
+        }       
         private void addNewOrderDetailBtn_Click(object sender, EventArgs e)
         {
             //EXCEPTION PROTECTION
@@ -44,16 +75,20 @@ namespace KWZP2019
                 AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, this.ordersDgv.CurrentRow.Cells[0].Value);
                 newOrderDetail.ShowDialog();
             }
+        }          
+        private void returnBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            previousForm.Show();
+            this.Close();
         }
         private void addNewCustomerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddNewCustomerForm newCustomer = new AddNewCustomerForm(db);
             newCustomer.ShowDialog();
-            RefreshGridCustomer();
             this.Close();
         }
-       
         //Metoda odświeżania klientów
         private void RefreshGridCustomer()
         {
@@ -102,13 +137,12 @@ namespace KWZP2019
         }
         private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(ordersDgv.CurrentRow.Cells[0].Value);
+            int idCustomer = Convert.ToInt32(ordersDgv.CurrentRow.Cells[0].Value);
             orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
-                                          where OrderDetail.Numer_zamówienia == id
+                                          where OrderDetail.Numer_zamówienia == idCustomer
                                           select OrderDetail).ToList();
             orderDetailsDgv.Columns[1].Visible = false;
         }
-
     }
 }
 
