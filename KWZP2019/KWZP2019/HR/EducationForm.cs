@@ -14,10 +14,14 @@ namespace KWZP2019
     public partial class EducationForm : Form
     {
         RoofingCompanyEntities db;
-        public EducationForm(RoofingCompanyEntities db)
+        StartForm startForm;
+        HR hr;
+        public EducationForm(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.hr = hr;
         }
 
         private void EducationForm_Load(object sender, EventArgs e)
@@ -96,6 +100,18 @@ namespace KWZP2019
                 }
                 MessageBox.Show("Prawidłowo dodano pracownika");
             }
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.hr.Show();
+            this.Hide();
         }
     }
 }
