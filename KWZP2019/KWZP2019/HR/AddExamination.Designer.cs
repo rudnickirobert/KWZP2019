@@ -32,10 +32,8 @@
             this.dtpExaminationDate = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbEmployeeList = new System.Windows.Forms.ComboBox();
-            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
-            this.lblPosition = new System.Windows.Forms.Label();
             this.lblEmployeeList = new System.Windows.Forms.Label();
             this.lblExaminationDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -84,18 +82,6 @@
             this.cbEmployeeList.Size = new System.Drawing.Size(344, 30);
             this.cbEmployeeList.TabIndex = 37;
             // 
-            // cbPosition
-            // 
-            this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.cbPosition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Location = new System.Drawing.Point(455, 150);
-            this.cbPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Size = new System.Drawing.Size(344, 30);
-            this.cbPosition.TabIndex = 38;
-            // 
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
@@ -142,19 +128,6 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.lblPosition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPosition.Location = new System.Drawing.Point(304, 160);
-            this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(115, 24);
-            this.lblPosition.TabIndex = 41;
-            this.lblPosition.Text = "Stanowisko";
-            // 
             // lblEmployeeList
             // 
             this.lblEmployeeList.AutoSize = true;
@@ -190,10 +163,8 @@
             this.ClientSize = new System.Drawing.Size(873, 487);
             this.Controls.Add(this.lblExaminationDate);
             this.Controls.Add(this.lblEmployeeList);
-            this.Controls.Add(this.lblPosition);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.dtpExaminationDate);
             this.Controls.Add(this.btnAdd);
@@ -214,10 +185,8 @@
         private System.Windows.Forms.DateTimePicker dtpExaminationDate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cbEmployeeList;
-        private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
-        private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Label lblEmployeeList;
         private System.Windows.Forms.Label lblExaminationDate;
     }

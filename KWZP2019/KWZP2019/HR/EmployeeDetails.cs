@@ -98,7 +98,7 @@ namespace KWZP2019
             dgvEmployeeDetails.Columns[14].HeaderText = "Koniec umowy";
             dgvEmployeeDetails.Columns[15].HeaderText = "Pensja";
             dgvEmployeeDetails.Columns[16].HeaderText = "Data treningu stanowiskowego";
-            dgvEmployeeDetails.Columns[17].HeaderText = "Termin ważności badań lekarskich";
+            dgvEmployeeDetails.Columns[17].HeaderText = "Data badania lekarskiego";
 
             dgvEmployeeDetails.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
