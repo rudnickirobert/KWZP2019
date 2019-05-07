@@ -27,8 +27,8 @@ namespace KWZP2019
             }
             else
             {
-                bool condition1 = float.TryParse(tbMultiplier.Text.Trim(), out float number);
-                if (condition1 == false)
+                bool numbersInTbMultipier = float.TryParse(tbMultiplier.Text.Trim(), out float number);
+                if (numbersInTbMultipier == false)
                 {
                     MessageBox.Show("W polu współczynnik nieobecności mogą znajdować się tylko cyfry");
                 }

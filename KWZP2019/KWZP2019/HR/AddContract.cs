@@ -35,8 +35,8 @@ namespace KWZP2019
                 }
                 else
                 {
-                    bool condition1 = long.TryParse(tbSalary.Text.Trim(), out long number);
-                    if (condition1 == false)
+                    bool numbersInTbSalary = long.TryParse(tbSalary.Text.Trim(), out long number);
+                    if (numbersInTbSalary == false)
                     {
                         MessageBox.Show("W polu Salaris mogą znajdować się tylko cyfry");
                     }

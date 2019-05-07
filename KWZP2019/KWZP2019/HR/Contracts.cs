@@ -85,9 +85,9 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Contract ContractsToRemove = new Contract { IdContract = int.Parse(dgvContracts.SelectedRows[0].Cells[7].Value.ToString()) };
-            db.Contracts.Attach(ContractsToRemove);
-            db.Contracts.Remove(ContractsToRemove);
+            Contract contractsToRemove = new Contract { IdContract = int.Parse(dgvContracts.SelectedRows[0].Cells[7].Value.ToString()) };
+            db.Contracts.Attach(contractsToRemove);
+            db.Contracts.Remove(contractsToRemove);
             db.SaveChanges();
             if (tbSearchContract.Text.Trim() == "" || tbSearchContractName.Text.Trim() == "")
             {
