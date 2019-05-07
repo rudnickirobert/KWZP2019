@@ -55,26 +55,26 @@ insert into Contract(StartDate, EndDate, Salary, IdEmployee, IdPosition, HealTes
 		('2018-06-13', '2020-06-13', 7000, 3, 1, '2018-06-10', '2018-06-13'),
 		('2018-03-16', '2020-03-16', 9000, 4, 1, '2018-03-12', '2018-03-16'),
 		('2018-02-15', '2020-02-15', 7500, 5, 1, '2018-02-13', '2018-02-15'),
-		('2018-03-22', '2020-03-22', 8000, 6, 1, '2018-03-20', '2018-03-23'),
-		('2018-05-06', '2020-05-06', 5000, 7, 2, '2018-05-05', '2018-05-06'),
+		('2018-05-22', '2020-03-22', 8000, 6, 1, '2018-03-20', '2018-03-23'),
+		('2018-05-16', '2020-05-06', 5000, 7, 2, '2018-05-05', '2018-05-06'),
 		('2018-06-13', '2020-06-13', 4000, 8, 2, '2018-06-10', '2018-06-13'),
 		('2018-03-16', '2020-03-16', 4500, 9, 3, '2018-03-12', '2018-03-16'),
 		('2018-02-15', '2020-02-15', 4000, 10, 3, '2018-02-13', '2018-02-15'),
 		('2018-03-22', '2019-05-22', 4000, 11, 4, '2018-03-20', '2018-03-23'),
 		('2018-05-06', '2019-05-06', 4700, 12, 4, '2018-05-05', '2018-05-06'),
 		('2018-06-13', '2020-06-13', 4300, 13, 4, '2018-06-10', '2018-06-13'),
-		('2018-03-16', '2020-03-16', 3700, 14, 4, '2018-03-12', '2018-03-16'),
-		('2018-02-15', '2020-02-15', 3500, 15, 4, '2018-02-13', '2018-02-15'),
-		('2018-03-22', '2020-03-22', 4500, 16, 4, '2018-03-20', '2018-03-23'),
-		('2018-05-06', '2020-05-06', 4000, 17, 4, '2018-05-05', '2018-05-06'),
+		('2018-05-16', '2020-03-16', 3700, 14, 4, '2018-03-12', '2018-03-16'),
+		('2018-06-15', '2020-02-15', 3500, 15, 4, '2018-02-13', '2018-02-15'),
+		('2018-06-22', '2020-03-22', 4500, 16, 4, '2018-03-20', '2018-03-23'),
+		('2018-06-06', '2020-05-06', 4000, 17, 4, '2018-05-05', '2018-05-06'),
 		('2018-06-13', '2019-07-13', 4200, 18, 4, '2018-06-10', '2018-06-13'),
-		('2018-03-16', '2020-03-16', 4100, 19, 4, '2018-03-12', '2018-03-16'),
-		('2018-02-15', '2020-02-15', 4700, 20, 4, '2018-02-13', '2018-02-15'),
-		('2018-03-22', '2020-03-22', 5000, 21, 5, '2018-03-20', '2018-03-23'),
-		('2018-05-06', '2020-05-06', 5100, 22, 5, '2018-05-05', '2018-05-06'),
+		('2018-05-26', '2020-03-16', 4100, 19, 4, '2018-03-12', '2018-03-16'),
+		('2018-05-15', '2020-02-15', 4700, 20, 4, '2018-02-13', '2018-02-15'),
+		('2018-05-22', '2020-03-22', 5000, 21, 5, '2018-03-20', '2018-03-23'),
+		('2018-06-06', '2020-05-06', 5100, 22, 5, '2018-05-05', '2018-05-06'),
 		('2018-06-13', '2019-06-13', 4700, 23, 6, '2018-06-10', '2018-06-13'),
-		('2018-03-16', '2020-03-16', 4500, 24, 6, '2018-03-12', '2018-03-16'),
-		('2018-02-15', '2020-02-15', 3500, 25, 7, '2018-02-13', '2018-02-15'),
+		('2018-06-16', '2020-03-16', 4500, 24, 6, '2018-03-12', '2018-03-16'),
+		('2018-06-15', '2020-02-15', 3500, 25, 7, '2018-02-13', '2018-02-15'),
 		('2018-03-22', '2020-03-22', 3500, 26, 7, '2018-03-20', '2018-03-23'),
 		('2018-05-06', '2020-05-06', 6500, 27, 8, '2018-05-05', '2018-05-06'),
 		('2018-06-13', '2019-07-13', 4500, 28, 9, '2018-06-10', '2018-06-13');
@@ -314,13 +314,13 @@ insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
 
 --SafetyControl
 insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
-		('Dąbek Jarosław 423452', 7, '2018-07-07 10:20:00', 'Brak zastosowania środków ochrony indywidualnej', 'TBF'),
-		('Dąbek Jarosław 423452', 11, '2018-08-18 10:30:00', 'Obciążenie przycisku maszyny narzędzdiem i obsługa maszyny jedną ręką zamiast dwiema', 'TBF'),
-		('Dąbek Jarosław 423452', 14, '2019-09-07 10:40:00', 'Pozostawienie włączonej maszyny bez nadzoru', 'TBF'),
-		('Dąbek Jarosław 423452', 15, '2018-10-07 10:50:00', 'Niezabezpieczenie kabli od elektronarzędzia', 'TBF'),
-		('Dąbek Jarosław 423452', 16, '2018-11-07 11:00:00', 'Stosowanie nieodpowiednich narzędzi do wykonywanej pracy', 'TBF'),
-		('Tomanek Jerzy 434444', 27, '2019-01-07 12:00:00', 'Złe ustawienie krzesła przy stanowisku biurowym, grożące wadom kręgosłupa', 'TBF'),
-		('Tomanek Jerzy 434444', 25, '2019-03-07 11:15:00', 'Niezastosowanie okularów wymaganych do pracy z komputerem', 'TBF');
+		('Dąbek Jarosław', 7, '2018-07-07 10:20:00', 'Brak zastosowania środków ochrony indywidualnej', 'TBF'),
+		('Dąbek Jarosław', 11, '2018-08-18 10:30:00', 'Obciążenie przycisku maszyny narzędziem i obsługa maszyny jedną ręką zamiast dwiema', 'TBF'),
+		('Dąbek Jarosław', 14, '2019-09-07 10:40:00', 'Pozostawienie włączonej maszyny bez nadzoru', 'TBF'),
+		('Dąbek Jarosław', 15, '2018-10-07 10:50:00', 'Niezabezpieczenie kabli od elektronarzędzia', 'TBF'),
+		('Dąbek Jarosław', 16, '2018-11-07 11:00:00', 'Stosowanie nieodpowiednich narzędzi do wykonywanej pracy', 'TBF'),
+		('Tomanek Jerzy', 27, '2019-01-07 12:00:00', 'Złe ustawienie krzesła przy stanowisku biurowym, grożące wadom kręgosłupa', 'TBF'),
+		('Tomanek Jerzy', 25, '2019-03-07 11:15:00', 'Niezastosowanie okularów wymaganych do pracy z komputerem', 'TBF');
 
 --SafetyTraining
 insert into SafetyTraining (IdEmployee, TrainingDate) values
@@ -329,36 +329,36 @@ insert into SafetyTraining (IdEmployee, TrainingDate) values
 		(3, '2018-06-13 08:00:00'),
 		(4, '2018-03-16 08:00:00'),
 		(5, '2018-02-15 08:00:00'),
-		(6, '2018-03-22 08:00:00'),
-		(7, '2018-05-06 08:00:00'),
+		(6, '2018-05-22 08:00:00'),
+		(7, '2018-05-16 08:00:00'),
 		(8, '2018-06-13 08:00:00'),
 		(9, '2018-03-16 08:00:00'),
 		(10, '2018-02-15 08:00:00'),
 		(11, '2018-03-22 08:00:00'),
 		(12, '2018-05-06 08:00:00'),
 		(13, '2018-06-13 08:00:00'),
-		(14, '2018-03-16 08:00:00'),
-		(15, '2018-02-15 08:00:00'),
-		(16, '2018-03-22 08:00:00'),
-		(17, '2018-05-06 08:00:00'),
+		(14, '2018-05-16 08:00:00'),
+		(15, '2018-06-15 08:00:00'),
+		(16, '2018-06-22 08:00:00'),
+		(17, '2018-06-06 08:00:00'),
 		(18, '2018-06-13 08:00:00'),
-		(19, '2018-03-16 08:00:00'),
-		(20, '2018-02-15 08:00:00'),
-		(21, '2018-03-22 08:00:00'),
-		(22, '2018-05-06 08:00:00'),
+		(19, '2018-05-26 08:00:00'),
+		(20, '2018-05-15 08:00:00'),
+		(21, '2018-05-22 08:00:00'),
+		(22, '2018-06-06 08:00:00'),
 		(23, '2018-06-13 08:00:00'),
-		(24, '2018-03-16 08:00:00'),
-		(25, '2018-02-15 08:00:00'),
+		(24, '2018-06-16 08:00:00'),
+		(25, '2018-06-15 08:00:00'),
 		(26, '2018-03-22 08:00:00'),
 		(27, '2018-05-06 08:00:00'),
 		(28, '2018-06-13 08:00:00');
 
 --SemiFinished
-/*grubo�ci blachy u Pruszy�skiego: 0,5; 0,7, 1; 1,25
-kolory G - grafit, C - ceg�a, W - wi�nia, B - br�z, X - czer�
+/*grubości blachy u Pruszyńskiego: 0,5; 0,7, 1; 1,25
+kolory G - grafit, C - cegła, W - wiśnia, B - brąz, X - czerń
 po # numer rolki
 jednostki: mm, kg
-przyk�adowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
+przykładowa rolka https://sprzedajemy.pl/blacha-aluminiowa-0-7-mm-konstancin-jeziorna-2-a1d299-nr58670589*/
 insert into SemiFinished (SfCode, Thickness, Width, SfWeight, Color, ChemicalComposition) values
 		('C05#1', 0.5, 1000, 580, 'cegła', 'C, Fe, Ni, Cr'),
 		('G05#1', 0.5, 1000, 580, 'grafit', 'C, Fe, Ni, Cr'),
@@ -376,13 +376,14 @@ insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
 
 
 		--Product
-/*TD - trapez du�y, TM - trapez ma�y P - p�aski, D - dach�wka, F - falisty*/
+/*TD - trapez duży, TM - trapez mały P - płaski, D - dachówka, F - falisty*/
 insert into Product (IdSemiFinished, ProductCode, IdTechnology, InputDate,InProduction) values
 		(1, 'C05#1TM', 1, '2019-01-07 10:30:00',1),
 		(2, 'G05#1D', 4, '2019-01-07 10:40:00',1),
 		(3, 'C07#1TD', 2, '2019-01-07 10:50:00',0),
 		(4, 'W10#1F', 5, '2019-01-07 11:00:00',1),
 		(5, 'B125#1P', 3, '2019-01-07 11:10:00',1);
+
 --TechnicalProductData
 insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values
 		(1, '', 800, 50, 5000, 40),
@@ -390,23 +391,6 @@ insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Len
 		(3, '', 800, 48, 5000, 38),
 		(4, '', 800, 55, 5000, 35),
 		(5, '', 800, 57, 5000, 40);
-
-
-/*Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '1', BulkColumn, '800', '50', '5000', '40'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
-Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '2', BulkColumn, '800', '55', '5000', '45'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
-Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '3' BulkColumn, '800', '48', '5000', '38'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
-Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '4' BulkColumn, '800', '55', '5000', '35'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
-Insert Into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter)
-Select '5' BulkColumn, '800', '57', '5000', '40'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
 
 --UR
 
