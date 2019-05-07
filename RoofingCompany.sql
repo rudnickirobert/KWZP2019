@@ -982,9 +982,12 @@ GO
 
 CREATE VIEW vHRExamination
 AS
-SELECT IdMedicalExamination
-FROM MedicalExamination
-
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Position.Workplace, Position.VailidityOfMedicalExam, (ISNULL(MedicalExamination.Date, '2000-01-01')) as PreviousExamination, (ISNULL(DATEADD(day, VailidityOfMedicalExam, MedicalExamination.Date),CONVERT(date,GETDATE()))) as NextExamination
+FROM Employee 
+inner JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+inner JOIN Position ON Contract.IdPosition = Position.IdPosition 
+left outer JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
+Where (Contract.EndDate > GETDATE()) AND (DATEADD(Day, VailidityOfMedicalExam,(ISNULL(MedicalExamination.Date,'2000-01-01')))) < GETDATE()+14
 GO
 
 CREATE VIEW vAbsenceType
