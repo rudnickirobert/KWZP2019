@@ -99,15 +99,25 @@ namespace KWZP2019
 
         void fill()
         {
-            tbFirstName.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.EmployeeSurname}).First().ToString().Substring(20, 8);
-            tbLastName.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.EmployeeName }).First().ToString();
-            tbZipCode.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.ZipCode }).First().ToString();
-            tbCity.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.City }).First().ToString();
-            tbStreet.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.Street }).First().ToString();
-            tbHouseNumber.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.HouseNumber }).First().ToString();
-            tbApartmentNumber.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.ApartmentNum }).First().ToString();
-            tbPhoneNumber.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PhoneNumber }).First().ToString();
-            tbPESEL.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PESEL }).First().ToString();
+            int lenght1 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.EmployeeSurname }).First().ToString().Length -1;
+            int lenght2 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.EmployeeName }).First().ToString().Length -1;
+            int lenght3 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.ZipCode }).First().ToString().Length -1;
+            int lenght4 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.City }).First().ToString().Length -1;
+            int lenght5 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.Street }).First().ToString().Length -1;
+            int lenght6 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.HouseNumber }).First().ToString().Length -1;
+            int lenght7 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.ApartmentNum }).First().ToString().Length -1;
+            int lenght8 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PhoneNumber }).First().ToString().Length -1;
+            int lenght9 = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PESEL }).First().ToString().Length -1;
+
+            tbFirstName.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.EmployeeSurname}).First().ToString().Substring(20, lenght1 -20);
+            tbLastName.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.EmployeeName }).First().ToString().Substring(17, lenght2 -17);
+            tbZipCode.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.ZipCode }).First().ToString().Substring(12, lenght3 -12);
+            tbCity.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.City }).First().ToString().Substring(9, lenght4 -9);
+            tbStreet.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.Street }).First().ToString().Substring(11, lenght5 -11);
+            tbHouseNumber.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.HouseNumber }).First().ToString().Substring(16, lenght6 -16);
+            tbApartmentNumber.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.ApartmentNum }).First().ToString().Substring(17, lenght7 -17);
+            tbPhoneNumber.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PhoneNumber }).First().ToString().Substring(16, lenght8 -16);
+            tbPESEL.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PESEL }).First().ToString().Substring(10, lenght9 -10);
         }
 
     }
