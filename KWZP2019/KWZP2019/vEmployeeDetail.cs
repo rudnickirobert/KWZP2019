@@ -15,23 +15,23 @@ namespace KWZP2019
     public partial class vEmployeeDetail
     {
         public int IdEmployee { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeSurname { get; set; }
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string Street { get; set; }
-        public string HouseNumber { get; set; }
-        public string ApartmentNum { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Nazwisko { get; set; }
+        public string Imię { get; set; }
+        public string Kod_pocztowy { get; set; }
+        public string Miasto { get; set; }
+        public string Ulica { get; set; }
+        public string Nr_Domu { get; set; }
+        public string Nr_lokalu { get; set; }
+        public string Nr_telefonu { get; set; }
         public string PESEL { get; set; }
-        public string EducationLevel { get; set; }
-        public string DegreeShort { get; set; }
-        public Nullable<System.DateTime> GraduationDate { get; set; }
-        public string Workplace { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public Nullable<decimal> Salary { get; set; }
-        public Nullable<System.DateTime> WorkplaceTrainingDate { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public string Stopień_wykształcenia { get; set; }
+        public string Tytułu_naukowe { get; set; }
+        public Nullable<System.DateTime> Data_ukończenia_studiów { get; set; }
+        public string Stanowisko { get; set; }
+        public Nullable<System.DateTime> Początek_umowy { get; set; }
+        public Nullable<System.DateTime> Koniec_umowy { get; set; }
+        public Nullable<decimal> Wynagrodzenie { get; set; }
+        public Nullable<System.DateTime> rening_Stanowiskowy { get; set; }
+        public Nullable<System.DateTime> Data_badania_lekarskiego { get; set; }
     }
 }

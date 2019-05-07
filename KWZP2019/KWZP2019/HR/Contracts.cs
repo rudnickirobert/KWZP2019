@@ -32,36 +32,18 @@ namespace KWZP2019
         private void tbSearchContract_TextChanged(object sender, EventArgs e)
         {
             dgvContracts.DataSource = db.vContracts.
-                Where (contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)
-                                 && contracts.EmployeeName.StartsWith(tbSearchContractName.Text)).
-                Select (contractsSelect => new {
-                        contractsSelect.EmployeeSurname,
-                        contractsSelect.EmployeeName,
-                        contractsSelect.Workplace,
-                        contractsSelect.StartDate,
-                        contractsSelect.EndDate,
-                        contractsSelect.Salary,
-                        contractsSelect.WorkplaceTrainingDate,
-                        contractsSelect.IdContract }).
-                OrderByDescending(ContractsOrderBy => ContractsOrderBy.StartDate).
+                Where (contracts => contracts.Nazwisko.StartsWith(tbSearchContract.Text)
+                                 && contracts.Imię.StartsWith(tbSearchContractName.Text)).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Początek).
                 ToList();
         }
 
         private void tbSearchContractName_TextChanged(object sender, EventArgs e)
         {
             dgvContracts.DataSource = db.vContracts.
-                Where(contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)
-                                && contracts.EmployeeName.StartsWith(tbSearchContractName.Text)).
-                Select (contractsSelect => new {
-                        contractsSelect.EmployeeSurname,
-                        contractsSelect.EmployeeName,
-                        contractsSelect.Workplace,
-                        contractsSelect.StartDate,
-                        contractsSelect.EndDate,
-                        contractsSelect.Salary,
-                        contractsSelect.WorkplaceTrainingDate,
-                        contractsSelect.IdContract }).
-                OrderByDescending(ContractsOrderBy => ContractsOrderBy.StartDate).
+                Where(contracts => contracts.Nazwisko.StartsWith(tbSearchContract.Text)
+                                && contracts.Imię.StartsWith(tbSearchContractName.Text)).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Początek).
                 ToList();
         }
 
@@ -85,7 +67,7 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Contract contractsToRemove = new Contract { IdContract = int.Parse(dgvContracts.SelectedRows[0].Cells[7].Value.ToString()) };
+            Contract contractsToRemove = new Contract { IdContract = int.Parse(dgvContracts.SelectedRows[0].Cells[0].Value.ToString()) };
             db.Contracts.Attach(contractsToRemove);
             db.Contracts.Remove(contractsToRemove);
             db.SaveChanges();
@@ -103,27 +85,10 @@ namespace KWZP2019
         void display()
         {
             dgvContracts.DataSource = db.vContracts.
-                Select (contractsSelect => new {
-                        contractsSelect.EmployeeSurname,
-                        contractsSelect.EmployeeName,
-                        contractsSelect.Workplace,
-                        contractsSelect.StartDate,
-                        contractsSelect.EndDate,
-                        contractsSelect.Salary,
-                        contractsSelect.WorkplaceTrainingDate,
-                        contractsSelect.IdContract }).
-                OrderByDescending(ContractsOrderBy => ContractsOrderBy.StartDate).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Początek).
                 ToList();
 
-            dgvContracts.Columns[7].Visible = false;
-
-            dgvContracts.Columns[0].HeaderText = "Nazwisko";
-            dgvContracts.Columns[1].HeaderText = "Imię";
-            dgvContracts.Columns[2].HeaderText = "Pozycja";
-            dgvContracts.Columns[3].HeaderText = "Początek";
-            dgvContracts.Columns[4].HeaderText = "Koniec";
-            dgvContracts.Columns[5].HeaderText = "Pensja";
-            dgvContracts.Columns[6].HeaderText = "Data szkolenia";
+            dgvContracts.Columns[0].Visible = false;
 
             dgvContracts.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvContracts.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;

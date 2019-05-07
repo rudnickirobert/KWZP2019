@@ -856,7 +856,7 @@ GO
 
 CREATE VIEW vAbsences
 AS
-SELECT Employee.IdEmployee, IdAbsence, EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
+SELECT IdAbsence, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], AbscenceReason [Powód], StartOfAbsence as [Początek], EndOfAbsence [Koniec], Employee.IdEmployee
 FROM Absence
 INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
 INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
@@ -864,7 +864,7 @@ INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
 GO
 CREATE VIEW	vAddTraining
 AS
-SELECT Employee.IdEmployee ,IdTraining, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, Cast(TrainingPrice as decimal(10,2)) as TrainingPrice
+SELECT IdTraining, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], TrainingName as [Nazwa], TrainingStartDate as [Początek], TrainingEndDate as [koniec], Cast(TrainingPrice as decimal(10,2)) as [Cena], Employee.IdEmployee
 FROM dbo.Employee 
 INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
 
@@ -879,7 +879,7 @@ GO
 
 CREATE VIEW vContracts
 AS
-SELECT IdContract, EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, Workplace
+SELECT IdContract, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Workplace as [Stanowisko], StartDate as [Początek], EndDate as [Koniec], Salary as [Wypłata], WorkplaceTrainingDate as [Szkolenie stanowiskowe]
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
@@ -888,7 +888,7 @@ GO
 
 CREATE VIEW vEducationForm
 AS
-SELECT Employee.IdEmployee, IdEducation, EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
+SELECT IdEducation, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], EducationLevel as [Stopień wykształcenia], Degree as [Degree], DegreeShort as [Tytuły naukowe], GraduationDate as [Data ukończenia], Employee.IdEmployee 
 FROM dbo.Employee
 INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
 INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
@@ -897,7 +897,7 @@ GO
 
 CREATE VIEW vEmployeeDetails
 AS
-SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, WorkplaceTrainingDate, Date 
+SELECT Employee.IdEmployee, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], ZipCode as [Kod pocztowy], City as [Miasto], Street as [Ulica], HouseNumber as [Nr Domu], ApartmentNum as [Nr lokalu], PhoneNumber as [Nr telefonu], PESEL, EducationLevel as [Stopień wykształcenia], DegreeShort as [Tytułu naukowe], GraduationDate [Data ukończenia studiów], Workplace as [Stanowisko], StartDate as [Początek umowy], EndDate as [Koniec umowy], Salary as [Wynagrodzenie], WorkplaceTrainingDate as [rening Stanowiskowy], Date as [Data badania lekarskiego] 
 FROM dbo.Contract
 
 RIGHT OUTER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
@@ -910,7 +910,7 @@ GO
 
 CREATE VIEW vExamination
 AS
-SELECT Employee.IdEmployee, IdMedicalExamination, EmployeeSurname, EmployeeName, Date
+SELECT IdMedicalExamination, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Date as [Data badania lekarskiego], Employee.IdEmployee
 FROM Employee
 INNER JOIN RoofingCompany.dbo.MedicalExamination
 ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee;
@@ -919,7 +919,7 @@ GO
 
 CREATE VIEW vHR
 AS
-SELECT Employee.IdEmployee, EmployeeSurname, PESEL, EmployeeName, City, PhoneNumber, Workplace
+SELECT Employee.IdEmployee, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], PESEL, Workplace as [Stanowisko], PhoneNumber as [Nr telefonu] 
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;

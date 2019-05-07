@@ -15,11 +15,10 @@ namespace KWZP2019
     public partial class vHR
     {
         public int IdEmployee { get; set; }
-        public string EmployeeSurname { get; set; }
+        public string Nazwisko { get; set; }
+        public string Imię { get; set; }
         public string PESEL { get; set; }
-        public string EmployeeName { get; set; }
-        public string City { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Workplace { get; set; }
+        public string Stanowisko { get; set; }
+        public string Nr_telefonu { get; set; }
     }
 }

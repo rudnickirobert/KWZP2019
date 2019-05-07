@@ -39,47 +39,28 @@ namespace KWZP2019
         private void tbSearchEmployeeExamination_TextChanged(object sender, EventArgs e)
         {
             dgvExamination.DataSource = db.vExaminations.
-                Where (examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
-                                   && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
-                Select (examinationSource => new {
-                        examinationSource.EmployeeSurname,
-                        examinationSource.EmployeeName,
-                        examinationSource.Date,
-                        examinationSource.IdMedicalExamination }).
-                OrderByDescending (ExaminationOrderBy => ExaminationOrderBy.Date).
+                Where (examination => examination.Nazwisko.StartsWith(tbSearchEmployeeExamination.Text)
+                                   && examination.Imię.StartsWith(tbSearchEmployeeExaminationName.Text)).
+                OrderByDescending (ExaminationOrderBy => ExaminationOrderBy.Data_badania_lekarskiego).
                 ToList();
         }
 
         private void tbSearchEmployeeExaminationName_TextChanged(object sender, EventArgs e)
         {
             dgvExamination.DataSource = db.vExaminations.
-                   Where (examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
-                                      && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
-                   Select (examinationSource => new {
-                           examinationSource.EmployeeSurname,
-                           examinationSource.EmployeeName,
-                           examinationSource.Date,
-                           examinationSource.IdMedicalExamination }).
-                    OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Date).
+                   Where (examination => examination.Nazwisko.StartsWith(tbSearchEmployeeExamination.Text)
+                                      && examination.Imię.StartsWith(tbSearchEmployeeExaminationName.Text)).
+                    OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Data_badania_lekarskiego).
                     ToList();
         }
 
         void display()
         {
             dgvExamination.DataSource = db.vExaminations.
-                Select (examinationSource => new {
-                        examinationSource.EmployeeSurname,
-                        examinationSource.EmployeeName,
-                        examinationSource.Date,
-                        examinationSource.IdMedicalExamination }).
-                OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Date).
+                OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Data_badania_lekarskiego).
                 ToList();
 
-            dgvExamination.Columns[3].Visible = false;
-
-            dgvExamination.Columns[0].HeaderText = "Nazwisko";
-            dgvExamination.Columns[1].HeaderText = "Imię";
-            dgvExamination.Columns[2].HeaderText = "Data badania lekarskiego";
+            dgvExamination.Columns[0].Visible = false;
 
             dgvExamination.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvExamination.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -101,7 +82,7 @@ namespace KWZP2019
         private void btnDelete_Click(object sender, EventArgs e)
         {
             MedicalExamination ExaminationToRemove = new MedicalExamination
-            { IdMedicalExamination = int.Parse(dgvExamination.SelectedRows[0].Cells[3].Value.ToString()) };
+            { IdMedicalExamination = int.Parse(dgvExamination.SelectedRows[0].Cells[0].Value.ToString()) };
             db.MedicalExaminations.Attach(ExaminationToRemove);
             db.MedicalExaminations.Remove(ExaminationToRemove);
             db.SaveChanges();
