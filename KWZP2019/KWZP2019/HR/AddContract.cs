@@ -91,6 +91,12 @@ namespace KWZP2019
             {
                 cbPosition.Items.Add(positionL.Workplace);
             }
+
+            List<vDeparment> departmentList = db.vDeparments.ToList();
+            foreach (vDeparment deparmentL in departmentList)
+            {
+                cbDepartmentList.Items.Add(deparmentL.DepartmentName);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
