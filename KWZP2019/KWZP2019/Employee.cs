@@ -41,7 +41,7 @@ namespace KWZP2019
         public string HouseNumber { get; set; }
         public string ApartmentNum { get; set; }
         public string PhoneNumber { get; set; }
-        public Nullable<long> PESEL { get; set; }
+        public string PESEL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Absence> Absences { get; set; }
