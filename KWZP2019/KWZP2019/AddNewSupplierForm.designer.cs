@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewSupplierForm));
             this.supplierTypeLbl = new System.Windows.Forms.Label();
-            this.nazwaLbl = new System.Windows.Forms.Label();
+            this.nameLbl = new System.Windows.Forms.Label();
             this.nameTb = new System.Windows.Forms.TextBox();
             this.phoneLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
@@ -75,18 +75,18 @@
             this.supplierTypeLbl.TabIndex = 0;
             this.supplierTypeLbl.Text = "Typ dostawcy";
             // 
-            // nazwaLbl
+            // nameLbl
             // 
-            this.nazwaLbl.AutoSize = true;
-            this.nazwaLbl.BackColor = System.Drawing.Color.Transparent;
-            this.nazwaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.nazwaLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nazwaLbl.Location = new System.Drawing.Point(364, 136);
-            this.nazwaLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nazwaLbl.Name = "nazwaLbl";
-            this.nazwaLbl.Size = new System.Drawing.Size(59, 18);
-            this.nazwaLbl.TabIndex = 2;
-            this.nazwaLbl.Text = "Nazwa";
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.nameLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nameLbl.Location = new System.Drawing.Point(364, 136);
+            this.nameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(59, 18);
+            this.nameLbl.TabIndex = 2;
+            this.nameLbl.Text = "Nazwa";
             // 
             // nameTb
             // 
@@ -453,7 +453,7 @@
             this.Controls.Add(this.emailLbl);
             this.Controls.Add(this.phoneLbl);
             this.Controls.Add(this.nameTb);
-            this.Controls.Add(this.nazwaLbl);
+            this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.supplierTypeLbl);
             this.Controls.Add(this.pictureBoxForm);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -469,7 +469,7 @@
         #endregion
 
         private System.Windows.Forms.Label supplierTypeLbl;
-        private System.Windows.Forms.Label nazwaLbl;
+        private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.TextBox nameTb;
         private System.Windows.Forms.Label phoneLbl;
         private System.Windows.Forms.Label emailLbl;

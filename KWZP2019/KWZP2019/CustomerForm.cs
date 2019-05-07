@@ -30,23 +30,17 @@ namespace KWZP2019
             foreach (OrderCustomer order in db.OrderCustomers)
             {
                 double temporaryCost = 0;
-                foreach (OrderDetail detail in db.OrderDetails)
+                foreach (OrderDetail detail in db.OrderDetails.Where(detail => detail.IdOrderCustomer == order.IdOrderCustomer))
                 {
                     double detailCost = 0;
                     double pricePerMeter = 0;
-                    foreach (TechnicalProductData productData in db.TechnicalProductDatas)
+                    foreach (TechnicalProductData productData in db.TechnicalProductDatas.Where(productData => productData.IdProduct == detail.IdProduct))
                     {
-                        if (detail.IdProduct == productData.IdProduct)
-                        {
-                            pricePerMeter = productData.PricePerMeter;
-                            break;
-                        }
+                        pricePerMeter = productData.PricePerMeter;
+                        break;
                     }
-                    if (detail.IdOrderCustomer == order.IdOrderCustomer)
-                    {
-                        detailCost = detail.Quantity * pricePerMeter;
-                        temporaryCost = temporaryCost + detailCost;
-                    }
+                    detailCost = detail.Quantity * pricePerMeter;
+                    temporaryCost = temporaryCost + detailCost;
                 }
                 order.Cost = Convert.ToDecimal(temporaryCost * (1 + order.Markup));
             }//END OF ALGORITHM
@@ -59,7 +53,7 @@ namespace KWZP2019
             AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value, previousForm);
             addNewOrderForm.ShowDialog();
             this.Close();
-        }       
+        }
         private void addNewOrderDetailBtn_Click(object sender, EventArgs e)
         {
             //EXCEPTION PROTECTION
@@ -73,7 +67,7 @@ namespace KWZP2019
                 AddNewOrderDetailForm newOrderDetail = new AddNewOrderDetailForm(db, this.ordersDgv.CurrentRow.Cells[0].Value, previousForm);
                 newOrderDetail.ShowDialog();
             }
-        }          
+        }
         private void returnBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -158,16 +152,16 @@ namespace KWZP2019
                 pdfCustomerReport.DefaultCell.Padding = 3;
                 pdfCustomerReport.WidthPercentage = 80;
                 pdfCustomerReport.DefaultCell.BorderWidth = 1;
-                
+
                 foreach (Customer cust in db.Customers)
                 {
                     if (cust.IdCustomer == Convert.ToInt32(ordersDgv.CurrentRow.Cells[1].Value))
                     {
                         customerName = cust.CustomerName;
-                        cell = new PdfPCell(new Phrase("Klient: " + customerName, FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12,1)));
+                        cell = new PdfPCell(new Phrase("Klient: " + customerName, FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
                         pdfCustomerReport.AddCell(cell);
                     }
-                    
+
                 }
                 cell = new PdfPCell(new Phrase("Zamówienie nr: " + idOrder, FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
                 pdfCustomerReport.AddCell(cell);
@@ -180,29 +174,17 @@ namespace KWZP2019
                 cell = new PdfPCell(new Phrase("Ilosc:", FontFactory.GetFont("Times New Roman", BaseFont.CP1257, false, 12, 1)));
                 pdfCustomerReport.AddCell(cell);
 
-                foreach (OrderDetail detail in db.OrderDetails)
+                foreach (OrderDetail detail in db.OrderDetails.Where(detail => detail.IdOrderCustomer == idOrder))
                 {
-                    if (detail.IdOrderCustomer == idOrder)
-                    {
-                        foreach (Product prod in db.Products)
+                        foreach (Product prod in db.Products.Where(prod => prod.IdProduct == detail.IdProduct))
                         {
-                            if (detail.IdProduct == prod.IdProduct)
-                            {
                                 pdfCustomerReport.AddCell(prod.ProductCode);
-                                foreach (Technology tech in db.Technologies)
+                                foreach (Technology tech in db.Technologies.Where(tech => tech.IdTechnology == prod.IdTechnology))
                                 {
-                                    if (prod.IdTechnology == tech.IdTechnology)
-                                    {
                                         pdfCustomerReport.AddCell(tech.TechnologyName);
-
-                                    }
                                 }
-                            }
                         }
-                        
-
                         pdfCustomerReport.AddCell(detail.Quantity.ToString());
-                    }
                 }
 
 
