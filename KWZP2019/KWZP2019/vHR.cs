@@ -16,7 +16,7 @@ namespace KWZP2019
     {
         public int IdEmployee { get; set; }
         public string EmployeeSurname { get; set; }
-        public Nullable<long> PESEL { get; set; }
+        public string PESEL { get; set; }
         public string EmployeeName { get; set; }
         public string City { get; set; }
         public string PhoneNumber { get; set; }

@@ -17,7 +17,7 @@ namespace KWZP2019
         public int IdEmployee { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
-        public Nullable<long> PESEL { get; set; }
+        public string PESEL { get; set; }
         public string Workplace { get; set; }
         public Nullable<int> VailidityOfMedicalExam { get; set; }
         public System.DateTime PreviousExamination { get; set; }

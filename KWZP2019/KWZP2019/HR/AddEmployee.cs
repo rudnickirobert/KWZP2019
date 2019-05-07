@@ -48,7 +48,6 @@ namespace KWZP2019
             {
                 MessageBox.Show("Imię, nazwisko oraz PESEL są wymagane");
             }
-            if (tbContractLenght.Text.Trim() == "")
             {
                 bool condition1 = long.TryParse(tbPESEL.Text.Trim(), out long number);
                 bool condition2 = long.TryParse(tbPhoneNumber.Text.Trim(), out long number1);
@@ -73,7 +72,7 @@ namespace KWZP2019
                         newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
                         newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
                         newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
-                        newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
+                        newEmployee.PESEL = (tbPESEL.Text.Trim());
                         db.Employees.Add(newEmployee);
                         db.SaveChanges();
                         clear();
