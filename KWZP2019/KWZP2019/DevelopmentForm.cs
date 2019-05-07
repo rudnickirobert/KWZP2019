@@ -60,9 +60,9 @@ namespace KWZP2019
                 int IdEmpTextBoxValue = int.Parse(textBoxEmployeeId.Text);
                 if(employeeQuantity >= IdEmpTextBoxValue)
                 {
-                    Employee Employee = db.Employees.First(emp => emp.IdEmployee.ToString() == textBoxEmployeeId.Text);
-                    textBoxName.Text = $"{Employee.EmployeeName}";
-                    textBoxSurname.Text = $"{Employee.EmployeeSurname}";
+                    Employee employee = db.Employees.First(emp => emp.IdEmployee.ToString() == textBoxEmployeeId.Text);
+                    textBoxName.Text = $"{employee.EmployeeName}";
+                    textBoxSurname.Text = $"{employee.EmployeeSurname}";
                     selectedEmployee = Convert.ToInt32(textBoxEmployeeId.Text);
                 }
                 else
@@ -86,14 +86,14 @@ namespace KWZP2019
             }
             else
             {
-                FEMAnalysi FEMAnalysi = new FEMAnalysi();
+                FEMAnalysis fEMAnalysis = new FEMAnalysis();
 
-                FEMAnalysi.AnalysisResults = textBoxDescription.Text;
-                FEMAnalysi.IdEmployee = int.Parse(textBoxEmployeeId.Text);
-                FEMAnalysi.NewPattern = newPatternImage;
-                FEMAnalysi.AnalysisDate = dateTimePicker.Value;
+                fEMAnalysis.AnalysisResults = textBoxDescription.Text;
+                fEMAnalysis.IdEmployee = int.Parse(textBoxEmployeeId.Text);
+                fEMAnalysis.NewPattern = newPatternImage;
+                fEMAnalysis.AnalysisDate = dateTimePicker.Value;
 
-                db.FEMAnalysis.Add(FEMAnalysi);
+                db.FEMAnalysis.Add(fEMAnalysis);
                 db.SaveChanges();
 
                 textBoxDescription.Clear();

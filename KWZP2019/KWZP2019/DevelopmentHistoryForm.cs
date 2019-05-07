@@ -34,8 +34,8 @@ namespace KWZP2019
 
         private void DevelopmentHistoryForm_Load(object sender, EventArgs e)
         {
-            List<FEMAnalysi> fEMAnalysisList = db.FEMAnalysis.ToList();
-            foreach (FEMAnalysi fEMAnalysis in fEMAnalysisList)
+            List<FEMAnalysis> fEMAnalysisList = db.FEMAnalysis.ToList();
+            foreach (FEMAnalysis fEMAnalysis in fEMAnalysisList)
             {
                 domainUpDownDevelompentNumber.Items.Add(fEMAnalysis.IdFEMAnalysis);               
             }
@@ -43,15 +43,15 @@ namespace KWZP2019
 
         private void domainUpDownDevelompentNumber_SelectedItemChanged(object sender, EventArgs e)
         {
-            FEMAnalysi FEMAnalysi = db.FEMAnalysis.First(fEMA => fEMA.IdFEMAnalysis.ToString() == domainUpDownDevelompentNumber.Text);
-            textBoxDevelopmentDate.Text = $"{FEMAnalysi.AnalysisDate}";
-            textBoxEmployeeNumber.Text = $"{FEMAnalysi.IdEmployee}";
-            textBoxDevelopmentDescription.Text = $"{FEMAnalysi.AnalysisResults}";
-            Employee Employee = db.Employees.First(emp => emp.IdEmployee.ToString() == FEMAnalysi.IdEmployee.ToString());
-            textBoxEmployeeName.Text = $"{Employee.EmployeeName}";
-            textBoxEmployeeSurname.Text = $"{Employee.EmployeeSurname}";
+            FEMAnalysis fEMAnalysi = db.FEMAnalysis.First(fEMA => fEMA.IdFEMAnalysis.ToString() == domainUpDownDevelompentNumber.Text);
+            textBoxDevelopmentDate.Text = $"{fEMAnalysi.AnalysisDate}";
+            textBoxEmployeeNumber.Text = $"{fEMAnalysi.IdEmployee}";
+            textBoxDevelopmentDescription.Text = $"{fEMAnalysi.AnalysisResults}";
+            Employee employee = db.Employees.First(emp => emp.IdEmployee.ToString() == fEMAnalysi.IdEmployee.ToString());
+            textBoxEmployeeName.Text = $"{employee.EmployeeName}";
+            textBoxEmployeeSurname.Text = $"{employee.EmployeeSurname}";
             selectedDevelopment = Convert.ToInt32(domainUpDownDevelompentNumber.Text);
-            MemoryStream memoryStream = new MemoryStream((byte[])FEMAnalysi.NewPattern);
+            MemoryStream memoryStream = new MemoryStream((byte[])fEMAnalysi.NewPattern);
             pictureBoxPattern.Image = new Bitmap(memoryStream);
         }
     }

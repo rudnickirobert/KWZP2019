@@ -2857,7 +2857,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ApartmentNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PESEL" Type="String" />
+          <Property Name="PESEL" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Absences" Relationship="Self.FK__Absence__IdEmplo__14270015" FromRole="Employee" ToRole="Absence" />
           <NavigationProperty Name="Accidents" Relationship="Self.FKAccidentEmployee" FromRole="Employee" ToRole="Accident" />
           <NavigationProperty Name="Allocations" Relationship="Self.FK__Allocatio__IdEmp__208CD6FA" FromRole="Employee" ToRole="Allocation" />
@@ -2935,7 +2935,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <NavigationProperty Name="Failure" Relationship="Self.FK_FailureFailureMaintenance" FromRole="FailureMaintenance" ToRole="Failure" />
           <NavigationProperty Name="Maintenance" Relationship="Self.FK_MaintenanceFailureMaintenance" FromRole="FailureMaintenance" ToRole="Maintenance" />
         </EntityType>
-        <EntityType Name="FEMAnalysi">
+        <EntityType Name="FEMAnalysis">
           <Key>
             <PropertyRef Name="IdFEMAnalysis" />
           </Key>
@@ -3783,7 +3783,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </Key>
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PESEL" Type="String" />
+          <Property Name="PESEL" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
           <Property Name="Bonus" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Sum" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Date" Type="DateTime" Precision="0" />
@@ -4151,7 +4151,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
         </Association>
         <Association Name="FkFEMAnalysisEmployee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="FEMAnalysis" Type="Self.FEMAnalysi" Multiplicity="*" />
+          <End Role="FEMAnalysis" Type="RoofingCompanyModel.FEMAnalysis" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
               <PropertyRef Name="IdEmployee" />
@@ -4706,7 +4706,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="Expenses" EntityType="Self.Expense" />
           <EntitySet Name="Failures" EntityType="Self.Failure" />
           <EntitySet Name="FailureMaintenances" EntityType="Self.FailureMaintenance" />
-          <EntitySet Name="FEMAnalysis" EntityType="Self.FEMAnalysi" />
+          <EntitySet Name="FEMAnalysis" EntityType="RoofingCompanyModel.FEMAnalysis" />
           <EntitySet Name="Invoices" EntityType="Self.Invoice" />
           <EntitySet Name="InvoiceTypes" EntityType="Self.InvoiceType" />
           <EntitySet Name="Machines" EntityType="Self.Machine" />
@@ -5057,7 +5057,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ApartmentNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PESEL" Type="String" />
+          <Property Name="PESEL" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
           <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="GraduationDate" Type="DateTime" Precision="0" />
@@ -5300,7 +5300,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FEMAnalysis">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.FEMAnalysi">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.FEMAnalysis">
               <MappingFragment StoreEntitySet="FEMAnalysis">
                 <ScalarProperty Name="AnalysisDate" ColumnName="AnalysisDate" />
                 <ScalarProperty Name="IdFEMAnalysis" ColumnName="IdFEMAnalysis" />

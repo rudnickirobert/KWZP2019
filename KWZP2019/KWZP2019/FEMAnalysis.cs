@@ -12,7 +12,7 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class FEMAnalysi
+    public partial class FEMAnalysis
     {
         public int IdFEMAnalysis { get; set; }
         public int IdEmployee { get; set; }

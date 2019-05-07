@@ -142,7 +142,7 @@
     <Compile Include="FailureMaintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FEMAnalysi.cs">
+    <Compile Include="FEMAnalysis.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Finances\AddNewCompany.cs">

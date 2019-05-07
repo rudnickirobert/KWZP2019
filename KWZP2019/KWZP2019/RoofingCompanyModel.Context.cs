@@ -41,7 +41,7 @@ namespace KWZP2019
         public virtual DbSet<Expense> Expenses { get; set; }
         public virtual DbSet<Failure> Failures { get; set; }
         public virtual DbSet<FailureMaintenance> FailureMaintenances { get; set; }
-        public virtual DbSet<FEMAnalysi> FEMAnalysis { get; set; }
+        public virtual DbSet<FEMAnalysis> FEMAnalysis { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<InvoiceType> InvoiceTypes { get; set; }
         public virtual DbSet<Machine> Machines { get; set; }
