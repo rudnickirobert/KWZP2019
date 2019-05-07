@@ -107,7 +107,6 @@ namespace KWZP2019
         public virtual DbSet<vExpencesPayment> vExpencesPayments { get; set; }
         public virtual DbSet<vHR> vHRs { get; set; }
         public virtual DbSet<vHRContract> vHRContracts { get; set; }
-        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
         public virtual DbSet<ViewDailySfDelivery> ViewDailySfDeliveries { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
@@ -133,5 +132,6 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
     }
 }

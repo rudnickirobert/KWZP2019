@@ -812,22 +812,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeList' does not have a 
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'RoofingCompany.dbo.vEmployeeSalesDepartment' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vEmployeeSalesDepartment">
-          <Property Name="Imię" Type="nvarchar" MaxLength="50" />
-          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
-          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="50" />
-          <Property Name="Miasto" Type="nvarchar" MaxLength="50" />
-          <Property Name="Ulica" Type="nvarchar" MaxLength="50" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="50" />
-          <Property Name="Numer lokalu" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
-          <Property Name="PESEL" Type="bigint" />
-          <Property Name="Dział" Type="nvarchar" MaxLength="50" />
-          <Property Name="Data początku" Type="date" />
-          <Property Name="Data końca" Type="date" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeSD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vEmployeeSD">
           <Key>
@@ -950,9 +934,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vHRContract' does not have a pr
 warning 6002: The table/view 'RoofingCompany.dbo.vHRExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vHRExamination">
           <Key>
-            <PropertyRef Name="IdMedicalExamination" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="PreviousExamination" />
           </Key>
-          <Property Name="IdMedicalExamination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="PESEL" Type="bigint" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+          <Property Name="VailidityOfMedicalExam" Type="int" />
+          <Property Name="PreviousExamination" Type="date" Nullable="false" />
+          <Property Name="NextExamination" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewDailySfDelivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2377,7 +2369,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vHRExamination" EntityType="Self.vHRExamination" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vHRExamination].[IdMedicalExamination] AS [IdMedicalExamination]
+    [vHRExamination].[IdEmployee] AS [IdEmployee], 
+    [vHRExamination].[EmployeeName] AS [EmployeeName], 
+    [vHRExamination].[EmployeeSurname] AS [EmployeeSurname], 
+    [vHRExamination].[PESEL] AS [PESEL], 
+    [vHRExamination].[Workplace] AS [Workplace], 
+    [vHRExamination].[VailidityOfMedicalExam] AS [VailidityOfMedicalExam], 
+    [vHRExamination].[PreviousExamination] AS [PreviousExamination], 
+    [vHRExamination].[NextExamination] AS [NextExamination]
     FROM [dbo].[vHRExamination] AS [vHRExamination]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewDailySfDelivery" EntityType="Self.ViewDailySfDelivery" store:Type="Views" store:Schema="dbo">
@@ -2959,7 +2958,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vExpencesPayments" EntityType="RoofingCompanyModel.vExpencesPayment" />
           <EntitySet Name="vHRs" EntityType="RoofingCompanyModel.vHR" />
           <EntitySet Name="vHRContracts" EntityType="RoofingCompanyModel.vHRContract" />
-          <EntitySet Name="vHRExaminations" EntityType="RoofingCompanyModel.vHRExamination" />
           <EntitySet Name="ViewDailySfDeliveries" EntityType="RoofingCompanyModel.ViewDailySfDelivery" />
           <EntitySet Name="ViewOshTrainings" EntityType="RoofingCompanyModel.ViewOshTraining" />
           <EntitySet Name="vIncomesProfits" EntityType="RoofingCompanyModel.vIncomesProfit" />
@@ -3237,6 +3235,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <EntitySet Name="vHRExaminations" EntityType="RoofingCompanyModel.vHRExamination" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -4242,12 +4241,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <PropertyRef Name="IdContract" />
           </Key>
           <Property Name="IdContract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="vHRExamination">
-          <Key>
-            <PropertyRef Name="IdMedicalExamination" />
-          </Key>
-          <Property Name="IdMedicalExamination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="ViewDailySfDelivery">
           <Key>
@@ -5338,6 +5331,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vHRExamination">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="PreviousExamination" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="Int64" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VailidityOfMedicalExam" Type="Int32" />
+          <Property Name="PreviousExamination" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NextExamination" Type="DateTime" Precision="0" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6272,13 +6279,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vHRExaminations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
-              <MappingFragment StoreEntitySet="vHRExamination">
-                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ViewDailySfDeliveries">
             <EntityTypeMapping TypeName="RoofingCompanyModel.ViewDailySfDelivery">
               <MappingFragment StoreEntitySet="ViewDailySfDelivery">
@@ -6565,6 +6565,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHRExaminations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
+              <MappingFragment StoreEntitySet="vHRExamination">
+                <ScalarProperty Name="NextExamination" ColumnName="NextExamination" />
+                <ScalarProperty Name="PreviousExamination" ColumnName="PreviousExamination" />
+                <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
