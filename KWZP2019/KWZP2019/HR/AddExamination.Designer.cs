@@ -41,10 +41,10 @@
             // dtpExaminationDate
             // 
             this.dtpExaminationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpExaminationDate.Location = new System.Drawing.Point(455, 218);
-            this.dtpExaminationDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpExaminationDate.Location = new System.Drawing.Point(341, 158);
+            this.dtpExaminationDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpExaminationDate.Name = "dtpExaminationDate";
-            this.dtpExaminationDate.Size = new System.Drawing.Size(344, 26);
+            this.dtpExaminationDate.Size = new System.Drawing.Size(259, 23);
             this.dtpExaminationDate.TabIndex = 0;
             // 
             // btnAdd
@@ -60,10 +60,10 @@
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdd.Location = new System.Drawing.Point(455, 326);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(341, 265);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(240, 148);
+            this.btnAdd.Size = new System.Drawing.Size(180, 120);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -76,10 +76,10 @@
             this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbEmployeeList.FormattingEnabled = true;
-            this.cbEmployeeList.Location = new System.Drawing.Point(455, 91);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmployeeList.Location = new System.Drawing.Point(341, 74);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(344, 30);
+            this.cbEmployeeList.Size = new System.Drawing.Size(259, 26);
             this.cbEmployeeList.TabIndex = 37;
             // 
             // btnReturn
@@ -95,10 +95,9 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturn.Location = new System.Drawing.Point(16, 34);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturn.Location = new System.Drawing.Point(12, 12);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(240, 148);
+            this.btnReturn.Size = new System.Drawing.Size(180, 120);
             this.btnReturn.TabIndex = 39;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -118,10 +117,9 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturnMain.Location = new System.Drawing.Point(16, 218);
-            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturnMain.Location = new System.Drawing.Point(12, 138);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(240, 148);
+            this.btnReturnMain.Size = new System.Drawing.Size(180, 120);
             this.btnReturnMain.TabIndex = 40;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -134,10 +132,9 @@
             this.lblEmployeeList.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEmployeeList.Location = new System.Drawing.Point(304, 101);
-            this.lblEmployeeList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmployeeList.Location = new System.Drawing.Point(228, 82);
             this.lblEmployeeList.Name = "lblEmployeeList";
-            this.lblEmployeeList.Size = new System.Drawing.Size(106, 24);
+            this.lblEmployeeList.Size = new System.Drawing.Size(87, 18);
             this.lblEmployeeList.TabIndex = 42;
             this.lblEmployeeList.Text = "Pracownik";
             // 
@@ -147,20 +144,19 @@
             this.lblExaminationDate.BackColor = System.Drawing.Color.Transparent;
             this.lblExaminationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblExaminationDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblExaminationDate.Location = new System.Drawing.Point(304, 222);
-            this.lblExaminationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExaminationDate.Location = new System.Drawing.Point(228, 161);
             this.lblExaminationDate.Name = "lblExaminationDate";
-            this.lblExaminationDate.Size = new System.Drawing.Size(131, 24);
+            this.lblExaminationDate.Size = new System.Drawing.Size(106, 18);
             this.lblExaminationDate.TabIndex = 43;
             this.lblExaminationDate.Text = "Data badania";
             // 
             // AddExamination
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(873, 487);
+            this.ClientSize = new System.Drawing.Size(704, 396);
             this.Controls.Add(this.lblExaminationDate);
             this.Controls.Add(this.lblEmployeeList);
             this.Controls.Add(this.btnReturnMain);
@@ -168,7 +164,7 @@
             this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.dtpExaminationDate);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddExamination";

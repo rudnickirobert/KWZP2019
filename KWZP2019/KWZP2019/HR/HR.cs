@@ -120,19 +120,16 @@ namespace KWZP2019
         {
             Examination examination = new Examination(db, startForm, this);
             examination.Show();
+            this.Hide();
         }
 
         private void lbWarningsContracts_DoubleClick(object sender, EventArgs e)
         {
             Contracts contracts = new Contracts(db, startForm, this);
             contracts.Show();
+            this.Hide();
         }
 
-        private void btnAddContract_Click(object sender, EventArgs e)
-        {
-            AddContract addContract = new AddContract(db);
-            addContract.Show();
-        }
 
         private void btnEducationLevel_Click(object sender, EventArgs e)
         {

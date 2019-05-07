@@ -72,8 +72,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvContracts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContracts.EnableHeadersVisualStyles = false;
-            this.dgvContracts.Location = new System.Drawing.Point(455, 185);
-            this.dgvContracts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvContracts.Location = new System.Drawing.Point(341, 150);
+            this.dgvContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvContracts.Name = "dgvContracts";
             this.dgvContracts.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -85,16 +85,16 @@
             this.dgvContracts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContracts.RowTemplate.Height = 24;
             this.dgvContracts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContracts.Size = new System.Drawing.Size(1069, 690);
+            this.dgvContracts.Size = new System.Drawing.Size(802, 561);
             this.dgvContracts.TabIndex = 0;
             // 
             // tbSearchContract
             // 
             this.tbSearchContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSearchContract.Location = new System.Drawing.Point(455, 79);
-            this.tbSearchContract.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchContract.Location = new System.Drawing.Point(341, 64);
+            this.tbSearchContract.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSearchContract.Name = "tbSearchContract";
-            this.tbSearchContract.Size = new System.Drawing.Size(488, 30);
+            this.tbSearchContract.Size = new System.Drawing.Size(367, 26);
             this.tbSearchContract.TabIndex = 1;
             this.tbSearchContract.TextChanged += new System.EventHandler(this.tbSearchContract_TextChanged);
             // 
@@ -106,10 +106,10 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(53, 482);
+            this.btnDelete.Location = new System.Drawing.Point(40, 392);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(329, 190);
+            this.btnDelete.Size = new System.Drawing.Size(247, 154);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Edytuj";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -124,10 +124,10 @@
             this.btnAddTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddTraining.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTraining.Image")));
-            this.btnAddTraining.Location = new System.Drawing.Point(53, 686);
+            this.btnAddTraining.Location = new System.Drawing.Point(40, 557);
             this.btnAddTraining.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddTraining.Name = "btnAddTraining";
-            this.btnAddTraining.Size = new System.Drawing.Size(329, 190);
+            this.btnAddTraining.Size = new System.Drawing.Size(247, 154);
             this.btnAddTraining.TabIndex = 3;
             this.btnAddTraining.Text = "Dodaj umowę";
             this.btnAddTraining.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -142,10 +142,10 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(53, 79);
+            this.btnReturn.Location = new System.Drawing.Point(40, 64);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(329, 190);
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -160,10 +160,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(53, 281);
+            this.btnReturnMain.Location = new System.Drawing.Point(40, 228);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
             this.btnReturnMain.TabIndex = 5;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -173,20 +173,20 @@
             // tbSearchContractName
             // 
             this.tbSearchContractName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSearchContractName.Location = new System.Drawing.Point(971, 79);
-            this.tbSearchContractName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchContractName.Location = new System.Drawing.Point(728, 64);
+            this.tbSearchContractName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSearchContractName.Name = "tbSearchContractName";
-            this.tbSearchContractName.Size = new System.Drawing.Size(488, 30);
+            this.tbSearchContractName.Size = new System.Drawing.Size(367, 26);
             this.tbSearchContractName.TabIndex = 6;
             this.tbSearchContractName.TextChanged += new System.EventHandler(this.tbSearchContractName_TextChanged);
             // 
             // Contracts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.tbSearchContractName);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
@@ -195,7 +195,7 @@
             this.Controls.Add(this.tbSearchContract);
             this.Controls.Add(this.dgvContracts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Contracts";
