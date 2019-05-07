@@ -47,9 +47,9 @@
             // 
             this.sfSupplierRb.AutoSize = true;
             this.sfSupplierRb.Location = new System.Drawing.Point(4, 28);
-            this.sfSupplierRb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sfSupplierRb.Margin = new System.Windows.Forms.Padding(2);
             this.sfSupplierRb.Name = "sfSupplierRb";
-            this.sfSupplierRb.Size = new System.Drawing.Size(177, 22);
+            this.sfSupplierRb.Size = new System.Drawing.Size(218, 28);
             this.sfSupplierRb.TabIndex = 1;
             this.sfSupplierRb.TabStop = true;
             this.sfSupplierRb.Text = "Dostawca półfabrykatu";
@@ -59,9 +59,9 @@
             // 
             this.partsSupplierRb.AutoSize = true;
             this.partsSupplierRb.Location = new System.Drawing.Point(4, 50);
-            this.partsSupplierRb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.partsSupplierRb.Margin = new System.Windows.Forms.Padding(2);
             this.partsSupplierRb.Name = "partsSupplierRb";
-            this.partsSupplierRb.Size = new System.Drawing.Size(140, 22);
+            this.partsSupplierRb.Size = new System.Drawing.Size(167, 28);
             this.partsSupplierRb.TabIndex = 2;
             this.partsSupplierRb.TabStop = true;
             this.partsSupplierRb.Text = "Dostawca części";
@@ -72,13 +72,13 @@
             this.supplierTypeGb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.supplierTypeGb.Controls.Add(this.partsSupplierRb);
             this.supplierTypeGb.Controls.Add(this.sfSupplierRb);
-            this.supplierTypeGb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.supplierTypeGb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.supplierTypeGb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.supplierTypeGb.Location = new System.Drawing.Point(90, 28);
-            this.supplierTypeGb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supplierTypeGb.Margin = new System.Windows.Forms.Padding(2);
             this.supplierTypeGb.Name = "supplierTypeGb";
-            this.supplierTypeGb.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.supplierTypeGb.Size = new System.Drawing.Size(199, 83);
+            this.supplierTypeGb.Padding = new System.Windows.Forms.Padding(2);
+            this.supplierTypeGb.Size = new System.Drawing.Size(269, 99);
             this.supplierTypeGb.TabIndex = 10;
             this.supplierTypeGb.TabStop = false;
             this.supplierTypeGb.Text = "Typ dostawcy";
@@ -113,8 +113,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.supplierDgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.supplierDgv.EnableHeadersVisualStyles = false;
-            this.supplierDgv.Location = new System.Drawing.Point(90, 145);
-            this.supplierDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supplierDgv.Location = new System.Drawing.Point(90, 188);
+            this.supplierDgv.Margin = new System.Windows.Forms.Padding(2);
             this.supplierDgv.MultiSelect = false;
             this.supplierDgv.Name = "supplierDgv";
             this.supplierDgv.RowHeadersVisible = false;
@@ -126,7 +126,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.supplierDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.supplierDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.supplierDgv.Size = new System.Drawing.Size(748, 193);
+            this.supplierDgv.Size = new System.Drawing.Size(1043, 261);
             this.supplierDgv.TabIndex = 22;
             // 
             // addNewSupplierBtn
@@ -135,8 +135,8 @@
             this.addNewSupplierBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.addNewSupplierBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addNewSupplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewSupplierBtn.Image")));
-            this.addNewSupplierBtn.Location = new System.Drawing.Point(256, 397);
-            this.addNewSupplierBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewSupplierBtn.Location = new System.Drawing.Point(273, 585);
+            this.addNewSupplierBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewSupplierBtn.Name = "addNewSupplierBtn";
             this.addNewSupplierBtn.Size = new System.Drawing.Size(200, 120);
             this.addNewSupplierBtn.TabIndex = 23;
@@ -152,7 +152,7 @@
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(34, 397);
+            this.backBtn.Location = new System.Drawing.Point(51, 585);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(200, 120);
             this.backBtn.TabIndex = 24;
@@ -166,14 +166,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(886, 612);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.addNewSupplierBtn);
             this.Controls.Add(this.supplierDgv);
             this.Controls.Add(this.supplierTypeGb);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SupplierForm";
-            this.Text = "SupplierForm";
+            this.Text = "Dostawcy";
             this.supplierTypeGb.ResumeLayout(false);
             this.supplierTypeGb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDgv)).EndInit();

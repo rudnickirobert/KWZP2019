@@ -54,7 +54,7 @@
             this.dodajNowaFirmeOutsourcingowaLbl = new System.Windows.Forms.Label();
             this.typeLbl = new System.Windows.Forms.Label();
             this.addNewOutsourcingCompanyBtn = new System.Windows.Forms.Button();
-            this.returnANOFBtn = new System.Windows.Forms.Button();
+            this.returnBtn = new System.Windows.Forms.Button();
             this.comboBoxOutsourcingType = new System.Windows.Forms.ComboBox();
             this.buttonAddTypeOutsourcing = new System.Windows.Forms.Button();
             this.textBoxNewTypeOutsourcing = new System.Windows.Forms.TextBox();
@@ -67,10 +67,10 @@
             this.descriptionTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.descriptionTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.descriptionTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.descriptionTb.Location = new System.Drawing.Point(901, 611);
-            this.descriptionTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.descriptionTb.Location = new System.Drawing.Point(826, 496);
+            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.descriptionTb.Name = "descriptionTb";
-            this.descriptionTb.Size = new System.Drawing.Size(162, 28);
+            this.descriptionTb.Size = new System.Drawing.Size(197, 24);
             this.descriptionTb.TabIndex = 46;
             // 
             // descriptionLbl
@@ -79,9 +79,10 @@
             this.descriptionLbl.BackColor = System.Drawing.Color.Transparent;
             this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.descriptionLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.descriptionLbl.Location = new System.Drawing.Point(897, 573);
+            this.descriptionLbl.Location = new System.Drawing.Point(823, 466);
+            this.descriptionLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(53, 24);
+            this.descriptionLbl.Size = new System.Drawing.Size(43, 18);
             this.descriptionLbl.TabIndex = 45;
             this.descriptionLbl.Text = "Opis";
             // 
@@ -90,10 +91,10 @@
             this.krsTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.krsTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.krsTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.krsTb.Location = new System.Drawing.Point(663, 611);
-            this.krsTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.krsTb.Location = new System.Drawing.Point(525, 496);
+            this.krsTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.krsTb.Name = "krsTb";
-            this.krsTb.Size = new System.Drawing.Size(162, 28);
+            this.krsTb.Size = new System.Drawing.Size(197, 24);
             this.krsTb.TabIndex = 44;
             // 
             // krsLbl
@@ -102,9 +103,10 @@
             this.krsLbl.BackColor = System.Drawing.Color.Transparent;
             this.krsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.krsLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.krsLbl.Location = new System.Drawing.Point(659, 573);
+            this.krsLbl.Location = new System.Drawing.Point(522, 466);
+            this.krsLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.krsLbl.Name = "krsLbl";
-            this.krsLbl.Size = new System.Drawing.Size(50, 24);
+            this.krsLbl.Size = new System.Drawing.Size(42, 18);
             this.krsLbl.TabIndex = 43;
             this.krsLbl.Text = "KRS";
             // 
@@ -113,10 +115,10 @@
             this.nipTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.nipTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.nipTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nipTb.Location = new System.Drawing.Point(409, 618);
-            this.nipTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nipTb.Location = new System.Drawing.Point(243, 496);
+            this.nipTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nipTb.Name = "nipTb";
-            this.nipTb.Size = new System.Drawing.Size(162, 28);
+            this.nipTb.Size = new System.Drawing.Size(197, 24);
             this.nipTb.TabIndex = 42;
             // 
             // nipLbl
@@ -125,9 +127,10 @@
             this.nipLbl.BackColor = System.Drawing.Color.Transparent;
             this.nipLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.nipLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nipLbl.Location = new System.Drawing.Point(405, 573);
+            this.nipLbl.Location = new System.Drawing.Point(240, 466);
+            this.nipLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nipLbl.Name = "nipLbl";
-            this.nipLbl.Size = new System.Drawing.Size(43, 24);
+            this.nipLbl.Size = new System.Drawing.Size(35, 18);
             this.nipLbl.TabIndex = 41;
             this.nipLbl.Text = "NIP";
             // 
@@ -136,10 +139,10 @@
             this.apartmentNumberTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.apartmentNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.apartmentNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.apartmentNumberTb.Location = new System.Drawing.Point(898, 512);
-            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.apartmentNumberTb.Location = new System.Drawing.Point(824, 416);
+            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.apartmentNumberTb.Name = "apartmentNumberTb";
-            this.apartmentNumberTb.Size = new System.Drawing.Size(162, 28);
+            this.apartmentNumberTb.Size = new System.Drawing.Size(197, 24);
             this.apartmentNumberTb.TabIndex = 40;
             // 
             // houseNumberTb
@@ -147,10 +150,10 @@
             this.houseNumberTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.houseNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.houseNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.houseNumberTb.Location = new System.Drawing.Point(663, 512);
-            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.houseNumberTb.Location = new System.Drawing.Point(525, 416);
+            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.houseNumberTb.Name = "houseNumberTb";
-            this.houseNumberTb.Size = new System.Drawing.Size(162, 28);
+            this.houseNumberTb.Size = new System.Drawing.Size(197, 24);
             this.houseNumberTb.TabIndex = 39;
             // 
             // apartmentNumberLbl
@@ -159,9 +162,10 @@
             this.apartmentNumberLbl.BackColor = System.Drawing.Color.Transparent;
             this.apartmentNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.apartmentNumberLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.apartmentNumberLbl.Location = new System.Drawing.Point(894, 467);
+            this.apartmentNumberLbl.Location = new System.Drawing.Point(820, 379);
+            this.apartmentNumberLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.apartmentNumberLbl.Name = "apartmentNumberLbl";
-            this.apartmentNumberLbl.Size = new System.Drawing.Size(93, 24);
+            this.apartmentNumberLbl.Size = new System.Drawing.Size(76, 18);
             this.apartmentNumberLbl.TabIndex = 38;
             this.apartmentNumberLbl.Text = "Nr lokalu";
             // 
@@ -171,9 +175,10 @@
             this.houseNumberLbl.BackColor = System.Drawing.Color.Transparent;
             this.houseNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.houseNumberLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.houseNumberLbl.Location = new System.Drawing.Point(659, 467);
+            this.houseNumberLbl.Location = new System.Drawing.Point(522, 379);
+            this.houseNumberLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.houseNumberLbl.Name = "houseNumberLbl";
-            this.houseNumberLbl.Size = new System.Drawing.Size(91, 24);
+            this.houseNumberLbl.Size = new System.Drawing.Size(73, 18);
             this.houseNumberLbl.TabIndex = 37;
             this.houseNumberLbl.Text = "Nr domu";
             // 
@@ -182,10 +187,10 @@
             this.streetTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.streetTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.streetTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.streetTb.Location = new System.Drawing.Point(409, 508);
-            this.streetTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.streetTb.Location = new System.Drawing.Point(243, 416);
+            this.streetTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.streetTb.Name = "streetTb";
-            this.streetTb.Size = new System.Drawing.Size(162, 28);
+            this.streetTb.Size = new System.Drawing.Size(197, 24);
             this.streetTb.TabIndex = 36;
             // 
             // zipCodeTb
@@ -193,10 +198,10 @@
             this.zipCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.zipCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.zipCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.zipCodeTb.Location = new System.Drawing.Point(898, 397);
-            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.zipCodeTb.Location = new System.Drawing.Point(824, 323);
+            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.zipCodeTb.Name = "zipCodeTb";
-            this.zipCodeTb.Size = new System.Drawing.Size(162, 28);
+            this.zipCodeTb.Size = new System.Drawing.Size(197, 24);
             this.zipCodeTb.TabIndex = 35;
             // 
             // streetLbl
@@ -205,9 +210,10 @@
             this.streetLbl.BackColor = System.Drawing.Color.Transparent;
             this.streetLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.streetLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.streetLbl.Location = new System.Drawing.Point(405, 467);
+            this.streetLbl.Location = new System.Drawing.Point(240, 379);
+            this.streetLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.streetLbl.Name = "streetLbl";
-            this.streetLbl.Size = new System.Drawing.Size(56, 24);
+            this.streetLbl.Size = new System.Drawing.Size(46, 18);
             this.streetLbl.TabIndex = 34;
             this.streetLbl.Text = "Ulica";
             // 
@@ -217,9 +223,10 @@
             this.zipCodeLbl.BackColor = System.Drawing.Color.Transparent;
             this.zipCodeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.zipCodeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.zipCodeLbl.Location = new System.Drawing.Point(894, 356);
+            this.zipCodeLbl.Location = new System.Drawing.Point(820, 289);
+            this.zipCodeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.zipCodeLbl.Name = "zipCodeLbl";
-            this.zipCodeLbl.Size = new System.Drawing.Size(140, 24);
+            this.zipCodeLbl.Size = new System.Drawing.Size(115, 18);
             this.zipCodeLbl.TabIndex = 33;
             this.zipCodeLbl.Text = "Kod pocztowy";
             // 
@@ -228,10 +235,10 @@
             this.cityTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.cityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.cityTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cityTb.Location = new System.Drawing.Point(663, 397);
-            this.cityTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cityTb.Location = new System.Drawing.Point(525, 323);
+            this.cityTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cityTb.Name = "cityTb";
-            this.cityTb.Size = new System.Drawing.Size(162, 28);
+            this.cityTb.Size = new System.Drawing.Size(197, 24);
             this.cityTb.TabIndex = 32;
             // 
             // emailTb
@@ -239,12 +246,11 @@
             this.emailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.emailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.emailTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.emailTb.Location = new System.Drawing.Point(898, 290);
-            this.emailTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emailTb.Location = new System.Drawing.Point(823, 234);
+            this.emailTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailTb.Name = "emailTb";
-            this.emailTb.Size = new System.Drawing.Size(162, 28);
+            this.emailTb.Size = new System.Drawing.Size(197, 24);
             this.emailTb.TabIndex = 31;
-            //this.emailTb.TextChanged += new System.EventHandler(this.emailTb_TextChanged);
             // 
             // cityLbl
             // 
@@ -252,9 +258,10 @@
             this.cityLbl.BackColor = System.Drawing.Color.Transparent;
             this.cityLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.cityLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cityLbl.Location = new System.Drawing.Point(659, 356);
+            this.cityLbl.Location = new System.Drawing.Point(522, 289);
+            this.cityLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cityLbl.Name = "cityLbl";
-            this.cityLbl.Size = new System.Drawing.Size(130, 24);
+            this.cityLbl.Size = new System.Drawing.Size(107, 18);
             this.cityLbl.TabIndex = 30;
             this.cityLbl.Text = "Miejscowość";
             // 
@@ -264,9 +271,10 @@
             this.emailLbl.BackColor = System.Drawing.Color.Transparent;
             this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.emailLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.emailLbl.Location = new System.Drawing.Point(904, 241);
+            this.emailLbl.Location = new System.Drawing.Point(820, 196);
+            this.emailLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(69, 24);
+            this.emailLbl.Size = new System.Drawing.Size(56, 18);
             this.emailLbl.TabIndex = 29;
             this.emailLbl.Text = "E-mail";
             // 
@@ -275,10 +283,10 @@
             this.phoneTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.phoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.phoneTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.phoneTb.Location = new System.Drawing.Point(409, 397);
-            this.phoneTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phoneTb.Location = new System.Drawing.Point(243, 323);
+            this.phoneTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.phoneTb.Name = "phoneTb";
-            this.phoneTb.Size = new System.Drawing.Size(162, 28);
+            this.phoneTb.Size = new System.Drawing.Size(197, 24);
             this.phoneTb.TabIndex = 28;
             // 
             // nameTb
@@ -286,10 +294,10 @@
             this.nameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.nameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.nameTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nameTb.Location = new System.Drawing.Point(663, 290);
-            this.nameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nameTb.Location = new System.Drawing.Point(525, 234);
+            this.nameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameTb.Name = "nameTb";
-            this.nameTb.Size = new System.Drawing.Size(162, 28);
+            this.nameTb.Size = new System.Drawing.Size(197, 24);
             this.nameTb.TabIndex = 27;
             // 
             // phoneLbl
@@ -298,9 +306,10 @@
             this.phoneLbl.BackColor = System.Drawing.Color.Transparent;
             this.phoneLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.phoneLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.phoneLbl.Location = new System.Drawing.Point(405, 356);
+            this.phoneLbl.Location = new System.Drawing.Point(240, 289);
+            this.phoneLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.phoneLbl.Name = "phoneLbl";
-            this.phoneLbl.Size = new System.Drawing.Size(81, 24);
+            this.phoneLbl.Size = new System.Drawing.Size(64, 18);
             this.phoneLbl.TabIndex = 26;
             this.phoneLbl.Text = "Telefon";
             // 
@@ -310,9 +319,10 @@
             this.nameLbl.BackColor = System.Drawing.Color.Transparent;
             this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.nameLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nameLbl.Location = new System.Drawing.Point(659, 241);
+            this.nameLbl.Location = new System.Drawing.Point(522, 196);
+            this.nameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(72, 24);
+            this.nameLbl.Size = new System.Drawing.Size(59, 18);
             this.nameLbl.TabIndex = 25;
             this.nameLbl.Text = "Nazwa";
             // 
@@ -322,9 +332,10 @@
             this.dodajNowaFirmeOutsourcingowaLbl.BackColor = System.Drawing.Color.Transparent;
             this.dodajNowaFirmeOutsourcingowaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.dodajNowaFirmeOutsourcingowaLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dodajNowaFirmeOutsourcingowaLbl.Location = new System.Drawing.Point(506, 130);
+            this.dodajNowaFirmeOutsourcingowaLbl.Location = new System.Drawing.Point(427, 104);
+            this.dodajNowaFirmeOutsourcingowaLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dodajNowaFirmeOutsourcingowaLbl.Name = "dodajNowaFirmeOutsourcingowaLbl";
-            this.dodajNowaFirmeOutsourcingowaLbl.Size = new System.Drawing.Size(453, 31);
+            this.dodajNowaFirmeOutsourcingowaLbl.Size = new System.Drawing.Size(371, 26);
             this.dodajNowaFirmeOutsourcingowaLbl.TabIndex = 47;
             this.dodajNowaFirmeOutsourcingowaLbl.Text = "Dodaj nową firmę outsourcingową";
             // 
@@ -334,9 +345,10 @@
             this.typeLbl.BackColor = System.Drawing.Color.Transparent;
             this.typeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.typeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.typeLbl.Location = new System.Drawing.Point(403, 241);
+            this.typeLbl.Location = new System.Drawing.Point(240, 196);
+            this.typeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.typeLbl.Name = "typeLbl";
-            this.typeLbl.Size = new System.Drawing.Size(45, 24);
+            this.typeLbl.Size = new System.Drawing.Size(35, 18);
             this.typeLbl.TabIndex = 48;
             this.typeLbl.Text = "Typ";
             // 
@@ -346,32 +358,31 @@
             this.addNewOutsourcingCompanyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.addNewOutsourcingCompanyBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addNewOutsourcingCompanyBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewOutsourcingCompanyBtn.Image")));
-            this.addNewOutsourcingCompanyBtn.Location = new System.Drawing.Point(22, 558);
-            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addNewOutsourcingCompanyBtn.Location = new System.Drawing.Point(258, 613);
+            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addNewOutsourcingCompanyBtn.Name = "addNewOutsourcingCompanyBtn";
-            this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(267, 148);
+            this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(200, 120);
             this.addNewOutsourcingCompanyBtn.TabIndex = 50;
             this.addNewOutsourcingCompanyBtn.Text = "Zatwierdź";
             this.addNewOutsourcingCompanyBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.addNewOutsourcingCompanyBtn.UseVisualStyleBackColor = false;
             this.addNewOutsourcingCompanyBtn.Click += new System.EventHandler(this.addNewOutsourcingCompanyBtn_Click);
             // 
-            // returnANOFBtn
+            // returnBtn
             // 
-            this.returnANOFBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.returnANOFBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.returnANOFBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.returnANOFBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.returnANOFBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnANOFBtn.Image")));
-            this.returnANOFBtn.Location = new System.Drawing.Point(13, 57);
-            this.returnANOFBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.returnANOFBtn.Name = "returnANOFBtn";
-            this.returnANOFBtn.Size = new System.Drawing.Size(267, 148);
-            this.returnANOFBtn.TabIndex = 51;
-            this.returnANOFBtn.Text = "Powrót";
-            this.returnANOFBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.returnANOFBtn.UseVisualStyleBackColor = false;
-            this.returnANOFBtn.Click += new System.EventHandler(this.returnANOFBtn_Click);
+            this.returnBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.returnBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.returnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.returnBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.returnBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnBtn.Image")));
+            this.returnBtn.Location = new System.Drawing.Point(19, 613);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(200, 120);
+            this.returnBtn.TabIndex = 51;
+            this.returnBtn.Text = "Powrót";
+            this.returnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.returnBtn.UseVisualStyleBackColor = false;
+            this.returnBtn.Click += new System.EventHandler(this.returnANOFBtn_Click);
             // 
             // comboBoxOutsourcingType
             // 
@@ -379,10 +390,9 @@
             this.comboBoxOutsourcingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.comboBoxOutsourcingType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.comboBoxOutsourcingType.FormattingEnabled = true;
-            this.comboBoxOutsourcingType.Location = new System.Drawing.Point(407, 288);
-            this.comboBoxOutsourcingType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOutsourcingType.Location = new System.Drawing.Point(243, 234);
             this.comboBoxOutsourcingType.Name = "comboBoxOutsourcingType";
-            this.comboBoxOutsourcingType.Size = new System.Drawing.Size(162, 30);
+            this.comboBoxOutsourcingType.Size = new System.Drawing.Size(197, 26);
             this.comboBoxOutsourcingType.TabIndex = 52;
             // 
             // buttonAddTypeOutsourcing
@@ -390,10 +400,9 @@
             this.buttonAddTypeOutsourcing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.buttonAddTypeOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.buttonAddTypeOutsourcing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAddTypeOutsourcing.Location = new System.Drawing.Point(25, 411);
-            this.buttonAddTypeOutsourcing.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddTypeOutsourcing.Location = new System.Drawing.Point(540, 674);
             this.buttonAddTypeOutsourcing.Name = "buttonAddTypeOutsourcing";
-            this.buttonAddTypeOutsourcing.Size = new System.Drawing.Size(281, 73);
+            this.buttonAddTypeOutsourcing.Size = new System.Drawing.Size(211, 59);
             this.buttonAddTypeOutsourcing.TabIndex = 53;
             this.buttonAddTypeOutsourcing.Text = "Dodaj nowy typ firmy outsourcingowej";
             this.buttonAddTypeOutsourcing.UseVisualStyleBackColor = false;
@@ -402,12 +411,11 @@
             // textBoxNewTypeOutsourcing
             // 
             this.textBoxNewTypeOutsourcing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.textBoxNewTypeOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.textBoxNewTypeOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.textBoxNewTypeOutsourcing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxNewTypeOutsourcing.Location = new System.Drawing.Point(25, 375);
-            this.textBoxNewTypeOutsourcing.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNewTypeOutsourcing.Location = new System.Drawing.Point(540, 613);
             this.textBoxNewTypeOutsourcing.Name = "textBoxNewTypeOutsourcing";
-            this.textBoxNewTypeOutsourcing.Size = new System.Drawing.Size(281, 28);
+            this.textBoxNewTypeOutsourcing.Size = new System.Drawing.Size(211, 35);
             this.textBoxNewTypeOutsourcing.TabIndex = 54;
             // 
             // pictureBoxForm
@@ -416,23 +424,22 @@
             this.pictureBoxForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxForm.BackgroundImage")));
             this.pictureBoxForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxForm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBoxForm.Location = new System.Drawing.Point(314, 13);
-            this.pictureBoxForm.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxForm.Location = new System.Drawing.Point(111, 11);
             this.pictureBoxForm.Name = "pictureBoxForm";
-            this.pictureBoxForm.Size = new System.Drawing.Size(832, 705);
+            this.pictureBoxForm.Size = new System.Drawing.Size(1030, 573);
             this.pictureBoxForm.TabIndex = 55;
             this.pictureBoxForm.TabStop = false;
             // 
             // AddNewOutsourcingCompanyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.textBoxNewTypeOutsourcing);
             this.Controls.Add(this.buttonAddTypeOutsourcing);
             this.Controls.Add(this.comboBoxOutsourcingType);
-            this.Controls.Add(this.returnANOFBtn);
+            this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.addNewOutsourcingCompanyBtn);
             this.Controls.Add(this.typeLbl);
             this.Controls.Add(this.dodajNowaFirmeOutsourcingowaLbl);
@@ -459,10 +466,10 @@
             this.Controls.Add(this.phoneLbl);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.pictureBoxForm);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddNewOutsourcingCompanyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddNewOutsourcingCompanyForm";
+            this.Text = "Dodaj nową firmę outsourcingową";
             this.Load += new System.EventHandler(this.AddNewOutsourcingCompanyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
@@ -497,7 +504,7 @@
         private System.Windows.Forms.Label dodajNowaFirmeOutsourcingowaLbl;
         private System.Windows.Forms.Label typeLbl;
         private System.Windows.Forms.Button addNewOutsourcingCompanyBtn;
-        private System.Windows.Forms.Button returnANOFBtn;
+        private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.ComboBox comboBoxOutsourcingType;
         private System.Windows.Forms.Button buttonAddTypeOutsourcing;
         private System.Windows.Forms.TextBox textBoxNewTypeOutsourcing;
