@@ -73,10 +73,7 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vCustomer" Width="1.5" PointX="18.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" Width="1.5" PointX="16.75" PointY="20.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vEducationForm" Width="1.5" PointX="20.75" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="22.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeList" Width="1.5" PointX="24.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSalesDepartment" Width="1.5" PointX="24.75" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="25.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExamination" Width="1.5" PointX="24.75" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesInvoice" Width="1.5" PointX="25.75" PointY="21.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOrder" Width="1.5" PointX="25.75" PointY="24.375" IsExpanded="true" />
@@ -169,6 +166,9 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="30.375" PointY="6.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSalesDepartment" Width="1.5" PointX="23.375" PointY="13.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

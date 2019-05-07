@@ -43,15 +43,15 @@ namespace KWZP2019
 
         private void domainUpDownDevelompentNumber_SelectedItemChanged(object sender, EventArgs e)
         {
-            FEMAnalysi fEMAnalysi = db.FEMAnalysis.First(fEMA => fEMA.IdFEMAnalysis.ToString() == domainUpDownDevelompentNumber.Text);
-            textBoxDevelopmentDate.Text = $"{fEMAnalysi.AnalysisDate}";
-            textBoxEmployeeNumber.Text = $"{fEMAnalysi.IdEmployee}";
-            textBoxDevelopmentDescription.Text = $"{fEMAnalysi.AnalysisResults}";
-            Employee employee = db.Employees.First(emp => emp.IdEmployee.ToString() == fEMAnalysi.IdEmployee.ToString());
-            textBoxEmployeeName.Text = $"{employee.EmployeeName}";
-            textBoxEmployeeSurname.Text = $"{employee.EmployeeSurname}";
+            FEMAnalysi FEMAnalysi = db.FEMAnalysis.First(fEMA => fEMA.IdFEMAnalysis.ToString() == domainUpDownDevelompentNumber.Text);
+            textBoxDevelopmentDate.Text = $"{FEMAnalysi.AnalysisDate}";
+            textBoxEmployeeNumber.Text = $"{FEMAnalysi.IdEmployee}";
+            textBoxDevelopmentDescription.Text = $"{FEMAnalysi.AnalysisResults}";
+            Employee Employee = db.Employees.First(emp => emp.IdEmployee.ToString() == FEMAnalysi.IdEmployee.ToString());
+            textBoxEmployeeName.Text = $"{Employee.EmployeeName}";
+            textBoxEmployeeSurname.Text = $"{Employee.EmployeeSurname}";
             selectedDevelopment = Convert.ToInt32(domainUpDownDevelompentNumber.Text);
-            MemoryStream memoryStream = new MemoryStream((byte[])fEMAnalysi.NewPattern);
+            MemoryStream memoryStream = new MemoryStream((byte[])FEMAnalysi.NewPattern);
             pictureBoxPattern.Image = new Bitmap(memoryStream);
         }
     }

@@ -60,9 +60,9 @@ namespace KWZP2019
                 int IdEmpTextBoxValue = int.Parse(textBoxEmployeeId.Text);
                 if(employeeQuantity >= IdEmpTextBoxValue)
                 {
-                    Employee employee = db.Employees.First(emp => emp.IdEmployee.ToString() == textBoxEmployeeId.Text);
-                    textBoxName.Text = $"{employee.EmployeeName}";
-                    textBoxSurname.Text = $"{employee.EmployeeSurname}";
+                    Employee Employee = db.Employees.First(emp => emp.IdEmployee.ToString() == textBoxEmployeeId.Text);
+                    textBoxName.Text = $"{Employee.EmployeeName}";
+                    textBoxSurname.Text = $"{Employee.EmployeeSurname}";
                     selectedEmployee = Convert.ToInt32(textBoxEmployeeId.Text);
                 }
                 else
@@ -80,7 +80,7 @@ namespace KWZP2019
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (textBoxDescription.Text == "" || textBoxEmployeeId.Text == "" || dateTimePicker.Text == "" |newPatternImage == null )
+            if (textBoxDescription.Text == "" || textBoxEmployeeId.Text == "" || dateTimePicker.Text == "" || newPatternImage == null )
             {
                 MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -93,10 +93,7 @@ namespace KWZP2019
         public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
         public virtual DbSet<vEducationForm> vEducationForms { get; set; }
-        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
-        public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
-        public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
         public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
         public virtual DbSet<vExpencesOrder> vExpencesOrders { get; set; }
@@ -126,6 +123,8 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
+        public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
     }
 }
