@@ -47,6 +47,7 @@
             this.btnEducationLevel = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmloyees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,10 +102,10 @@
             // lbWarningsExamination
             // 
             this.lbWarningsExamination.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.lbWarningsExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lbWarningsExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbWarningsExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsExamination.FormattingEnabled = true;
-            this.lbWarningsExamination.ItemHeight = 29;
+            this.lbWarningsExamination.ItemHeight = 25;
             this.lbWarningsExamination.Location = new System.Drawing.Point(15, 610);
             this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbWarningsExamination.Name = "lbWarningsExamination";
@@ -228,10 +229,10 @@
             // lbWarningsContracts
             // 
             this.lbWarningsContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.lbWarningsContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lbWarningsContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbWarningsContracts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsContracts.FormattingEnabled = true;
-            this.lbWarningsContracts.ItemHeight = 29;
+            this.lbWarningsContracts.ItemHeight = 25;
             this.lbWarningsContracts.Location = new System.Drawing.Point(15, 558);
             this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbWarningsContracts.Name = "lbWarningsContracts";
@@ -309,6 +310,16 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(242, 732);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(96, 48);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edytuj";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // HR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,6 +327,7 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnEducationLevel);
@@ -362,5 +374,6 @@
         private System.Windows.Forms.Button btnEducationLevel;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

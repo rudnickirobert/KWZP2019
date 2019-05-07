@@ -41,7 +41,6 @@
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
             this.btnEducation = new System.Windows.Forms.Button();
             this.btnTrainings = new System.Windows.Forms.Button();
-            this.tbSearchEmployeeDetails = new System.Windows.Forms.TextBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.dgvTrainings = new System.Windows.Forms.DataGridView();
@@ -72,7 +71,7 @@
             this.dgvEmployeeDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployeeDetails.EnableHeadersVisualStyles = false;
-            this.dgvEmployeeDetails.Location = new System.Drawing.Point(369, 190);
+            this.dgvEmployeeDetails.Location = new System.Drawing.Point(372, 75);
             this.dgvEmployeeDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
             this.dgvEmployeeDetails.RowHeadersVisible = false;
@@ -85,7 +84,7 @@
             this.dgvEmployeeDetails.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmployeeDetails.RowTemplate.Height = 24;
             this.dgvEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployeeDetails.Size = new System.Drawing.Size(1195, 529);
+            this.dgvEmployeeDetails.Size = new System.Drawing.Size(1195, 180);
             this.dgvEmployeeDetails.TabIndex = 0;
             // 
             // btnEducation
@@ -127,16 +126,6 @@
             this.btnTrainings.Text = "Szkolenia";
             this.btnTrainings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTrainings.UseVisualStyleBackColor = false;
-            // 
-            // tbSearchEmployeeDetails
-            // 
-            this.tbSearchEmployeeDetails.Location = new System.Drawing.Point(369, 135);
-            this.tbSearchEmployeeDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbSearchEmployeeDetails.Name = "tbSearchEmployeeDetails";
-            this.tbSearchEmployeeDetails.Size = new System.Drawing.Size(651, 22);
-            this.tbSearchEmployeeDetails.TabIndex = 6;
-            this.tbSearchEmployeeDetails.Text = "Wyszukaj po nazwisku";
-            this.tbSearchEmployeeDetails.TextChanged += new System.EventHandler(this.tbSearchEmployeeDetails_TextChanged);
             // 
             // btnReturn
             // 
@@ -201,7 +190,7 @@
             this.dgvTrainings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTrainings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrainings.EnableHeadersVisualStyles = false;
-            this.dgvTrainings.Location = new System.Drawing.Point(382, 448);
+            this.dgvTrainings.Location = new System.Drawing.Point(350, 307);
             this.dgvTrainings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTrainings.Name = "dgvTrainings";
             this.dgvTrainings.RowHeadersVisible = false;
@@ -214,7 +203,7 @@
             this.dgvTrainings.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTrainings.RowTemplate.Height = 24;
             this.dgvTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrainings.Size = new System.Drawing.Size(340, 446);
+            this.dgvTrainings.Size = new System.Drawing.Size(656, 602);
             this.dgvTrainings.TabIndex = 9;
             // 
             // dgvAbsences
@@ -238,7 +227,7 @@
             this.dgvAbsences.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAbsences.EnableHeadersVisualStyles = false;
-            this.dgvAbsences.Location = new System.Drawing.Point(783, 448);
+            this.dgvAbsences.Location = new System.Drawing.Point(1012, 307);
             this.dgvAbsences.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAbsences.Name = "dgvAbsences";
             this.dgvAbsences.RowHeadersVisible = false;
@@ -251,7 +240,7 @@
             this.dgvAbsences.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAbsences.RowTemplate.Height = 24;
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAbsences.Size = new System.Drawing.Size(340, 446);
+            this.dgvAbsences.Size = new System.Drawing.Size(562, 602);
             this.dgvAbsences.TabIndex = 10;
             // 
             // EmployeeDetails
@@ -265,7 +254,6 @@
             this.Controls.Add(this.dgvTrainings);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.tbSearchEmployeeDetails);
             this.Controls.Add(this.btnTrainings);
             this.Controls.Add(this.btnEducation);
             this.Controls.Add(this.dgvEmployeeDetails);
@@ -281,7 +269,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -290,7 +277,6 @@
         private System.Windows.Forms.DataGridView dgvEmployeeDetails;
         private System.Windows.Forms.Button btnEducation;
         private System.Windows.Forms.Button btnTrainings;
-        private System.Windows.Forms.TextBox tbSearchEmployeeDetails;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.DataGridView dgvTrainings;

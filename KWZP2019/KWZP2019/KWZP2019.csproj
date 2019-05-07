@@ -67,6 +67,12 @@
     <Compile Include="Accident.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HR\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="HR\AddAbsenceType.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -68,7 +68,7 @@ namespace KWZP2019
                         employeesSelect.EmployeeName,
                         employeesSelect.Workplace,
                         employeesSelect.PhoneNumber,
-                        employeesSelect.City,
+                        employeesSelect.PESEL,
                         employeesSelect.IdEmployee }).
                 OrderBy (EmployeeOrderBy => EmployeeOrderBy.EmployeeSurname).
                 ToList();
@@ -79,7 +79,7 @@ namespace KWZP2019
             dgvEmloyees.Columns[1].HeaderText = "Imię";
             dgvEmloyees.Columns[2].HeaderText = "Stanowisko";
             dgvEmloyees.Columns[3].HeaderText = "Numer";
-            dgvEmloyees.Columns[4].HeaderText = "Miejsce zamieszkania";
+            dgvEmloyees.Columns[4].HeaderText = "PESEL";
 
             dgvEmloyees.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmloyees.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -87,12 +87,10 @@ namespace KWZP2019
             dgvEmloyees.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmloyees.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            String stddetails = "{0, -40}{1, 0}";
-
-            lbWarningsContracts.Items.Add(String.Format(stddetails,
+            lbWarningsContracts.Items.Add(String.Format("{0, -52} {1, 0}",
                 "Kończące się umowy: ", db.vHRContracts.Count()));
 
-            lbWarningsExamination.Items.Add(String.Format(stddetails, 
+            lbWarningsExamination.Items.Add(String.Format("{0, -45} {1, 0}", 
                 "Kończące się badania lekarskie: ", db.vHRExaminations.Count()));
         }
 
@@ -152,6 +150,14 @@ namespace KWZP2019
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
+            this.Hide();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dgvEmloyees.SelectedRows[0].Cells[5].Value.ToString());
+            EditEmployee editEmployee = new EditEmployee(db, startForm, this, id);
+            editEmployee.Show();
             this.Hide();
         }
     }
