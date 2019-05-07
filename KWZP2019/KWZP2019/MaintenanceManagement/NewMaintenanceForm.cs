@@ -40,60 +40,51 @@ namespace KWZP2019
 
         void PopulateDataGridView()
         {
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                this.dgvEmployees.DataSource = db.vMaintenanceEmployees.ToList<vMaintenanceEmployees>();
-                this.dgvMaintenanceEmployees.DataSource = (from employeeview in db.vMaintenanceAssignEmployees
-                                                           where employeeview.IdMaintenance == this.maintenance.IdMaintenance
-                                                           select new
-                                                           {
-                                                               employeeview.IdEmployeePlan,
-                                                               employeeview.IdMaintenance,
-                                                               employeeview.IdEmployee,
-                                                               employeeview.EmployeeName,
-                                                               employeeview.EmployeeSurname,
-                                                               employeeview.StartDate,
-                                                               employeeview.EndDate
-                                                           }).ToList();
-                this.dgvPart.DataSource = (from partview in db.vMaintenanceAssignParts
-                                           where partview.IdMaintenance == this.maintenance.IdMaintenance
-                                           select new
-                                           {
-                                               partview.IdMaintenance,
-                                               partview.IdPart,
-                                               partview.PartName,
-                                               partview.PartQuantity,
-                                               partview.QuantityWarehouse,
-                                               partview.UnitName
-                                           }).ToList();                            
-            }
+            this.dgvEmployees.DataSource = this.db.vMaintenanceEmployees.ToList<vMaintenanceEmployees>();
+            this.dgvMaintenanceEmployees.DataSource = (from employeeview in this.db.vMaintenanceAssignEmployees
+                                                       where employeeview.IdMaintenance == this.maintenance.IdMaintenance
+                                                       select new
+                                                       {
+                                                           employeeview.IdEmployeePlan,
+                                                           employeeview.IdMaintenance,
+                                                           employeeview.IdEmployee,
+                                                           employeeview.EmployeeName,
+                                                           employeeview.EmployeeSurname,
+                                                           employeeview.StartDate,
+                                                           employeeview.EndDate
+                                                       }).ToList();
+            this.dgvPart.DataSource = (from partview in this.db.vMaintenanceAssignParts
+                                       where partview.IdMaintenance == this.maintenance.IdMaintenance
+                                       select new
+                                       {
+                                           partview.IdMaintenance,
+                                           partview.IdPart,
+                                           partview.PartName,
+                                           partview.PartQuantity,
+                                           partview.QuantityWarehouse,
+                                           partview.UnitName
+                                       }).ToList();                            
         }
 
         void PopulateListBox()
         {
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                List<Part> Result = db.Parts.ToList<Part>();
-                this.lbxParts.DataSource = Result;
-                this.lbxParts.DisplayMember = "PartName";
-                this.lbxParts.ValueMember = "IdPart";
-            }
+            List<Part> Result = this.db.Parts.ToList<Part>();
+            this.lbxParts.DataSource = Result;
+            this.lbxParts.DisplayMember = "PartName";
+            this.lbxParts.ValueMember = "IdPart";
         }
 
         void PopulateComboBox()
         {
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                List<vComboboxNewFailures> lst = db.vComboboxNewFailures.ToList<vComboboxNewFailures>();
-                vComboboxNewFailures record = new vComboboxNewFailures();
-                record.IdFailure = -1;
-                record.Specification = "Nie wybrano";
-                lst.Add(record);
-                this.comFailure.DataSource = lst;
-                this.comFailure.ValueMember = "IdFailure";
-                this.comFailure.DisplayMember = "Specification";
-                this.comFailure.SelectedValue = -1;
-            }
+            List<vComboboxNewFailures> lst = this.db.vComboboxNewFailures.ToList<vComboboxNewFailures>();
+            vComboboxNewFailures record = new vComboboxNewFailures();
+            record.IdFailure = -1;
+            record.Specification = "Nie wybrano";
+            lst.Add(record);
+            this.comFailure.DataSource = lst;
+            this.comFailure.ValueMember = "IdFailure";
+            this.comFailure.DisplayMember = "Specification";
+            this.comFailure.SelectedValue = -1;       
         }
 
         void Clear()
@@ -102,8 +93,8 @@ namespace KWZP2019
             this.dtpStartDate.Value = this.dtpEndDate.Value = DateTime.Now;
             this.tpStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             this.tpEndDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, 0, 0);
-            this.maintenance.IdMaintenance = 0;
-            this.failureMaintenance.IdMaintenance = 0;
+            this.maintenance = new Maintenance();
+            this.failureMaintenance = new FailureMaintenance();
         }
 
         void ClearEmployee()
@@ -111,15 +102,13 @@ namespace KWZP2019
             this.dtpEmployeeStartDate.Value = this.dtpEmployeeEndDate.Value = DateTime.Now;
             this.tpEmployeeStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             this.tpEmployeeEndDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, 0, 0);
-            this.employeePlan.IdEmployeePlan = 0;
-            this.employeePlan.IdEmployee = 0;
+            this.employeePlan = new EmployeePlan();
             this.nIdSelectedEmployee = 0;
         }
 
         void ClearPart()
         {
-            this.maintPart.IdMaintPart = 0;
-            this.maintPart.IdPart = 0;
+            this.maintPart = new MaintPart();
             this.txtQuantity.Text = String.Empty;
         }
 
@@ -159,7 +148,7 @@ namespace KWZP2019
                 failureMaintenance.IdMaintenance = this.maintenance.IdMaintenance;              
                 int failureId = Convert.ToInt32(comFailure.SelectedValue);
                 failureMaintenance.IdFailure = failureId;
-                vMachineFailure machineFailureItem = db.vMachineFailure.First(m => m.IdFailure == failureId);
+                vMachineFailure machineFailureItem = this.db.vMachineFailure.First(m => m.IdFailure == failureId);
                 maintenance.IdMachine = machineFailureItem.IdMachine;
                 this.maintenance.IdMaintType = 1;
                 this.maintenance.IdMaintDesc = null;
@@ -167,18 +156,16 @@ namespace KWZP2019
                 this.maintenance.StartDatePlan = this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay;
                 this.maintenance.EndDatePlan = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
                 this.maintenance.MaintenanceNr = this.txtMaintenanceNr.Text.Trim();
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {                 
-                    if (maintenance.IdMaintenance == 0)//Instert
-                        db.Maintenances.Add(maintenance);
-                    else //update
-                        db.Entry(maintenance).State = EntityState.Modified;
-                    if (failureMaintenance.IdMaintenance == 0)//Instert
-                        db.FailureMaintenances.Add(failureMaintenance);
-                    else //update
-                        db.Entry(failureMaintenance).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
+                
+                if (maintenance.IdMaintenance == 0)//Instert
+                    this.db.Maintenances.Add(maintenance);
+                else //update
+                    this.db.Entry(maintenance).State = EntityState.Modified;
+                if (failureMaintenance.IdMaintenance == 0)//Instert
+                    this.db.FailureMaintenances.Add(failureMaintenance);
+                else //update
+                    this.db.Entry(failureMaintenance).State = EntityState.Modified;
+                this.db.SaveChanges();    
                 MessageBox.Show("Obsługa została dodana!");
                 this.btnSave.Text = "Aktualizuj";
             }
@@ -205,7 +192,7 @@ namespace KWZP2019
                     this.txtMachine.Text = string.Empty;
                     return;
                 }
-                vMachineFailure machineFailureItem = db.vMachineFailure.FirstOrDefault(m => m.IdFailure == failureId);
+                vMachineFailure machineFailureItem = this.db.vMachineFailure.FirstOrDefault(m => m.IdFailure == failureId);
                 maintenance.IdMachine = machineFailureItem.IdMachine;
                 this.txtMachine.Text = machineFailureItem.MachineName;
             }
@@ -227,15 +214,13 @@ namespace KWZP2019
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.ToString());
                 }
             }
         }
 
         private void btnSaveEmployee_Click(object sender, EventArgs e)
-        {
-            
+        {         
             if (this.maintenance.IdMaintenance == 0)
             {
                 MessageBox.Show("Najpierw wprowadź zlecenie!");
@@ -261,14 +246,13 @@ namespace KWZP2019
                 this.employeePlan.IdMaintenance = this.maintenance.IdMaintenance;
                 this.employeePlan.StartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
                 this.employeePlan.EndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {
-                    if (this.employeePlan.IdEmployeePlan == 0)//Instert
-                        db.EmployeePlans.Add(employeePlan);
-                    else //update
-                        db.Entry(employeePlan).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
+         
+                if (this.employeePlan.IdEmployeePlan == 0)//Instert
+                    this.db.EmployeePlans.Add(employeePlan);
+                else //update
+                    this.db.Entry(employeePlan).State = EntityState.Modified;
+                this.db.SaveChanges();
+                
                 ClearEmployee();
                 MessageBox.Show("Pracownik został dodany!");
                 PopulateDataGridView();
@@ -313,15 +297,12 @@ namespace KWZP2019
             {
                 this.maintPart.IdPart = lnIdPart;
                 this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;               
-                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {
-                    if (this.maintPart.IdMaintPart == 0)//Instert
-                        db.MaintParts.Add(maintPart);
-                    else //update
-                        db.Entry(maintPart).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
+                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());               
+                if (this.maintPart.IdMaintPart == 0)//Instert
+                    this.db.MaintParts.Add(maintPart);
+                else //update
+                    this.db.Entry(maintPart).State = EntityState.Modified;
+                this.db.SaveChanges();               
             }
             catch (Exception ex)
             {
@@ -411,18 +392,15 @@ namespace KWZP2019
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Czy na pewno chcesz usunąć tę pozycję?", "Usuwanie pracownika", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {
-                    var entry = db.Entry(employeePlan);
-                    if (entry.State == EntityState.Detached)
-                        db.EmployeePlans.Attach(employeePlan);
-                    db.EmployeePlans.Remove(employeePlan);
-                    db.SaveChanges();
-                    PopulateDataGridView();
-                    ClearEmployee();
-                    MessageBox.Show("Usunięto prawidłowo");
-                }
+            {                          
+                var entry = this.db.Entry(employeePlan);
+                if (entry.State == EntityState.Detached)
+                    this.db.EmployeePlans.Attach(employeePlan);
+                this.db.EmployeePlans.Remove(employeePlan);
+                this.db.SaveChanges();
+                PopulateDataGridView();
+                ClearEmployee();
+                MessageBox.Show("Usunięto prawidłowo");     
             }
         }
 
@@ -435,33 +413,31 @@ namespace KWZP2019
         {
             if (this.dgvMaintenanceEmployees.CurrentRow.Index != -1)
             {
-                this.employeePlan.IdEmployeePlan = Convert.ToInt32(this.dgvMaintenanceEmployees.CurrentRow.Cells["IdEmployeePlan"].Value);
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {
-                    this.employeePlan = db.EmployeePlans.Where(x => x.IdEmployeePlan == employeePlan.IdEmployeePlan).First();
-                    this.dtpEmployeeStartDate.Value = new DateTime(
-                        employeePlan.StartDate.Year,
-                        employeePlan.StartDate.Month,
-                        employeePlan.StartDate.Day, 0, 0, 0);
-                    this.tpEmployeeStartDate.Value = new DateTime(
-                        employeePlan.StartDate.Year,
-                        employeePlan.StartDate.Month,
-                        employeePlan.StartDate.Day,
-                        employeePlan.StartDate.Hour, 
-                        employeePlan.StartDate.Minute, 
-                        employeePlan.StartDate.Second);
-                    this.dtpEmployeeEndDate.Value = new DateTime(
-                        employeePlan.EndDate.Year,
-                        employeePlan.EndDate.Month,
-                        employeePlan.EndDate.Day, 0, 0, 0);
-                    this.tpEmployeeEndDate.Value = new DateTime(
-                        employeePlan.EndDate.Year,
-                        employeePlan.EndDate.Month,
-                        employeePlan.EndDate.Day,
-                        employeePlan.EndDate.Hour,
-                        employeePlan.EndDate.Minute,
-                        employeePlan.EndDate.Second);
-                }
+                this.employeePlan.IdEmployeePlan = Convert.ToInt32(this.dgvMaintenanceEmployees.CurrentRow.Cells["IdEmployeePlan"].Value);                                
+                this.employeePlan = this.db.EmployeePlans.Where(x => x.IdEmployeePlan == employeePlan.IdEmployeePlan).First();
+                this.dtpEmployeeStartDate.Value = new DateTime(
+                    employeePlan.StartDate.Year,
+                    employeePlan.StartDate.Month,
+                    employeePlan.StartDate.Day, 0, 0, 0);
+                this.tpEmployeeStartDate.Value = new DateTime(
+                    employeePlan.StartDate.Year,
+                    employeePlan.StartDate.Month,
+                    employeePlan.StartDate.Day,
+                    employeePlan.StartDate.Hour, 
+                    employeePlan.StartDate.Minute, 
+                    employeePlan.StartDate.Second);
+                this.dtpEmployeeEndDate.Value = new DateTime(
+                    employeePlan.EndDate.Year,
+                    employeePlan.EndDate.Month,
+                    employeePlan.EndDate.Day, 0, 0, 0);
+                this.tpEmployeeEndDate.Value = new DateTime(
+                    employeePlan.EndDate.Year,
+                    employeePlan.EndDate.Month,
+                    employeePlan.EndDate.Day,
+                    employeePlan.EndDate.Hour,
+                    employeePlan.EndDate.Minute,
+                    employeePlan.EndDate.Second);
+                
                 this.btnSaveEmployee.Text = "Aktualizuj";
                 this.btnDeleteEmployee.Enabled = true;
             }
