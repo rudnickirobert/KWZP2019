@@ -182,5 +182,12 @@ namespace KWZP2019
             string number = cbEmployeeList.SelectedItem.ToString();
             MessageBox.Show(number.Substring(0, 41));
         }
+
+        private void btnAddAbsenceType_Click(object sender, EventArgs e)
+        {
+            AddAbsenceType addAbsenceType = new AddAbsenceType(db);
+            addAbsenceType.Show();
+            this.Close();
+        }
     }
 }

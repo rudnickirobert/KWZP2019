@@ -90,10 +90,10 @@ namespace KWZP2019
             String stddetails = "{0, -40}{1, 0}";
 
             lbWarningsContracts.Items.Add(String.Format(stddetails,
-                "Pracownicy, którym kończy się umowa: ", db.vHRContracts.Count()));
+                "Kończące się umowy: ", db.vHRContracts.Count()));
 
             lbWarningsExamination.Items.Add(String.Format(stddetails, 
-                "Pracownicy, z krótkim terminem badań lekarskich: ", db.vHRExaminations.Count()));
+                "Kończące się badania lekarskie: ", db.vHRExaminations.Count()));
         }
 
         private void tbEmployeeSearching_TextChanged(object sender, EventArgs e)

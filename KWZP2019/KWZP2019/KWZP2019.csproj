@@ -67,6 +67,12 @@
     <Compile Include="Accident.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HR\AddAbsenceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR\AddAbsenceType.Designer.cs">
+      <DependentUpon>AddAbsenceType.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -810,6 +816,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\AddInvoices.resx">
       <DependentUpon>AddInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR\AddAbsenceType.resx">
+      <DependentUpon>AddAbsenceType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR\AddContract.resx">
       <DependentUpon>AddContract.cs</DependentUpon>
