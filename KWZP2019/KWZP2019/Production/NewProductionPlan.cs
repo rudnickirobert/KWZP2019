@@ -212,6 +212,7 @@ namespace KWZP2019
                 tBoxPlanNr.Text = Convert.ToString(newPlanId);
                 viewProcessEmpl.DataSource = null;
                 btnSave.Enabled = true;
+                flagEditPlan = false;
             }
             else
             {

@@ -16,6 +16,10 @@ namespace KWZP2019
         private RoofingCompanyEntities db;
         private StartForm startForm;
         private QualityControl qualityControlForm;
+        private int selectedEmployee;
+        private SafetyTraining safetyTraining;
+        private DataGridViewRow selectedRow;
+        private bool doSelectedRow = false;
 
         public OshTrainingForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
@@ -45,20 +49,58 @@ namespace KWZP2019
         private void OshTrainingForm_Load(object sender, EventArgs e)
         {
             List<Department> departmentList = db.Departments.ToList();
-            foreach(Department dep in departmentList)
+            foreach (Department department in departmentList)
             {
-                domainUpDownDepartmentName.Items.Add(dep.DepartmentName);
+                domainUpDownDepartmentName.Items.Add(department.DepartmentName);
             }
+            datePickerControlDate.Value = DateTime.Now;
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
             dataGVOshTraining.DataSource = db.ViewOshTrainings.
-                Where(vOsh => vOsh.DepartmentName == domainUpDownDepartmentName.Text
-                && DbFunctions.AddDays(vOsh.TrainingDate, (int)vOsh.ValidityOfOshTraining * 365) <= DbFunctions.AddDays(DateTime.Now, 45)
-                && vOsh.EndDate > DbFunctions.AddDays(DateTime.Now, 45))
-                .Select(osh => new { osh.EmployeeName, osh.EmployeeSurname, NextTrainingDate = DbFunctions.AddDays(osh.TrainingDate, (int)osh.ValidityOfOshTraining * 365) })
-                .ToList();
+                Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
+            dataGVOshTraining.AutoResizeColumns();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if(doSelectedRow)
+            {
+                string pesel = selectedRow.Cells["PESEL"].Value.ToString();
+                int idEmployee = db.Employees
+                    .First(check => check.PESEL == pesel).IdEmployee;
+                SafetyTraining safetyTraining = db.SafetyTrainings
+                    .First(check => check.IdEmployee == idEmployee);
+                safetyTraining.TrainingDate = datePickerControlDate.Value;
+                db.SaveChanges();
+                doSelectedRow = false;
+                MessageBox.Show("Zmiany zostały zapisane!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGVOshTraining.DataSource = db.ViewOshTrainings
+                    .Where(vOsh => vOsh.Dział == domainUpDownDepartmentName.Text).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Zaznacz wiersz wybranego pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGVOshTraining_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(dataGVOshTraining.SelectedRows.Count == 0)
+            {
+                doSelectedRow = false;
+            }
+            else
+            {
+                selectedRow = dataGVOshTraining.SelectedRows[0];
+                doSelectedRow = true;
+            }
+        }
+
+        private void dataGVOshTraining_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            doSelectedRow = false;
         }
     }
-}
+};

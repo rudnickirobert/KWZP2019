@@ -404,11 +404,11 @@ insert into Technology(TechnologyName, TimePermeter, SpeedFactor)
 		--Product
 /*TD - trapez du�y, TM - trapez ma�y P - p�aski, D - dach�wka, F - falisty*/
 insert into Product (IdSemiFinished, ProductCode, IdTechnology, InputDate,InProduction) values
-		(1, 'C05#1D', 4, '2019-01-07 10:30:00',1),
+		(1, 'C05#1TM', 1, '2019-01-07 10:30:00',1),
 		(2, 'G05#1D', 4, '2019-01-07 10:40:00',1),
-		(3, 'C07#1D', 4, '2019-01-07 10:50:00',0),
-		(4, 'W10#1D', 4, '2019-01-07 11:00:00',1),
-		(5, 'B125#1D', 4, '2019-01-07 11:10:00',1);
+		(3, 'C07#1TD', 2, '2019-01-07 10:50:00',0),
+		(4, 'W10#1F', 5, '2019-01-07 11:00:00',1),
+		(5, 'B125#1P', 3, '2019-01-07 11:10:00',1);
 --TechnicalProductData
 insert into TechnicalProductData (IdProduct, Pattern, Width, WeightPerMeter, Lenght, PricePerMeter) values
 		(1, '', 800, 50, 5000, 40),
