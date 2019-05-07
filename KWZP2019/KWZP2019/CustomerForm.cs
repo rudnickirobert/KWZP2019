@@ -131,7 +131,7 @@ namespace KWZP2019
         {
             int idCustomer = Convert.ToInt32(ordersDgv.CurrentRow.Cells[0].Value);
             orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
-                                          where OrderDetail.Numer_zamówienia == idCustomer
+                                          where OrderDetail.Nr_zamówienia == idCustomer
                                           select OrderDetail).ToList();
             orderDetailsDgv.Columns[1].Visible = false;
         }

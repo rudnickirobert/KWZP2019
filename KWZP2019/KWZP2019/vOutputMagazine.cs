@@ -17,5 +17,6 @@ namespace KWZP2019
         public string Kod_produktu { get; set; }
         public Nullable<int> Ilość { get; set; }
         public System.DateTime Data_przyjęcia_na_magazyn { get; set; }
+        public int Numer { get; set; }
     }
 }

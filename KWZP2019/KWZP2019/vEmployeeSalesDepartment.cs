@@ -14,13 +14,14 @@ namespace KWZP2019
     
     public partial class vEmployeeSalesDepartment
     {
+        public int Numer { get; set; }
         public string Imię { get; set; }
         public string Nazwisko { get; set; }
         public string Kod_pocztowy { get; set; }
         public string Miasto { get; set; }
         public string Ulica { get; set; }
-        public string Numer { get; set; }
-        public string Numer_lokalu { get; set; }
+        public string Nr_domu { get; set; }
+        public string Nr_lokalu { get; set; }
         public string Telefon { get; set; }
         public string PESEL { get; set; }
         public string Dział { get; set; }
