@@ -12,10 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vPositionExaminationValidity
+    public partial class vOD
     {
-        public int IdPosition { get; set; }
-        public Nullable<int> VailidityOfMedicalExam { get; set; }
-        public string Workplace { get; set; }
+        public int IdEmployee { get; set; }
+        public Nullable<int> ODDays { get; set; }
+        public Nullable<double> ODX { get; set; }
     }
 }

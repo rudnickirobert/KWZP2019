@@ -20,6 +20,7 @@ namespace KWZP2019
         public Nullable<decimal> Salary { get; set; }
         public Nullable<int> IdEmployee { get; set; }
         public int IdPosition { get; set; }
+        public Nullable<System.DateTime> HealTestDate { get; set; }
         public Nullable<System.DateTime> WorkplaceTrainingDate { get; set; }
     
         public virtual Employee Employee { get; set; }
