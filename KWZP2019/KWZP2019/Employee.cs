@@ -26,7 +26,7 @@ namespace KWZP2019
             this.Payments = new HashSet<Payment>();
             this.Trainings = new HashSet<Training>();
             this.EntranceControls = new HashSet<EntranceControl>();
-            this.FEMAnalysis = new HashSet<FEMAnalysi>();
+            this.FEMAnalysis = new HashSet<FEMAnalysis>();
             this.SafetyControls = new HashSet<SafetyControl>();
             this.OrderCustomers = new HashSet<OrderCustomer>();
             this.OutControls = new HashSet<OutControl>();
@@ -41,7 +41,7 @@ namespace KWZP2019
         public string HouseNumber { get; set; }
         public string ApartmentNum { get; set; }
         public string PhoneNumber { get; set; }
-        public Nullable<long> PESEL { get; set; }
+        public string PESEL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Absence> Absences { get; set; }
@@ -62,7 +62,7 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntranceControl> EntranceControls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FEMAnalysi> FEMAnalysis { get; set; }
+        public virtual ICollection<FEMAnalysis> FEMAnalysis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SafetyControl> SafetyControls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

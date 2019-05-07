@@ -14,10 +14,10 @@ namespace KWZP2019
     
     public partial class vMaintPartsView
     {
-        public string Nr_Obsługi { get; set; }
-        public System.DateTime Data_przyjęcia { get; set; }
-        public string Nazwa_części { get; set; }
-        public int Ilość { get; set; }
-        public string Jednostka { get; set; }
+        public string MaintenanceNr { get; set; }
+        public System.DateTime DateAcceptOrder { get; set; }
+        public string PartName { get; set; }
+        public int PartQuantity { get; set; }
+        public string UnitName { get; set; }
     }
 }
