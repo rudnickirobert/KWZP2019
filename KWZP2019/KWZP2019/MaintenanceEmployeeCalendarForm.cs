@@ -24,24 +24,21 @@ namespace KWZP2019
         {
             this.Hide();
         }
-        private void PopulateDataGridView()
+        private void populateDataGridView()
         {
             this.dgvEmployeeMaintenanceCalendar.AutoGenerateColumns = false;
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                this.dgvEmployeeMaintenanceCalendar.DataSource = this.db.vMaintenanceEmployeesCalendars.ToList<vMaintenanceEmployeesCalendar>();
-            }
+            this.dgvEmployeeMaintenanceCalendar.DataSource = this.db.vMaintenanceEmployeesCalendars.ToList<vMaintenanceEmployeesCalendar>();           
         }
 
-        private void Clear()
+        private void clear()
         {
             this.txtSearch.Text = String.Empty;
         }
 
         private void MaintenanceEmployeeCalendarForm_Load(object sender, EventArgs e)
         {
-            Clear();
-            PopulateDataGridView();
+            clear();
+            populateDataGridView();
         }
     }
 }

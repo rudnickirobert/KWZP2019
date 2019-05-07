@@ -21,7 +21,7 @@ namespace KWZP2019
         EmployeePlan employeePlan = new EmployeePlan();
         MaintPart maintPart = new MaintPart();
         int nIdSelectedEmployee = 0;
-        bool lLoad = true;
+        bool lIsLoading = true;
         vMachineFailure machineFailure = new vMachineFailure();
 
         public NewMaintenanceForm(RoofingCompanyEntities db, StartForm startForm, FailureListForm failureListForm)
@@ -38,7 +38,7 @@ namespace KWZP2019
             this.Hide();
         }
 
-        void PopulateDataGridView()
+        void populateDataGridView()
         {
             this.dgvEmployees.DataSource = this.db.vMaintenanceEmployees.ToList<vMaintenanceEmployee>();
             this.dgvMaintenanceEmployees.DataSource = (from employeeview in this.db.vMaintenanceAssignEmployees
@@ -66,7 +66,7 @@ namespace KWZP2019
                                        }).ToList();                            
         }
 
-        void PopulateListBox()
+        void populateListBox()
         {
             List<Part> Result = this.db.Parts.ToList<Part>();
             this.lbxParts.DataSource = Result;
@@ -74,7 +74,7 @@ namespace KWZP2019
             this.lbxParts.ValueMember = "IdPart";
         }
 
-        void PopulateComboBox()
+        void populateComboBox()
         {
             List<vComboboxNewFailure> list = this.db.vComboboxNewFailures.ToList<vComboboxNewFailure>();
             vComboboxNewFailure record = new vComboboxNewFailure();
@@ -87,7 +87,7 @@ namespace KWZP2019
             this.comFailure.SelectedValue = -1;       
         }
 
-        void Clear()
+        void clear()
         {
             this.txtMaintenanceNr.Text = string.Empty;
             this.dtpStartDate.Value = this.dtpEndDate.Value = DateTime.Now;
@@ -97,7 +97,7 @@ namespace KWZP2019
             this.failureMaintenance = new FailureMaintenance();
         }
 
-        void ClearEmployee()
+        void clearEmployee()
         {
             this.dtpEmployeeStartDate.Value = this.dtpEmployeeEndDate.Value = DateTime.Now;
             this.tpEmployeeStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
@@ -106,20 +106,20 @@ namespace KWZP2019
             this.nIdSelectedEmployee = 0;
         }
 
-        void ClearPart()
+        void clearPart()
         {
             this.maintPart = new MaintPart();
             this.txtQuantity.Text = String.Empty;
         }
 
-        void LoadWindow()
+        void loadWindow()
         {
-            Clear();
-            ClearEmployee();
-            ClearPart();
-            PopulateComboBox();
-            PopulateDataGridView();
-            PopulateListBox();
+            clear();
+            clearEmployee();
+            clearPart();
+            populateComboBox();
+            populateDataGridView();
+            populateListBox();
             this.tpEndDate.Format = DateTimePickerFormat.Time;
             this.tpEndDate.ShowUpDown = true;
             this.tpStartDate.Format = DateTimePickerFormat.Time;
@@ -128,12 +128,12 @@ namespace KWZP2019
             this.tpEmployeeEndDate.ShowUpDown = true;
             this.tpEmployeeStartDate.Format = DateTimePickerFormat.Time;
             this.tpEmployeeStartDate.ShowUpDown = true;
-            this.lLoad = false;
+            this.lIsLoading = false;
         }
 
         private void NewMaintenanceForm_Load(object sender, EventArgs e)
         {
-            LoadWindow();
+            loadWindow();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -177,12 +177,12 @@ namespace KWZP2019
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Clear();
+            clear();
         }
 
         private void comFailure_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lLoad)
+            if (lIsLoading)
                 return;
             else
             {
@@ -253,9 +253,9 @@ namespace KWZP2019
                     this.db.Entry(this.employeePlan).State = EntityState.Modified;
                 this.db.SaveChanges();
                 
-                ClearEmployee();
+                clearEmployee();
                 MessageBox.Show("Pracownik został dodany!");
-                PopulateDataGridView();
+                populateDataGridView();
                 this.btnSaveEmployee.Text = "Zapisz";
             }
             catch (Exception ex)
@@ -289,8 +289,7 @@ namespace KWZP2019
                 {
                     MessageBox.Show("Ta część już została dodana!");
                     return;
-                }
-                    
+                }                   
             }
 
             try
@@ -308,9 +307,9 @@ namespace KWZP2019
             {
                 MessageBox.Show(ex.ToString());
             }
-            ClearPart();
+            clearPart();
             MessageBox.Show("Część została dodana!");
-            PopulateDataGridView();
+            populateDataGridView();
         }
 
         private void checkDate(System.Windows.Forms.DateTimePicker dtPicker)
@@ -398,15 +397,15 @@ namespace KWZP2019
                     this.db.EmployeePlans.Attach(this.employeePlan);
                 this.db.EmployeePlans.Remove(this.employeePlan);
                 this.db.SaveChanges();
-                PopulateDataGridView();
-                ClearEmployee();
+                populateDataGridView();
+                clearEmployee();
                 MessageBox.Show("Usunięto prawidłowo");     
             }
         }
 
         private void btnCancelEmployee_Click(object sender, EventArgs e)
         {
-            ClearEmployee();
+            clearEmployee();
         }
 
         private void dgvMaintenanceEmployees_DoubleClick(object sender, EventArgs e)
@@ -414,7 +413,7 @@ namespace KWZP2019
             if (this.dgvMaintenanceEmployees.CurrentRow.Index != -1)
             {
                 this.employeePlan.IdEmployeePlan = Convert.ToInt32(this.dgvMaintenanceEmployees.CurrentRow.Cells["IdEmployeePlan"].Value);                                
-                this.employeePlan = this.db.EmployeePlans.Where(x => x.IdEmployeePlan == this.employeePlan.IdEmployeePlan).First();
+                this.employeePlan = this.db.EmployeePlans.Where(employeePlan => employeePlan.IdEmployeePlan == this.employeePlan.IdEmployeePlan).First();
                 this.dtpEmployeeStartDate.Value = new DateTime(
                     employeePlan.StartDate.Year,
                     employeePlan.StartDate.Month,
