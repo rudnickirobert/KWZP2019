@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PlannedProductionGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +57,24 @@
             // 
             // PlannedProductionGridView
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.PlannedProductionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.PlannedProductionGridView.AutoGenerateColumns = false;
-            this.PlannedProductionGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PlannedProductionGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.PlannedProductionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PlannedProductionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.PlannedProductionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PlannedProductionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -67,12 +87,28 @@
             this.dataGridViewTextBoxColumn9,
             this.maintenanceDataGridViewTextBoxColumn});
             this.PlannedProductionGridView.DataSource = this.plannedProductionBindingSource;
-            this.PlannedProductionGridView.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PlannedProductionGridView.Location = new System.Drawing.Point(9, 125);
-            this.PlannedProductionGridView.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PlannedProductionGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PlannedProductionGridView.EnableHeadersVisualStyles = false;
+            this.PlannedProductionGridView.Location = new System.Drawing.Point(12, 154);
+            this.PlannedProductionGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlannedProductionGridView.Name = "PlannedProductionGridView";
+            this.PlannedProductionGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.PlannedProductionGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.PlannedProductionGridView.RowTemplate.Height = 24;
-            this.PlannedProductionGridView.Size = new System.Drawing.Size(782, 257);
+            this.PlannedProductionGridView.Size = new System.Drawing.Size(1043, 316);
             this.PlannedProductionGridView.TabIndex = 0;
             this.PlannedProductionGridView.SelectionChanged += new System.EventHandler(this.PlannedProductionGridView_SelectionChanged);
             // 
@@ -149,20 +185,19 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(238, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(317, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.Size = new System.Drawing.Size(131, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Szukaj planu:";
             // 
             // txtBoxPlanSearch
             // 
             this.txtBoxPlanSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxPlanSearch.Location = new System.Drawing.Point(241, 60);
-            this.txtBoxPlanSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxPlanSearch.Location = new System.Drawing.Point(321, 74);
+            this.txtBoxPlanSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxPlanSearch.Name = "txtBoxPlanSearch";
-            this.txtBoxPlanSearch.Size = new System.Drawing.Size(126, 26);
+            this.txtBoxPlanSearch.Size = new System.Drawing.Size(167, 30);
             this.txtBoxPlanSearch.TabIndex = 2;
             this.txtBoxPlanSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxPlanSearch_KeyPress);
             // 
@@ -178,10 +213,10 @@
             this.btnAddPlan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddPlan.Image = global::KWZP2019.Properties.Resources.icons8_pencil_80;
             this.btnAddPlan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddPlan.Location = new System.Drawing.Point(9, 10);
-            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddPlan.Location = new System.Drawing.Point(12, 12);
+            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(208, 110);
+            this.btnAddPlan.Size = new System.Drawing.Size(277, 135);
             this.btnAddPlan.TabIndex = 3;
             this.btnAddPlan.Text = "Nowy plan /edytuj plan";
             this.btnAddPlan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -197,10 +232,10 @@
             this.btnReturn.FlatAppearance.BorderSize = 3;
             this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Location = new System.Drawing.Point(346, 387);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturn.Location = new System.Drawing.Point(461, 476);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(72, 68);
+            this.btnReturn.Size = new System.Drawing.Size(96, 84);
             this.btnReturn.TabIndex = 5;
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -217,10 +252,10 @@
             this.btnRefreshPlanList.ForeColor = System.Drawing.Color.White;
             this.btnRefreshPlanList.Image = global::KWZP2019.Properties.Resources.icons8_repeat_80;
             this.btnRefreshPlanList.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRefreshPlanList.Location = new System.Drawing.Point(591, 10);
-            this.btnRefreshPlanList.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefreshPlanList.Location = new System.Drawing.Point(788, 12);
+            this.btnRefreshPlanList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefreshPlanList.Name = "btnRefreshPlanList";
-            this.btnRefreshPlanList.Size = new System.Drawing.Size(200, 110);
+            this.btnRefreshPlanList.Size = new System.Drawing.Size(267, 135);
             this.btnRefreshPlanList.TabIndex = 9;
             this.btnRefreshPlanList.Text = "Odśwież listę";
             this.btnRefreshPlanList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -230,10 +265,10 @@
             // txtBoxDetailSearch
             // 
             this.txtBoxDetailSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxDetailSearch.Location = new System.Drawing.Point(427, 60);
-            this.txtBoxDetailSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxDetailSearch.Location = new System.Drawing.Point(569, 74);
+            this.txtBoxDetailSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxDetailSearch.Name = "txtBoxDetailSearch";
-            this.txtBoxDetailSearch.Size = new System.Drawing.Size(126, 26);
+            this.txtBoxDetailSearch.Size = new System.Drawing.Size(167, 30);
             this.txtBoxDetailSearch.TabIndex = 11;
             this.txtBoxDetailSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxDetailSearch_KeyPress);
             // 
@@ -243,20 +278,19 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(423, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(564, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 20);
+            this.label2.Size = new System.Drawing.Size(171, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Szukaj szczególu:";
             // 
             // ProductionPlanned
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 465);
+            this.ClientSize = new System.Drawing.Size(1067, 572);
             this.Controls.Add(this.txtBoxDetailSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefreshPlanList);
@@ -266,6 +300,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PlannedProductionGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductionPlanned";
             this.Text = "Planowana produkcja";
             this.Load += new System.EventHandler(this.ProductionPlanned_Load);
