@@ -57,7 +57,9 @@ namespace KWZP2019
             newContractor.Street = tbStreet.Text.Trim();
             newContractor.HouseNumber = tbHouseNumber.Text.Trim();
             newContractor.ApartmentNumber = tbLocalNumber.Text.Trim();
+            tbNIP.MaxLength = 10;
             newContractor.NIP = long.Parse(tbNIP.Text.Trim());
+            tbKRS.MaxLength = 10;
             newContractor.KRS = long.Parse(tbKRS.Text.Trim());
             newContractor.Description = tbDescription.Text.Trim();
             db.Contractors.Add(newContractor);
