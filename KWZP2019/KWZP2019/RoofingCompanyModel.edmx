@@ -5405,7 +5405,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
           </EntityContainer>
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6127,6 +6126,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vComboboxNewFailures">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vComboboxNewFailure">
+              <MappingFragment StoreEntitySet="vComboboxNewFailures">
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vContracts">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vContract">
               <MappingFragment StoreEntitySet="vContracts">
@@ -6575,11 +6582,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
                 <ScalarProperty Name="PartName" ColumnName="PartName" />
                 <ScalarProperty Name="IdPartRequest" ColumnName="IdPartRequest" />
-                 <EntitySetMapping Name="vComboboxNewFailures">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vComboboxNewFailure">
-              <MappingFragment StoreEntitySet="vComboboxNewFailures">
-                <ScalarProperty Name="Specification" ColumnName="Specification" />
-                <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
