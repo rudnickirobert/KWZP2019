@@ -896,11 +896,12 @@ CREATE VIEW vEmployeeDetails
 AS
 SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, WorkplaceTrainingDate, Date 
 FROM dbo.Contract
-INNER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
-INNER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
-INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
-INNER JOIN Education ON Employee.IdEmployee = Education.IdEmployee
-INNER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
+
+RIGHT OUTER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
+LEFT OUTER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
+LEFT OUTER JOIN Position ON Contract.IdPosition = Position.IdPosition
+LEFT OUTER JOIN Education ON Employee.IdEmployee = Education.IdEmployee
+LEFT OUTER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel
 
 GO
 
