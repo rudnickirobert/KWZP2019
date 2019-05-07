@@ -968,17 +968,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vInvoiceType' does not have a p
 warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vMaintPartsView">
           <Key>
-            <PropertyRef Name="Nr Obsługi" />
-            <PropertyRef Name="Data przyjęcia" />
-            <PropertyRef Name="Nazwa części" />
-            <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="MaintenanceNr" />
+            <PropertyRef Name="DateAcceptOrder" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="PartQuantity" />
+            <PropertyRef Name="UnitName" />
           </Key>
-          <Property Name="Nr Obsługi" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Data przyjęcia" Type="datetime" Nullable="false" />
-          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Ilość" Type="int" Nullable="false" />
-          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaintenanceNr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateAcceptOrder" Type="datetime" Nullable="false" />
+          <Property Name="PartName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PartQuantity" Type="int" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1045,18 +1045,38 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not 
           <Property Name="Opis" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPartsRequestView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPartsRequestView">
+          <Key>
+            <PropertyRef Name="IdPartRequest" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="RequestDate" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="StatusPart" />
+          </Key>
+          <Property Name="IdPartRequest" Type="int" Nullable="false" />
+          <Property Name="PartName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="StatusPart" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPartsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vPartsView">
           <Key>
-            <PropertyRef Name="Nazwa części" />
-            <PropertyRef Name="Typ części" />
-            <PropertyRef Name="Jednostka" />
-            <PropertyRef Name="Stan magazynowy" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="partType" />
+            <PropertyRef Name="Producer" />
+            <PropertyRef Name="CatalogPartNr" />
+            <PropertyRef Name="QuantityWarehouse" />
+            <PropertyRef Name="UnitName" />
           </Key>
-          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Typ części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Stan magazynowy" Type="int" Nullable="false" />
+          <Property Name="PartName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="partType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Producer" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CatalogPartNr" Type="int" Nullable="false" />
+          <Property Name="QuantityWarehouse" Type="int" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPaymentHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2298,11 +2318,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vMaintPartsView" EntityType="Self.vMaintPartsView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vMaintPartsView].[Nr Obsługi] AS [Nr Obsługi], 
-    [vMaintPartsView].[Data przyjęcia] AS [Data przyjęcia], 
-    [vMaintPartsView].[Nazwa części] AS [Nazwa części], 
-    [vMaintPartsView].[Ilość] AS [Ilość], 
-    [vMaintPartsView].[Jednostka] AS [Jednostka]
+    [vMaintPartsView].[MaintenanceNr] AS [MaintenanceNr], 
+    [vMaintPartsView].[DateAcceptOrder] AS [DateAcceptOrder], 
+    [vMaintPartsView].[PartName] AS [PartName], 
+    [vMaintPartsView].[PartQuantity] AS [PartQuantity], 
+    [vMaintPartsView].[UnitName] AS [UnitName]
     FROM [dbo].[vMaintPartsView] AS [vMaintPartsView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOrder" EntityType="Self.vOrder" store:Type="Views" store:Schema="dbo">
@@ -2343,12 +2363,23 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vOutsourcingWithType].[Opis] AS [Opis]
     FROM [dbo].[vOutsourcingWithType] AS [vOutsourcingWithType]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vPartsRequestView" EntityType="Self.vPartsRequestView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPartsRequestView].[IdPartRequest] AS [IdPartRequest], 
+    [vPartsRequestView].[PartName] AS [PartName], 
+    [vPartsRequestView].[RequestDate] AS [RequestDate], 
+    [vPartsRequestView].[Quantity] AS [Quantity], 
+    [vPartsRequestView].[StatusPart] AS [StatusPart]
+    FROM [dbo].[vPartsRequestView] AS [vPartsRequestView]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vPartsView" EntityType="Self.vPartsView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vPartsView].[Nazwa części] AS [Nazwa części], 
-    [vPartsView].[Typ części] AS [Typ części], 
-    [vPartsView].[Jednostka] AS [Jednostka], 
-    [vPartsView].[Stan magazynowy] AS [Stan magazynowy]
+    [vPartsView].[PartName] AS [PartName], 
+    [vPartsView].[partType] AS [partType], 
+    [vPartsView].[Producer] AS [Producer], 
+    [vPartsView].[CatalogPartNr] AS [CatalogPartNr], 
+    [vPartsView].[QuantityWarehouse] AS [QuantityWarehouse], 
+    [vPartsView].[UnitName] AS [UnitName]
     FROM [dbo].[vPartsView] AS [vPartsView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vPaymentHistory" EntityType="Self.vPaymentHistory" store:Type="Views" store:Schema="dbo">
@@ -3696,17 +3727,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
         </EntityType>
         <EntityType Name="vMaintPartsView">
           <Key>
-            <PropertyRef Name="Nr_Obsługi" />
-            <PropertyRef Name="Data_przyjęcia" />
-            <PropertyRef Name="Nazwa_części" />
-            <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="MaintenanceNr" />
+            <PropertyRef Name="DateAcceptOrder" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="PartQuantity" />
+            <PropertyRef Name="UnitName" />
           </Key>
-          <Property Name="Nr_Obsługi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Data_przyjęcia" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Nazwa_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
-          <Property Name="Jednostka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaintenanceNr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateAcceptOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PartQuantity" Type="Int32" Nullable="false" />
+          <Property Name="UnitName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vOrder">
           <Key>
@@ -3764,17 +3795,35 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="KRS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+          <EntityType Name="vPartsRequestView">
+          <Key>
+            <PropertyRef Name="IdPartRequest" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="RequestDate" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="StatusPart" />
+          </Key>
+          <Property Name="IdPartRequest" Type="Int32" Nullable="false" />
+          <Property Name="PartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="StatusPart" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="vPartsView">
           <Key>
-            <PropertyRef Name="Nazwa_części" />
-            <PropertyRef Name="Typ_części" />
-            <PropertyRef Name="Jednostka" />
-            <PropertyRef Name="Stan_magazynowy" />
+            <PropertyRef Name="PartName" />
+            <PropertyRef Name="partType" />
+            <PropertyRef Name="Producer" />
+            <PropertyRef Name="CatalogPartNr" />
+            <PropertyRef Name="QuantityWarehouse" />
+            <PropertyRef Name="UnitName" />
           </Key>
-          <Property Name="Nazwa_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Typ_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Jednostka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Stan_magazynowy" Type="Int32" Nullable="false" />
+          <Property Name="PartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="partType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Producer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CatalogPartNr" Type="Int32" Nullable="false" />
+          <Property Name="QuantityWarehouse" Type="Int32" Nullable="false" />
+          <Property Name="UnitName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vPaymentHistory">
           <Key>
@@ -4776,6 +4825,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vOrderDetails" EntityType="Self.vOrderDetail" />
           <EntitySet Name="vOutputMagazines" EntityType="Self.vOutputMagazine" />
           <EntitySet Name="vOutsourcingWithTypes" EntityType="Self.vOutsourcingWithType" />
+          <EntitySet Name="vPartsRequestViews" EntityType="Self.vPartsRequestView" />
           <EntitySet Name="vPartsViews" EntityType="Self.vPartsView" />
           <EntitySet Name="vPaymentHistories" EntityType="Self.vPaymentHistory" />
           <EntitySet Name="vPredictedPriceForCustomers" EntityType="Self.vPredictedPriceForCustomer" />
@@ -6009,11 +6059,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="vMaintPartsViews">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vMaintPartsView">
               <MappingFragment StoreEntitySet="vMaintPartsView">
-                <ScalarProperty Name="Nr_Obsługi" ColumnName="Nr Obsługi" />
-                <ScalarProperty Name="Data_przyjęcia" ColumnName="Data przyjęcia" />
-                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="PartQuantity" ColumnName="PartQuantity" />
+                <ScalarProperty Name="PartName" ColumnName="PartName" />
+                <ScalarProperty Name="DateAcceptOrder" ColumnName="DateAcceptOrder" />
+                <ScalarProperty Name="MaintenanceNr" ColumnName="MaintenanceNr" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6066,10 +6116,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="vPartsViews">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vPartsView">
               <MappingFragment StoreEntitySet="vPartsView">
-                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
-                <ScalarProperty Name="Typ_części" ColumnName="Typ części" />
-                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
-                <ScalarProperty Name="Stan_magazynowy" ColumnName="Stan magazynowy" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="QuantityWarehouse" ColumnName="QuantityWarehouse" />
+                <ScalarProperty Name="CatalogPartNr" ColumnName="CatalogPartNr" />
+                <ScalarProperty Name="Producer" ColumnName="Producer" />
+                <ScalarProperty Name="partType" ColumnName="partType" />
+                <ScalarProperty Name="PartName" ColumnName="PartName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6256,6 +6308,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imię" ColumnName="Imię" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPartsRequestViews">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPartsRequestView">
+              <MappingFragment StoreEntitySet="vPartsRequestView">
+                <ScalarProperty Name="StatusPart" ColumnName="StatusPart" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="PartName" ColumnName="PartName" />
+                <ScalarProperty Name="IdPartRequest" ColumnName="IdPartRequest" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

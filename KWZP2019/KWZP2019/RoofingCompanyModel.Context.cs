@@ -126,5 +126,6 @@ namespace KWZP2019
         public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
         public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
+        public virtual DbSet<vPartsRequestView> vPartsRequestViews { get; set; }
     }
 }
