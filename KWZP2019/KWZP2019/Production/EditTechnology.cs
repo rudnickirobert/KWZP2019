@@ -59,6 +59,7 @@ namespace KWZP2019
 
             db.SaveChanges();
             productionTechnology.refreshDataGridView();
+            productionTechnology.selectRow(technology.IdTechnology);
             productionTechnology.Show();
             this.Close();
         }
