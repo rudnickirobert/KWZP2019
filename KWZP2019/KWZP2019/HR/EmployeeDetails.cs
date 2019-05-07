@@ -14,10 +14,14 @@ namespace KWZP2019
     public partial class EmployeeDetails : Form
     {
         RoofingCompanyEntities db;
-        public EmployeeDetails(RoofingCompanyEntities db)
+        StartForm startForm;
+        HR hr;
+        public EmployeeDetails(RoofingCompanyEntities db, StartForm startForm, HR hr)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.hr = hr;
         }
 
         private void EmployeeDetails_Load(object sender, EventArgs e)
@@ -113,6 +117,18 @@ namespace KWZP2019
             dgvEmployeeDetails.Columns[16].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[17].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[18].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.hr.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

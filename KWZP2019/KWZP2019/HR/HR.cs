@@ -33,14 +33,14 @@ namespace KWZP2019
 
         private void btnExamination_Click(object sender, EventArgs e)
         {
-            Examination examination = new Examination(db);
+            Examination examination = new Examination(db, startForm, this);
             examination.Show();
             this.Hide();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            EmployeeDetails employeeDetails = new EmployeeDetails(db);
+            EmployeeDetails employeeDetails = new EmployeeDetails(db, startForm, this);
             employeeDetails.Show();
             this.Hide();
         }
@@ -105,19 +105,20 @@ namespace KWZP2019
 
         private void btnContracts_Click(object sender, EventArgs e)
         {
-            Contracts contracts = new Contracts(db);
+            Contracts contracts = new Contracts(db, startForm, this);
             contracts.Show();
+            this.Hide();
         }
 
         private void lbWarningsExamination_DoubleClick(object sender, EventArgs e)
         {
-            Examination examination = new Examination(db);
+            Examination examination = new Examination(db, startForm, this);
             examination.Show();
         }
 
         private void lbWarningsContracts_DoubleClick(object sender, EventArgs e)
         {
-            Contracts contracts = new Contracts(db);
+            Contracts contracts = new Contracts(db, startForm, this);
             contracts.Show();
         }
 
@@ -129,8 +130,9 @@ namespace KWZP2019
 
         private void btnEducationLevel_Click(object sender, EventArgs e)
         {
-            EducationForm educationForm = new EducationForm(db);
+            EducationForm educationForm = new EducationForm(db, startForm, this);
             educationForm.Show();
+            this.Hide();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
