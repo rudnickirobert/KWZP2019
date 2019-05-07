@@ -497,7 +497,7 @@ insert into MaintPart values (4, 5, 3);
 insert into MaintPart values (5, 2, 1);
 
 insert into PartRequest values (2, 5, 0, '2019-04-07 12:12:47 AM');
-insert into PartRequest values (3, 10, 0, '2019-04-08 08:42:27 AM');
+insert into PartRequest values (3, 10, 1, '2019-04-08 08:42:27 AM');
 insert into PartRequest values (5, 25, 0, '2019-04-08 10:25:45 AM');
 insert into PartRequest values (1, 8, 0, '2019-04-09 09:10:26 AM');
 insert into PartRequest values (4, 20, 0, '2019-04-10 11:31:24 AM');

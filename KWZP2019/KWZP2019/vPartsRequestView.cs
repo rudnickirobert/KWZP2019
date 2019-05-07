@@ -12,13 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vPartsView
+    public partial class vPartsRequestView
     {
+        public int IdPartRequest { get; set; }
         public string PartName { get; set; }
-        public string partType { get; set; }
-        public string Producer { get; set; }
-        public int CatalogPartNr { get; set; }
-        public int QuantityWarehouse { get; set; }
-        public string UnitName { get; set; }
+        public System.DateTime RequestDate { get; set; }
+        public int Quantity { get; set; }
+        public int StatusPart { get; set; }
     }
 }

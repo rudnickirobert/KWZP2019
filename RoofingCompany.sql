@@ -773,23 +773,32 @@ GO
 
 CREATE VIEW vPartsView
 AS
-SELECT Part.PartName as [Nazwa części], 
-PartType.partType as [Typ części], 
-Unit.UnitName as [Jednostka], 
-Part.QuantityWarehouse as [Stan magazynowy]
+SELECT Part.PartName, 
+PartType.partType,
+Part.Producer,
+Part.CatalogPartNr, 
+Part.QuantityWarehouse,
+Unit.UnitName
 FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
 ON Unit.IdUnit = Part.IdUnit
 GO
 
 CREATE VIEW vMaintPartsView
 AS
-SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
-Part.PartName as [Nazwa części], MaintPart.PartQuantity as [Ilość], Unit.UnitName as [Jednostka]
+SELECT Maintenance.MaintenanceNr, Maintenance.DateAcceptOrder, 
+Part.PartName, MaintPart.PartQuantity, Unit.UnitName
 FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart 
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
 GO
+
+CREATE VIEW vPartsRequestView
+AS
+SELECT PartRequest.IdPartRequest, Part.PartName, PartRequest.RequestDate, PartRequest.Quantity, PartRequest.StatusPart
+FROM PartRequest
+JOIN Part
+ON Part.IdPart = PartRequest.IdPart
 
 /*====SALES DEPARTMENT START===*/
 
