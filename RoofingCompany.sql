@@ -873,21 +873,19 @@ SELECT IdAbsence, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Abscen
 FROM Absence
 INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
 INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
-
 GO
+
 CREATE VIEW	vAddTraining
 AS
 SELECT IdTraining, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], TrainingName as [Nazwa], TrainingStartDate as [Początek], TrainingEndDate as [koniec], Cast(TrainingPrice as decimal(10,2)) as [Cena], Employee.IdEmployee
 FROM dbo.Employee 
 INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
-
 GO
 
 CREATE VIEW vEmployeeList
 AS
 SELECT Employee.IdEmployee, Employee.EmployeeSurname, Employee.EmployeeName 
 FROM Employee;
-
 GO
 
 CREATE VIEW vContracts
@@ -896,7 +894,6 @@ SELECT IdContract, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Workp
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
-
 GO 
 
 CREATE VIEW vEducationForm
@@ -905,7 +902,6 @@ SELECT IdEducation, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Educ
 FROM dbo.Employee
 INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
 INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
-
 GO
 
 CREATE VIEW vEmployeeDetails
@@ -927,7 +923,6 @@ SELECT IdMedicalExamination, EmployeeSurname as [Nazwisko], EmployeeName as [Imi
 FROM Employee
 INNER JOIN RoofingCompany.dbo.MedicalExamination
 ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee;
-
 GO
 
 CREATE VIEW vHR
@@ -936,8 +931,8 @@ SELECT Employee.IdEmployee, EmployeeSurname as [Nazwisko], EmployeeName as [Imi�
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
-
 GO
+
 CREATE VIEW vIncomesProfits
 AS
 SELECT Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
@@ -985,7 +980,6 @@ CREATE VIEW vInvoiceType
 as
 SELECT IdInvoiceType, Type
 FROM InvoiceType;
-
 GO
 
 CREATE VIEW vHRContract
@@ -993,7 +987,6 @@ AS
 SELECT IdContract
 FROM Contract
 WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE());
-
 GO
 
 CREATE VIEW vHRExamination

@@ -47,6 +47,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -115,6 +116,12 @@
     <Compile Include="DevelopmentForm.Designer.cs">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevelopmentHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopmentHistoryForm.Designer.cs">
+      <DependentUpon>DevelopmentHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +156,9 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FailureMaintenance.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FEMAnalysis.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Finances\AddNewCompany.cs">
@@ -823,6 +833,9 @@
     <EmbeddedResource Include="DevelopmentForm.resx">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevelopmentHistoryForm.resx">
+      <DependentUpon>DevelopmentHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -1054,7 +1067,6 @@
     <None Include="Resources\ok_48px.png" />
     <None Include="Resources\poor_quality_40px.png" />
     <None Include="Resources\new_80px.png" />
-    <None Include="Resources\good_quality_80px.png" />
     <None Include="Resources\poor_quality_80px.png" />
     <None Include="Resources\icons8-duration-finance-80.png" />
     <None Include="Resources\icons8-sell-stock-80.png" />
@@ -1068,6 +1080,15 @@
     <None Include="Resources\output-onlinepngtools %281%29.png" />
     <None Include="Resources\icons8-download-80.png" />
     <None Include="Resources\icons8-download-801.png" />
+    <None Include="Resources\icons8-return-40.png" />
+    <None Include="Resources\icons8-home-40.png" />
+    <None Include="Resources\icons8-clear-formatting-40.png" />
+    <None Include="Resources\icons8-send-40.png" />
+    <None Include="Resources\icons8-add-image-80.png" />
+    <None Include="Resources\icons8-add-image-801.png" />
+    <None Include="Resources\icons8-add-image-802.png" />
+    <None Include="Resources\icons8-import-40.png" />
+    <None Include="Resources\icons8-puzzled-40.png" />
     <None Include="Resources\powrott.png" />
     <None Include="Resources\okej.png" />
     <None Include="Resources\addp.png" />
@@ -1075,6 +1096,7 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-time-machine-40.png" />
     <None Include="Resources\icons8-pencil-40.png" />
     <None Include="Resources\icons8-pencil-80.png" />
     <None Include="Resources\icons8-repeat-80.png" />
@@ -1088,6 +1110,7 @@
     <None Include="Resources\icons8-save-40.png" />
     <None Include="Resources\icons8-euro-money-80.png" />
     <None Include="Resources\icons8-user-groups-80 %281%29.png" />
+    <None Include="Resources\good_quality_80px.png" />
     <Content Include="Resources\icons8-clear-filters-40.png" />
     <Content Include="Resources\icons8-filter-40.png" />
     <Content Include="Resources\icons8-home-40.png" />
