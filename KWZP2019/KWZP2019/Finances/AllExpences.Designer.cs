@@ -647,9 +647,9 @@
             this.lblPartOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblPartOrder.Location = new System.Drawing.Point(526, 464);
             this.lblPartOrder.Name = "lblPartOrder";
-            this.lblPartOrder.Size = new System.Drawing.Size(196, 20);
+            this.lblPartOrder.Size = new System.Drawing.Size(193, 20);
             this.lblPartOrder.TabIndex = 57;
-            this.lblPartOrder.Text = "Zamówienia częściowe:";
+            this.lblPartOrder.Text = "Koszta eksploatacyjne:";
             // 
             // AllExpenses
             // 
