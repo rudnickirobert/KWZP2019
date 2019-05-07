@@ -1015,63 +1015,81 @@ FROM EducationLevel
 
 GO
 
-CREATE VIEW vSalariesSummary
+CREATE VIEW vL4
+AS
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'L4Days', AbsenceType.Multiplier as 'L4X'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'L4') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO	
+
+CREATE VIEW vPaidAbsence
+AS
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'PADays', AbsenceType.Multiplier as 'PAX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'Urlop Płatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO
+
+CREATE VIEW vUnpaidAbsence
+AS
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NPADays', AbsenceType.Multiplier as 'NPAX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'Urlop Bezpłatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO
+
+CREATE VIEW vUnexcused 
 as
-WITH 
-L4 AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'L4Days', AbsenceType.Multiplier as 'L4X'
-			FROM Absence  
-			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
-			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where (AbscenceReason = 'L4') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
-			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NUDays', AbsenceType.Multiplier as 'NUX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'Nieusprawiedliwiona') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
 
-		 PaidAbsence AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'PADays', AbsenceType.Multiplier as 'PAX'
-			FROM Absence  
-			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
-			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where (AbscenceReason = 'Urlop Płatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
-			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+GO
 
-		UnpaidAbsence AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NPADays', AbsenceType.Multiplier as 'NPAX'
-			FROM Absence  
-			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
-			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where (AbscenceReason = 'Urlop Bezpłatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
-			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+CREATE VIEW vOD
+as
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'ODDays', AbsenceType.Multiplier as 'ODX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where AbscenceReason = 'Na żądanie' AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
 
-		Unexcused AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NUDays', AbsenceType.Multiplier as 'NUX'
-			FROM Absence  
-			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
-			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where (AbscenceReason = 'Nieusprawiedliwiona') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
-			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+GO
 
-		OD AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'ODDays', AbsenceType.Multiplier as 'ODX'
-			FROM Absence  
-			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
-			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where AbscenceReason = 'Na żądanie' AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
-			GROUP by Employee.IdEmployee, AbsenceType.Multiplier)
-
+CREATE VIEW vSalariesSummary
+AS
 SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL,CAST((Contract.Salary/21) as decimal(10,2)) as DailyWage, 
-				Convert(date ,Getdate()) as Date, 
-				ISNULL(L4.L4Days,0) as [Dni L4],CAST(ISNULL(((Contract.Salary/21)*L4.L4Days*L4X),0) as decimal(10,2)) as L4Pay, 
-				ISNULL(PaidAbsence.PADays,0) as [Urlop płatny],CAST(ISNULL(((Contract.Salary/21)*PaidAbsence.PADays*PAX),0) as decimal(10,2)) as PAPay,
-				ISNULL(UnpaidAbsence.NPADays,0) as [Urlop bezpłatny],CAST(ISNULL(((Contract.Salary/21)*UnpaidAbsence.NPADays*NPAX),0) as decimal(10,2)) as NPAPay,
-				ISNULL(Unexcused.NUDays,0) as [Nieusprawiedliowiona],CAST(ISNULL(((Contract.Salary/21)*Unexcused.NUDays*NUX),0) as decimal(10,2)) as NPAay,
-				ISNULL(OD.ODDays,0) as [Na żądanie],CAST(ISNULL(((Contract.Salary/21)*OD.ODDays*ODX),0) as decimal(10,2)) as ODPay,
-				Ceiling(((21-(ISNULL(L4.L4Days,0)+ISNULL(PaidAbsence.PADays,0)+ISNULL(UnpaidAbsence.NPADays,0)+ISNULL(Unexcused.NUDays,0)+ISNULL(OD.ODDays,0)))*(Contract.Salary/21))+ISNULL(((Contract.Salary/21)*L4.L4Days*L4X),0)+ISNULL(((Contract.Salary/21)*PaidAbsence.PADays*PAX),0)+ISNULL(((Contract.Salary/21)*UnpaidAbsence.NPADays*NPAX),0)+ISNULL(((Contract.Salary/21)*Unexcused.NUDays*NUX),0)+ISNULL(((Contract.Salary/21)*OD.ODDays*ODX),0)) as TotalSalary
-
-	FROM Absence 
-		right outer JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee 
-		Left outer JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
-		left outer join Payment ON Employee.IdEmployee = Payment.IdEmployee
-		left outer join L4 on Employee.IdEmployee = L4.IdEmployee
-		Left outer join PaidAbsence on Employee.IdEmployee = PaidAbsence.IdEmployee
-		Left outer join UnpaidAbsence on Employee.IdEmployee = UnpaidAbsence.IdEmployee
-		Left outer join Unexcused on Employee.IdEmployee = Unexcused.IdEmployee
-		Left outer join OD on Employee.IdEmployee = OD.IdEmployee
-		Where Contract.EndDate > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))
+Convert(date ,Getdate()) as Date, 
+ISNULL(vL4.L4Days,0) as [Dni L4],CAST(ISNULL(((Contract.Salary/21)*vL4.L4Days*L4X),0) as decimal(10,2)) as L4Pay, 
+ISNULL(vPaidAbsence.PADays,0) as [Urlop płatny],CAST(ISNULL(((Contract.Salary/21)*vPaidAbsence.PADays*PAX),0) as decimal(10,2)) as PAPay,
+ISNULL(vUnpaidAbsence.NPADays,0) as [Urlop bezpłatny],CAST(ISNULL(((Contract.Salary/21)*vUnpaidAbsence.NPADays*NPAX),0) as decimal(10,2)) as NPAPay,
+ISNULL(vUnexcused.NUDays,0) as [Nieusprawiedliowiona],CAST(ISNULL(((Contract.Salary/21)*vUnexcused.NUDays*NUX),0) as decimal(10,2)) as NPAay,
+ISNULL(vOD.ODDays,0) as [Na żądanie],CAST(ISNULL(((Contract.Salary/21)*vOD.ODDays*ODX),0) as decimal(10,2)) as ODPay,
+Ceiling(((21-(ISNULL(vL4.L4Days,0)+ISNULL(vPaidAbsence.PADays,0)+ISNULL(vUnpaidAbsence.NPADays,0)+ISNULL(vUnexcused.NUDays,0)+ISNULL(vOD.ODDays,0)))*(Contract.Salary/21))+ISNULL(((Contract.Salary/21)*vL4.L4Days*L4X),0)+ISNULL(((Contract.Salary/21)*vPaidAbsence.PADays*PAX),0)+ISNULL(((Contract.Salary/21)*vUnpaidAbsence.NPADays*NPAX),0)+ISNULL(((Contract.Salary/21)*vUnexcused.NUDays*NUX),0)+ISNULL(((Contract.Salary/21)*vOD.ODDays*ODX),0)) as TotalSalary
+FROM Absence 
+right outer JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee 
+Left outer JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+left outer join Payment ON Employee.IdEmployee = Payment.IdEmployee
+left outer join vL4 on Employee.IdEmployee = vL4.IdEmployee
+Left outer join vPaidAbsence on Employee.IdEmployee = vPaidAbsence.IdEmployee
+Left outer join vUnpaidAbsence on Employee.IdEmployee = vUnpaidAbsence.IdEmployee
+Left outer join vUnexcused on Employee.IdEmployee = vUnexcused.IdEmployee
+Left outer join vOD on Employee.IdEmployee = vOD.IdEmployee
+Where Contract.EndDate > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))
 GO
 
 CREATE VIEW vPosition 
