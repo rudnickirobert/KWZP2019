@@ -22,7 +22,8 @@ namespace KWZP2019
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (cbEmployeeList.SelectedIndex == -1 || cbPosition.SelectedIndex == -1 || tbSalary.Text.Trim() == "")
+            if (cbEmployeeList.SelectedIndex == -1 || cbPosition.SelectedIndex == -1 ||
+                tbSalary.Text.Trim() == "" || cbDepartmentList.SelectedIndex == -1)
             {
                 MessageBox.Show("Wszystkie pola muszą być wypełnione");
             }
@@ -41,6 +42,12 @@ namespace KWZP2019
                     }
                     else
                     {
+                        Allocation newAllocation = new Allocation();
+                        newAllocation.IdEmployee = cbEmployeeList.SelectedIndex + 1;
+                        newAllocation.IdDepartment = cbDepartmentList.SelectedIndex + 1;
+                        newAllocation.StartDate = dtpStartDate.Value;
+                        newAllocation.EndDate = dtpEndDate.Value;
+                        db.Allocations.Add(newAllocation);
                         Contract newContract = new Contract();
                         newContract.IdEmployee = cbEmployeeList.SelectedIndex + 1;
                         newContract.IdPosition = cbPosition.SelectedIndex + 1;
@@ -64,6 +71,8 @@ namespace KWZP2019
             dtpStartDate.Value = DateTime.Today;
             dtpWorkplaceTrainingDate.Value = DateTime.Today;
             tbSalary.Text = "";
+
+            cbDepartmentList.SelectedIndex = -1;
         }
 
         private void AddContract_Load(object sender, EventArgs e)
@@ -82,6 +91,11 @@ namespace KWZP2019
             {
                 cbPosition.Items.Add(positionL.Workplace);
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }
