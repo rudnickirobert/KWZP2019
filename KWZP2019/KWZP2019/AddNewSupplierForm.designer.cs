@@ -415,6 +415,7 @@
             this.buttonAddNewSupplier.TabIndex = 46;
             this.buttonAddNewSupplier.Text = "Dodaj nowy typ dostawcy";
             this.buttonAddNewSupplier.UseVisualStyleBackColor = false;
+            this.buttonAddNewSupplier.Click += new System.EventHandler(this.buttonAddNewSupplier_Click_1);
             // 
             // textBoxAddNewTypeSupplier
             // 
@@ -466,6 +467,7 @@
             this.Name = "AddNewSupplierForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj nowego dostawcę";
+            this.Load += new System.EventHandler(this.AddNewSupplierForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

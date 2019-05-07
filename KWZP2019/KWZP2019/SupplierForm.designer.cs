@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,8 +40,10 @@
             this.supplierDgv = new System.Windows.Forms.DataGridView();
             this.addNewSupplierBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.supplierTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierTypeGb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sfSupplierRb
@@ -51,9 +54,9 @@
             this.sfSupplierRb.Name = "sfSupplierRb";
             this.sfSupplierRb.Size = new System.Drawing.Size(218, 28);
             this.sfSupplierRb.TabIndex = 1;
-            this.sfSupplierRb.TabStop = true;
             this.sfSupplierRb.Text = "Dostawca półfabrykatu";
             this.sfSupplierRb.UseVisualStyleBackColor = true;
+            this.sfSupplierRb.CheckedChanged += new System.EventHandler(this.sfSupplierRb_CheckedChanged_1);
             // 
             // partsSupplierRb
             // 
@@ -63,7 +66,6 @@
             this.partsSupplierRb.Name = "partsSupplierRb";
             this.partsSupplierRb.Size = new System.Drawing.Size(167, 28);
             this.partsSupplierRb.TabIndex = 2;
-            this.partsSupplierRb.TabStop = true;
             this.partsSupplierRb.Text = "Dostawca części";
             this.partsSupplierRb.UseVisualStyleBackColor = true;
             // 
@@ -161,6 +163,10 @@
             this.backBtn.UseVisualStyleBackColor = false;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // supplierTypeBindingSource
+            // 
+            this.supplierTypeBindingSource.DataSource = typeof(KWZP2019.SupplierType);
+            // 
             // SupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +183,7 @@
             this.supplierTypeGb.ResumeLayout(false);
             this.supplierTypeGb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +195,6 @@
         private System.Windows.Forms.DataGridView supplierDgv;
         private System.Windows.Forms.Button addNewSupplierBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.BindingSource supplierTypeBindingSource;
     }
 }

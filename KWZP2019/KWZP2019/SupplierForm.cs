@@ -37,24 +37,17 @@ namespace KWZP2019
             previousForm.Show();
             this.Close();
         }
-
-        private void sfSupplierRb_CheckedChanged(object sender, EventArgs e)
+        private void sfSupplierRb_CheckedChanged_1(object sender, EventArgs e)
         {
-            
             if (sfSupplierRb.Checked)
             {
-                supplierDgv.DataSource = (from db in db.vSupplierSemis
-                                          where
-                                          db.Typ.Contains("Półfabrykaty")
-                                          select db).ToList();
+                supplierDgv.DataSource = db.vSupplierSemis.
+                    Where(semis => semis.Typ == "Półfabrykaty").ToList();
             }
-
             if (partsSupplierRb.Checked)
             {
-                supplierDgv.DataSource = (from db in db.vSupplierParts
-                                          where
-                                          db.Typ.Contains("Części")
-                                          select db).ToList();
+                supplierDgv.DataSource = db.vSupplierParts.
+                    Where(parts => parts.Typ == "Części").ToList();
             }
         }
     }

@@ -52,6 +52,7 @@
             this.addNewOrderDetailBtn = new System.Windows.Forms.Button();
             this.orderDetailsDgv = new System.Windows.Forms.DataGridView();
             this.generateReportBtn = new System.Windows.Forms.Button();
+            this.buttonDeleteDetail = new System.Windows.Forms.Button();
             this.idOrderCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCustomerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,7 +169,7 @@
             this.customersDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.customersDgv.RowTemplate.Height = 24;
             this.customersDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customersDgv.Size = new System.Drawing.Size(1152, 161);
+            this.customersDgv.Size = new System.Drawing.Size(1069, 161);
             this.customersDgv.TabIndex = 15;
             this.customersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDgv_CellContentClick);
             // 
@@ -265,7 +266,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.ordersDgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ordersDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ordersDgv.Size = new System.Drawing.Size(748, 126);
+            this.ordersDgv.Size = new System.Drawing.Size(200, 126);
             this.ordersDgv.TabIndex = 21;
             this.ordersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersDgv_CellContentClick);
             // 
@@ -324,7 +325,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.orderDetailsDgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.orderDetailsDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderDetailsDgv.Size = new System.Drawing.Size(386, 126);
+            this.orderDetailsDgv.Size = new System.Drawing.Size(351, 126);
             this.orderDetailsDgv.TabIndex = 23;
             // 
             // generateReportBtn
@@ -340,54 +341,72 @@
             this.generateReportBtn.UseVisualStyleBackColor = false;
             this.generateReportBtn.Click += new System.EventHandler(this.generateReportBtn_Click);
             // 
+            // buttonDeleteDetail
+            // 
+            this.buttonDeleteDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.buttonDeleteDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDeleteDetail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonDeleteDetail.Location = new System.Drawing.Point(786, 373);
+            this.buttonDeleteDetail.Name = "buttonDeleteDetail";
+            this.buttonDeleteDetail.Size = new System.Drawing.Size(230, 55);
+            this.buttonDeleteDetail.TabIndex = 25;
+            this.buttonDeleteDetail.Text = "Usuń szczegół";
+            this.buttonDeleteDetail.UseVisualStyleBackColor = false;
+            this.buttonDeleteDetail.Click += new System.EventHandler(this.buttonDeleteDetail_Click);
+            // 
             // idOrderCustomerDataGridViewTextBoxColumn
             // 
             this.idOrderCustomerDataGridViewTextBoxColumn.DataPropertyName = "IdOrderCustomer";
             this.idOrderCustomerDataGridViewTextBoxColumn.HeaderText = "IdOrderCustomer";
             this.idOrderCustomerDataGridViewTextBoxColumn.Name = "idOrderCustomerDataGridViewTextBoxColumn";
-            this.idOrderCustomerDataGridViewTextBoxColumn.Width = 149;
+            this.idOrderCustomerDataGridViewTextBoxColumn.Visible = false;
+            this.idOrderCustomerDataGridViewTextBoxColumn.Width = 153;
             // 
             // idCustomerDataGridViewTextBoxColumn1
             // 
             this.idCustomerDataGridViewTextBoxColumn1.DataPropertyName = "IdCustomer";
             this.idCustomerDataGridViewTextBoxColumn1.HeaderText = "IdCustomer";
             this.idCustomerDataGridViewTextBoxColumn1.Name = "idCustomerDataGridViewTextBoxColumn1";
-            this.idCustomerDataGridViewTextBoxColumn1.Width = 110;
+            this.idCustomerDataGridViewTextBoxColumn1.Visible = false;
+            this.idCustomerDataGridViewTextBoxColumn1.Width = 113;
             // 
             // orderDateDataGridViewTextBoxColumn
             // 
             this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
             this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
             this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.Width = 104;
+            this.orderDateDataGridViewTextBoxColumn.Width = 106;
             // 
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 63;
+            this.costDataGridViewTextBoxColumn.Width = 65;
             // 
             // customerDataGridViewTextBoxColumn
             // 
             this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
             this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
             this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-            this.customerDataGridViewTextBoxColumn.Width = 97;
+            this.customerDataGridViewTextBoxColumn.Visible = false;
+            this.customerDataGridViewTextBoxColumn.Width = 99;
             // 
             // employeeDataGridViewTextBoxColumn
             // 
             this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
             this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
             this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
-            this.employeeDataGridViewTextBoxColumn.Width = 102;
+            this.employeeDataGridViewTextBoxColumn.Visible = false;
+            this.employeeDataGridViewTextBoxColumn.Width = 103;
             // 
             // orderDetailsDataGridViewTextBoxColumn
             // 
             this.orderDetailsDataGridViewTextBoxColumn.DataPropertyName = "OrderDetails";
             this.orderDetailsDataGridViewTextBoxColumn.HeaderText = "OrderDetails";
             this.orderDetailsDataGridViewTextBoxColumn.Name = "orderDetailsDataGridViewTextBoxColumn";
-            this.orderDetailsDataGridViewTextBoxColumn.Width = 120;
+            this.orderDetailsDataGridViewTextBoxColumn.Visible = false;
+            this.orderDetailsDataGridViewTextBoxColumn.Width = 122;
             // 
             // orderCustomerBindingSource
             // 
@@ -398,84 +417,85 @@
             this.idCustomerDataGridViewTextBoxColumn.DataPropertyName = "IdCustomer";
             this.idCustomerDataGridViewTextBoxColumn.HeaderText = "IdCustomer";
             this.idCustomerDataGridViewTextBoxColumn.Name = "idCustomerDataGridViewTextBoxColumn";
-            this.idCustomerDataGridViewTextBoxColumn.Width = 110;
+            this.idCustomerDataGridViewTextBoxColumn.Visible = false;
+            this.idCustomerDataGridViewTextBoxColumn.Width = 113;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
             this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
             this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
             this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.Width = 138;
+            this.customerNameDataGridViewTextBoxColumn.Width = 141;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 130;
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 132;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 71;
+            this.emailDataGridViewTextBoxColumn.Width = 72;
             // 
             // cityDataGridViewTextBoxColumn
             // 
             this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
             this.cityDataGridViewTextBoxColumn.HeaderText = "City";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 58;
+            this.cityDataGridViewTextBoxColumn.Width = 60;
             // 
             // zipCodeDataGridViewTextBoxColumn
             // 
             this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
             this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
             this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            this.zipCodeDataGridViewTextBoxColumn.Width = 91;
+            this.zipCodeDataGridViewTextBoxColumn.Width = 94;
             // 
             // streetDataGridViewTextBoxColumn
             // 
             this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
             this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
             this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.Width = 73;
+            this.streetDataGridViewTextBoxColumn.Width = 74;
             // 
             // houseNumberDataGridViewTextBoxColumn
             // 
             this.houseNumberDataGridViewTextBoxColumn.DataPropertyName = "HouseNumber";
             this.houseNumberDataGridViewTextBoxColumn.HeaderText = "HouseNumber";
             this.houseNumberDataGridViewTextBoxColumn.Name = "houseNumberDataGridViewTextBoxColumn";
-            this.houseNumberDataGridViewTextBoxColumn.Width = 131;
+            this.houseNumberDataGridViewTextBoxColumn.Width = 133;
             // 
             // apartmentNumberDataGridViewTextBoxColumn
             // 
             this.apartmentNumberDataGridViewTextBoxColumn.DataPropertyName = "ApartmentNumber";
             this.apartmentNumberDataGridViewTextBoxColumn.HeaderText = "ApartmentNumber";
             this.apartmentNumberDataGridViewTextBoxColumn.Name = "apartmentNumberDataGridViewTextBoxColumn";
-            this.apartmentNumberDataGridViewTextBoxColumn.Width = 156;
+            this.apartmentNumberDataGridViewTextBoxColumn.Width = 158;
             // 
             // peselDataGridViewTextBoxColumn
             // 
             this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
             this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
             this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
-            this.peselDataGridViewTextBoxColumn.Width = 72;
+            this.peselDataGridViewTextBoxColumn.Width = 73;
             // 
             // nIPDataGridViewTextBoxColumn
             // 
             this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
             this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
             this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
-            this.nIPDataGridViewTextBoxColumn.Width = 57;
+            this.nIPDataGridViewTextBoxColumn.Width = 60;
             // 
             // kRSDataGridViewTextBoxColumn
             // 
             this.kRSDataGridViewTextBoxColumn.DataPropertyName = "KRS";
             this.kRSDataGridViewTextBoxColumn.HeaderText = "KRS";
             this.kRSDataGridViewTextBoxColumn.Name = "kRSDataGridViewTextBoxColumn";
-            this.kRSDataGridViewTextBoxColumn.Width = 62;
+            this.kRSDataGridViewTextBoxColumn.Width = 66;
             // 
             // customerBindingSource
             // 
@@ -491,6 +511,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.buttonDeleteDetail);
             this.Controls.Add(this.generateReportBtn);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.orderDetailsDgv);
@@ -526,14 +547,13 @@
         private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.DataGridView ordersDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOrderCustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCustomerDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDetailsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource orderCustomerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button addNewOrderDetailBtn;
+        private System.Windows.Forms.BindingSource orderDetailBindingSource;
+        private System.Windows.Forms.Button generateReportBtn;
+        private System.Windows.Forms.DataGridView orderDetailsDgv;
+        private System.Windows.Forms.Button buttonDeleteDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCustomerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
@@ -546,10 +566,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn peselDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nIPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kRSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button addNewOrderDetailBtn;
-        private System.Windows.Forms.BindingSource orderDetailBindingSource;
-        private System.Windows.Forms.Button generateReportBtn;
-        private System.Windows.Forms.DataGridView orderDetailsDgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrderCustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCustomerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDetailsDataGridViewTextBoxColumn;
     }
 }

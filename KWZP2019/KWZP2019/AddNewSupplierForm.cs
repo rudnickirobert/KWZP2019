@@ -66,7 +66,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format numeru lokalu");
                 return;
             }
-            bool nipTextBox = float.TryParse(nipTb.Text.Trim(), out float nipTextbox);
+            bool nipTextBox = long.TryParse(nipTb.Text.Trim(), out long nipTextbox);
             if (nipTextBox)
             {
                 newSupplier.NIP = Convert.ToString(nipTextbox);
@@ -76,7 +76,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format NIP");
                 return;
             }
-            bool krsTextBox = float.TryParse(krsTb.Text.Trim(), out float krsTextbox);
+            bool krsTextBox = long.TryParse(krsTb.Text.Trim(), out long krsTextbox);
             if (krsTextBox)
             {
                 newSupplier.KRS = Convert.ToString(krsTextbox);
@@ -92,8 +92,9 @@ namespace KWZP2019
             db.SupplierTypes.Add(newsupplierType);
             db.SaveChanges();
         }
+       
 
-        private void buttonAddNewSupplier_Click(object sender, EventArgs e)
+        private void buttonAddNewSupplier_Click_1(object sender, EventArgs e)
         {
             string typ = textBoxAddNewTypeSupplier.Text;
             comboBoxSupplierType.BeginUpdate();
@@ -103,14 +104,14 @@ namespace KWZP2019
 
         private void AddNewSupplierForm_Load(object sender, EventArgs e)
         {
-            List<SupplierType> supplierList = db.SupplierTypes.ToList();
-            comboBoxSupplierType.BeginUpdate();
+                List<SupplierType> supplierList = db.SupplierTypes.ToList();
+                comboBoxSupplierType.BeginUpdate();
 
-            foreach (SupplierType emp in supplierList)
-            {
-                comboBoxSupplierType.Items.Add(emp.Suppliers);
-            }
-            comboBoxSupplierType.EndUpdate();
+                foreach (SupplierType emp in supplierList)
+                {
+                    comboBoxSupplierType.Items.Add(emp.SupplierNameType);
+                }
+                comboBoxSupplierType.EndUpdate();
         }
     }
 }

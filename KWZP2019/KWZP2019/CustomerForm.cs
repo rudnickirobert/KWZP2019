@@ -113,8 +113,7 @@ namespace KWZP2019
             {
                 customersDgv.DataSource = (from db in db.Customers
                                            where
-                                            db.CustomerName.Contains(searchTxt.Text.Trim())
-                                         || db.City.Contains(searchTxt.Text.Trim())
+                                           db.CustomerName.Contains(searchTxt.Text.Trim())
                                            select db).ToList();
             }
         }
@@ -124,7 +123,7 @@ namespace KWZP2019
             //zadeklarowanie zmiennej "id" typu int i ustalenie wartości na podstawie pierwszej [0] kolumny w customerDgv
             int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells[0].Value);
             ordersDgv.DataSource = (from OrderCustomer in db.OrderCustomers
-                                    where OrderCustomer.IdCustomer == id
+                                    where OrderCustomer.IdOrderCustomer == id
                                     select OrderCustomer).ToList();
         }
         private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -204,6 +203,16 @@ namespace KWZP2019
                 }
                 MessageBox.Show("Pomyślnie wygenerowano raport.");
             }
+        }
+
+        private void buttonDeleteDetail_Click(object sender, EventArgs e)
+        {
+            int idDetailToRemove = Convert.ToInt32(this.orderDetailsDgv.CurrentRow.Cells["IdDetail"].Value);
+            string messageDuringRemovingDetail = "Usunięto szczegół o numerze: " + Convert.ToString(idDetailToRemove);
+            MessageBox.Show(messageDuringRemovingDetail, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            OrderDetail detailToRemove = db.OrderDetails.First(f => f.IdDetail == idDetailToRemove);
+            db.OrderDetails.Remove(detailToRemove);
+            db.SaveChanges();
         }
     }
 }

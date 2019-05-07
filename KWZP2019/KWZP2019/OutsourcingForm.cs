@@ -47,10 +47,8 @@ namespace KWZP2019
             }
             else
             {
-                outsourcingTypeDgv.DataSource = (from db in db.OutsourcingTypes
-                                           where
-                                           db.OutsourcingType1.Contains(txtBSerachOutsourcing.Text.Trim())
-                                           select db).ToList();
+                outsourcingTypeDgv.DataSource =  db.vOutsourcingTypes.
+                                          ToList();
             }
         }
 

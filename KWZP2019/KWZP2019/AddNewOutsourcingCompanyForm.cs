@@ -67,7 +67,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format numeru lokalu");
                 return;
             }
-            bool nipTextBox = float.TryParse(nipTb.Text.Trim(), out float nipTextbox);
+            bool nipTextBox = long.TryParse(nipTb.Text.Trim(), out long nipTextbox);
             if (nipTextBox)
             {
                 newOutsourcing.NIP = Convert.ToString(nipTextbox);
@@ -77,7 +77,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format NIP");
                 return;
             }
-            bool krsTextBox = float.TryParse(krsTb.Text.Trim(), out float krsTextbox);
+            bool krsTextBox = long.TryParse(krsTb.Text.Trim(), out long krsTextbox);
             if (krsTextBox)
             {
                 newOutsourcing.KRS = Convert.ToString(krsTextbox);
@@ -96,7 +96,6 @@ namespace KWZP2019
         {
             List<OutsourcingType> outsourcingList = db.OutsourcingTypes.ToList();
             comboBoxOutsourcingType.BeginUpdate();
-
             foreach (OutsourcingType emp in outsourcingList)
             {
                 comboBoxOutsourcingType.Items.Add(emp.OutsourcingType1);
