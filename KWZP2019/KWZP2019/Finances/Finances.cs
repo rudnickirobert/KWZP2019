@@ -51,20 +51,17 @@ namespace KWZP2019
             profits.Show();
             this.Hide();
         }
-        
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
             AddInvoices addInvoices = new AddInvoices(db, startForm, this);
             addInvoices.Show();
             this.Hide();
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.startForm.Show();
         }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.finanseIHR.Show();

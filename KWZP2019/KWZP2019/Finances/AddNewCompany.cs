@@ -65,13 +65,11 @@ namespace KWZP2019
             db.Contractors.Add(newContractor);
             db.SaveChanges();
         }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.addInvoices.Show();
             this.Hide();
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
