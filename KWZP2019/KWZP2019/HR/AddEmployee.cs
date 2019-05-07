@@ -48,7 +48,7 @@ namespace KWZP2019
             {
                 MessageBox.Show("Imię, nazwisko oraz PESEL są wymagane");
             }
-            else
+            if (tbContractLenght.Text.Trim() == "")
             {
                 bool condition1 = long.TryParse(tbPESEL.Text.Trim(), out long number);
                 bool condition2 = long.TryParse(tbPhoneNumber.Text.Trim(), out long number1);

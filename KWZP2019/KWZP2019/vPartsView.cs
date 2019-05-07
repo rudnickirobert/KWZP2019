@@ -14,9 +14,11 @@ namespace KWZP2019
     
     public partial class vPartsView
     {
-        public string Nazwa_części { get; set; }
-        public string Typ_części { get; set; }
-        public string Jednostka { get; set; }
-        public int Stan_magazynowy { get; set; }
+        public string PartName { get; set; }
+        public string partType { get; set; }
+        public string Producer { get; set; }
+        public int CatalogPartNr { get; set; }
+        public int QuantityWarehouse { get; set; }
+        public string UnitName { get; set; }
     }
 }

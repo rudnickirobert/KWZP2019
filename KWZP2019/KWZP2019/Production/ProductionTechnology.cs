@@ -43,7 +43,7 @@ namespace KWZP2019
             selectedRow = dataGVtechnology.Rows[dataGVtechnology.SelectedCells[0].RowIndex];
             selectedRowIndex = selectedRow.Index;
             // TimePermeter nazywa się pole w tabeli Technology
-            selectedId = (int)selectedRow.Cells["IdTechnology"].Value;
+            selectedId = (int)selectedRow.Cells[0].Value;
             technology = db.Technologies.Where(t => t.IdTechnology == selectedId).First();
         }
         //===========================================================
@@ -76,8 +76,6 @@ namespace KWZP2019
         public void refreshDataGridView()
         {
             dataGVtechnology.DataSource = db.Technologies.ToList();
-            dataGVtechnology.Rows[0].Cells[0].Selected = false;
-            dataGVtechnology.Rows[selectedRowIndex].Selected = true;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace KWZP2019
         public string HouseNumber { get; set; }
         public string ApartmentNum { get; set; }
         public string PhoneNumber { get; set; }
-        public Nullable<long> PESEL { get; set; }
+        public string PESEL { get; set; }
         public string EducationLevel { get; set; }
         public string DegreeShort { get; set; }
         public Nullable<System.DateTime> GraduationDate { get; set; }

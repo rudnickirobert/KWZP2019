@@ -15,6 +15,9 @@ namespace KWZP2019
     {
         RoofingCompanyEntities db;
         int idPlan, employeesQuantity;
+        bool flagEditPlan = true;
+        bool flagExitPermission = true;
+        PlannedProduction newPlan = new PlannedProduction();
         public NewProductionPlan(RoofingCompanyEntities db, int id)
         {
             InitializeComponent();
@@ -27,12 +30,10 @@ namespace KWZP2019
             comboBoxMachine.ValueMember = "idMachine";
             comboBoxMachine.DisplayMember = "machineFullName";
             comboBoxMachine.Invalidate();
-
             comboBoxEmployee.DataSource = db.vComboBoxEmployees.ToList();
             comboBoxEmployee.ValueMember = "idEmployee";
             comboBoxEmployee.DisplayMember = "employeeFullName";
             comboBoxEmployee.Invalidate();
-
             if (idPlan > 0)
             {
                 PlannedProduction plan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
@@ -64,12 +65,40 @@ namespace KWZP2019
                                           select PlannedProductionEmployeeDetail).ToList();
             dateTimeStart.Format = DateTimePickerFormat.Custom;
             dateTimeEnd.Format = DateTimePickerFormat.Custom;
+            dateTimeEmployeeStart.Format = DateTimePickerFormat.Custom;
+            dateTimeEmployeeEnd.Format = DateTimePickerFormat.Custom;
             dateTimeStart.CustomFormat = "yyyy-MM-dd HH:mm";
             dateTimeEnd.CustomFormat = "yyyy-MM-dd HH:mm";
+            dateTimeEmployeeStart.CustomFormat = "yyyy-MM-dd HH:mm";
+            dateTimeEmployeeEnd.CustomFormat = "yyyy-MM-dd HH:mm";
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            Close();
+            if (editPlan() & flagEditPlan)
+            {
+                Close();
+            }
+            else
+            {
+
+                if (viewProcessEmpl.RowCount == 0)
+                {
+                    db.PlannedProductions.Remove(newPlan);
+                    db.SaveChanges();
+                    Close();
+                }
+                else
+                {
+                    if (flagExitPermission)
+                    {
+                        MessageBox.Show("Usuń wszystkich pracowników jeśli nie chcesz zapisać tego planu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        Close();
+                    }
+                }
+            }
         }
         private void viewOrderDetail_SelectionChanged(object sender, EventArgs e)
         {
@@ -114,11 +143,11 @@ namespace KWZP2019
         private bool editPlan()
         {
             int currentPlanId = Convert.ToInt32(tBoxPlanNr.Text.Trim());
-            return db.PlannedProductions.Count() >= currentPlanId;
+            return db.PlannedProductions.Count() > currentPlanId;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (editPlan())
+            if (editPlan() || flagEditPlan)
             {
                 PlannedProduction existingPlan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
                 existingPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
@@ -130,25 +159,73 @@ namespace KWZP2019
                 MessageBox.Show("Dokonano edycji planu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            {           
+            {
+                employeesQuantity = viewProcessEmpl.RowCount;
                 if (employeesQuantity == 0)
                 {
                     MessageBox.Show("Nie przydzielono pracownika!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
                 else
                 {
-                    PlannedProduction newPlan = new PlannedProduction();
                     newPlan.IdDetail = Convert.ToInt32(this.viewOrderDetail.CurrentRow.Cells[0].Value);
                     newPlan.IdMachine = Convert.ToInt32(comboBoxMachine.SelectedValue);
                     newPlan.PlannedStartd = dateTimeStart.Value;
                     newPlan.PlannedEndd = dateTimeEnd.Value;
                     newPlan.Inproduction = Convert.ToBoolean(cBoxIntoProduction.CheckState);
-                    db.PlannedProductions.Add(newPlan);
                     db.SaveChanges();
                     MessageBox.Show("Dodano nowy plan!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSave.Enabled = false;
                 }
             }
+            flagExitPermission = false;
+        }
+        private bool isEmptyDataGridViewEmployee()
+        {
+            return viewProcessEmpl.DataSource == null;
+        }
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
+            PlannedProductionEmployeeDetail newEmployee = new PlannedProductionEmployeeDetail();
+            newPlan.IdDetail = 1;
+            newPlan.IdMachine = 1;
+            newPlan.PlannedStartd = DateTime.Now;
+            newPlan.PlannedEndd = DateTime.Now;
+            newPlan.Inproduction = false;
+            newEmployee.IdProces = currentPlanNumber;
+            newEmployee.IdEmployee = Convert.ToInt32(comboBoxEmployee.SelectedValue);
+            newEmployee.StartDate = dateTimeEmployeeStart.Value;
+            newEmployee.EndDate = dateTimeEmployeeEnd.Value;
+            if (isEmptyDataGridViewEmployee())
+            {
+                db.PlannedProductions.Add(newPlan);
+                db.PlannedProductionEmployeeDetails.Add(newEmployee);
+                db.SaveChanges();
+                viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
+                                              where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
+                                              select PlannedProductionEmployeeDetail).ToList();
+            }
+            else
+            {
+                db.PlannedProductionEmployeeDetails.Add(newEmployee);
+                db.SaveChanges();
+                viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
+                                              where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
+                                              select PlannedProductionEmployeeDetail).ToList();
+            }
+        }
+        private void btnRemoveEmployee_Click(object sender, EventArgs e)
+        {
+            int currentPlanNumber = Convert.ToInt32(tBoxPlanNr.Text.Trim());
+            int idEmployeeToRemove = Convert.ToInt32(this.viewProcessEmpl.CurrentRow.Cells["idDetail"].Value);
+            string messageDuringRemovingEmployee = "Usunięto plan pracownika o numerze: " + Convert.ToString(idEmployeeToRemove + ".");
+            MessageBox.Show(messageDuringRemovingEmployee, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PlannedProductionEmployeeDetail employeeToRemove = db.PlannedProductionEmployeeDetails.First(f => f.IdDetail == idEmployeeToRemove);
+            db.PlannedProductionEmployeeDetails.Remove(employeeToRemove);
+            db.SaveChanges();
+            viewProcessEmpl.DataSource = (from PlannedProductionEmployeeDetail in db.PlannedProductionEmployeeDetails
+                                          where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
+                                          select PlannedProductionEmployeeDetail).ToList();
         }
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
@@ -159,6 +236,7 @@ namespace KWZP2019
                 tBoxPlanNr.Text = Convert.ToString(newPlanId);
                 viewProcessEmpl.DataSource = null;
                 btnSave.Enabled = true;
+                flagEditPlan = false;
             }
             else
             {
