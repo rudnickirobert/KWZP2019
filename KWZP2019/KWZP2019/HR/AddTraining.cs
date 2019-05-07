@@ -132,8 +132,8 @@ namespace KWZP2019
             }
             else
             {
-                bool condition1 = int.TryParse(tbTrainingPrice.Text.Trim(), out int number);
-                if (condition1 == false)
+                bool numbersInTbPrice = int.TryParse(tbTrainingPrice.Text.Trim(), out int number);
+                if (numbersInTbPrice == false)
                 {
                     MessageBox.Show("W polu cena muszą znajdować się wyłącznie cyfry");
                 }

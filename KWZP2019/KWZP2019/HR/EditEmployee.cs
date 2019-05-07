@@ -51,9 +51,9 @@ namespace KWZP2019
             }
             else
             {
-                bool condition1 = long.TryParse(tbPESEL.Text.Trim(), out long number);
-                bool condition2 = long.TryParse(tbPhoneNumber.Text.Trim(), out long number1);
-                if (condition1 == false || condition2 == false)
+                bool numbersInTbPESEL = long.TryParse(tbPESEL.Text.Trim(), out long number);
+                bool numbersInTbPhoneNum = long.TryParse(tbPhoneNumber.Text.Trim(), out long number1);
+                if (numbersInTbPESEL == false || numbersInTbPhoneNum == false)
                 {
                     MessageBox.Show("W polach Numer telefonu i PESEL muszą znajdować się wyłącznie cyfry");
                 }

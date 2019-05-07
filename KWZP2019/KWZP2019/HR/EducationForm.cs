@@ -130,9 +130,9 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Education EducationsToRemove = new Education { IdEducation = int.Parse(dgvEducation.SelectedRows[0].Cells[6].Value.ToString()) };
-            db.Educations.Attach(EducationsToRemove);
-            db.Educations.Remove(EducationsToRemove);
+            Education educationsToRemove = new Education { IdEducation = int.Parse(dgvEducation.SelectedRows[0].Cells[6].Value.ToString()) };
+            db.Educations.Attach(educationsToRemove);
+            db.Educations.Remove(educationsToRemove);
             db.SaveChanges();
             if (tbEducationSearch.Text.Trim() == "" )
             {
