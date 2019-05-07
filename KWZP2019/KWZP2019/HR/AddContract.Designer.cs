@@ -65,7 +65,7 @@
             // dtpEndDate
             // 
             this.dtpEndDate.Location = new System.Drawing.Point(395, 122);
-            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(297, 22);
             this.dtpEndDate.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.cbPosition.FormattingEnabled = true;
             this.cbPosition.Location = new System.Drawing.Point(427, 214);
-            this.cbPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPosition.Margin = new System.Windows.Forms.Padding(4);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(160, 24);
             this.cbPosition.TabIndex = 4;
@@ -82,7 +82,7 @@
             // dtpWorkplaceTrainingDate
             // 
             this.dtpWorkplaceTrainingDate.Location = new System.Drawing.Point(427, 288);
-            this.dtpWorkplaceTrainingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpWorkplaceTrainingDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpWorkplaceTrainingDate.Name = "dtpWorkplaceTrainingDate";
             this.dtpWorkplaceTrainingDate.Size = new System.Drawing.Size(265, 22);
             this.dtpWorkplaceTrainingDate.TabIndex = 6;
@@ -90,7 +90,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(232, 372);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(121, 38);
             this.btnAdd.TabIndex = 7;
@@ -112,7 +112,7 @@
             this.Controls.Add(this.dtpStartDate);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddContract";
-            this.Text = "AddContract";
+            this.Text = "Dodaj umowę";
             this.Load += new System.EventHandler(this.AddContract_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -232,7 +232,7 @@
             this.pbEducationForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEducationForm.BackgroundImage")));
             this.pbEducationForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbEducationForm.Location = new System.Drawing.Point(809, 15);
-            this.pbEducationForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbEducationForm.Margin = new System.Windows.Forms.Padding(4);
             this.pbEducationForm.Name = "pbEducationForm";
             this.pbEducationForm.Size = new System.Drawing.Size(764, 702);
             this.pbEducationForm.TabIndex = 17;
@@ -265,7 +265,7 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.Location = new System.Drawing.Point(425, 720);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(329, 190);
             this.btnReturn.TabIndex = 38;
@@ -286,7 +286,7 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.Location = new System.Drawing.Point(16, 720);
-            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
             this.btnReturnMain.TabIndex = 39;
@@ -336,7 +336,7 @@
             this.MinimizeBox = false;
             this.Name = "EducationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EducationForm";
+            this.Text = "Wykształcenie";
             this.Load += new System.EventHandler(this.EducationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEducationForm)).EndInit();

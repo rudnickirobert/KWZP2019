@@ -45,8 +45,9 @@ namespace KWZP2019
                         examinationSource.EmployeeSurname,
                         examinationSource.EmployeeName,
                         examinationSource.Date,
-                        examinationSource.IdMedicalExamination
-                }).ToList();
+                        examinationSource.IdMedicalExamination }).
+                OrderByDescending (ExaminationOrderBy => ExaminationOrderBy.Date).
+                ToList();
         }
 
         private void tbSearchEmployeeExaminationName_TextChanged(object sender, EventArgs e)
@@ -58,19 +59,21 @@ namespace KWZP2019
                            examinationSource.EmployeeSurname,
                            examinationSource.EmployeeName,
                            examinationSource.Date,
-                           examinationSource.IdMedicalExamination
-                   }).ToList();
+                           examinationSource.IdMedicalExamination }).
+                    OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Date).
+                    ToList();
         }
 
         void display()
         {
             dgvExamination.DataSource = db.vExaminations.
-                Select(examinationSource => new {
-                    examinationSource.EmployeeSurname,
-                    examinationSource.EmployeeName,
-                    examinationSource.Date,
-                    examinationSource.IdMedicalExamination
-                }).ToList();
+                Select (examinationSource => new {
+                        examinationSource.EmployeeSurname,
+                        examinationSource.EmployeeName,
+                        examinationSource.Date,
+                        examinationSource.IdMedicalExamination }).
+                OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Date).
+                ToList();
 
             dgvExamination.Columns[3].Visible = false;
 

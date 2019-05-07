@@ -200,7 +200,7 @@
             this.MinimizeBox = false;
             this.Name = "Contracts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Contracts";
+            this.Text = "Umowy";
             this.Load += new System.EventHandler(this.Contracts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).EndInit();
             this.ResumeLayout(false);

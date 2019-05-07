@@ -69,8 +69,9 @@ namespace KWZP2019
                         employeesSelect.Workplace,
                         employeesSelect.PhoneNumber,
                         employeesSelect.City,
-                        employeesSelect.IdEmployee
-                }).ToList();
+                        employeesSelect.IdEmployee }).
+                OrderBy (EmployeeOrderBy => EmployeeOrderBy.EmployeeSurname).
+                ToList();
 
             dgvEmloyees.Columns[5].Visible = false;
 
@@ -105,8 +106,9 @@ namespace KWZP2019
                         employeesSelect.Workplace,
                         employeesSelect.PhoneNumber,
                         employeesSelect.City,
-                        employeesSelect.IdEmployee
-                }).ToList();
+                        employeesSelect.IdEmployee }).
+                OrderBy (EmployeeOrderBy => EmployeeOrderBy.EmployeeSurname).
+                ToList();
         }
 
         private void btnContracts_Click(object sender, EventArgs e)

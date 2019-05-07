@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Absences));
             this.dgvAbsences = new System.Windows.Forms.DataGridView();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -73,13 +69,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvAbsences.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvAbsences.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAbsences.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAbsences.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dgvAbsences.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -91,14 +80,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAbsences.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAbsences.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -108,17 +89,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAbsences.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAbsences.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAbsences.EnableHeadersVisualStyles = false;
             this.dgvAbsences.Location = new System.Drawing.Point(11, 102);
-            this.dgvAbsences.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAbsences.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAbsences.Name = "dgvAbsences";
             this.dgvAbsences.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -128,13 +101,6 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgvAbsences.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvAbsences.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAbsences.RowTemplate.Height = 24;
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAbsences.Size = new System.Drawing.Size(555, 391);
@@ -181,9 +147,9 @@
             this.cbAbsenceType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbAbsenceType.FormattingEnabled = true;
             this.cbAbsenceType.Location = new System.Drawing.Point(812, 350);
-            this.cbAbsenceType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbAbsenceType.Margin = new System.Windows.Forms.Padding(2);
             this.cbAbsenceType.Name = "cbAbsenceType";
-            this.cbAbsenceType.Size = new System.Drawing.Size(259, 26);
+            this.cbAbsenceType.Size = new System.Drawing.Size(259, 30);
             this.cbAbsenceType.TabIndex = 3;
             // 
             // lblAbsenceType
@@ -195,7 +161,7 @@
             this.lblAbsenceType.Location = new System.Drawing.Point(643, 358);
             this.lblAbsenceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAbsenceType.Name = "lblAbsenceType";
-            this.lblAbsenceType.Size = new System.Drawing.Size(155, 20);
+            this.lblAbsenceType.Size = new System.Drawing.Size(197, 25);
             this.lblAbsenceType.TabIndex = 4;
             this.lblAbsenceType.Text = "Typ nieobecności";
             // 
@@ -204,9 +170,9 @@
             this.dateTimePickerFirstDay.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dateTimePickerFirstDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.dateTimePickerFirstDay.Location = new System.Drawing.Point(812, 411);
-            this.dateTimePickerFirstDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFirstDay.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFirstDay.Name = "dateTimePickerFirstDay";
-            this.dateTimePickerFirstDay.Size = new System.Drawing.Size(259, 24);
+            this.dateTimePickerFirstDay.Size = new System.Drawing.Size(259, 28);
             this.dateTimePickerFirstDay.TabIndex = 5;
             // 
             // lblFirstDay
@@ -218,7 +184,7 @@
             this.lblFirstDay.Location = new System.Drawing.Point(662, 417);
             this.lblFirstDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstDay.Name = "lblFirstDay";
-            this.lblFirstDay.Size = new System.Drawing.Size(136, 20);
+            this.lblFirstDay.Size = new System.Drawing.Size(170, 25);
             this.lblFirstDay.TabIndex = 6;
             this.lblFirstDay.Text = "Pierwszy dzień";
             // 
@@ -227,9 +193,9 @@
             this.dateTimePickerLastDay.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dateTimePickerLastDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.dateTimePickerLastDay.Location = new System.Drawing.Point(812, 470);
-            this.dateTimePickerLastDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerLastDay.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerLastDay.Name = "dateTimePickerLastDay";
-            this.dateTimePickerLastDay.Size = new System.Drawing.Size(259, 24);
+            this.dateTimePickerLastDay.Size = new System.Drawing.Size(259, 28);
             this.dateTimePickerLastDay.TabIndex = 7;
             // 
             // lblLastDay
@@ -241,7 +207,7 @@
             this.lblLastDay.Location = new System.Drawing.Point(676, 476);
             this.lblLastDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLastDay.Name = "lblLastDay";
-            this.lblLastDay.Size = new System.Drawing.Size(121, 20);
+            this.lblLastDay.Size = new System.Drawing.Size(151, 25);
             this.lblLastDay.TabIndex = 8;
             this.lblLastDay.Text = "Ostatni dzień";
             // 
@@ -267,9 +233,9 @@
             this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbLastName.Location = new System.Drawing.Point(812, 291);
-            this.tbLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLastName.Margin = new System.Windows.Forms.Padding(2);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(259, 24);
+            this.tbLastName.Size = new System.Drawing.Size(259, 28);
             this.tbLastName.TabIndex = 10;
             // 
             // tbFirstName
@@ -278,9 +244,9 @@
             this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbFirstName.Location = new System.Drawing.Point(812, 232);
-            this.tbFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(259, 24);
+            this.tbFirstName.Size = new System.Drawing.Size(259, 28);
             this.tbFirstName.TabIndex = 11;
             // 
             // lblFirstName
@@ -292,7 +258,7 @@
             this.lblFirstName.Location = new System.Drawing.Point(744, 238);
             this.lblFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(44, 20);
+            this.lblFirstName.Size = new System.Drawing.Size(55, 25);
             this.lblFirstName.TabIndex = 12;
             this.lblFirstName.Text = "Imię";
             // 
@@ -305,7 +271,7 @@
             this.lblLastName.Location = new System.Drawing.Point(701, 297);
             this.lblLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(89, 20);
+            this.lblLastName.Size = new System.Drawing.Size(112, 25);
             this.lblLastName.TabIndex = 13;
             this.lblLastName.Text = "Nazwisko";
             // 
@@ -315,9 +281,9 @@
             this.tbSearchAbsence.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbSearchAbsence.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbSearchAbsence.Location = new System.Drawing.Point(15, 56);
-            this.tbSearchAbsence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSearchAbsence.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchAbsence.Name = "tbSearchAbsence";
-            this.tbSearchAbsence.Size = new System.Drawing.Size(271, 24);
+            this.tbSearchAbsence.Size = new System.Drawing.Size(271, 28);
             this.tbSearchAbsence.TabIndex = 14;
             this.tbSearchAbsence.Text = "Wysz";
             this.tbSearchAbsence.TextChanged += new System.EventHandler(this.tbSearchAbsence_TextChanged);
@@ -331,7 +297,7 @@
             this.lblSearchSurname.Location = new System.Drawing.Point(17, 25);
             this.lblSearchSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchSurname.Name = "lblSearchSurname";
-            this.lblSearchSurname.Size = new System.Drawing.Size(82, 18);
+            this.lblSearchSurname.Size = new System.Drawing.Size(98, 24);
             this.lblSearchSurname.TabIndex = 15;
             this.lblSearchSurname.Text = "Nazwisko";
             // 
@@ -344,7 +310,7 @@
             this.lblSearchName.Location = new System.Drawing.Point(346, 25);
             this.lblSearchName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(39, 18);
+            this.lblSearchName.Size = new System.Drawing.Size(49, 24);
             this.lblSearchName.TabIndex = 16;
             this.lblSearchName.Text = "Imię";
             // 
@@ -354,9 +320,9 @@
             this.tbSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbSearchName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbSearchName.Location = new System.Drawing.Point(349, 56);
-            this.tbSearchName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSearchName.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchName.Name = "tbSearchName";
-            this.tbSearchName.Size = new System.Drawing.Size(217, 24);
+            this.tbSearchName.Size = new System.Drawing.Size(217, 28);
             this.tbSearchName.TabIndex = 17;
             this.tbSearchName.TextChanged += new System.EventHandler(this.tbSearchName_TextChanged);
             // 
@@ -404,7 +370,7 @@
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFormTitle.Location = new System.Drawing.Point(725, 140);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(313, 26);
+            this.lblFormTitle.Size = new System.Drawing.Size(390, 31);
             this.lblFormTitle.TabIndex = 34;
             this.lblFormTitle.Text = "Dodaj nieobecność pracownika";
             // 
@@ -413,9 +379,8 @@
             this.pbAbsence.BackColor = System.Drawing.Color.Transparent;
             this.pbAbsence.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAbsence.BackgroundImage")));
             this.pbAbsence.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAbsence.Location = new System.Drawing.Point(788, 15);
-            this.pbAbsence.Margin = new System.Windows.Forms.Padding(4);
             this.pbAbsence.Location = new System.Drawing.Point(591, 12);
+            this.pbAbsence.Margin = new System.Windows.Forms.Padding(4);
             this.pbAbsence.Name = "pbAbsence";
             this.pbAbsence.Size = new System.Drawing.Size(581, 716);
             this.pbAbsence.TabIndex = 35;
@@ -428,15 +393,14 @@
             this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbEmployeeList.FormattingEnabled = true;
             this.cbEmployeeList.Location = new System.Drawing.Point(812, 258);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(259, 26);
+            this.cbEmployeeList.Size = new System.Drawing.Size(259, 30);
             this.cbEmployeeList.TabIndex = 36;
             // 
             // Absences
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -465,12 +429,12 @@
             this.Controls.Add(this.dgvAbsences);
             this.Controls.Add(this.pbAbsence);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Absences";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Absences";
+            this.Text = "Nieobecności";
             this.Load += new System.EventHandler(this.Absences_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAbsence)).EndInit();

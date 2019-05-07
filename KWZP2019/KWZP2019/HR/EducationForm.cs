@@ -53,22 +53,24 @@ namespace KWZP2019
                         educationFormSelect.Degree,
                         educationFormSelect.DegreeShort,
                         educationFormSelect.GraduationDate,
-                        educationFormSelect.IdEducation
-                }).ToList();
+                        educationFormSelect.IdEducation }).
+                OrderBy (EducationOrderBy => EducationOrderBy.EducationLevel).
+                ToList();
         }
         
         void display()
         {
             dgvEducation.DataSource = db.vEducationForms.
-                Select(educationFormSelect => new {
-                    educationFormSelect.EmployeeSurname,
-                    educationFormSelect.EmployeeName,
-                    educationFormSelect.EducationLevel,
-                    educationFormSelect.Degree,
-                    educationFormSelect.DegreeShort,
-                    educationFormSelect.GraduationDate,
-                    educationFormSelect.IdEducation
-                }).ToList();
+                Select (educationFormSelect => new {
+                        educationFormSelect.EmployeeSurname,
+                        educationFormSelect.EmployeeName,
+                        educationFormSelect.EducationLevel,
+                        educationFormSelect.Degree,
+                        educationFormSelect.DegreeShort,
+                        educationFormSelect.GraduationDate,
+                        educationFormSelect.IdEducation }).
+                OrderBy (EducationOrderBy => EducationOrderBy.EducationLevel).
+                ToList();
 
             dgvEducation.Columns[6].Visible = false;
 

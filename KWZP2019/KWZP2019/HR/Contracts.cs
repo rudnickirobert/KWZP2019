@@ -42,8 +42,9 @@ namespace KWZP2019
                         contractsSelect.EndDate,
                         contractsSelect.Salary,
                         contractsSelect.WorkplaceTrainingDate,
-                        contractsSelect.IdContract
-                }).ToList();
+                        contractsSelect.IdContract }).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.StartDate).
+                ToList();
         }
 
         private void tbSearchContractName_TextChanged(object sender, EventArgs e)
@@ -51,16 +52,17 @@ namespace KWZP2019
             dgvContracts.DataSource = db.vContracts.
                 Where(contracts => contracts.EmployeeSurname.StartsWith(tbSearchContract.Text)
                                 && contracts.EmployeeName.StartsWith(tbSearchContractName.Text)).
-                Select(contractsSelect => new {
-                    contractsSelect.EmployeeSurname,
-                    contractsSelect.EmployeeName,
-                    contractsSelect.Workplace,
-                    contractsSelect.StartDate,
-                    contractsSelect.EndDate,
-                    contractsSelect.Salary,
-                    contractsSelect.WorkplaceTrainingDate,
-                    contractsSelect.IdContract
-                }).ToList();
+                Select (contractsSelect => new {
+                        contractsSelect.EmployeeSurname,
+                        contractsSelect.EmployeeName,
+                        contractsSelect.Workplace,
+                        contractsSelect.StartDate,
+                        contractsSelect.EndDate,
+                        contractsSelect.Salary,
+                        contractsSelect.WorkplaceTrainingDate,
+                        contractsSelect.IdContract }).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.StartDate).
+                ToList();
         }
 
         private void btnAddTraining_Click(object sender, EventArgs e)
@@ -101,16 +103,17 @@ namespace KWZP2019
         void display()
         {
             dgvContracts.DataSource = db.vContracts.
-                Select(contractsSelect => new {
-                    contractsSelect.EmployeeSurname,
-                    contractsSelect.EmployeeName,
-                    contractsSelect.Workplace,
-                    contractsSelect.StartDate,
-                    contractsSelect.EndDate,
-                    contractsSelect.Salary,
-                    contractsSelect.WorkplaceTrainingDate,
-                    contractsSelect.IdContract
-                }).ToList();
+                Select (contractsSelect => new {
+                        contractsSelect.EmployeeSurname,
+                        contractsSelect.EmployeeName,
+                        contractsSelect.Workplace,
+                        contractsSelect.StartDate,
+                        contractsSelect.EndDate,
+                        contractsSelect.Salary,
+                        contractsSelect.WorkplaceTrainingDate,
+                        contractsSelect.IdContract }).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.StartDate).
+                ToList();
 
             dgvContracts.Columns[7].Visible = false;
 

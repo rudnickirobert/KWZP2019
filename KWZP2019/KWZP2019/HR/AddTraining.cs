@@ -49,8 +49,10 @@ namespace KWZP2019
                         addtrainigSelect.TrainingStartDate,
                         addtrainigSelect.TrainingEndDate,
                         addtrainigSelect.TrainingPrice,
-                        addtrainigSelect.IdTraining
-                }).ToList();
+                        addtrainigSelect.IdTraining }).
+                OrderByDescending (TrainingOrderBy => TrainingOrderBy.TrainingStartDate).
+                ToList();
+            
         }
 
         private void tbSearchTrainingName_TextChanged(object sender, EventArgs e)
@@ -65,8 +67,9 @@ namespace KWZP2019
                         addtrainigSelect.TrainingStartDate,
                         addtrainigSelect.TrainingEndDate,
                         addtrainigSelect.TrainingPrice,
-                        addtrainigSelect.IdTraining
-                }).ToList();
+                        addtrainigSelect.IdTraining }).
+                OrderByDescending(TrainingOrderBy => TrainingOrderBy.TrainingStartDate).
+                ToList();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -93,15 +96,16 @@ namespace KWZP2019
         void display()
         {
             dgvTrainings.DataSource = db.vAddTrainings.
-                Select(addtrainigSelect => new {
-                    addtrainigSelect.EmployeeSurname,
-                    addtrainigSelect.EmployeeName,
-                    addtrainigSelect.TrainingName,
-                    addtrainigSelect.TrainingStartDate,
-                    addtrainigSelect.TrainingEndDate,
-                    addtrainigSelect.TrainingPrice,
-                    addtrainigSelect.IdTraining
-                }).ToList();
+                Select (addtrainigSelect => new {
+                        addtrainigSelect.EmployeeSurname,
+                        addtrainigSelect.EmployeeName,
+                        addtrainigSelect.TrainingName,
+                        addtrainigSelect.TrainingStartDate,
+                        addtrainigSelect.TrainingEndDate,
+                        addtrainigSelect.TrainingPrice,
+                        addtrainigSelect.IdTraining }).
+                OrderByDescending (TrainingOrderBy => TrainingOrderBy.TrainingStartDate).
+                ToList();
 
             dgvTrainings.Columns[6].Visible = false;
 

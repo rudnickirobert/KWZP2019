@@ -150,7 +150,7 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.Location = new System.Drawing.Point(16, 75);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(329, 190);
             this.btnReturn.TabIndex = 7;
@@ -171,7 +171,7 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.Location = new System.Drawing.Point(16, 272);
-            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
             this.btnReturnMain.TabIndex = 8;
@@ -275,7 +275,7 @@
             this.MinimizeBox = false;
             this.Name = "EmployeeDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Employee Details";
+            this.Text = "Szczegóły pracownika";
             this.Load += new System.EventHandler(this.EmployeeDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainings)).EndInit();

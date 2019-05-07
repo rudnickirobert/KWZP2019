@@ -240,7 +240,7 @@
             this.MinimizeBox = false;
             this.Name = "Examination";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Examination";
+            this.Text = "Badania lekarskie";
             this.Load += new System.EventHandler(this.Examination_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamination)).EndInit();
             this.ResumeLayout(false);
