@@ -35,12 +35,13 @@ namespace KWZP2019
             {
                 MedicalExamination newMedicalExamination = new MedicalExamination();
                 newMedicalExamination.IdEmployee = cbEmployeeList.SelectedIndex + 1;
+                MessageBox.Show(cbPosition.SelectedIndex.ToString());
                 int validity = int.Parse(db.Positions.
-                    Where(validityWhere => validityWhere.Equals(cbPosition.SelectedText)).
-                    Select(validitySelect => new
-                    {
-                        validitySelect.VailidityOfMedicalExam
+                    Where(validityWhere => validityWhere.IdPosition.Equals(cbPosition.SelectedIndex +1)).
+                    Select (validitySelect => new {
+                            validitySelect.VailidityOfMedicalExam
                     }).ToString());
+                
                 newMedicalExamination.Date = dtpExaminationDate.Value.AddDays(validity);
                 db.MedicalExaminations.Add(newMedicalExamination);
                 db.SaveChanges();
@@ -59,13 +60,11 @@ namespace KWZP2019
                     employee.EmployeeSurname, employee.EmployeeName));
             }
 
-            /*List<vEmployeeList> employeeList = db.vEmployeeLists.
-                OrderBy(employeeListOrderBy => employeeListOrderBy.EmployeeSurname).ToList();
-            foreach (vEmployeeList employee in employeeList)
+            List<vPosition> positionList = db.vPositions.ToList();
+            foreach (vPosition positionL in positionList)
             {
-                cbEmployeeList.Items.Add(String.Format("{0, -20} {1, -20}",
-                    employee.EmployeeSurname, employee.EmployeeName));
-            }*/
+                cbPosition.Items.Add(positionL.Workplace);
+            }
 
             clear();
         }
