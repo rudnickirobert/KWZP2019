@@ -158,9 +158,6 @@
     <Compile Include="FailureMaintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FEMAnalysis.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Finances\AddNewCompany.cs">
       <SubType>Form</SubType>
     </Compile>
