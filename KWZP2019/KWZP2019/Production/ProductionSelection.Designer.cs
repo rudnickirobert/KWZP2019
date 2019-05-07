@@ -50,7 +50,7 @@
             this.btnCurrentProduction.Name = "btnCurrentProduction";
             this.btnCurrentProduction.Size = new System.Drawing.Size(290, 160);
             this.btnCurrentProduction.TabIndex = 8;
-            this.btnCurrentProduction.Text = "Aktualnie w produkcji";
+            this.btnCurrentProduction.Text = "W produkcji";
             this.btnCurrentProduction.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCurrentProduction.UseVisualStyleBackColor = false;
             this.btnCurrentProduction.Click += new System.EventHandler(this.btnCurrentProduction_Click);
