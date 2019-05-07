@@ -35,18 +35,21 @@ namespace KWZP2019
             {
                 MedicalExamination newMedicalExamination = new MedicalExamination();
                 newMedicalExamination.IdEmployee = cbEmployeeList.SelectedIndex + 1;
+
                 MessageBox.Show(cbPosition.SelectedIndex.ToString());
-                int validity = int.Parse(db.Positions.
-                    Where(validityWhere => validityWhere.IdPosition.Equals(cbPosition.SelectedIndex +1)).
-                    Select (validitySelect => new {
-                            validitySelect.VailidityOfMedicalExam
-                    }).ToString());
-                
+                MessageBox.Show(cbPosition.SelectedItem.ToString());
+                MessageBox.Show(db.vPositionExaminationValidities.
+                    Where(validityWhere => validityWhere.Workplace.StartsWith(cbPosition.SelectedItem.ToString())).
+                    Select(validitySelect => new { validitySelect.VailidityOfMedicalExam }).ToString());
+                /*int validity = int.Parse(db.vPositionExaminationValidities.
+                    Where(validityWhere => validityWhere.Workplace.StartsWith(cbPosition.SelectedItem.ToString())).
+                    Select(validitySelect => new { validitySelect.VailidityOfMedicalExam }).ToString());
                 newMedicalExamination.Date = dtpExaminationDate.Value.AddDays(validity);
+                
                 db.MedicalExaminations.Add(newMedicalExamination);
                 db.SaveChanges();
                 clear();
-                MessageBox.Show("Prawidłowo wprowadzono badanie");
+                MessageBox.Show("Prawidłowo wprowadzono badanie");*/
             }
         }
 

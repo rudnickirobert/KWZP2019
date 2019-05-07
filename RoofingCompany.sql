@@ -1095,3 +1095,8 @@ JOIN Machine
 ON PlannedProduction.IdMachine = Machine.IdMachine
 GO
 
+CREATE VIEW vPositionExaminationValidity
+AS
+SELECT IdPosition, VailidityOfMedicalExam, Workplace
+FROM Position
+GO

@@ -121,6 +121,7 @@ namespace KWZP2019
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
         public virtual DbSet<vPosition> vPositions { get; set; }
+        public virtual DbSet<vPositionExaminationValidity> vPositionExaminationValidities { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomers { get; set; }
         public virtual DbSet<vProductionProcessFullData> vProductionProcessFullDatas { get; set; }
         public virtual DbSet<vSafetyControlHistoryView> vSafetyControlHistoryViews { get; set; }

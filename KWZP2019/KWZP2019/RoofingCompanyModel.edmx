@@ -1136,6 +1136,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vPosition' does not have a prim
           <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPositionExaminationValidity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPositionExaminationValidity">
+          <Key>
+            <PropertyRef Name="IdPosition" />
+          </Key>
+          <Property Name="IdPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VailidityOfMedicalExam" Type="int" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vPredictedPriceForCustomer">
           <Key>
@@ -2483,6 +2493,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vPosition].[Workplace] AS [Workplace]
     FROM [dbo].[vPosition] AS [vPosition]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vPositionExaminationValidity" EntityType="Self.vPositionExaminationValidity" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPositionExaminationValidity].[IdPosition] AS [IdPosition], 
+    [vPositionExaminationValidity].[VailidityOfMedicalExam] AS [VailidityOfMedicalExam], 
+    [vPositionExaminationValidity].[Workplace] AS [Workplace]
+    FROM [dbo].[vPositionExaminationValidity] AS [vPositionExaminationValidity]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vPredictedPriceForCustomer" EntityType="Self.vPredictedPriceForCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vPredictedPriceForCustomer].[IdOrderCustomer] AS [IdOrderCustomer], 
@@ -2956,6 +2973,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vPartsViews" EntityType="RoofingCompanyModel.vPartsView" />
           <EntitySet Name="vPaymentHistories" EntityType="RoofingCompanyModel.vPaymentHistory" />
           <EntitySet Name="vPositions" EntityType="RoofingCompanyModel.vPosition" />
+          <EntitySet Name="vPositionExaminationValidities" EntityType="RoofingCompanyModel.vPositionExaminationValidity" />
           <EntitySet Name="vPredictedPriceForCustomers" EntityType="RoofingCompanyModel.vPredictedPriceForCustomer" />
           <EntitySet Name="vProductionProcessFullDatas" EntityType="RoofingCompanyModel.vProductionProcessFullData" />
           <EntitySet Name="vSafetyControlHistoryViews" EntityType="RoofingCompanyModel.vSafetyControlHistoryView" />
@@ -4384,6 +4402,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <PropertyRef Name="IdPosition" />
           </Key>
           <Property Name="IdPosition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vPositionExaminationValidity">
+          <Key>
+            <PropertyRef Name="IdPosition" />
+          </Key>
+          <Property Name="IdPosition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VailidityOfMedicalExam" Type="Int32" />
           <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vPredictedPriceForCustomer">
@@ -6388,6 +6414,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <EntityTypeMapping TypeName="RoofingCompanyModel.vPosition">
               <MappingFragment StoreEntitySet="vPosition">
                 <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPositionExaminationValidities">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPositionExaminationValidity">
+              <MappingFragment StoreEntitySet="vPositionExaminationValidity">
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />
                 <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
               </MappingFragment>
             </EntityTypeMapping>
