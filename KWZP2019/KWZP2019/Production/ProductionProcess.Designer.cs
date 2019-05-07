@@ -29,11 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionProcess));
             this.ProductionProcessGridView = new System.Windows.Forms.DataGridView();
+            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catalogMachineNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vProductionProcessFullDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dTPickerProductionActualFilterLower = new System.Windows.Forms.DateTimePicker();
             this.dTPickerProductionActualFilterUpper = new System.Windows.Forms.DateTimePicker();
             this.btnProductionActualFilter = new System.Windows.Forms.Button();
@@ -45,41 +55,31 @@
             this.lblProductionActualFilterSince = new System.Windows.Forms.Label();
             this.lblProductionActualFilterTo = new System.Windows.Forms.Label();
             this.btnActualProductionBack = new System.Windows.Forms.Button();
-            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catalogMachineNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vProductionProcessFullDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductionProcessGridView)).BeginInit();
-            this.panelActualProductionRadioBtns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).BeginInit();
+            this.panelActualProductionRadioBtns.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductionProcessGridView
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.ProductionProcessGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.ProductionProcessGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ProductionProcessGridView.AutoGenerateColumns = false;
             this.ProductionProcessGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.ProductionProcessGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductionProcessGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductionProcessGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProductionProcessGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductionProcessGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProcesDataGridViewTextBoxColumn,
@@ -96,15 +96,73 @@
             this.ProductionProcessGridView.Location = new System.Drawing.Point(250, 130);
             this.ProductionProcessGridView.Name = "ProductionProcessGridView";
             this.ProductionProcessGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.ProductionProcessGridView.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.ProductionProcessGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ProductionProcessGridView.Size = new System.Drawing.Size(905, 580);
             this.ProductionProcessGridView.TabIndex = 0;
+            // 
+            // idProcesDataGridViewTextBoxColumn
+            // 
+            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
+            this.idProcesDataGridViewTextBoxColumn.HeaderText = "Numer procesu";
+            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
+            // 
+            // idPlanDataGridViewTextBoxColumn
+            // 
+            this.idPlanDataGridViewTextBoxColumn.DataPropertyName = "IdPlan";
+            this.idPlanDataGridViewTextBoxColumn.HeaderText = "Numer planu";
+            this.idPlanDataGridViewTextBoxColumn.Name = "idPlanDataGridViewTextBoxColumn";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Czas rozpoczęcia";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Czas zakończenia";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // idEmployeeDataGridViewTextBoxColumn
+            // 
+            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IdEmployee";
+            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "Numer pracownika";
+            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "Imię pracownika";
+            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            // 
+            // employeeSurnameDataGridViewTextBoxColumn
+            // 
+            this.employeeSurnameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeSurname";
+            this.employeeSurnameDataGridViewTextBoxColumn.HeaderText = "Nazwisko pracownika";
+            this.employeeSurnameDataGridViewTextBoxColumn.Name = "employeeSurnameDataGridViewTextBoxColumn";
+            // 
+            // machineNameDataGridViewTextBoxColumn
+            // 
+            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "MachineName";
+            this.machineNameDataGridViewTextBoxColumn.HeaderText = "Nazwa maszyny";
+            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
+            // 
+            // catalogMachineNrDataGridViewTextBoxColumn
+            // 
+            this.catalogMachineNrDataGridViewTextBoxColumn.DataPropertyName = "CatalogMachineNr";
+            this.catalogMachineNrDataGridViewTextBoxColumn.HeaderText = "Numer katalogowy maszyny";
+            this.catalogMachineNrDataGridViewTextBoxColumn.Name = "catalogMachineNrDataGridViewTextBoxColumn";
+            // 
+            // vProductionProcessFullDataBindingSource
+            // 
+            this.vProductionProcessFullDataBindingSource.DataSource = typeof(KWZP2019.vProductionProcessFullData);
             // 
             // dTPickerProductionActualFilterLower
             // 
@@ -251,64 +309,6 @@
             this.btnActualProductionBack.UseVisualStyleBackColor = false;
             this.btnActualProductionBack.Click += new System.EventHandler(this.btnActualProductionBack_Click);
             // 
-            // idProcesDataGridViewTextBoxColumn
-            // 
-            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.HeaderText = "Numer procesu";
-            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
-            // 
-            // idPlanDataGridViewTextBoxColumn
-            // 
-            this.idPlanDataGridViewTextBoxColumn.DataPropertyName = "IdPlan";
-            this.idPlanDataGridViewTextBoxColumn.HeaderText = "Numer planu";
-            this.idPlanDataGridViewTextBoxColumn.Name = "idPlanDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Czas rozpoczęcia";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Czas zakończenia";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // idEmployeeDataGridViewTextBoxColumn
-            // 
-            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IdEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "Numer pracownika";
-            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
-            // 
-            // employeeNameDataGridViewTextBoxColumn
-            // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "Imię pracownika";
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
-            // 
-            // employeeSurnameDataGridViewTextBoxColumn
-            // 
-            this.employeeSurnameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeSurname";
-            this.employeeSurnameDataGridViewTextBoxColumn.HeaderText = "Nazwisko pracownika";
-            this.employeeSurnameDataGridViewTextBoxColumn.Name = "employeeSurnameDataGridViewTextBoxColumn";
-            // 
-            // machineNameDataGridViewTextBoxColumn
-            // 
-            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "MachineName";
-            this.machineNameDataGridViewTextBoxColumn.HeaderText = "Nazwa maszyny";
-            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
-            // 
-            // catalogMachineNrDataGridViewTextBoxColumn
-            // 
-            this.catalogMachineNrDataGridViewTextBoxColumn.DataPropertyName = "CatalogMachineNr";
-            this.catalogMachineNrDataGridViewTextBoxColumn.HeaderText = "Numer katalogowy maszyny";
-            this.catalogMachineNrDataGridViewTextBoxColumn.Name = "catalogMachineNrDataGridViewTextBoxColumn";
-            // 
-            // vProductionProcessFullDataBindingSource
-            // 
-            this.vProductionProcessFullDataBindingSource.DataSource = typeof(KWZP2019.vProductionProcessFullData);
-            // 
             // ProductionProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,12 +328,12 @@
             this.MaximizeBox = false;
             this.Name = "ProductionProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aktualnie w produkcji";
+            this.Text = "W produkcji";
             this.Load += new System.EventHandler(this.ProductionProcess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductionProcessGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).EndInit();
             this.panelActualProductionRadioBtns.ResumeLayout(false);
             this.panelActualProductionRadioBtns.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
