@@ -1009,6 +1009,68 @@ FROM EducationLevel
 
 GO
 
+CREATE VIEW vSalariesSummary
+as
+WITH 
+L4 AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'L4Days', AbsenceType.Multiplier as 'L4X'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'L4'
+			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		 PaidAbsence AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'PADays', AbsenceType.Multiplier as 'PAX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Urlop Płatny'
+			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		UnpaidAbsence AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NPADays', AbsenceType.Multiplier as 'NPAX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Urlop Bezłatny'
+			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		Unexcused AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NUDays', AbsenceType.Multiplier as 'NUX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Nieusprawiedliwiona'
+			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		OD AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'ODDays', AbsenceType.Multiplier as 'ODX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Na żądanie'
+			GROUP by Employee.IdEmployee, AbsenceType.Multiplier)
+
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL,CAST((Contract.Salary/21) as decimal(10,2)) as DailyWage, 
+				Convert(date ,Getdate()) as Date, 
+				ISNULL(L4.L4Days,0) as [Dni L4],CAST(ISNULL(((Contract.Salary/21)*L4.L4Days*L4X),0) as decimal(10,2)) as L4Pay, 
+				ISNULL(PaidAbsence.PADays,0) as [Urlop płatny],CAST(ISNULL(((Contract.Salary/21)*PaidAbsence.PADays*PAX),0) as decimal(10,2)) as PAPay,
+				ISNULL(UnpaidAbsence.NPADays,0) as [Urlop bezpłatny],CAST(ISNULL(((Contract.Salary/21)*UnpaidAbsence.NPADays*NPAX),0) as decimal(10,2)) as NPAPay,
+				ISNULL(Unexcused.NUDays,0) as [Nieusprawiedliowiona],CAST(ISNULL(((Contract.Salary/21)*Unexcused.NUDays*NUX),0) as decimal(10,2)) as NPAay,
+				ISNULL(OD.ODDays,0) as [Na żądanie],CAST(ISNULL(((Contract.Salary/21)*OD.ODDays*ODX),0) as decimal(10,2)) as ODPay,
+				Ceiling(((21-(ISNULL(L4.L4Days,0)+ISNULL(PaidAbsence.PADays,0)+ISNULL(UnpaidAbsence.NPADays,0)+ISNULL(Unexcused.NUDays,0)+ISNULL(OD.ODDays,0)))*(Contract.Salary/21))+ISNULL(((Contract.Salary/21)*L4.L4Days*L4X),0)+ISNULL(((Contract.Salary/21)*PaidAbsence.PADays*PAX),0)+ISNULL(((Contract.Salary/21)*UnpaidAbsence.NPADays*NPAX),0)+ISNULL(((Contract.Salary/21)*Unexcused.NUDays*NUX),0)+ISNULL(((Contract.Salary/21)*OD.ODDays*ODX),0)) as TotalSalary
+
+	FROM Absence 
+		right outer JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee 
+		Left outer JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+		left outer join Payment ON Employee.IdEmployee = Payment.IdEmployee
+		left outer join L4 on Employee.IdEmployee = L4.IdEmployee
+		Left outer join PaidAbsence on Employee.IdEmployee = PaidAbsence.IdEmployee
+		Left outer join UnpaidAbsence on Employee.IdEmployee = UnpaidAbsence.IdEmployee
+		Left outer join Unexcused on Employee.IdEmployee = Unexcused.IdEmployee
+		Left outer join OD on Employee.IdEmployee = OD.IdEmployee
+
+go
+
+
+
+
 CREATE VIEW vProductionProcessFullData
 AS
 SELECT ProductionProcess.IdProces, ProductionProcess.IdPlan, ProductionProcess.StartDate, ProductionProcess.EndDate, PlannedProductionEmployeeDetails.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Machine.MachineName, Machine.CatalogMachineNr
