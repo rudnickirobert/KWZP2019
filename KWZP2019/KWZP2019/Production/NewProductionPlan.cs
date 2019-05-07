@@ -87,6 +87,10 @@ namespace KWZP2019
                     db.SaveChanges();
                     Close();
                 }
+                else if(viewProcessEmpl.DataSource == null)
+                {
+                    Close();
+                }
                 else
                 {
                     if (flagExitPermission)
