@@ -188,12 +188,12 @@ namespace KWZP2019
                 }
 
 
-                string folderPath = @"C:\Users\lotys\Desktop\";
-                if (!Directory.Exists(folderPath))
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) +"\\";
+                if (!Directory.Exists(desktopPath))
                 {
-                    Directory.CreateDirectory(folderPath);
+                    Directory.CreateDirectory(desktopPath);
                 }
-                using (FileStream stream = new FileStream(folderPath + customerName + " zam " + ordersDgv.CurrentRow.Cells[0].Value + ".pdf", FileMode.Create))
+                using (FileStream stream = new FileStream(desktopPath + @customerName + " zam " + ordersDgv.CurrentRow.Cells[0].Value + ".pdf", FileMode.Create))
                 {
                     Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
                     PdfWriter.GetInstance(pdfDoc, stream);

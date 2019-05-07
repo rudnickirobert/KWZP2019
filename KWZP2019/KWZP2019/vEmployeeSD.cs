@@ -12,11 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class ViewDailySfDelivery
+    public partial class vEmployeeSD
     {
-        public System.DateTime Delivery { get; set; }
-        public string SupplierName { get; set; }
-        public string SfCode { get; set; }
-        public int Quantity { get; set; }
+        public string Nr_Obsługi { get; set; }
+        public System.DateTime Data_przyjęcia { get; set; }
+        public string Nazwa_części { get; set; }
+        public int Ilość { get; set; }
+        public string Jednostka { get; set; }
     }
 }
