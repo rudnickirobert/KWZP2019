@@ -106,10 +106,10 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditTechnology.cs">
+    <Compile Include="Production\EditTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditTechnology.Designer.cs">
+    <Compile Include="Production\EditTechnology.Designer.cs">
       <DependentUpon>EditTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="Education.cs">
@@ -428,10 +428,10 @@
     <Compile Include="Production\NewProductionFailure.Designer.cs">
       <DependentUpon>NewProductionFailure.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewTechnology.cs">
+    <Compile Include="Production\NewTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewTechnology.Designer.cs">
+    <Compile Include="Production\NewTechnology.Designer.cs">
       <DependentUpon>NewTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="OSHControlHistory.cs">
@@ -778,7 +778,7 @@
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTechnology.resx">
+    <EmbeddedResource Include="Production\EditTechnology.resx">
       <DependentUpon>EditTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finances\AddNewCompany.resx">
@@ -844,7 +844,7 @@
     <EmbeddedResource Include="Production\NewProductionFailure.resx">
       <DependentUpon>NewProductionFailure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewTechnology.resx">
+    <EmbeddedResource Include="Production\NewTechnology.resx">
       <DependentUpon>NewTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">

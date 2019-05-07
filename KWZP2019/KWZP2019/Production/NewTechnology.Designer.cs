@@ -42,27 +42,36 @@
             // lblSpeedFactor
             // 
             this.lblSpeedFactor.AutoSize = true;
-            this.lblSpeedFactor.Location = new System.Drawing.Point(42, 186);
+            this.lblSpeedFactor.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpeedFactor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSpeedFactor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSpeedFactor.Location = new System.Drawing.Point(3, 180);
             this.lblSpeedFactor.Name = "lblSpeedFactor";
-            this.lblSpeedFactor.Size = new System.Drawing.Size(124, 13);
+            this.lblSpeedFactor.Size = new System.Drawing.Size(157, 16);
             this.lblSpeedFactor.TabIndex = 7;
             this.lblSpeedFactor.Text = "Współczynnik prędkości";
             // 
             // lblTimePerMeter
             // 
             this.lblTimePerMeter.AutoSize = true;
-            this.lblTimePerMeter.Location = new System.Drawing.Point(65, 135);
+            this.lblTimePerMeter.BackColor = System.Drawing.Color.Transparent;
+            this.lblTimePerMeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTimePerMeter.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTimePerMeter.Location = new System.Drawing.Point(26, 129);
             this.lblTimePerMeter.Name = "lblTimePerMeter";
-            this.lblTimePerMeter.Size = new System.Drawing.Size(101, 13);
+            this.lblTimePerMeter.Size = new System.Drawing.Size(127, 16);
             this.lblTimePerMeter.TabIndex = 8;
             this.lblTimePerMeter.Text = "Prędkość produkcji ";
             // 
             // lblTechnologyName
             // 
             this.lblTechnologyName.AutoSize = true;
-            this.lblTechnologyName.Location = new System.Drawing.Point(80, 84);
+            this.lblTechnologyName.BackColor = System.Drawing.Color.Transparent;
+            this.lblTechnologyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTechnologyName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTechnologyName.Location = new System.Drawing.Point(41, 78);
             this.lblTechnologyName.Name = "lblTechnologyName";
-            this.lblTechnologyName.Size = new System.Drawing.Size(92, 13);
+            this.lblTechnologyName.Size = new System.Drawing.Size(114, 16);
             this.lblTechnologyName.TabIndex = 9;
             this.lblTechnologyName.Text = "Nazwa technologi";
             // 
@@ -99,13 +108,11 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(342, 59);
+            this.btnSave.Location = new System.Drawing.Point(342, 47);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(172, 98);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Zatwierdź";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -122,7 +129,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(342, 245);
+            this.btnReturn.Location = new System.Drawing.Point(342, 189);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(172, 98);
             this.btnReturn.TabIndex = 18;
@@ -135,7 +142,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 388);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.ClientSize = new System.Drawing.Size(551, 331);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblSpeedFactor);
@@ -147,7 +155,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewTechnology";
-            this.Text = "NewTechnology";
+            this.Text = "Nowa technlogia";
             this.ResumeLayout(false);
             this.PerformLayout();
 
