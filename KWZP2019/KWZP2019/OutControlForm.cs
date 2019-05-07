@@ -202,8 +202,8 @@ namespace KWZP2019
                 chartWidth.Series["Width Measures"].Points.Add(outputProduct.MeasuredWidth);
             }
             int succesfullyProduced = Int16.Parse(db.vSuccesfullyProducedPerProcesses.First(e => e.IdProcess == procesNumber).SuccesfullProduced.ToString());
-            chartSuccesfullFailCount.Series["Produkty"].Points.AddXY("Spełniające wymagania", succesfullyProduced);
-            chartSuccesfullFailCount.Series["Produkty"].Points.AddXY("Nie spełniające wymagań", outputProductMeasurements.Count() - succesfullyProduced);
+            chartSuccesfullFailCount.Series["Produkty"].Points.AddXY("Spełniające wymagania : " + succesfullyProduced, succesfullyProduced);
+            chartSuccesfullFailCount.Series["Produkty"].Points.AddXY("Nie spełniające wymagań : " + (outputProductMeasurements.Count() - succesfullyProduced), outputProductMeasurements.Count() - succesfullyProduced);
             chartSuccesfullFailCount.Series["Produkty"].SmartLabelStyle.Enabled = false;
             chartSuccesfullFailCount.Legends["Default"].IsTextAutoFit = true;
             chartSuccesfullFailCount.Legends["Default"].MaximumAutoSize = 100;
