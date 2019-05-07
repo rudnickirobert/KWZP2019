@@ -16,7 +16,7 @@ namespace KWZP2019
     {
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
-        public Nullable<long> PESEL { get; set; }
+        public string PESEL { get; set; }
         public Nullable<decimal> Bonus { get; set; }
         public Nullable<decimal> Sum { get; set; }
         public Nullable<System.DateTime> Date { get; set; }

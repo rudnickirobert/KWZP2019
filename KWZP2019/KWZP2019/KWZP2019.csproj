@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -358,29 +358,11 @@
     <Compile Include="MaintenanceManagement\NewMaintenanceForm.Designer.cs">
       <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production\NewProductionFailure.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Production\NewProductionFailure.Designer.cs">
-      <DependentUpon>NewProductionFailure.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NewTechnology.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewTechnology.Designer.cs">
-      <DependentUpon>NewTechnology.cs</DependentUpon>
-    </Compile>
     <Compile Include="OrderCustomer.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OSHControlHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OSHControlHistory.Designer.cs">
-      <DependentUpon>OSHControlHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="OutControl.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
@@ -433,6 +415,24 @@
     <Compile Include="ProductionProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\NewProductionFailure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\NewProductionFailure.Designer.cs">
+      <DependentUpon>NewProductionFailure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewTechnology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTechnology.Designer.cs">
+      <DependentUpon>NewTechnology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSHControlHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSHControlHistory.Designer.cs">
+      <DependentUpon>OSHControlHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\NewProductionPlan.cs">
       <SubType>Form</SubType>
@@ -648,6 +648,12 @@
     <Compile Include="vEmployeeList.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vEmployeeSalesDepartment.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vEmployeeSD.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vExamination.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -670,9 +676,6 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vHRExamination.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ViewDailySfDelivery.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewOshTraining.cs">
@@ -706,6 +709,9 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vNewFailures.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOrder.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOrderDetail.cs">
@@ -964,6 +970,13 @@
     <None Include="Production\ProductionTechnology.datasource" />
     <None Include="Properties\DataSources\SafetyControlHistoryView.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
+    <EntityDeploy Include="RoofingCompanyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RoofingCompanyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RoofingCompanyModel.edmx.diagram">
+      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
+    </None>
     <None Include="Technology.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -974,13 +987,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="RoofingCompanyModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RoofingCompanyModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="RoofingCompanyModel.edmx.diagram">
-      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -988,6 +994,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RoofingCompanyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
+      <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RoofingCompanyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
+      <LastGenOutput>RoofingCompanyModel.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\53062472_302328053765523_8291849142804676608_n.png" />
     <None Include="Resources\cancel_48px.png" />
     <None Include="Resources\good_quality_40px.png" />
@@ -1033,16 +1049,6 @@
     <Content Include="Resources\icons8-clear-filters-40.png" />
     <Content Include="Resources\icons8-filter-40.png" />
     <Content Include="Resources\icons8-home-40.png" />
-    <Content Include="RoofingCompanyModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RoofingCompanyModel.Context.cs</LastGenOutput>
-      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="RoofingCompanyModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
-      <LastGenOutput>RoofingCompanyModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
