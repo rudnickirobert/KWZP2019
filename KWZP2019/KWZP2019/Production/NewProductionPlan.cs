@@ -16,6 +16,7 @@ namespace KWZP2019
         RoofingCompanyEntities db;
         int idPlan, employeesQuantity;
         bool flagEditPlan = true;
+        bool flagExitPermission = true;
         PlannedProduction newPlan = new PlannedProduction();
         public NewProductionPlan(RoofingCompanyEntities db, int id)
         {
@@ -79,6 +80,7 @@ namespace KWZP2019
             }
             else
             {
+
                 if (viewProcessEmpl.RowCount == 0)
                 {
                     db.PlannedProductions.Remove(newPlan);
@@ -87,7 +89,14 @@ namespace KWZP2019
                 }
                 else
                 {
-                    Close();
+                    if (flagExitPermission)
+                    {
+                        MessageBox.Show("Usuń wszystkich pracowników jeśli nie chcesz zapisać tego planu", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        Close();
+                    }
                 }
             }
         }
@@ -168,6 +177,7 @@ namespace KWZP2019
                     btnSave.Enabled = false;
                 }
             }
+            flagExitPermission = false;
         }
         private bool isEmptyDataGridViewEmployee()
         {
