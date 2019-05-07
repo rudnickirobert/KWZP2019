@@ -98,6 +98,7 @@ namespace KWZP2019
         public virtual DbSet<vEducationLevel> vEducationLevels { get; set; }
         public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
+        public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
         public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
         public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencePartOrder> vExpencePartOrders { get; set; }
@@ -105,8 +106,9 @@ namespace KWZP2019
         public virtual DbSet<vExpencesOrder> vExpencesOrders { get; set; }
         public virtual DbSet<vExpencesOutsourcing> vExpencesOutsourcings { get; set; }
         public virtual DbSet<vExpencesPayment> vExpencesPayments { get; set; }
+        public virtual DbSet<vHR> vHRs { get; set; }
         public virtual DbSet<vHRContract> vHRContracts { get; set; }
-        public virtual DbSet<ViewDailySfDelivery> ViewDailySfDeliveries { get; set; }
+        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
@@ -116,6 +118,7 @@ namespace KWZP2019
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
+        public virtual DbSet<vPartsRequestView> vPartsRequestViews { get; set; }
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
         public virtual DbSet<vPosition> vPositions { get; set; }
@@ -131,7 +134,5 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
-        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
-        public virtual DbSet<vHR> vHRs { get; set; }
     }
 }
