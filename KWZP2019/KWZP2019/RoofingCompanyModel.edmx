@@ -6681,6 +6681,9 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="FailureDate" ColumnName="FailureDate" />
                 <ScalarProperty Name="Specification" ColumnName="Specification" />
                 <ScalarProperty Name="IdFailure" ColumnName="IdFailure" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vTotalNumberOfMeasuresPerProcesses">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess">
               <MappingFragment StoreEntitySet="vTotalNumberOfMeasuresPerProcess">
