@@ -169,6 +169,13 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vComboboxNewFailure" Width="3.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vMachineFailure" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vMaintenanceAssignEmployee" Width="1.5" PointX="30.375" PointY="6.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vMaintenanceAssignPart" Width="1.5" PointX="30.375" PointY="19.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vMaintenanceEmployee" Width="1.5" PointX="30.375" PointY="22.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vMaintenanceEmployeesCalendar" Width="1.5" PointX="30.375" PointY="25.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vNewFailure" Width="1.5" PointX="30.375" PointY="29.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

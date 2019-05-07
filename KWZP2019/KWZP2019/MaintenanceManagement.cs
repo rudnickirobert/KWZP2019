@@ -23,15 +23,15 @@ namespace KWZP2019
 
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
-                this.startForm.Show();
-                this.Hide();            
+            this.startForm.Show();
+            this.Hide();
         }
 
         private void btnNewMaintenance_Click(object sender, EventArgs e)
         {
-            NewMaintenanceForm newMaintenanceForm = new NewMaintenanceForm(db, startForm, this);
+            FailureListForm failureListForm = new FailureListForm(this.db, startForm, this);
             this.Hide();
-            newMaintenanceForm.Show();
+            failureListForm.Show();
         }
 
         private void btnMachines_Click(object sender, EventArgs e)
@@ -53,13 +53,6 @@ namespace KWZP2019
             MaintenanceCalendarForm maintenanceCalendarForm = new MaintenanceCalendarForm(db, startForm, this);
             this.Hide();
             maintenanceCalendarForm.Show();
-        }
-
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-            MaintenanceEmployeeCalendarForm maintenanceEmployeeCalendarForm = new MaintenanceEmployeeCalendarForm(db, startForm, this);
-            this.Hide();
-            maintenanceEmployeeCalendarForm.Show();
         }
     }
 }
