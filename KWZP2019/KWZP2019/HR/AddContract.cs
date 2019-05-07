@@ -77,11 +77,11 @@ namespace KWZP2019
                     employee.EmployeeSurname, employee.EmployeeName));
             }
 
-            /*List<vPosition> absenceType = db.vAbsenceTypes.ToList();
-            foreach (vAbsenceType absenceT in absenceType)
+            List<vPosition> positionList = db.vPositions.ToList();
+            foreach (vPosition positionL in positionList)
             {
-                cbAbsenceType.Items.Add(absenceT.AbscenceReason);
-            }*/
+                cbPosition.Items.Add(positionL.Workplace);
+            }
         }
     }
 }

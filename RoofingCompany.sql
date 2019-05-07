@@ -861,7 +861,7 @@ INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
 GO
 CREATE VIEW	vAddTraining
 AS
-SELECT Employee.IdEmployee ,IdTraining, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
+SELECT Employee.IdEmployee ,IdTraining, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, Cast(TrainingPrice as decimal(10,2)) as TrainingPrice
 FROM dbo.Employee 
 INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
 
@@ -983,7 +983,6 @@ CREATE VIEW vHRExamination
 AS
 SELECT IdMedicalExamination
 FROM MedicalExamination
-WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE());
 
 GO
 
@@ -1066,10 +1065,21 @@ SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSur
 		Left outer join Unexcused on Employee.IdEmployee = Unexcused.IdEmployee
 		Left outer join OD on Employee.IdEmployee = OD.IdEmployee
 
-go
+GO
 
+CREATE VIEW vPosition 
+as
+SELECT Position.IdPosition, Position.Workplace 
+FROM Position
 
+GO
 
+CREATE VIEW vDeparment
+as
+SELECT Department.IdDepartment, Department.DepartmentName
+FROM Department
+
+GO
 
 CREATE VIEW vProductionProcessFullData
 AS
