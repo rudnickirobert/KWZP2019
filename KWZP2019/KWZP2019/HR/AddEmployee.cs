@@ -54,7 +54,7 @@ namespace KWZP2019
             {
                 MessageBox.Show("Imię i nazwisko są wymagane");
             }
-            else
+            if (tbContractLenght.Text.Trim() == "")
             {
                 Employee newEmployee = new Employee();
                 newEmployee.EmployeeName = tbFirstName.Text.Trim();

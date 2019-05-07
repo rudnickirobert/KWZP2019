@@ -362,7 +362,7 @@ EndRealDate datetime null
 
 create table Employee(
 IdEmployee int primary key identity(1,1) not null,
-EmployeeName nvarchar(50) null,
+EmployeeName nvarchar(50) not null,
 EmployeeSurname nvarchar(50) null,
 ZipCode nvarchar(50) null,
 City nvarchar(50) null,
@@ -670,7 +670,7 @@ where Position.IdPosition = 2 and Contract.EndDate > getdate();
 
 go
 create view ViewOshTraining as
-select Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Department.DepartmentName, Contract.EndDate, SafetyTraining.TrainingDate, Position.ValidityOfOshTraining
+select Department.DepartmentName as [Dział], Employee.PESEL as [PESEL], Employee.EmployeeName as [Imię], Employee.EmployeeSurname as [Nazwisko], (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate)) as [Data wygaśniecia szkolenia]
 from Employee
 join Contract
 on Employee.IdEmployee = Contract.IdEmployee
@@ -681,7 +681,8 @@ on Position.IdPosition = Contract.IdPosition
 join Allocation
 on Employee.IdEmployee = Allocation.IdEmployee
 join Department
-on Department.IdDepartment = Allocation.IdDepartment;
+on Department.IdDepartment = Allocation.IdDepartment
+where Contract.EndDate > (GETDATE() + 45) and (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate) < (Getdate() + 45));
 
 
 /*====SALES DEPARTMENT===*/
@@ -913,6 +914,7 @@ FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
+
 GO
 
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 

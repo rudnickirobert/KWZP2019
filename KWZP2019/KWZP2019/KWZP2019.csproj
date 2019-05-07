@@ -656,6 +656,9 @@
     <Compile Include="vEmployeeList.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vEmployeeSalesDepartment.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vEmployeeSD.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
