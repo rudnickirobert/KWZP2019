@@ -32,7 +32,8 @@ create table FEMAnalysis(
 	IdFEMAnalysis int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	NewPattern image not null,
-	AnalysisResults text not null
+	AnalysisResults text not null,
+	AnalysisDate DateTime not null
 	);
 
 create table OutControl(

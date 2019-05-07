@@ -312,32 +312,6 @@ insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
 		(4, '2019-03-12 13:35:00', 'Uraz ręki na skutek włożenia jej do maszyny'),
 		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej półki magazynowej');
 
-
---FEMAnalysis
-insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
-		(2, ' ', 'Wzór nr 1, odporny na duże naciski, idealny na górskie dachy'),
-		(2, ' ', 'Wzór nr 2, nowatorskie tłoczenia'),
-		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta'),
-		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej więźby'),
-		(2, ' ', 'Wzór nr 5, dla montażu o najmniejszym odpadzie');
-
-/*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select , '2', BulkColumn, 'Wz�r nr 2, nowatorskie t�oczenia'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 3, test blachy od nowego producenta'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
-
-
 --SafetyControl
 insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
 		('Dąbek Jarosław 423452', 7, '2018-07-07 10:20:00', 'Brak zastosowania środków ochrony indywidualnej', 'TBF'),
