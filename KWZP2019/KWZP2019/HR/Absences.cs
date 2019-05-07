@@ -47,32 +47,18 @@ namespace KWZP2019
         private void tbSearchAbsence_TextChanged(object sender, EventArgs e)
         {
             dgvAbsences.DataSource = db.vAbsences.
-                Where(absences => absences.EmployeeSurname.StartsWith(tbSearchAbsence.Text)
-                               && absences.EmployeeName.StartsWith(tbSearchName.Text)).
-                Select(absencesSelect => new {
-                    absencesSelect.EmployeeSurname,
-                    absencesSelect.EmployeeName,
-                    absencesSelect.AbscenceReason,
-                    absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence,
-                    absencesSelect.IdAbsence }).
-                OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
+                Where(absences => absences.Nazwisko.StartsWith(tbSearchAbsence.Text)
+                               && absences.Nazwisko.StartsWith(tbSearchName.Text)).
+                OrderByDescending(absenceOrderBy => absenceOrderBy.Początek).
                 ToList();
         }
 
         private void tbSearchName_TextChanged(object sender, EventArgs e)
         {
             dgvAbsences.DataSource = db.vAbsences.
-                Where(absences => absences.EmployeeSurname.StartsWith(tbSearchAbsence.Text)
-                               && absences.EmployeeName.StartsWith(tbSearchName.Text)).
-                Select(absencesSelect => new {
-                    absencesSelect.EmployeeSurname,
-                    absencesSelect.EmployeeName,
-                    absencesSelect.AbscenceReason,
-                    absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence,
-                    absencesSelect.IdAbsence }).
-                OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
+                Where(absences => absences.Nazwisko.StartsWith(tbSearchAbsence.Text)
+                               && absences.Imię.StartsWith(tbSearchName.Text)).
+                OrderByDescending(absenceOrderBy => absenceOrderBy.Początek).
                 ToList();
         }
 
@@ -133,7 +119,7 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Absence AbsenceToRemove = new Absence {IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[5].Value.ToString())};
+            Absence AbsenceToRemove = new Absence {IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[0].Value.ToString())};
             db.Absences.Attach(AbsenceToRemove);
             db.Absences.Remove(AbsenceToRemove);
             db.SaveChanges();
@@ -151,24 +137,10 @@ namespace KWZP2019
         void display()
         {
             dgvAbsences.DataSource = db.vAbsences.
-                Select(absencesSelect => new {
-                    absencesSelect.EmployeeSurname,
-                    absencesSelect.EmployeeName,
-                    absencesSelect.AbscenceReason,
-                    absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence,
-                    absencesSelect.IdAbsence
-                }).
-                OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
+                OrderByDescending(absenceOrderBy => absenceOrderBy.Początek).
                 ToList();
 
-            dgvAbsences.Columns[5].Visible = false;
-
-            dgvAbsences.Columns[0].HeaderText = "Nazwisko";
-            dgvAbsences.Columns[1].HeaderText = "Imię";
-            dgvAbsences.Columns[2].HeaderText = "Powód";
-            dgvAbsences.Columns[3].HeaderText = "Początek";
-            dgvAbsences.Columns[4].HeaderText = "Koniec";
+            dgvAbsences.Columns[0].Visible = false;
 
             dgvAbsences.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvAbsences.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;

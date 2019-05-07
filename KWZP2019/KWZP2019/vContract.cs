@@ -15,12 +15,12 @@ namespace KWZP2019
     public partial class vContract
     {
         public int IdContract { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeSurname { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public Nullable<decimal> Salary { get; set; }
-        public Nullable<System.DateTime> WorkplaceTrainingDate { get; set; }
-        public string Workplace { get; set; }
+        public string Nazwisko { get; set; }
+        public string Imię { get; set; }
+        public string Stanowisko { get; set; }
+        public Nullable<System.DateTime> Początek { get; set; }
+        public Nullable<System.DateTime> Koniec { get; set; }
+        public Nullable<decimal> Wypłata { get; set; }
+        public Nullable<System.DateTime> Szkolenie_stanowiskowe { get; set; }
     }
 }

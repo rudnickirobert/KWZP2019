@@ -40,7 +40,7 @@ namespace KWZP2019
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-                int id = int.Parse(dgvEmloyees.SelectedRows[0].Cells[5].Value.ToString());
+                int id = int.Parse(dgvEmloyees.SelectedRows[0].Cells[0].Value.ToString());
                 EmployeeDetails employeeDetails = new EmployeeDetails(db, startForm, this, id);
                 employeeDetails.Show();
                 this.Hide();
@@ -63,23 +63,10 @@ namespace KWZP2019
         private void HR_Load(object sender, EventArgs e)
         {
             dgvEmloyees.DataSource = db.vHRs.
-                Select (employeesSelect => new {
-                        employeesSelect.EmployeeSurname,
-                        employeesSelect.EmployeeName,
-                        employeesSelect.Workplace,
-                        employeesSelect.PhoneNumber,
-                        employeesSelect.PESEL,
-                        employeesSelect.IdEmployee }).
-                OrderBy (EmployeeOrderBy => EmployeeOrderBy.EmployeeSurname).
+                OrderBy (EmployeeOrderBy => EmployeeOrderBy.Nazwisko).
                 ToList();
 
-            dgvEmloyees.Columns[5].Visible = false;
-
-            dgvEmloyees.Columns[0].HeaderText = "Nazwisko";
-            dgvEmloyees.Columns[1].HeaderText = "Imię";
-            dgvEmloyees.Columns[2].HeaderText = "Stanowisko";
-            dgvEmloyees.Columns[3].HeaderText = "Numer";
-            dgvEmloyees.Columns[4].HeaderText = "PESEL";
+            dgvEmloyees.Columns[0].Visible = false;
 
             dgvEmloyees.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmloyees.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -97,15 +84,8 @@ namespace KWZP2019
         private void tbEmployeeSearching_TextChanged(object sender, EventArgs e)
         {
             dgvEmloyees.DataSource = db.vHRs.
-                Where (employees => employees.EmployeeSurname.StartsWith(tbEmployeeSearching.Text)).
-                Select (employeesSelect => new {
-                        employeesSelect.EmployeeSurname,
-                        employeesSelect.EmployeeName,
-                        employeesSelect.Workplace,
-                        employeesSelect.PhoneNumber,
-                        employeesSelect.City,
-                        employeesSelect.IdEmployee }).
-                OrderBy (EmployeeOrderBy => EmployeeOrderBy.EmployeeSurname).
+                Where (employees => employees.Nazwisko.StartsWith(tbEmployeeSearching.Text)).
+                OrderBy (EmployeeOrderBy => EmployeeOrderBy.Nazwisko).
                 ToList();
         }
 
@@ -152,7 +132,7 @@ namespace KWZP2019
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dgvEmloyees.SelectedRows[0].Cells[5].Value.ToString());
+            int id = int.Parse(dgvEmloyees.SelectedRows[0].Cells[0].Value.ToString());
             EditEmployee editEmployee = new EditEmployee(db, startForm, this, id);
             editEmployee.Show();
             this.Hide();

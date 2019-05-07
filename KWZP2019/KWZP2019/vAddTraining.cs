@@ -14,13 +14,13 @@ namespace KWZP2019
     
     public partial class vAddTraining
     {
-        public int IdEmployee { get; set; }
         public int IdTraining { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeSurname { get; set; }
-        public string TrainingName { get; set; }
-        public Nullable<System.DateTime> TrainingStartDate { get; set; }
-        public Nullable<System.DateTime> TrainingEndDate { get; set; }
-        public Nullable<decimal> TrainingPrice { get; set; }
+        public string Nazwisko { get; set; }
+        public string Imię { get; set; }
+        public string Nazwa { get; set; }
+        public Nullable<System.DateTime> Początek { get; set; }
+        public Nullable<System.DateTime> koniec { get; set; }
+        public Nullable<decimal> Cena { get; set; }
+        public int IdEmployee { get; set; }
     }
 }

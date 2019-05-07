@@ -14,13 +14,13 @@ namespace KWZP2019
     
     public partial class vEducationForm
     {
-        public int IdEmployee { get; set; }
         public int IdEducation { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeSurname { get; set; }
-        public string EducationLevel { get; set; }
+        public string Nazwisko { get; set; }
+        public string Imię { get; set; }
+        public string Stopień_wykształcenia { get; set; }
         public string Degree { get; set; }
-        public string DegreeShort { get; set; }
-        public Nullable<System.DateTime> GraduationDate { get; set; }
+        public string Tytuły_naukowe { get; set; }
+        public Nullable<System.DateTime> Data_ukończenia { get; set; }
+        public int IdEmployee { get; set; }
     }
 }

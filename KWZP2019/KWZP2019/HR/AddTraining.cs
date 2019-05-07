@@ -40,17 +40,9 @@ namespace KWZP2019
         private void tbSearchTraining_TextChanged(object sender, EventArgs e)
         {
             dgvTrainings.DataSource = db.vAddTrainings.
-                Where (addtraining => addtraining.EmployeeName.StartsWith(tbSearchTrainingName.Text)
-                                   && addtraining.EmployeeSurname.StartsWith(tbSearchTraining.Text)).
-                Select (addtrainigSelect => new {
-                        addtrainigSelect.EmployeeSurname,
-                        addtrainigSelect.EmployeeName,
-                        addtrainigSelect.TrainingName,
-                        addtrainigSelect.TrainingStartDate,
-                        addtrainigSelect.TrainingEndDate,
-                        addtrainigSelect.TrainingPrice,
-                        addtrainigSelect.IdTraining }).
-                OrderByDescending (TrainingOrderBy => TrainingOrderBy.TrainingStartDate).
+                Where (addtraining => addtraining.Imię.StartsWith(tbSearchTrainingName.Text)
+                                   && addtraining.Nazwisko.StartsWith(tbSearchTraining.Text)).
+                OrderByDescending (TrainingOrderBy => TrainingOrderBy.Początek).
                 ToList();
             
         }
@@ -58,17 +50,9 @@ namespace KWZP2019
         private void tbSearchTrainingName_TextChanged(object sender, EventArgs e)
         {
             dgvTrainings.DataSource = db.vAddTrainings.
-                Where (addtraining => addtraining.EmployeeName.StartsWith(tbSearchTrainingName.Text)
-                                   && addtraining.EmployeeSurname.StartsWith(tbSearchTraining.Text)).
-                Select (addtrainigSelect => new {
-                        addtrainigSelect.EmployeeSurname,
-                        addtrainigSelect.EmployeeName,
-                        addtrainigSelect.TrainingName,
-                        addtrainigSelect.TrainingStartDate,
-                        addtrainigSelect.TrainingEndDate,
-                        addtrainigSelect.TrainingPrice,
-                        addtrainigSelect.IdTraining }).
-                OrderByDescending(TrainingOrderBy => TrainingOrderBy.TrainingStartDate).
+                Where (addtraining => addtraining.Imię.StartsWith(tbSearchTrainingName.Text)
+                                   && addtraining.Nazwisko.StartsWith(tbSearchTraining.Text)).
+                OrderByDescending(TrainingOrderBy => TrainingOrderBy.Początek).
                 ToList();
         }
 
@@ -96,25 +80,10 @@ namespace KWZP2019
         void display()
         {
             dgvTrainings.DataSource = db.vAddTrainings.
-                Select (addtrainigSelect => new {
-                        addtrainigSelect.EmployeeSurname,
-                        addtrainigSelect.EmployeeName,
-                        addtrainigSelect.TrainingName,
-                        addtrainigSelect.TrainingStartDate,
-                        addtrainigSelect.TrainingEndDate,
-                        addtrainigSelect.TrainingPrice,
-                        addtrainigSelect.IdTraining }).
-                OrderByDescending (TrainingOrderBy => TrainingOrderBy.TrainingStartDate).
+                OrderByDescending (TrainingOrderBy => TrainingOrderBy.Początek).
                 ToList();
 
-            dgvTrainings.Columns[6].Visible = false;
-
-            dgvTrainings.Columns[0].HeaderText = "Nazwisko";
-            dgvTrainings.Columns[1].HeaderText = "Imię";
-            dgvTrainings.Columns[2].HeaderText = "Nazwa";
-            dgvTrainings.Columns[3].HeaderText = "Początek";
-            dgvTrainings.Columns[4].HeaderText = "Koniec";
-            dgvTrainings.Columns[5].HeaderText = "Cena";
+            dgvTrainings.Columns[0].Visible = false;
 
             dgvTrainings.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvTrainings.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -170,7 +139,7 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvTrainings.SelectedRows[0].Cells[6].Value.ToString());
+            MessageBox.Show(dgvTrainings.SelectedRows[0].Cells[0].Value.ToString());
             Training TrainingToRemove = new Training { IdTraining  = int.Parse(dgvTrainings.SelectedRows[0].Cells[6].Value.ToString()) };
             db.Trainings.Attach(TrainingToRemove);
             db.Trainings.Remove(TrainingToRemove);

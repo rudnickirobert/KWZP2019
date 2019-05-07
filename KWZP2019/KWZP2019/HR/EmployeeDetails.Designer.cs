@@ -39,8 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
-            this.btnEducation = new System.Windows.Forms.Button();
-            this.btnTrainings = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.dgvTrainings = new System.Windows.Forms.DataGridView();
@@ -86,46 +84,6 @@
             this.dgvEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployeeDetails.Size = new System.Drawing.Size(1195, 180);
             this.dgvEmployeeDetails.TabIndex = 0;
-            // 
-            // btnEducation
-            // 
-            this.btnEducation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEducation.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEducation.FlatAppearance.BorderSize = 3;
-            this.btnEducation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEducation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnEducation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEducation.Image = ((System.Drawing.Image)(resources.GetObject("btnEducation.Image")));
-            this.btnEducation.Location = new System.Drawing.Point(15, 524);
-            this.btnEducation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEducation.Name = "btnEducation";
-            this.btnEducation.Size = new System.Drawing.Size(329, 190);
-            this.btnEducation.TabIndex = 4;
-            this.btnEducation.Text = "Wykształcenie";
-            this.btnEducation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEducation.UseVisualStyleBackColor = false;
-            // 
-            // btnTrainings
-            // 
-            this.btnTrainings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnTrainings.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnTrainings.FlatAppearance.BorderSize = 3;
-            this.btnTrainings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnTrainings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnTrainings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrainings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnTrainings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTrainings.Image = ((System.Drawing.Image)(resources.GetObject("btnTrainings.Image")));
-            this.btnTrainings.Location = new System.Drawing.Point(16, 719);
-            this.btnTrainings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTrainings.Name = "btnTrainings";
-            this.btnTrainings.Size = new System.Drawing.Size(329, 190);
-            this.btnTrainings.TabIndex = 5;
-            this.btnTrainings.Text = "Szkolenia";
-            this.btnTrainings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTrainings.UseVisualStyleBackColor = false;
             // 
             // btnReturn
             // 
@@ -254,8 +212,6 @@
             this.Controls.Add(this.dgvTrainings);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnTrainings);
-            this.Controls.Add(this.btnEducation);
             this.Controls.Add(this.dgvEmployeeDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -275,8 +231,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvEmployeeDetails;
-        private System.Windows.Forms.Button btnEducation;
-        private System.Windows.Forms.Button btnTrainings;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.DataGridView dgvTrainings;
