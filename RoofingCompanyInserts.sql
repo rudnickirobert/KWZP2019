@@ -436,10 +436,10 @@ from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5
 
 --UR
 
-insert into Unit values ('Szt');
-insert into Unit values ('Litr');
-insert into Unit values ('Metr');
-insert into Unit values ('Kilogram');
+insert into Unit values ('szt.');
+insert into Unit values ('l');
+insert into Unit values ('m');
+insert into Unit values ('kg');
 
 insert into MachineType values ('Żłobiarka');
 insert into MachineType values ('Walcarka');
@@ -448,11 +448,11 @@ insert into MachineType values ('Zaginarka');
 insert into MachineType values ('Gilotyna');
 
 
-insert into Machine values (4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360);
-insert into Machine values (5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80);
-insert into Machine values (4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400);
-insert into Machine values (2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200);
-insert into Machine values (1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100);
+insert into Machine values (4, 'ZDR', 'Dachdecker', 2017, '2', '7m2', '87WF', 360, 0.25);
+insert into Machine values (5, 'ZRA', 'Dachdecker', 2015, '5', NULL, '10DW', 80, 0.5);
+insert into Machine values (4, 'SEG-L', 'Dachdecker', 2016, '3', '8m2', '9EF2', 400, 0.5);
+insert into Machine values (2, 'ZRC', 'Dachdecker', 2018, '4', NULL, 'P12D', 200, 0.25);
+insert into Machine values (1, 'ZRA', 'Dachdecker', 2014, '3', NULL, 'E21M', 100, 0.25);
 
 insert into SkillsForMachine(IdMachine, IdPosition)
 	values
@@ -466,23 +466,37 @@ insert into MaintType values ('Awaria');
 insert into MaintType values ('Przegląd');
 insert into MaintType values ('Konserwacja');
 
-insert into MaintDescription values ('Smarowanie łańcucha', null, 0.25);
-insert into MaintDescription values ('Wymiana łożysk', null, 6);
-insert into MaintDescription values ('Regulacja luzu napinacza', null, 1);
-insert into MaintDescription values ('Pomiar zużycia kół zębatych', null, 2);
-insert into MaintDescription values ('Wymiana pasa napędowego', null, 0.25);
+insert into MaintDescription values ('Smarowanie łańcucha', null);
+insert into MaintDescription values ('Wymiana łożysk', null);
+insert into MaintDescription values ('Regulacja luzu napinacza', null);
+insert into MaintDescription values ('Pomiar zużycia kół zębatych', null);
+insert into MaintDescription values ('Wymiana pasa napędowego', null);
 
 insert into PartType values ('Łożysko');
 insert into PartType values ('Pasek');
 insert into PartType values ('Koło zębate');
 insert into PartType values ('Smar');
 insert into PartType values ('Łańcuch');
+insert into PartType values ('Wał');
+insert into PartType values ('Pierścień segera');
+insert into PartType values ('Nóż do gilotyny');
+insert into PartType values ('Koło pasowe');
+insert into PartType values ('Wpust pryzmatyczny');
+insert into PartType values ('Podładka M5');
+insert into PartType values ('Podładka M6');
+insert into PartType values ('Podładka M8');
+insert into PartType values ('Śruba M5x25');
+insert into PartType values ('Śruba M5x30');
+insert into PartType values ('Śruba M5x35');
+insert into PartType values ('Śruba M6x12');
+insert into PartType values ('Śruba M6x16');
+insert into PartType values ('Śruba M6x20');
 
-insert into Part values (1, 1, 'Łożysko kulkowe', 'SKF', 6305, 10);
-insert into Part values (3, 1, 'Koło zębate M5', 'Tente', 516, 3);
-insert into Part values (4, 4, 'Smar maszynowy', 'CX80', 43681554, 2);
-insert into Part values (5, 3, 'Łańcuch krzyżakowy', 'Kort', 5735, 5);
-insert into Part values (2, 3, 'Pasek zębaty', 'Oscar', 450, 12);
+insert into Part values (1, 1, 'Łożysko kulkowe', 'SKF', 6305, 10, 5);
+insert into Part values (3, 1, 'Koło zębate M5', 'Tente', 516, 3, 2);
+insert into Part values (4, 4, 'Smar maszynowy', 'CX80', 43681554, 2, 1);
+insert into Part values (5, 3, 'Łańcuch krzyżakowy', 'Kort', 5735, 5, 1);
+insert into Part values (2, 3, 'Pasek zębaty', 'Oscar', 450, 12, 5);
 
 insert into Maintenance values (2, 2, 3, '2019-03-07 09:43:21 AM', '2019-03-08 10:34:09 AM', '2019-03-08 02:25:53 PM', '8753T78B');
 insert into Maintenance values (4, 1, 2, '2019-03-11 08:23:32 AM', '2019-03-11 09:14:09 AM', '2019-03-11 11:45:13 AM', '8912YEY9');
