@@ -27,29 +27,26 @@ namespace KWZP2019
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (cbEmployeeList.SelectedIndex == -1 || cbPosition.SelectedIndex == -1)
+            if (cbEmployeeList.SelectedIndex == -1 )
             {
-                MessageBox.Show("Wszystkie pola muszą być wypełnione");
+                MessageBox.Show("Pole pracownik musi być wypełnione");
             }
             else
             {
-                MedicalExamination newMedicalExamination = new MedicalExamination();
-                newMedicalExamination.IdEmployee = cbEmployeeList.SelectedIndex + 1;
-
-                MessageBox.Show(cbPosition.SelectedIndex.ToString());
-                MessageBox.Show(cbPosition.SelectedItem.ToString());
-                MessageBox.Show(db.vPositionExaminationValidities.
-                    Where(validityWhere => validityWhere.Workplace.StartsWith(cbPosition.SelectedItem.ToString())).
-                    Select(validitySelect => new { validitySelect.VailidityOfMedicalExam }).ToString());
-                /*int validity = int.Parse(db.vPositionExaminationValidities.
-                    Where(validityWhere => validityWhere.Workplace.StartsWith(cbPosition.SelectedItem.ToString())).
-                    Select(validitySelect => new { validitySelect.VailidityOfMedicalExam }).ToString());
-                newMedicalExamination.Date = dtpExaminationDate.Value.AddDays(validity);
-                
-                db.MedicalExaminations.Add(newMedicalExamination);
-                db.SaveChanges();
-                clear();
-                MessageBox.Show("Prawidłowo wprowadzono badanie");*/
+                if (dtpExaminationDate.Value > DateTime.Today)
+                {
+                    MessageBox.Show("Data badanie nie może być datą przyszłą");
+                }
+                else
+                {
+                    MedicalExamination newMedicalExamination = new MedicalExamination();
+                    newMedicalExamination.IdEmployee = cbEmployeeList.SelectedIndex + 1;
+                    newMedicalExamination.Date = dtpExaminationDate.Value;
+                    db.MedicalExaminations.Add(newMedicalExamination);
+                    db.SaveChanges();
+                    clear();
+                    MessageBox.Show("Prawidłowo wprowadzono badanie");
+                }
             }
         }
 
@@ -61,12 +58,6 @@ namespace KWZP2019
             {
                 cbEmployeeList.Items.Add(String.Format("{0, -20} {1, -20}",
                     employee.EmployeeSurname, employee.EmployeeName));
-            }
-
-            List<vPosition> positionList = db.vPositions.ToList();
-            foreach (vPosition positionL in positionList)
-            {
-                cbPosition.Items.Add(positionL.Workplace);
             }
 
             clear();
@@ -87,7 +78,6 @@ namespace KWZP2019
         void clear()
         {
             cbEmployeeList.SelectedIndex = -1;
-            cbPosition.SelectedIndex = -1;
             dtpExaminationDate.Value = DateTime.Today;
         }
     }

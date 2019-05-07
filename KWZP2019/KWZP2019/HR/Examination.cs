@@ -79,7 +79,7 @@ namespace KWZP2019
 
             dgvExamination.Columns[0].HeaderText = "Nazwisko";
             dgvExamination.Columns[1].HeaderText = "Imię";
-            dgvExamination.Columns[2].HeaderText = "Data ważności badań lekarskich";
+            dgvExamination.Columns[2].HeaderText = "Data badania lekarskiego";
 
             dgvExamination.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvExamination.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
