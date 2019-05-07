@@ -12,13 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vPartsView
+    public partial class FEMAnalysis
     {
-        public string PartName { get; set; }
-        public string partType { get; set; }
-        public string Producer { get; set; }
-        public int CatalogPartNr { get; set; }
-        public int QuantityWarehouse { get; set; }
-        public string UnitName { get; set; }
+        public int IdFEMAnalysis { get; set; }
+        public int IdEmployee { get; set; }
+        public byte[] NewPattern { get; set; }
+        public string AnalysisResults { get; set; }
+        public System.DateTime AnalysisDate { get; set; }
     }
 }

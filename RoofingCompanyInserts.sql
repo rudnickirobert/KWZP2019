@@ -312,32 +312,6 @@ insert into Accident (IdEmployee, AccidentDate, AccidentDescription) values
 		(4, '2019-03-12 13:35:00', 'Uraz ręki na skutek włożenia jej do maszyny'),
 		(5, '2019-04-01 10:50:00', 'Spadek rolki blachy z uszkodzonej półki magazynowej');
 
-
---FEMAnalysis
-insert into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults) values
-		(2, ' ', 'Wzór nr 1, odporny na duże naciski, idealny na górskie dachy'),
-		(2, ' ', 'Wzór nr 2, nowatorskie tłoczenia'),
-		(2, ' ', 'Wzór nr 3, test blachy od nowego producenta'),
-		(2, ' ', 'Wzór nr 4, wersja ekonomiczna dla lekkiej więźby'),
-		(2, ' ', 'Wzór nr 5, dla montażu o najmniejszym odpadzie');
-
-/*Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 1, odporny na du�e naciski, idealny na g�rskie dachy'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\1.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select , '2', BulkColumn, 'Wz�r nr 2, nowatorskie t�oczenia'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\2.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 3, test blachy od nowego producenta'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\3.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 4, wersja ekonomiczna dla lekkiej wi�by'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\4.jpg', Single_Blob) as Image;
-Insert Into FEMAnalysis (IdEmployee, NewPattern, AnalysisResults)
-Select '2', BulkColumn, 'Wz�r nr 5, dla monta�u o najmniejszym odpadzie'
-from Openrowset (Bulk 'C:\Users\Milenka\Documents\SQL Server Management Studio\5.jpg', Single_Blob) as Image;*/
-
-
 --SafetyControl
 insert into SafetyControl (IdSafetyEmployee, IdInspectedEmployee, SaftyControlDate, SafetyControlDescription, CompanyName) values
 		('Dąbek Jarosław 423452', 7, '2018-07-07 10:20:00', 'Brak zastosowania środków ochrony indywidualnej', 'TBF'),
@@ -497,7 +471,7 @@ insert into MaintPart values (4, 5, 3);
 insert into MaintPart values (5, 2, 1);
 
 insert into PartRequest values (2, 5, 0, '2019-04-07 12:12:47 AM');
-insert into PartRequest values (3, 10, 0, '2019-04-08 08:42:27 AM');
+insert into PartRequest values (3, 10, 1, '2019-04-08 08:42:27 AM');
 insert into PartRequest values (5, 25, 0, '2019-04-08 10:25:45 AM');
 insert into PartRequest values (1, 8, 0, '2019-04-09 09:10:26 AM');
 insert into PartRequest values (4, 20, 0, '2019-04-10 11:31:24 AM');
@@ -626,12 +600,12 @@ insert into OutsourcingCommitment values('3', '2019-11-30', '');
 
  insert into PlannedProduction (IdDetail, IdMachine, PlannedStartd,PlannedEndd,Inproduction)
  values 
-	(1, 2, '2019-07-31','2019-02-15','0'),
-	(2, 2, '2019-07-31','2019-03-30','0'),
-	(3, 1, '2019-07-31','2019-03-30','1'),
-	(4, 1, '2019-07-31','2019-04-30','1'),
-	(5, 3, '2019-07-31','2019-05-30','1'),
-	(6, 3, '2019-08-15','2019-09-15','0'),
+	(1, 2, '2019-01-10','2019-02-15','0'),
+	(2, 2, '2019-02-16','2019-03-12','0'),
+	(3, 1, '2019-03-10','2019-03-30','1'),
+	(4, 1, '2019-03-31','2019-04-30','1'),
+	(5, 3, '2019-04-30','2019-05-30','1'),
+	(6, 3, '2019-05-15','2019-06-15','0'),
 	(7, 2, '2019-08-15','2019-09-10','0'),
 	(8, 4, '2019-08-15','2019-09-20','1'),
 	(9, 1, '2019-08-15','2019-09-25','1'),
@@ -652,16 +626,16 @@ insert into PlannedProductionEmployeeDetails (IdProces, IdEmployee, StartDate, E
 
  insert into ProductionProcess(IdPlan, StartDate, EndDate)
  values  
-	(1, '2019-03-23','2019-04-23'),
-	(2, '2019-04-23','2019-05-23'),
-	(3, '2019-05-23','2019-06-23'),
-	(4, '2019-06-23','2019-07-23'),
-	(5, '2019-08-23','2019-09-23'),
-	(6, '2019-09-20', '2019-09-15'),
-	(7, '2019-09-05', '2019-09-10'),
-	(8, '2019-09-15', '2019-09-20'),
-	(9, '2019-09-20', '2019-09-25'),
-	(10, '2019-09-25','2019-09-30');
+	(1, '2019-02-23','2019-02-25'),
+	(2, '2019-02-26','2019-03-23'),
+	(3, '2019-03-15','2019-03-23'),
+	(4, '2019-04-03','2019-04-10'),
+	(5, '2019-04-12','2019-04-23'),
+	(6, '2019-04-20', '2019-05-15'),
+	(7, '2019-05-05', '2019-05-10'),
+	(8, '2019-05-15', '2019-05-20'),
+	(9, '2019-05-21', '2019-06-02'),
+	(10, '2019-06-03','2019-06-10');
 
  insert into Failure(IdProces, Specification, FailureDate)
  values 

@@ -12,13 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class FEMAnalysi
+    public partial class vPartsRequestView
     {
-        public int IdFEMAnalysis { get; set; }
-        public int IdEmployee { get; set; }
-        public byte[] NewPattern { get; set; }
-        public string AnalysisResults { get; set; }
-    
-        public virtual Employee Employee { get; set; }
+        public int IdPartRequest { get; set; }
+        public string PartName { get; set; }
+        public System.DateTime RequestDate { get; set; }
+        public int Quantity { get; set; }
+        public int StatusPart { get; set; }
     }
 }

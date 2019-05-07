@@ -100,16 +100,22 @@
     <Compile Include="DevelopmentForm.Designer.cs">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevelopmentHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopmentHistoryForm.Designer.cs">
+      <DependentUpon>DevelopmentHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditTechnology.cs">
+    <Compile Include="Production\EditTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditTechnology.Designer.cs">
+    <Compile Include="Production\EditTechnology.Designer.cs">
       <DependentUpon>EditTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="Education.cs">
@@ -142,7 +148,7 @@
     <Compile Include="FailureMaintenance.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FEMAnalysi.cs">
+    <Compile Include="FEMAnalysis.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Finances\AddNewCompany.cs">
@@ -394,6 +400,18 @@
     <Compile Include="PartRequest.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartsRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest.Designer.cs">
+      <DependentUpon>PartsRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartsRequest_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsRequest_Add.Designer.cs">
+      <DependentUpon>PartsRequest_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="PartType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -422,10 +440,10 @@
     <Compile Include="Production\NewProductionFailure.Designer.cs">
       <DependentUpon>NewProductionFailure.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewTechnology.cs">
+    <Compile Include="Production\NewTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewTechnology.Designer.cs">
+    <Compile Include="Production\NewTechnology.Designer.cs">
       <DependentUpon>NewTechnology.cs</DependentUpon>
     </Compile>
     <Compile Include="OSHControlHistory.cs">
@@ -723,6 +741,9 @@
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vPartsRequestView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vPartsView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -787,10 +808,13 @@
     <EmbeddedResource Include="DevelopmentForm.resx">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevelopmentHistoryForm.resx">
+      <DependentUpon>DevelopmentHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTechnology.resx">
+    <EmbeddedResource Include="Production\EditTechnology.resx">
       <DependentUpon>EditTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FailureListForm.resx">
@@ -853,10 +877,13 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartsRequest.resx">
+      <DependentUpon>PartsRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production\NewProductionFailure.resx">
       <DependentUpon>NewProductionFailure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewTechnology.resx">
+    <EmbeddedResource Include="Production\NewTechnology.resx">
       <DependentUpon>NewTechnology.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
@@ -1012,7 +1039,6 @@
     <None Include="Resources\ok_48px.png" />
     <None Include="Resources\poor_quality_40px.png" />
     <None Include="Resources\new_80px.png" />
-    <None Include="Resources\good_quality_80px.png" />
     <None Include="Resources\poor_quality_80px.png" />
     <None Include="Resources\icons8-duration-finance-80.png" />
     <None Include="Resources\icons8-sell-stock-80.png" />
@@ -1026,6 +1052,15 @@
     <None Include="Resources\output-onlinepngtools %281%29.png" />
     <None Include="Resources\icons8-download-80.png" />
     <None Include="Resources\icons8-download-801.png" />
+    <None Include="Resources\icons8-return-40.png" />
+    <None Include="Resources\icons8-home-40.png" />
+    <None Include="Resources\icons8-clear-formatting-40.png" />
+    <None Include="Resources\icons8-send-40.png" />
+    <None Include="Resources\icons8-add-image-80.png" />
+    <None Include="Resources\icons8-add-image-801.png" />
+    <None Include="Resources\icons8-add-image-802.png" />
+    <None Include="Resources\icons8-import-40.png" />
+    <None Include="Resources\icons8-puzzled-40.png" />
     <None Include="Resources\powrott.png" />
     <None Include="Resources\okej.png" />
     <None Include="Resources\addp.png" />
@@ -1033,6 +1068,7 @@
     <None Include="Resources\refreshp.png" />
     <None Include="Resources\deletep.png" />
     <None Include="Resources\closep.png" />
+    <None Include="Resources\icons8-time-machine-40.png" />
     <None Include="Resources\icons8-pencil-40.png" />
     <None Include="Resources\icons8-pencil-80.png" />
     <None Include="Resources\icons8-repeat-80.png" />
@@ -1046,6 +1082,7 @@
     <None Include="Resources\icons8-save-40.png" />
     <None Include="Resources\icons8-euro-money-80.png" />
     <None Include="Resources\icons8-user-groups-80 %281%29.png" />
+    <None Include="Resources\good_quality_80px.png" />
     <Content Include="Resources\icons8-clear-filters-40.png" />
     <Content Include="Resources\icons8-filter-40.png" />
     <Content Include="Resources\icons8-home-40.png" />
