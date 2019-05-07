@@ -170,6 +170,7 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="30.375" PointY="6.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSalesDepartment" Width="1.5" PointX="23.375" PointY="13.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess" Width="1.5" PointX="6.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
