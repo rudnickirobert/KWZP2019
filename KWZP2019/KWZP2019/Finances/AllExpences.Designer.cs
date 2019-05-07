@@ -121,7 +121,6 @@
             this.tbSumOutsourcing.TabIndex = 44;
             this.tbSumOutsourcing.Text = "0";
             this.tbSumOutsourcing.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbSumOutsourcing.TextChanged += new System.EventHandler(this.tbSumOS_TextChanged);
             // 
             // tbSumOrders
             // 
@@ -133,7 +132,6 @@
             this.tbSumOrders.TabIndex = 43;
             this.tbSumOrders.Text = "0";
             this.tbSumOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbSumOrders.TextChanged += new System.EventHandler(this.tbSumOrders_TextChanged);
             // 
             // btnSum
             // 
@@ -193,7 +191,6 @@
             this.dgvOutsourcing.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOutsourcing.Size = new System.Drawing.Size(424, 134);
             this.dgvOutsourcing.TabIndex = 41;
-            this.dgvOutsourcing.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOutsourcing_CellContentClick);
             // 
             // dgvOrders
             // 
@@ -237,7 +234,6 @@
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrders.Size = new System.Drawing.Size(424, 134);
             this.dgvOrders.TabIndex = 40;
-            this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
             // 
             // dgvSalaries
             // 
@@ -336,7 +332,6 @@
             this.lblOutsourcing.Size = new System.Drawing.Size(111, 20);
             this.lblOutsourcing.TabIndex = 37;
             this.lblOutsourcing.Text = "Outsourcing:";
-            this.lblOutsourcing.Click += new System.EventHandler(this.lblOutsourcing_Click);
             // 
             // lblOrders
             // 
@@ -349,7 +344,6 @@
             this.lblOrders.Size = new System.Drawing.Size(109, 20);
             this.lblOrders.TabIndex = 36;
             this.lblOrders.Text = "Zamówienia:";
-            this.lblOrders.Click += new System.EventHandler(this.lblOrders_Click);
             // 
             // lblSalaries
             // 
@@ -506,7 +500,6 @@
             this.lblOrdersPln.Size = new System.Drawing.Size(125, 20);
             this.lblOrdersPln.TabIndex = 50;
             this.lblOrdersPln.Text = "złotych (netto)";
-            this.lblOrdersPln.Click += new System.EventHandler(this.lblOrdersPln_Click);
             // 
             // lblSalariesPln
             // 
@@ -531,7 +524,6 @@
             this.lblOutsourcingPln.Size = new System.Drawing.Size(125, 20);
             this.lblOutsourcingPln.TabIndex = 52;
             this.lblOutsourcingPln.Text = "złotych (netto)";
-            this.lblOutsourcingPln.Click += new System.EventHandler(this.lblOutsourcingPln_Click);
             // 
             // lblSumPln
             // 
@@ -635,7 +627,6 @@
             this.lblPartOrderPln.Size = new System.Drawing.Size(125, 20);
             this.lblPartOrderPln.TabIndex = 59;
             this.lblPartOrderPln.Text = "złotych (netto)";
-            this.lblPartOrderPln.Click += new System.EventHandler(this.lblPartsCostsPln_Click);
             // 
             // tbSumPartOrder
             // 
@@ -647,7 +638,6 @@
             this.tbSumPartOrder.TabIndex = 58;
             this.tbSumPartOrder.Text = "0";
             this.tbSumPartOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbSumPartOrder.TextChanged += new System.EventHandler(this.tbSumPartsCosts_TextChanged);
             // 
             // lblPartOrder
             // 
@@ -657,9 +647,9 @@
             this.lblPartOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblPartOrder.Location = new System.Drawing.Point(526, 464);
             this.lblPartOrder.Name = "lblPartOrder";
-            this.lblPartOrder.Size = new System.Drawing.Size(196, 20);
+            this.lblPartOrder.Size = new System.Drawing.Size(193, 20);
             this.lblPartOrder.TabIndex = 57;
-            this.lblPartOrder.Text = "Zamówienia częściowe:";
+            this.lblPartOrder.Text = "Koszta eksploatacyjne:";
             // 
             // AllExpenses
             // 

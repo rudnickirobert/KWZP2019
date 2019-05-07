@@ -39,29 +39,17 @@ namespace KWZP2019
         private void btSum_Click(object sender, EventArgs e)
         {
             dgvProfits.DataSource = db.vIncomesProfits.ToList().Where(vIncomesProfits =>
-            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
-            .Select(vIncomesProfits => new { vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
-            .ToList();
+            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value).ToList();
             dgvInvoices.DataSource = db.vExpencesInvoices.ToList().Where(vExpencesInvoices =>
-            vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value)
-            .Select(vExpencesInvoices => new { vExpencesInvoices.IdInvoice, vExpencesInvoices.Date, vExpencesInvoices.Sum, vExpencesInvoices.ContractorName, vExpencesInvoices.Type })
-            .ToList();
+            vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value).ToList();
             dgvOrders.DataSource = db.vExpencesOrders.ToList().Where(vExpencesOrders =>
-            vExpencesOrders.SfOrderDate > dtpStartDate.Value && vExpencesOrders.SfOrderDate < dtpEndDate.Value)
-            .Select(vExpencesOrders => new { vExpencesOrders.IdSfOrder, vExpencesOrders.Cost, vExpencesOrders.SfOrderDate, vExpencesOrders.SupplierName })
-            .ToList();
+            vExpencesOrders.SfOrderDate > dtpStartDate.Value && vExpencesOrders.SfOrderDate < dtpEndDate.Value).ToList();
             dgvOutsourcing.DataSource = db.vExpencesOutsourcings.ToList().Where(vExpencesOutsourcing =>
-            vExpencesOutsourcing.EndCommitmentDate > dtpStartDate.Value && vExpencesOutsourcing.EndCommitmentDate < dtpEndDate.Value)
-            .Select(vExpencesOutsourcing => new { vExpencesOutsourcing.IdOutsourcing, vExpencesOutsourcing.Cost, vExpencesOutsourcing.EndCommitmentDate, vExpencesOutsourcing.CompanyName })
-            .ToList();
+            vExpencesOutsourcing.EndCommitmentDate > dtpStartDate.Value && vExpencesOutsourcing.EndCommitmentDate < dtpEndDate.Value).ToList();
             dgvSalaries.DataSource = db.vExpencesPayments.ToList().Where(vExpencesPayment =>
-            vExpencesPayment.Date > dtpStartDate.Value && vExpencesPayment.Date < dtpEndDate.Value)
-            .Select(vExpencesPayment => new { vExpencesPayment.IdPayment, vExpencesPayment.Date, vExpencesPayment.Sum, vExpencesPayment.Bonus, vExpencesPayment.EmployeeName, vExpencesPayment.EmployeeSurname })
-            .ToList();
+            vExpencesPayment.Date > dtpStartDate.Value && vExpencesPayment.Date < dtpEndDate.Value).ToList();
             dgvPartOrder.DataSource = db.vExpencePartOrders.ToList().Where(vExpencePartOrder =>
-            vExpencePartOrder.OrderDate > dtpStartDate.Value && vExpencePartOrder.OrderDate < dtpEndDate.Value)
-            .Select(vExpencePartOrder => new { vExpencePartOrder.SupplierName, vExpencePartOrder.OrderDate, vExpencePartOrder.CostPartOrder })
-            .ToList();
+            vExpencePartOrder.OrderDate > dtpStartDate.Value && vExpencePartOrder.OrderDate < dtpEndDate.Value).ToList();
             decimal sumPayment = 0, sumOutsourcing = 0, sumInvoice = 0, sumOrders = 0, sumProfits = 0, sumPartOrder = 0;
             for (int i = 0; i < dgvProfits.Rows.Count; i++)
             {
@@ -69,7 +57,7 @@ namespace KWZP2019
             }
             for (int i = 0; i < dgvSalaries.Rows.Count; i++)
             {
-                sumPayment +=  Convert.ToDecimal(dgvSalaries.Rows[i].Cells[3].Value) + Convert.ToDecimal(dgvSalaries.Rows[i].Cells[0].Value);
+                sumPayment +=  Convert.ToDecimal(dgvSalaries.Rows[i].Cells[3].Value) + Convert.ToDecimal(dgvSalaries.Rows[i].Cells[1].Value);
             }
             for (int i = 0; i < dgvOutsourcing.Rows.Count; i++)
             {
@@ -85,7 +73,7 @@ namespace KWZP2019
             }
             for (int i = 0; i < dgvPartOrder.Rows.Count; i++)
             {
-                sumPartOrder += Convert.ToDecimal(dgvPartOrder.Rows[i].Cells[2].Value);
+                sumPartOrder += Convert.ToDecimal(dgvPartOrder.Rows[i].Cells[4].Value);
             }
             decimal sumAll = sumProfits - (sumPayment + sumOutsourcing + sumInvoice + sumOrders + sumPartOrder);    
             if (sumAll > 0) tbPureMoney.BackColor = Color.Green;
@@ -230,7 +218,6 @@ namespace KWZP2019
             this.finances.Show();
             this.Hide();
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.Hide();

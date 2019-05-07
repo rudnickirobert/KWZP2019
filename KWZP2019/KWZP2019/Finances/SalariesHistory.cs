@@ -36,24 +36,19 @@ namespace KWZP2019
             dgvHistory.Columns[3].HeaderText = "Premia";
             dgvHistory.Columns[4].HeaderText = "Podstawa wynagrodzenia";
             dgvHistory.Columns[5].HeaderText = "Data wypłaty";
-            dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-
         private void tbSurname_KeyUp(object sender, EventArgs e)
         {
         dgvHistory.DataSource = db.vPaymentHistories.ToList().Where(vPaymentHistory =>
-        vPaymentHistory.EmployeeSurname.StartsWith(tbSurname.Text, StringComparison.OrdinalIgnoreCase))
-        .Select(vPaymentHistory => new { vPaymentHistory.EmployeeName, vPaymentHistory.EmployeeSurname, vPaymentHistory.PESEL, vPaymentHistory.Bonus, vPaymentHistory.Sum, vPaymentHistory.Date })
-        .ToList();
-        dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+        vPaymentHistory.EmployeeSurname.StartsWith(tbSurname.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+        dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.finances.Show();
             this.Hide();
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();

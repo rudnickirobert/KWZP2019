@@ -66,34 +66,24 @@ namespace KWZP2019
         private void btSum_Click(object sender, EventArgs e)
         {
             dgvInvoices.DataSource = db.vExpencesInvoices.ToList().Where(vExpencesInvoices =>
-            vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value)
-            .Select(vExpencesInvoices => new { vExpencesInvoices.IdInvoice, vExpencesInvoices.Date, vExpencesInvoices.Sum, vExpencesInvoices.ContractorName, vExpencesInvoices.Type })
-            .ToList();
+            vExpencesInvoices.Date > dtpStartDate.Value && vExpencesInvoices.Date < dtpEndDate.Value).ToList();
             dgvInvoices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvOrders.DataSource = db.vExpencesOrders.ToList().Where(vExpencesOrders =>
-            vExpencesOrders.SfOrderDate > dtpStartDate.Value && vExpencesOrders.SfOrderDate < dtpEndDate.Value)
-            .Select(vExpencesOrders => new { vExpencesOrders.IdSfOrder, vExpencesOrders.Cost, vExpencesOrders.SfOrderDate, vExpencesOrders.SupplierName })
-            .ToList();
+            vExpencesOrders.SfOrderDate > dtpStartDate.Value && vExpencesOrders.SfOrderDate < dtpEndDate.Value).ToList();
             dgvOrders.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvOutsourcing.DataSource = db.vExpencesOutsourcings.ToList().Where(vExpencesOutsourcing =>
-            vExpencesOutsourcing.EndCommitmentDate > dtpStartDate.Value && vExpencesOutsourcing.EndCommitmentDate < dtpEndDate.Value)
-            .Select(vExpencesOutsourcing => new { vExpencesOutsourcing.IdOutsourcing, vExpencesOutsourcing.Cost, vExpencesOutsourcing.EndCommitmentDate, vExpencesOutsourcing.CompanyName })
-            .ToList();
+            vExpencesOutsourcing.EndCommitmentDate > dtpStartDate.Value && vExpencesOutsourcing.EndCommitmentDate < dtpEndDate.Value).ToList();
             dgvOutsourcing.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvSalaries.DataSource = db.vExpencesPayments.ToList().Where(vExpencesPayment =>
-            vExpencesPayment.Date > dtpStartDate.Value && vExpencesPayment.Date < dtpEndDate.Value)
-            .Select(vExpencesPayment => new { vExpencesPayment.IdPayment, vExpencesPayment.Date, vExpencesPayment.Sum, vExpencesPayment.Bonus, vExpencesPayment.EmployeeName, vExpencesPayment.EmployeeSurname })
-            .ToList();
+            vExpencesPayment.Date > dtpStartDate.Value && vExpencesPayment.Date < dtpEndDate.Value).ToList();
             dgvSalaries.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvPartOrder.DataSource = db.vExpencePartOrders.ToList().Where(vExpencePartOrder =>
-            vExpencePartOrder.OrderDate > dtpStartDate.Value && vExpencePartOrder.OrderDate < dtpEndDate.Value)
-            .Select(vExpencePartOrder => new { vExpencePartOrder.SupplierName, vExpencePartOrder.OrderDate, vExpencePartOrder.CostPartOrder })
-            .ToList();
+            vExpencePartOrder.OrderDate > dtpStartDate.Value && vExpencePartOrder.OrderDate < dtpEndDate.Value).ToList();
             dgvPartOrder.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             decimal sumPayment = 0, sumOutsourcing = 0, sumInvoice = 0, sumOrders = 0, sumPartOrder = 0;
             for (int i = 0; i < dgvSalaries.Rows.Count; i++)
             {
-                sumPayment += Convert.ToDecimal(dgvSalaries.Rows[i].Cells[3].Value) + Convert.ToDecimal(dgvSalaries.Rows[i].Cells[0].Value);
+                sumPayment += Convert.ToDecimal(dgvSalaries.Rows[i].Cells[3].Value) + Convert.ToDecimal(dgvSalaries.Rows[i].Cells[1].Value);
             }
             for (int i = 0; i < dgvOutsourcing.Rows.Count; i++)
             {
@@ -109,7 +99,7 @@ namespace KWZP2019
             }
             for (int i = 0; i < dgvPartOrder.Rows.Count; i++)
             {
-                sumPartOrder += Convert.ToDecimal(dgvPartOrder.Rows[i].Cells[2].Value);
+                sumPartOrder += Convert.ToDecimal(dgvPartOrder.Rows[i].Cells[4].Value);
             }
             decimal sumAll = sumPayment + sumOutsourcing + sumInvoice + sumOrders + sumPartOrder;
             tbSumOutsourcing.Text = sumOutsourcing.ToString("0,##");
@@ -226,66 +216,15 @@ namespace KWZP2019
             }
             MessageBox.Show("Pomyślnie wygenerowano raport.");
         }
-        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblOrdersPln_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSumOS_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSumOrders_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblOutsourcingPln_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvOutsourcing_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblOutsourcing_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblOrders_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.finances.Show();
             this.Hide();
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
             this.Hide();
-        }
-
-        private void tbSumPartsCosts_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPartsCostsPln_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

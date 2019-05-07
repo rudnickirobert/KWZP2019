@@ -33,15 +33,13 @@ namespace KWZP2019
             dgvProfits.Columns[1].HeaderText = "Nazwa klienta";
             dgvProfits.Columns[2].HeaderText = "Data zamówienia";
             dgvProfits.Columns[3].HeaderText = "Wartość zamówienia";
-            dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         private void btnAcceptSelectedTime_Click(object sender, EventArgs e)
         {
             dgvProfits.DataSource = db.vIncomesProfits.ToList().Where(vIncomesProfits =>
-            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value)
-            .Select(vIncomesProfits => new {vIncomesProfits.IdCustomer, vIncomesProfits.CustomerName, vIncomesProfits.OrderDate, vIncomesProfits.Cost })
-            .ToList();
-            dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            vIncomesProfits.OrderDate > dtpStartDate.Value && vIncomesProfits.OrderDate < dtpEndDate.Value).ToList();
+            dgvProfits.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         private void btSum_Click(object sender, EventArgs e)
         {
@@ -87,13 +85,11 @@ namespace KWZP2019
             }
             MessageBox.Show("Pomyślnie wygenerowano raport.");
         }
-
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
             this.Hide();
         }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.finances.Show();
