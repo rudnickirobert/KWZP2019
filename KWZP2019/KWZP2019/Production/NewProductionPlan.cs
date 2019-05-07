@@ -29,12 +29,10 @@ namespace KWZP2019
             comboBoxMachine.ValueMember = "idMachine";
             comboBoxMachine.DisplayMember = "machineFullName";
             comboBoxMachine.Invalidate();
-
             comboBoxEmployee.DataSource = db.vComboBoxEmployees.ToList();
             comboBoxEmployee.ValueMember = "idEmployee";
             comboBoxEmployee.DisplayMember = "employeeFullName";
             comboBoxEmployee.Invalidate();
-
             if (idPlan > 0)
             {
                 PlannedProduction plan = db.PlannedProductions.First(f => f.IdPlan == idPlan);
@@ -75,7 +73,23 @@ namespace KWZP2019
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            Close();
+            if (editPlan() & flagEditPlan)
+            {
+                Close();
+            }
+            else
+            {
+                if (viewProcessEmpl.RowCount == 0)
+                {
+                    db.PlannedProductions.Remove(newPlan);
+                    db.SaveChanges();
+                    Close();
+                }
+                else
+                {
+                    Close();
+                }
+            }
         }
         private void viewOrderDetail_SelectionChanged(object sender, EventArgs e)
         {
