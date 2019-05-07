@@ -41,7 +41,7 @@ namespace KWZP2019
         public virtual DbSet<Expense> Expenses { get; set; }
         public virtual DbSet<Failure> Failures { get; set; }
         public virtual DbSet<FailureMaintenance> FailureMaintenances { get; set; }
-        public virtual DbSet<FEMAnalysi> FEMAnalysis { get; set; }
+        public virtual DbSet<FEMAnalysis> FEMAnalysis { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<InvoiceType> InvoiceTypes { get; set; }
         public virtual DbSet<Machine> Machines { get; set; }
@@ -93,10 +93,7 @@ namespace KWZP2019
         public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
         public virtual DbSet<vEducationForm> vEducationForms { get; set; }
-        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
-        public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
-        public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
         public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
         public virtual DbSet<vExpencesOrder> vExpencesOrders { get; set; }
@@ -114,6 +111,7 @@ namespace KWZP2019
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
         public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
+        public virtual DbSet<vPartsRequestView> vPartsRequestViews { get; set; }
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
         public virtual DbSet<vPredictedPriceForCustomer> vPredictedPriceForCustomers { get; set; }
@@ -126,5 +124,9 @@ namespace KWZP2019
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
+        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
+        public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
+        public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
+        public virtual DbSet<vTotalNumberOfMeasuresPerProcess> vTotalNumberOfMeasuresPerProcesses { get; set; }
     }
 }
