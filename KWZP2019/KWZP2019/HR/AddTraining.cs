@@ -48,7 +48,8 @@ namespace KWZP2019
                         addtrainigSelect.TrainingName,
                         addtrainigSelect.TrainingStartDate,
                         addtrainigSelect.TrainingEndDate,
-                        addtrainigSelect.TrainingPrice
+                        addtrainigSelect.TrainingPrice,
+                        addtrainigSelect.IdTraining
                 }).ToList();
         }
 
@@ -63,7 +64,8 @@ namespace KWZP2019
                         addtrainigSelect.TrainingName,
                         addtrainigSelect.TrainingStartDate,
                         addtrainigSelect.TrainingEndDate,
-                        addtrainigSelect.TrainingPrice
+                        addtrainigSelect.TrainingPrice,
+                        addtrainigSelect.IdTraining
                 }).ToList();
         }
 
@@ -97,8 +99,11 @@ namespace KWZP2019
                     addtrainigSelect.TrainingName,
                     addtrainigSelect.TrainingStartDate,
                     addtrainigSelect.TrainingEndDate,
-                    addtrainigSelect.TrainingPrice
+                    addtrainigSelect.TrainingPrice,
+                    addtrainigSelect.IdTraining
                 }).ToList();
+
+            dgvTrainings.Columns[6].Visible = false;
 
             dgvTrainings.Columns[0].HeaderText = "Nazwisko";
             dgvTrainings.Columns[1].HeaderText = "Imię";
@@ -157,6 +162,24 @@ namespace KWZP2019
                     }
                 }
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dgvTrainings.SelectedRows[0].Cells[6].Value.ToString());
+            Training TrainingToRemove = new Training { IdTraining  = int.Parse(dgvTrainings.SelectedRows[0].Cells[6].Value.ToString()) };
+            db.Trainings.Attach(TrainingToRemove);
+            db.Trainings.Remove(TrainingToRemove);
+            db.SaveChanges();
+            if (tbSearchTraining.Text.Trim() == "" || tbSearchTrainingName.Text.Trim() == "")
+            {
+                display();
+            }
+            else
+            {
+                tbSearchTrainingName_TextChanged(sender, e);
+            }
+            MessageBox.Show("Rekord został usunięty");
         }
     }
 }

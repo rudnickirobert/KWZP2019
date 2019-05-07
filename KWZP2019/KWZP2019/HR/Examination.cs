@@ -44,7 +44,8 @@ namespace KWZP2019
                 Select (examinationSource => new {
                         examinationSource.EmployeeSurname,
                         examinationSource.EmployeeName,
-                        examinationSource.Date
+                        examinationSource.Date,
+                        examinationSource.IdMedicalExamination
                 }).ToList();
         }
 
@@ -56,7 +57,8 @@ namespace KWZP2019
                    Select (examinationSource => new {
                            examinationSource.EmployeeSurname,
                            examinationSource.EmployeeName,
-                           examinationSource.Date
+                           examinationSource.Date,
+                           examinationSource.IdMedicalExamination
                    }).ToList();
         }
 
@@ -66,8 +68,11 @@ namespace KWZP2019
                 Select(examinationSource => new {
                     examinationSource.EmployeeSurname,
                     examinationSource.EmployeeName,
-                    examinationSource.Date
+                    examinationSource.Date,
+                    examinationSource.IdMedicalExamination
                 }).ToList();
+
+            dgvExamination.Columns[3].Visible = false;
 
             dgvExamination.Columns[0].HeaderText = "Nazwisko";
             dgvExamination.Columns[1].HeaderText = "Imię";
@@ -88,6 +93,24 @@ namespace KWZP2019
         {
             this.hr.Show();
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MedicalExamination ExaminationToRemove = new MedicalExamination
+            { IdMedicalExamination = int.Parse(dgvExamination.SelectedRows[0].Cells[3].Value.ToString()) };
+            db.MedicalExaminations.Attach(ExaminationToRemove);
+            db.MedicalExaminations.Remove(ExaminationToRemove);
+            db.SaveChanges();
+            if (tbSearchEmployeeExamination.Text.Trim() == "" || tbSearchEmployeeExaminationName.Text.Trim() == "")
+            {
+                display();
+            }
+            else
+            {
+                tbSearchEmployeeExamination_TextChanged(sender, e);
+            }
+            MessageBox.Show("Rekord został usunięty");
         }
     }
 }

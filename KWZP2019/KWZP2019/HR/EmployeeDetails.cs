@@ -16,12 +16,14 @@ namespace KWZP2019
         RoofingCompanyEntities db;
         StartForm startForm;
         HR hr;
-        public EmployeeDetails(RoofingCompanyEntities db, StartForm startForm, HR hr)
+        int id;
+        public EmployeeDetails(RoofingCompanyEntities db, StartForm startForm, HR hr, int id)
         {
             InitializeComponent();
             this.db = db;
             this.startForm = startForm;
             this.hr = hr;
+            this.id = id;
         }
 
         private void EmployeeDetails_Load(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace KWZP2019
         void display()
         {
             dgvEmployeeDetails.DataSource = db.vEmployeeDetails.
+                    Where (employeeWhere => employeeWhere.IdEmployee == id).
                     Select(employeeDetailsSelect => new {
                         employeeDetailsSelect.EmployeeSurname,
                         employeeDetailsSelect.EmployeeName,
@@ -94,9 +97,8 @@ namespace KWZP2019
             dgvEmployeeDetails.Columns[13].HeaderText = "Początek umowy";
             dgvEmployeeDetails.Columns[14].HeaderText = "Koniec umowy";
             dgvEmployeeDetails.Columns[15].HeaderText = "Pensja";
-            dgvEmployeeDetails.Columns[16].HeaderText = "Badanie";
-            dgvEmployeeDetails.Columns[17].HeaderText = "Data treningu stanowiskowego";
-            dgvEmployeeDetails.Columns[18].HeaderText = "Termin ważności badań lekarskich";
+            dgvEmployeeDetails.Columns[16].HeaderText = "Data treningu stanowiskowego";
+            dgvEmployeeDetails.Columns[17].HeaderText = "Termin ważności badań lekarskich";
 
             dgvEmployeeDetails.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -116,7 +118,55 @@ namespace KWZP2019
             dgvEmployeeDetails.Columns[15].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[16].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[17].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvEmployeeDetails.Columns[18].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvAbsences.DataSource = db.vAbsences.
+                Where(employeeAbsenceWhere => employeeAbsenceWhere.IdEmployee == id).
+                Select(absencesSelect => new {
+                    absencesSelect.EmployeeSurname,
+                    absencesSelect.EmployeeName,
+                    absencesSelect.AbscenceReason,
+                    absencesSelect.StartOfAbsence,
+                    absencesSelect.EndOfAbsence
+                }).
+                OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
+                ToList();
+
+            dgvAbsences.Columns[0].HeaderText = "Nazwisko";
+            dgvAbsences.Columns[1].HeaderText = "Imię";
+            dgvAbsences.Columns[2].HeaderText = "Powód";
+            dgvAbsences.Columns[3].HeaderText = "Początek";
+            dgvAbsences.Columns[4].HeaderText = "Koniec";
+
+            dgvAbsences.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAbsences.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAbsences.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAbsences.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAbsences.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvTrainings.DataSource = db.vAddTrainings.
+                Where(employeeTrainingWhere => employeeTrainingWhere.IdEmployee == id).
+                Select(addtrainigSelect => new {
+                    addtrainigSelect.EmployeeSurname,
+                    addtrainigSelect.EmployeeName,
+                    addtrainigSelect.TrainingName,
+                    addtrainigSelect.TrainingStartDate,
+                    addtrainigSelect.TrainingEndDate,
+                    addtrainigSelect.TrainingPrice,
+                }).ToList();
+
+            dgvTrainings.Columns[0].HeaderText = "Nazwisko";
+            dgvTrainings.Columns[1].HeaderText = "Imię";
+            dgvTrainings.Columns[2].HeaderText = "Nazwa";
+            dgvTrainings.Columns[3].HeaderText = "Początek";
+            dgvTrainings.Columns[4].HeaderText = "Koniec";
+            dgvTrainings.Columns[5].HeaderText = "Cena";
+
+            dgvTrainings.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvTrainings.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvTrainings.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvTrainings.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvTrainings.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvTrainings.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

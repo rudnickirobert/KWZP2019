@@ -40,10 +40,12 @@ namespace KWZP2019
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            EmployeeDetails employeeDetails = new EmployeeDetails(db, startForm, this);
-            employeeDetails.Show();
-            this.Hide();
+                int id = int.Parse(dgvEmloyees.SelectedRows[0].Cells[5].Value.ToString());
+                EmployeeDetails employeeDetails = new EmployeeDetails(db, startForm, this, id);
+                employeeDetails.Show();
+                this.Hide();
         }
+
         private void btnAbsences_Click(object sender, EventArgs e)
         {
             Absences absences = new Absences(db, startForm, this);
@@ -66,8 +68,11 @@ namespace KWZP2019
                         employeesSelect.EmployeeName,
                         employeesSelect.Workplace,
                         employeesSelect.PhoneNumber,
-                        employeesSelect.City
+                        employeesSelect.City,
+                        employeesSelect.IdEmployee
                 }).ToList();
+
+            dgvEmloyees.Columns[5].Visible = false;
 
             dgvEmloyees.Columns[0].HeaderText = "Nazwisko";
             dgvEmloyees.Columns[1].HeaderText = "Imię";
@@ -99,7 +104,8 @@ namespace KWZP2019
                         employeesSelect.EmployeeName,
                         employeesSelect.Workplace,
                         employeesSelect.PhoneNumber,
-                        employeesSelect.City
+                        employeesSelect.City,
+                        employeesSelect.IdEmployee
                 }).ToList();
         }
 
@@ -124,7 +130,7 @@ namespace KWZP2019
 
         private void btnAddContract_Click(object sender, EventArgs e)
         {
-            AddContract addContract = new AddContract();
+            AddContract addContract = new AddContract(db);
             addContract.Show();
         }
 

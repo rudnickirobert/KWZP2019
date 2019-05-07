@@ -27,13 +27,19 @@ namespace KWZP2019
         private void EducationForm_Load(object sender, EventArgs e)
         {
             display();
-            List<vEmployeeList> employeeList = db.vEmployeeLists.
-                OrderBy(employeeListOrderBy => employeeListOrderBy.EmployeeSurname).ToList();
+            clear();
+            List<vEmployeeList> employeeList = db.vEmployeeLists.ToList();
             foreach (vEmployeeList employee in employeeList)
             {
                 cbEmployeeList.Items.Add(String.Format("{0, -20} {1, -20}",
                     employee.EmployeeSurname, employee.EmployeeName));
-            }            
+            }
+
+            List<vEducationLevel> educationLevels = db.vEducationLevels.ToList();
+            foreach (vEducationLevel ecucationL in educationLevels)
+            {
+                cbEducationLevel.Items.Add(ecucationL.EducationLevel);
+            }
         }
 
         private void tbEducationSearch_TextChanged(object sender, EventArgs e)
@@ -46,7 +52,8 @@ namespace KWZP2019
                         educationFormSelect.EducationLevel,
                         educationFormSelect.Degree,
                         educationFormSelect.DegreeShort,
-                        educationFormSelect.GraduationDate
+                        educationFormSelect.GraduationDate,
+                        educationFormSelect.IdEducation
                 }).ToList();
         }
         
@@ -59,8 +66,12 @@ namespace KWZP2019
                     educationFormSelect.EducationLevel,
                     educationFormSelect.Degree,
                     educationFormSelect.DegreeShort,
-                    educationFormSelect.GraduationDate
+                    educationFormSelect.GraduationDate,
+                    educationFormSelect.IdEducation
                 }).ToList();
+
+            dgvEducation.Columns[6].Visible = false;
+
             dgvEducation.Columns[0].HeaderText = "Nazwisko";
             dgvEducation.Columns[1].HeaderText = "Imię";
             dgvEducation.Columns[2].HeaderText = "Stopień wykształcenia";
@@ -99,6 +110,7 @@ namespace KWZP2019
                     tbEducationSearch_TextChanged(sender, e);
                 }
                 MessageBox.Show("Prawidłowo dodano pracownika");
+                clear();
             }
         }
 
@@ -112,6 +124,36 @@ namespace KWZP2019
         {
             this.hr.Show();
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Education EducationsToRemove = new Education { IdEducation = int.Parse(dgvEducation.SelectedRows[0].Cells[6].Value.ToString()) };
+            db.Educations.Attach(EducationsToRemove);
+            db.Educations.Remove(EducationsToRemove);
+            db.SaveChanges();
+            if (tbEducationSearch.Text.Trim() == "" )
+            {
+                display();
+            }
+            else
+            {
+                tbEducationSearch_TextChanged(sender, e);
+            }
+            MessageBox.Show("Rekord został usunięty");
+            clear();
+        }
+        
+        void clear()
+        {
+            cbEmployeeList.SelectedIndex = -1;
+            cbEducationLevel.SelectedIndex = -1;
+            dtpGraduationDate.Value = DateTime.Today;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }

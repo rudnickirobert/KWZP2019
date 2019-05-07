@@ -28,25 +28,20 @@ namespace KWZP2019
         private void Absences_Load(object sender, EventArgs e)
         {
             display();
+            clear();
 
-            /*List<vEmployeeList> employeeList = db.vEmployeeLists.
-                OrderBy(employeeListOrderBy => employeeListOrderBy.EmployeeSurname).ToList();
+            List<vEmployeeList> employeeList = db.vEmployeeLists.ToList();
             foreach (vEmployeeList employee in employeeList)
             {
-                cbEmployeeList.Items.Add(String.Format("{0, 0} {1, 0} {2, 0}",
-                    employee.IdEmployee, employee.EmployeeSurname, employee.EmployeeName));
-            }*/
-
-            /*DataTable tabel = db.vEmployeeLists.ToList();
-            cbEmployeeList.DataSource = db.vEmployeeLists.ToList();*/
+                cbEmployeeList.Items.Add(String.Format("{0, -10} {1, 0}",
+                    employee.EmployeeSurname, employee.EmployeeName));
+            }
 
             List<vAbsenceType> absenceType = db.vAbsenceTypes.ToList();
             foreach (vAbsenceType absenceT in absenceType)
             {
                 cbAbsenceType.Items.Add(absenceT.AbscenceReason);
             }
-
-            clear();
         }
 
         private void tbSearchAbsence_TextChanged(object sender, EventArgs e)
@@ -59,7 +54,8 @@ namespace KWZP2019
                     absencesSelect.EmployeeName,
                     absencesSelect.AbscenceReason,
                     absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence }).
+                    absencesSelect.EndOfAbsence,
+                    absencesSelect.IdAbsence }).
                 OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
                 ToList();
         }
@@ -74,7 +70,8 @@ namespace KWZP2019
                     absencesSelect.EmployeeName,
                     absencesSelect.AbscenceReason,
                     absencesSelect.StartOfAbsence,
-                    absencesSelect.EndOfAbsence }).
+                    absencesSelect.EndOfAbsence,
+                    absencesSelect.IdAbsence }).
                 OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
                 ToList();
         }
@@ -82,31 +79,35 @@ namespace KWZP2019
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Absence newAbsence = new Absence();
-            if (cbEmployeeList.SelectedIndex == -1 ||
-                cbAbsenceType.SelectedIndex == -1 ||
-                dateTimePickerFirstDay.Value > dateTimePickerLastDay.Value)
+            if (cbEmployeeList.SelectedIndex == -1 || cbAbsenceType.SelectedIndex == -1)
             {
-                MessageBox.Show("Pola Pracownik oraz typ nieobecności nie mogą być puste, " +
-                    "oraz data końca nieobecności nie może być wcześniejsza od daty początku nieobecności");
+                MessageBox.Show("Wszystkie pola muszą być wypełnione");
             }
             else
             {
-                newAbsence.IdEmployee = cbEmployeeList.SelectedIndex + 1;
-                newAbsence.IdAbsenceType = cbAbsenceType.SelectedIndex + 1;
-                newAbsence.StartOfAbsence = dateTimePickerFirstDay.Value;
-                newAbsence.EndOfAbsence = dateTimePickerLastDay.Value;
-                db.Absences.Add(newAbsence);
-                db.SaveChanges();
-                if (tbSearchAbsence.Text.Trim() == "" || tbSearchName.Text.Trim() == "")
+                if (dateTimePickerFirstDay.Value > dateTimePickerLastDay.Value)
                 {
-                    display();
+                    MessageBox.Show("Data końca nieobecności nie może być wcześniejsza niż data początku");
                 }
                 else
                 {
-                    tbSearchAbsence_TextChanged(sender, e);
+                    newAbsence.IdEmployee = cbEmployeeList.SelectedIndex + 1;
+                    newAbsence.IdAbsenceType = cbAbsenceType.SelectedIndex + 1;
+                    newAbsence.StartOfAbsence = dateTimePickerFirstDay.Value;
+                    newAbsence.EndOfAbsence = dateTimePickerLastDay.Value;
+                    db.Absences.Add(newAbsence);
+                    db.SaveChanges();
+                    if (tbSearchAbsence.Text.Trim() == "" || tbSearchName.Text.Trim() == "")
+                    {
+                        display();
+                    }
+                    else
+                    {
+                        tbSearchAbsence_TextChanged(sender, e);
+                    }
+                    clear();
+                    MessageBox.Show("Nieobecność dodana prawidłowo");
                 }
-                clear();
-                MessageBox.Show("Nieobecność dodana prawidłowo");
             }
         }
 
@@ -132,12 +133,19 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            /*Absence AbsenceToRemove = new Absence {IdAbsence = dgvAbsences.SelectedRows[0].Index + 1};
+            Absence AbsenceToRemove = new Absence {IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[5].Value.ToString())};
             db.Absences.Attach(AbsenceToRemove);
             db.Absences.Remove(AbsenceToRemove);
+            db.SaveChanges();
+            if (tbSearchAbsence.Text.Trim() == "" || tbSearchName.Text.Trim() == "")
+            {
+                display();
+            }
+            else
+            {
+                tbSearchAbsence_TextChanged(sender, e);
+            }
             MessageBox.Show("Rekord został usunięty");
-            display();*/
-            MessageBox.Show(dgvAbsences.SelectedRows[0].Cells[1].Value.ToString());
         }
 
         void display()
@@ -149,9 +157,12 @@ namespace KWZP2019
                     absencesSelect.AbscenceReason,
                     absencesSelect.StartOfAbsence,
                     absencesSelect.EndOfAbsence,
+                    absencesSelect.IdAbsence
                 }).
                 OrderByDescending(absenceOrderBy => absenceOrderBy.StartOfAbsence).
                 ToList();
+
+            dgvAbsences.Columns[5].Visible = false;
 
             dgvAbsences.Columns[0].HeaderText = "Nazwisko";
             dgvAbsences.Columns[1].HeaderText = "Imię";

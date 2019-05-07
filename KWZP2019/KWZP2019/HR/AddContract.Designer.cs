@@ -34,80 +34,86 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.dtpWorkplaceTrainingDate = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(42, 97);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpStartDate.Location = new System.Drawing.Point(56, 119);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(206, 20);
+            this.dtpStartDate.Size = new System.Drawing.Size(273, 22);
             this.dtpStartDate.TabIndex = 0;
             // 
             // cbEmployeeList
             // 
             this.cbEmployeeList.FormattingEnabled = true;
-            this.cbEmployeeList.Location = new System.Drawing.Point(129, 45);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2);
+            this.cbEmployeeList.Location = new System.Drawing.Point(172, 55);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(92, 21);
+            this.cbEmployeeList.Size = new System.Drawing.Size(121, 24);
             this.cbEmployeeList.TabIndex = 1;
             // 
             // tbSalary
             // 
-            this.tbSalary.Location = new System.Drawing.Point(201, 175);
-            this.tbSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSalary.Location = new System.Drawing.Point(268, 215);
+            this.tbSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSalary.Name = "tbSalary";
-            this.tbSalary.Size = new System.Drawing.Size(76, 20);
+            this.tbSalary.Size = new System.Drawing.Size(100, 22);
             this.tbSalary.TabIndex = 2;
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(296, 99);
+            this.dtpEndDate.Location = new System.Drawing.Point(395, 122);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(224, 20);
+            this.dtpEndDate.Size = new System.Drawing.Size(297, 22);
             this.dtpEndDate.TabIndex = 3;
             // 
             // cbPosition
             // 
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Location = new System.Drawing.Point(320, 174);
+            this.cbPosition.Location = new System.Drawing.Point(427, 214);
+            this.cbPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Size = new System.Drawing.Size(121, 21);
+            this.cbPosition.Size = new System.Drawing.Size(160, 24);
             this.cbPosition.TabIndex = 4;
             // 
             // dtpWorkplaceTrainingDate
             // 
-            this.dtpWorkplaceTrainingDate.Location = new System.Drawing.Point(320, 234);
+            this.dtpWorkplaceTrainingDate.Location = new System.Drawing.Point(427, 288);
+            this.dtpWorkplaceTrainingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpWorkplaceTrainingDate.Name = "dtpWorkplaceTrainingDate";
-            this.dtpWorkplaceTrainingDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpWorkplaceTrainingDate.Size = new System.Drawing.Size(265, 22);
             this.dtpWorkplaceTrainingDate.TabIndex = 6;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(174, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 31);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(232, 372);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(121, 38);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Dodaj";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AddContract
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dtpWorkplaceTrainingDate);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.tbSalary);
             this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.dtpStartDate);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddContract";
             this.Text = "AddContract";
+            this.Load += new System.EventHandler(this.AddContract_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +127,6 @@
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.DateTimePicker dtpWorkplaceTrainingDate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
