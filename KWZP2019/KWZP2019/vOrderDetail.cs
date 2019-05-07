@@ -14,7 +14,7 @@ namespace KWZP2019
     
     public partial class vOrderDetail
     {
-        public int Numer_zamówienia { get; set; }
+        public int Nr_zamówienia { get; set; }
         public string Kod_produktu { get; set; }
         public int Ilość { get; set; }
     }
