@@ -18,7 +18,7 @@ namespace KWZP2019
         public string partType { get; set; }
         public string Producer { get; set; }
         public int CatalogPartNr { get; set; }
-        public string UnitName { get; set; }
         public int QuantityWarehouse { get; set; }
+        public string UnitName { get; set; }
     }
 }

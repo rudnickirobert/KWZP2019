@@ -54,7 +54,7 @@ namespace KWZP2019
             {
                 MessageBox.Show("Imię i nazwisko są wymagane");
             }
-            else
+            if (tbContractLenght.Text.Trim() == "")
             {
                 Employee newEmployee = new Employee();
                 newEmployee.EmployeeName = tbFirstName.Text.Trim();
@@ -65,7 +65,7 @@ namespace KWZP2019
                 newEmployee.HouseNumber = tbHouseNumber.Text.Trim();
                 newEmployee.ApartmentNum = tbApartmentNumber.Text.Trim();
                 newEmployee.PhoneNumber = tbPhoneNumber.Text.Trim();
-                newEmployee.PESEL = long.Parse(tbPESEL.Text.Trim());
+                newEmployee.PESEL = tbPESEL.Text.Trim();
                 db.Employees.Add(newEmployee);
                 db.SaveChanges();
                 MessageBox.Show("Prawidłowo wprowadzono pracownika");
