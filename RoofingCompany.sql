@@ -1015,35 +1015,35 @@ L4 AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsenc
 			FROM Absence  
 			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
 			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where AbscenceReason = 'L4'
+			where (AbscenceReason = 'L4') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
 			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
 
 		 PaidAbsence AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'PADays', AbsenceType.Multiplier as 'PAX'
 			FROM Absence  
 			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
 			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where AbscenceReason = 'Urlop Płatny'
+			where (AbscenceReason = 'Urlop Płatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
 			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
 
 		UnpaidAbsence AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NPADays', AbsenceType.Multiplier as 'NPAX'
 			FROM Absence  
 			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
 			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where AbscenceReason = 'Urlop Bezłatny'
+			where (AbscenceReason = 'Urlop Bezpłatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
 			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
 
 		Unexcused AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NUDays', AbsenceType.Multiplier as 'NUX'
 			FROM Absence  
 			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
 			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where AbscenceReason = 'Nieusprawiedliwiona'
+			where (AbscenceReason = 'Nieusprawiedliwiona') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
 			GROUP by Employee.IdEmployee, AbsenceType.Multiplier),
 
 		OD AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'ODDays', AbsenceType.Multiplier as 'ODX'
 			FROM Absence  
 			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
 			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
-			where AbscenceReason = 'Na żądanie'
+			where AbscenceReason = 'Na żądanie' AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
 			GROUP by Employee.IdEmployee, AbsenceType.Multiplier)
 
 SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL,CAST((Contract.Salary/21) as decimal(10,2)) as DailyWage, 
@@ -1064,7 +1064,7 @@ SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSur
 		Left outer join UnpaidAbsence on Employee.IdEmployee = UnpaidAbsence.IdEmployee
 		Left outer join Unexcused on Employee.IdEmployee = Unexcused.IdEmployee
 		Left outer join OD on Employee.IdEmployee = OD.IdEmployee
-
+		Where Contract.EndDate > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))
 GO
 
 CREATE VIEW vPosition 
