@@ -1009,6 +1009,68 @@ FROM EducationLevel
 
 GO
 
+CREATE VIEW vSalariesSummary
+as
+WITH 
+L4 AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'L4Days', AbsenceType.Multiplier as 'L4X'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'L4'
+			group by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		 UrlopPlatny AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'UPDays', AbsenceType.Multiplier as 'UPX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Urlop Płatny'
+			group by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		UrlopBezplatny AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'UBPDays', AbsenceType.Multiplier as 'UBPX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Urlop Bezłatny'
+			group by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		Nieusprawiedliwiona AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NUDays', AbsenceType.Multiplier as 'NUX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Nieusprawiedliwiona'
+			group by Employee.IdEmployee, AbsenceType.Multiplier),
+
+		NZ AS (SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NZDays', AbsenceType.Multiplier as 'NZX'
+			FROM Absence  
+			inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+			INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+			where AbscenceReason = 'Na żądanie'
+			group by Employee.IdEmployee, AbsenceType.Multiplier)
+
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL,CAST((Contract.Salary/21) as decimal(10,2)) as DailyWage, 
+				Convert(date ,Getdate()) as Date, 
+				ISNULL(L4.L4Days,0) as [Dni L4],CAST(ISNULL(((Contract.Salary/21)*L4.L4Days*L4X),0) as decimal(10,2)) as L4Pay, 
+				ISNULL(UrlopPlatny.UPDays,0) as [Urlop płatny],CAST(ISNULL(((Contract.Salary/21)*UrlopPlatny.UPDays*UPX),0) as decimal(10,2)) as UPPay,
+				ISNULL(UrlopBezplatny.UBPDays,0) as [Urlop bezpłatny],CAST(ISNULL(((Contract.Salary/21)*UrlopBezplatny.UBPDays*UBPX),0) as decimal(10,2)) as UBPPay,
+				ISNULL(Nieusprawiedliwiona.NUDays,0) as [Nieusprawiedliowiona],CAST(ISNULL(((Contract.Salary/21)*Nieusprawiedliwiona.NUDays*NUX),0) as decimal(10,2)) as NUPay,
+				ISNULL(NZ.NZDays,0) as [Na żądanie],CAST(ISNULL(((Contract.Salary/21)*NZ.NZDays*NZX),0) as decimal(10,2)) as NZPay,
+				Ceiling(((21-(ISNULL(L4.L4Days,0)+ISNULL(UrlopPlatny.UPDays,0)+ISNULL(UrlopBezplatny.UBPDays,0)+ISNULL(Nieusprawiedliwiona.NUDays,0)+ISNULL(NZ.NZDays,0)))*(Contract.Salary/21))+ISNULL(((Contract.Salary/21)*L4.L4Days*L4X),0)+ISNULL(((Contract.Salary/21)*UrlopPlatny.UPDays*UPX),0)+ISNULL(((Contract.Salary/21)*UrlopBezplatny.UBPDays*UBPX),0)+ISNULL(((Contract.Salary/21)*Nieusprawiedliwiona.NUDays*NUX),0)+ISNULL(((Contract.Salary/21)*NZ.NZDays*NZX),0)) as TotalSalary
+
+	FROM Absence 
+		right outer JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee 
+		Left outer JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+		left outer join Payment ON Employee.IdEmployee = Payment.IdEmployee
+		left outer join L4 on Employee.IdEmployee = L4.IdEmployee
+		Left outer join UrlopPlatny on Employee.IdEmployee = UrlopPlatny.IdEmployee
+		Left outer join UrlopBezplatny on Employee.IdEmployee = UrlopBezplatny.IdEmployee
+		Left outer join Nieusprawiedliwiona on Employee.IdEmployee = Nieusprawiedliwiona.IdEmployee
+		Left outer join NZ on Employee.IdEmployee = NZ.IdEmployee
+
+go
+
+
+
+
 CREATE VIEW vProductionProcessFullData
 AS
 SELECT ProductionProcess.IdProces, ProductionProcess.IdPlan, ProductionProcess.StartDate, ProductionProcess.EndDate, PlannedProductionEmployeeDetails.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Machine.MachineName, Machine.CatalogMachineNr

@@ -1152,6 +1152,35 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSafetyControlHistoryView' does
           <Property Name="SafetyControlDescription" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSalariesSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSalariesSummary">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="Dni L4" />
+            <PropertyRef Name="Urlop płatny" />
+            <PropertyRef Name="Urlop bezpłatny" />
+            <PropertyRef Name="Nieusprawiedliowiona" />
+            <PropertyRef Name="Na żądanie" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="PESEL" Type="bigint" />
+          <Property Name="DailyWage" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Dni L4" Type="int" Nullable="false" />
+          <Property Name="L4Pay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop płatny" Type="int" Nullable="false" />
+          <Property Name="PAPay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop bezpłatny" Type="int" Nullable="false" />
+          <Property Name="NPAPay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Nieusprawiedliowiona" Type="int" Nullable="false" />
+          <Property Name="NPAay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Na żądanie" Type="int" Nullable="false" />
+          <Property Name="ODPay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TotalSalary" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSuccesfullyProcess">
           <Key>
@@ -2440,6 +2469,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vSafetyControlHistoryView].[SafetyControlDescription] AS [SafetyControlDescription]
     FROM [dbo].[vSafetyControlHistoryView] AS [vSafetyControlHistoryView]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vSalariesSummary" EntityType="Self.vSalariesSummary" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSalariesSummary].[IdEmployee] AS [IdEmployee], 
+    [vSalariesSummary].[EmployeeName] AS [EmployeeName], 
+    [vSalariesSummary].[EmployeeSurname] AS [EmployeeSurname], 
+    [vSalariesSummary].[PESEL] AS [PESEL], 
+    [vSalariesSummary].[DailyWage] AS [DailyWage], 
+    [vSalariesSummary].[Date] AS [Date], 
+    [vSalariesSummary].[Dni L4] AS [Dni L4], 
+    [vSalariesSummary].[L4Pay] AS [L4Pay], 
+    [vSalariesSummary].[Urlop płatny] AS [Urlop płatny], 
+    [vSalariesSummary].[PAPay] AS [PAPay], 
+    [vSalariesSummary].[Urlop bezpłatny] AS [Urlop bezpłatny], 
+    [vSalariesSummary].[NPAPay] AS [NPAPay], 
+    [vSalariesSummary].[Nieusprawiedliowiona] AS [Nieusprawiedliowiona], 
+    [vSalariesSummary].[NPAay] AS [NPAay], 
+    [vSalariesSummary].[Na żądanie] AS [Na żądanie], 
+    [vSalariesSummary].[ODPay] AS [ODPay], 
+    [vSalariesSummary].[TotalSalary] AS [TotalSalary]
+    FROM [dbo].[vSalariesSummary] AS [vSalariesSummary]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vSuccesfullyProcess" EntityType="Self.vSuccesfullyProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vSuccesfullyProcess].[IdProcess] AS [IdProcess]
@@ -3120,6 +3170,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
+          <EntitySet Name="vSalariesSummaries" EntityType="RoofingCompanyModel.vSalariesSummary" />
         </EntityContainer>
         <EntityType Name="Absence">
           <Key>
@@ -5172,6 +5223,33 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vSalariesSummary">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="Dni_L4" />
+            <PropertyRef Name="Urlop_płatny" />
+            <PropertyRef Name="Urlop_bezpłatny" />
+            <PropertyRef Name="Nieusprawiedliowiona" />
+            <PropertyRef Name="Na_żądanie" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="Int64" />
+          <Property Name="DailyWage" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Dni_L4" Type="Int32" Nullable="false" />
+          <Property Name="L4Pay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop_płatny" Type="Int32" Nullable="false" />
+          <Property Name="PAPay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop_bezpłatny" Type="Int32" Nullable="false" />
+          <Property Name="NPAPay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Nieusprawiedliowiona" Type="Int32" Nullable="false" />
+          <Property Name="NPAay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Na_żądanie" Type="Int32" Nullable="false" />
+          <Property Name="ODPay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TotalSalary" Type="Double" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6351,6 +6429,29 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSalariesSummaries">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSalariesSummary">
+              <MappingFragment StoreEntitySet="vSalariesSummary">
+                <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+                <ScalarProperty Name="ODPay" ColumnName="ODPay" />
+                <ScalarProperty Name="Na_żądanie" ColumnName="Na żądanie" />
+                <ScalarProperty Name="NPAay" ColumnName="NPAay" />
+                <ScalarProperty Name="Nieusprawiedliowiona" ColumnName="Nieusprawiedliowiona" />
+                <ScalarProperty Name="NPAPay" ColumnName="NPAPay" />
+                <ScalarProperty Name="Urlop_bezpłatny" ColumnName="Urlop bezpłatny" />
+                <ScalarProperty Name="PAPay" ColumnName="PAPay" />
+                <ScalarProperty Name="Urlop_płatny" ColumnName="Urlop płatny" />
+                <ScalarProperty Name="L4Pay" ColumnName="L4Pay" />
+                <ScalarProperty Name="Dni_L4" ColumnName="Dni L4" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DailyWage" ColumnName="DailyWage" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

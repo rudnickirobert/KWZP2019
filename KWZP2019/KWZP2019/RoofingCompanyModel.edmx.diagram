@@ -177,6 +177,7 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSalariesSummary" Width="1.5" PointX="28.375" PointY="25.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
