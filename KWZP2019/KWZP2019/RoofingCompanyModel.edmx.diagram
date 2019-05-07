@@ -90,7 +90,6 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOrder" Width="1.5" PointX="21.75" PointY="12" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOutsourcing" Width="1.5" PointX="21.75" PointY="15" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesPayment" Width="1.5" PointX="21.75" PointY="18" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vHR" Width="1.5" PointX="21.75" PointY="21" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vHRContract" Width="1.5" PointX="16.75" PointY="23" />
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewDailySfDelivery" Width="1.5" PointX="22.75" PointY="2" />
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="20.75" PointY="24" />
@@ -181,6 +180,7 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vHRExamination" Width="1.5" PointX="28.375" PointY="7.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vHR" Width="1.5" PointX="28.375" PointY="11.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

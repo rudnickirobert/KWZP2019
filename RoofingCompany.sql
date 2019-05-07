@@ -916,7 +916,7 @@ GO
 
 CREATE VIEW vHR
 AS
-SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
+SELECT Employee.IdEmployee, EmployeeSurname, PESEL, EmployeeName, City, PhoneNumber, Workplace
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
