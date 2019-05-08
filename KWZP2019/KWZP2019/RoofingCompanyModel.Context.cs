@@ -85,32 +85,20 @@ namespace KWZP2019
         public virtual DbSet<Training> Trainings { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<SafetyControlHistoryView> SafetyControlHistoryViews { get; set; }
-        public virtual DbSet<vAbsence> vAbsences { get; set; }
-        public virtual DbSet<vAddTraining> vAddTrainings { get; set; }
         public virtual DbSet<vComboBoxEmployee> vComboBoxEmployees { get; set; }
         public virtual DbSet<vComboBoxMachine> vComboBoxMachines { get; set; }
-        public virtual DbSet<vContract> vContracts { get; set; }
-        public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<vDevotionsInMeasuremntsPerProcess> vDevotionsInMeasuremntsPerProcesses { get; set; }
-        public virtual DbSet<vEducationForm> vEducationForms { get; set; }
         public virtual DbSet<vEmployeeList> vEmployeeLists { get; set; }
-        public virtual DbSet<vExamination> vExaminations { get; set; }
         public virtual DbSet<vExpencesInvoice> vExpencesInvoices { get; set; }
         public virtual DbSet<vExpencesOrder> vExpencesOrders { get; set; }
         public virtual DbSet<vExpencesOutsourcing> vExpencesOutsourcings { get; set; }
         public virtual DbSet<vExpencesPayment> vExpencesPayments { get; set; }
-        public virtual DbSet<vHR> vHRs { get; set; }
         public virtual DbSet<vHRContract> vHRContracts { get; set; }
-        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
         public virtual DbSet<ViewOshTraining> ViewOshTrainings { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
         public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
         public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
-        public virtual DbSet<vOrder> vOrders { get; set; }
-        public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
-        public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
-        public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
         public virtual DbSet<vPartsRequestView> vPartsRequestViews { get; set; }
         public virtual DbSet<vPartsView> vPartsViews { get; set; }
         public virtual DbSet<vPaymentHistory> vPaymentHistories { get; set; }
@@ -119,14 +107,42 @@ namespace KWZP2019
         public virtual DbSet<vSafetyControlHistoryView> vSafetyControlHistoryViews { get; set; }
         public virtual DbSet<vSuccesfullyProcess> vSuccesfullyProcesses { get; set; }
         public virtual DbSet<vSuccesfullyProducedPerProcess> vSuccesfullyProducedPerProcesses { get; set; }
-        public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }
-        public virtual DbSet<vSupplierSemi> vSupplierSemis { get; set; }
         public virtual DbSet<vTechnicalProductDataPerProcess> vTechnicalProductDataPerProcesses { get; set; }
         public virtual DbSet<vUnfinishedProcess> vUnfinishedProcesses { get; set; }
         public virtual DbSet<vUnhandledOrderDetail> vUnhandledOrderDetails { get; set; }
-        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
+        public virtual DbSet<vOutsourcing> vOutsourcings { get; set; }
+        public virtual DbSet<vOutsourcingCommitment> vOutsourcingCommitments { get; set; }
+        public virtual DbSet<vOutsourcingType> vOutsourcingTypes { get; set; }
+        public virtual DbSet<vSupplierPartsMinusType> vSupplierPartsMinusTypes { get; set; }
+        public virtual DbSet<vSupplierSemisMinusType> vSupplierSemisMinusTypes { get; set; }
+        public virtual DbSet<vOutsourcingWithType> vOutsourcingWithTypes { get; set; }
+        public virtual DbSet<vSupplierPart> vSupplierParts { get; set; }
+        public virtual DbSet<vSupplierSemi> vSupplierSemis { get; set; }
+        public virtual DbSet<vOrder> vOrders { get; set; }
+        public virtual DbSet<vCustomer> vCustomers { get; set; }
+        public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vEmployeeSD> vEmployeeSDs { get; set; }
         public virtual DbSet<vEmployeeSalesDepartment> vEmployeeSalesDepartments { get; set; }
         public virtual DbSet<vTotalNumberOfMeasuresPerProcess> vTotalNumberOfMeasuresPerProcesses { get; set; }
+        public virtual DbSet<vAbsenceType> vAbsenceTypes { get; set; }
+        public virtual DbSet<vDeparment> vDeparments { get; set; }
+        public virtual DbSet<vEducationLevel> vEducationLevels { get; set; }
+        public virtual DbSet<vExpencePartOrder> vExpencePartOrders { get; set; }
+        public virtual DbSet<vL4> vL4 { get; set; }
+        public virtual DbSet<vOD> vODs { get; set; }
+        public virtual DbSet<vPaidAbsence> vPaidAbsences { get; set; }
+        public virtual DbSet<vPosition> vPositions { get; set; }
+        public virtual DbSet<vSalariesSummary> vSalariesSummaries { get; set; }
+        public virtual DbSet<vUnexcused> vUnexcuseds { get; set; }
+        public virtual DbSet<vUnpaidAbsence> vUnpaidAbsences { get; set; }
+        public virtual DbSet<vAbsence> vAbsences { get; set; }
+        public virtual DbSet<vAddTraining> vAddTrainings { get; set; }
+        public virtual DbSet<vContract> vContracts { get; set; }
+        public virtual DbSet<vEducationForm> vEducationForms { get; set; }
+        public virtual DbSet<vEmployeeDetail> vEmployeeDetails { get; set; }
+        public virtual DbSet<vExamination> vExaminations { get; set; }
+        public virtual DbSet<vHR> vHRs { get; set; }
+        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
+        public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
     }
 }

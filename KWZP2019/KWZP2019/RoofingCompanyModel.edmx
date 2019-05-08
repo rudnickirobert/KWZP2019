@@ -628,30 +628,43 @@ warning 6002: The table/view 'RoofingCompany.dbo.SafetyControlHistoryView' does 
 warning 6002: The table/view 'RoofingCompany.dbo.vAbsences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vAbsences">
           <Key>
+            <PropertyRef Name="IdAbsence" />
+            <PropertyRef Name="Imię" />
             <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
           </Key>
+          <Property Name="IdAbsence" Type="int" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Powód" Type="nvarchar" MaxLength="50" />
+          <Property Name="Początek" Type="date" />
+          <Property Name="Koniec" Type="date" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="StartOfAbsence" Type="date" />
-          <Property Name="EndOfAbsence" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vAbsenceType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vAbsenceType">
+          <Key>
+            <PropertyRef Name="IdAbsenceType" />
+          </Key>
+          <Property Name="IdAbsenceType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AbscenceReason" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vAddTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vAddTraining">
           <Key>
+            <PropertyRef Name="IdTraining" />
+            <PropertyRef Name="Imię" />
             <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
           </Key>
+          <Property Name="IdTraining" Type="int" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="200" />
+          <Property Name="Początek" Type="date" />
+          <Property Name="koniec" Type="date" />
+          <Property Name="Cena" Type="decimal" Precision="10" Scale="2" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="TrainingName" Type="nvarchar" MaxLength="200" />
-          <Property Name="TrainingStartDate" Type="date" />
-          <Property Name="TrainingEndDate" Type="date" />
-          <Property Name="TrainingPrice" Type="money" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vComboBoxEmployee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -675,44 +688,54 @@ warning 6002: The table/view 'RoofingCompany.dbo.vComboBoxMachine' does not have
 warning 6002: The table/view 'RoofingCompany.dbo.vContracts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vContracts">
           <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="IdContract" />
+            <PropertyRef Name="Imię" />
           </Key>
-          <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="StartDate" Type="date" />
-          <Property Name="EndDate" Type="date" />
-          <Property Name="Salary" Type="money" />
-          <Property Name="WorkplaceTrainingDate" Type="date" />
-          <Property Name="HealTestDate" Type="date" />
-          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdContract" Type="int" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stanowisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Początek" Type="date" />
+          <Property Name="Koniec" Type="date" />
+          <Property Name="Wypłata" Type="money" />
+          <Property Name="Szkolenie stanowiskowe" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vCustomer">
           <Key>
-            <PropertyRef Name="Klient" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Telefon" />
             <PropertyRef Name="E-mail" />
             <PropertyRef Name="Miasto" />
             <PropertyRef Name="Kod pocztowy" />
             <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer lokalu" />
+            <PropertyRef Name="Nr domu" />
+            <PropertyRef Name="Nr lokalu" />
           </Key>
-          <Property Name="Klient" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Numer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
           <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="5" Nullable="false" />
-          <Property Name="Numer lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="Pesel" Type="nvarchar" MaxLength="11" />
           <Property Name="NIP" Type="nvarchar" MaxLength="10" />
           <Property Name="KRS" Type="nvarchar" MaxLength="10" />
           <Property Name="Opis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vDeparment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDeparment">
+          <Key>
+            <PropertyRef Name="IdDepartment" />
+          </Key>
+          <Property Name="IdDepartment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vDevotionsInMeasuremntsPerProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -738,44 +761,55 @@ warning 6002: The table/view 'RoofingCompany.dbo.vDevotionsInMeasuremntsPerProce
 warning 6002: The table/view 'RoofingCompany.dbo.vEducationForm' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vEducationForm">
           <Key>
+            <PropertyRef Name="IdEducation" />
+            <PropertyRef Name="Imię" />
             <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
           </Key>
+          <Property Name="IdEducation" Type="int" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stopień wykształcenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tytuły naukowe" Type="nvarchar" MaxLength="10" />
+          <Property Name="Data ukończenia" Type="date" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vEducationLevel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEducationLevel">
+          <Key>
+            <PropertyRef Name="IdEducationLevel" />
+          </Key>
+          <Property Name="IdEducationLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EducationLevel" Type="nvarchar" MaxLength="50" />
           <Property Name="Degree" Type="nvarchar" MaxLength="50" />
-          <Property Name="DegreeShort" Type="nvarchar" MaxLength="10" />
-          <Property Name="GraduationDate" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vEmployeeDetails">
           <Key>
             <PropertyRef Name="IdEmployee" />
-            
+            <PropertyRef Name="Imię" />
           </Key>
           <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
-          <Property Name="City" Type="nvarchar" MaxLength="50" />
-          <Property Name="Street" Type="nvarchar" MaxLength="50" />
-          <Property Name="HouseNumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="ApartmentNum" Type="nvarchar" MaxLength="50" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Miasto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ulica" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr Domu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr telefonu" Type="nvarchar" MaxLength="50" />
           <Property Name="PESEL" Type="nvarchar" MaxLength="11" />
-          <Property Name="EducationLevel" Type="nvarchar" MaxLength="50" />
-          <Property Name="DegreeShort" Type="nvarchar" MaxLength="10" />
-          <Property Name="GraduationDate" Type="date" />
-          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
-          <Property Name="StartDate" Type="date" />
-          <Property Name="EndDate" Type="date" />
-          <Property Name="Salary" Type="money" />
-          <Property Name="HealTestDate" Type="date" />
-          <Property Name="WorkplaceTrainingDate" Type="date" />
-          <Property Name="Date" Type="date" />
+          <Property Name="Stopień wykształcenia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tytułu naukowe" Type="nvarchar" MaxLength="10" />
+          <Property Name="Data ukończenia studiów" Type="date" />
+          <Property Name="Stanowisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Początek umowy" Type="date" />
+          <Property Name="Koniec umowy" Type="date" />
+          <Property Name="Wynagrodzenie" Type="money" />
+          <Property Name="rening Stanowiskowy" Type="date" />
+          <Property Name="Data badania lekarskiego" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -792,15 +826,17 @@ warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeList' does not have a 
 warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeSalesDepartment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vEmployeeSalesDepartment">
           <Key>
+            <PropertyRef Name="Numer" />
             <PropertyRef Name="Imię" />
           </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
           <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="50" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="50" />
           <Property Name="Ulica" Type="nvarchar" MaxLength="50" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="50" />
-          <Property Name="Numer lokalu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="50" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
           <Property Name="PESEL" Type="nvarchar" MaxLength="11" />
           <Property Name="Dział" Type="nvarchar" MaxLength="50" />
@@ -811,29 +847,42 @@ warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeSalesDepartment' does 
 warning 6002: The table/view 'RoofingCompany.dbo.vEmployeeSD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vEmployeeSD">
           <Key>
-            <PropertyRef Name="Nr Obsługi" />
-            <PropertyRef Name="Data przyjęcia" />
-            <PropertyRef Name="Nazwa części" />
-            <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Imię" />
           </Key>
-          <Property Name="Nr Obsługi" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Data przyjęcia" Type="datetime" Nullable="false" />
-          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Ilość" Type="int" Nullable="false" />
-          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vExamination">
           <Key>
+            <PropertyRef Name="IdMedicalExamination" />
+            <PropertyRef Name="Imię" />
             <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
           </Key>
+          <Property Name="IdMedicalExamination" Type="int" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Data badania lekarskiego" Type="date" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Date" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vExpencePartOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vExpencePartOrder">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="StatusPartOrder" />
+            <PropertyRef Name="CostPartOrder" />
+          </Key>
+          <Property Name="IdSupplier" Type="int" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="StatusPartOrder" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CostPartOrder" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vExpencesInvoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -894,14 +943,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vHR' does not have a primary ke
         <EntityType Name="vHR">
           <Key>
             <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="Imię" />
           </Key>
           <Property Name="IdEmployee" Type="int" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
-          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="City" Type="nvarchar" MaxLength="50" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imię" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" />
+          <Property Name="Stanowisko" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nr telefonu" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vHRContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -915,9 +964,18 @@ warning 6002: The table/view 'RoofingCompany.dbo.vHRContract' does not have a pr
 warning 6002: The table/view 'RoofingCompany.dbo.vHRExamination' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vHRExamination">
           <Key>
-            <PropertyRef Name="IdMedicalExamination" />
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="PreviousExamination" />
           </Key>
-          <Property Name="IdMedicalExamination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
+          <Property Name="VailidityOfMedicalExam" Type="int" />
+          <Property Name="PreviousExamination" Type="date" Nullable="false" />
+          <Property Name="NextExamination" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -949,9 +1007,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vIncomesProfits' does not have 
 warning 6002: The table/view 'RoofingCompany.dbo.vInputMagazine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vInputMagazine">
           <Key>
+            <PropertyRef Name="Numer" />
             <PropertyRef Name="Kod Produktu" />
             <PropertyRef Name="Data przyjęcia na magazyn" />
           </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
           <Property Name="Kod Produktu" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Ilość" Type="int" />
           <Property Name="Data przyjęcia na magazyn" Type="datetime" Nullable="false" />
@@ -964,6 +1024,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vInvoiceType' does not have a p
           </Key>
           <Property Name="IdInvoiceType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vL4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vL4">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="L4Days" Type="int" />
+          <Property Name="L4X" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -982,27 +1052,38 @@ warning 6002: The table/view 'RoofingCompany.dbo.vMaintPartsView' does not have 
           <Property Name="UnitName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOD">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="ODDays" Type="int" />
+          <Property Name="ODX" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOrder">
           <Key>
-            <PropertyRef Name="Nazwa części" />
-            <PropertyRef Name="Typ części" />
-            <PropertyRef Name="Jednostka" />
-            <PropertyRef Name="Stan magazynowy" />
+            <PropertyRef Name="Nr zamówienia" />
+            <PropertyRef Name="Data zamówienia" />
+            <PropertyRef Name="Wycena" />
+            <PropertyRef Name="Marża" />
           </Key>
-          <Property Name="Nazwa części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Typ części" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Jednostka" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Stan magazynowy" Type="int" Nullable="false" />
+          <Property Name="Nr zamówienia" Type="int" Nullable="false" />
+          <Property Name="Data zamówienia" Type="datetime" Nullable="false" />
+          <Property Name="Wycena" Type="money" Nullable="false" />
+          <Property Name="Marża" Type="float" Nullable="false" />
+          <Property Name="Pracownik odpowiedzialny" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOrderDetail">
           <Key>
-            <PropertyRef Name="Numer zamówienia" />
+            <PropertyRef Name="Nr zamówienia" />
             <PropertyRef Name="Ilość" />
           </Key>
-          <Property Name="Numer zamówienia" Type="int" Nullable="false" />
+          <Property Name="Nr zamówienia" Type="int" Nullable="false" />
           <Property Name="Kod produktu" Type="nvarchar" MaxLength="50" />
           <Property Name="Ilość" Type="int" Nullable="false" />
         </EntityType>
@@ -1010,42 +1091,106 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a p
 warning 6002: The table/view 'RoofingCompany.dbo.vOutputMagazine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOutputMagazine">
           <Key>
-            <PropertyRef Name="Numer Procesu Produkcji" />
-            <PropertyRef Name="Data przyjęcia na magazyn" />
+            <PropertyRef Name="Numer" />
           </Key>
-          <Property Name="Numer Procesu Produkcji" Type="int" Nullable="false" />
+          <Property Name="Numer" Type="int" Nullable="false" />
           <Property Name="Kod produktu" Type="nvarchar" MaxLength="50" />
           <Property Name="Ilość" Type="int" />
-          <Property Name="Data przyjęcia na magazyn" Type="datetime" Nullable="false" />
+          <Property Name="Data przyjęcia na magazyn" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vOutsourcingWithType">
+warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOutsourcing">
           <Key>
-            <PropertyRef Name="Typ" />
-            <PropertyRef Name="Firma" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Telefon" />
             <PropertyRef Name="E-mail" />
             <PropertyRef Name="Miasto" />
             <PropertyRef Name="Kod pocztowy" />
             <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer lokalu" />
+            <PropertyRef Name="Nr domu" />
+            <PropertyRef Name="Nr lokalu" />
             <PropertyRef Name="NIP" />
             <PropertyRef Name="KRS" />
           </Key>
-          <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Firma" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Numer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
           <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="5" Nullable="false" />
-          <Property Name="Numer lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="NIP" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="KRS" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Opis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingCommitment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOutsourcingCommitment">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Koniec zobowiązania" />
+            <PropertyRef Name="Cena" />
+          </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Koniec zobowiązania" Type="datetime" Nullable="false" />
+          <Property Name="Cena" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOutsourcingType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Typ" />
+          </Key>
+          <Property Name="Numer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vOutsourcingWithType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vOutsourcingWithType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E-mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr domu" />
+            <PropertyRef Name="Nr lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="NIP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KRS" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPaidAbsence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPaidAbsence">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="PADays" Type="int" />
+          <Property Name="PAX" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPartsRequestView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1095,6 +1240,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vPaymentHistory' does not have 
           <Property Name="Sum" Type="money" />
           <Property Name="Date" Type="date" />
           <Property Name="IdEmployee" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vPosition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPosition">
+          <Key>
+            <PropertyRef Name="IdPosition" />
+          </Key>
+          <Property Name="IdPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Workplace" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vPredictedPriceForCustomer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1148,6 +1302,36 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSafetyControlHistoryView' does
           <Property Name="SafetyControlDescription" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSalariesSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSalariesSummary">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="Dni L4" />
+            <PropertyRef Name="Urlop płatny" />
+            <PropertyRef Name="Urlop bezpłatny" />
+            <PropertyRef Name="Nieusprawiedliowiona" />
+            <PropertyRef Name="Na żądanie" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" />
+          <Property Name="DailyWage" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Dni L4" Type="int" Nullable="false" />
+          <Property Name="L4Pay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop płatny" Type="int" Nullable="false" />
+          <Property Name="PAPay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop bezpłatny" Type="int" Nullable="false" />
+          <Property Name="NPAPay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Nieusprawiedliowiona" Type="int" Nullable="false" />
+          <Property Name="NPAay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Na żądanie" Type="int" Nullable="false" />
+          <Property Name="ODPay" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TotalSalary" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSuccesfullyProcess">
           <Key>
@@ -1170,27 +1354,58 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProducedPerProcess'
 warning 6002: The table/view 'RoofingCompany.dbo.vSupplierParts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSupplierParts">
           <Key>
+            <PropertyRef Name="Numer" />
             <PropertyRef Name="Typ" />
-            <PropertyRef Name="Firma" />
+            <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Telefon" />
             <PropertyRef Name="E-mail" />
             <PropertyRef Name="Miasto" />
             <PropertyRef Name="Kod pocztowy" />
             <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer lokalu" />
+            <PropertyRef Name="Nr domu" />
+            <PropertyRef Name="Nr lokalu" />
             <PropertyRef Name="NIP" />
             <PropertyRef Name="KRS" />
           </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
           <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Firma" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
           <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="5" Nullable="false" />
-          <Property Name="Numer lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="NIP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KRS" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSupplierPartsMinusType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSupplierPartsMinusType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E-mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr domu" />
+            <PropertyRef Name="Nr lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="NIP" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="KRS" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Opis" Type="nvarchar" MaxLength="100" />
@@ -1199,27 +1414,58 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSupplierParts' does not have a
 warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSupplierSemis">
           <Key>
+            <PropertyRef Name="Numer" />
             <PropertyRef Name="Typ" />
-            <PropertyRef Name="Firma" />
+            <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Telefon" />
             <PropertyRef Name="E-mail" />
             <PropertyRef Name="Miasto" />
             <PropertyRef Name="Kod pocztowy" />
             <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nr domu" />
             <PropertyRef Name="Numer lokalu" />
             <PropertyRef Name="NIP" />
             <PropertyRef Name="KRS" />
           </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
           <Property Name="Typ" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Firma" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
           <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Numer" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="Numer lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="NIP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KRS" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSupplierSemisMinusType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSupplierSemisMinusType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E-mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr domu" />
+            <PropertyRef Name="Nr lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="E-mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Miasto" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="Ulica" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nr domu" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Nr lokalu" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="NIP" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="KRS" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Opis" Type="nvarchar" MaxLength="100" />
@@ -1253,6 +1499,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vTotalNumberOfMeasuresPerProces
           <Property Name="QuantityToBeProducted" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vUnexcused' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vUnexcused">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="NUDays" Type="int" />
+          <Property Name="NUX" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vUnfinishedProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vUnfinishedProcess">
           <Key>
@@ -1270,6 +1526,16 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdDetail" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vUnpaidAbsence">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
+          <Property Name="NPADays" Type="int" />
+          <Property Name="NPAX" Type="float" />
         </EntityType>
         <Association Name="FK__Absence__IdAbsen__1332DBDC">
           <End Role="AbsenceType" Type="Self.AbsenceType" Multiplicity="0..1" />
@@ -2099,23 +2365,31 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vAbsences" EntityType="Self.vAbsences" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vAbsences].[IdEmployee] AS [IdEmployee], 
-    [vAbsences].[EmployeeName] AS [EmployeeName], 
-    [vAbsences].[EmployeeSurname] AS [EmployeeSurname], 
-    [vAbsences].[StartOfAbsence] AS [StartOfAbsence], 
-    [vAbsences].[EndOfAbsence] AS [EndOfAbsence], 
-    [vAbsences].[AbscenceReason] AS [AbscenceReason]
+    [vAbsences].[IdAbsence] AS [IdAbsence], 
+    [vAbsences].[Nazwisko] AS [Nazwisko], 
+    [vAbsences].[Imię] AS [Imię], 
+    [vAbsences].[Powód] AS [Powód], 
+    [vAbsences].[Początek] AS [Początek], 
+    [vAbsences].[Koniec] AS [Koniec], 
+    [vAbsences].[IdEmployee] AS [IdEmployee]
     FROM [dbo].[vAbsences] AS [vAbsences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vAbsenceType" EntityType="Self.vAbsenceType" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vAbsenceType].[IdAbsenceType] AS [IdAbsenceType], 
+    [vAbsenceType].[AbscenceReason] AS [AbscenceReason]
+    FROM [dbo].[vAbsenceType] AS [vAbsenceType]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vAddTraining" EntityType="Self.vAddTraining" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vAddTraining].[IdEmployee] AS [IdEmployee], 
-    [vAddTraining].[EmployeeName] AS [EmployeeName], 
-    [vAddTraining].[EmployeeSurname] AS [EmployeeSurname], 
-    [vAddTraining].[TrainingName] AS [TrainingName], 
-    [vAddTraining].[TrainingStartDate] AS [TrainingStartDate], 
-    [vAddTraining].[TrainingEndDate] AS [TrainingEndDate], 
-    [vAddTraining].[TrainingPrice] AS [TrainingPrice]
+    [vAddTraining].[IdTraining] AS [IdTraining], 
+    [vAddTraining].[Nazwisko] AS [Nazwisko], 
+    [vAddTraining].[Imię] AS [Imię], 
+    [vAddTraining].[Nazwa] AS [Nazwa], 
+    [vAddTraining].[Początek] AS [Początek], 
+    [vAddTraining].[koniec] AS [koniec], 
+    [vAddTraining].[Cena] AS [Cena], 
+    [vAddTraining].[IdEmployee] AS [IdEmployee]
     FROM [dbo].[vAddTraining] AS [vAddTraining]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vComboBoxEmployee" EntityType="Self.vComboBoxEmployee" store:Type="Views" store:Schema="dbo">
@@ -2132,32 +2406,38 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vContracts" EntityType="Self.vContracts" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vContracts].[IdEmployee] AS [IdEmployee], 
-    [vContracts].[EmployeeName] AS [EmployeeName], 
-    [vContracts].[EmployeeSurname] AS [EmployeeSurname], 
-    [vContracts].[StartDate] AS [StartDate], 
-    [vContracts].[EndDate] AS [EndDate], 
-    [vContracts].[Salary] AS [Salary], 
-    [vContracts].[WorkplaceTrainingDate] AS [WorkplaceTrainingDate], 
-    [vContracts].[HealTestDate] AS [HealTestDate], 
-    [vContracts].[Workplace] AS [Workplace]
+    [vContracts].[IdContract] AS [IdContract], 
+    [vContracts].[Nazwisko] AS [Nazwisko], 
+    [vContracts].[Imię] AS [Imię], 
+    [vContracts].[Stanowisko] AS [Stanowisko], 
+    [vContracts].[Początek] AS [Początek], 
+    [vContracts].[Koniec] AS [Koniec], 
+    [vContracts].[Wypłata] AS [Wypłata], 
+    [vContracts].[Szkolenie stanowiskowe] AS [Szkolenie stanowiskowe]
     FROM [dbo].[vContracts] AS [vContracts]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vCustomer" EntityType="Self.vCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vCustomer].[Klient] AS [Klient], 
+    [vCustomer].[Numer] AS [Numer], 
+    [vCustomer].[Nazwa] AS [Nazwa], 
     [vCustomer].[Telefon] AS [Telefon], 
     [vCustomer].[E-mail] AS [E-mail], 
     [vCustomer].[Miasto] AS [Miasto], 
     [vCustomer].[Kod pocztowy] AS [Kod pocztowy], 
     [vCustomer].[Ulica] AS [Ulica], 
-    [vCustomer].[Numer] AS [Numer], 
-    [vCustomer].[Numer lokalu] AS [Numer lokalu], 
+    [vCustomer].[Nr domu] AS [Nr domu], 
+    [vCustomer].[Nr lokalu] AS [Nr lokalu], 
     [vCustomer].[Pesel] AS [Pesel], 
     [vCustomer].[NIP] AS [NIP], 
     [vCustomer].[KRS] AS [KRS], 
     [vCustomer].[Opis] AS [Opis]
     FROM [dbo].[vCustomer] AS [vCustomer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDeparment" EntityType="Self.vDeparment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDeparment].[IdDepartment] AS [IdDepartment], 
+    [vDeparment].[DepartmentName] AS [DepartmentName]
+    FROM [dbo].[vDeparment] AS [vDeparment]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDevotionsInMeasuremntsPerProcess" EntityType="Self.vDevotionsInMeasuremntsPerProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2172,37 +2452,44 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vEducationForm" EntityType="Self.vEducationForm" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vEducationForm].[IdEmployee] AS [IdEmployee], 
-    [vEducationForm].[EmployeeName] AS [EmployeeName], 
-    [vEducationForm].[EmployeeSurname] AS [EmployeeSurname], 
-    [vEducationForm].[EducationLevel] AS [EducationLevel], 
+    [vEducationForm].[IdEducation] AS [IdEducation], 
+    [vEducationForm].[Nazwisko] AS [Nazwisko], 
+    [vEducationForm].[Imię] AS [Imię], 
+    [vEducationForm].[Stopień wykształcenia] AS [Stopień wykształcenia], 
     [vEducationForm].[Degree] AS [Degree], 
-    [vEducationForm].[DegreeShort] AS [DegreeShort], 
-    [vEducationForm].[GraduationDate] AS [GraduationDate]
+    [vEducationForm].[Tytuły naukowe] AS [Tytuły naukowe], 
+    [vEducationForm].[Data ukończenia] AS [Data ukończenia], 
+    [vEducationForm].[IdEmployee] AS [IdEmployee]
     FROM [dbo].[vEducationForm] AS [vEducationForm]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEducationLevel" EntityType="Self.vEducationLevel" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vEducationLevel].[IdEducationLevel] AS [IdEducationLevel], 
+    [vEducationLevel].[EducationLevel] AS [EducationLevel], 
+    [vEducationLevel].[Degree] AS [Degree]
+    FROM [dbo].[vEducationLevel] AS [vEducationLevel]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vEmployeeDetails" EntityType="Self.vEmployeeDetails" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vEmployeeDetails].[IdEmployee] AS [IdEmployee], 
-    [vEmployeeDetails].[EmployeeName] AS [EmployeeName], 
-    [vEmployeeDetails].[EmployeeSurname] AS [EmployeeSurname], 
-    [vEmployeeDetails].[ZipCode] AS [ZipCode], 
-    [vEmployeeDetails].[City] AS [City], 
-    [vEmployeeDetails].[Street] AS [Street], 
-    [vEmployeeDetails].[HouseNumber] AS [HouseNumber], 
-    [vEmployeeDetails].[ApartmentNum] AS [ApartmentNum], 
-    [vEmployeeDetails].[PhoneNumber] AS [PhoneNumber], 
+    [vEmployeeDetails].[Nazwisko] AS [Nazwisko], 
+    [vEmployeeDetails].[Imię] AS [Imię], 
+    [vEmployeeDetails].[Kod pocztowy] AS [Kod pocztowy], 
+    [vEmployeeDetails].[Miasto] AS [Miasto], 
+    [vEmployeeDetails].[Ulica] AS [Ulica], 
+    [vEmployeeDetails].[Nr Domu] AS [Nr Domu], 
+    [vEmployeeDetails].[Nr lokalu] AS [Nr lokalu], 
+    [vEmployeeDetails].[Nr telefonu] AS [Nr telefonu], 
     [vEmployeeDetails].[PESEL] AS [PESEL], 
-    [vEmployeeDetails].[EducationLevel] AS [EducationLevel], 
-    [vEmployeeDetails].[DegreeShort] AS [DegreeShort], 
-    [vEmployeeDetails].[GraduationDate] AS [GraduationDate], 
-    [vEmployeeDetails].[Workplace] AS [Workplace], 
-    [vEmployeeDetails].[StartDate] AS [StartDate], 
-    [vEmployeeDetails].[EndDate] AS [EndDate], 
-    [vEmployeeDetails].[Salary] AS [Salary], 
-    [vEmployeeDetails].[HealTestDate] AS [HealTestDate], 
-    [vEmployeeDetails].[WorkplaceTrainingDate] AS [WorkplaceTrainingDate], 
-    [vEmployeeDetails].[Date] AS [Date]
+    [vEmployeeDetails].[Stopień wykształcenia] AS [Stopień wykształcenia], 
+    [vEmployeeDetails].[Tytułu naukowe] AS [Tytułu naukowe], 
+    [vEmployeeDetails].[Data ukończenia studiów] AS [Data ukończenia studiów], 
+    [vEmployeeDetails].[Stanowisko] AS [Stanowisko], 
+    [vEmployeeDetails].[Początek umowy] AS [Początek umowy], 
+    [vEmployeeDetails].[Koniec umowy] AS [Koniec umowy], 
+    [vEmployeeDetails].[Wynagrodzenie] AS [Wynagrodzenie], 
+    [vEmployeeDetails].[rening Stanowiskowy] AS [rening Stanowiskowy], 
+    [vEmployeeDetails].[Data badania lekarskiego] AS [Data badania lekarskiego]
     FROM [dbo].[vEmployeeDetails] AS [vEmployeeDetails]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vEmployeeList" EntityType="Self.vEmployeeList" store:Type="Views" store:Schema="dbo">
@@ -2214,13 +2501,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vEmployeeSalesDepartment" EntityType="Self.vEmployeeSalesDepartment" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vEmployeeSalesDepartment].[Numer] AS [Numer], 
     [vEmployeeSalesDepartment].[Imię] AS [Imię], 
     [vEmployeeSalesDepartment].[Nazwisko] AS [Nazwisko], 
     [vEmployeeSalesDepartment].[Kod pocztowy] AS [Kod pocztowy], 
     [vEmployeeSalesDepartment].[Miasto] AS [Miasto], 
     [vEmployeeSalesDepartment].[Ulica] AS [Ulica], 
-    [vEmployeeSalesDepartment].[Numer] AS [Numer], 
-    [vEmployeeSalesDepartment].[Numer lokalu] AS [Numer lokalu], 
+    [vEmployeeSalesDepartment].[Nr domu] AS [Nr domu], 
+    [vEmployeeSalesDepartment].[Nr lokalu] AS [Nr lokalu], 
     [vEmployeeSalesDepartment].[Telefon] AS [Telefon], 
     [vEmployeeSalesDepartment].[PESEL] AS [PESEL], 
     [vEmployeeSalesDepartment].[Dział] AS [Dział], 
@@ -2230,20 +2518,28 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vEmployeeSD" EntityType="Self.vEmployeeSD" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vEmployeeSD].[Nr Obsługi] AS [Nr Obsługi], 
-    [vEmployeeSD].[Data przyjęcia] AS [Data przyjęcia], 
-    [vEmployeeSD].[Nazwa części] AS [Nazwa części], 
-    [vEmployeeSD].[Ilość] AS [Ilość], 
-    [vEmployeeSD].[Jednostka] AS [Jednostka]
+    [vEmployeeSD].[Numer] AS [Numer], 
+    [vEmployeeSD].[Imię] AS [Imię], 
+    [vEmployeeSD].[Nazwisko] AS [Nazwisko]
     FROM [dbo].[vEmployeeSD] AS [vEmployeeSD]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vExamination" EntityType="Self.vExamination" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vExamination].[IdEmployee] AS [IdEmployee], 
-    [vExamination].[EmployeeSurname] AS [EmployeeSurname], 
-    [vExamination].[EmployeeName] AS [EmployeeName], 
-    [vExamination].[Date] AS [Date]
+    [vExamination].[IdMedicalExamination] AS [IdMedicalExamination], 
+    [vExamination].[Nazwisko] AS [Nazwisko], 
+    [vExamination].[Imię] AS [Imię], 
+    [vExamination].[Data badania lekarskiego] AS [Data badania lekarskiego], 
+    [vExamination].[IdEmployee] AS [IdEmployee]
     FROM [dbo].[vExamination] AS [vExamination]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vExpencePartOrder" EntityType="Self.vExpencePartOrder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vExpencePartOrder].[IdSupplier] AS [IdSupplier], 
+    [vExpencePartOrder].[SupplierName] AS [SupplierName], 
+    [vExpencePartOrder].[OrderDate] AS [OrderDate], 
+    [vExpencePartOrder].[StatusPartOrder] AS [StatusPartOrder], 
+    [vExpencePartOrder].[CostPartOrder] AS [CostPartOrder]
+    FROM [dbo].[vExpencePartOrder] AS [vExpencePartOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vExpencesInvoices" EntityType="Self.vExpencesInvoices" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2283,11 +2579,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vHR" EntityType="Self.vHR" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vHR].[IdEmployee] AS [IdEmployee], 
-    [vHR].[EmployeeSurname] AS [EmployeeSurname], 
-    [vHR].[EmployeeName] AS [EmployeeName], 
-    [vHR].[City] AS [City], 
-    [vHR].[PhoneNumber] AS [PhoneNumber], 
-    [vHR].[Workplace] AS [Workplace]
+    [vHR].[Nazwisko] AS [Nazwisko], 
+    [vHR].[Imię] AS [Imię], 
+    [vHR].[PESEL] AS [PESEL], 
+    [vHR].[Stanowisko] AS [Stanowisko], 
+    [vHR].[Nr telefonu] AS [Nr telefonu]
     FROM [dbo].[vHR] AS [vHR]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vHRContract" EntityType="Self.vHRContract" store:Type="Views" store:Schema="dbo">
@@ -2297,7 +2593,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vHRExamination" EntityType="Self.vHRExamination" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vHRExamination].[IdMedicalExamination] AS [IdMedicalExamination]
+    [vHRExamination].[IdEmployee] AS [IdEmployee], 
+    [vHRExamination].[EmployeeName] AS [EmployeeName], 
+    [vHRExamination].[EmployeeSurname] AS [EmployeeSurname], 
+    [vHRExamination].[PESEL] AS [PESEL], 
+    [vHRExamination].[Workplace] AS [Workplace], 
+    [vHRExamination].[VailidityOfMedicalExam] AS [VailidityOfMedicalExam], 
+    [vHRExamination].[PreviousExamination] AS [PreviousExamination], 
+    [vHRExamination].[NextExamination] AS [NextExamination]
     FROM [dbo].[vHRExamination] AS [vHRExamination]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewOshTraining" EntityType="Self.ViewOshTraining" store:Type="Views" store:Schema="dbo">
@@ -2319,6 +2622,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vInputMagazine" EntityType="Self.vInputMagazine" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vInputMagazine].[Numer] AS [Numer], 
     [vInputMagazine].[Kod Produktu] AS [Kod Produktu], 
     [vInputMagazine].[Ilość] AS [Ilość], 
     [vInputMagazine].[Data przyjęcia na magazyn] AS [Data przyjęcia na magazyn]
@@ -2330,6 +2634,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vInvoiceType].[Type] AS [Type]
     FROM [dbo].[vInvoiceType] AS [vInvoiceType]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vL4" EntityType="Self.vL4" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vL4].[IdEmployee] AS [IdEmployee], 
+    [vL4].[L4Days] AS [L4Days], 
+    [vL4].[L4X] AS [L4X]
+    FROM [dbo].[vL4] AS [vL4]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vMaintPartsView" EntityType="Self.vMaintPartsView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vMaintPartsView].[MaintenanceNr] AS [MaintenanceNr], 
@@ -2339,44 +2650,90 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vMaintPartsView].[UnitName] AS [UnitName]
     FROM [dbo].[vMaintPartsView] AS [vMaintPartsView]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vOD" EntityType="Self.vOD" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOD].[IdEmployee] AS [IdEmployee], 
+    [vOD].[ODDays] AS [ODDays], 
+    [vOD].[ODX] AS [ODX]
+    FROM [dbo].[vOD] AS [vOD]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vOrder" EntityType="Self.vOrder" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vOrder].[Nazwa części] AS [Nazwa części], 
-    [vOrder].[Typ części] AS [Typ części], 
-    [vOrder].[Jednostka] AS [Jednostka], 
-    [vOrder].[Stan magazynowy] AS [Stan magazynowy]
+    [vOrder].[Nr zamówienia] AS [Nr zamówienia], 
+    [vOrder].[Data zamówienia] AS [Data zamówienia], 
+    [vOrder].[Wycena] AS [Wycena], 
+    [vOrder].[Marża] AS [Marża], 
+    [vOrder].[Pracownik odpowiedzialny] AS [Pracownik odpowiedzialny]
     FROM [dbo].[vOrder] AS [vOrder]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vOrderDetail].[Numer zamówienia] AS [Numer zamówienia], 
+    [vOrderDetail].[Nr zamówienia] AS [Nr zamówienia], 
     [vOrderDetail].[Kod produktu] AS [Kod produktu], 
     [vOrderDetail].[Ilość] AS [Ilość]
     FROM [dbo].[vOrderDetail] AS [vOrderDetail]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vOutputMagazine" EntityType="Self.vOutputMagazine" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vOutputMagazine].[Numer Procesu Produkcji] AS [Numer Procesu Produkcji], 
+    [vOutputMagazine].[Numer] AS [Numer], 
     [vOutputMagazine].[Kod produktu] AS [Kod produktu], 
     [vOutputMagazine].[Ilość] AS [Ilość], 
     [vOutputMagazine].[Data przyjęcia na magazyn] AS [Data przyjęcia na magazyn]
     FROM [dbo].[vOutputMagazine] AS [vOutputMagazine]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vOutsourcing" EntityType="Self.vOutsourcing" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOutsourcing].[Numer] AS [Numer], 
+    [vOutsourcing].[Nazwa] AS [Nazwa], 
+    [vOutsourcing].[Telefon] AS [Telefon], 
+    [vOutsourcing].[E-mail] AS [E-mail], 
+    [vOutsourcing].[Miasto] AS [Miasto], 
+    [vOutsourcing].[Kod pocztowy] AS [Kod pocztowy], 
+    [vOutsourcing].[Ulica] AS [Ulica], 
+    [vOutsourcing].[Nr domu] AS [Nr domu], 
+    [vOutsourcing].[Nr lokalu] AS [Nr lokalu], 
+    [vOutsourcing].[NIP] AS [NIP], 
+    [vOutsourcing].[KRS] AS [KRS], 
+    [vOutsourcing].[Opis] AS [Opis]
+    FROM [dbo].[vOutsourcing] AS [vOutsourcing]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vOutsourcingCommitment" EntityType="Self.vOutsourcingCommitment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOutsourcingCommitment].[Numer] AS [Numer], 
+    [vOutsourcingCommitment].[Nazwa] AS [Nazwa], 
+    [vOutsourcingCommitment].[Koniec zobowiązania] AS [Koniec zobowiązania], 
+    [vOutsourcingCommitment].[Cena] AS [Cena]
+    FROM [dbo].[vOutsourcingCommitment] AS [vOutsourcingCommitment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vOutsourcingType" EntityType="Self.vOutsourcingType" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vOutsourcingType].[Numer] AS [Numer], 
+    [vOutsourcingType].[Typ] AS [Typ]
+    FROM [dbo].[vOutsourcingType] AS [vOutsourcingType]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vOutsourcingWithType" EntityType="Self.vOutsourcingWithType" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vOutsourcingWithType].[Numer] AS [Numer], 
     [vOutsourcingWithType].[Typ] AS [Typ], 
-    [vOutsourcingWithType].[Firma] AS [Firma], 
+    [vOutsourcingWithType].[Nazwa] AS [Nazwa], 
     [vOutsourcingWithType].[Telefon] AS [Telefon], 
     [vOutsourcingWithType].[E-mail] AS [E-mail], 
     [vOutsourcingWithType].[Miasto] AS [Miasto], 
     [vOutsourcingWithType].[Kod pocztowy] AS [Kod pocztowy], 
     [vOutsourcingWithType].[Ulica] AS [Ulica], 
-    [vOutsourcingWithType].[Numer] AS [Numer], 
-    [vOutsourcingWithType].[Numer lokalu] AS [Numer lokalu], 
+    [vOutsourcingWithType].[Nr domu] AS [Nr domu], 
+    [vOutsourcingWithType].[Nr lokalu] AS [Nr lokalu], 
     [vOutsourcingWithType].[NIP] AS [NIP], 
     [vOutsourcingWithType].[KRS] AS [KRS], 
     [vOutsourcingWithType].[Opis] AS [Opis]
     FROM [dbo].[vOutsourcingWithType] AS [vOutsourcingWithType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPaidAbsence" EntityType="Self.vPaidAbsence" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPaidAbsence].[IdEmployee] AS [IdEmployee], 
+    [vPaidAbsence].[PADays] AS [PADays], 
+    [vPaidAbsence].[PAX] AS [PAX]
+    FROM [dbo].[vPaidAbsence] AS [vPaidAbsence]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vPartsRequestView" EntityType="Self.vPartsRequestView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2407,6 +2764,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vPaymentHistory].[Date] AS [Date], 
     [vPaymentHistory].[IdEmployee] AS [IdEmployee]
     FROM [dbo].[vPaymentHistory] AS [vPaymentHistory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPosition" EntityType="Self.vPosition" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPosition].[IdPosition] AS [IdPosition], 
+    [vPosition].[Workplace] AS [Workplace]
+    FROM [dbo].[vPosition] AS [vPosition]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vPredictedPriceForCustomer" EntityType="Self.vPredictedPriceForCustomer" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2440,6 +2803,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vSafetyControlHistoryView].[SafetyControlDescription] AS [SafetyControlDescription]
     FROM [dbo].[vSafetyControlHistoryView] AS [vSafetyControlHistoryView]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vSalariesSummary" EntityType="Self.vSalariesSummary" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSalariesSummary].[IdEmployee] AS [IdEmployee], 
+    [vSalariesSummary].[EmployeeName] AS [EmployeeName], 
+    [vSalariesSummary].[EmployeeSurname] AS [EmployeeSurname], 
+    [vSalariesSummary].[PESEL] AS [PESEL], 
+    [vSalariesSummary].[DailyWage] AS [DailyWage], 
+    [vSalariesSummary].[Date] AS [Date], 
+    [vSalariesSummary].[Dni L4] AS [Dni L4], 
+    [vSalariesSummary].[L4Pay] AS [L4Pay], 
+    [vSalariesSummary].[Urlop płatny] AS [Urlop płatny], 
+    [vSalariesSummary].[PAPay] AS [PAPay], 
+    [vSalariesSummary].[Urlop bezpłatny] AS [Urlop bezpłatny], 
+    [vSalariesSummary].[NPAPay] AS [NPAPay], 
+    [vSalariesSummary].[Nieusprawiedliowiona] AS [Nieusprawiedliowiona], 
+    [vSalariesSummary].[NPAay] AS [NPAay], 
+    [vSalariesSummary].[Na żądanie] AS [Na żądanie], 
+    [vSalariesSummary].[ODPay] AS [ODPay], 
+    [vSalariesSummary].[TotalSalary] AS [TotalSalary]
+    FROM [dbo].[vSalariesSummary] AS [vSalariesSummary]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vSuccesfullyProcess" EntityType="Self.vSuccesfullyProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vSuccesfullyProcess].[IdProcess] AS [IdProcess]
@@ -2454,35 +2838,69 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           </EntitySet>
           <EntitySet Name="vSupplierParts" EntityType="Self.vSupplierParts" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vSupplierParts].[Numer] AS [Numer], 
     [vSupplierParts].[Typ] AS [Typ], 
-    [vSupplierParts].[Firma] AS [Firma], 
+    [vSupplierParts].[Nazwa] AS [Nazwa], 
     [vSupplierParts].[Telefon] AS [Telefon], 
     [vSupplierParts].[E-mail] AS [E-mail], 
     [vSupplierParts].[Miasto] AS [Miasto], 
     [vSupplierParts].[Kod pocztowy] AS [Kod pocztowy], 
     [vSupplierParts].[Ulica] AS [Ulica], 
-    [vSupplierParts].[Numer] AS [Numer], 
-    [vSupplierParts].[Numer lokalu] AS [Numer lokalu], 
+    [vSupplierParts].[Nr domu] AS [Nr domu], 
+    [vSupplierParts].[Nr lokalu] AS [Nr lokalu], 
     [vSupplierParts].[NIP] AS [NIP], 
     [vSupplierParts].[KRS] AS [KRS], 
     [vSupplierParts].[Opis] AS [Opis]
     FROM [dbo].[vSupplierParts] AS [vSupplierParts]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vSupplierPartsMinusType" EntityType="Self.vSupplierPartsMinusType" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSupplierPartsMinusType].[Numer] AS [Numer], 
+    [vSupplierPartsMinusType].[Nazwa] AS [Nazwa], 
+    [vSupplierPartsMinusType].[Telefon] AS [Telefon], 
+    [vSupplierPartsMinusType].[E-mail] AS [E-mail], 
+    [vSupplierPartsMinusType].[Miasto] AS [Miasto], 
+    [vSupplierPartsMinusType].[Kod pocztowy] AS [Kod pocztowy], 
+    [vSupplierPartsMinusType].[Ulica] AS [Ulica], 
+    [vSupplierPartsMinusType].[Nr domu] AS [Nr domu], 
+    [vSupplierPartsMinusType].[Nr lokalu] AS [Nr lokalu], 
+    [vSupplierPartsMinusType].[NIP] AS [NIP], 
+    [vSupplierPartsMinusType].[KRS] AS [KRS], 
+    [vSupplierPartsMinusType].[Opis] AS [Opis]
+    FROM [dbo].[vSupplierPartsMinusType] AS [vSupplierPartsMinusType]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vSupplierSemis" EntityType="Self.vSupplierSemis" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vSupplierSemis].[Numer] AS [Numer], 
     [vSupplierSemis].[Typ] AS [Typ], 
-    [vSupplierSemis].[Firma] AS [Firma], 
+    [vSupplierSemis].[Nazwa] AS [Nazwa], 
     [vSupplierSemis].[Telefon] AS [Telefon], 
     [vSupplierSemis].[E-mail] AS [E-mail], 
     [vSupplierSemis].[Miasto] AS [Miasto], 
     [vSupplierSemis].[Kod pocztowy] AS [Kod pocztowy], 
     [vSupplierSemis].[Ulica] AS [Ulica], 
-    [vSupplierSemis].[Numer] AS [Numer], 
+    [vSupplierSemis].[Nr domu] AS [Nr domu], 
     [vSupplierSemis].[Numer lokalu] AS [Numer lokalu], 
     [vSupplierSemis].[NIP] AS [NIP], 
     [vSupplierSemis].[KRS] AS [KRS], 
     [vSupplierSemis].[Opis] AS [Opis]
     FROM [dbo].[vSupplierSemis] AS [vSupplierSemis]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vSupplierSemisMinusType" EntityType="Self.vSupplierSemisMinusType" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSupplierSemisMinusType].[Numer] AS [Numer], 
+    [vSupplierSemisMinusType].[Nazwa] AS [Nazwa], 
+    [vSupplierSemisMinusType].[Telefon] AS [Telefon], 
+    [vSupplierSemisMinusType].[E-mail] AS [E-mail], 
+    [vSupplierSemisMinusType].[Miasto] AS [Miasto], 
+    [vSupplierSemisMinusType].[Kod pocztowy] AS [Kod pocztowy], 
+    [vSupplierSemisMinusType].[Ulica] AS [Ulica], 
+    [vSupplierSemisMinusType].[Nr domu] AS [Nr domu], 
+    [vSupplierSemisMinusType].[Nr lokalu] AS [Nr lokalu], 
+    [vSupplierSemisMinusType].[NIP] AS [NIP], 
+    [vSupplierSemisMinusType].[KRS] AS [KRS], 
+    [vSupplierSemisMinusType].[Opis] AS [Opis]
+    FROM [dbo].[vSupplierSemisMinusType] AS [vSupplierSemisMinusType]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vTechnicalProductDataPerProcess" EntityType="Self.vTechnicalProductDataPerProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2501,6 +2919,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vTotalNumberOfMeasuresPerProcess].[QuantityToBeProducted] AS [QuantityToBeProducted]
     FROM [dbo].[vTotalNumberOfMeasuresPerProcess] AS [vTotalNumberOfMeasuresPerProcess]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vUnexcused" EntityType="Self.vUnexcused" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vUnexcused].[IdEmployee] AS [IdEmployee], 
+    [vUnexcused].[NUDays] AS [NUDays], 
+    [vUnexcused].[NUX] AS [NUX]
+    FROM [dbo].[vUnexcused] AS [vUnexcused]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vUnfinishedProcess" EntityType="Self.vUnfinishedProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vUnfinishedProcess].[IdProces] AS [IdProces]
@@ -2512,6 +2937,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
     [vUnhandledOrderDetails].[Quantity] AS [Quantity], 
     [vUnhandledOrderDetails].[ProductCode] AS [ProductCode]
     FROM [dbo].[vUnhandledOrderDetails] AS [vUnhandledOrderDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vUnpaidAbsence" EntityType="Self.vUnpaidAbsence" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vUnpaidAbsence].[IdEmployee] AS [IdEmployee], 
+    [vUnpaidAbsence].[NPADays] AS [NPADays], 
+    [vUnpaidAbsence].[NPAX] AS [NPAX]
+    FROM [dbo].[vUnpaidAbsence] AS [vUnpaidAbsence]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Absence__IdAbsen__1332DBDC" Association="Self.FK__Absence__IdAbsen__1332DBDC">
             <End Role="AbsenceType" EntitySet="AbsenceType" />
@@ -3512,31 +3944,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="InspectedEmpolyee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SafetyControlDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vAbsence">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartOfAbsence" Type="DateTime" Precision="0" />
-          <Property Name="EndOfAbsence" Type="DateTime" Precision="0" />
-          <Property Name="AbscenceReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vAddTraining">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TrainingName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="TrainingStartDate" Type="DateTime" Precision="0" />
-          <Property Name="TrainingEndDate" Type="DateTime" Precision="0" />
-          <Property Name="TrainingPrice" Type="Decimal" Precision="19" Scale="4" />
-        </EntityType>
         <EntityType Name="vComboBoxEmployee">
           <Key>
             <PropertyRef Name="IdEmployee" />
@@ -3551,45 +3958,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdMachine" Type="Int32" Nullable="false" />
           <Property Name="machineFullName" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="vContract">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
-          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
-          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vCustomer">
-          <Key>
-            <PropertyRef Name="Klient" />
-            <PropertyRef Name="Telefon" />
-            <PropertyRef Name="E_mail" />
-            <PropertyRef Name="Miasto" />
-            <PropertyRef Name="Kod_pocztowy" />
-            <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer_lokalu" />
-          </Key>
-          <Property Name="Klient" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Miasto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Kod_pocztowy" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ulica" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer_lokalu" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="NIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="KRS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="vDevotionsInMeasuremntsPerProcess">
           <Key>
             <PropertyRef Name="IdMeasurement" />
@@ -3603,23 +3971,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdMeasurement" Type="Int32" Nullable="false" />
           <Property Name="IdProcess" Type="Int32" Nullable="false" />
           <Property Name="QuantityToBeProducted" Type="Int32" Nullable="false" />
-          <Property Name="LenghtDeviation" Type="Decimal" Nullable="false" />
-          <Property Name="WidthDeviation" Type="Decimal" Nullable="false" />
+          <Property Name="LenghtDeviation" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="WidthDeviation" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
           <Property Name="LenghtAcceptableDeviation" Type="Double" Nullable="false" />
           <Property Name="WidthAcceptableDeviation" Type="Double" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vEducationForm">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="GraduationDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="vEmployeeList">
           <Key>
@@ -3629,16 +3984,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vExamination">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="vExpencesInvoice">
           <Key>
@@ -3686,29 +4031,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vHR">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="vHRContract">
           <Key>
             <PropertyRef Name="IdContract" />
           </Key>
           <Property Name="IdContract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="vHRExamination">
-          <Key>
-            <PropertyRef Name="IdMedicalExamination" />
-          </Key>
-          <Property Name="IdMedicalExamination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="ViewOshTraining">
           <Key>
@@ -3736,10 +4063,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Key>
             <PropertyRef Name="Kod_Produktu" />
             <PropertyRef Name="Data_przyjęcia_na_magazyn" />
+            <PropertyRef Name="Numer" />
           </Key>
           <Property Name="Kod_Produktu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ilość" Type="Int32" />
           <Property Name="Data_przyjęcia_na_magazyn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vInvoiceType">
           <Key>
@@ -3761,64 +4090,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="PartName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PartQuantity" Type="Int32" Nullable="false" />
           <Property Name="UnitName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="vOrder">
-          <Key>
-            <PropertyRef Name="Nazwa_części" />
-            <PropertyRef Name="Typ_części" />
-            <PropertyRef Name="Jednostka" />
-            <PropertyRef Name="Stan_magazynowy" />
-          </Key>
-          <Property Name="Nazwa_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Typ_części" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Jednostka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Stan_magazynowy" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vOrderDetail">
-          <Key>
-            <PropertyRef Name="Numer_zamówienia" />
-            <PropertyRef Name="Ilość" />
-          </Key>
-          <Property Name="Numer_zamówienia" Type="Int32" Nullable="false" />
-          <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vOutputMagazine">
-          <Key>
-            <PropertyRef Name="Data_przyjęcia_na_magazyn" />
-            <PropertyRef Name="Numer_Procesu_Produkcji" />
-          </Key>
-          <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ilość" Type="Int32" />
-          <Property Name="Data_przyjęcia_na_magazyn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Numer_Procesu_Produkcji" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vOutsourcingWithType">
-          <Key>
-            <PropertyRef Name="Typ" />
-            <PropertyRef Name="Firma" />
-            <PropertyRef Name="Telefon" />
-            <PropertyRef Name="E_mail" />
-            <PropertyRef Name="Miasto" />
-            <PropertyRef Name="Kod_pocztowy" />
-            <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer_lokalu" />
-            <PropertyRef Name="NIP" />
-            <PropertyRef Name="KRS" />
-          </Key>
-          <Property Name="Typ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Firma" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Miasto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Kod_pocztowy" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ulica" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer_lokalu" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KRS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
           <EntityType Name="vPartsRequestView">
           <Key>
@@ -3922,60 +4193,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdProcess" Type="Int32" Nullable="false" />
           <Property Name="SuccesfullProduced" Type="Int32" />
           <Property Name="QuantityToBeProducted" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vSupplierPart">
-          <Key>
-            <PropertyRef Name="Typ" />
-            <PropertyRef Name="Firma" />
-            <PropertyRef Name="Telefon" />
-            <PropertyRef Name="E_mail" />
-            <PropertyRef Name="Miasto" />
-            <PropertyRef Name="Kod_pocztowy" />
-            <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer_lokalu" />
-            <PropertyRef Name="NIP" />
-            <PropertyRef Name="KRS" />
-          </Key>
-          <Property Name="Typ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Firma" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Miasto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Kod_pocztowy" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ulica" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer_lokalu" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KRS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vSupplierSemi">
-          <Key>
-            <PropertyRef Name="Typ" />
-            <PropertyRef Name="Firma" />
-            <PropertyRef Name="Telefon" />
-            <PropertyRef Name="E_mail" />
-            <PropertyRef Name="Miasto" />
-            <PropertyRef Name="Kod_pocztowy" />
-            <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Numer" />
-            <PropertyRef Name="Numer_lokalu" />
-            <PropertyRef Name="NIP" />
-            <PropertyRef Name="KRS" />
-          </Key>
-          <Property Name="Typ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Firma" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Miasto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Kod_pocztowy" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ulica" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numer_lokalu" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="KRS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vTechnicalProductDataPerProcess">
           <Key>
@@ -4824,32 +5041,20 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="Trainings" EntityType="Self.Training" />
           <EntitySet Name="Units" EntityType="Self.Unit" />
           <EntitySet Name="SafetyControlHistoryViews" EntityType="Self.SafetyControlHistoryView" />
-          <EntitySet Name="vAbsences" EntityType="Self.vAbsence" />
-          <EntitySet Name="vAddTrainings" EntityType="Self.vAddTraining" />
           <EntitySet Name="vComboBoxEmployees" EntityType="Self.vComboBoxEmployee" />
           <EntitySet Name="vComboBoxMachines" EntityType="Self.vComboBoxMachine" />
-          <EntitySet Name="vContracts" EntityType="Self.vContract" />
-          <EntitySet Name="vCustomers" EntityType="Self.vCustomer" />
           <EntitySet Name="vDevotionsInMeasuremntsPerProcesses" EntityType="Self.vDevotionsInMeasuremntsPerProcess" />
-          <EntitySet Name="vEducationForms" EntityType="Self.vEducationForm" />
           <EntitySet Name="vEmployeeLists" EntityType="Self.vEmployeeList" />
-          <EntitySet Name="vExaminations" EntityType="Self.vExamination" />
           <EntitySet Name="vExpencesInvoices" EntityType="Self.vExpencesInvoice" />
           <EntitySet Name="vExpencesOrders" EntityType="Self.vExpencesOrder" />
           <EntitySet Name="vExpencesOutsourcings" EntityType="Self.vExpencesOutsourcing" />
           <EntitySet Name="vExpencesPayments" EntityType="Self.vExpencesPayment" />
-          <EntitySet Name="vHRs" EntityType="Self.vHR" />
           <EntitySet Name="vHRContracts" EntityType="Self.vHRContract" />
-          <EntitySet Name="vHRExaminations" EntityType="Self.vHRExamination" />
           <EntitySet Name="ViewOshTrainings" EntityType="Self.ViewOshTraining" />
           <EntitySet Name="vIncomesProfits" EntityType="Self.vIncomesProfit" />
           <EntitySet Name="vInputMagazines" EntityType="Self.vInputMagazine" />
           <EntitySet Name="vInvoiceTypes" EntityType="Self.vInvoiceType" />
           <EntitySet Name="vMaintPartsViews" EntityType="Self.vMaintPartsView" />
-          <EntitySet Name="vOrders" EntityType="Self.vOrder" />
-          <EntitySet Name="vOrderDetails" EntityType="Self.vOrderDetail" />
-          <EntitySet Name="vOutputMagazines" EntityType="Self.vOutputMagazine" />
-          <EntitySet Name="vOutsourcingWithTypes" EntityType="Self.vOutsourcingWithType" />
           <EntitySet Name="vPartsRequestViews" EntityType="Self.vPartsRequestView" />
           <EntitySet Name="vPartsViews" EntityType="Self.vPartsView" />
           <EntitySet Name="vPaymentHistories" EntityType="Self.vPaymentHistory" />
@@ -4858,8 +5063,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySet Name="vSafetyControlHistoryViews" EntityType="Self.vSafetyControlHistoryView" />
           <EntitySet Name="vSuccesfullyProcesses" EntityType="Self.vSuccesfullyProcess" />
           <EntitySet Name="vSuccesfullyProducedPerProcesses" EntityType="Self.vSuccesfullyProducedPerProcess" />
-          <EntitySet Name="vSupplierParts" EntityType="Self.vSupplierPart" />
-          <EntitySet Name="vSupplierSemis" EntityType="Self.vSupplierSemi" />
           <EntitySet Name="vTechnicalProductDataPerProcesses" EntityType="Self.vTechnicalProductDataPerProcess" />
           <EntitySet Name="vUnfinishedProcesses" EntityType="Self.vUnfinishedProcess" />
           <EntitySet Name="vUnhandledOrderDetails" EntityType="Self.vUnhandledOrderDetail" />
@@ -5115,67 +5318,306 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
             <End Role="SupplierType" EntitySet="SupplierTypes" />
             <End Role="Supplier" EntitySet="Suppliers" />
           </AssociationSet>
-          <EntitySet Name="vEmployeeDetails" EntityType="RoofingCompanyModel.vEmployeeDetail" />
+          <EntitySet Name="vOutsourcings" EntityType="RoofingCompanyModel.vOutsourcing" />
+          <EntitySet Name="vOutsourcingCommitments" EntityType="RoofingCompanyModel.vOutsourcingCommitment" />
+          <EntitySet Name="vOutsourcingTypes" EntityType="RoofingCompanyModel.vOutsourcingType" />
+          <EntitySet Name="vSupplierPartsMinusTypes" EntityType="RoofingCompanyModel.vSupplierPartsMinusType" />
+          <EntitySet Name="vSupplierSemisMinusTypes" EntityType="RoofingCompanyModel.vSupplierSemisMinusType" />
+          <EntitySet Name="vOutsourcingWithTypes" EntityType="RoofingCompanyModel.vOutsourcingWithType" />
+          <EntitySet Name="vSupplierParts" EntityType="RoofingCompanyModel.vSupplierPart" />
+          <EntitySet Name="vSupplierSemis" EntityType="RoofingCompanyModel.vSupplierSemi" />
+          <EntitySet Name="vOrders" EntityType="RoofingCompanyModel.vOrder" />
+          <EntitySet Name="vCustomers" EntityType="RoofingCompanyModel.vCustomer" />
+          <EntitySet Name="vOrderDetails" EntityType="RoofingCompanyModel.vOrderDetail" />
           <EntitySet Name="vEmployeeSDs" EntityType="RoofingCompanyModel.vEmployeeSD" />
           <EntitySet Name="vEmployeeSalesDepartments" EntityType="RoofingCompanyModel.vEmployeeSalesDepartment" />
           <EntitySet Name="vTotalNumberOfMeasuresPerProcesses" EntityType="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess" />
+          <EntitySet Name="vAbsenceTypes" EntityType="RoofingCompanyModel.vAbsenceType" />
+          <EntitySet Name="vDeparments" EntityType="RoofingCompanyModel.vDeparment" />
+          <EntitySet Name="vEducationLevels" EntityType="RoofingCompanyModel.vEducationLevel" />
+          <EntitySet Name="vExpencePartOrders" EntityType="RoofingCompanyModel.vExpencePartOrder" />
+          <EntitySet Name="vL4" EntityType="RoofingCompanyModel.vL4" />
+          <EntitySet Name="vODs" EntityType="RoofingCompanyModel.vOD" />
+          <EntitySet Name="vPaidAbsences" EntityType="RoofingCompanyModel.vPaidAbsence" />
+          <EntitySet Name="vPositions" EntityType="RoofingCompanyModel.vPosition" />
+          <EntitySet Name="vSalariesSummaries" EntityType="RoofingCompanyModel.vSalariesSummary" />
+          <EntitySet Name="vUnexcuseds" EntityType="RoofingCompanyModel.vUnexcused" />
+          <EntitySet Name="vUnpaidAbsences" EntityType="RoofingCompanyModel.vUnpaidAbsence" />
+          <EntitySet Name="vAbsences" EntityType="RoofingCompanyModel.vAbsence" />
+          <EntitySet Name="vAddTrainings" EntityType="RoofingCompanyModel.vAddTraining" />
+          <EntitySet Name="vContracts" EntityType="RoofingCompanyModel.vContract" />
+          <EntitySet Name="vEducationForms" EntityType="RoofingCompanyModel.vEducationForm" />
+          <EntitySet Name="vEmployeeDetails" EntityType="RoofingCompanyModel.vEmployeeDetail" />
+          <EntitySet Name="vExaminations" EntityType="RoofingCompanyModel.vExamination" />
+          <EntitySet Name="vHRs" EntityType="RoofingCompanyModel.vHR" />
+          <EntitySet Name="vHRExaminations" EntityType="RoofingCompanyModel.vHRExamination" />
+          <EntitySet Name="vOutputMagazines" EntityType="RoofingCompanyModel.vOutputMagazine" />
         </EntityContainer>
-        <EntityType Name="vEmployeeDetail">
+        <EntityType Name="vOutsourcing">
           <Key>
-            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Nr_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
           </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ApartmentNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PESEL" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
-          <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DegreeShort" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="GraduationDate" Type="DateTime" Precision="0" />
-          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="HealTestDate" Type="DateTime" Precision="0" />
-          <Property Name="WorkplaceTrainingDate" Type="DateTime" Precision="0" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Numer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vOutsourcingCommitment">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Koniec_zobowiązania" />
+            <PropertyRef Name="Cena" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Koniec_zobowiązania" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cena" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vOutsourcingType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Typ" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSupplierPartsMinusType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Nr_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSupplierSemisMinusType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Nr_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vEmployeeSD">
           <Key>
-            <PropertyRef Name="Nr_Obsługi" />
-            <PropertyRef Name="Data_przyjęcia" />
-            <PropertyRef Name="Nazwa_części" />
-            <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Jednostka" />
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Imię" />
           </Key>
-          <Property Name="Nr_Obsługi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Data_przyjęcia" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Nazwa_części" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
-          <Property Name="Jednostka" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vOutsourcingWithType">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Nr_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSupplierPart">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Nr_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSupplierSemi">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Numer_lokalu" />
+            <PropertyRef Name="NIP" />
+            <PropertyRef Name="KRS" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Numer_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vOrder">
+          <Key>
+            <PropertyRef Name="Nr_zamówienia" />
+            <PropertyRef Name="Data_zamówienia" />
+            <PropertyRef Name="Wycena" />
+            <PropertyRef Name="Marża" />
+          </Key>
+          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
+          <Property Name="Data_zamówienia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Wycena" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Marża" Type="Double" Nullable="false" />
+          <Property Name="Pracownik_odpowiedzialny" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vCustomer">
+          <Key>
+            <PropertyRef Name="Numer" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="E_mail" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Kod_pocztowy" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Nr_domu" />
+            <PropertyRef Name="Nr_lokalu" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="NIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KRS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vEmployeeSalesDepartment">
           <Key>
+            <PropertyRef Name="Numer" />
             <PropertyRef Name="Imię" />
           </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
           <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Kod_pocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Miasto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Numer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Numer_lokalu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_domu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="Dział" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Data_początku" Type="DateTime" Precision="0" />
           <Property Name="Data_końca" Type="DateTime" Precision="0" />
         </EntityType>
+        <EntityType Name="vOrderDetail">
+          <Key>
+            <PropertyRef Name="Nr_zamówienia" />
+            <PropertyRef Name="Ilość" />
+          </Key>
+          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
+          <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" Nullable="false" />
+        </EntityType>
+
         <EntityType Name="vTotalNumberOfMeasuresPerProcess">
           <Key>
             <PropertyRef Name="IdProcess" />
@@ -5184,6 +5626,248 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <Property Name="IdProcess" Type="Int32" Nullable="false" />
           <Property Name="Produced" Type="Int32" />
           <Property Name="QuantityToBeProducted" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vAbsenceType">
+          <Key>
+            <PropertyRef Name="IdAbsenceType" />
+          </Key>
+          <Property Name="IdAbsenceType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AbscenceReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vDeparment">
+          <Key>
+            <PropertyRef Name="IdDepartment" />
+          </Key>
+          <Property Name="IdDepartment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vEducationLevel">
+          <Key>
+            <PropertyRef Name="IdEducationLevel" />
+          </Key>
+          <Property Name="IdEducationLevel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vExpencePartOrder">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="StatusPartOrder" />
+            <PropertyRef Name="CostPartOrder" />
+          </Key>
+          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StatusPartOrder" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CostPartOrder" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vL4">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="L4Days" Type="Int32" />
+          <Property Name="L4X" Type="Double" />
+        </EntityType>
+        <EntityType Name="vOD">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="ODDays" Type="Int32" />
+          <Property Name="ODX" Type="Double" />
+        </EntityType>
+        <EntityType Name="vPaidAbsence">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="PADays" Type="Int32" />
+          <Property Name="PAX" Type="Double" />
+        </EntityType>
+        <EntityType Name="vPosition">
+          <Key>
+            <PropertyRef Name="IdPosition" />
+          </Key>
+          <Property Name="IdPosition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vSalariesSummary">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="Dni_L4" />
+            <PropertyRef Name="Urlop_płatny" />
+            <PropertyRef Name="Urlop_bezpłatny" />
+            <PropertyRef Name="Nieusprawiedliowiona" />
+            <PropertyRef Name="Na_żądanie" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="DailyWage" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Dni_L4" Type="Int32" Nullable="false" />
+          <Property Name="L4Pay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop_płatny" Type="Int32" Nullable="false" />
+          <Property Name="PAPay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Urlop_bezpłatny" Type="Int32" Nullable="false" />
+          <Property Name="NPAPay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Nieusprawiedliowiona" Type="Int32" Nullable="false" />
+          <Property Name="NPAay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Na_żądanie" Type="Int32" Nullable="false" />
+          <Property Name="ODPay" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TotalSalary" Type="Double" />
+        </EntityType>
+        <EntityType Name="vUnexcused">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="NUDays" Type="Int32" />
+          <Property Name="NUX" Type="Double" />
+        </EntityType>
+        <EntityType Name="vUnpaidAbsence">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="NPADays" Type="Int32" />
+          <Property Name="NPAX" Type="Double" />
+        </EntityType>
+        <EntityType Name="vAbsence">
+          <Key>
+            <PropertyRef Name="IdAbsence" />
+            <PropertyRef Name="Imię" />
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdAbsence" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Powód" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Początek" Type="DateTime" Precision="0" />
+          <Property Name="Koniec" Type="DateTime" Precision="0" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vAddTraining">
+          <Key>
+            <PropertyRef Name="IdTraining" />
+            <PropertyRef Name="Imię" />
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdTraining" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Początek" Type="DateTime" Precision="0" />
+          <Property Name="koniec" Type="DateTime" Precision="0" />
+          <Property Name="Cena" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vContract">
+          <Key>
+            <PropertyRef Name="IdContract" />
+            <PropertyRef Name="Imię" />
+          </Key>
+          <Property Name="IdContract" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stanowisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Początek" Type="DateTime" Precision="0" />
+          <Property Name="Koniec" Type="DateTime" Precision="0" />
+          <Property Name="Wypłata" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Szkolenie_stanowiskowe" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vEducationForm">
+          <Key>
+            <PropertyRef Name="IdEducation" />
+            <PropertyRef Name="Imię" />
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdEducation" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stopień_wykształcenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tytuły_naukowe" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Data_ukończenia" Type="DateTime" Precision="0" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vEmployeeDetail">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="Imię" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_pocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Miasto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_Domu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_lokalu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Stopień_wykształcenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tytułu_naukowe" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Data_ukończenia_studiów" Type="DateTime" Precision="0" />
+          <Property Name="Stanowisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Początek_umowy" Type="DateTime" Precision="0" />
+          <Property Name="Koniec_umowy" Type="DateTime" Precision="0" />
+          <Property Name="Wynagrodzenie" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rening_Stanowiskowy" Type="DateTime" Precision="0" />
+          <Property Name="Data_badania_lekarskiego" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vExamination">
+          <Key>
+            <PropertyRef Name="IdMedicalExamination" />
+            <PropertyRef Name="Imię" />
+            <PropertyRef Name="IdEmployee" />
+          </Key>
+          <Property Name="IdMedicalExamination" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data_badania_lekarskiego" Type="DateTime" Precision="0" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vHR">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="Imię" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imię" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Stanowisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nr_telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vHRExamination">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="PreviousExamination" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VailidityOfMedicalExam" Type="Int32" />
+          <Property Name="PreviousExamination" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NextExamination" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="vOutputMagazine">
+          <Key>
+            <PropertyRef Name="Numer" />
+          </Key>
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" />
+          <Property Name="Data_przyjęcia_na_magazyn" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5866,31 +6550,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vAbsences">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vAbsence">
-              <MappingFragment StoreEntitySet="vAbsences">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="StartOfAbsence" ColumnName="StartOfAbsence" />
-                <ScalarProperty Name="EndOfAbsence" ColumnName="EndOfAbsence" />
-                <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vAddTrainings">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vAddTraining">
-              <MappingFragment StoreEntitySet="vAddTraining">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />
-                <ScalarProperty Name="TrainingStartDate" ColumnName="TrainingStartDate" />
-                <ScalarProperty Name="TrainingEndDate" ColumnName="TrainingEndDate" />
-                <ScalarProperty Name="TrainingPrice" ColumnName="TrainingPrice" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vComboBoxEmployees">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vComboBoxEmployee">
               <MappingFragment StoreEntitySet="vComboBoxEmployee">
@@ -5907,39 +6566,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vContracts">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vContract">
-              <MappingFragment StoreEntitySet="vContracts">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
-                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
-                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vCustomers">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vCustomer">
-              <MappingFragment StoreEntitySet="vCustomer">
-                <ScalarProperty Name="Klient" ColumnName="Klient" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
-                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
-                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
-                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
-                <ScalarProperty Name="Numer" ColumnName="Numer" />
-                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
-                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="Opis" ColumnName="Opis" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vDevotionsInMeasuremntsPerProcesses">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess">
               <MappingFragment StoreEntitySet="vDevotionsInMeasuremntsPerProcess">
@@ -5953,35 +6579,12 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vEducationForms">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vEducationForm">
-              <MappingFragment StoreEntitySet="vEducationForm">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
-                <ScalarProperty Name="Degree" ColumnName="Degree" />
-                <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
-                <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vEmployeeLists">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeList">
               <MappingFragment StoreEntitySet="vEmployeeList">
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vExaminations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vExamination">
-              <MappingFragment StoreEntitySet="vExamination">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6028,29 +6631,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vHRs">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vHR">
-              <MappingFragment StoreEntitySet="vHR">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vHRContracts">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vHRContract">
               <MappingFragment StoreEntitySet="vHRContract">
                 <ScalarProperty Name="IdContract" ColumnName="IdContract" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vHRExaminations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
-              <MappingFragment StoreEntitySet="vHRExamination">
-                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6078,6 +6662,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
           <EntitySetMapping Name="vInputMagazines">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vInputMagazine">
               <MappingFragment StoreEntitySet="vInputMagazine">
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
                 <ScalarProperty Name="Kod_Produktu" ColumnName="Kod Produktu" />
                 <ScalarProperty Name="Ilość" ColumnName="Ilość" />
                 <ScalarProperty Name="Data_przyjęcia_na_magazyn" ColumnName="Data przyjęcia na magazyn" />
@@ -6100,53 +6685,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="PartName" ColumnName="PartName" />
                 <ScalarProperty Name="DateAcceptOrder" ColumnName="DateAcceptOrder" />
                 <ScalarProperty Name="MaintenanceNr" ColumnName="MaintenanceNr" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vOrders">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vOrder">
-              <MappingFragment StoreEntitySet="vOrder">
-                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
-                <ScalarProperty Name="Typ_części" ColumnName="Typ części" />
-                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
-                <ScalarProperty Name="Stan_magazynowy" ColumnName="Stan magazynowy" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vOrderDetails">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
-              <MappingFragment StoreEntitySet="vOrderDetail">
-                <ScalarProperty Name="Numer_zamówienia" ColumnName="Numer zamówienia" />
-                <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vOutputMagazines">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutputMagazine">
-              <MappingFragment StoreEntitySet="vOutputMagazine">
-                <ScalarProperty Name="Numer_Procesu_Produkcji" ColumnName="Numer Procesu Produkcji" />
-                <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-                <ScalarProperty Name="Data_przyjęcia_na_magazyn" ColumnName="Data przyjęcia na magazyn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vOutsourcingWithTypes">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcingWithType">
-              <MappingFragment StoreEntitySet="vOutsourcingWithType">
-                <ScalarProperty Name="Typ" ColumnName="Typ" />
-                <ScalarProperty Name="Firma" ColumnName="Firma" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
-                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
-                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
-                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
-                <ScalarProperty Name="Numer" ColumnName="Numer" />
-                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="Opis" ColumnName="Opis" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6229,42 +6767,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vSupplierParts">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierPart">
-              <MappingFragment StoreEntitySet="vSupplierParts">
-                <ScalarProperty Name="Typ" ColumnName="Typ" />
-                <ScalarProperty Name="Firma" ColumnName="Firma" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
-                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
-                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
-                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
-                <ScalarProperty Name="Numer" ColumnName="Numer" />
-                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="Opis" ColumnName="Opis" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vSupplierSemis">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemi">
-              <MappingFragment StoreEntitySet="vSupplierSemis">
-                <ScalarProperty Name="Typ" ColumnName="Typ" />
-                <ScalarProperty Name="Firma" ColumnName="Firma" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
-                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
-                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
-                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
-                <ScalarProperty Name="Numer" ColumnName="Numer" />
-                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
-                <ScalarProperty Name="NIP" ColumnName="NIP" />
-                <ScalarProperty Name="KRS" ColumnName="KRS" />
-                <ScalarProperty Name="Opis" ColumnName="Opis" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vTechnicalProductDataPerProcesses">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vTechnicalProductDataPerProcess">
               <MappingFragment StoreEntitySet="vTechnicalProductDataPerProcess">
@@ -6293,40 +6795,171 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vEmployeeDetails">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeDetail">
-              <MappingFragment StoreEntitySet="vEmployeeDetails">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="WorkplaceTrainingDate" ColumnName="WorkplaceTrainingDate" />
-                <ScalarProperty Name="HealTestDate" ColumnName="HealTestDate" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
-                <ScalarProperty Name="GraduationDate" ColumnName="GraduationDate" />
-                <ScalarProperty Name="DegreeShort" ColumnName="DegreeShort" />
-                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
-                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="ApartmentNum" ColumnName="ApartmentNum" />
-                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
-                <ScalarProperty Name="Street" ColumnName="Street" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+          <EntitySetMapping Name="vOutsourcings">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcing">
+              <MappingFragment StoreEntitySet="vOutsourcing">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutsourcingCommitments">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcingCommitment">
+              <MappingFragment StoreEntitySet="vOutsourcingCommitment">
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Koniec_zobowiązania" ColumnName="Koniec zobowiązania" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutsourcingTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcingType">
+              <MappingFragment StoreEntitySet="vOutsourcingType">
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierPartsMinusTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierPartsMinusType">
+              <MappingFragment StoreEntitySet="vSupplierPartsMinusType">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierSemisMinusTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemisMinusType">
+              <MappingFragment StoreEntitySet="vSupplierSemisMinusType">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vEmployeeSDs">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeSD">
               <MappingFragment StoreEntitySet="vEmployeeSD">
-                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-                <ScalarProperty Name="Nazwa_części" ColumnName="Nazwa części" />
-                <ScalarProperty Name="Data_przyjęcia" ColumnName="Data przyjęcia" />
-                <ScalarProperty Name="Nr_Obsługi" ColumnName="Nr Obsługi" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutsourcingWithTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutsourcingWithType">
+              <MappingFragment StoreEntitySet="vOutsourcingWithType">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierParts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierPart">
+              <MappingFragment StoreEntitySet="vSupplierParts">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSupplierSemis">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSupplierSemi">
+              <MappingFragment StoreEntitySet="vSupplierSemis">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOrders">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOrder">
+              <MappingFragment StoreEntitySet="vOrder">
+                <ScalarProperty Name="Pracownik_odpowiedzialny" ColumnName="Pracownik odpowiedzialny" />
+                <ScalarProperty Name="Marża" ColumnName="Marża" />
+                <ScalarProperty Name="Wycena" ColumnName="Wycena" />
+                <ScalarProperty Name="Data_zamówienia" ColumnName="Data zamówienia" />
+                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vCustomers">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vCustomer">
+              <MappingFragment StoreEntitySet="vCustomer">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="KRS" ColumnName="KRS" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6338,16 +6971,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="Dział" ColumnName="Dział" />
                 <ScalarProperty Name="PESEL" ColumnName="PESEL" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="Numer_lokalu" ColumnName="Numer lokalu" />
-                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_domu" ColumnName="Nr domu" />
                 <ScalarProperty Name="Ulica" ColumnName="Ulica" />
                 <ScalarProperty Name="Miasto" ColumnName="Miasto" />
                 <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vOrderDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
+              <MappingFragment StoreEntitySet="vOrderDetail">
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
+                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+
           <EntitySetMapping Name="vPartsRequestViews">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vPartsRequestView">
               <MappingFragment StoreEntitySet="vPartsRequestView">
@@ -6365,6 +7009,245 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnhandledOrderDetails' does no
                 <ScalarProperty Name="QuantityToBeProducted" ColumnName="QuantityToBeProducted" />
                 <ScalarProperty Name="Produced" ColumnName="Produced" />
                 <ScalarProperty Name="IdProcess" ColumnName="IdProcess" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAbsenceTypes">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vAbsenceType">
+              <MappingFragment StoreEntitySet="vAbsenceType">
+                <ScalarProperty Name="AbscenceReason" ColumnName="AbscenceReason" />
+                <ScalarProperty Name="IdAbsenceType" ColumnName="IdAbsenceType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDeparments">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vDeparment">
+              <MappingFragment StoreEntitySet="vDeparment">
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEducationLevels">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEducationLevel">
+              <MappingFragment StoreEntitySet="vEducationLevel">
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+                <ScalarProperty Name="IdEducationLevel" ColumnName="IdEducationLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExpencePartOrders">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExpencePartOrder">
+              <MappingFragment StoreEntitySet="vExpencePartOrder">
+                <ScalarProperty Name="CostPartOrder" ColumnName="CostPartOrder" />
+                <ScalarProperty Name="StatusPartOrder" ColumnName="StatusPartOrder" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vL4">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vL4">
+              <MappingFragment StoreEntitySet="vL4">
+                <ScalarProperty Name="L4X" ColumnName="L4X" />
+                <ScalarProperty Name="L4Days" ColumnName="L4Days" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vODs">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOD">
+              <MappingFragment StoreEntitySet="vOD">
+                <ScalarProperty Name="ODX" ColumnName="ODX" />
+                <ScalarProperty Name="ODDays" ColumnName="ODDays" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPaidAbsences">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPaidAbsence">
+              <MappingFragment StoreEntitySet="vPaidAbsence">
+                <ScalarProperty Name="PAX" ColumnName="PAX" />
+                <ScalarProperty Name="PADays" ColumnName="PADays" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPositions">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vPosition">
+              <MappingFragment StoreEntitySet="vPosition">
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSalariesSummaries">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSalariesSummary">
+              <MappingFragment StoreEntitySet="vSalariesSummary">
+                <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+                <ScalarProperty Name="ODPay" ColumnName="ODPay" />
+                <ScalarProperty Name="Na_żądanie" ColumnName="Na żądanie" />
+                <ScalarProperty Name="NPAay" ColumnName="NPAay" />
+                <ScalarProperty Name="Nieusprawiedliowiona" ColumnName="Nieusprawiedliowiona" />
+                <ScalarProperty Name="NPAPay" ColumnName="NPAPay" />
+                <ScalarProperty Name="Urlop_bezpłatny" ColumnName="Urlop bezpłatny" />
+                <ScalarProperty Name="PAPay" ColumnName="PAPay" />
+                <ScalarProperty Name="Urlop_płatny" ColumnName="Urlop płatny" />
+                <ScalarProperty Name="L4Pay" ColumnName="L4Pay" />
+                <ScalarProperty Name="Dni_L4" ColumnName="Dni L4" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DailyWage" ColumnName="DailyWage" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vUnexcuseds">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vUnexcused">
+              <MappingFragment StoreEntitySet="vUnexcused">
+                <ScalarProperty Name="NUX" ColumnName="NUX" />
+                <ScalarProperty Name="NUDays" ColumnName="NUDays" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vUnpaidAbsences">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vUnpaidAbsence">
+              <MappingFragment StoreEntitySet="vUnpaidAbsence">
+                <ScalarProperty Name="NPAX" ColumnName="NPAX" />
+                <ScalarProperty Name="NPADays" ColumnName="NPADays" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAbsences">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vAbsence">
+              <MappingFragment StoreEntitySet="vAbsences">
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Koniec" ColumnName="Koniec" />
+                <ScalarProperty Name="Początek" ColumnName="Początek" />
+                <ScalarProperty Name="Powód" ColumnName="Powód" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdAbsence" ColumnName="IdAbsence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vAddTrainings">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vAddTraining">
+              <MappingFragment StoreEntitySet="vAddTraining">
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="koniec" ColumnName="koniec" />
+                <ScalarProperty Name="Początek" ColumnName="Początek" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdTraining" ColumnName="IdTraining" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vContracts">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vContract">
+              <MappingFragment StoreEntitySet="vContracts">
+                <ScalarProperty Name="Szkolenie_stanowiskowe" ColumnName="Szkolenie stanowiskowe" />
+                <ScalarProperty Name="Wypłata" ColumnName="Wypłata" />
+                <ScalarProperty Name="Koniec" ColumnName="Koniec" />
+                <ScalarProperty Name="Początek" ColumnName="Początek" />
+                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdContract" ColumnName="IdContract" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEducationForms">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEducationForm">
+              <MappingFragment StoreEntitySet="vEducationForm">
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Data_ukończenia" ColumnName="Data ukończenia" />
+                <ScalarProperty Name="Tytuły_naukowe" ColumnName="Tytuły naukowe" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="Stopień_wykształcenia" ColumnName="Stopień wykształcenia" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdEducation" ColumnName="IdEducation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vEmployeeDetail">
+              <MappingFragment StoreEntitySet="vEmployeeDetails">
+                <ScalarProperty Name="Data_badania_lekarskiego" ColumnName="Data badania lekarskiego" />
+                <ScalarProperty Name="rening_Stanowiskowy" ColumnName="rening Stanowiskowy" />
+                <ScalarProperty Name="Wynagrodzenie" ColumnName="Wynagrodzenie" />
+                <ScalarProperty Name="Koniec_umowy" ColumnName="Koniec umowy" />
+                <ScalarProperty Name="Początek_umowy" ColumnName="Początek umowy" />
+                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+                <ScalarProperty Name="Data_ukończenia_studiów" ColumnName="Data ukończenia studiów" />
+                <ScalarProperty Name="Tytułu_naukowe" ColumnName="Tytułu naukowe" />
+                <ScalarProperty Name="Stopień_wykształcenia" ColumnName="Stopień wykształcenia" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="Nr_telefonu" ColumnName="Nr telefonu" />
+                <ScalarProperty Name="Nr_lokalu" ColumnName="Nr lokalu" />
+                <ScalarProperty Name="Nr_Domu" ColumnName="Nr Domu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vExaminations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vExamination">
+              <MappingFragment StoreEntitySet="vExamination">
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+                <ScalarProperty Name="Data_badania_lekarskiego" ColumnName="Data badania lekarskiego" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHRs">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHR">
+              <MappingFragment StoreEntitySet="vHR">
+                <ScalarProperty Name="Nr_telefonu" ColumnName="Nr telefonu" />
+                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vHRExaminations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
+              <MappingFragment StoreEntitySet="vHRExamination">
+                <ScalarProperty Name="NextExamination" ColumnName="NextExamination" />
+                <ScalarProperty Name="PreviousExamination" ColumnName="PreviousExamination" />
+                <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOutputMagazines">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vOutputMagazine">
+              <MappingFragment StoreEntitySet="vOutputMagazine">
+                <ScalarProperty Name="Data_przyjęcia_na_magazyn" ColumnName="Data przyjęcia na magazyn" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

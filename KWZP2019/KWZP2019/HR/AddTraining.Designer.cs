@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTraining));
             this.dgvTrainings = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblTrainingName = new System.Windows.Forms.Label();
             this.tbTrainingName = new System.Windows.Forms.TextBox();
             this.lblTrainingStartDate = new System.Windows.Forms.Label();
-            this.dateTimePickerTrainingStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerTrainingEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpTrainingStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpTrainingEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblTrainingEndDate = new System.Windows.Forms.Label();
             this.lblEmployeeFirstName = new System.Windows.Forms.Label();
             this.tbEmployeeFirstName = new System.Windows.Forms.TextBox();
@@ -48,171 +53,259 @@
             this.tbSearchTrainingName = new System.Windows.Forms.TextBox();
             this.lblSearchTrainingSurname = new System.Windows.Forms.Label();
             this.lblSearchTrainingName = new System.Windows.Forms.Label();
+            this.pbAddTraining = new System.Windows.Forms.PictureBox();
+            this.lblFormTitle = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReturnMain = new System.Windows.Forms.Button();
+            this.cbEmployeeList = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddTraining)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTrainings
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTrainings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTrainings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTrainings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvTrainings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrainings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTrainings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrainings.Location = new System.Drawing.Point(27, 54);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTrainings.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTrainings.EnableHeadersVisualStyles = false;
+            this.dgvTrainings.Location = new System.Drawing.Point(27, 81);
             this.dgvTrainings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTrainings.Name = "dgvTrainings";
             this.dgvTrainings.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTrainings.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTrainings.RowTemplate.Height = 24;
-            this.dgvTrainings.Size = new System.Drawing.Size(503, 353);
+            this.dgvTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTrainings.Size = new System.Drawing.Size(708, 513);
             this.dgvTrainings.TabIndex = 0;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(555, 396);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(1020, 624);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 42);
+            this.btnAdd.Size = new System.Drawing.Size(269, 185);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Dodaj";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(635, 396);
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Location = new System.Drawing.Point(28, 607);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 42);
+            this.btnDelete.Size = new System.Drawing.Size(341, 70);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Usuń";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblTrainingName
             // 
             this.lblTrainingName.AutoSize = true;
-            this.lblTrainingName.Location = new System.Drawing.Point(569, 34);
+            this.lblTrainingName.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTrainingName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTrainingName.Location = new System.Drawing.Point(864, 288);
             this.lblTrainingName.Name = "lblTrainingName";
-            this.lblTrainingName.Size = new System.Drawing.Size(113, 17);
+            this.lblTrainingName.Size = new System.Drawing.Size(174, 25);
             this.lblTrainingName.TabIndex = 3;
             this.lblTrainingName.Text = "Nazwa szkolenia";
             // 
             // tbTrainingName
             // 
-            this.tbTrainingName.Location = new System.Drawing.Point(572, 54);
+            this.tbTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbTrainingName.Location = new System.Drawing.Point(1128, 294);
             this.tbTrainingName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTrainingName.Name = "tbTrainingName";
-            this.tbTrainingName.Size = new System.Drawing.Size(100, 22);
+            this.tbTrainingName.Size = new System.Drawing.Size(333, 26);
             this.tbTrainingName.TabIndex = 4;
             // 
             // lblTrainingStartDate
             // 
             this.lblTrainingStartDate.AutoSize = true;
-            this.lblTrainingStartDate.Location = new System.Drawing.Point(572, 95);
+            this.lblTrainingStartDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrainingStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTrainingStartDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTrainingStartDate.Location = new System.Drawing.Point(864, 348);
             this.lblTrainingStartDate.Name = "lblTrainingStartDate";
-            this.lblTrainingStartDate.Size = new System.Drawing.Size(129, 17);
+            this.lblTrainingStartDate.Size = new System.Drawing.Size(198, 25);
             this.lblTrainingStartDate.TabIndex = 5;
             this.lblTrainingStartDate.Text = "Początek szkolenia";
             // 
-            // dateTimePickerTrainingStartDate
+            // dtpTrainingStartDate
             // 
-            this.dateTimePickerTrainingStartDate.Location = new System.Drawing.Point(572, 114);
-            this.dateTimePickerTrainingStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerTrainingStartDate.Name = "dateTimePickerTrainingStartDate";
-            this.dateTimePickerTrainingStartDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerTrainingStartDate.TabIndex = 6;
+            this.dtpTrainingStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpTrainingStartDate.Location = new System.Drawing.Point(1128, 354);
+            this.dtpTrainingStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTrainingStartDate.Name = "dtpTrainingStartDate";
+            this.dtpTrainingStartDate.Size = new System.Drawing.Size(333, 26);
+            this.dtpTrainingStartDate.TabIndex = 6;
             // 
-            // dateTimePickerTrainingEndDate
+            // dtpTrainingEndDate
             // 
-            this.dateTimePickerTrainingEndDate.Location = new System.Drawing.Point(572, 176);
-            this.dateTimePickerTrainingEndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerTrainingEndDate.Name = "dateTimePickerTrainingEndDate";
-            this.dateTimePickerTrainingEndDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerTrainingEndDate.TabIndex = 7;
+            this.dtpTrainingEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpTrainingEndDate.Location = new System.Drawing.Point(1128, 412);
+            this.dtpTrainingEndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTrainingEndDate.Name = "dtpTrainingEndDate";
+            this.dtpTrainingEndDate.Size = new System.Drawing.Size(333, 26);
+            this.dtpTrainingEndDate.TabIndex = 7;
             // 
             // lblTrainingEndDate
             // 
             this.lblTrainingEndDate.AutoSize = true;
-            this.lblTrainingEndDate.Location = new System.Drawing.Point(572, 157);
+            this.lblTrainingEndDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrainingEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTrainingEndDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTrainingEndDate.Location = new System.Drawing.Point(864, 410);
             this.lblTrainingEndDate.Name = "lblTrainingEndDate";
-            this.lblTrainingEndDate.Size = new System.Drawing.Size(114, 17);
+            this.lblTrainingEndDate.Size = new System.Drawing.Size(176, 25);
             this.lblTrainingEndDate.TabIndex = 8;
             this.lblTrainingEndDate.Text = "Koniec szkolenia";
             // 
             // lblEmployeeFirstName
             // 
             this.lblEmployeeFirstName.AutoSize = true;
-            this.lblEmployeeFirstName.Location = new System.Drawing.Point(572, 212);
+            this.lblEmployeeFirstName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeeFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmployeeFirstName.Location = new System.Drawing.Point(864, 466);
             this.lblEmployeeFirstName.Name = "lblEmployeeFirstName";
-            this.lblEmployeeFirstName.Size = new System.Drawing.Size(108, 17);
+            this.lblEmployeeFirstName.Size = new System.Drawing.Size(167, 25);
             this.lblEmployeeFirstName.TabIndex = 9;
             this.lblEmployeeFirstName.Text = "Imię pracownika";
             // 
             // tbEmployeeFirstName
             // 
-            this.tbEmployeeFirstName.Location = new System.Drawing.Point(572, 231);
+            this.tbEmployeeFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbEmployeeFirstName.Location = new System.Drawing.Point(1128, 463);
             this.tbEmployeeFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmployeeFirstName.Name = "tbEmployeeFirstName";
-            this.tbEmployeeFirstName.Size = new System.Drawing.Size(100, 22);
+            this.tbEmployeeFirstName.Size = new System.Drawing.Size(333, 26);
             this.tbEmployeeFirstName.TabIndex = 10;
             // 
             // tbEmployeeLastName
             // 
-            this.tbEmployeeLastName.Location = new System.Drawing.Point(575, 284);
+            this.tbEmployeeLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbEmployeeLastName.Location = new System.Drawing.Point(1128, 514);
             this.tbEmployeeLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmployeeLastName.Name = "tbEmployeeLastName";
-            this.tbEmployeeLastName.Size = new System.Drawing.Size(100, 22);
+            this.tbEmployeeLastName.Size = new System.Drawing.Size(333, 26);
             this.tbEmployeeLastName.TabIndex = 11;
             // 
             // lblEmployeeLastName
             // 
             this.lblEmployeeLastName.AutoSize = true;
-            this.lblEmployeeLastName.Location = new System.Drawing.Point(572, 265);
+            this.lblEmployeeLastName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeeLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmployeeLastName.Location = new System.Drawing.Point(864, 518);
             this.lblEmployeeLastName.Name = "lblEmployeeLastName";
-            this.lblEmployeeLastName.Size = new System.Drawing.Size(142, 17);
+            this.lblEmployeeLastName.Size = new System.Drawing.Size(219, 25);
             this.lblEmployeeLastName.TabIndex = 12;
             this.lblEmployeeLastName.Text = "Nazwisko pracownika";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(716, 396);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEdit.Location = new System.Drawing.Point(405, 607);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 42);
+            this.btnEdit.Size = new System.Drawing.Size(329, 70);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edytuj";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // tbTrainingPrice
             // 
-            this.tbTrainingPrice.Location = new System.Drawing.Point(572, 341);
+            this.tbTrainingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbTrainingPrice.Location = new System.Drawing.Point(1128, 566);
+            this.tbTrainingPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTrainingPrice.Name = "tbTrainingPrice";
-            this.tbTrainingPrice.Size = new System.Drawing.Size(153, 22);
+            this.tbTrainingPrice.Size = new System.Drawing.Size(333, 26);
             this.tbTrainingPrice.TabIndex = 14;
             // 
             // lblTrainingPrice
             // 
             this.lblTrainingPrice.AutoSize = true;
-            this.lblTrainingPrice.Location = new System.Drawing.Point(572, 321);
+            this.lblTrainingPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrainingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTrainingPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTrainingPrice.Location = new System.Drawing.Point(864, 570);
             this.lblTrainingPrice.Name = "lblTrainingPrice";
-            this.lblTrainingPrice.Size = new System.Drawing.Size(43, 17);
+            this.lblTrainingPrice.Size = new System.Drawing.Size(67, 25);
             this.lblTrainingPrice.TabIndex = 15;
             this.lblTrainingPrice.Text = "Koszt";
             // 
             // tbSearchTraining
             // 
-            this.tbSearchTraining.Location = new System.Drawing.Point(27, 27);
+            this.tbSearchTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbSearchTraining.Location = new System.Drawing.Point(112, 27);
+            this.tbSearchTraining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSearchTraining.Name = "tbSearchTraining";
-            this.tbSearchTraining.Size = new System.Drawing.Size(201, 22);
+            this.tbSearchTraining.Size = new System.Drawing.Size(256, 26);
             this.tbSearchTraining.TabIndex = 16;
             this.tbSearchTraining.TextChanged += new System.EventHandler(this.tbSearchTraining_TextChanged);
             // 
             // tbSearchTrainingName
             // 
-            this.tbSearchTrainingName.Location = new System.Drawing.Point(329, 27);
+            this.tbSearchTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbSearchTrainingName.Location = new System.Drawing.Point(481, 27);
+            this.tbSearchTrainingName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSearchTrainingName.Name = "tbSearchTrainingName";
-            this.tbSearchTrainingName.Size = new System.Drawing.Size(201, 22);
+            this.tbSearchTrainingName.Size = new System.Drawing.Size(252, 26);
             this.tbSearchTrainingName.TabIndex = 17;
             this.tbSearchTrainingName.TextChanged += new System.EventHandler(this.tbSearchTrainingName_TextChanged);
             // 
             // lblSearchTrainingSurname
             // 
             this.lblSearchTrainingSurname.AutoSize = true;
-            this.lblSearchTrainingSurname.Location = new System.Drawing.Point(24, 7);
+            this.lblSearchTrainingSurname.Location = new System.Drawing.Point(24, 39);
             this.lblSearchTrainingSurname.Name = "lblSearchTrainingSurname";
             this.lblSearchTrainingSurname.Size = new System.Drawing.Size(67, 17);
             this.lblSearchTrainingSurname.TabIndex = 18;
@@ -221,17 +314,96 @@
             // lblSearchTrainingName
             // 
             this.lblSearchTrainingName.AutoSize = true;
-            this.lblSearchTrainingName.Location = new System.Drawing.Point(326, 7);
+            this.lblSearchTrainingName.Location = new System.Drawing.Point(401, 39);
             this.lblSearchTrainingName.Name = "lblSearchTrainingName";
             this.lblSearchTrainingName.Size = new System.Drawing.Size(33, 17);
             this.lblSearchTrainingName.TabIndex = 19;
             this.lblSearchTrainingName.Text = "Imię";
             // 
+            // pbAddTraining
+            // 
+            this.pbAddTraining.BackColor = System.Drawing.Color.Transparent;
+            this.pbAddTraining.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAddTraining.BackgroundImage")));
+            this.pbAddTraining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAddTraining.Location = new System.Drawing.Point(763, 15);
+            this.pbAddTraining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbAddTraining.Name = "pbAddTraining";
+            this.pbAddTraining.Size = new System.Drawing.Size(775, 881);
+            this.pbAddTraining.TabIndex = 20;
+            this.pbAddTraining.TabStop = false;
+            // 
+            // lblFormTitle
+            // 
+            this.lblFormTitle.AutoSize = true;
+            this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFormTitle.Location = new System.Drawing.Point(960, 160);
+            this.lblFormTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFormTitle.Name = "lblFormTitle";
+            this.lblFormTitle.Size = new System.Drawing.Size(362, 42);
+            this.lblFormTitle.TabIndex = 21;
+            this.lblFormTitle.Text = "Wprowadź szkolenie";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(28, 709);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(341, 187);
+            this.btnReturn.TabIndex = 24;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnReturnMain
+            // 
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.Location = new System.Drawing.Point(405, 706);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturnMain.Name = "btnReturnMain";
+            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.TabIndex = 25;
+            this.btnReturnMain.Text = "Menu główne";
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
+            // 
+            // cbEmployeeList
+            // 
+            this.cbEmployeeList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbEmployeeList.FormattingEnabled = true;
+            this.cbEmployeeList.Location = new System.Drawing.Point(1117, 480);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmployeeList.Name = "cbEmployeeList";
+            this.cbEmployeeList.Size = new System.Drawing.Size(344, 30);
+            this.cbEmployeeList.TabIndex = 37;
+            // 
             // AddTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.Controls.Add(this.cbEmployeeList);
+            this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.lblSearchTrainingName);
             this.Controls.Add(this.lblSearchTrainingSurname);
             this.Controls.Add(this.tbSearchTrainingName);
@@ -244,19 +416,25 @@
             this.Controls.Add(this.tbEmployeeFirstName);
             this.Controls.Add(this.lblEmployeeFirstName);
             this.Controls.Add(this.lblTrainingEndDate);
-            this.Controls.Add(this.dateTimePickerTrainingEndDate);
-            this.Controls.Add(this.dateTimePickerTrainingStartDate);
+            this.Controls.Add(this.dtpTrainingEndDate);
+            this.Controls.Add(this.dtpTrainingStartDate);
             this.Controls.Add(this.lblTrainingStartDate);
             this.Controls.Add(this.tbTrainingName);
             this.Controls.Add(this.lblTrainingName);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvTrainings);
+            this.Controls.Add(this.pbAddTraining);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddTraining";
-            this.Text = "AddTraining";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Szkolenia";
             this.Load += new System.EventHandler(this.AddTraining_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddTraining)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,8 +448,8 @@
         private System.Windows.Forms.Label lblTrainingName;
         private System.Windows.Forms.TextBox tbTrainingName;
         private System.Windows.Forms.Label lblTrainingStartDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerTrainingStartDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerTrainingEndDate;
+        private System.Windows.Forms.DateTimePicker dtpTrainingStartDate;
+        private System.Windows.Forms.DateTimePicker dtpTrainingEndDate;
         private System.Windows.Forms.Label lblTrainingEndDate;
         private System.Windows.Forms.Label lblEmployeeFirstName;
         private System.Windows.Forms.TextBox tbEmployeeFirstName;
@@ -284,5 +462,10 @@
         private System.Windows.Forms.TextBox tbSearchTrainingName;
         private System.Windows.Forms.Label lblSearchTrainingSurname;
         private System.Windows.Forms.Label lblSearchTrainingName;
+        private System.Windows.Forms.PictureBox pbAddTraining;
+        private System.Windows.Forms.Label lblFormTitle;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnReturnMain;
+        private System.Windows.Forms.ComboBox cbEmployeeList;
     }
 }

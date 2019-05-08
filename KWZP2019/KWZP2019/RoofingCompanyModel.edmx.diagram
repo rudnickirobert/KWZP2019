@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d405c627a5ff462494eb90e107a3ee0e" Name="Diagram1">
+      <Diagram DiagramId="d405c627a5ff462494eb90e107a3ee0e" Name="Diagram1" ZoomLevel="100">
         <EntityTypeShape EntityType="RoofingCompanyModel.Absence" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.AbsenceType" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Accident" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
@@ -65,32 +65,20 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.Training" Width="1.5" PointX="3" PointY="54.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.Unit" Width="1.5" PointX="16.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.SafetyControlHistoryView" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vAbsence" Width="1.5" PointX="5.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vAddTraining" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vComboBoxEmployee" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vComboBoxMachine" Width="1.5" PointX="7.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vContract" Width="1.5" PointX="16.75" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vCustomer" Width="1.5" PointX="18.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vDevotionsInMeasuremntsPerProcess" Width="1.5" PointX="16.75" PointY="20.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEducationForm" Width="1.5" PointX="20.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeList" Width="1.5" PointX="24.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vExamination" Width="1.5" PointX="24.75" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesInvoice" Width="1.5" PointX="25.75" PointY="21.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOrder" Width="1.5" PointX="25.75" PointY="24.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesOutsourcing" Width="1.5" PointX="25.75" PointY="27.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vExpencesPayment" Width="1.5" PointX="26.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vHR" Width="1.5" PointX="26.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vHRContract" Width="1.5" PointX="7.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vHRExamination" Width="1.5" PointX="13.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.ViewOshTraining" Width="1.5" PointX="8.75" PointY="28.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vIncomesProfit" Width="1.5" PointX="26.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vInputMagazine" Width="1.5" PointX="10.75" PointY="28.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vInvoiceType" Width="1.5" PointX="18.75" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vMaintPartsView" Width="1.5" PointX="12.75" PointY="28.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOrder" Width="1.5" PointX="26.75" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOrderDetail" Width="1.5" PointX="14.75" PointY="28.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="26.75" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingWithType" Width="1.5" PointX="16.75" PointY="28.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPartsRequestView" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPartsView" Width="1.5" PointX="18.75" PointY="28.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vPaymentHistory" Width="1.5" PointX="20.75" PointY="28.375" IsExpanded="true" />
@@ -99,8 +87,6 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.vSafetyControlHistoryView" Width="1.5" PointX="27.75" PointY="21.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProcess" Width="1.5" PointX="27.75" PointY="24.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vSuccesfullyProducedPerProcess" Width="1.5" PointX="27.75" PointY="26.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPart" Width="1.5" PointX="27.75" PointY="29.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemi" Width="1.5" PointX="28.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vTechnicalProductDataPerProcess" Width="1.5" PointX="28.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vUnfinishedProcess" Width="1.5" PointX="28.75" PointY="15.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vUnhandledOrderDetail" Width="1.5" PointX="28.75" PointY="17.375" IsExpanded="true" />
@@ -167,10 +153,24 @@
         <AssociationConnector Association="RoofingCompanyModel.FkSemiFinishedOrderSupplier" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FkSfOrderDetailSemiFinishedOrder" ManuallyRouted="false" />
         <AssociationConnector Association="RoofingCompanyModel.FkSupplierSupplierType" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeDetail" Width="1.5" PointX="30.375" PointY="6.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSD" Width="1.5" PointX="13.375" PointY="0.75" />
-        <EntityTypeShape EntityType="RoofingCompanyModel.vEmployeeSalesDepartment" Width="1.5" PointX="23.375" PointY="13.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcing" Width="1.5" PointX="30.375" PointY="7.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingCommitment" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vTotalNumberOfMeasuresPerProcess" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vAbsenceType" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vDeparment" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vEducationLevel" Width="1.5" PointX="30.375" PointY="19.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vExpencePartOrder" Width="1.5" PointX="30.375" PointY="22.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vL4" Width="1.5" PointX="30.375" PointY="25.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOD" Width="1.5" PointX="30.375" PointY="28.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPaidAbsence" Width="1.5" PointX="31.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vPosition" Width="1.5" PointX="21.375" PointY="7.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSalariesSummary" Width="1.5" PointX="8.375" PointY="31.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vUnexcused" Width="1.5" PointX="31.375" PointY="3.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutsourcingType" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierPartsMinusType" Width="1.5" PointX="30.375" PointY="19.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSupplierSemisMinusType" Width="1.5" PointX="30.375" PointY="24.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vUnpaidAbsence" Width="1.5" PointX="10.375" PointY="31.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vOutputMagazine" Width="1.5" PointX="0.75" PointY="16.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

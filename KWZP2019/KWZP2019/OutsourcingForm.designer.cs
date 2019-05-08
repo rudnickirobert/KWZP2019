@@ -83,13 +83,13 @@
             // addNewOutsourcingCompanyBtn
             // 
             this.addNewOutsourcingCompanyBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.addNewOutsourcingCompanyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.addNewOutsourcingCompanyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.addNewOutsourcingCompanyBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addNewOutsourcingCompanyBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewOutsourcingCompanyBtn.Image")));
-            this.addNewOutsourcingCompanyBtn.Location = new System.Drawing.Point(22, 552);
-            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addNewOutsourcingCompanyBtn.Location = new System.Drawing.Point(312, 603);
+            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewOutsourcingCompanyBtn.Name = "addNewOutsourcingCompanyBtn";
-            this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(267, 148);
+            this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(200, 120);
             this.addNewOutsourcingCompanyBtn.TabIndex = 13;
             this.addNewOutsourcingCompanyBtn.Text = "Dodaj firmę outsourcingową";
             this.addNewOutsourcingCompanyBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -131,8 +131,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.outsourcingTypeDgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.outsourcingTypeDgv.EnableHeadersVisualStyles = false;
-            this.outsourcingTypeDgv.Location = new System.Drawing.Point(55, 71);
-            this.outsourcingTypeDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.outsourcingTypeDgv.Location = new System.Drawing.Point(41, 58);
+            this.outsourcingTypeDgv.Margin = new System.Windows.Forms.Padding(2);
             this.outsourcingTypeDgv.MultiSelect = false;
             this.outsourcingTypeDgv.Name = "outsourcingTypeDgv";
             this.outsourcingTypeDgv.RowHeadersVisible = false;
@@ -144,7 +144,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.outsourcingTypeDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.outsourcingTypeDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.outsourcingTypeDgv.Size = new System.Drawing.Size(552, 89);
+            this.outsourcingTypeDgv.Size = new System.Drawing.Size(325, 104);
             this.outsourcingTypeDgv.TabIndex = 14;
             this.outsourcingTypeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.outsourcingTypeDgv_CellContentClick);
             // 
@@ -153,14 +153,14 @@
             this.idOutsourcingTypeDataGridViewTextBoxColumn.DataPropertyName = "IdOutsourcingType";
             this.idOutsourcingTypeDataGridViewTextBoxColumn.HeaderText = "IdOutsourcingType";
             this.idOutsourcingTypeDataGridViewTextBoxColumn.Name = "idOutsourcingTypeDataGridViewTextBoxColumn";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn.Width = 194;
+            this.idOutsourcingTypeDataGridViewTextBoxColumn.Width = 163;
             // 
             // OutsourcingType1
             // 
             this.OutsourcingType1.DataPropertyName = "OutsourcingType1";
             this.OutsourcingType1.HeaderText = "OutsourcingType1";
             this.OutsourcingType1.Name = "OutsourcingType1";
-            this.OutsourcingType1.Width = 189;
+            this.OutsourcingType1.Width = 158;
             // 
             // outsourcingTypeBindingSource
             // 
@@ -211,8 +211,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detailsOutsourcingDgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.detailsOutsourcingDgv.EnableHeadersVisualStyles = false;
-            this.detailsOutsourcingDgv.Location = new System.Drawing.Point(55, 388);
-            this.detailsOutsourcingDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsOutsourcingDgv.Location = new System.Drawing.Point(55, 406);
+            this.detailsOutsourcingDgv.Margin = new System.Windows.Forms.Padding(2);
             this.detailsOutsourcingDgv.MultiSelect = false;
             this.detailsOutsourcingDgv.Name = "detailsOutsourcingDgv";
             this.detailsOutsourcingDgv.RowHeadersVisible = false;
@@ -224,7 +224,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.detailsOutsourcingDgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.detailsOutsourcingDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detailsOutsourcingDgv.Size = new System.Drawing.Size(707, 98);
+            this.detailsOutsourcingDgv.Size = new System.Drawing.Size(1148, 80);
             this.detailsOutsourcingDgv.TabIndex = 15;
             // 
             // idOutsourcingDataGridViewTextBoxColumn1
@@ -232,84 +232,84 @@
             this.idOutsourcingDataGridViewTextBoxColumn1.DataPropertyName = "IdOutsourcing";
             this.idOutsourcingDataGridViewTextBoxColumn1.HeaderText = "IdOutsourcing";
             this.idOutsourcingDataGridViewTextBoxColumn1.Name = "idOutsourcingDataGridViewTextBoxColumn1";
-            this.idOutsourcingDataGridViewTextBoxColumn1.Width = 154;
+            this.idOutsourcingDataGridViewTextBoxColumn1.Width = 127;
             // 
             // idOutsourcingTypeDataGridViewTextBoxColumn1
             // 
             this.idOutsourcingTypeDataGridViewTextBoxColumn1.DataPropertyName = "IdOutsourcingType";
             this.idOutsourcingTypeDataGridViewTextBoxColumn1.HeaderText = "IdOutsourcingType";
             this.idOutsourcingTypeDataGridViewTextBoxColumn1.Name = "idOutsourcingTypeDataGridViewTextBoxColumn1";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn1.Width = 194;
+            this.idOutsourcingTypeDataGridViewTextBoxColumn1.Width = 163;
             // 
             // companyNameDataGridViewTextBoxColumn
             // 
             this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
             this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            this.companyNameDataGridViewTextBoxColumn.Width = 162;
+            this.companyNameDataGridViewTextBoxColumn.Width = 138;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 154;
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 130;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 84;
+            this.emailDataGridViewTextBoxColumn.Width = 71;
             // 
             // cityDataGridViewTextBoxColumn
             // 
             this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
             this.cityDataGridViewTextBoxColumn.HeaderText = "City";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 70;
+            this.cityDataGridViewTextBoxColumn.Width = 58;
             // 
             // zipCodeDataGridViewTextBoxColumn
             // 
             this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
             this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
             this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            this.zipCodeDataGridViewTextBoxColumn.Width = 105;
+            this.zipCodeDataGridViewTextBoxColumn.Width = 91;
             // 
             // streetDataGridViewTextBoxColumn
             // 
             this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
             this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
             this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.Width = 88;
+            this.streetDataGridViewTextBoxColumn.Width = 73;
             // 
             // houseNumberDataGridViewTextBoxColumn
             // 
             this.houseNumberDataGridViewTextBoxColumn.DataPropertyName = "HouseNumber";
             this.houseNumberDataGridViewTextBoxColumn.HeaderText = "HouseNumber";
             this.houseNumberDataGridViewTextBoxColumn.Name = "houseNumberDataGridViewTextBoxColumn";
-            this.houseNumberDataGridViewTextBoxColumn.Width = 156;
+            this.houseNumberDataGridViewTextBoxColumn.Width = 131;
             // 
             // apartmentNumberDataGridViewTextBoxColumn
             // 
             this.apartmentNumberDataGridViewTextBoxColumn.DataPropertyName = "ApartmentNumber";
             this.apartmentNumberDataGridViewTextBoxColumn.HeaderText = "ApartmentNumber";
             this.apartmentNumberDataGridViewTextBoxColumn.Name = "apartmentNumberDataGridViewTextBoxColumn";
-            this.apartmentNumberDataGridViewTextBoxColumn.Width = 188;
+            this.apartmentNumberDataGridViewTextBoxColumn.Width = 156;
             // 
             // nIPDataGridViewTextBoxColumn
             // 
             this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
             this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
             this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
-            this.nIPDataGridViewTextBoxColumn.Width = 67;
+            this.nIPDataGridViewTextBoxColumn.Width = 57;
             // 
             // kRSDataGridViewTextBoxColumn
             // 
             this.kRSDataGridViewTextBoxColumn.DataPropertyName = "KRS";
             this.kRSDataGridViewTextBoxColumn.HeaderText = "KRS";
             this.kRSDataGridViewTextBoxColumn.Name = "kRSDataGridViewTextBoxColumn";
-            this.kRSDataGridViewTextBoxColumn.Width = 74;
+            this.kRSDataGridViewTextBoxColumn.Width = 62;
             // 
             // outsourcingBindingSource
             // 
@@ -320,10 +320,9 @@
             this.txtBSerachOutsourcing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.txtBSerachOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtBSerachOutsourcing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtBSerachOutsourcing.Location = new System.Drawing.Point(403, 25);
-            this.txtBSerachOutsourcing.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBSerachOutsourcing.Location = new System.Drawing.Point(344, 20);
             this.txtBSerachOutsourcing.Name = "txtBSerachOutsourcing";
-            this.txtBSerachOutsourcing.Size = new System.Drawing.Size(259, 30);
+            this.txtBSerachOutsourcing.Size = new System.Drawing.Size(195, 26);
             this.txtBSerachOutsourcing.TabIndex = 16;
             this.txtBSerachOutsourcing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBSerachOutsourcing_KeyPress);
             // 
@@ -331,12 +330,11 @@
             // 
             this.nameOutsourcingLbl.AutoSize = true;
             this.nameOutsourcingLbl.BackColor = System.Drawing.Color.Transparent;
-            this.nameOutsourcingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nameOutsourcingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.nameOutsourcingLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nameOutsourcingLbl.Location = new System.Drawing.Point(51, 28);
-            this.nameOutsourcingLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameOutsourcingLbl.Location = new System.Drawing.Point(38, 23);
             this.nameOutsourcingLbl.Name = "nameOutsourcingLbl";
-            this.nameOutsourcingLbl.Size = new System.Drawing.Size(327, 25);
+            this.nameOutsourcingLbl.Size = new System.Drawing.Size(296, 20);
             this.nameOutsourcingLbl.TabIndex = 17;
             this.nameOutsourcingLbl.Text = "Wyszukaj typ firmy outsourcingowej:";
             // 
@@ -344,13 +342,12 @@
             // 
             this.returnCancelOutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.returnCancelOutBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.returnCancelOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.returnCancelOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.returnCancelOutBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.returnCancelOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnCancelOutBtn.Image")));
-            this.returnCancelOutBtn.Location = new System.Drawing.Point(340, 552);
-            this.returnCancelOutBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.returnCancelOutBtn.Location = new System.Drawing.Point(55, 603);
             this.returnCancelOutBtn.Name = "returnCancelOutBtn";
-            this.returnCancelOutBtn.Size = new System.Drawing.Size(267, 148);
+            this.returnCancelOutBtn.Size = new System.Drawing.Size(200, 120);
             this.returnCancelOutBtn.TabIndex = 18;
             this.returnCancelOutBtn.Text = "Powrót";
             this.returnCancelOutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -361,12 +358,11 @@
             // 
             this.serachOutsourcingCompaniesLbl.AutoSize = true;
             this.serachOutsourcingCompaniesLbl.BackColor = System.Drawing.Color.Transparent;
-            this.serachOutsourcingCompaniesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.serachOutsourcingCompaniesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.serachOutsourcingCompaniesLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.serachOutsourcingCompaniesLbl.Location = new System.Drawing.Point(51, 346);
-            this.serachOutsourcingCompaniesLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.serachOutsourcingCompaniesLbl.Location = new System.Drawing.Point(38, 372);
             this.serachOutsourcingCompaniesLbl.Name = "serachOutsourcingCompaniesLbl";
-            this.serachOutsourcingCompaniesLbl.Size = new System.Drawing.Size(301, 25);
+            this.serachOutsourcingCompaniesLbl.Size = new System.Drawing.Size(274, 20);
             this.serachOutsourcingCompaniesLbl.TabIndex = 19;
             this.serachOutsourcingCompaniesLbl.Text = "Szczegóły firmy outsourcingowej:";
             // 
@@ -407,8 +403,8 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.nameOutsourcingDgv.DefaultCellStyle = dataGridViewCellStyle11;
             this.nameOutsourcingDgv.EnableHeadersVisualStyles = false;
-            this.nameOutsourcingDgv.Location = new System.Drawing.Point(55, 220);
-            this.nameOutsourcingDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nameOutsourcingDgv.Location = new System.Drawing.Point(38, 249);
+            this.nameOutsourcingDgv.Margin = new System.Windows.Forms.Padding(2);
             this.nameOutsourcingDgv.MultiSelect = false;
             this.nameOutsourcingDgv.Name = "nameOutsourcingDgv";
             this.nameOutsourcingDgv.RowHeadersVisible = false;
@@ -420,7 +416,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.nameOutsourcingDgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.nameOutsourcingDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nameOutsourcingDgv.Size = new System.Drawing.Size(685, 114);
+            this.nameOutsourcingDgv.Size = new System.Drawing.Size(498, 93);
             this.nameOutsourcingDgv.TabIndex = 20;
             // 
             // idCommitmentDataGridViewTextBoxColumn
@@ -428,28 +424,28 @@
             this.idCommitmentDataGridViewTextBoxColumn.DataPropertyName = "IdCommitment";
             this.idCommitmentDataGridViewTextBoxColumn.HeaderText = "IdCommitment";
             this.idCommitmentDataGridViewTextBoxColumn.Name = "idCommitmentDataGridViewTextBoxColumn";
-            this.idCommitmentDataGridViewTextBoxColumn.Width = 157;
+            this.idCommitmentDataGridViewTextBoxColumn.Width = 129;
             // 
             // idOutsourcingDataGridViewTextBoxColumn
             // 
             this.idOutsourcingDataGridViewTextBoxColumn.DataPropertyName = "IdOutsourcing";
             this.idOutsourcingDataGridViewTextBoxColumn.HeaderText = "IdOutsourcing";
             this.idOutsourcingDataGridViewTextBoxColumn.Name = "idOutsourcingDataGridViewTextBoxColumn";
-            this.idOutsourcingDataGridViewTextBoxColumn.Width = 154;
+            this.idOutsourcingDataGridViewTextBoxColumn.Width = 127;
             // 
             // endCommitmentDateDataGridViewTextBoxColumn
             // 
             this.endCommitmentDateDataGridViewTextBoxColumn.DataPropertyName = "EndCommitmentDate";
             this.endCommitmentDateDataGridViewTextBoxColumn.HeaderText = "EndCommitmentDate";
             this.endCommitmentDateDataGridViewTextBoxColumn.Name = "endCommitmentDateDataGridViewTextBoxColumn";
-            this.endCommitmentDateDataGridViewTextBoxColumn.Width = 214;
+            this.endCommitmentDateDataGridViewTextBoxColumn.Width = 176;
             // 
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 76;
+            this.costDataGridViewTextBoxColumn.Width = 63;
             // 
             // outsourcingCommitmentBindingSource
             // 
@@ -459,21 +455,20 @@
             // 
             this.labelCommitmentOutsourc.AutoSize = true;
             this.labelCommitmentOutsourc.BackColor = System.Drawing.Color.Transparent;
-            this.labelCommitmentOutsourc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelCommitmentOutsourc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.labelCommitmentOutsourc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCommitmentOutsourc.Location = new System.Drawing.Point(55, 178);
-            this.labelCommitmentOutsourc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCommitmentOutsourc.Location = new System.Drawing.Point(38, 215);
             this.labelCommitmentOutsourc.Name = "labelCommitmentOutsourc";
-            this.labelCommitmentOutsourc.Size = new System.Drawing.Size(256, 25);
+            this.labelCommitmentOutsourc.Size = new System.Drawing.Size(233, 20);
             this.labelCommitmentOutsourc.TabIndex = 21;
             this.labelCommitmentOutsourc.Text = "Zobowiązania outsourcingu:";
             // 
             // OutsourcingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.labelCommitmentOutsourc);
             this.Controls.Add(this.nameOutsourcingDgv);
             this.Controls.Add(this.serachOutsourcingCompaniesLbl);
@@ -483,10 +478,10 @@
             this.Controls.Add(this.detailsOutsourcingDgv);
             this.Controls.Add(this.outsourcingTypeDgv);
             this.Controls.Add(this.addNewOutsourcingCompanyBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OutsourcingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OutsourcingForm";
+            this.Text = "Outsourcing";
             this.Load += new System.EventHandler(this.OutsourcingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeBindingSource)).EndInit();

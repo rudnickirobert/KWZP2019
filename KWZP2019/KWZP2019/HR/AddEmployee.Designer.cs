@@ -50,21 +50,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.tabControlContractLenght = new System.Windows.Forms.TabControl();
-            this.ContractLenght = new System.Windows.Forms.TabPage();
-            this.lblContractLenght = new System.Windows.Forms.Label();
-            this.tbContractLenght = new System.Windows.Forms.TextBox();
-            this.Dates = new System.Windows.Forms.TabPage();
-            this.dateTimePickerEndDate = new System.Windows.Forms.DateTimePicker();
-            this.lblEndDate = new System.Windows.Forms.Label();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
-            this.lblStartDate = new System.Windows.Forms.Label();
             this.pbAddEmployee = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblAdd = new System.Windows.Forms.Label();
-            this.tabControlContractLenght.SuspendLayout();
-            this.ContractLenght.SuspendLayout();
-            this.Dates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,6 +258,10 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.FlatAppearance.BorderSize = 3;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -288,6 +280,10 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnClear.FlatAppearance.BorderSize = 3;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -307,6 +303,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.FlatAppearance.BorderSize = 3;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -319,104 +319,6 @@
             this.btnCancel.Text = "Menu główne";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // tabControlContractLenght
-            // 
-            this.tabControlContractLenght.Controls.Add(this.ContractLenght);
-            this.tabControlContractLenght.Controls.Add(this.Dates);
-            this.tabControlContractLenght.Location = new System.Drawing.Point(866, 241);
-            this.tabControlContractLenght.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControlContractLenght.Name = "tabControlContractLenght";
-            this.tabControlContractLenght.SelectedIndex = 0;
-            this.tabControlContractLenght.Size = new System.Drawing.Size(182, 170);
-            this.tabControlContractLenght.TabIndex = 19;
-            // 
-            // ContractLenght
-            // 
-            this.ContractLenght.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ContractLenght.Controls.Add(this.lblContractLenght);
-            this.ContractLenght.Controls.Add(this.tbContractLenght);
-            this.ContractLenght.Location = new System.Drawing.Point(4, 22);
-            this.ContractLenght.Margin = new System.Windows.Forms.Padding(2);
-            this.ContractLenght.Name = "ContractLenght";
-            this.ContractLenght.Padding = new System.Windows.Forms.Padding(2);
-            this.ContractLenght.Size = new System.Drawing.Size(174, 144);
-            this.ContractLenght.TabIndex = 0;
-            this.ContractLenght.Text = "Długość Umowy";
-            // 
-            // lblContractLenght
-            // 
-            this.lblContractLenght.AutoSize = true;
-            this.lblContractLenght.Location = new System.Drawing.Point(11, 25);
-            this.lblContractLenght.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblContractLenght.Name = "lblContractLenght";
-            this.lblContractLenght.Size = new System.Drawing.Size(84, 13);
-            this.lblContractLenght.TabIndex = 1;
-            this.lblContractLenght.Text = "Dlugość Umowy";
-            // 
-            // tbContractLenght
-            // 
-            this.tbContractLenght.Location = new System.Drawing.Point(11, 50);
-            this.tbContractLenght.Margin = new System.Windows.Forms.Padding(2);
-            this.tbContractLenght.Name = "tbContractLenght";
-            this.tbContractLenght.Size = new System.Drawing.Size(146, 20);
-            this.tbContractLenght.TabIndex = 0;
-            // 
-            // Dates
-            // 
-            this.Dates.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Dates.Controls.Add(this.dateTimePickerEndDate);
-            this.Dates.Controls.Add(this.lblEndDate);
-            this.Dates.Controls.Add(this.dateTimePickerStartDate);
-            this.Dates.Controls.Add(this.lblStartDate);
-            this.Dates.Location = new System.Drawing.Point(4, 22);
-            this.Dates.Margin = new System.Windows.Forms.Padding(2);
-            this.Dates.Name = "Dates";
-            this.Dates.Padding = new System.Windows.Forms.Padding(2);
-            this.Dates.Size = new System.Drawing.Size(174, 144);
-            this.Dates.TabIndex = 1;
-            this.Dates.Text = "Daty Od i Do";
-            // 
-            // dateTimePickerEndDate
-            // 
-            this.dateTimePickerEndDate.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(12, 112);
-            this.dateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            this.dateTimePickerEndDate.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePickerEndDate.TabIndex = 3;
-            // 
-            // lblEndDate
-            // 
-            this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(10, 89);
-            this.lblEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(143, 13);
-            this.lblEndDate.TabIndex = 2;
-            this.lblEndDate.Text = "Koniec Umowy (yyyy-MM-dd)";
-            // 
-            // dateTimePickerStartDate
-            // 
-            this.dateTimePickerStartDate.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(12, 41);
-            this.dateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePickerStartDate.TabIndex = 1;
-            // 
-            // lblStartDate
-            // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(10, 17);
-            this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(155, 13);
-            this.lblStartDate.TabIndex = 0;
-            this.lblStartDate.Text = "Początek Umowy (yyyy-MM-dd)";
             // 
             // pbAddEmployee
             // 
@@ -433,6 +335,10 @@
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -469,7 +375,6 @@
             this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.lblAdd);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.tabControlContractLenght);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
@@ -497,11 +402,7 @@
             this.Name = "AddEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj Pracownika";
-            this.tabControlContractLenght.ResumeLayout(false);
-            this.ContractLenght.ResumeLayout(false);
-            this.ContractLenght.PerformLayout();
-            this.Dates.ResumeLayout(false);
-            this.Dates.PerformLayout();
+            this.Load += new System.EventHandler(this.AddEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbAddEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -531,15 +432,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TabControl tabControlContractLenght;
-        private System.Windows.Forms.TabPage ContractLenght;
-        private System.Windows.Forms.Label lblContractLenght;
-        private System.Windows.Forms.TextBox tbContractLenght;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEndDate;
-        private System.Windows.Forms.Label lblEndDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
-        private System.Windows.Forms.Label lblStartDate;
-        private System.Windows.Forms.TabPage Dates;
         private System.Windows.Forms.PictureBox pbAddEmployee;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblAdd;
