@@ -45,6 +45,7 @@
             this.productLbl = new System.Windows.Forms.Label();
             this.semiFinishedCodeTb = new System.Windows.Forms.TextBox();
             this.productCodeTb = new System.Windows.Forms.TextBox();
+            this.sfOrderBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.entraceWarehouseDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outWarehouseDgv)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.entraceWarehouseDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.entraceWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.entraceWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.entraceWarehouseDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.entraceWarehouseDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -71,7 +72,7 @@
             this.entraceWarehouseDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.entraceWarehouseDgv.EnableHeadersVisualStyles = false;
             this.entraceWarehouseDgv.Location = new System.Drawing.Point(29, 155);
-            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.entraceWarehouseDgv.MultiSelect = false;
             this.entraceWarehouseDgv.Name = "entraceWarehouseDgv";
             this.entraceWarehouseDgv.RowHeadersVisible = false;
@@ -96,7 +97,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.outWarehouseDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.outWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.outWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.outWarehouseDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.outWarehouseDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -117,7 +118,7 @@
             this.outWarehouseDgv.DefaultCellStyle = dataGridViewCellStyle6;
             this.outWarehouseDgv.EnableHeadersVisualStyles = false;
             this.outWarehouseDgv.Location = new System.Drawing.Point(644, 155);
-            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.outWarehouseDgv.MultiSelect = false;
             this.outWarehouseDgv.Name = "outWarehouseDgv";
             this.outWarehouseDgv.RowHeadersVisible = false;
@@ -206,8 +207,8 @@
             this.semiFinishedCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.semiFinishedCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.semiFinishedCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.semiFinishedCodeTb.Location = new System.Drawing.Point(173, 90);
-            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(2);
+            this.semiFinishedCodeTb.Location = new System.Drawing.Point(192, 93);
+            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.semiFinishedCodeTb.Name = "semiFinishedCodeTb";
             this.semiFinishedCodeTb.Size = new System.Drawing.Size(271, 24);
             this.semiFinishedCodeTb.TabIndex = 25;
@@ -219,11 +220,25 @@
             this.productCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.productCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.productCodeTb.Location = new System.Drawing.Point(788, 93);
-            this.productCodeTb.Margin = new System.Windows.Forms.Padding(2);
+            this.productCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.productCodeTb.Name = "productCodeTb";
             this.productCodeTb.Size = new System.Drawing.Size(271, 24);
             this.productCodeTb.TabIndex = 26;
             this.productCodeTb.TextChanged += new System.EventHandler(this.productCodeTb_TextChanged);
+            // 
+            // sfOrderBtn
+            // 
+            this.sfOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.sfOrderBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.sfOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.sfOrderBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sfOrderBtn.Location = new System.Drawing.Point(352, 618);
+            this.sfOrderBtn.Name = "sfOrderBtn";
+            this.sfOrderBtn.Size = new System.Drawing.Size(200, 120);
+            this.sfOrderBtn.TabIndex = 20;
+            this.sfOrderBtn.Text = "Zamów półfabrykat";
+            this.sfOrderBtn.UseVisualStyleBackColor = false;
+            this.sfOrderBtn.Click += new System.EventHandler(this.sfOrderBtn_Click);
             // 
             // WarehouseForm
             // 
@@ -238,10 +253,11 @@
             this.Controls.Add(this.semiFinishedLbl);
             this.Controls.Add(this.outWarehouseLbl);
             this.Controls.Add(this.entraceWarehouseLbl);
+            this.Controls.Add(this.sfOrderBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.outWarehouseDgv);
             this.Controls.Add(this.entraceWarehouseDgv);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "WarehouseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Magazyn";
@@ -264,5 +280,6 @@
         private System.Windows.Forms.Label productLbl;
         private System.Windows.Forms.TextBox semiFinishedCodeTb;
         private System.Windows.Forms.TextBox productCodeTb;
+        private System.Windows.Forms.Button sfOrderBtn;
     }
 }

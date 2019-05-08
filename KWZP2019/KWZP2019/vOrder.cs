@@ -15,9 +15,10 @@ namespace KWZP2019
     public partial class vOrder
     {
         public int Nr_zamówienia { get; set; }
+        public int IdCustomer { get; set; }
         public System.DateTime Data_zamówienia { get; set; }
         public decimal Wycena { get; set; }
         public double Marża { get; set; }
-        public string Pracownik_odpowiedzialny { get; set; }
+        public string Pracownik { get; set; }
     }
 }
