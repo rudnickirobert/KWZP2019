@@ -47,13 +47,14 @@
             this.btnEducationLevel = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmloyees)).BeginInit();
             this.SuspendLayout();
             // 
             // tbEmployeeSearching
             // 
             this.tbEmployeeSearching.Location = new System.Drawing.Point(353, 54);
-            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
             this.tbEmployeeSearching.Size = new System.Drawing.Size(578, 20);
             this.tbEmployeeSearching.TabIndex = 0;
@@ -69,6 +70,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvEmloyees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmloyees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmloyees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dgvEmloyees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -82,7 +84,7 @@
             this.dgvEmloyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmloyees.EnableHeadersVisualStyles = false;
             this.dgvEmloyees.Location = new System.Drawing.Point(353, 94);
-            this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvEmloyees.Name = "dgvEmloyees";
             this.dgvEmloyees.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -100,14 +102,14 @@
             // lbWarningsExamination
             // 
             this.lbWarningsExamination.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.lbWarningsExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbWarningsExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbWarningsExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsExamination.FormattingEnabled = true;
-            this.lbWarningsExamination.ItemHeight = 18;
+            this.lbWarningsExamination.ItemHeight = 20;
             this.lbWarningsExamination.Location = new System.Drawing.Point(11, 496);
-            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2);
+            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbWarningsExamination.Name = "lbWarningsExamination";
-            this.lbWarningsExamination.Size = new System.Drawing.Size(320, 22);
+            this.lbWarningsExamination.Size = new System.Drawing.Size(320, 24);
             this.lbWarningsExamination.TabIndex = 3;
             this.lbWarningsExamination.DoubleClick += new System.EventHandler(this.lbWarningsExamination_DoubleClick);
             // 
@@ -227,14 +229,14 @@
             // lbWarningsContracts
             // 
             this.lbWarningsContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.lbWarningsContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbWarningsContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbWarningsContracts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsContracts.FormattingEnabled = true;
-            this.lbWarningsContracts.ItemHeight = 18;
+            this.lbWarningsContracts.ItemHeight = 20;
             this.lbWarningsContracts.Location = new System.Drawing.Point(11, 453);
-            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2);
+            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbWarningsContracts.Name = "lbWarningsContracts";
-            this.lbWarningsContracts.Size = new System.Drawing.Size(320, 22);
+            this.lbWarningsContracts.Size = new System.Drawing.Size(320, 24);
             this.lbWarningsContracts.TabIndex = 11;
             this.lbWarningsContracts.DoubleClick += new System.EventHandler(this.lbWarningsContracts_DoubleClick);
             // 
@@ -253,9 +255,7 @@
             this.btnAddContract.TabIndex = 12;
             this.btnAddContract.Text = "Dodaj umowę";
             this.btnAddContract.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddContract.UseVisualStyleBackColor = false;
-            this.btnAddContract.Click += new System.EventHandler(this.btnAddContract_Click);
-            // 
+            this.btnAddContract.UseVisualStyleBackColor = false;            // 
             // btnEducationLevel
             // 
             this.btnEducationLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
@@ -308,13 +308,25 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(188, 534);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(72, 39);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edytuj";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // HR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnEducationLevel);
@@ -331,7 +343,7 @@
             this.Controls.Add(this.dgvEmloyees);
             this.Controls.Add(this.tbEmployeeSearching);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HR";
@@ -361,5 +373,6 @@
         private System.Windows.Forms.Button btnEducationLevel;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
