@@ -222,7 +222,6 @@ namespace KWZP2019
             DateTime endDate = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
             DateTime employeeStartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
             DateTime employeeEndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
-
             if ((employeeStartDate < startDate) || (employeeEndDate > endDate))
             {
                 MessageBox.Show("Pracownik musi mieć przydzielone daty w terminie zlecenia. " +

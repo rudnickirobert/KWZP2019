@@ -1151,7 +1151,6 @@ JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (SupplierNameType = 'Półfabrykaty');
 
---UR
 GO
 CREATE VIEW vNewFailures
 AS
@@ -1219,5 +1218,6 @@ INNER JOIN MaintPart ON Maintenance.IdMaintenance = MaintPart.IdMaintenance
 INNER JOIN Part ON MaintPart.IdPart = Part.IdPart 
 INNER JOIN Unit ON dbo.Part.IdUnit = Unit.IdUnit
 GO
+
 
 
