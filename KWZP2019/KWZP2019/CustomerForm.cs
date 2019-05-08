@@ -44,7 +44,8 @@ namespace KWZP2019
                 }
                 order.Cost = Convert.ToDecimal(temporaryCost * (1 + order.Markup));
             }//END OF ALGORITHM
-            customersDgv.DataSource = db.Customers.ToList();
+            customersDgv.DataSource = db.vCustomers.ToList();
+            customersDgv.Columns["Numer"].Visible = false;
         }
         //BUTTONS  
         private void orderBtn_Click(object sender, EventArgs e)
@@ -90,6 +91,7 @@ namespace KWZP2019
                 saveRow = customersDgv.FirstDisplayedCell.RowIndex;
             RoofingCompanyEntities db = new RoofingCompanyEntities();
             customersDgv.DataSource = db.Customers.ToList();
+            customersDgv.Columns["Numer"].Visible = false;
 
             if (saveRow != 0 && saveRow < customersDgv.Rows.Count)
                 customersDgv.FirstDisplayedScrollingRowIndex = saveRow;
@@ -108,24 +110,27 @@ namespace KWZP2019
             {
                 //pobranie wszystkich danych, gdy pole zawiera mniej niż 1 znak
                 customersDgv.DataSource = db.Customers.ToList();
+                customersDgv.Columns["Numer"].Visible = false;
             }
             else
             {
-                customersDgv.DataSource = (from db in db.Customers
+                customersDgv.DataSource = (from db in db.vCustomers
                                            where
-                                            db.CustomerName.Contains(searchTxt.Text.Trim())
-                                         || db.City.Contains(searchTxt.Text.Trim())
+                                            db.Nazwa.Contains(searchTxt.Text.Trim())
+                                         || db.Miasto.Contains(searchTxt.Text.Trim())
                                            select db).ToList();
+                customersDgv.Columns["Numer"].Visible = false;
             }
         }
         //PRZYPISYWANIE ZAMOWIENIA DO KLIENTA AKTUALNIE WYSZUKIWANEGO
         private void customersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //zadeklarowanie zmiennej "id" typu int i ustalenie wartości na podstawie pierwszej [0] kolumny w customerDgv
-            int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells[0].Value);
-            ordersDgv.DataSource = (from OrderCustomer in db.OrderCustomers
+            int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells["Numer"].Value);
+            ordersDgv.DataSource = (from OrderCustomer in db.vOrders
                                     where OrderCustomer.IdCustomer == id
                                     select OrderCustomer).ToList();
+            ordersDgv.Columns["IdCustomer"].Visible = false;
         }
         private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -133,7 +138,7 @@ namespace KWZP2019
             orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
                                           where OrderDetail.Nr_zamówienia == idCustomer
                                           select OrderDetail).ToList();
-            orderDetailsDgv.Columns[1].Visible = false;
+            //orderDetailsDgv.Columns[1].Visible = false;
         }
         //REPORT GENERATE ALGORITHM
         private void generateReportBtn_Click(object sender, EventArgs e)

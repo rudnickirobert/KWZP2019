@@ -721,9 +721,9 @@ JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
 GO
 
-CREATE VIEW vIndividualCustomer
+CREATE VIEW vCustomer
 AS
-SELECT IdCustomer as [Numer], CustomerName as [Nazwa], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy],  
+SELECT Customer.IdCustomer as [Numer], CustomerName as [Nazwa], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy],  
 Street as [Ulica], HouseNumber as [Nr domu], ApartmentNumber as [Nr lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
 FROM Customer;
 
@@ -899,15 +899,18 @@ GO
 
 CREATE VIEW vOrder
 AS
-SELECT OrderCustomer.IdOrderCustomer as [Nr zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena], Markup as [Marża],  
-EmployeeSurname as [Pracownik odpowiedzialny]
+SELECT DISTINCT OrderCustomer.IdOrderCustomer as [Nr zamówienia], Customer.IdCustomer, OrderDate as [Data zamówienia], Cost as [Wycena], Markup as [Marża],  
+EmployeeSurname as [Pracownik]
 FROM OrderCustomer
 INNER JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 INNER JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 INNER JOIN Employee
-ON OrderCustomer.IdEmployee = Employee.IdEmployee;
+ON OrderCustomer.IdEmployee = Employee.IdEmployee
+INNER JOIN Customer
+ON Customer.IdCustomer = OrderCustomer.IdCustomer;
+
 GO
 
 CREATE VIEW vEmployeeSalesDepartment

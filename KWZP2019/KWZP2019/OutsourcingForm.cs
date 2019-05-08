@@ -22,7 +22,8 @@ namespace KWZP2019
         }
         private void OutsourcingForm_Load(object sender, EventArgs e)
         {
-            outsourcingTypeDgv.DataSource = db.OutsourcingTypes.ToList();
+            outsourcingTypeDgv.DataSource = db.vOutsourcingTypes.ToList();
+            outsourcingTypeDgv.Columns["Numer"].Visible = false;
         }
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {
@@ -37,32 +38,40 @@ namespace KWZP2019
             this.Close();
         }
         private void txtBSerachOutsourcing_KeyPress(object sender, KeyPressEventArgs e)
-        { 
+        {
             if (txtBSerachOutsourcing.Text.Trim().Length < 1)
-            
+
             {
-                outsourcingTypeDgv.DataSource = db.Outsourcings.ToList();
-                nameOutsourcingDgv.DataSource = db.OutsourcingCommitments.ToList();
-                detailsOutsourcingDgv.DataSource = db.Outsourcings.ToList();
+                outsourcingTypeDgv.DataSource = db.vOutsourcingTypes.ToList();
+                outsourcingTypeDgv.Columns["Numer"].Visible = false;
+                nameOutsourcingDgv.DataSource = db.vOutsourcingCommitments.ToList();
+                detailsOutsourcingDgv.DataSource = db.vOutsourcings.ToList();
             }
             else
             {
-                outsourcingTypeDgv.DataSource = (from db in db.OutsourcingTypes
-                                           where
-                                           db.OutsourcingType1.Contains(txtBSerachOutsourcing.Text.Trim())
-                                           select db).ToList();
+                outsourcingTypeDgv.DataSource = db.vOutsourcingTypes.ToList();
+                outsourcingTypeDgv.Columns["Numer"].Visible = false;
+                nameOutsourcingDgv.DataSource = (from db in db.vOutsourcingCommitments
+                                                 where
+                                                 db.Nazwa.Contains(txtBSerachOutsourcing.Text.Trim())
+                                                 select db).ToList();
+                detailsOutsourcingDgv.DataSource = (from db in db.vOutsourcings
+                                                    where
+                                                    db.Nazwa.Contains(txtBSerachOutsourcing.Text.Trim())
+                                                    select db).ToList();
             }
         }
 
         private void outsourcingTypeDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = Convert.ToInt32(this.outsourcingTypeDgv.CurrentRow.Cells[0].Value);
+            int id = Convert.ToInt32(this.outsourcingTypeDgv.CurrentRow.Cells["Numer"].Value);
 
-            detailsOutsourcingDgv.DataSource = (from Outsourcing in db.Outsourcings
-                                                where Outsourcing.IdOutsourcing == id
+            detailsOutsourcingDgv.DataSource = (from Outsourcing in db.vOutsourcings
+                                                where Outsourcing.Numer == id
                                                 select Outsourcing).ToList();
-            nameOutsourcingDgv.DataSource = (from OutsourcingCommitment in db.OutsourcingCommitments
-                                             where OutsourcingCommitment.IdOutsourcing == id
+            outsourcingTypeDgv.Columns["Numer"].Visible = false;
+            nameOutsourcingDgv.DataSource = (from OutsourcingCommitment in db.vOutsourcingCommitments
+                                             where OutsourcingCommitment.Numer == id
                                              select OutsourcingCommitment).ToList();
         }
     }

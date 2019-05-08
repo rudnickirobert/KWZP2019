@@ -58,7 +58,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.entraceWarehouseDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.entraceWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.entraceWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.entraceWarehouseDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.entraceWarehouseDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -70,8 +70,8 @@
             this.entraceWarehouseDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.entraceWarehouseDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.entraceWarehouseDgv.EnableHeadersVisualStyles = false;
-            this.entraceWarehouseDgv.Location = new System.Drawing.Point(29, 155);
-            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.entraceWarehouseDgv.Location = new System.Drawing.Point(39, 191);
+            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entraceWarehouseDgv.MultiSelect = false;
             this.entraceWarehouseDgv.Name = "entraceWarehouseDgv";
             this.entraceWarehouseDgv.RowHeadersVisible = false;
@@ -84,7 +84,7 @@
             this.entraceWarehouseDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.entraceWarehouseDgv.RowTemplate.Height = 24;
             this.entraceWarehouseDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.entraceWarehouseDgv.Size = new System.Drawing.Size(523, 418);
+            this.entraceWarehouseDgv.Size = new System.Drawing.Size(697, 514);
             this.entraceWarehouseDgv.TabIndex = 16;
             // 
             // outWarehouseDgv
@@ -96,7 +96,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.outWarehouseDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.outWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.outWarehouseDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.outWarehouseDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.outWarehouseDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -116,8 +116,8 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.outWarehouseDgv.DefaultCellStyle = dataGridViewCellStyle6;
             this.outWarehouseDgv.EnableHeadersVisualStyles = false;
-            this.outWarehouseDgv.Location = new System.Drawing.Point(644, 155);
-            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(2);
+            this.outWarehouseDgv.Location = new System.Drawing.Point(859, 191);
+            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.outWarehouseDgv.MultiSelect = false;
             this.outWarehouseDgv.Name = "outWarehouseDgv";
             this.outWarehouseDgv.RowHeadersVisible = false;
@@ -130,7 +130,7 @@
             this.outWarehouseDgv.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.outWarehouseDgv.RowTemplate.Height = 24;
             this.outWarehouseDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.outWarehouseDgv.Size = new System.Drawing.Size(506, 418);
+            this.outWarehouseDgv.Size = new System.Drawing.Size(675, 514);
             this.outWarehouseDgv.TabIndex = 17;
             // 
             // backBtn
@@ -140,9 +140,10 @@
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(60, 618);
+            this.backBtn.Location = new System.Drawing.Point(80, 761);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(200, 120);
+            this.backBtn.Size = new System.Drawing.Size(267, 148);
             this.backBtn.TabIndex = 20;
             this.backBtn.Text = "Powrót";
             this.backBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -155,10 +156,9 @@
             this.entraceWarehouseLbl.BackColor = System.Drawing.Color.Transparent;
             this.entraceWarehouseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.entraceWarehouseLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.entraceWarehouseLbl.Location = new System.Drawing.Point(24, 30);
-            this.entraceWarehouseLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.entraceWarehouseLbl.Location = new System.Drawing.Point(32, 37);
             this.entraceWarehouseLbl.Name = "entraceWarehouseLbl";
-            this.entraceWarehouseLbl.Size = new System.Drawing.Size(242, 29);
+            this.entraceWarehouseLbl.Size = new System.Drawing.Size(297, 36);
             this.entraceWarehouseLbl.TabIndex = 21;
             this.entraceWarehouseLbl.Text = "Magazyn wejściowy";
             // 
@@ -168,10 +168,9 @@
             this.outWarehouseLbl.BackColor = System.Drawing.Color.Transparent;
             this.outWarehouseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.outWarehouseLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.outWarehouseLbl.Location = new System.Drawing.Point(639, 30);
-            this.outWarehouseLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.outWarehouseLbl.Location = new System.Drawing.Point(852, 37);
             this.outWarehouseLbl.Name = "outWarehouseLbl";
-            this.outWarehouseLbl.Size = new System.Drawing.Size(239, 29);
+            this.outWarehouseLbl.Size = new System.Drawing.Size(296, 36);
             this.outWarehouseLbl.TabIndex = 22;
             this.outWarehouseLbl.Text = "Magazyn wyjściowy";
             // 
@@ -181,10 +180,9 @@
             this.semiFinishedLbl.BackColor = System.Drawing.Color.Transparent;
             this.semiFinishedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.semiFinishedLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.semiFinishedLbl.Location = new System.Drawing.Point(26, 93);
-            this.semiFinishedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.semiFinishedLbl.Location = new System.Drawing.Point(35, 114);
             this.semiFinishedLbl.Name = "semiFinishedLbl";
-            this.semiFinishedLbl.Size = new System.Drawing.Size(135, 18);
+            this.semiFinishedLbl.Size = new System.Drawing.Size(169, 24);
             this.semiFinishedLbl.TabIndex = 23;
             this.semiFinishedLbl.Text = "Kod półfabrykatu";
             // 
@@ -194,10 +192,9 @@
             this.productLbl.BackColor = System.Drawing.Color.Transparent;
             this.productLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.productLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.productLbl.Location = new System.Drawing.Point(641, 93);
-            this.productLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.productLbl.Location = new System.Drawing.Point(855, 114);
             this.productLbl.Name = "productLbl";
-            this.productLbl.Size = new System.Drawing.Size(109, 18);
+            this.productLbl.Size = new System.Drawing.Size(135, 24);
             this.productLbl.TabIndex = 24;
             this.productLbl.Text = "Kod produktu";
             // 
@@ -206,10 +203,10 @@
             this.semiFinishedCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.semiFinishedCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.semiFinishedCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.semiFinishedCodeTb.Location = new System.Drawing.Point(173, 90);
-            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(2);
+            this.semiFinishedCodeTb.Location = new System.Drawing.Point(256, 114);
+            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.semiFinishedCodeTb.Name = "semiFinishedCodeTb";
-            this.semiFinishedCodeTb.Size = new System.Drawing.Size(271, 24);
+            this.semiFinishedCodeTb.Size = new System.Drawing.Size(360, 28);
             this.semiFinishedCodeTb.TabIndex = 25;
             this.semiFinishedCodeTb.TextChanged += new System.EventHandler(this.semiFinishedCodeTb_TextChanged);
             // 
@@ -218,20 +215,20 @@
             this.productCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.productCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.productCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.productCodeTb.Location = new System.Drawing.Point(788, 93);
-            this.productCodeTb.Margin = new System.Windows.Forms.Padding(2);
+            this.productCodeTb.Location = new System.Drawing.Point(1051, 114);
+            this.productCodeTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productCodeTb.Name = "productCodeTb";
-            this.productCodeTb.Size = new System.Drawing.Size(271, 24);
+            this.productCodeTb.Size = new System.Drawing.Size(360, 28);
             this.productCodeTb.TabIndex = 26;
             this.productCodeTb.TextChanged += new System.EventHandler(this.productCodeTb_TextChanged);
             // 
             // WarehouseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.ClientSize = new System.Drawing.Size(1579, 937);
             this.Controls.Add(this.productCodeTb);
             this.Controls.Add(this.semiFinishedCodeTb);
             this.Controls.Add(this.productLbl);
@@ -241,7 +238,7 @@
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.outWarehouseDgv);
             this.Controls.Add(this.entraceWarehouseDgv);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WarehouseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Magazyn";
