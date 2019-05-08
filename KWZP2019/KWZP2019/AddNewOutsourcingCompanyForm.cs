@@ -12,15 +12,19 @@ namespace KWZP2019
 {
     public partial class AddNewOutsourcingCompanyForm : Form
     {
-        RoofingCompanyEntities db;
-        public AddNewOutsourcingCompanyForm(RoofingCompanyEntities db)
+        private RoofingCompanyEntities db;
+        private OutsourcingForm previousForm;
+        public AddNewOutsourcingCompanyForm(RoofingCompanyEntities db, OutsourcingForm form)
         {
             InitializeComponent();
             this.db = db;
+            this.previousForm = form;
         }
         private void returnANOFBtn_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            previousForm.Show();
+            this.Close();
         }
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {

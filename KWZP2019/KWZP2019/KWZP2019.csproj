@@ -62,6 +62,12 @@
     <Compile Include="Absence.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddNewOrderDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewOrderDetailForm.Designer.cs">
+      <DependentUpon>AddNewOrderDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbsenceType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -465,12 +471,6 @@
     <Compile Include="Production\NewProductionPlan.Designer.cs">
       <DependentUpon>NewProductionPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderForm.designer.cs">
-      <DependentUpon>OrderForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="OshTrainingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -742,6 +742,15 @@
     <Compile Include="vOutputMagazine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vOutsourcing.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOutsourcingCommitment.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vOutsourcingType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vOutsourcingWithType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -781,7 +790,13 @@
     <Compile Include="vSupplierPart.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vSupplierPartsMinusType.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vSupplierSemi.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSupplierSemisMinusType.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vTechnicalProductDataPerProcess.cs">
@@ -811,6 +826,9 @@
     <Compile Include="WorkingDays.cs" />
     <EmbeddedResource Include="AddNewCustomerForm.resx">
       <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewOrderDetailForm.resx">
+      <DependentUpon>AddNewOrderDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewOrderForm.resx">
       <DependentUpon>AddNewOrderForm.cs</DependentUpon>
@@ -910,9 +928,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production\NewTechnology.resx">
       <DependentUpon>NewTechnology.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrderForm.resx">
-      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachinesForm.resx">
       <DependentUpon>MachinesForm.cs</DependentUpon>

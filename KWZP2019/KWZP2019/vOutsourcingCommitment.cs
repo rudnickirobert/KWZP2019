@@ -12,20 +12,11 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vSupplierSemi
+    public partial class vOutsourcingCommitment
     {
         public int Numer { get; set; }
-        public string Typ { get; set; }
         public string Nazwa { get; set; }
-        public string Telefon { get; set; }
-        public string E_mail { get; set; }
-        public string Miasto { get; set; }
-        public string Kod_pocztowy { get; set; }
-        public string Ulica { get; set; }
-        public string Nr_domu { get; set; }
-        public string Numer_lokalu { get; set; }
-        public string NIP { get; set; }
-        public string KRS { get; set; }
-        public string Opis { get; set; }
+        public System.DateTime Koniec_zobowiązania { get; set; }
+        public decimal Cena { get; set; }
     }
 }

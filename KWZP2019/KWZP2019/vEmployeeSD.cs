@@ -14,10 +14,8 @@ namespace KWZP2019
     
     public partial class vEmployeeSD
     {
-        public string Nr_Obsługi { get; set; }
-        public System.DateTime Data_przyjęcia { get; set; }
-        public string Nazwa_części { get; set; }
-        public int Ilość { get; set; }
-        public string Jednostka { get; set; }
+        public int Numer { get; set; }
+        public string Imię { get; set; }
+        public string Nazwisko { get; set; }
     }
 }
