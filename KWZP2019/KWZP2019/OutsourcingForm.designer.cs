@@ -180,7 +180,7 @@
             this.txtBSerachOutsourcing.Name = "txtBSerachOutsourcing";
             this.txtBSerachOutsourcing.Size = new System.Drawing.Size(195, 26);
             this.txtBSerachOutsourcing.TabIndex = 16;
-            this.txtBSerachOutsourcing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBSerachOutsourcing_KeyPress);
+            this.txtBSerachOutsourcing.TextChanged += new System.EventHandler(this.txtBSerachOutsourcing_TextChanged);
             // 
             // nameOutsourcingLbl
             // 
@@ -265,7 +265,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.nameOutsourcingDgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.nameOutsourcingDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nameOutsourcingDgv.Size = new System.Drawing.Size(360, 121);
+            this.nameOutsourcingDgv.Size = new System.Drawing.Size(430, 121);
             this.nameOutsourcingDgv.TabIndex = 20;
             // 
             // labelCommitmentOutsourc

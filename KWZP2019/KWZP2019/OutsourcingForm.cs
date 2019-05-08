@@ -37,12 +37,12 @@ namespace KWZP2019
             previousForm.Show();
             this.Close();
         }
-        private void txtBSerachOutsourcing_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtBSerachOutsourcing_TextChanged(object sender, EventArgs e)
         { 
             if (txtBSerachOutsourcing.Text.Trim().Length < 1)
             
             {
-                outsourcingTypeDgv.DataSource = db.vOutsourcings.ToList();
+                outsourcingTypeDgv.DataSource = db.vOutsourcingTypes.ToList();
                 outsourcingTypeDgv.Columns["Numer"].Visible = false;
                 nameOutsourcingDgv.DataSource = db.vOutsourcingCommitments.ToList();
                 detailsOutsourcingDgv.DataSource = db.vOutsourcings.ToList();
@@ -51,6 +51,12 @@ namespace KWZP2019
             {
                 outsourcingTypeDgv.DataSource =  db.vOutsourcingTypes.ToList();
                 outsourcingTypeDgv.Columns["Numer"].Visible = false;
+                nameOutsourcingDgv.DataSource = (from Outsourcing in db.vOutsourcingCommitments
+                                                 where Outsourcing.Nazwa.Contains(txtBSerachOutsourcing.Text.Trim())
+                                                 select Outsourcing).ToList();
+                detailsOutsourcingDgv.DataSource = (from Outsourcing in db.vOutsourcings
+                                                    where Outsourcing.Nazwa.Contains(txtBSerachOutsourcing.Text.Trim())
+                                                    select Outsourcing).ToList();
             }
         }
 
