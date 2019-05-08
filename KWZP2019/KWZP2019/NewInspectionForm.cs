@@ -184,7 +184,7 @@ namespace KWZP2019
                 this.db.SaveChanges();
                 MessageBox.Show("Obsługa została dodana!");
                 this.btnSave.Text = "Aktualizuj";
-                nIdSelectedDescription = maintenance.IdMaintDesc;
+                nIdSelectedDescription = Convert.ToInt32(maintenance.IdMaintDesc);
                 populateTextBox();        
             }
             catch (Exception)

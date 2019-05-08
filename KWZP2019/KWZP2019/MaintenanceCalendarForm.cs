@@ -93,7 +93,7 @@ namespace KWZP2019
             try
             {               
                 maintenance = db.Maintenances.Where(maintenance => maintenance.IdMaintenance == this.idSelectedMaintenance).First();
-                MaintenanceDescriptionForm maintDescriptionForm = new MaintenanceDescriptionForm(this.db, maintenance.IdMaintDesc);
+                MaintenanceDescriptionForm maintDescriptionForm = new MaintenanceDescriptionForm(this.db, Convert.ToInt32(maintenance.IdMaintDesc));
                 maintDescriptionForm.Show();
             }
             catch (Exception ex)
