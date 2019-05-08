@@ -37,11 +37,11 @@ namespace KWZP2019
             dgvSalariesData.Columns[3].HeaderText = "Imię";
             dgvSalariesData.Columns[4].HeaderText = "Nazwisko";
             dgvSalariesData.Columns[5].HeaderText = "PESEL";
-            dgvSalariesData.Columns[8].HeaderText = "Liczba dni na L4";
-            dgvSalariesData.Columns[10].HeaderText = "Liczba dni płatnego urlopu";
+            dgvSalariesData.Columns[8].HeaderText = "Dni L4";
+            dgvSalariesData.Columns[10].HeaderText = "Dni urlopu płatnego";
             dgvSalariesData.Columns[12].HeaderText = "Liczba dni bezpłatnego urlopu";
-            dgvSalariesData.Columns[14].HeaderText = "Liczba dni nieusprawiedliwionych";
-            dgvSalariesData.Columns[16].HeaderText = "Liczba dni urlopu na żądanie";
+            dgvSalariesData.Columns[14].HeaderText = "Dni NU";
+            dgvSalariesData.Columns[16].HeaderText = "Dni NŻ";
             dgvSalariesData.Columns[18].HeaderText = "Pensja bez premii";
             dgvSalariesData.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             tbCurrentDate.Text = DateTime.Now.ToString("yyyy-MM-dd");

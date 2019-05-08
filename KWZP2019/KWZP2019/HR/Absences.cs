@@ -119,7 +119,8 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Absence absenceToRemove = new Absence {IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[0].Value.ToString())};
+            Absence absenceToRemove = new Absence();
+            absenceToRemove.IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[0].Value.ToString());
             db.Absences.Attach(absenceToRemove);
             db.Absences.Remove(absenceToRemove);
             db.SaveChanges();

@@ -52,10 +52,10 @@
             // dtpStartDate
             // 
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpStartDate.Location = new System.Drawing.Point(443, 124);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpStartDate.Location = new System.Drawing.Point(591, 153);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(249, 23);
+            this.dtpStartDate.Size = new System.Drawing.Size(331, 26);
             this.dtpStartDate.TabIndex = 0;
             // 
             // cbEmployeeList
@@ -64,10 +64,10 @@
             this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbEmployeeList.FormattingEnabled = true;
-            this.cbEmployeeList.Location = new System.Drawing.Point(443, 28);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEmployeeList.Location = new System.Drawing.Point(591, 34);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(249, 26);
+            this.cbEmployeeList.Size = new System.Drawing.Size(331, 30);
             this.cbEmployeeList.TabIndex = 1;
             // 
             // tbSalary
@@ -75,18 +75,19 @@
             this.tbSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbSalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbSalary.Location = new System.Drawing.Point(443, 186);
-            this.tbSalary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSalary.Location = new System.Drawing.Point(591, 229);
+            this.tbSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSalary.Name = "tbSalary";
-            this.tbSalary.Size = new System.Drawing.Size(249, 24);
+            this.tbSalary.Size = new System.Drawing.Size(331, 28);
             this.tbSalary.TabIndex = 2;
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpEndDate.Location = new System.Drawing.Point(443, 155);
+            this.dtpEndDate.Location = new System.Drawing.Point(591, 191);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(249, 23);
+            this.dtpEndDate.Size = new System.Drawing.Size(331, 26);
             this.dtpEndDate.TabIndex = 3;
             // 
             // cbPosition
@@ -95,17 +96,19 @@
             this.cbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbPosition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Location = new System.Drawing.Point(443, 92);
+            this.cbPosition.Location = new System.Drawing.Point(591, 113);
+            this.cbPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Size = new System.Drawing.Size(249, 26);
+            this.cbPosition.Size = new System.Drawing.Size(331, 30);
             this.cbPosition.TabIndex = 4;
             // 
             // dtpWorkplaceTrainingDate
             // 
             this.dtpWorkplaceTrainingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpWorkplaceTrainingDate.Location = new System.Drawing.Point(443, 217);
+            this.dtpWorkplaceTrainingDate.Location = new System.Drawing.Point(591, 267);
+            this.dtpWorkplaceTrainingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpWorkplaceTrainingDate.Name = "dtpWorkplaceTrainingDate";
-            this.dtpWorkplaceTrainingDate.Size = new System.Drawing.Size(249, 23);
+            this.dtpWorkplaceTrainingDate.Size = new System.Drawing.Size(331, 26);
             this.dtpWorkplaceTrainingDate.TabIndex = 6;
             // 
             // btnAdd
@@ -120,9 +123,10 @@
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdd.Location = new System.Drawing.Point(354, 260);
+            this.btnAdd.Location = new System.Drawing.Point(472, 320);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(180, 120);
+            this.btnAdd.Size = new System.Drawing.Size(240, 148);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,9 +139,10 @@
             this.cbDepartmentList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbDepartmentList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbDepartmentList.FormattingEnabled = true;
-            this.cbDepartmentList.Location = new System.Drawing.Point(443, 60);
+            this.cbDepartmentList.Location = new System.Drawing.Point(591, 74);
+            this.cbDepartmentList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbDepartmentList.Name = "cbDepartmentList";
-            this.cbDepartmentList.Size = new System.Drawing.Size(249, 26);
+            this.cbDepartmentList.Size = new System.Drawing.Size(331, 30);
             this.cbDepartmentList.TabIndex = 9;
             // 
             // btnClear
@@ -152,13 +157,15 @@
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClear.Location = new System.Drawing.Point(3, 260);
+            this.btnClear.Location = new System.Drawing.Point(4, 320);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(180, 120);
+            this.btnClear.Size = new System.Drawing.Size(240, 148);
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Wyczyść";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnReturn
             // 
@@ -173,9 +180,10 @@
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturn.Location = new System.Drawing.Point(4, 14);
+            this.btnReturn.Location = new System.Drawing.Point(5, 17);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(180, 120);
+            this.btnReturn.Size = new System.Drawing.Size(240, 148);
             this.btnReturn.TabIndex = 40;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -195,9 +203,10 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReturnMain.Location = new System.Drawing.Point(3, 137);
+            this.btnReturnMain.Location = new System.Drawing.Point(4, 169);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(180, 120);
+            this.btnReturnMain.Size = new System.Drawing.Size(240, 148);
             this.btnReturnMain.TabIndex = 41;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -210,9 +219,10 @@
             this.lblEmployee.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEmployee.Location = new System.Drawing.Point(189, 30);
+            this.lblEmployee.Location = new System.Drawing.Point(252, 37);
+            this.lblEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(87, 18);
+            this.lblEmployee.Size = new System.Drawing.Size(106, 24);
             this.lblEmployee.TabIndex = 42;
             this.lblEmployee.Text = "Pracownik";
             // 
@@ -222,9 +232,10 @@
             this.lblDepartment.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblDepartment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDepartment.Location = new System.Drawing.Point(189, 62);
+            this.lblDepartment.Location = new System.Drawing.Point(252, 76);
+            this.lblDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(46, 18);
+            this.lblDepartment.Size = new System.Drawing.Size(59, 24);
             this.lblDepartment.TabIndex = 43;
             this.lblDepartment.Text = "Dział";
             // 
@@ -234,9 +245,10 @@
             this.lblPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblPosition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPosition.Location = new System.Drawing.Point(189, 94);
+            this.lblPosition.Location = new System.Drawing.Point(252, 116);
+            this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(96, 18);
+            this.lblPosition.Size = new System.Drawing.Size(115, 24);
             this.lblPosition.TabIndex = 44;
             this.lblPosition.Text = "Stanowisko";
             // 
@@ -246,9 +258,10 @@
             this.lblStartDate.BackColor = System.Drawing.Color.Transparent;
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblStartDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStartDate.Location = new System.Drawing.Point(189, 126);
+            this.lblStartDate.Location = new System.Drawing.Point(252, 155);
+            this.lblStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(173, 18);
+            this.lblStartDate.Size = new System.Drawing.Size(210, 24);
             this.lblStartDate.TabIndex = 45;
             this.lblStartDate.Text = "Data zawarcia umowy";
             // 
@@ -258,9 +271,10 @@
             this.lblEndDate.BackColor = System.Drawing.Color.Transparent;
             this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblEndDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEndDate.Location = new System.Drawing.Point(189, 158);
+            this.lblEndDate.Location = new System.Drawing.Point(252, 194);
+            this.lblEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(201, 18);
+            this.lblEndDate.Size = new System.Drawing.Size(245, 24);
             this.lblEndDate.TabIndex = 46;
             this.lblEndDate.Text = "Data zakończenia umowy";
             // 
@@ -270,9 +284,10 @@
             this.lblSalary.BackColor = System.Drawing.Color.Transparent;
             this.lblSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblSalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSalary.Location = new System.Drawing.Point(189, 190);
+            this.lblSalary.Location = new System.Drawing.Point(252, 234);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(153, 18);
+            this.lblSalary.Size = new System.Drawing.Size(186, 24);
             this.lblSalary.TabIndex = 47;
             this.lblSalary.Text = "Stawka miesięczna";
             // 
@@ -282,20 +297,21 @@
             this.lblWorkPlaceTrainingDate.BackColor = System.Drawing.Color.Transparent;
             this.lblWorkPlaceTrainingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblWorkPlaceTrainingDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWorkPlaceTrainingDate.Location = new System.Drawing.Point(188, 219);
+            this.lblWorkPlaceTrainingDate.Location = new System.Drawing.Point(251, 270);
+            this.lblWorkPlaceTrainingDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWorkPlaceTrainingDate.Name = "lblWorkPlaceTrainingDate";
-            this.lblWorkPlaceTrainingDate.Size = new System.Drawing.Size(251, 18);
+            this.lblWorkPlaceTrainingDate.Size = new System.Drawing.Size(303, 24);
             this.lblWorkPlaceTrainingDate.TabIndex = 48;
             this.lblWorkPlaceTrainingDate.Text = "Data szkolenia stanowiskowego";
             // 
             // AddContract
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(704, 396);
+            this.ClientSize = new System.Drawing.Size(939, 487);
             this.Controls.Add(this.lblWorkPlaceTrainingDate);
             this.Controls.Add(this.lblSalary);
             this.Controls.Add(this.lblEndDate);
@@ -314,7 +330,7 @@
             this.Controls.Add(this.tbSalary);
             this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.dtpStartDate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddContract";
