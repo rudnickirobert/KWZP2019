@@ -44,10 +44,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.addNewOutsourcingCompanyBtn = new System.Windows.Forms.Button();
             this.outsourcingTypeDgv = new System.Windows.Forms.DataGridView();
-            this.idOutsourcingTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OutsourcingType1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outsourcingTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detailsOutsourcingDgv = new System.Windows.Forms.DataGridView();
+            this.txtBSerachOutsourcing = new System.Windows.Forms.TextBox();
+            this.nameOutsourcingLbl = new System.Windows.Forms.Label();
+            this.returnCancelOutBtn = new System.Windows.Forms.Button();
+            this.serachOutsourcingCompaniesLbl = new System.Windows.Forms.Label();
+            this.nameOutsourcingDgv = new System.Windows.Forms.DataGridView();
+            this.labelCommitmentOutsourc = new System.Windows.Forms.Label();
+            this.idCommitmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOutsourcingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCommitmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outsourcingCommitmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idOutsourcingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idOutsourcingTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,23 +70,14 @@
             this.nIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kRSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outsourcingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtBSerachOutsourcing = new System.Windows.Forms.TextBox();
-            this.nameOutsourcingLbl = new System.Windows.Forms.Label();
-            this.returnCancelOutBtn = new System.Windows.Forms.Button();
-            this.serachOutsourcingCompaniesLbl = new System.Windows.Forms.Label();
-            this.nameOutsourcingDgv = new System.Windows.Forms.DataGridView();
-            this.idCommitmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOutsourcingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endCommitmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outsourcingCommitmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelCommitmentOutsourc = new System.Windows.Forms.Label();
+            this.idOutsourcingTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outsourcingTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsOutsourcingDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outsourcingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameOutsourcingDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outsourcingCommitmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outsourcingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // addNewOutsourcingCompanyBtn
@@ -144,16 +144,9 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.outsourcingTypeDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.outsourcingTypeDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.outsourcingTypeDgv.Size = new System.Drawing.Size(325, 104);
+            this.outsourcingTypeDgv.Size = new System.Drawing.Size(325, 99);
             this.outsourcingTypeDgv.TabIndex = 14;
             this.outsourcingTypeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.outsourcingTypeDgv_CellContentClick);
-            // 
-            // idOutsourcingTypeDataGridViewTextBoxColumn
-            // 
-            this.idOutsourcingTypeDataGridViewTextBoxColumn.DataPropertyName = "IdOutsourcingType";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn.HeaderText = "IdOutsourcingType";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn.Name = "idOutsourcingTypeDataGridViewTextBoxColumn";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn.Width = 163;
             // 
             // OutsourcingType1
             // 
@@ -161,10 +154,6 @@
             this.OutsourcingType1.HeaderText = "OutsourcingType1";
             this.OutsourcingType1.Name = "OutsourcingType1";
             this.OutsourcingType1.Width = 158;
-            // 
-            // outsourcingTypeBindingSource
-            // 
-            this.outsourcingTypeBindingSource.DataSource = typeof(KWZP2019.OutsourcingType);
             // 
             // detailsOutsourcingDgv
             // 
@@ -211,7 +200,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detailsOutsourcingDgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.detailsOutsourcingDgv.EnableHeadersVisualStyles = false;
-            this.detailsOutsourcingDgv.Location = new System.Drawing.Point(55, 406);
+            this.detailsOutsourcingDgv.Location = new System.Drawing.Point(37, 418);
             this.detailsOutsourcingDgv.Margin = new System.Windows.Forms.Padding(2);
             this.detailsOutsourcingDgv.MultiSelect = false;
             this.detailsOutsourcingDgv.Name = "detailsOutsourcingDgv";
@@ -224,96 +213,8 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.detailsOutsourcingDgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.detailsOutsourcingDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detailsOutsourcingDgv.Size = new System.Drawing.Size(1148, 80);
+            this.detailsOutsourcingDgv.Size = new System.Drawing.Size(1148, 127);
             this.detailsOutsourcingDgv.TabIndex = 15;
-            // 
-            // idOutsourcingDataGridViewTextBoxColumn1
-            // 
-            this.idOutsourcingDataGridViewTextBoxColumn1.DataPropertyName = "IdOutsourcing";
-            this.idOutsourcingDataGridViewTextBoxColumn1.HeaderText = "IdOutsourcing";
-            this.idOutsourcingDataGridViewTextBoxColumn1.Name = "idOutsourcingDataGridViewTextBoxColumn1";
-            this.idOutsourcingDataGridViewTextBoxColumn1.Width = 127;
-            // 
-            // idOutsourcingTypeDataGridViewTextBoxColumn1
-            // 
-            this.idOutsourcingTypeDataGridViewTextBoxColumn1.DataPropertyName = "IdOutsourcingType";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn1.HeaderText = "IdOutsourcingType";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn1.Name = "idOutsourcingTypeDataGridViewTextBoxColumn1";
-            this.idOutsourcingTypeDataGridViewTextBoxColumn1.Width = 163;
-            // 
-            // companyNameDataGridViewTextBoxColumn
-            // 
-            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            this.companyNameDataGridViewTextBoxColumn.Width = 138;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 71;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 58;
-            // 
-            // zipCodeDataGridViewTextBoxColumn
-            // 
-            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            this.zipCodeDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // streetDataGridViewTextBoxColumn
-            // 
-            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
-            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
-            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // houseNumberDataGridViewTextBoxColumn
-            // 
-            this.houseNumberDataGridViewTextBoxColumn.DataPropertyName = "HouseNumber";
-            this.houseNumberDataGridViewTextBoxColumn.HeaderText = "HouseNumber";
-            this.houseNumberDataGridViewTextBoxColumn.Name = "houseNumberDataGridViewTextBoxColumn";
-            this.houseNumberDataGridViewTextBoxColumn.Width = 131;
-            // 
-            // apartmentNumberDataGridViewTextBoxColumn
-            // 
-            this.apartmentNumberDataGridViewTextBoxColumn.DataPropertyName = "ApartmentNumber";
-            this.apartmentNumberDataGridViewTextBoxColumn.HeaderText = "ApartmentNumber";
-            this.apartmentNumberDataGridViewTextBoxColumn.Name = "apartmentNumberDataGridViewTextBoxColumn";
-            this.apartmentNumberDataGridViewTextBoxColumn.Width = 156;
-            // 
-            // nIPDataGridViewTextBoxColumn
-            // 
-            this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
-            this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
-            this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
-            this.nIPDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // kRSDataGridViewTextBoxColumn
-            // 
-            this.kRSDataGridViewTextBoxColumn.DataPropertyName = "KRS";
-            this.kRSDataGridViewTextBoxColumn.HeaderText = "KRS";
-            this.kRSDataGridViewTextBoxColumn.Name = "kRSDataGridViewTextBoxColumn";
-            this.kRSDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // outsourcingBindingSource
-            // 
-            this.outsourcingBindingSource.DataSource = typeof(KWZP2019.Outsourcing);
             // 
             // txtBSerachOutsourcing
             // 
@@ -403,7 +304,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.nameOutsourcingDgv.DefaultCellStyle = dataGridViewCellStyle11;
             this.nameOutsourcingDgv.EnableHeadersVisualStyles = false;
-            this.nameOutsourcingDgv.Location = new System.Drawing.Point(38, 249);
+            this.nameOutsourcingDgv.Location = new System.Drawing.Point(37, 234);
             this.nameOutsourcingDgv.Margin = new System.Windows.Forms.Padding(2);
             this.nameOutsourcingDgv.MultiSelect = false;
             this.nameOutsourcingDgv.Name = "nameOutsourcingDgv";
@@ -416,8 +317,20 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.nameOutsourcingDgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.nameOutsourcingDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nameOutsourcingDgv.Size = new System.Drawing.Size(498, 93);
+            this.nameOutsourcingDgv.Size = new System.Drawing.Size(514, 106);
             this.nameOutsourcingDgv.TabIndex = 20;
+            // 
+            // labelCommitmentOutsourc
+            // 
+            this.labelCommitmentOutsourc.AutoSize = true;
+            this.labelCommitmentOutsourc.BackColor = System.Drawing.Color.Transparent;
+            this.labelCommitmentOutsourc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.labelCommitmentOutsourc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelCommitmentOutsourc.Location = new System.Drawing.Point(37, 200);
+            this.labelCommitmentOutsourc.Name = "labelCommitmentOutsourc";
+            this.labelCommitmentOutsourc.Size = new System.Drawing.Size(233, 20);
+            this.labelCommitmentOutsourc.TabIndex = 21;
+            this.labelCommitmentOutsourc.Text = "Zobowiązania outsourcingu:";
             // 
             // idCommitmentDataGridViewTextBoxColumn
             // 
@@ -451,23 +364,111 @@
             // 
             this.outsourcingCommitmentBindingSource.DataSource = typeof(KWZP2019.OutsourcingCommitment);
             // 
-            // labelCommitmentOutsourc
+            // idOutsourcingDataGridViewTextBoxColumn1
             // 
-            this.labelCommitmentOutsourc.AutoSize = true;
-            this.labelCommitmentOutsourc.BackColor = System.Drawing.Color.Transparent;
-            this.labelCommitmentOutsourc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.labelCommitmentOutsourc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCommitmentOutsourc.Location = new System.Drawing.Point(38, 215);
-            this.labelCommitmentOutsourc.Name = "labelCommitmentOutsourc";
-            this.labelCommitmentOutsourc.Size = new System.Drawing.Size(233, 20);
-            this.labelCommitmentOutsourc.TabIndex = 21;
-            this.labelCommitmentOutsourc.Text = "Zobowiązania outsourcingu:";
+            this.idOutsourcingDataGridViewTextBoxColumn1.DataPropertyName = "IdOutsourcing";
+            this.idOutsourcingDataGridViewTextBoxColumn1.HeaderText = "IdOutsourcing";
+            this.idOutsourcingDataGridViewTextBoxColumn1.Name = "idOutsourcingDataGridViewTextBoxColumn1";
+            this.idOutsourcingDataGridViewTextBoxColumn1.Width = 127;
+            // 
+            // idOutsourcingTypeDataGridViewTextBoxColumn1
+            // 
+            this.idOutsourcingTypeDataGridViewTextBoxColumn1.DataPropertyName = "IdOutsourcingType";
+            this.idOutsourcingTypeDataGridViewTextBoxColumn1.HeaderText = "IdOutsourcingType";
+            this.idOutsourcingTypeDataGridViewTextBoxColumn1.Name = "idOutsourcingTypeDataGridViewTextBoxColumn1";
+            this.idOutsourcingTypeDataGridViewTextBoxColumn1.Width = 163;
+            // 
+            // companyNameDataGridViewTextBoxColumn
+            // 
+            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            this.companyNameDataGridViewTextBoxColumn.Width = 138;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // zipCodeDataGridViewTextBoxColumn
+            // 
+            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
+            this.zipCodeDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // streetDataGridViewTextBoxColumn
+            // 
+            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
+            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
+            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
+            this.streetDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // houseNumberDataGridViewTextBoxColumn
+            // 
+            this.houseNumberDataGridViewTextBoxColumn.DataPropertyName = "HouseNumber";
+            this.houseNumberDataGridViewTextBoxColumn.HeaderText = "HouseNumber";
+            this.houseNumberDataGridViewTextBoxColumn.Name = "houseNumberDataGridViewTextBoxColumn";
+            this.houseNumberDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // apartmentNumberDataGridViewTextBoxColumn
+            // 
+            this.apartmentNumberDataGridViewTextBoxColumn.DataPropertyName = "ApartmentNumber";
+            this.apartmentNumberDataGridViewTextBoxColumn.HeaderText = "ApartmentNumber";
+            this.apartmentNumberDataGridViewTextBoxColumn.Name = "apartmentNumberDataGridViewTextBoxColumn";
+            this.apartmentNumberDataGridViewTextBoxColumn.Width = 156;
+            // 
+            // nIPDataGridViewTextBoxColumn
+            // 
+            this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
+            this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
+            this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
+            this.nIPDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // kRSDataGridViewTextBoxColumn
+            // 
+            this.kRSDataGridViewTextBoxColumn.DataPropertyName = "KRS";
+            this.kRSDataGridViewTextBoxColumn.HeaderText = "KRS";
+            this.kRSDataGridViewTextBoxColumn.Name = "kRSDataGridViewTextBoxColumn";
+            this.kRSDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // outsourcingBindingSource
+            // 
+            this.outsourcingBindingSource.DataSource = typeof(KWZP2019.Outsourcing);
+            // 
+            // idOutsourcingTypeDataGridViewTextBoxColumn
+            // 
+            this.idOutsourcingTypeDataGridViewTextBoxColumn.DataPropertyName = "IdOutsourcingType";
+            this.idOutsourcingTypeDataGridViewTextBoxColumn.HeaderText = "IdOutsourcingType";
+            this.idOutsourcingTypeDataGridViewTextBoxColumn.Name = "idOutsourcingTypeDataGridViewTextBoxColumn";
+            this.idOutsourcingTypeDataGridViewTextBoxColumn.Width = 163;
+            // 
+            // outsourcingTypeBindingSource
+            // 
+            this.outsourcingTypeBindingSource.DataSource = typeof(KWZP2019.OutsourcingType);
             // 
             // OutsourcingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.labelCommitmentOutsourc);
             this.Controls.Add(this.nameOutsourcingDgv);
@@ -484,11 +485,11 @@
             this.Text = "Outsourcing";
             this.Load += new System.EventHandler(this.OutsourcingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsOutsourcingDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outsourcingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameOutsourcingDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outsourcingCommitmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outsourcingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outsourcingTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

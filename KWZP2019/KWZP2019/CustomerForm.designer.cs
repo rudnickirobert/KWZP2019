@@ -274,7 +274,7 @@
             this.addNewOrderDetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.addNewOrderDetailBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.addNewOrderDetailBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(786, 307);
+            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(881, 307);
             this.addNewOrderDetailBtn.Name = "addNewOrderDetailBtn";
             this.addNewOrderDetailBtn.Size = new System.Drawing.Size(230, 55);
             this.addNewOrderDetailBtn.TabIndex = 22;
@@ -312,7 +312,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.orderDetailsDgv.DefaultCellStyle = dataGridViewCellStyle11;
             this.orderDetailsDgv.EnableHeadersVisualStyles = false;
-            this.orderDetailsDgv.Location = new System.Drawing.Point(786, 437);
+            this.orderDetailsDgv.Location = new System.Drawing.Point(881, 437);
             this.orderDetailsDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.orderDetailsDgv.Name = "orderDetailsDgv";
             this.orderDetailsDgv.RowHeadersVisible = false;
@@ -324,7 +324,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.orderDetailsDgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.orderDetailsDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderDetailsDgv.Size = new System.Drawing.Size(386, 126);
+            this.orderDetailsDgv.Size = new System.Drawing.Size(271, 126);
             this.orderDetailsDgv.TabIndex = 23;
             // 
             // generateReportBtn
@@ -490,6 +490,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.generateReportBtn);
             this.Controls.Add(this.orderBtn);

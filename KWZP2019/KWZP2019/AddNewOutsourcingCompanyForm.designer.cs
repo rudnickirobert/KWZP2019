@@ -65,10 +65,10 @@
             // descriptionTb
             // 
             this.descriptionTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.descriptionTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.descriptionTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.descriptionTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.descriptionTb.Location = new System.Drawing.Point(826, 496);
-            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptionTb.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTb.Name = "descriptionTb";
             this.descriptionTb.Size = new System.Drawing.Size(197, 24);
             this.descriptionTb.TabIndex = 46;
@@ -89,10 +89,10 @@
             // krsTb
             // 
             this.krsTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.krsTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.krsTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.krsTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.krsTb.Location = new System.Drawing.Point(525, 496);
-            this.krsTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.krsTb.Margin = new System.Windows.Forms.Padding(2);
             this.krsTb.Name = "krsTb";
             this.krsTb.Size = new System.Drawing.Size(197, 24);
             this.krsTb.TabIndex = 44;
@@ -113,10 +113,10 @@
             // nipTb
             // 
             this.nipTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.nipTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.nipTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.nipTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nipTb.Location = new System.Drawing.Point(243, 496);
-            this.nipTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nipTb.Margin = new System.Windows.Forms.Padding(2);
             this.nipTb.Name = "nipTb";
             this.nipTb.Size = new System.Drawing.Size(197, 24);
             this.nipTb.TabIndex = 42;
@@ -137,10 +137,10 @@
             // apartmentNumberTb
             // 
             this.apartmentNumberTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.apartmentNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.apartmentNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.apartmentNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.apartmentNumberTb.Location = new System.Drawing.Point(824, 416);
-            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.apartmentNumberTb.Margin = new System.Windows.Forms.Padding(2);
             this.apartmentNumberTb.Name = "apartmentNumberTb";
             this.apartmentNumberTb.Size = new System.Drawing.Size(197, 24);
             this.apartmentNumberTb.TabIndex = 40;
@@ -148,10 +148,10 @@
             // houseNumberTb
             // 
             this.houseNumberTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.houseNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.houseNumberTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.houseNumberTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.houseNumberTb.Location = new System.Drawing.Point(525, 416);
-            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.houseNumberTb.Margin = new System.Windows.Forms.Padding(2);
             this.houseNumberTb.Name = "houseNumberTb";
             this.houseNumberTb.Size = new System.Drawing.Size(197, 24);
             this.houseNumberTb.TabIndex = 39;
@@ -185,10 +185,10 @@
             // streetTb
             // 
             this.streetTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.streetTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.streetTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.streetTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.streetTb.Location = new System.Drawing.Point(243, 416);
-            this.streetTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.streetTb.Margin = new System.Windows.Forms.Padding(2);
             this.streetTb.Name = "streetTb";
             this.streetTb.Size = new System.Drawing.Size(197, 24);
             this.streetTb.TabIndex = 36;
@@ -196,10 +196,10 @@
             // zipCodeTb
             // 
             this.zipCodeTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.zipCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.zipCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.zipCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.zipCodeTb.Location = new System.Drawing.Point(824, 323);
-            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zipCodeTb.Margin = new System.Windows.Forms.Padding(2);
             this.zipCodeTb.Name = "zipCodeTb";
             this.zipCodeTb.Size = new System.Drawing.Size(197, 24);
             this.zipCodeTb.TabIndex = 35;
@@ -233,10 +233,10 @@
             // cityTb
             // 
             this.cityTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.cityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.cityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cityTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cityTb.Location = new System.Drawing.Point(525, 323);
-            this.cityTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityTb.Margin = new System.Windows.Forms.Padding(2);
             this.cityTb.Name = "cityTb";
             this.cityTb.Size = new System.Drawing.Size(197, 24);
             this.cityTb.TabIndex = 32;
@@ -244,10 +244,10 @@
             // emailTb
             // 
             this.emailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.emailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.emailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.emailTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.emailTb.Location = new System.Drawing.Point(823, 234);
-            this.emailTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTb.Margin = new System.Windows.Forms.Padding(2);
             this.emailTb.Name = "emailTb";
             this.emailTb.Size = new System.Drawing.Size(197, 24);
             this.emailTb.TabIndex = 31;
@@ -281,10 +281,10 @@
             // phoneTb
             // 
             this.phoneTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.phoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.phoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.phoneTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.phoneTb.Location = new System.Drawing.Point(243, 323);
-            this.phoneTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneTb.Margin = new System.Windows.Forms.Padding(2);
             this.phoneTb.Name = "phoneTb";
             this.phoneTb.Size = new System.Drawing.Size(197, 24);
             this.phoneTb.TabIndex = 28;
@@ -292,10 +292,10 @@
             // nameTb
             // 
             this.nameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.nameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.nameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.nameTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nameTb.Location = new System.Drawing.Point(525, 234);
-            this.nameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTb.Margin = new System.Windows.Forms.Padding(2);
             this.nameTb.Name = "nameTb";
             this.nameTb.Size = new System.Drawing.Size(197, 24);
             this.nameTb.TabIndex = 27;
@@ -359,7 +359,7 @@
             this.addNewOutsourcingCompanyBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addNewOutsourcingCompanyBtn.Image = ((System.Drawing.Image)(resources.GetObject("addNewOutsourcingCompanyBtn.Image")));
             this.addNewOutsourcingCompanyBtn.Location = new System.Drawing.Point(258, 613);
-            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewOutsourcingCompanyBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewOutsourcingCompanyBtn.Name = "addNewOutsourcingCompanyBtn";
             this.addNewOutsourcingCompanyBtn.Size = new System.Drawing.Size(200, 120);
             this.addNewOutsourcingCompanyBtn.TabIndex = 50;
@@ -387,7 +387,7 @@
             // comboBoxOutsourcingType
             // 
             this.comboBoxOutsourcingType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.comboBoxOutsourcingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.comboBoxOutsourcingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.comboBoxOutsourcingType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.comboBoxOutsourcingType.FormattingEnabled = true;
             this.comboBoxOutsourcingType.Location = new System.Drawing.Point(243, 234);
@@ -435,6 +435,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.textBoxNewTypeOutsourcing);
             this.Controls.Add(this.buttonAddTypeOutsourcing);
@@ -466,7 +467,7 @@
             this.Controls.Add(this.phoneLbl);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.pictureBoxForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddNewOutsourcingCompanyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj nową firmę outsourcingową";
