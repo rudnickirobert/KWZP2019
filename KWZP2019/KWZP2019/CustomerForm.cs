@@ -20,13 +20,18 @@ namespace KWZP2019
         private SalesDepartmentForm previousForm;
         public CustomerForm(RoofingCompanyEntities db, SalesDepartmentForm previousForm)
         {
+            InitializeComponent();
             this.db = db;
             this.previousForm = previousForm;
-            InitializeComponent();
         }
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-            //COST CALCULATION ALGORITHM
+            costCountingAlgorithm();
+            customersDgv.DataSource = db.vCustomers.ToList();
+            customersDgv.Columns["Numer"].Visible = false;
+        }
+        private void costCountingAlgorithm()
+        {
             foreach (OrderCustomer order in db.OrderCustomers)
             {
                 double temporaryCost = 0;
@@ -43,9 +48,7 @@ namespace KWZP2019
                     temporaryCost = temporaryCost + detailCost;
                 }
                 order.Cost = Convert.ToDecimal(temporaryCost * (1 + order.Markup));
-            }//END OF ALGORITHM
-            customersDgv.DataSource = db.vCustomers.ToList();
-            customersDgv.Columns["Numer"].Visible = false;
+            }
         }
         //BUTTONS  
         private void orderBtn_Click(object sender, EventArgs e)
@@ -54,6 +57,15 @@ namespace KWZP2019
             AddNewOrderForm addNewOrderForm = new AddNewOrderForm(db, this.customersDgv.CurrentRow.Cells[1].Value, previousForm);
             addNewOrderForm.ShowDialog();
             this.Close();
+        }
+        private void deleteOrderDetailBtn_Click(object sender, EventArgs e)
+        {
+            int idDetailToRemove = Convert.ToInt32(this.orderDetailsDgv.CurrentRow.Cells["IdDetail"].Value);
+            string messageDuringRemovingDetail = "Usunięto szczegół o numerze: " + Convert.ToString(idDetailToRemove);
+            MessageBox.Show(messageDuringRemovingDetail, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            OrderDetail detailToRemove = db.OrderDetails.First(f => f.IdDetail == idDetailToRemove);
+            db.OrderDetails.Remove(detailToRemove);
+            db.SaveChanges();
         }
         private void addNewOrderDetailBtn_Click(object sender, EventArgs e)
         {
@@ -90,7 +102,7 @@ namespace KWZP2019
 
                 saveRow = customersDgv.FirstDisplayedCell.RowIndex;
             RoofingCompanyEntities db = new RoofingCompanyEntities();
-            customersDgv.DataSource = db.Customers.ToList();
+            customersDgv.DataSource = db.vCustomers.ToList();
             customersDgv.Columns["Numer"].Visible = false;
 
             if (saveRow != 0 && saveRow < customersDgv.Rows.Count)
@@ -104,13 +116,13 @@ namespace KWZP2019
         }
         //WYSZUKIWANIE KLIENTA W BAZIE
 
-        private void searchTxt_KeyPress(object sender, KeyPressEventArgs e)
+        private void searchTxt_TextChanged(object sender, EventArgs e)
         {
             if (searchTxt.Text.Trim().Length < 1)
             {
                 //pobranie wszystkich danych, gdy pole zawiera mniej niż 1 znak
-                customersDgv.DataSource = db.Customers.ToList();
-                customersDgv.Columns["Numer"].Visible = false;
+                customersDgv.DataSource = db.vCustomers.ToList();
+                //customersDgv.Columns["Numer"].Visible = false;
             }
             else
             {
@@ -131,6 +143,7 @@ namespace KWZP2019
                                     where OrderCustomer.IdCustomer == id
                                     select OrderCustomer).ToList();
             ordersDgv.Columns["IdCustomer"].Visible = false;
+            orderLbl.Text = "Zamówienie klienta: " + this.customersDgv.CurrentRow.Cells["Nazwa"].Value.ToString();
         }
         private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -138,6 +151,8 @@ namespace KWZP2019
             orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
                                           where OrderDetail.Nr_zamówienia == idCustomer
                                           select OrderDetail).ToList();
+            orderDetailsDgv.Columns["Nr_zamówienia"].Visible = false;
+            orderDetailLbl.Text = "Szczegóły zamówienia nr: " + ordersDgv.CurrentRow.Cells["Nr_zamówienia"].Value.ToString();
             //orderDetailsDgv.Columns[1].Visible = false;
         }
         //REPORT GENERATE ALGORITHM
