@@ -66,6 +66,13 @@ namespace KWZP2019
             OrderDetail detailToRemove = db.OrderDetails.First(f => f.IdDetail == idDetailToRemove);
             db.OrderDetails.Remove(detailToRemove);
             db.SaveChanges();
+            int idCustomer = Convert.ToInt32(ordersDgv.CurrentRow.Cells["Nr_zamówienia"].Value);
+            orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
+                                          where OrderDetail.Nr_zamówienia == idCustomer
+                                          select OrderDetail).ToList();
+            orderDetailsDgv.Columns["Nr_zamówienia"].Visible = false;
+            orderDetailsDgv.Columns["IdDetail"].Visible = false;
+            orderDetailLbl.Text = "Szczegóły zamówienia nr: " + ordersDgv.CurrentRow.Cells["Nr_zamówienia"].Value.ToString();
         }
         private void addNewOrderDetailBtn_Click(object sender, EventArgs e)
         {
@@ -147,11 +154,12 @@ namespace KWZP2019
         }
         private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idCustomer = Convert.ToInt32(ordersDgv.CurrentRow.Cells[0].Value);
+            int idCustomer = Convert.ToInt32(ordersDgv.CurrentRow.Cells["Nr_zamówienia"].Value);
             orderDetailsDgv.DataSource = (from OrderDetail in db.vOrderDetails
                                           where OrderDetail.Nr_zamówienia == idCustomer
                                           select OrderDetail).ToList();
             orderDetailsDgv.Columns["Nr_zamówienia"].Visible = false;
+            orderDetailsDgv.Columns["IdDetail"].Visible = false;
             orderDetailLbl.Text = "Szczegóły zamówienia nr: " + ordersDgv.CurrentRow.Cells["Nr_zamówienia"].Value.ToString();
             //orderDetailsDgv.Columns[1].Visible = false;
         }

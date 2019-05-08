@@ -1268,9 +1268,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vOrder' does not have a primary
 warning 6002: The table/view 'RoofingCompany.dbo.vOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vOrderDetail">
           <Key>
+            <PropertyRef Name="IdDetail" />
             <PropertyRef Name="Nr zamówienia" />
             <PropertyRef Name="Ilość" />
           </Key>
+          <Property Name="IdDetail" Type="int" Nullable="false" />
           <Property Name="Nr zamówienia" Type="int" Nullable="false" />
           <Property Name="Kod produktu" Type="nvarchar" MaxLength="50" />
           <Property Name="Ilość" Type="int" Nullable="false" />
@@ -2970,6 +2972,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           </EntitySet>
           <EntitySet Name="vOrderDetail" EntityType="Self.vOrderDetail" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vOrderDetail].[IdDetail] AS [IdDetail], 
     [vOrderDetail].[Nr zamówienia] AS [Nr zamówienia], 
     [vOrderDetail].[Kod produktu] AS [Kod produktu], 
     [vOrderDetail].[Ilość] AS [Ilość]
@@ -4644,12 +4647,14 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
         </EntityType>
         <EntityType Name="vOrderDetail">
           <Key>
-            <PropertyRef Name="Nr_zamówienia" />
             <PropertyRef Name="Ilość" />
+            <PropertyRef Name="IdDetail" />
+            <PropertyRef Name="Nr_zamówienia" />
           </Key>
-          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
           <Property Name="Kod_produktu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="IdDetail" Type="Int32" Nullable="false" />
+          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vOutputMagazine">
           <Key>
@@ -7408,6 +7413,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
             <EntityTypeMapping TypeName="RoofingCompanyModel.vOrderDetail">
               <MappingFragment StoreEntitySet="vOrderDetail">
                 <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
+                <ScalarProperty Name="IdDetail" ColumnName="IdDetail" />
                 <ScalarProperty Name="Kod_produktu" ColumnName="Kod produktu" />
                 <ScalarProperty Name="Ilość" ColumnName="Ilość" />
               </MappingFragment>

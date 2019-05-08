@@ -816,7 +816,7 @@ GO
 
 CREATE VIEW vOrderDetail 
 AS
-SELECT OrderCustomer.IdOrderCustomer as [Nr zamówienia], Product.ProductCode as [Kod produktu], OrderDetail.Quantity as [Ilość]
+SELECT OrderDetail.IdDetail, OrderCustomer.IdOrderCustomer as [Nr zamówienia], Product.ProductCode as [Kod produktu], OrderDetail.Quantity as [Ilość]
 FROM OrderCustomer
 JOIN Customer
 ON Customer.IdCustomer = OrderCustomer.IdCustomer
