@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalariesSummary));
             this.dgvSalariesData = new System.Windows.Forms.DataGridView();
             this.FullSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +50,50 @@
             // 
             // dgvSalariesData
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvSalariesData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSalariesData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvSalariesData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvSalariesData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalariesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalariesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalariesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullSalary,
             this.Bonus});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalariesData.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSalariesData.EnableHeadersVisualStyles = false;
             this.dgvSalariesData.Location = new System.Drawing.Point(285, 241);
             this.dgvSalariesData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalariesData.Name = "dgvSalariesData";
             this.dgvSalariesData.ReadOnly = true;
-            this.dgvSalariesData.Size = new System.Drawing.Size(1072, 313);
+            this.dgvSalariesData.RowHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvSalariesData.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvSalariesData.Size = new System.Drawing.Size(1054, 313);
             this.dgvSalariesData.TabIndex = 0;
             // 
             // FullSalary
@@ -62,15 +101,17 @@
             this.FullSalary.HeaderText = "Pensja z premią";
             this.FullSalary.Name = "FullSalary";
             this.FullSalary.ReadOnly = true;
+            this.FullSalary.Width = 135;
             // 
             // Bonus
             // 
-            dataGridViewCellStyle1.NullValue = "0";
-            this.Bonus.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.NullValue = "0";
+            this.Bonus.DefaultCellStyle = dataGridViewCellStyle3;
             this.Bonus.HeaderText = "Premia";
             this.Bonus.Name = "Bonus";
             this.Bonus.ReadOnly = true;
             this.Bonus.ToolTipText = "0";
+            this.Bonus.Width = 82;
             // 
             // btnAcceptChangesAndSendToDatabase
             // 
@@ -85,8 +126,10 @@
             // 
             // tbBonus
             // 
+            this.tbBonus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbBonus.Location = new System.Drawing.Point(569, 98);
+            this.tbBonus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbBonus.Location = new System.Drawing.Point(498, 96);
             this.tbBonus.Margin = new System.Windows.Forms.Padding(4);
             this.tbBonus.Name = "tbBonus";
             this.tbBonus.Size = new System.Drawing.Size(256, 23);
@@ -133,8 +176,10 @@
             // 
             // tbCurrentDate
             // 
+            this.tbCurrentDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbCurrentDate.Location = new System.Drawing.Point(569, 71);
+            this.tbCurrentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbCurrentDate.Location = new System.Drawing.Point(498, 69);
             this.tbCurrentDate.Margin = new System.Windows.Forms.Padding(4);
             this.tbCurrentDate.Name = "tbCurrentDate";
             this.tbCurrentDate.ReadOnly = true;
@@ -161,6 +206,7 @@
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnReturnMain
             // 
@@ -182,6 +228,7 @@
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // SalariesSummary
             // 
