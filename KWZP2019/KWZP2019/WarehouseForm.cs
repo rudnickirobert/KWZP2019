@@ -23,7 +23,9 @@ namespace KWZP2019
         private void WarehouseForm_Load(object sender, EventArgs e)
         {
             entraceWarehouseDgv.DataSource = db.vInputMagazines.ToList();
+            entraceWarehouseDgv.Columns["Numer"].Visible = false;
             outWarehouseDgv.DataSource = db.vOutputMagazines.ToList();
+            outWarehouseDgv.Columns["Numer"].Visible = false;
         }
         private void backBtn_Click(object sender, EventArgs e)
         {
@@ -31,11 +33,19 @@ namespace KWZP2019
             previousForm.Show();
             this.Close();
         }
+        private void sfOrderBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrderNewSemiProductForm OrderNewSemiProductForm = new OrderNewSemiProductForm(db, previousForm);
+            OrderNewSemiProductForm.ShowDialog();
+            this.Close();
+        }
         private void semiFinishedCodeTb_TextChanged(object sender, EventArgs e)
         {
             if (semiFinishedCodeTb.Text.Trim() == "")
             {
                 entraceWarehouseDgv.DataSource = db.vInputMagazines.ToList();
+                entraceWarehouseDgv.Columns["Numer"].Visible = false;
             }
             else
             {
@@ -43,6 +53,7 @@ namespace KWZP2019
                                                   where
                                                    db.Kod_Produktu.Contains(semiFinishedCodeTb.Text.Trim())
                                                   select db).ToList();
+                entraceWarehouseDgv.Columns["Numer"].Visible = false;
             }
         }
         private void productCodeTb_TextChanged(object sender, EventArgs e)
@@ -50,6 +61,7 @@ namespace KWZP2019
             if (productCodeTb.Text.Trim() == "")
             {
                 outWarehouseDgv.DataSource = db.vOutputMagazines.ToList();
+                outWarehouseDgv.Columns["Numer"].Visible = false;
             }
             else
             {
@@ -57,6 +69,7 @@ namespace KWZP2019
                                               where
                                                db.Kod_produktu.Contains(productCodeTb.Text.Trim())
                                               select db).ToList();
+                outWarehouseDgv.Columns["Numer"].Visible = false;
             }
         }
     }
