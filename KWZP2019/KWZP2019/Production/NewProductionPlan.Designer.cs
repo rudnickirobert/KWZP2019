@@ -50,6 +50,11 @@
             this.cBoxIntoProduction = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.viewProcessEmpl = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblOperators = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,22 +66,17 @@
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
             this.viewOrderDetail = new System.Windows.Forms.DataGridView();
-            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.btnEndDateCalculate = new System.Windows.Forms.Button();
-            this.vUnhandledOrderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vUnhandledOrderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.btnEndDateCalculate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddEmployee
@@ -88,10 +88,10 @@
             this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.ForeColor = System.Drawing.Color.White;
             this.btnAddEmployee.Image = global::KWZP2019.Properties.Resources.icons8_add_user_male_40;
-            this.btnAddEmployee.Location = new System.Drawing.Point(583, 17);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddEmployee.Location = new System.Drawing.Point(437, 14);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(91, 55);
+            this.btnAddEmployee.Size = new System.Drawing.Size(68, 45);
             this.btnAddEmployee.TabIndex = 0;
             this.btnAddEmployee.UseVisualStyleBackColor = false;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
@@ -102,9 +102,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(191, 114);
+            this.label1.Location = new System.Drawing.Point(143, 93);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 25);
+            this.label1.Size = new System.Drawing.Size(162, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Szczegół zamówienia";
             // 
@@ -114,19 +115,20 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 300);
+            this.label2.Location = new System.Drawing.Point(15, 244);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 25);
+            this.label2.Size = new System.Drawing.Size(165, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Przydzielona maszyna";
             // 
             // comboBoxMachine
             // 
             this.comboBoxMachine.FormattingEnabled = true;
-            this.comboBoxMachine.Location = new System.Drawing.Point(317, 299);
-            this.comboBoxMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxMachine.Location = new System.Drawing.Point(238, 243);
+            this.comboBoxMachine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxMachine.Name = "comboBoxMachine";
-            this.comboBoxMachine.Size = new System.Drawing.Size(259, 24);
+            this.comboBoxMachine.Size = new System.Drawing.Size(195, 21);
             this.comboBoxMachine.TabIndex = 3;
             // 
             // label3
@@ -135,29 +137,30 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(601, 462);
+            this.label3.Location = new System.Drawing.Point(451, 375);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 25);
+            this.label3.Size = new System.Drawing.Size(131, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Data zamówienia";
             // 
             // tBoxPlanNr
             // 
             this.tBoxPlanNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tBoxPlanNr.Location = new System.Drawing.Point(271, 14);
-            this.tBoxPlanNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tBoxPlanNr.Location = new System.Drawing.Point(320, 10);
+            this.tBoxPlanNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tBoxPlanNr.Name = "tBoxPlanNr";
-            this.tBoxPlanNr.Size = new System.Drawing.Size(135, 38);
+            this.tBoxPlanNr.Size = new System.Drawing.Size(102, 32);
             this.tBoxPlanNr.TabIndex = 7;
             // 
             // dateTimeStart
             // 
             this.dateTimeStart.AllowDrop = true;
             this.dateTimeStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeStart.Location = new System.Drawing.Point(888, 462);
-            this.dateTimeStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimeStart.Location = new System.Drawing.Point(666, 375);
+            this.dateTimeStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(264, 22);
+            this.dateTimeStart.Size = new System.Drawing.Size(199, 20);
             this.dateTimeStart.TabIndex = 9;
             // 
             // label5
@@ -166,19 +169,20 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(601, 510);
+            this.label5.Location = new System.Drawing.Point(451, 414);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(238, 25);
+            this.label5.Size = new System.Drawing.Size(192, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Szacowana data realizacji";
             // 
             // dateTimeEnd
             // 
             this.dateTimeEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeEnd.Location = new System.Drawing.Point(888, 510);
-            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimeEnd.Location = new System.Drawing.Point(666, 414);
+            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(264, 22);
+            this.dateTimeEnd.Size = new System.Drawing.Size(199, 20);
             this.dateTimeEnd.TabIndex = 11;
             // 
             // label4
@@ -187,9 +191,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(9, 22);
+            this.label4.Location = new System.Drawing.Point(7, 18);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 25);
+            this.label4.Size = new System.Drawing.Size(192, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Numer planu produkcji:";
             // 
@@ -202,10 +207,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::KWZP2019.Properties.Resources.icons8_save_40;
-            this.btnSave.Location = new System.Drawing.Point(160, 463);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Location = new System.Drawing.Point(120, 376);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 71);
+            this.btnSave.Size = new System.Drawing.Size(88, 58);
             this.btnSave.TabIndex = 13;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -219,10 +224,10 @@
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Image = global::KWZP2019.Properties.Resources.icons8_return_40;
-            this.btnReturn.Location = new System.Drawing.Point(15, 463);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReturn.Location = new System.Drawing.Point(11, 376);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(113, 74);
+            this.btnReturn.Size = new System.Drawing.Size(85, 60);
             this.btnReturn.TabIndex = 14;
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -230,10 +235,10 @@
             // cBoxIntoProduction
             // 
             this.cBoxIntoProduction.AutoSize = true;
-            this.cBoxIntoProduction.Location = new System.Drawing.Point(317, 358);
-            this.cBoxIntoProduction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cBoxIntoProduction.Location = new System.Drawing.Point(238, 291);
+            this.cBoxIntoProduction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxIntoProduction.Name = "cBoxIntoProduction";
-            this.cBoxIntoProduction.Size = new System.Drawing.Size(18, 17);
+            this.cBoxIntoProduction.Size = new System.Drawing.Size(15, 14);
             this.cBoxIntoProduction.TabIndex = 15;
             this.cBoxIntoProduction.UseVisualStyleBackColor = true;
             // 
@@ -243,9 +248,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(20, 358);
+            this.label6.Location = new System.Drawing.Point(15, 291);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(237, 25);
+            this.label6.Size = new System.Drawing.Size(191, 20);
             this.label6.TabIndex = 16;
             this.label6.Text = "Przekazano do produkcji?";
             // 
@@ -277,8 +283,8 @@
             this.IdDetail});
             this.viewProcessEmpl.DataSource = this.plannedProductionEmployeeDetailBindingSource;
             this.viewProcessEmpl.EnableHeadersVisualStyles = false;
-            this.viewProcessEmpl.Location = new System.Drawing.Point(607, 156);
-            this.viewProcessEmpl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewProcessEmpl.Location = new System.Drawing.Point(455, 127);
+            this.viewProcessEmpl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewProcessEmpl.Name = "viewProcessEmpl";
             this.viewProcessEmpl.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -289,8 +295,40 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.viewProcessEmpl.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.viewProcessEmpl.RowTemplate.Height = 24;
-            this.viewProcessEmpl.Size = new System.Drawing.Size(697, 101);
+            this.viewProcessEmpl.Size = new System.Drawing.Size(523, 82);
             this.viewProcessEmpl.TabIndex = 17;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdEmployee";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Numer pracownika";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "StartDate";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Data rozpoczęcia";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "EndDate";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Data zakończenia";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // IdDetail
+            // 
+            this.IdDetail.DataPropertyName = "IdDetail";
+            this.IdDetail.HeaderText = "IdDetail";
+            this.IdDetail.Name = "IdDetail";
+            this.IdDetail.Visible = false;
+            // 
+            // plannedProductionEmployeeDetailBindingSource
+            // 
+            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
             // 
             // lblOperators
             // 
@@ -298,9 +336,10 @@
             this.lblOperators.BackColor = System.Drawing.Color.Transparent;
             this.lblOperators.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOperators.ForeColor = System.Drawing.Color.White;
-            this.lblOperators.Location = new System.Drawing.Point(843, 114);
+            this.lblOperators.Location = new System.Drawing.Point(632, 93);
+            this.lblOperators.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOperators.Name = "lblOperators";
-            this.lblOperators.Size = new System.Drawing.Size(220, 25);
+            this.lblOperators.Size = new System.Drawing.Size(174, 20);
             this.lblOperators.TabIndex = 18;
             this.lblOperators.Text = "Przydzieleni pracownicy";
             // 
@@ -316,11 +355,11 @@
             this.groupBox1.Controls.Add(this.comboBoxEmployee);
             this.groupBox1.Controls.Add(this.btnAddEmployee);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(607, 283);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(455, 230);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(697, 138);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(523, 112);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodawanie pracowników";
@@ -329,9 +368,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(5, 38);
+            this.label7.Location = new System.Drawing.Point(4, 31);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 21;
             this.label7.Text = "Pracownik";
             // 
@@ -344,10 +384,10 @@
             this.btnRemoveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveEmployee.ForeColor = System.Drawing.Color.White;
             this.btnRemoveEmployee.Image = global::KWZP2019.Properties.Resources.icons8_denied_40;
-            this.btnRemoveEmployee.Location = new System.Drawing.Point(583, 75);
-            this.btnRemoveEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveEmployee.Location = new System.Drawing.Point(437, 61);
+            this.btnRemoveEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveEmployee.Name = "btnRemoveEmployee";
-            this.btnRemoveEmployee.Size = new System.Drawing.Size(91, 54);
+            this.btnRemoveEmployee.Size = new System.Drawing.Size(68, 44);
             this.btnRemoveEmployee.TabIndex = 24;
             this.btnRemoveEmployee.UseVisualStyleBackColor = false;
             this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
@@ -355,48 +395,50 @@
             // dateTimeEmployeeEnd
             // 
             this.dateTimeEmployeeEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeEmployeeEnd.Location = new System.Drawing.Point(347, 97);
-            this.dateTimeEmployeeEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimeEmployeeEnd.Location = new System.Drawing.Point(260, 79);
+            this.dateTimeEmployeeEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimeEmployeeEnd.Name = "dateTimeEmployeeEnd";
-            this.dateTimeEmployeeEnd.Size = new System.Drawing.Size(200, 23);
+            this.dateTimeEmployeeEnd.Size = new System.Drawing.Size(151, 20);
             this.dateTimeEmployeeEnd.TabIndex = 23;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(219, 97);
+            this.label9.Location = new System.Drawing.Point(164, 79);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 17);
+            this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 22;
             this.label9.Text = "Data zakończenia";
             // 
             // dateTimeEmployeeStart
             // 
             this.dateTimeEmployeeStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeEmployeeStart.Location = new System.Drawing.Point(347, 38);
-            this.dateTimeEmployeeStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimeEmployeeStart.Location = new System.Drawing.Point(260, 31);
+            this.dateTimeEmployeeStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimeEmployeeStart.Name = "dateTimeEmployeeStart";
-            this.dateTimeEmployeeStart.Size = new System.Drawing.Size(200, 23);
+            this.dateTimeEmployeeStart.Size = new System.Drawing.Size(151, 20);
             this.dateTimeEmployeeStart.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(219, 38);
+            this.label8.Location = new System.Drawing.Point(164, 31);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 17);
+            this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Data rozpoczęcia";
             // 
             // comboBoxEmployee
             // 
             this.comboBoxEmployee.FormattingEnabled = true;
-            this.comboBoxEmployee.Location = new System.Drawing.Point(5, 59);
-            this.comboBoxEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxEmployee.Location = new System.Drawing.Point(4, 48);
+            this.comboBoxEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxEmployee.Name = "comboBoxEmployee";
-            this.comboBoxEmployee.Size = new System.Drawing.Size(193, 33);
+            this.comboBoxEmployee.Size = new System.Drawing.Size(146, 28);
             this.comboBoxEmployee.TabIndex = 5;
             // 
             // btnNewPlan
@@ -410,10 +452,10 @@
             this.btnNewPlan.ForeColor = System.Drawing.Color.White;
             this.btnNewPlan.Image = global::KWZP2019.Properties.Resources.icons8_add_new_80;
             this.btnNewPlan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNewPlan.Location = new System.Drawing.Point(504, 14);
-            this.btnNewPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNewPlan.Location = new System.Drawing.Point(479, 11);
+            this.btnNewPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewPlan.Name = "btnNewPlan";
-            this.btnNewPlan.Size = new System.Drawing.Size(168, 138);
+            this.btnNewPlan.Size = new System.Drawing.Size(126, 112);
             this.btnNewPlan.TabIndex = 21;
             this.btnNewPlan.Text = "NOWY PLAN";
             this.btnNewPlan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -447,8 +489,8 @@
             this.dataGridViewTextBoxColumn3});
             this.viewOrderDetail.DataSource = this.vUnhandledOrderDetailBindingSource;
             this.viewOrderDetail.EnableHeadersVisualStyles = false;
-            this.viewOrderDetail.Location = new System.Drawing.Point(23, 156);
-            this.viewOrderDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewOrderDetail.Location = new System.Drawing.Point(17, 127);
+            this.viewOrderDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewOrderDetail.Name = "viewOrderDetail";
             this.viewOrderDetail.RowHeadersVisible = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -459,45 +501,9 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.viewOrderDetail.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.viewOrderDetail.RowTemplate.Height = 24;
-            this.viewOrderDetail.Size = new System.Drawing.Size(555, 101);
+            this.viewOrderDetail.Size = new System.Drawing.Size(416, 82);
             this.viewOrderDetail.TabIndex = 22;
             this.viewOrderDetail.SelectionChanged += new System.EventHandler(this.viewOrderDetail_SelectionChanged);
-            // 
-            // entityCommand1
-            // 
-            this.entityCommand1.CommandTimeout = 0;
-            this.entityCommand1.CommandTree = null;
-            this.entityCommand1.Connection = null;
-            this.entityCommand1.EnablePlanCaching = true;
-            this.entityCommand1.Transaction = null;
-            // 
-            // btnEndDateCalculate
-            // 
-            this.btnEndDateCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEndDateCalculate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEndDateCalculate.FlatAppearance.BorderSize = 3;
-            this.btnEndDateCalculate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEndDateCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEndDateCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnEndDateCalculate.Image = global::KWZP2019.Properties.Resources.icons8_abacus_80;
-            this.btnEndDateCalculate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEndDateCalculate.Location = new System.Drawing.Point(341, 394);
-            this.btnEndDateCalculate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEndDateCalculate.Name = "btnEndDateCalculate";
-            this.btnEndDateCalculate.Size = new System.Drawing.Size(237, 140);
-            this.btnEndDateCalculate.TabIndex = 23;
-            this.btnEndDateCalculate.Text = "OSZACUJ DATĘ KOŃCOWĄ";
-            this.btnEndDateCalculate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEndDateCalculate.UseVisualStyleBackColor = false;
-            this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
-            // 
-            // vUnhandledOrderDetailBindingSource
-            // 
-            this.vUnhandledOrderDetailBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
-            // 
-            // plannedProductionEmployeeDetailBindingSource
-            // 
-            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -520,41 +526,45 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Kod produktu";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn6
+            // vUnhandledOrderDetailBindingSource
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdEmployee";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Numer pracownika";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.vUnhandledOrderDetailBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
             // 
-            // dataGridViewTextBoxColumn7
+            // entityCommand1
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "StartDate";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Data rozpoczęcia";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
             // 
-            // dataGridViewTextBoxColumn8
+            // btnEndDateCalculate
             // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "EndDate";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Data zakończenia";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // IdDetail
-            // 
-            this.IdDetail.DataPropertyName = "IdDetail";
-            this.IdDetail.HeaderText = "IdDetail";
-            this.IdDetail.Name = "IdDetail";
-            this.IdDetail.Visible = false;
+            this.btnEndDateCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnEndDateCalculate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEndDateCalculate.FlatAppearance.BorderSize = 3;
+            this.btnEndDateCalculate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnEndDateCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEndDateCalculate.ForeColor = System.Drawing.Color.White;
+            this.btnEndDateCalculate.Image = global::KWZP2019.Properties.Resources.icons8_abacus_80;
+            this.btnEndDateCalculate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEndDateCalculate.Location = new System.Drawing.Point(223, 320);
+            this.btnEndDateCalculate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEndDateCalculate.Name = "btnEndDateCalculate";
+            this.btnEndDateCalculate.Size = new System.Drawing.Size(211, 114);
+            this.btnEndDateCalculate.TabIndex = 23;
+            this.btnEndDateCalculate.Text = "OSZACUJ DATĘ KOŃCOWĄ";
+            this.btnEndDateCalculate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEndDateCalculate.UseVisualStyleBackColor = false;
+            this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
             // 
             // NewProductionPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1347, 566);
+            this.ClientSize = new System.Drawing.Size(1010, 460);
             this.Controls.Add(this.btnEndDateCalculate);
             this.Controls.Add(this.viewOrderDetail);
             this.Controls.Add(this.btnNewPlan);
@@ -574,16 +584,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxMachine);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewProductionPlan";
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -56,6 +56,16 @@ namespace KWZP2019
         private void PlannedProductionGridView_SelectionChanged(object sender, EventArgs e)
         {
             id = Convert.ToInt32(this.PlannedProductionGridView.CurrentRow.Cells[0].Value);
+            PlannedProduction selectedPlan = db.PlannedProductions.First(f => f.IdPlan == id);
+            Machine planMachine = db.Machines.First(f => f.IdMachine == selectedPlan.IdMachine);
+            OrderDetail planDetail = db.OrderDetails.First(f => f.IdDetail == selectedPlan.IdDetail);
+            Product planProduct = db.Products.First(f => f.IdProduct == planDetail.IdProduct);
+            string infoAboutOrderProduct = Convert.ToString(planProduct.ProductCode);
+            string infoAboutOrderProductQuantity= Convert.ToString(planDetail.Quantity);
+            string infoAboutMachine = Convert.ToString(planMachine.MachineName) + " " + Convert.ToString(planMachine.CatalogMachineNr);
+            labelMachine.Text = infoAboutMachine;
+            labelProductCode.Text = infoAboutOrderProduct;
+            labelProductQuantity.Text = infoAboutOrderProductQuantity;
         }
         private void btnRefreshPlanList_Click(object sender, EventArgs e)
         {
