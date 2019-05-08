@@ -58,6 +58,13 @@ namespace KWZP2019
             addNewOrderForm.ShowDialog();
             this.Close();
         }
+        private void warehouseBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WarehouseForm warehouseForm = new WarehouseForm(db, previousForm);
+            warehouseForm.ShowDialog();
+            this.Close();
+        }
         private void deleteOrderDetailBtn_Click(object sender, EventArgs e)
         {
             int idDetailToRemove = Convert.ToInt32(this.orderDetailsDgv.CurrentRow.Cells["IdDetail"].Value);
