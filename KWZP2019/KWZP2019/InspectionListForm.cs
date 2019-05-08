@@ -16,9 +16,9 @@ namespace KWZP2019
         StartForm startForm;
         MaintenanceManagement maintenanceManagementForm;
         Maintenance maintenance = new Maintenance();
-        MaintType maintType = new MaintType();
-        int nIdSelectedMaintenance = 0;
-        bool lIsLoading = true;
+        MaintType maintenanceType = new MaintType();
+        int idSelectedMaintenance = 0;
+        bool isLoading = true;
 
         public InspectionListForm(RoofingCompanyEntities db, StartForm startForm, MaintenanceManagement maintenanceManagementForm)
         {
@@ -65,7 +65,7 @@ namespace KWZP2019
             comMachine.ValueMember = "IdMachine";
             comMachine.DisplayMember = "MachineName";
             comMachine.SelectedValue = -1;
-            this.lIsLoading = false;
+            this.isLoading = false;
             this.machineFilter();
         }
 
@@ -75,7 +75,7 @@ namespace KWZP2019
             {
                 try
                 {
-                    this.nIdSelectedMaintenance = Convert.ToInt32(this.dgvMaintenance.CurrentRow.Cells["IdMaintenance"].Value);
+                    this.idSelectedMaintenance = Convert.ToInt32(this.dgvMaintenance.CurrentRow.Cells["IdMaintenance"].Value);
                 }
                 catch (Exception ex)
                 {
@@ -86,11 +86,11 @@ namespace KWZP2019
 
         private void btnDescription_Click(object sender, EventArgs e)
         {
-            if (this.nIdSelectedMaintenance == 0)
+            if (this.idSelectedMaintenance == 0)
                 return;
             try
             {
-                maintenance = db.Maintenances.Where(maintenance => maintenance.IdMaintenance == this.nIdSelectedMaintenance).First();
+                maintenance = db.Maintenances.Where(maintenance => maintenance.IdMaintenance == this.idSelectedMaintenance).First();
                 MaintenanceDescriptionForm maintDescriptionForm = new MaintenanceDescriptionForm(this.db, Convert.ToInt32(maintenance.IdMaintDesc));
                 maintDescriptionForm.Show();
             }
@@ -103,7 +103,7 @@ namespace KWZP2019
         private void comMachine_SelectedIndexChanged(object sender, EventArgs e)
         {
             {
-                if (lIsLoading)
+                if (isLoading)
                     return;
                 this.machineFilter();
             }
@@ -111,14 +111,14 @@ namespace KWZP2019
 
         void machineFilter()
         {
-            int lnSelectedMachine = Convert.ToInt32(this.comMachine.SelectedValue);
-            if (lnSelectedMachine == -1)
+            int selectedMachine = Convert.ToInt32(this.comMachine.SelectedValue);
+            if (selectedMachine == -1)
             {
                 populateDataGridView();
             }
             else
             {
-                this.dgvMaintenance.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMachine == lnSelectedMachine).ToList();
+                this.dgvMaintenance.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMachine == selectedMachine).ToList();
             }
         }
 

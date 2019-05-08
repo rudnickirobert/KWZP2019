@@ -12,17 +12,17 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class MaintDescription
+    public partial class MaintenanceDescription
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MaintDescription()
+        public MaintenanceDescription()
         {
             this.Maintenances = new HashSet<Maintenance>();
         }
     
         public int IdMaintDesc { get; set; }
-        public string MaintDescName { get; set; }
-        public string MaintDescription1 { get; set; }
+        public string DescriptionShort { get; set; }
+        public string DescriptionLong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Maintenance> Maintenances { get; set; }
