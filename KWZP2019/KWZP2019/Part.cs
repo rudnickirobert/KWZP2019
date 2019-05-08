@@ -29,6 +29,7 @@ namespace KWZP2019
         public string Producer { get; set; }
         public int CatalogPartNr { get; set; }
         public int QuantityWarehouse { get; set; }
+        public Nullable<int> QuantityMinimum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaintPart> MaintParts { get; set; }
