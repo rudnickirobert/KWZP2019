@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InspectionListForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewInspection = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -37,10 +41,8 @@
             this.DateAcceptOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMaintType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMaintDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaintTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaintenanceNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMachine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MachineName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFilterDate = new System.Windows.Forms.Button();
@@ -52,24 +54,37 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDescription = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNewInspection
             // 
-            this.btnNewInspection.Location = new System.Drawing.Point(905, 224);
+            this.btnNewInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnNewInspection.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnNewInspection.FlatAppearance.BorderSize = 3;
+            this.btnNewInspection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnNewInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNewInspection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNewInspection.Image = ((System.Drawing.Image)(resources.GetObject("btnNewInspection.Image")));
+            this.btnNewInspection.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNewInspection.Location = new System.Drawing.Point(626, 287);
             this.btnNewInspection.Name = "btnNewInspection";
-            this.btnNewInspection.Size = new System.Drawing.Size(267, 49);
+            this.btnNewInspection.Size = new System.Drawing.Size(140, 75);
             this.btnNewInspection.TabIndex = 0;
             this.btnNewInspection.Text = "Dodaj nowy przegląd";
-            this.btnNewInspection.UseVisualStyleBackColor = true;
+            this.btnNewInspection.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNewInspection.UseVisualStyleBackColor = false;
             this.btnNewInspection.Click += new System.EventHandler(this.btnNewInspection_Click);
             // 
             // btnReturnMain
             // 
             this.btnReturnMain.AutoSize = true;
             this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnReturnMain.BackgroundImage = global::KWZP2019.Properties.Resources.icons8_home_40;
+            this.btnReturnMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.BackgroundImage")));
             this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnReturnMain.FlatAppearance.BorderSize = 3;
@@ -78,10 +93,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(1004, 557);
+            this.btnReturnMain.Location = new System.Drawing.Point(793, 446);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(128, 115);
+            this.btnReturnMain.Size = new System.Drawing.Size(140, 112);
             this.btnReturnMain.TabIndex = 12;
             this.btnReturnMain.Text = "Powrót ";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -90,41 +105,74 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(906, 293);
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRefresh.Location = new System.Drawing.Point(793, 287);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(265, 56);
+            this.btnRefresh.Size = new System.Drawing.Size(140, 75);
             this.btnRefresh.TabIndex = 13;
-            this.btnRefresh.Text = "Odświerz listę";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Text = "Odśwież listę";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // lblInspections
             // 
             this.lblInspections.AutoSize = true;
-            this.lblInspections.Location = new System.Drawing.Point(36, 28);
+            this.lblInspections.BackColor = System.Drawing.Color.Transparent;
+            this.lblInspections.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblInspections.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblInspections.Location = new System.Drawing.Point(115, 40);
             this.lblInspections.Name = "lblInspections";
-            this.lblInspections.Size = new System.Drawing.Size(89, 13);
+            this.lblInspections.Size = new System.Drawing.Size(218, 29);
             this.lblInspections.TabIndex = 15;
             this.lblInspections.Text = "Lista przeglądów:";
             // 
             // dgvMaintenance
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
+            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaintenance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdMaintenance,
             this.DateAcceptOrder,
             this.IdMaintType,
             this.IdMaintDesc,
-            this.MaintTypeName,
             this.MaintenanceNr,
             this.IdMachine,
-            this.MachineName,
             this.StartDatePlan,
             this.EndDatePlan});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMaintenance.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMaintenance.EnableHeadersVisualStyles = false;
             this.dgvMaintenance.Location = new System.Drawing.Point(39, 72);
             this.dgvMaintenance.Name = "dgvMaintenance";
             this.dgvMaintenance.ReadOnly = true;
-            this.dgvMaintenance.Size = new System.Drawing.Size(622, 486);
+            this.dgvMaintenance.Size = new System.Drawing.Size(347, 191);
             this.dgvMaintenance.TabIndex = 16;
             this.dgvMaintenance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaintenance_CellClick);
             // 
@@ -160,12 +208,6 @@
             this.IdMaintDesc.ReadOnly = true;
             this.IdMaintDesc.Visible = false;
             // 
-            // MaintTypeName
-            // 
-            this.MaintTypeName.HeaderText = "Typ obsługi";
-            this.MaintTypeName.Name = "MaintTypeName";
-            this.MaintTypeName.ReadOnly = true;
-            // 
             // MaintenanceNr
             // 
             this.MaintenanceNr.DataPropertyName = "MaintenanceNr";
@@ -180,12 +222,6 @@
             this.IdMachine.Name = "IdMachine";
             this.IdMachine.ReadOnly = true;
             this.IdMachine.Visible = false;
-            // 
-            // MachineName
-            // 
-            this.MachineName.HeaderText = "Nazwa maszyny";
-            this.MachineName.Name = "MachineName";
-            this.MachineName.ReadOnly = true;
             // 
             // StartDatePlan
             // 
@@ -214,7 +250,7 @@
             // comMachine
             // 
             this.comMachine.FormattingEnabled = true;
-            this.comMachine.Location = new System.Drawing.Point(852, 176);
+            this.comMachine.Location = new System.Drawing.Point(708, 200);
             this.comMachine.Name = "comMachine";
             this.comMachine.Size = new System.Drawing.Size(200, 21);
             this.comMachine.TabIndex = 30;
@@ -223,15 +259,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(717, 179);
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(634, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 29;
             this.label5.Text = "Maszyna:";
             // 
             // dtpToDate
             // 
-            this.dtpToDate.Location = new System.Drawing.Point(852, 124);
+            this.dtpToDate.Location = new System.Drawing.Point(708, 168);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(200, 20);
             this.dtpToDate.TabIndex = 27;
@@ -239,15 +278,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(717, 131);
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(638, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 25;
             this.label4.Text = "Data do:";
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Location = new System.Drawing.Point(852, 72);
+            this.dtpFromDate.Location = new System.Drawing.Point(708, 136);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(200, 20);
             this.dtpFromDate.TabIndex = 28;
@@ -255,36 +297,70 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(717, 79);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(638, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 26;
             this.label3.Text = "Data od:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(717, 28);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(715, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(146, 24);
             this.label2.TabIndex = 24;
             this.label2.Text = "Filtruj według:";
             // 
             // btnDescription
             // 
-            this.btnDescription.Location = new System.Drawing.Point(39, 606);
+            this.btnDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnDescription.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDescription.FlatAppearance.BorderSize = 3;
+            this.btnDescription.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDescription.Location = new System.Drawing.Point(626, 384);
             this.btnDescription.Name = "btnDescription";
-            this.btnDescription.Size = new System.Drawing.Size(75, 23);
+            this.btnDescription.Size = new System.Drawing.Size(307, 45);
             this.btnDescription.TabIndex = 32;
             this.btnDescription.Text = "Pokaż opis";
-            this.btnDescription.UseVisualStyleBackColor = true;
+            this.btnDescription.UseVisualStyleBackColor = false;
             this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(626, 72);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(307, 175);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(403, 72);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(187, 186);
+            this.listBox1.TabIndex = 34;
             // 
             // InspectionListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(970, 568);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnDescription);
             this.Controls.Add(this.btnFilterDate);
             this.Controls.Add(this.comMachine);
@@ -299,10 +375,13 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnNewInspection);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "InspectionListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista przeglądów";
             this.Load += new System.EventHandler(this.InspectionListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,16 +394,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblInspections;
         private System.Windows.Forms.DataGridView dgvMaintenance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintenance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateAcceptOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintDesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaintTypeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaintenanceNr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMachine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MachineName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDatePlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDatePlan;
         private System.Windows.Forms.Button btnFilterDate;
         private System.Windows.Forms.ComboBox comMachine;
         private System.Windows.Forms.Label label5;
@@ -334,5 +403,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDescription;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintenance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateAcceptOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaintenanceNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMachine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDatePlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDatePlan;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
