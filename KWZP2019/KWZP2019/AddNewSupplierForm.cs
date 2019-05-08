@@ -108,8 +108,6 @@ namespace KWZP2019
             db.SaveChanges();
             MessageBox.Show("Dodano dostawcę");
         }
-       
-
         private void buttonAddNewSupplier_Click_1(object sender, EventArgs e)
         {
             string typ = textBoxAddNewTypeSupplier.Text;
@@ -121,7 +119,6 @@ namespace KWZP2019
             db.SupplierTypes.Add(newsupplierType);
             db.SaveChanges();
         }
-
         private void AddNewSupplierForm_Load(object sender, EventArgs e)
         {
                 List<SupplierType> supplierList = db.SupplierTypes.ToList();

@@ -51,20 +51,5 @@ namespace KWZP2019
                 supplierDgv.Columns[0].Visible = false;
             }
         }
-        private void sfSupplierRb_Enter(object sender, EventArgs e)
-        {
-            if (sfSupplierRb.Checked)
-            {
-                supplierDgv.DataSource = db.vSupplierSemis.
-                Where(semis => semis.Typ == "Półfabrykaty").ToList();
-                supplierDgv.Columns[0].Visible = false;
-            }
-            if (partsSupplierRb.Checked)
-            {
-                supplierDgv.DataSource = db.vSupplierParts.
-                Where(parts => parts.Typ == "Części").ToList();
-                supplierDgv.Columns[0].Visible = false;
-            }
-        }
     }
 }
