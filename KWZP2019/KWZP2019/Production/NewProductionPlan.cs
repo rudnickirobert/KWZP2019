@@ -48,6 +48,7 @@ namespace KWZP2019
                     order.IdDetail = plan.IdDetail;
                     order.Quantity = orderDetail.Quantity;
                     order.ProductCode = product.ProductCode;
+                    cBoxIntoProduction.Checked = (bool)plan.Inproduction;
                 }
                 else
                 {

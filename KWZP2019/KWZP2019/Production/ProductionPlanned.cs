@@ -20,8 +20,10 @@ namespace KWZP2019
             this.db = db;
         }
         private void ProductionPlanned_Load(object sender, EventArgs e)
-        {
+        {          
             PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
+            PlannedProductionGridView.Columns["dataGridViewTextBoxColumnInProduction"].DefaultCellStyle.FormatProvider = new BoolFormatter();
+            PlannedProductionGridView.Columns["dataGridViewTextBoxColumnInProduction"].DefaultCellStyle.Format = "TakNie";
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -97,6 +99,15 @@ namespace KWZP2019
                 {
                     MessageBox.Show("Proszę podać poprawny numer planu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private void PlannedProductionGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.CellStyle.FormatProvider is ICustomFormatter)
+            {
+                e.Value = (e.CellStyle.FormatProvider.GetFormat(typeof(ICustomFormatter)) as ICustomFormatter).Format(e.CellStyle.Format, e.Value, e.CellStyle.FormatProvider);
+                e.FormattingApplied = true;
             }
         }
     }
