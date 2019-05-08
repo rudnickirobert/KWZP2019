@@ -28,11 +28,11 @@ namespace KWZP2019
         private void AddNewOrderForm_Load(object sender, EventArgs e)
         {//INSERTS EMPLOYEES TO COMBOBOX
             markupTb.BackColor = Color.LightGreen;
-            List<Employee> employeeList = db.Employees.ToList();
+            List<vEmployeeSD> employeeList = db.vEmployeeSDs.ToList();
             employeeCb.BeginUpdate();
-            foreach (Employee emp in employeeList)
+            foreach (vEmployeeSD emp in employeeList)
             {
-                employeeCb.Items.Add(emp.EmployeeName + " " + emp.EmployeeSurname);
+                employeeCb.Items.Add(emp.Imię + " " + emp.Nazwisko);
             }
             employeeCb.EndUpdate();
         }//MARKUP INSERT PROTECTION

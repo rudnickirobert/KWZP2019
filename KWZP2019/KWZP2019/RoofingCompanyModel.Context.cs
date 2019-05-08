@@ -113,13 +113,11 @@ namespace KWZP2019
         public virtual DbSet<ViewSemiFinishedCode> ViewSemiFinishedCodes { get; set; }
         public virtual DbSet<ViewSemiFinishedOrder> ViewSemiFinishedOrders { get; set; }
         public virtual DbSet<vIncomesProfit> vIncomesProfits { get; set; }
-        public virtual DbSet<vIndividualCustomer> vIndividualCustomers { get; set; }
         public virtual DbSet<vInputMagazine> vInputMagazines { get; set; }
         public virtual DbSet<vInvoiceType> vInvoiceTypes { get; set; }
         public virtual DbSet<vL4> vL4 { get; set; }
         public virtual DbSet<vMaintPartsView> vMaintPartsViews { get; set; }
         public virtual DbSet<vOD> vODs { get; set; }
-        public virtual DbSet<vOrder> vOrders { get; set; }
         public virtual DbSet<vOrderDetail> vOrderDetails { get; set; }
         public virtual DbSet<vOutputMagazine> vOutputMagazines { get; set; }
         public virtual DbSet<vOutsourcing> vOutsourcings { get; set; }
@@ -156,6 +154,8 @@ namespace KWZP2019
         public virtual DbSet<vMaintenanceEmployeesCalendar> vMaintenanceEmployeesCalendars { get; set; }
         public virtual DbSet<vNewFailure> vNewFailures { get; set; }
         public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
+        public virtual DbSet<vOrder> vOrders { get; set; }
+        public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<MaintenanceDescription> MaintenanceDescriptions { get; set; }
         public virtual DbSet<vProductionProduct> vProductionProducts { get; set; }
     }

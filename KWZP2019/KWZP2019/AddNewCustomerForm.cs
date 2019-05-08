@@ -71,7 +71,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format numeru lokalu");
                 return;
             }
-            bool nipTb2 = float.TryParse(nipTb.Text.Trim(), out float nipTb21);
+            bool nipTb2 = long.TryParse(nipTb.Text.Trim(), out long nipTb21);
             if (nipTb2)
             {
                 newCustomer.NIP = Convert.ToString(nipTb21);
@@ -81,7 +81,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format NIP");
                 return;
             }
-            bool krsTb2 = float.TryParse(krsTb.Text.Trim(), out float krsTb21);
+            bool krsTb2 = long.TryParse(krsTb.Text.Trim(), out long krsTb21);
             if (krsTb2)
             {
                 newCustomer.KRS = Convert.ToString(krsTb21);
@@ -91,7 +91,7 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format KRS");
                 return;
             }
-            bool peselTb2 = float.TryParse(peselTb.Text.Trim(), out float peselTb21);
+            bool peselTb2 = long.TryParse(peselTb.Text.Trim(), out long peselTb21);
             if (peselTb2)
             {
                 newCustomer.Pesel = Convert.ToString(peselTb21);
@@ -101,9 +101,12 @@ namespace KWZP2019
                 MessageBox.Show("Niewłaściwy format PESEL");
                 return;
             }
-            MessageBox.Show("Czy na pewno chcesz dodać nowego klienta?");
+            MessageBox.Show("Dodano nowego klienta");
             db.Customers.Add(newCustomer);
             db.SaveChanges();
+            this.Hide();
+            previousForm.Show();
+            this.Close();
         }
     }
 }

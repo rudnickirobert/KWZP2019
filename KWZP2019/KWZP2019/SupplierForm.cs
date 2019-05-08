@@ -27,10 +27,12 @@ namespace KWZP2019
             AddNewSupplierForm addnewsupplierForm = new AddNewSupplierForm(db, this);
             addnewsupplierForm.ShowDialog();
         }
-        private void SupplierForm_Load(object sender, EventArgs e)
+        private void SupplierForm_Load_1(object sender, EventArgs e)
         {
             supplierDgv.DataSource = db.Suppliers.ToList();
+        
         }
+        
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
