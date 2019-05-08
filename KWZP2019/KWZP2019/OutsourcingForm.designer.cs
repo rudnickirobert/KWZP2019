@@ -190,9 +190,9 @@
             this.nameOutsourcingLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nameOutsourcingLbl.Location = new System.Drawing.Point(38, 23);
             this.nameOutsourcingLbl.Name = "nameOutsourcingLbl";
-            this.nameOutsourcingLbl.Size = new System.Drawing.Size(296, 20);
+            this.nameOutsourcingLbl.Size = new System.Drawing.Size(260, 20);
             this.nameOutsourcingLbl.TabIndex = 17;
-            this.nameOutsourcingLbl.Text = "Wyszukaj typ firmy outsourcingowej:";
+            this.nameOutsourcingLbl.Text = "Wyszukaj firmę outsourcingową";
             // 
             // returnCancelOutBtn
             // 
