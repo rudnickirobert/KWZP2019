@@ -19,10 +19,10 @@ namespace KWZP2019
         FailureListForm failureListForm;
         FailureMaintenance failureMaintenance = new FailureMaintenance();
         EmployeePlan employeePlan = new EmployeePlan();
-        MaintPart maintPart = new MaintPart();
-        int nIdSelectedEmployee = 0;
-        int nIdSelectedEmployeePlan = 0;
-        bool lIsLoading = true;
+        MaintPart maintenancePart = new MaintPart();
+        int idSelectedEmployee = 0;
+        int idSelectedEmployeePlan = 0;
+        bool isLoading = true;
         vMachineFailure machineFailure = new vMachineFailure();
 
         public NewMaintenanceForm(RoofingCompanyEntities db, StartForm startForm, FailureListForm failureListForm)
@@ -104,12 +104,12 @@ namespace KWZP2019
             this.tpEmployeeStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             this.tpEmployeeEndDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, 0, 0);
             this.employeePlan = new EmployeePlan();
-            this.nIdSelectedEmployee = 0;
+            this.idSelectedEmployee = 0;
         }
 
         void clearPart()
         {
-            this.maintPart = new MaintPart();
+            this.maintenancePart = new MaintPart();
             this.txtQuantity.Text = String.Empty;
         }
 
@@ -129,7 +129,7 @@ namespace KWZP2019
             this.tpEmployeeEndDate.ShowUpDown = true;
             this.tpEmployeeStartDate.Format = DateTimePickerFormat.Time;
             this.tpEmployeeStartDate.ShowUpDown = true;
-            this.lIsLoading = false;
+            this.isLoading = false;
             this.btnDeleteEmployee.Enabled = false;
         }
 
@@ -159,7 +159,7 @@ namespace KWZP2019
                 vMachineFailure machineFailureItem = this.db.vMachineFailures.First(machineFailure => machineFailure.IdFailure == failureId);
                 maintenance.IdMachine = machineFailureItem.IdMachine;
                 this.maintenance.IdMaintType = 1;
-                this.maintenance.IdMaintDesc = 1;
+                this.maintenance.IdMaintDesc = null;
                 this.maintenance.DateAcceptOrder = DateTime.Now;       
                 this.maintenance.StartDatePlan = this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay;
                 this.maintenance.EndDatePlan = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
@@ -190,7 +190,7 @@ namespace KWZP2019
 
         private void comFailure_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lIsLoading)
+            if (isLoading)
                 return;
             else
             {
@@ -218,7 +218,7 @@ namespace KWZP2019
             {               
                 try
                 {
-                    this.nIdSelectedEmployee = Convert.ToInt32(this.dgvEmployees.CurrentRow.Cells["IdEmployee"].Value);
+                    this.idSelectedEmployee = Convert.ToInt32(this.dgvEmployees.CurrentRow.Cells["IdEmployee"].Value);
                 }
                 catch (Exception ex)
                 {
@@ -251,14 +251,14 @@ namespace KWZP2019
                 MessageBox.Show("Najpierw wprowadź zlecenie!");
                 return;
             }
-            if (this.nIdSelectedEmployee == 0)
+            if (this.idSelectedEmployee == 0)
             {
                 MessageBox.Show("Najpierw wybierz pracownika!");
                 return;
             }
             foreach (DataGridViewRow row in this.dgvMaintenanceEmployees.Rows)
             {
-                if (int.Parse(row.Cells[2].Value.ToString()) == this.nIdSelectedEmployee)
+                if (int.Parse(row.Cells[2].Value.ToString()) == this.idSelectedEmployee)
                 {
                     MessageBox.Show("Ten pracownik juz został dodany!");
                     return;
@@ -266,7 +266,7 @@ namespace KWZP2019
             }
             try
             {
-                this.employeePlan.IdEmployee = this.nIdSelectedEmployee;
+                this.employeePlan.IdEmployee = this.idSelectedEmployee;
                 this.employeePlan.IdMaintenance = this.maintenance.IdMaintenance;
                 this.employeePlan.StartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
                 this.employeePlan.EndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
@@ -316,13 +316,13 @@ namespace KWZP2019
             }
             try
             {
-                this.maintPart.IdPart = lnIdPart;
-                this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;               
-                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());               
-                if (this.maintPart.IdMaintPart == 0)//Instert
-                    this.db.MaintParts.Add(maintPart);
+                this.maintenancePart.IdPart = lnIdPart;
+                this.maintenancePart.IdMaintenance = this.maintenance.IdMaintenance;               
+                this.maintenancePart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());               
+                if (this.maintenancePart.IdMaintPart == 0)//Instert
+                    this.db.MaintParts.Add(maintenancePart);
                 else //update
-                    this.db.Entry(maintPart).State = EntityState.Modified;
+                    this.db.Entry(maintenancePart).State = EntityState.Modified;
                 this.db.SaveChanges();               
             }
             catch (Exception ex)
@@ -491,9 +491,7 @@ namespace KWZP2019
             catch (Exception ex)
             {
                 MessageBox.Show("Nie udało się zaktualizować planu. Błąd: " + ex.Message);
-            }
-           
-
+            }          
         }
     }
 }

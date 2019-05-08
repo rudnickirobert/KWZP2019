@@ -193,6 +193,9 @@
     <Compile Include="InspectionListForm.Designer.cs">
       <DependentUpon>InspectionListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintenanceDescription.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MaintenanceDescriptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,9 +224,6 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MachineType.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaintDescription.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Maintenance.cs">
@@ -870,6 +870,9 @@
     <Compile Include="vProductionProcessFullData.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vProductionProduct.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vSafetyControlHistoryView.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -1152,6 +1155,7 @@
     <None Include="Production\ProductionProducts.datasource" />
     <None Include="Production\ProductionTechnology.datasource" />
     <None Include="Properties\DataSources\SafetyControlHistoryView.datasource" />
+    <None Include="Properties\DataSources\vProductionProduct.datasource" />
     <None Include="Properties\DataSources\vUnhandledOrderDetails.datasource" />
     <EntityDeploy Include="RoofingCompanyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

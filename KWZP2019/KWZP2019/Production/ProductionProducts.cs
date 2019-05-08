@@ -29,7 +29,7 @@ namespace KWZP2019
 
         private void refreshProducts()
         {
-            dataGridProducts.DataSource = db.Products.ToList();
+            dataGridProducts.DataSource = db.vProductionProducts.ToList();
         }
 
         private void btAddProduct_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace KWZP2019
 
         private void ProductionProducts_Load(object sender, EventArgs e)
         {
-            dataGridProducts.DataSource = db.Products.ToList();
+            dataGridProducts.DataSource = db.vProductionProducts.ToList();
         }
 
         private void btEnd_Click(object sender, EventArgs e)

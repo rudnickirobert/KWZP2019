@@ -212,9 +212,9 @@
             this.lblOrders.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblOrders.Location = new System.Drawing.Point(512, 488);
             this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(104, 20);
+            this.lblOrders.Size = new System.Drawing.Size(108, 20);
             this.lblOrders.TabIndex = 14;
-            this.lblOrders.Text = "Zamówienia";
+            this.lblOrders.Text = "Półfabrykaty";
             // 
             // lblOutsourcing
             // 

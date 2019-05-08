@@ -120,11 +120,11 @@
             this.lblTimePerMeter.BackColor = System.Drawing.Color.Transparent;
             this.lblTimePerMeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTimePerMeter.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTimePerMeter.Location = new System.Drawing.Point(46, 103);
+            this.lblTimePerMeter.Location = new System.Drawing.Point(23, 103);
             this.lblTimePerMeter.Name = "lblTimePerMeter";
-            this.lblTimePerMeter.Size = new System.Drawing.Size(127, 16);
+            this.lblTimePerMeter.Size = new System.Drawing.Size(157, 16);
             this.lblTimePerMeter.TabIndex = 19;
-            this.lblTimePerMeter.Text = "Prędkość produkcji ";
+            this.lblTimePerMeter.Text = "Prędkość produkcji [m/h]";
             // 
             // lblTechnologyName
             // 

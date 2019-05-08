@@ -114,5 +114,10 @@ namespace KWZP2019
             this.startForm.Show();
             this.Hide();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
     }
 }

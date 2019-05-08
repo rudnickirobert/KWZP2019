@@ -331,7 +331,7 @@
             this.lblOutsourcing.BackColor = System.Drawing.Color.Transparent;
             this.lblOutsourcing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblOutsourcing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblOutsourcing.Location = new System.Drawing.Point(779, 298);
+            this.lblOutsourcing.Location = new System.Drawing.Point(775, 293);
             this.lblOutsourcing.Name = "lblOutsourcing";
             this.lblOutsourcing.Size = new System.Drawing.Size(111, 20);
             this.lblOutsourcing.TabIndex = 37;
@@ -343,11 +343,11 @@
             this.lblOrders.BackColor = System.Drawing.Color.Transparent;
             this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblOrders.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblOrders.Location = new System.Drawing.Point(363, 298);
+            this.lblOrders.Location = new System.Drawing.Point(356, 293);
             this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(109, 20);
+            this.lblOrders.Size = new System.Drawing.Size(113, 20);
             this.lblOrders.TabIndex = 36;
-            this.lblOrders.Text = "Zamówienia:";
+            this.lblOrders.Text = "Półfabrykaty:";
             // 
             // lblSalaries
             // 
@@ -355,7 +355,7 @@
             this.lblSalaries.BackColor = System.Drawing.Color.Transparent;
             this.lblSalaries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblSalaries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSalaries.Location = new System.Drawing.Point(779, 126);
+            this.lblSalaries.Location = new System.Drawing.Point(794, 121);
             this.lblSalaries.Name = "lblSalaries";
             this.lblSalaries.Size = new System.Drawing.Size(77, 20);
             this.lblSalaries.TabIndex = 35;
@@ -367,7 +367,7 @@
             this.lblInvoices.BackColor = System.Drawing.Color.Transparent;
             this.lblInvoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblInvoices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInvoices.Location = new System.Drawing.Point(363, 124);
+            this.lblInvoices.Location = new System.Drawing.Point(377, 121);
             this.lblInvoices.Name = "lblInvoices";
             this.lblInvoices.Size = new System.Drawing.Size(74, 20);
             this.lblInvoices.TabIndex = 34;
@@ -661,7 +661,7 @@
             this.lblPartOrder.BackColor = System.Drawing.Color.Transparent;
             this.lblPartOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblPartOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPartOrder.Location = new System.Drawing.Point(526, 464);
+            this.lblPartOrder.Location = new System.Drawing.Point(519, 461);
             this.lblPartOrder.Name = "lblPartOrder";
             this.lblPartOrder.Size = new System.Drawing.Size(193, 20);
             this.lblPartOrder.TabIndex = 57;

@@ -12,17 +12,12 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vProductionProcessFullData
+    public partial class vProductionProduct
     {
-        public int IdProces { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public int IdEmployee { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeSurname { get; set; }
-        public string MachineName { get; set; }
-        public string CatalogMachineNr { get; set; }
+        public int IdProduct { get; set; }
         public string ProductCode { get; set; }
-        public int Quantity { get; set; }
+        public string SfCode { get; set; }
+        public string TechnologyName { get; set; }
+        public System.DateTime InputDate { get; set; }
     }
 }

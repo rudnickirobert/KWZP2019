@@ -106,10 +106,10 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MedicalExamination ExaminationToRemove = new MedicalExamination
-            { IdMedicalExamination = int.Parse(dgvExamination.SelectedRows[0].Cells[8].Value.ToString()) };
-            db.MedicalExaminations.Attach(ExaminationToRemove);
-            db.MedicalExaminations.Remove(ExaminationToRemove);
+            MedicalExamination examinationToRemove = new MedicalExamination();
+            examinationToRemove.IdMedicalExamination = int.Parse(dgvExamination.SelectedRows[0].Cells[8].Value.ToString());
+            db.MedicalExaminations.Attach(examinationToRemove);
+            db.MedicalExaminations.Remove(examinationToRemove);
             db.SaveChanges();
             if (tbSearchEmployeeExamination.Text.Trim() == "" || tbSearchEmployeeExaminationName.Text.Trim() == "")
             {

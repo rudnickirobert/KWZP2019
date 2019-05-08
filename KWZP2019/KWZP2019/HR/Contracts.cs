@@ -68,7 +68,8 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Contract contractsToRemove = new Contract { IdContract = int.Parse(dgvContracts.SelectedRows[0].Cells[0].Value.ToString()) };
+            Contract contractsToRemove = new Contract();
+            contractsToRemove.IdContract = int.Parse(dgvContracts.SelectedRows[0].Cells[0].Value.ToString()) ;
             db.Contracts.Attach(contractsToRemove);
             db.Contracts.Remove(contractsToRemove);
             db.SaveChanges();
@@ -90,6 +91,8 @@ namespace KWZP2019
                 ToList();
 
             dgvContracts.Columns[0].Visible = false;
+
+            dgvContracts.Columns[7].HeaderText = "Szkolenie";
 
             foreach (DataGridViewRow row in dgvContracts.Rows)
             {

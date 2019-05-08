@@ -58,7 +58,11 @@ namespace KWZP2019
 
             dgvEducation.Columns[0].Visible = false;
             dgvEducation.Columns[7].Visible = false;
+
             dgvEducation.Columns[4].HeaderText = "Stopień naukowy";
+            dgvEducation.Columns[3].HeaderText = "Stopień wykształcenia";
+            dgvEducation.Columns[5].HeaderText = "Tytuły naukowe";
+
             dgvEducation.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEducation.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEducation.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -108,7 +112,8 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Education educationsToRemove = new Education { IdEducation = int.Parse(dgvEducation.SelectedRows[0].Cells[0].Value.ToString()) };
+            Education educationsToRemove = new Education();
+            educationsToRemove.IdEducation = int.Parse(dgvEducation.SelectedRows[0].Cells[0].Value.ToString());
             db.Educations.Attach(educationsToRemove);
             db.Educations.Remove(educationsToRemove);
             db.SaveChanges();

@@ -18,7 +18,7 @@ namespace KWZP2019
         Maintenance maintenance = new Maintenance();
         MaintType maintenanceType = new MaintType();
         int idSelectedMaintenance = 0;
-        bool lIsLoading = true;
+        bool isLoading = true;
 
         public MaintenanceCalendarForm(RoofingCompanyEntities db, StartForm startForm, MaintenanceManagement maintenanceManagementForm)
         {
@@ -67,7 +67,7 @@ namespace KWZP2019
             comMachine.ValueMember = "IdMachine";
             comMachine.DisplayMember = "MachineName";
             comMachine.SelectedValue = -1;   
-            this.lIsLoading = false;
+            this.isLoading = false;
             this.machineFilter();
         }
 
@@ -119,7 +119,7 @@ namespace KWZP2019
 
         private void comMachine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lIsLoading)
+            if (isLoading)
                 return;
             this.machineFilter();
         }
@@ -139,7 +139,7 @@ namespace KWZP2019
 
         private void comType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lIsLoading)
+            if (isLoading)
                 return;
             this.TypeFilter();
         }
