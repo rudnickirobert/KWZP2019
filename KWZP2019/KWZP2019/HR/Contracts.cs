@@ -95,7 +95,7 @@ namespace KWZP2019
             {
                 DateTime expirationDate = DateTime.Parse(row.Cells[5].Value.ToString());
                 DateTime now = DateTime.Now;
-                DateTime twoMonthsBefore = expirationDate.AddMonths(-2);
+                DateTime twoMonthsBefore = expirationDate.AddMonths(-3);
                 if (twoMonthsBefore < now && expirationDate > now)
                 {
                     row.DefaultCellStyle.BackColor = Color.FromArgb(102, 179, 255);
