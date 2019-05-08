@@ -267,7 +267,8 @@ IdUnit int not null,
 PartName varchar (50) not null,
 Producer varchar (50) not null,
 CatalogPartNr int not null,
-QuantityWarehouse int not null
+QuantityWarehouse int not null,
+QuantityMinimum int null
 );
 
 create table MaintPart (
@@ -286,7 +287,7 @@ create table Maintenance (
 IdMaintenance int primary key identity (1,1) not null,
 IdMachine int not null,
 IdMaintType int not null,
-IdMaintDesc int not null,
+IdMaintDesc int null,
 DateAcceptOrder datetime not null,
 StartDatePlan datetime not null,
 EndDatePlan datetime not null,
@@ -330,8 +331,7 @@ MaintenanceType varchar (50) not null
 create table MaintDescription (
 IdMaintDesc int primary key identity (1,1) not null,
 MaintDescName varchar (50) not null,
-MaintDescription varchar (50) null,
-InspectionTimeInterval float (2) not null
+MaintDescription varchar (50) null
 );
 
 create table Machine (
@@ -343,7 +343,8 @@ ProductionYear int null,
 PowerMachine float (2) null,
 WorkingArea varchar (50) null,
 CatalogMachineNr varchar (50) not null,
-MetersPerHour float (2) not null
+MetersPerHour float (2) not null,
+InspectionTimeInterval float (2) not null
 );
 
 create table MachineType (
