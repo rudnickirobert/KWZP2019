@@ -22,7 +22,8 @@ namespace KWZP2019
         }
         private void OutsourcingForm_Load(object sender, EventArgs e)
         {
-            outsourcingTypeDgv.DataSource = db.OutsourcingTypes.ToList();
+            outsourcingTypeDgv.DataSource = db.vOutsourcingTypes.ToList();
+            outsourcingTypeDgv.Columns["Numer"].Visible = false;
         }
         private void addNewOutsourcingCompanyBtn_Click(object sender, EventArgs e)
         {
@@ -41,14 +42,15 @@ namespace KWZP2019
             if (txtBSerachOutsourcing.Text.Trim().Length < 1)
             
             {
-                outsourcingTypeDgv.DataSource = db.Outsourcings.ToList();
-                nameOutsourcingDgv.DataSource = db.OutsourcingCommitments.ToList();
-                detailsOutsourcingDgv.DataSource = db.Outsourcings.ToList();
+                outsourcingTypeDgv.DataSource = db.vOutsourcings.ToList();
+                outsourcingTypeDgv.Columns["Numer"].Visible = false;
+                nameOutsourcingDgv.DataSource = db.vOutsourcingCommitments.ToList();
+                detailsOutsourcingDgv.DataSource = db.vOutsourcings.ToList();
             }
             else
             {
                 outsourcingTypeDgv.DataSource =  db.vOutsourcingTypes.ToList();
-                outsourcingTypeDgv.Columns[0].Visible = false;
+                outsourcingTypeDgv.Columns["Numer"].Visible = false;
             }
         }
 
@@ -56,14 +58,14 @@ namespace KWZP2019
         {
             int id = Convert.ToInt32(this.outsourcingTypeDgv.CurrentRow.Cells[0].Value);
 
-            detailsOutsourcingDgv.DataSource = (from Outsourcing in db.Outsourcings
-                                                where Outsourcing.IdOutsourcing == id
+            detailsOutsourcingDgv.DataSource = (from Outsourcing in db.vOutsourcings
+                                                where Outsourcing.Numer == id
                                                 select Outsourcing).ToList();
-            detailsOutsourcingDgv.Columns[0].Visible = false;
-            nameOutsourcingDgv.DataSource = (from OutsourcingCommitment in db.OutsourcingCommitments
-                                             where OutsourcingCommitment.IdOutsourcing == id
+            detailsOutsourcingDgv.Columns["Numer"].Visible = false;
+            nameOutsourcingDgv.DataSource = (from OutsourcingCommitment in db.vOutsourcingCommitments
+                                             where OutsourcingCommitment.Numer == id
                                              select OutsourcingCommitment).ToList();
-            nameOutsourcingDgv.Columns[0].Visible = false;
+            nameOutsourcingDgv.Columns["Numer"].Visible = false;
         }
     }
 }

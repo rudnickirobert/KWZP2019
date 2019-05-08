@@ -55,7 +55,7 @@
             this.customerNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.customerNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.customerNameLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customerNameLbl.Location = new System.Drawing.Point(406, 213);
+            this.customerNameLbl.Location = new System.Drawing.Point(353, 215);
             this.customerNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.customerNameLbl.Name = "customerNameLbl";
             this.customerNameLbl.Size = new System.Drawing.Size(113, 18);
@@ -68,7 +68,7 @@
             this.employeeLbl.BackColor = System.Drawing.Color.Transparent;
             this.employeeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.employeeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.employeeLbl.Location = new System.Drawing.Point(406, 257);
+            this.employeeLbl.Location = new System.Drawing.Point(353, 259);
             this.employeeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.employeeLbl.Name = "employeeLbl";
             this.employeeLbl.Size = new System.Drawing.Size(87, 18);
@@ -81,7 +81,7 @@
             this.dataLbl.BackColor = System.Drawing.Color.Transparent;
             this.dataLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.dataLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataLbl.Location = new System.Drawing.Point(406, 290);
+            this.dataLbl.Location = new System.Drawing.Point(353, 292);
             this.dataLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dataLbl.Name = "dataLbl";
             this.dataLbl.Size = new System.Drawing.Size(43, 18);
@@ -94,7 +94,7 @@
             this.markupLbl.BackColor = System.Drawing.Color.Transparent;
             this.markupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.markupLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.markupLbl.Location = new System.Drawing.Point(406, 327);
+            this.markupLbl.Location = new System.Drawing.Point(353, 329);
             this.markupLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.markupLbl.Name = "markupLbl";
             this.markupLbl.Size = new System.Drawing.Size(55, 18);
@@ -107,7 +107,7 @@
             this.sentToProductionLbl.BackColor = System.Drawing.Color.Transparent;
             this.sentToProductionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.sentToProductionLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sentToProductionLbl.Location = new System.Drawing.Point(406, 365);
+            this.sentToProductionLbl.Location = new System.Drawing.Point(353, 367);
             this.sentToProductionLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.sentToProductionLbl.Name = "sentToProductionLbl";
             this.sentToProductionLbl.Size = new System.Drawing.Size(249, 18);
@@ -120,7 +120,7 @@
             this.priceLbl.BackColor = System.Drawing.Color.Transparent;
             this.priceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.priceLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.priceLbl.Location = new System.Drawing.Point(406, 400);
+            this.priceLbl.Location = new System.Drawing.Point(353, 402);
             this.priceLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.priceLbl.Name = "priceLbl";
             this.priceLbl.Size = new System.Drawing.Size(68, 18);
@@ -148,7 +148,7 @@
             this.priceTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.priceTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.priceTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.priceTb.Location = new System.Drawing.Point(537, 401);
+            this.priceTb.Location = new System.Drawing.Point(484, 403);
             this.priceTb.Margin = new System.Windows.Forms.Padding(2);
             this.priceTb.Name = "priceTb";
             this.priceTb.Size = new System.Drawing.Size(302, 24);
@@ -158,7 +158,7 @@
             // sentToProductionCb
             // 
             this.sentToProductionCb.AutoSize = true;
-            this.sentToProductionCb.Location = new System.Drawing.Point(825, 369);
+            this.sentToProductionCb.Location = new System.Drawing.Point(772, 371);
             this.sentToProductionCb.Margin = new System.Windows.Forms.Padding(2);
             this.sentToProductionCb.Name = "sentToProductionCb";
             this.sentToProductionCb.Size = new System.Drawing.Size(15, 14);
@@ -171,7 +171,7 @@
             this.customerNameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.customerNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.customerNameTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.customerNameTb.Location = new System.Drawing.Point(538, 207);
+            this.customerNameTb.Location = new System.Drawing.Point(485, 209);
             this.customerNameTb.Margin = new System.Windows.Forms.Padding(2);
             this.customerNameTb.Name = "customerNameTb";
             this.customerNameTb.ReadOnly = true;
@@ -198,7 +198,7 @@
             // 
             this.orderDtp.CalendarTitleForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.orderDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.orderDtp.Location = new System.Drawing.Point(538, 285);
+            this.orderDtp.Location = new System.Drawing.Point(485, 287);
             this.orderDtp.Name = "orderDtp";
             this.orderDtp.Size = new System.Drawing.Size(302, 24);
             this.orderDtp.TabIndex = 14;
@@ -209,7 +209,7 @@
             this.employeeCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.employeeCb.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.employeeCb.FormattingEnabled = true;
-            this.employeeCb.Location = new System.Drawing.Point(538, 250);
+            this.employeeCb.Location = new System.Drawing.Point(485, 252);
             this.employeeCb.Name = "employeeCb";
             this.employeeCb.Size = new System.Drawing.Size(302, 26);
             this.employeeCb.TabIndex = 15;
@@ -219,8 +219,8 @@
             // 
             this.markupTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.markupTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.markupTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.markupTb.Location = new System.Drawing.Point(538, 325);
+            this.markupTb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.markupTb.Location = new System.Drawing.Point(485, 327);
             this.markupTb.Name = "markupTb";
             this.markupTb.Size = new System.Drawing.Size(302, 24);
             this.markupTb.TabIndex = 16;
@@ -230,10 +230,10 @@
             // markupInfoLbl
             // 
             this.markupInfoLbl.AutoSize = true;
-            this.markupInfoLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.markupInfoLbl.BackColor = System.Drawing.Color.Transparent;
             this.markupInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.markupInfoLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.markupInfoLbl.Location = new System.Drawing.Point(856, 331);
+            this.markupInfoLbl.Location = new System.Drawing.Point(803, 333);
             this.markupInfoLbl.Name = "markupInfoLbl";
             this.markupInfoLbl.Size = new System.Drawing.Size(103, 18);
             this.markupInfoLbl.TabIndex = 17;

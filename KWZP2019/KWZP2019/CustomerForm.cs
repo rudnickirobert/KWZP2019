@@ -44,7 +44,8 @@ namespace KWZP2019
                 }
                 order.Cost = Convert.ToDecimal(temporaryCost * (1 + order.Markup));
             }//END OF ALGORITHM
-            customersDgv.DataSource = db.Customers.ToList();
+            customersDgv.DataSource = db.vCustomers.ToList();
+            customersDgv.Columns["Numer"].Visible = false;
         }
         //BUTTONS  
         private void orderBtn_Click(object sender, EventArgs e)
@@ -107,13 +108,13 @@ namespace KWZP2019
             if (searchTxt.Text.Trim().Length < 1)
             {
                 //pobranie wszystkich danych, gdy pole zawiera mniej niż 1 znak
-                customersDgv.DataSource = db.Customers.ToList();
+                customersDgv.DataSource = db.vCustomers.ToList();
             }
             else
             {
-                customersDgv.DataSource = (from db in db.Customers
+                customersDgv.DataSource = (from db in db.vCustomers
                                            where
-                                           db.CustomerName.Contains(searchTxt.Text.Trim())
+                                           db.Nazwa.Contains(searchTxt.Text.Trim())
                                            select db).ToList();
             }
         }
@@ -121,10 +122,10 @@ namespace KWZP2019
         private void customersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //zadeklarowanie zmiennej "id" typu int i ustalenie wartości na podstawie pierwszej [0] kolumny w customerDgv
-            int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells[0].Value);
-            ordersDgv.DataSource = (from OrderCustomer in db.OrderCustomers
-                                    where OrderCustomer.IdOrderCustomer == id
-                                    select OrderCustomer).ToList();
+            int id = Convert.ToInt32(this.customersDgv.CurrentRow.Cells["Numer"].Value);
+            ordersDgv.DataSource = (from db in db.vOrders
+                                    where db.Nr_zamówienia == id
+                                    select db).ToList();
         }
         private void ordersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
