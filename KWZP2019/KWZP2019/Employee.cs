@@ -26,10 +26,10 @@ namespace KWZP2019
             this.Payments = new HashSet<Payment>();
             this.Trainings = new HashSet<Training>();
             this.EntranceControls = new HashSet<EntranceControl>();
-            this.FEMAnalysis = new HashSet<FEMAnalysis>();
             this.SafetyControls = new HashSet<SafetyControl>();
             this.OrderCustomers = new HashSet<OrderCustomer>();
             this.OutControls = new HashSet<OutControl>();
+            this.FEMAnalysis = new HashSet<FEMAnalysis>();
         }
     
         public int IdEmployee { get; set; }
@@ -62,13 +62,13 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EntranceControl> EntranceControls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FEMAnalysis> FEMAnalysis { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SafetyControl> SafetyControls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderCustomer> OrderCustomers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OutControl> OutControls { get; set; }
         public virtual SafetyTraining SafetyTraining { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FEMAnalysis> FEMAnalysis { get; set; }
     }
 }

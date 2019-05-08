@@ -14,14 +14,15 @@ namespace KWZP2019
     
     public partial class vIndividualCustomer
     {
-        public string Klient { get; set; }
+        public int Numer { get; set; }
+        public string Nazwa { get; set; }
         public string Telefon { get; set; }
         public string E_mail { get; set; }
         public string Miasto { get; set; }
         public string Kod_pocztowy { get; set; }
         public string Ulica { get; set; }
-        public string Numer { get; set; }
-        public string Numer_lokalu { get; set; }
+        public string Nr_domu { get; set; }
+        public string Nr_lokalu { get; set; }
         public string Pesel { get; set; }
         public string NIP { get; set; }
         public string KRS { get; set; }

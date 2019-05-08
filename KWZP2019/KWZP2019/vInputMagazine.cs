@@ -14,8 +14,9 @@ namespace KWZP2019
     
     public partial class vInputMagazine
     {
-        public string SfCode { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public System.DateTime ControlDate { get; set; }
+        public int Numer { get; set; }
+        public string Kod_Produktu { get; set; }
+        public Nullable<int> Ilość { get; set; }
+        public System.DateTime Data_przyjęcia_na_magazyn { get; set; }
     }
 }
