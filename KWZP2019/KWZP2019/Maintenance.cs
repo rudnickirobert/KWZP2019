@@ -37,11 +37,11 @@ namespace KWZP2019
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FailureMaintenance> FailureMaintenances { get; set; }
         public virtual Machine Machine { get; set; }
-        public virtual MaintDescription MaintDescription { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Realization> Realizations { get; set; }
         public virtual MaintType MaintType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlannedProduction> PlannedProductions { get; set; }
+        public virtual MaintenanceDescription MaintenanceDescription { get; set; }
     }
 }

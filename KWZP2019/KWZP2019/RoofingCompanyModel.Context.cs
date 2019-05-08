@@ -45,7 +45,6 @@ namespace KWZP2019
         public virtual DbSet<InvoiceType> InvoiceTypes { get; set; }
         public virtual DbSet<Machine> Machines { get; set; }
         public virtual DbSet<MachineType> MachineTypes { get; set; }
-        public virtual DbSet<MaintDescription> MaintDescriptions { get; set; }
         public virtual DbSet<Maintenance> Maintenances { get; set; }
         public virtual DbSet<MaintPart> MaintParts { get; set; }
         public virtual DbSet<MaintType> MaintTypes { get; set; }
@@ -157,5 +156,6 @@ namespace KWZP2019
         public virtual DbSet<vMaintenanceEmployeesCalendar> vMaintenanceEmployeesCalendars { get; set; }
         public virtual DbSet<vNewFailure> vNewFailures { get; set; }
         public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
+        public virtual DbSet<MaintenanceDescription> MaintenanceDescriptions { get; set; }
     }
 }

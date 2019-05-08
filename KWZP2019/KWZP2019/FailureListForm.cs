@@ -24,13 +24,10 @@ namespace KWZP2019
             InitializeComponent();
         }
 
-        void PopulateDataGridView()
+        void populateDataGridView()
         {
             this.dgvNewFailures.AutoGenerateColumns = false;
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                this.dgvNewFailures.DataSource = db.vNewFailures.ToList<vNewFailure>();
-            }
+            this.dgvNewFailures.DataSource = db.vNewFailures.ToList<vNewFailure>();
         }
 
         private void btnNewMaintenance_Click_1(object sender, EventArgs e)
@@ -48,7 +45,7 @@ namespace KWZP2019
 
         private void FailureListForm_Load_1(object sender, EventArgs e)
         {
-            PopulateDataGridView();
+            populateDataGridView();
         }
     }
 }

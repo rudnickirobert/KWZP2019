@@ -16,7 +16,7 @@ namespace KWZP2019
         RoofingCompanyEntities db;
         StartForm startForm;
         MaintenanceManagement maintenanceManagementForm;
-        MaintDescription maintenanceDescription = new MaintDescription();
+        MaintenanceDescription maintenanceDescription = new MaintenanceDescription();
         int idSelectedDescription = 0;
 
 
@@ -31,7 +31,7 @@ namespace KWZP2019
         void populateDataGridView()
         {
             dgvDescription.AutoGenerateColumns = false;
-            dgvDescription.DataSource = this.db.MaintDescriptions.ToList<MaintDescription>();
+            dgvDescription.DataSource = this.db.MaintenanceDescriptions.ToList<MaintenanceDescription>();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -43,12 +43,12 @@ namespace KWZP2019
             }
             try
             {
-                this.maintenanceDescription.MaintDescName = this.txtShortDescription.Text.TrimEnd();
-                this.maintenanceDescription.MaintDescription1 = this.txtLongDescription.Text.TrimEnd();
+                this.maintenanceDescription.DescriptionShort = this.txtShortDescription.Text.TrimEnd();
+                this.maintenanceDescription.DescriptionLong = this.txtLongDescription.Text.TrimEnd();
 
                 if (maintenanceDescription.IdMaintDesc == 0) //Instert
                 {
-                    this.db.MaintDescriptions.Add(maintenanceDescription);
+                    this.db.MaintenanceDescriptions.Add(maintenanceDescription);
                 }
                 else //update
                     this.db.Entry(maintenanceDescription).State = EntityState.Modified;
@@ -68,7 +68,7 @@ namespace KWZP2019
         void clear()
         {
             this.txtShortDescription.Text = this.txtLongDescription.Text =  "";
-            this.maintenanceDescription = new MaintDescription();
+            this.maintenanceDescription = new MaintenanceDescription();
         }
 
         private void dgvDescription_DoubleClick(object sender, EventArgs e)
@@ -76,15 +76,15 @@ namespace KWZP2019
             if (dgvDescription.CurrentRow.Index != -1)
             {
                 this.idSelectedDescription = Convert.ToInt32(dgvDescription.CurrentRow.Cells["IdMaintDesc"].Value);
-                maintenanceDescription = this.db.MaintDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == this.idSelectedDescription).First();
-                if (this.maintenanceDescription.MaintDescription1 == null)
+                maintenanceDescription = this.db.MaintenanceDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == this.idSelectedDescription).First();
+                if (this.maintenanceDescription.DescriptionLong == null)
                     this.txtLongDescription.Text = "";
                 else
-                    this.txtLongDescription.Text = this.maintenanceDescription.MaintDescription1.ToString();
-                if (this.maintenanceDescription.MaintDescName == null)
+                    this.txtLongDescription.Text = this.maintenanceDescription.DescriptionLong.ToString();
+                if (this.maintenanceDescription.DescriptionShort == null)
                     this.txtShortDescription.Text = "";
                 else
-                    this.txtShortDescription.Text = this.maintenanceDescription.MaintDescName.ToString();
+                    this.txtShortDescription.Text = this.maintenanceDescription.DescriptionShort.ToString();
                 btnSave.Text = "Aktualizuj";
                 btnDelete.Enabled = true;
             }
@@ -98,8 +98,8 @@ namespace KWZP2019
                 {
                     var entry = this.db.Entry(maintenanceDescription);
                     if (entry.State == EntityState.Detached)
-                        this.db.MaintDescriptions.Attach(maintenanceDescription);
-                    this.db.MaintDescriptions.Remove(maintenanceDescription);
+                        this.db.MaintenanceDescriptions.Attach(maintenanceDescription);
+                    this.db.MaintenanceDescriptions.Remove(maintenanceDescription);
                     this.db.SaveChanges();
                     populateDataGridView();
                     clear();

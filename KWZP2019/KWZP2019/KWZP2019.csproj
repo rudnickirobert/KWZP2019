@@ -193,6 +193,9 @@
     <Compile Include="InspectionListForm.Designer.cs">
       <DependentUpon>InspectionListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintenanceDescription.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MaintenanceDescriptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,9 +224,6 @@
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MachineType.cs">
-      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaintDescription.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Maintenance.cs">

@@ -328,10 +328,10 @@ IdMaintenanceType int primary key identity (1,1) not null,
 MaintenanceType varchar (50) not null
 );
 
-create table MaintDescription (
+create table MaintenanceDescription (
 IdMaintDesc int primary key identity (1,1) not null,
-MaintDescName varchar (50) not null,
-MaintDescription varchar (50) null
+DescriptionShort varchar (50) not null,
+DescriptionLong varchar (255) null
 );
 
 create table Machine (
@@ -585,7 +585,7 @@ alter table PartOrderDetail add constraint FK_PartOrderPartOrderDetail foreign k
 alter table PartOrderDetail add constraint FK_PartRequestPartOrderDetail foreign key (IdPart) references Part(IdPart);
 alter table Maintenance add constraint FK_MachineMaintenance foreign key (IdMachine) references Machine(IdMachine);
 alter table Maintenance add constraint FK_MaintTypeMaintenance foreign key (IdMaintType) references MaintType(IdMaintenanceType);
-alter table Maintenance add constraint FK_MainDescriptionMaintenance foreign key (IdMaintDesc) references MaintDescription(IdMaintDesc);
+alter table Maintenance add constraint FK_MainDescriptionMaintenance foreign key (IdMaintDesc) references MaintenanceDescription(IdMaintDesc);
 alter table FailureMaintenance add constraint FK_FailureFailureMaintenance foreign key (IdFailure) references Failure(IdFailure);
 alter table FailureMaintenance add constraint FK_MaintenanceFailureMaintenance foreign key (IdMaintenance) references Maintenance(IdMaintenance);
 alter table EmployeePlan add constraint FK_MaintenanceEmployee foreign key (IdMaintenance) references Maintenance(IdMaintenance);

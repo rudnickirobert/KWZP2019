@@ -13,13 +13,14 @@ namespace KWZP2019
     public partial class MaintenanceDescriptionForm : Form
     {
         RoofingCompanyEntities db;
-        MaintDescription maintenanceDescription;
+        MaintenanceDescription maintenanceDescription;
 
         public MaintenanceDescriptionForm(RoofingCompanyEntities db, int tIdMaintDescription)
-        {      
-            this.maintenanceDescription = db.MaintDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == tIdMaintDescription).First();
-            this.txtShortDescription.Text = maintenanceDescription.MaintDescName;
-            this.txtDetailDescription.Text = maintenanceDescription.MaintDescription1;
+        {
+            this.db = db;
+            this.maintenanceDescription = db.MaintenanceDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == tIdMaintDescription).First();
+            this.txtShortDescription.Text = maintenanceDescription.DescriptionShort;
+            this.txtDetailDescription.Text = maintenanceDescription.DescriptionLong;
             tIdMaintDescription = 0;
         }
 
