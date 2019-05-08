@@ -787,6 +787,9 @@
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartsRequest_Add.resx">
+      <DependentUpon>PartsRequest_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production\EditTechnology.resx">
       <DependentUpon>EditTechnology.cs</DependentUpon>
     </EmbeddedResource>
