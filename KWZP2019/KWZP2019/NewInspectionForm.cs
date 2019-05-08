@@ -11,31 +11,30 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class NewMaintenanceForm : Form
+    public partial class NewInspectionForm : Form
     {
         RoofingCompanyEntities db;
-        Maintenance maintenance = new Maintenance();
         StartForm startForm;
-        FailureListForm failureListForm;
-        FailureMaintenance failureMaintenance = new FailureMaintenance();
+        InspectionListForm inspectionListForm;
         EmployeePlan employeePlan = new EmployeePlan();
         MaintPart maintPart = new MaintPart();
+        MaintDescription maintDescription = new MaintDescription();
+        Maintenance maintenance = new Maintenance();
         int nIdSelectedEmployee = 0;
-        int nIdSelectedEmployeePlan = 0;
+        int nIdSelectedDescription = 0;
         bool lIsLoading = true;
-        vMachineFailure machineFailure = new vMachineFailure();
 
-        public NewMaintenanceForm(RoofingCompanyEntities db, StartForm startForm, FailureListForm failureListForm)
+        public NewInspectionForm(RoofingCompanyEntities db, StartForm startForm, InspectionListForm inspectionListForm)
         {
             this.db = db;
             this.startForm = startForm;
-            this.failureListForm = failureListForm;
+            this.inspectionListForm = inspectionListForm;
             InitializeComponent();
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
-            this.failureListForm.Show();
+            this.inspectionListForm.Show();
             this.Hide();
         }
 
@@ -64,40 +63,61 @@ namespace KWZP2019
                                            partview.PartQuantity,
                                            partview.QuantityWarehouse,
                                            partview.UnitName
-                                       }).ToList();                            
+                                       }).ToList();
         }
 
         void populateListBox()
         {
-            List<Part> Result = this.db.Parts.ToList<Part>();
-            this.lbxParts.DataSource = Result;
+            List<Part> partList = this.db.Parts.ToList<Part>();
+            this.lbxParts.DataSource = partList;
             this.lbxParts.DisplayMember = "PartName";
             this.lbxParts.ValueMember = "IdPart";
+            List<MaintDescription> descriptionList = this.db.MaintDescriptions.ToList<MaintDescription>();
+            this.lbxDescriptionShort.DataSource = descriptionList;
+            this.lbxDescriptionShort.DisplayMember = "MaintDescName";
+            this.lbxDescriptionShort.ValueMember = "IdMaintDesc";
+        }
+
+        void populateTextBox()
+        {
+            if (this.nIdSelectedDescription>0)
+            {
+                this.maintDescription = this.db.MaintDescriptions.Where(maintDescription => maintDescription.IdMaintDesc == nIdSelectedDescription).First();
+                if (maintDescription.MaintDescription1 == null)
+                {
+                    this.txtDescriptionLong.Text = String.Empty;
+                }
+                else
+                {
+                    this.txtDescriptionLong.Text = this.maintDescription.MaintDescription1.ToString();
+                }           
+            }           
         }
 
         void populateComboBox()
         {
-            List<vComboboxNewFailure> list = this.db.vComboboxNewFailures.ToList<vComboboxNewFailure>();
-            vComboboxNewFailure record = new vComboboxNewFailure();
-            record.IdFailure = -1;
-            record.Specification = "Nie wybrano";
-            list.Add(record);
-            this.comFailure.DataSource = list;
-            this.comFailure.ValueMember = "IdFailure";
-            this.comFailure.DisplayMember = "Specification";
-            this.comFailure.SelectedValue = -1;       
+            List<Machine> listMachines = db.Machines.ToList<Machine>();
+            Machine recordMachine = new Machine();
+            recordMachine.IdMachine = -1;
+            recordMachine.MachineName = "Nie wybrano";
+            listMachines.Add(recordMachine);
+            comMachine.DataSource = listMachines;
+            comMachine.ValueMember = "IdMachine";
+            comMachine.DisplayMember = "MachineName";
+            comMachine.SelectedValue = -1;
         }
 
         void clear()
         {
+            this.comMachine.SelectedValue = 0;
+            this.lbxDescriptionShort.SelectedValue = 0;
             this.txtMaintenanceNr.Text = string.Empty;
             this.dtpStartDate.Value = this.dtpEndDate.Value = DateTime.Now;
             this.tpStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             this.tpEndDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, 0, 0);
             this.maintenance = new Maintenance();
-            this.failureMaintenance = new FailureMaintenance();
         }
-
+        
         void clearEmployee()
         {
             this.dtpEmployeeStartDate.Value = this.dtpEmployeeEndDate.Value = DateTime.Now;
@@ -113,7 +133,7 @@ namespace KWZP2019
             this.txtQuantity.Text = String.Empty;
         }
 
-        void loadWindow()
+        private void NewInspectionForm_Load(object sender, EventArgs e)
         {
             clear();
             clearEmployee();
@@ -121,6 +141,7 @@ namespace KWZP2019
             populateComboBox();
             populateDataGridView();
             populateListBox();
+            populateTextBox();
             this.tpEndDate.Format = DateTimePickerFormat.Time;
             this.tpEndDate.ShowUpDown = true;
             this.tpStartDate.Format = DateTimePickerFormat.Time;
@@ -130,52 +151,41 @@ namespace KWZP2019
             this.tpEmployeeStartDate.Format = DateTimePickerFormat.Time;
             this.tpEmployeeStartDate.ShowUpDown = true;
             this.lIsLoading = false;
-            this.btnDeleteEmployee.Enabled = false;
-        }
-
-        private void NewMaintenanceForm_Load(object sender, EventArgs e)
-        {
-            loadWindow();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtMaintenanceNr.Text.Trim().Length == 0 || Convert.ToInt32(this.comFailure.SelectedValue) == -1)
-            {
-                MessageBox.Show("Nie wprowadzono wartości!");
-                return;
-            }
             if ((this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay) >
                 (this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay))
             {
                 MessageBox.Show("'Data od' musi być mniejsza od 'Data do'!");
                 return;
             }
+            if (txtMaintenanceNr.Text.Trim().Length == 0 || Convert.ToInt32(this.comMachine.SelectedValue) == -1 ||
+                Convert.ToInt32(this.lbxDescriptionShort.SelectedValue) == 0)
+            {
+                MessageBox.Show("Nie wprowadzono wartości!");
+                return;
+            }
             try
             {
-                failureMaintenance.IdMaintenance = this.maintenance.IdMaintenance;              
-                int failureId = Convert.ToInt32(this.comFailure.SelectedValue);
-                failureMaintenance.IdFailure = failureId;
-                vMachineFailure machineFailureItem = this.db.vMachineFailures.First(machineFailure => machineFailure.IdFailure == failureId);
-                maintenance.IdMachine = machineFailureItem.IdMachine;
-                this.maintenance.IdMaintType = 1;
-                this.maintenance.IdMaintDesc = 1;
-                this.maintenance.DateAcceptOrder = DateTime.Now;       
+                this.maintenance.IdMachine = Convert.ToInt32(this.comMachine.SelectedValue);
+                this.maintenance.IdMaintType = 2;
+                this.maintenance.IdMaintDesc = Convert.ToInt32(this.lbxDescriptionShort.SelectedValue);
+                this.maintenance.DateAcceptOrder = DateTime.Now;
                 this.maintenance.StartDatePlan = this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay;
                 this.maintenance.EndDatePlan = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
-                this.maintenance.MaintenanceNr = "AWR"+this.txtMaintenanceNr.Text.Trim();
-                
+                this.maintenance.MaintenanceNr = "INSP"+this.txtMaintenanceNr.Text.Trim();
+
                 if (maintenance.IdMaintenance == 0)//Instert
                     this.db.Maintenances.Add(maintenance);
                 else //update
-                    this.db.Entry(maintenance).State = EntityState.Modified;
-                if (failureMaintenance.IdMaintenance == 0)//Instert
-                    this.db.FailureMaintenances.Add(failureMaintenance);
-                else //update
-                    this.db.Entry(failureMaintenance).State = EntityState.Modified;
-                this.db.SaveChanges();    
+                    this.db.Entry(maintenance).State = EntityState.Modified;             
+                this.db.SaveChanges();
                 MessageBox.Show("Obsługa została dodana!");
                 this.btnSave.Text = "Aktualizuj";
+                nIdSelectedDescription = Convert.ToInt32(maintenance.IdMaintDesc);
+                populateTextBox();        
             }
             catch (Exception)
             {
@@ -188,24 +198,6 @@ namespace KWZP2019
             clear();
         }
 
-        private void comFailure_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lIsLoading)
-                return;
-            else
-            {
-                int failureId = Convert.ToInt32(this.comFailure.SelectedValue);
-                if (failureId == -1)
-                {
-                    this.txtMachine.Text = string.Empty;
-                    return;
-                }
-                vMachineFailure machineFailureItem = this.db.vMachineFailures.First(machineFailure => machineFailure.IdFailure == failureId);
-                maintenance.IdMachine = machineFailureItem.IdMachine;
-                this.txtMachine.Text = machineFailureItem.MachineName;
-            }
-        }
-
         private void btnEmloyeeCalendar_Click(object sender, EventArgs e)
         {
             MaintenanceEmployeeCalendarForm maintenanceEmployeeCalendarForm = new MaintenanceEmployeeCalendarForm(this.db);
@@ -214,16 +206,13 @@ namespace KWZP2019
 
         private void dgvEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.dgvEmployees.CurrentRow.Index != -1)
-            {               
-                try
-                {
-                    this.nIdSelectedEmployee = Convert.ToInt32(this.dgvEmployees.CurrentRow.Cells["IdEmployee"].Value);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+            try
+            {
+                this.nIdSelectedEmployee = Convert.ToInt32(this.dgvEmployees.CurrentRow.Cells["IdEmployee"].Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -233,8 +222,7 @@ namespace KWZP2019
             DateTime endDate = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
             DateTime employeeStartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
             DateTime employeeEndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
-
-            if ((employeeStartDate < startDate)||(employeeEndDate > endDate))          
+            if ((employeeStartDate < startDate) || (employeeEndDate > endDate))
             {
                 MessageBox.Show("Pracownik musi mieć przydzielone daty w terminie zlecenia. " +
                     "Popraw daty dla pracownika lub aktualizuj termin zlecenia");
@@ -263,6 +251,7 @@ namespace KWZP2019
                     MessageBox.Show("Ten pracownik juz został dodany!");
                     return;
                 }
+
             }
             try
             {
@@ -270,16 +259,16 @@ namespace KWZP2019
                 this.employeePlan.IdMaintenance = this.maintenance.IdMaintenance;
                 this.employeePlan.StartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
                 this.employeePlan.EndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
-         
+
                 if (this.employeePlan.IdEmployeePlan == 0)//Instert
                     this.db.EmployeePlans.Add(this.employeePlan);
                 else //update
                     this.db.Entry(this.employeePlan).State = EntityState.Modified;
                 this.db.SaveChanges();
-                
                 clearEmployee();
                 MessageBox.Show("Pracownik został dodany!");
                 populateDataGridView();
+                this.btnSaveEmployee.Text = "Zapisz";
             }
             catch (Exception ex)
             {
@@ -312,18 +301,18 @@ namespace KWZP2019
                 {
                     MessageBox.Show("Ta część już została dodana!");
                     return;
-                }                  
+                }
             }
             try
             {
                 this.maintPart.IdPart = lnIdPart;
-                this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;               
-                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());               
+                this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;
+                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
                 if (this.maintPart.IdMaintPart == 0)//Instert
                     this.db.MaintParts.Add(maintPart);
                 else //update
                     this.db.Entry(maintPart).State = EntityState.Modified;
-                this.db.SaveChanges();               
+                this.db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -357,8 +346,8 @@ namespace KWZP2019
             if (dateTime.TimeOfDay < minTime || dateTime.TimeOfDay > maxTime)
             {
                 MessageBox.Show("Pracujemy w godzinach 8-16!");
-                timePicker.Value = new DateTime(dateTime.Year,dateTime.Month,dateTime.Day,8,0,0);
-            }           
+                timePicker.Value = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, 8, 0, 0);
+            }
         }
 
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
@@ -410,10 +399,10 @@ namespace KWZP2019
             this.checkTime(dateTimePicker);
         }
 
-        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        private void btnDeletePart_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Czy na pewno chcesz usunąć tę pozycję?", "Usuwanie pracownika", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {                          
+            {
                 var entry = this.db.Entry(this.employeePlan);
                 if (entry.State == EntityState.Detached)
                     this.db.EmployeePlans.Attach(this.employeePlan);
@@ -421,11 +410,11 @@ namespace KWZP2019
                 this.db.SaveChanges();
                 populateDataGridView();
                 clearEmployee();
-                MessageBox.Show("Usunięto prawidłowo");     
+                MessageBox.Show("Usunięto prawidłowo");
             }
         }
 
-        private void btnCancelEmployee_Click(object sender, EventArgs e)
+        private void btnCancelPart_Click(object sender, EventArgs e)
         {
             clearEmployee();
         }
@@ -434,8 +423,8 @@ namespace KWZP2019
         {
             if (this.dgvMaintenanceEmployees.CurrentRow.Index != -1)
             {
-                this.employeePlan.IdEmployeePlan = Convert.ToInt32(this.dgvMaintenanceEmployees.CurrentRow.Cells["IdEmployeePlan"].Value);                                
-                this.employeePlan = this.db.EmployeePlans.Where(x => x.IdEmployeePlan == this.employeePlan.IdEmployeePlan).First();
+                this.employeePlan.IdEmployeePlan = Convert.ToInt32(this.dgvMaintenanceEmployees.CurrentRow.Cells["IdEmployeePlan"].Value);
+                this.employeePlan = this.db.EmployeePlans.Where(employeePlan => employeePlan.IdEmployeePlan == this.employeePlan.IdEmployeePlan).First();
                 this.dtpEmployeeStartDate.Value = new DateTime(
                     employeePlan.StartDate.Year,
                     employeePlan.StartDate.Month,
@@ -444,8 +433,8 @@ namespace KWZP2019
                     employeePlan.StartDate.Year,
                     employeePlan.StartDate.Month,
                     employeePlan.StartDate.Day,
-                    employeePlan.StartDate.Hour, 
-                    employeePlan.StartDate.Minute, 
+                    employeePlan.StartDate.Hour,
+                    employeePlan.StartDate.Minute,
                     employeePlan.StartDate.Second);
                 this.dtpEmployeeEndDate.Value = new DateTime(
                     employeePlan.EndDate.Year,
@@ -458,42 +447,44 @@ namespace KWZP2019
                     employeePlan.EndDate.Hour,
                     employeePlan.EndDate.Minute,
                     employeePlan.EndDate.Second);
-                
+
+                this.btnSaveEmployee.Text = "Aktualizuj";
                 this.btnDeleteEmployee.Enabled = true;
             }
         }
 
-        private void btnUpdateEmployee_Click(object sender, EventArgs e)
+        private void btnSaveDescription_Click(object sender, EventArgs e)
         {
-            DateTime startDate = this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay;
-            DateTime endDate = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
-            DateTime employeeStartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
-            DateTime employeeEndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
-
-            if ((employeeStartDate < startDate) || (employeeEndDate > endDate))
+            int lnIdMaintDesc = Convert.ToInt32(this.lbxDescriptionShort.SelectedValue);          
+            if (this.maintenance.IdMaintenance == 0)
             {
-                MessageBox.Show("Pracownik musi mieć przydzielone daty w terminie zlecenia. " +
-                    "Popraw daty dla pracownika lub aktualizuj termin zlecenia");
+                MessageBox.Show("Najpierw wprowadź zlecenie!");
                 return;
             }
+            if (Convert.ToInt32(this.lbxDescriptionShort.SelectedValue) == 0)
+            {
+                MessageBox.Show("Najpierw wybierz opis!");
+                return;
+            }
+
             try
             {
-                this.employeePlan.StartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
-                this.employeePlan.EndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
-                 
-                this.db.Entry(this.employeePlan).State = EntityState.Modified;
+                this.maintDescription.IdMaintDesc = lnIdMaintDesc;
+                this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;
+                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
+                if (this.maintPart.IdMaintPart == 0)//Instert
+                    this.db.MaintParts.Add(maintPart);
+                else //update
+                    this.db.Entry(maintPart).State = EntityState.Modified;
                 this.db.SaveChanges();
-
-                clearEmployee();
-                MessageBox.Show("Pracownik został zaktualizowany!");
-                populateDataGridView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nie udało się zaktualizować planu. Błąd: " + ex.Message);
+                MessageBox.Show(ex.ToString());
             }
-           
-
+            clearPart();
+            MessageBox.Show("Część została dodana!");
+            populateDataGridView();
         }
     }
 }
