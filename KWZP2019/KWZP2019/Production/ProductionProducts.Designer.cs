@@ -167,9 +167,8 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridProducts.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridProducts.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.dataGridProducts.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridProducts.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridProducts.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Empty;
+            this.dataGridProducts.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Empty;
             this.dataGridProducts.Size = new System.Drawing.Size(776, 286);
             this.dataGridProducts.TabIndex = 4;
             this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);

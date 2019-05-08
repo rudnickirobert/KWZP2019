@@ -22,7 +22,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Finances));
-            this.btnSalariesHistory = new System.Windows.Forms.Button();
+            this.btnPayments = new System.Windows.Forms.Button();
             this.btnCountPayments = new System.Windows.Forms.Button();
             this.btnCosts = new System.Windows.Forms.Button();
             this.btnEarnings = new System.Windows.Forms.Button();
@@ -34,23 +34,23 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnSalariesHistory
+            // btnPayments
             // 
-            this.btnSalariesHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnSalariesHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSalariesHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalariesHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnSalariesHistory.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalariesHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnSalariesHistory.Image")));
-            this.btnSalariesHistory.Location = new System.Drawing.Point(370, 116);
-            this.btnSalariesHistory.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSalariesHistory.Name = "btnSalariesHistory";
-            this.btnSalariesHistory.Size = new System.Drawing.Size(290, 160);
-            this.btnSalariesHistory.TabIndex = 4;
-            this.btnSalariesHistory.Text = "Historia Wypłat";
-            this.btnSalariesHistory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSalariesHistory.UseVisualStyleBackColor = false;
-            this.btnSalariesHistory.Click += new System.EventHandler(this.btnSalariesHistory_Click);
+            this.btnPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnPayments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPayments.Image = ((System.Drawing.Image)(resources.GetObject("btnPayments.Image")));
+            this.btnPayments.Location = new System.Drawing.Point(370, 116);
+            this.btnPayments.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPayments.Name = "btnPayments";
+            this.btnPayments.Size = new System.Drawing.Size(290, 160);
+            this.btnPayments.TabIndex = 4;
+            this.btnPayments.Text = "Historia Wypłat";
+            this.btnPayments.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPayments.UseVisualStyleBackColor = false;
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
             // btnCountPayments
             // 
@@ -224,7 +224,7 @@
             this.Controls.Add(this.btnEarnings);
             this.Controls.Add(this.btnCosts);
             this.Controls.Add(this.btnCountPayments);
-            this.Controls.Add(this.btnSalariesHistory);
+            this.Controls.Add(this.btnPayments);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -237,7 +237,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalariesHistory;
+        private System.Windows.Forms.Button btnPayments;
         private System.Windows.Forms.Button btnCountPayments;
         private System.Windows.Forms.Button btnCosts;
         private System.Windows.Forms.Button btnEarnings;

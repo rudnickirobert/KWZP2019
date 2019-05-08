@@ -12,13 +12,10 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class FEMAnalysi
+    public partial class vUnexcused
     {
-        public int IdFEMAnalysis { get; set; }
         public int IdEmployee { get; set; }
-        public byte[] NewPattern { get; set; }
-        public string AnalysisResults { get; set; }
-    
-        public virtual Employee Employee { get; set; }
+        public Nullable<int> NUDays { get; set; }
+        public Nullable<double> NUX { get; set; }
     }
 }
