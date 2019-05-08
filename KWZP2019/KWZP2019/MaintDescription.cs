@@ -23,7 +23,6 @@ namespace KWZP2019
         public int IdMaintDesc { get; set; }
         public string MaintDescName { get; set; }
         public string MaintDescription1 { get; set; }
-        public float InspectionTimeInterval { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Maintenance> Maintenances { get; set; }

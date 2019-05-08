@@ -26,7 +26,7 @@ namespace KWZP2019
         public int IdMaintenance { get; set; }
         public int IdMachine { get; set; }
         public int IdMaintType { get; set; }
-        public int IdMaintDesc { get; set; }
+        public Nullable<int> IdMaintDesc { get; set; }
         public System.DateTime DateAcceptOrder { get; set; }
         public System.DateTime StartDatePlan { get; set; }
         public System.DateTime EndDatePlan { get; set; }

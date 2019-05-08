@@ -30,6 +30,7 @@ namespace KWZP2019
         public string WorkingArea { get; set; }
         public string CatalogMachineNr { get; set; }
         public float MetersPerHour { get; set; }
+        public float InspectionTimeInterval { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SkillsForMachine> SkillsForMachines { get; set; }
