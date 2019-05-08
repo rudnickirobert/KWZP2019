@@ -28,13 +28,6 @@ namespace KWZP2019
             this.entranceControlForm = entranceControlForm;
         }
         // ==================================================
-        private void BtnReturnMain_Click(object sender, EventArgs e)
-        {
-            this.startForm.Show();
-            this.entranceControlForm.Close();
-            this.Close();
-        }
-        // ==================================================
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.entranceControlForm.Show();

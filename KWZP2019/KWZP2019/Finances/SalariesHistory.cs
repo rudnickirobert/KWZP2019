@@ -14,19 +14,19 @@ using System.IO;
 
 namespace KWZP2019
 {
-    public partial class SalariesHistory : Form
+    public partial class Salaries : Form
     {
         private RoofingCompanyEntities db;
         private StartForm startForm;
-        private Finances Finances;
-        public SalariesHistory(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
+        private Finances finances;
+        public Salaries(RoofingCompanyEntities db, StartForm startForm, Finances finances)
         {
             this.db = db;
             this.startForm = startForm;
-            this.Finances = Finances;
+            this.finances = finances;
             InitializeComponent();
         }
-        private void SalariesHistory_Load(object sender, EventArgs e)
+        private void Salaries_Load(object sender, EventArgs e)
         {
             dgvHistory.DataSource = db.vPaymentHistories.ToList();
             this.dgvHistory.Columns["IdEmployee"].Visible = false;
@@ -36,15 +36,23 @@ namespace KWZP2019
             dgvHistory.Columns[3].HeaderText = "Premia";
             dgvHistory.Columns[4].HeaderText = "Podstawa wynagrodzenia";
             dgvHistory.Columns[5].HeaderText = "Data wypłaty";
-            dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-        private void tbSurname_TextChanged(object sender, EventArgs e)
+        private void tbSurname_KeyUp(object sender, EventArgs e)
         {
         dgvHistory.DataSource = db.vPaymentHistories.ToList().Where(vPaymentHistory =>
-        vPaymentHistory.EmployeeSurname.StartsWith(tbSurname.Text, StringComparison.OrdinalIgnoreCase))
-        .Select(vPaymentHistory => new { vPaymentHistory.EmployeeName, vPaymentHistory.EmployeeSurname, vPaymentHistory.PESEL, vPaymentHistory.Bonus, vPaymentHistory.Sum, vPaymentHistory.Date })
-        .ToList();
-        dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+        vPaymentHistory.EmployeeSurname.StartsWith(tbSurname.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+        dgvHistory.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finances.Show();
+            this.Hide();
+        }
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

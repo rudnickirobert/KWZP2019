@@ -32,15 +32,16 @@ create table FEMAnalysis(
 	IdFEMAnalysis int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	NewPattern image not null,
-	AnalysisResults text not null
+	AnalysisResults text not null,
+	AnalysisDate DateTime not null
 	);
 
 create table OutControl(
 	IdProcess int primary key not null,
 	IdEmployee int not null,
 	StartControlDate DateTime not null,
-    EndControlDate DateTime not null,
-    WidthAcceptableDeviation float not null,
+   	EndControlDate DateTime,
+   	WidthAcceptableDeviation float not null,
 	LenghtAcceptableDeviation float not null
     );
 
@@ -592,6 +593,7 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
+go
 
 -- ===BB===
 go
@@ -683,11 +685,10 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment
 where Contract.EndDate > (GETDATE() + 45) and (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate) < (Getdate() + 45));
-
+GO 
 
 /*====SALES DEPARTMENT===*/
 
-GO 
 CREATE VIEW vSupplierParts
 AS
 SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
@@ -696,8 +697,8 @@ FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (SupplierNameType = 'Części');
-
 GO
+
 CREATE VIEW vSupplierSemis
 AS
 SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
@@ -706,8 +707,8 @@ FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (SupplierNameType = 'Półfabrykaty');
-
 GO
+
 CREATE VIEW vOutsourcingWithType
 AS
 SELECT  OutsourcingType as [Typ], CompanyName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City [Miasto], ZipCode as [Kod pocztowy], 
@@ -715,31 +716,32 @@ Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NI
 FROM Outsourcing
 JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
-
 GO
+
 CREATE VIEW vIndividualCustomer
 AS
 SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
 ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
 FROM Customer;
-GO
+GO 
+
 /*====SALES DEPARTMENT END===*/
-GO
-GO
+
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
-SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
-FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, OutControl E, TechnicalProductData F
-WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
-
+SELECT D.IdProces as IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
+FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, TechnicalProductData F
+WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and F.IdProduct = B.IdProduct
 GO
+
 CREATE VIEW vDevotionsInMeasuremntsPerProcess
 AS
-SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
+SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, CAST(ROUND((((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100),2) AS NUMERIC (12,2)) as LenghtDeviation, 
+		CAST(ROUND((((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100),2) AS NUMERIC (12,2))  as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
 FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
 WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
-
 GO
+
 CREATE VIEW vSuccesfullyProducedPerProcess
 AS
 SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced, QuantityToBeProducted
@@ -748,43 +750,52 @@ WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<=
 GROUP BY IdProcess, QuantityToBeProducted
 
 GO
+
+CREATE VIEW vTotalNumberOfMeasuresPerProcess
+AS
+SELECT IdProcess, COUNT(IdMeasurement) as Produced, QuantityToBeProducted
+FROM vDevotionsInMeasuremntsPerProcess
+GROUP BY IdProcess, QuantityToBeProducted
+GO
+
 CREATE VIEW vSuccesfullyProcess
 AS
 SELECT IdProcess
 FROM vSuccesfullyProducedPerProcess
 WHERE SuccesfullProduced >= QuantityToBeProducted
-
 GO
+
 CREATE VIEW vUnfinishedProcess
 AS
 SELECT IdProces
 FROM ProductionProcess, vSuccesfullyProcess
 WHERE IdProces != IdProcess
-
 GO
+
 CREATE VIEW SafetyControlHistoryView 
 AS
 SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
 FROM SafetyControl
 JOIN Employee
 ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
+GO
 
 /*====SALES DEPARTMENT START===*/
-go
+
 CREATE VIEW vOutputMagazine
 AS
-SELECT A.ProductCode, B.EndControlDate, C.SuccesfullProduced
+SELECT A.IdProcess as [Numer Procesu Produkcji], A.ProductCode as [Kod produktu], C.SuccesfullProduced as [Ilość], B.EndControlDate [Data przyjęcia na magazyn] 
 FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
-
 GO
+
 
 CREATE VIEW vInputMagazine
 AS
 SELECT SfCode, Quantity, ControlDate 
 FROM EntranceControl, SemiFinished;
-
 GO
+
 
 CREATE VIEW vPredictedPriceForCustomer
 AS
@@ -796,8 +807,8 @@ JOIN TechnicalProductData
 ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
 JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
-
 GO
+
 
 CREATE VIEW vOrderDetail 
 AS
@@ -810,11 +821,11 @@ ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
 GO
+/*====SALES DEPARTMENT END===*/ 
 
 /*====PRODUCTION===*/
 
-GO
-GO
+
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
@@ -822,8 +833,8 @@ FROM OrderDetail
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
-
 GO
+
 CREATE VIEW vSafetyControlHistoryView 
 AS
 SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
@@ -853,27 +864,36 @@ GO
 
 CREATE VIEW vPartsView
 AS
-SELECT Part.PartName as [Nazwa części], 
-PartType.partType as [Typ części], 
-Unit.UnitName as [Jednostka], 
-Part.QuantityWarehouse as [Stan magazynowy]
+SELECT Part.PartName, 
+PartType.partType,
+Part.Producer,
+Part.CatalogPartNr, 
+Part.QuantityWarehouse,
+Unit.UnitName
 FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
 ON Unit.IdUnit = Part.IdUnit
 GO
 
 CREATE VIEW vMaintPartsView
 AS
-SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
-Part.PartName as [Nazwa części], MaintPart.PartQuantity as [Ilość], Unit.UnitName as [Jednostka]
+SELECT Maintenance.MaintenanceNr, Maintenance.DateAcceptOrder, 
+Part.PartName, MaintPart.PartQuantity, Unit.UnitName
 FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart 
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
 GO
 
+CREATE VIEW vPartsRequestView
+AS
+SELECT PartRequest.IdPartRequest, Part.PartName, PartRequest.RequestDate, PartRequest.Quantity, PartRequest.StatusPart
+FROM PartRequest
+JOIN Part
+ON Part.IdPart = PartRequest.IdPart
+GO
+
 /*====SALES DEPARTMENT START===*/
 
-GO
 CREATE VIEW vOrder
 AS
 SELECT Part.PartName as [Nazwa części], 
@@ -882,7 +902,9 @@ Unit.UnitName as [Jednostka],
 Part.QuantityWarehouse as [Stan magazynowy]
 FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
 ON Unit.IdUnit = Part.IdUnit
-go
+GO
+
+
 SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena],
 Markup as [Marża], EmployeeSurname as [Pracownik odpowiedzialny]
 FROM OrderCustomer
@@ -892,8 +914,8 @@ INNER JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 INNER JOIN Employee
 ON OrderCustomer.IdEmployee = Employee.IdEmployee;
-
 GO
+
 CREATE VIEW vEmployeeSalesDepartment
 AS
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko], ZipCode as [Kod pocztowy], City as [Miasto], Street as [Ulica], HouseNumber as [Numer], 
@@ -904,8 +926,8 @@ ON Allocation.IdEmployee = Employee.IdEmployee
 JOIN Department
 ON Allocation.IdDepartment = Department.IdDepartment
 WHERE (DepartmentName = 'Logistyka');
-
 GO 
+
 CREATE VIEW vEmployeeSD
 AS
 SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
@@ -914,7 +936,6 @@ FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
-
 GO
 
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 
@@ -926,76 +947,74 @@ ON Allocation.IdDepartment = Department.IdDepartment
 WHERE (DepartmentName = 'Logistyka');
 GO
 
+-------- VIEWS HR
+
 CREATE VIEW vAbsences
 AS
-SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartOfAbsence, EndOfAbsence, AbscenceReason 
+SELECT IdAbsence, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], AbscenceReason [Powód], StartOfAbsence as [Początek], EndOfAbsence [Koniec], Employee.IdEmployee
 FROM Absence
 INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
 INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
-
 GO
+
 CREATE VIEW	vAddTraining
 AS
-SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, TrainingName, TrainingStartDate, TrainingEndDate, TrainingPrice
+SELECT IdTraining, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], TrainingName as [Nazwa], TrainingStartDate as [Początek], TrainingEndDate as [koniec], Cast(TrainingPrice as decimal(10,2)) as [Cena], Employee.IdEmployee
 FROM dbo.Employee 
 INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
-
 GO
 
 CREATE VIEW vEmployeeList
 AS
 SELECT Employee.IdEmployee, Employee.EmployeeSurname, Employee.EmployeeName 
 FROM Employee;
-
 GO
 
 CREATE VIEW vContracts
 AS
-SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, StartDate, EndDate, Salary, WorkplaceTrainingDate, HealTestDate, Workplace
+SELECT IdContract, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Workplace as [Stanowisko], StartDate as [Początek], EndDate as [Koniec], Salary as [Wypłata], WorkplaceTrainingDate as [Szkolenie stanowiskowe]
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
-
 GO 
 
 CREATE VIEW vEducationForm
 AS
-SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, EducationLevel, Degree, DegreeShort, GraduationDate
+SELECT IdEducation, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], EducationLevel as [Stopień wykształcenia], Degree as [Degree], DegreeShort as [Tytuły naukowe], GraduationDate as [Data ukończenia], Employee.IdEmployee 
 FROM dbo.Employee
 INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
 INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
-
 GO
 
 CREATE VIEW vEmployeeDetails
 AS
-SELECT Employee.IdEmployee, EmployeeName, EmployeeSurname, ZipCode, City, Street, HouseNumber, ApartmentNum, PhoneNumber, PESEL, EducationLevel, DegreeShort, GraduationDate, Workplace, StartDate, EndDate, Salary, HealTestDate, WorkplaceTrainingDate, Date 
+SELECT Employee.IdEmployee, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], ZipCode as [Kod pocztowy], City as [Miasto], Street as [Ulica], HouseNumber as [Nr Domu], ApartmentNum as [Nr lokalu], PhoneNumber as [Nr telefonu], PESEL, EducationLevel as [Stopień wykształcenia], DegreeShort as [Tytułu naukowe], GraduationDate [Data ukończenia studiów], Workplace as [Stanowisko], StartDate as [Początek umowy], EndDate as [Koniec umowy], Salary as [Wynagrodzenie], WorkplaceTrainingDate as [rening Stanowiskowy], Date as [Data badania lekarskiego] 
 FROM dbo.Contract
-INNER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
-INNER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
-INNER JOIN Position ON Contract.IdPosition = Position.IdPosition
-INNER JOIN Education ON Employee.IdEmployee = Education.IdEmployee
-INNER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
+
+RIGHT OUTER JOIN Employee ON Contract.IdEmployee = Employee.IdEmployee
+LEFT OUTER JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
+LEFT OUTER JOIN Position ON Contract.IdPosition = Position.IdPosition
+LEFT OUTER JOIN Education ON Employee.IdEmployee = Education.IdEmployee
+LEFT OUTER JOIN EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel
 
 GO
 
 CREATE VIEW vExamination
 AS
-SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, Date
+SELECT IdMedicalExamination, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Date as [Data badania lekarskiego], Employee.IdEmployee
 FROM Employee
 INNER JOIN RoofingCompany.dbo.MedicalExamination
 ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee;
-
 GO
 
 CREATE VIEW vHR
 AS
-SELECT Employee.IdEmployee, EmployeeSurname, EmployeeName, City, PhoneNumber, Workplace
+SELECT Employee.IdEmployee, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], PESEL, Workplace as [Stanowisko], PhoneNumber as [Nr telefonu] 
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
-
 GO
+
 CREATE VIEW vIncomesProfits
 AS
 SELECT Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
@@ -1043,7 +1062,6 @@ CREATE VIEW vInvoiceType
 as
 SELECT IdInvoiceType, Type
 FROM InvoiceType;
-
 GO
 
 CREATE VIEW vHRContract
@@ -1051,15 +1069,128 @@ AS
 SELECT IdContract
 FROM Contract
 WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE());
-
 GO
 
 CREATE VIEW vHRExamination
 AS
-SELECT IdMedicalExamination
-FROM MedicalExamination
-WHERE  MedicalExamination.Date < DATEADD(day, 14, GETDATE());
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Position.Workplace, Position.VailidityOfMedicalExam, (ISNULL(MedicalExamination.Date, '2000-01-01')) as PreviousExamination, (ISNULL(DATEADD(day, VailidityOfMedicalExam, MedicalExamination.Date),CONVERT(date,GETDATE()))) as NextExamination
+FROM Employee 
+inner JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+inner JOIN Position ON Contract.IdPosition = Position.IdPosition 
+left outer JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
+Where (Contract.EndDate > GETDATE()) AND (DATEADD(Day, VailidityOfMedicalExam,(ISNULL(MedicalExamination.Date,'2000-01-01')))) < GETDATE()+14
+GO
 
+CREATE VIEW vAbsenceType
+AS
+SELECT IdAbsenceType, AbscenceReason
+FROM AbsenceType
+
+GO
+
+CREATE VIEW vExpencePartOrder
+AS
+SELECT Supplier.IdSupplier, Supplier.SupplierName, PartOrder.OrderDate, PartOrder.StatusPartOrder, PartOrder.CostPartOrder
+FROM PartOrder 
+INNER JOIN Supplier ON PartOrder.IdSupplier = Supplier.IdSupplier
+
+GO
+
+CREATE VIEW vEducationLevel
+AS
+SELECT IdEducationLevel, EducationLevel, Degree
+FROM EducationLevel
+
+GO
+
+CREATE VIEW vL4
+AS
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'L4Days', AbsenceType.Multiplier as 'L4X'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'L4') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO	
+
+CREATE VIEW vPaidAbsence
+AS
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'PADays', AbsenceType.Multiplier as 'PAX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'Urlop Płatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO
+
+CREATE VIEW vUnpaidAbsence
+AS
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NPADays', AbsenceType.Multiplier as 'NPAX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'Urlop Bezpłatny') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO
+
+CREATE VIEW vUnexcused 
+as
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'NUDays', AbsenceType.Multiplier as 'NUX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where (AbscenceReason = 'Nieusprawiedliwiona') AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO
+
+CREATE VIEW vOD
+as
+SELECT Employee.IdEmployee, SUM(Datediff(day, StartOfAbsence, EndOfAbsence))+1 as 'ODDays', AbsenceType.Multiplier as 'ODX'
+FROM Absence  
+inner JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType 
+INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee
+where AbscenceReason = 'Na żądanie' AND (StartOfAbsence > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))) AND (EndOfAbsence < (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), -1))))
+GROUP by Employee.IdEmployee, AbsenceType.Multiplier
+
+GO
+
+CREATE VIEW vSalariesSummary
+AS
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL,CAST((Contract.Salary/21) as decimal(10,2)) as DailyWage, 
+Convert(date ,Getdate()) as Date, 
+ISNULL(vL4.L4Days,0) as [Dni L4],CAST(ISNULL(((Contract.Salary/21)*vL4.L4Days*L4X),0) as decimal(10,2)) as L4Pay, 
+ISNULL(vPaidAbsence.PADays,0) as [Urlop płatny],CAST(ISNULL(((Contract.Salary/21)*vPaidAbsence.PADays*PAX),0) as decimal(10,2)) as PAPay,
+ISNULL(vUnpaidAbsence.NPADays,0) as [Urlop bezpłatny],CAST(ISNULL(((Contract.Salary/21)*vUnpaidAbsence.NPADays*NPAX),0) as decimal(10,2)) as NPAPay,
+ISNULL(vUnexcused.NUDays,0) as [Nieusprawiedliowiona],CAST(ISNULL(((Contract.Salary/21)*vUnexcused.NUDays*NUX),0) as decimal(10,2)) as NPAay,
+ISNULL(vOD.ODDays,0) as [Na żądanie],CAST(ISNULL(((Contract.Salary/21)*vOD.ODDays*ODX),0) as decimal(10,2)) as ODPay,
+Ceiling(((21-(ISNULL(vL4.L4Days,0)+ISNULL(vPaidAbsence.PADays,0)+ISNULL(vUnpaidAbsence.NPADays,0)+ISNULL(vUnexcused.NUDays,0)+ISNULL(vOD.ODDays,0)))*(Contract.Salary/21))+ISNULL(((Contract.Salary/21)*vL4.L4Days*L4X),0)+ISNULL(((Contract.Salary/21)*vPaidAbsence.PADays*PAX),0)+ISNULL(((Contract.Salary/21)*vUnpaidAbsence.NPADays*NPAX),0)+ISNULL(((Contract.Salary/21)*vUnexcused.NUDays*NUX),0)+ISNULL(((Contract.Salary/21)*vOD.ODDays*ODX),0)) as TotalSalary
+FROM Absence 
+right outer JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee 
+Left outer JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
+left outer join Payment ON Employee.IdEmployee = Payment.IdEmployee
+left outer join vL4 on Employee.IdEmployee = vL4.IdEmployee
+Left outer join vPaidAbsence on Employee.IdEmployee = vPaidAbsence.IdEmployee
+Left outer join vUnpaidAbsence on Employee.IdEmployee = vUnpaidAbsence.IdEmployee
+Left outer join vUnexcused on Employee.IdEmployee = vUnexcused.IdEmployee
+Left outer join vOD on Employee.IdEmployee = vOD.IdEmployee
+Where Contract.EndDate > (SELECT CONVERT(Date,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) - 1, 0)))
+GO
+
+CREATE VIEW vPosition 
+as
+SELECT Position.IdPosition, Position.Workplace 
+FROM Position
+
+GO
+
+CREATE VIEW vDeparment
+as
+SELECT Department.IdDepartment, Department.DepartmentName
+FROM Department
 
 GO
 

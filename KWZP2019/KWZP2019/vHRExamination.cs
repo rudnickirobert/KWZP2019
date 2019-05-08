@@ -14,6 +14,13 @@ namespace KWZP2019
     
     public partial class vHRExamination
     {
-        public int IdMedicalExamination { get; set; }
+        public int IdEmployee { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeSurname { get; set; }
+        public string PESEL { get; set; }
+        public string Workplace { get; set; }
+        public Nullable<int> VailidityOfMedicalExam { get; set; }
+        public System.DateTime PreviousExamination { get; set; }
+        public Nullable<System.DateTime> NextExamination { get; set; }
     }
 }

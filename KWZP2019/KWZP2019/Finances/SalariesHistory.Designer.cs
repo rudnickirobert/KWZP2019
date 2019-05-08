@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class SalariesHistory
+    partial class Salaries
     {
         /// <summary>
         /// Required designer variable.
@@ -28,49 +28,154 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salaries));
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.tbSurname = new System.Windows.Forms.TextBox();
-            this.lblSurnameSearching = new System.Windows.Forms.Label();
+            this.lblSurnameSearched = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReturnMain = new System.Windows.Forms.Button();
+            this.pbPayment = new System.Windows.Forms.PictureBox();
+            this.lblFormTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPayment)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvHistory
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistory.Location = new System.Drawing.Point(12, 12);
+            this.dgvHistory.EnableHeadersVisualStyles = false;
+            this.dgvHistory.Location = new System.Drawing.Point(521, 261);
             this.dgvHistory.Name = "dgvHistory";
-            this.dgvHistory.Size = new System.Drawing.Size(776, 387);
+            this.dgvHistory.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistory.Size = new System.Drawing.Size(552, 384);
             this.dgvHistory.TabIndex = 0;
             // 
             // tbSurname
             // 
-            this.tbSurname.Location = new System.Drawing.Point(121, 418);
+            this.tbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbSurname.Location = new System.Drawing.Point(691, 229);
             this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(667, 20);
-            this.tbSurname.TabIndex = 1;
-            this.tbSurname.TextChanged += new System.EventHandler(this.tbSurname_TextChanged);
+            this.tbSurname.Size = new System.Drawing.Size(376, 26);
+            this.tbSurname.TabIndex = 4;
+            this.tbSurname.TextChanged += new System.EventHandler(this.tbSurname_KeyUp);
             // 
-            // lblSurnameSearching
+            // lblSurnameSearched
             // 
-            this.lblSurnameSearching.AutoSize = true;
-            this.lblSurnameSearching.Location = new System.Drawing.Point(12, 421);
-            this.lblSurnameSearching.Name = "lblSurnameSearching";
-            this.lblSurnameSearching.Size = new System.Drawing.Size(103, 13);
-            this.lblSurnameSearching.TabIndex = 2;
-            this.lblSurnameSearching.Text = "Wyszukaj nazwisko:";
+            this.lblSurnameSearched.AutoSize = true;
+            this.lblSurnameSearched.Location = new System.Drawing.Point(565, 237);
+            this.lblSurnameSearched.Name = "lblSurnameSearched";
+            this.lblSurnameSearched.Size = new System.Drawing.Size(120, 13);
+            this.lblSurnameSearched.TabIndex = 5;
+            this.lblSurnameSearched.Text = "Poszukiwane nazwisko:";
             // 
-            // SalariesHistory
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(73, 96);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
+            this.btnReturn.TabIndex = 6;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnReturnMain
+            // 
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.Location = new System.Drawing.Point(73, 299);
+            this.btnReturnMain.Name = "btnReturnMain";
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
+            this.btnReturnMain.TabIndex = 7;
+            this.btnReturnMain.Text = "Menu główne";
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
+            // 
+            // pbPayment
+            // 
+            this.pbPayment.BackColor = System.Drawing.Color.Transparent;
+            this.pbPayment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbPayment.BackgroundImage")));
+            this.pbPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPayment.Location = new System.Drawing.Point(446, 12);
+            this.pbPayment.Name = "pbPayment";
+            this.pbPayment.Size = new System.Drawing.Size(700, 716);
+            this.pbPayment.TabIndex = 8;
+            this.pbPayment.TabStop = false;
+            // 
+            // lblFormTitle
+            // 
+            this.lblFormTitle.AutoSize = true;
+            this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFormTitle.Location = new System.Drawing.Point(694, 135);
+            this.lblFormTitle.Name = "lblFormTitle";
+            this.lblFormTitle.Size = new System.Drawing.Size(209, 36);
+            this.lblFormTitle.TabIndex = 9;
+            this.lblFormTitle.Text = "Historia wypłat";
+            // 
+            // Salaries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblSurnameSearching);
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblFormTitle);
+            this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.lblSurnameSearched);
             this.Controls.Add(this.tbSurname);
             this.Controls.Add(this.dgvHistory);
-            this.Name = "SalariesHistory";
+            this.Controls.Add(this.pbPayment);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Salaries";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historia wypłat";
-            this.Load += new System.EventHandler(this.SalariesHistory_Load);
+            this.Load += new System.EventHandler(this.Salaries_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPayment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,6 +185,10 @@
 
         private System.Windows.Forms.DataGridView dgvHistory;
         private System.Windows.Forms.TextBox tbSurname;
-        private System.Windows.Forms.Label lblSurnameSearching;
+        private System.Windows.Forms.Label lblSurnameSearched;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnReturnMain;
+        private System.Windows.Forms.PictureBox pbPayment;
+        private System.Windows.Forms.Label lblFormTitle;
     }
 }

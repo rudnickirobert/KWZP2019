@@ -14,11 +14,12 @@ namespace KWZP2019
     
     public partial class vAbsence
     {
+        public int IdAbsence { get; set; }
+        public string Nazwisko { get; set; }
+        public string Imię { get; set; }
+        public string Powód { get; set; }
+        public Nullable<System.DateTime> Początek { get; set; }
+        public Nullable<System.DateTime> Koniec { get; set; }
         public int IdEmployee { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeSurname { get; set; }
-        public Nullable<System.DateTime> StartOfAbsence { get; set; }
-        public Nullable<System.DateTime> EndOfAbsence { get; set; }
-        public string AbscenceReason { get; set; }
     }
 }
