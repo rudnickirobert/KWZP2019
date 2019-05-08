@@ -40,25 +40,26 @@
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.btnTraining = new System.Windows.Forms.Button();
             this.btnAbsences = new System.Windows.Forms.Button();
-            this.btnPayChecks = new System.Windows.Forms.Button();
             this.btnContracts = new System.Windows.Forms.Button();
             this.lbWarningsContracts = new System.Windows.Forms.ListBox();
-            this.btnAddContract = new System.Windows.Forms.Button();
             this.btnEducationLevel = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.lblEmployeeSearch = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmloyees)).BeginInit();
             this.SuspendLayout();
             // 
             // tbEmployeeSearching
             // 
-            this.tbEmployeeSearching.Location = new System.Drawing.Point(353, 54);
-            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmployeeSearching.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbEmployeeSearching.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbEmployeeSearching.Location = new System.Drawing.Point(535, 54);
+            this.tbEmployeeSearching.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmployeeSearching.Name = "tbEmployeeSearching";
-            this.tbEmployeeSearching.Size = new System.Drawing.Size(578, 20);
+            this.tbEmployeeSearching.Size = new System.Drawing.Size(221, 20);
             this.tbEmployeeSearching.TabIndex = 0;
-            this.tbEmployeeSearching.Text = "Wyszukaj po nazwisku";
             this.tbEmployeeSearching.TextChanged += new System.EventHandler(this.tbEmployeeSearching_TextChanged);
             // 
             // dgvEmloyees
@@ -83,8 +84,8 @@
             this.dgvEmloyees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmloyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmloyees.EnableHeadersVisualStyles = false;
-            this.dgvEmloyees.Location = new System.Drawing.Point(353, 94);
-            this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEmloyees.Location = new System.Drawing.Point(353, 132);
+            this.dgvEmloyees.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmloyees.Name = "dgvEmloyees";
             this.dgvEmloyees.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -96,7 +97,7 @@
             this.dgvEmloyees.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmloyees.RowTemplate.Height = 24;
             this.dgvEmloyees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmloyees.Size = new System.Drawing.Size(578, 424);
+            this.dgvEmloyees.Size = new System.Drawing.Size(578, 386);
             this.dgvEmloyees.TabIndex = 2;
             // 
             // lbWarningsExamination
@@ -106,8 +107,8 @@
             this.lbWarningsExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsExamination.FormattingEnabled = true;
             this.lbWarningsExamination.ItemHeight = 20;
-            this.lbWarningsExamination.Location = new System.Drawing.Point(11, 496);
-            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbWarningsExamination.Location = new System.Drawing.Point(21, 686);
+            this.lbWarningsExamination.Margin = new System.Windows.Forms.Padding(2);
             this.lbWarningsExamination.Name = "lbWarningsExamination";
             this.lbWarningsExamination.Size = new System.Drawing.Size(320, 24);
             this.lbWarningsExamination.TabIndex = 3;
@@ -117,6 +118,11 @@
             // 
             this.btnDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDetails.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnDetails.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDetails.FlatAppearance.BorderSize = 3;
+            this.btnDetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -133,6 +139,11 @@
             // 
             this.btnExamination.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnExamination.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExamination.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnExamination.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnExamination.FlatAppearance.BorderSize = 3;
+            this.btnExamination.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnExamination.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnExamination.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -149,6 +160,11 @@
             // 
             this.btnAddEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAddEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddEmployee.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnAddEmployee.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddEmployee.FlatAppearance.BorderSize = 3;
+            this.btnAddEmployee.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -167,6 +183,11 @@
             // 
             this.btnTraining.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnTraining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTraining.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnTraining.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnTraining.FlatAppearance.BorderSize = 3;
+            this.btnTraining.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnTraining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -183,6 +204,11 @@
             // 
             this.btnAbsences.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAbsences.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAbsences.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnAbsences.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAbsences.FlatAppearance.BorderSize = 3;
+            this.btnAbsences.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAbsences.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAbsences.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbsences.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAbsences.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -195,29 +221,19 @@
             this.btnAbsences.UseVisualStyleBackColor = false;
             this.btnAbsences.Click += new System.EventHandler(this.btnAbsences_Click);
             // 
-            // btnPayChecks
-            // 
-            this.btnPayChecks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnPayChecks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPayChecks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayChecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnPayChecks.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPayChecks.Location = new System.Drawing.Point(946, 438);
-            this.btnPayChecks.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPayChecks.Name = "btnPayChecks";
-            this.btnPayChecks.Size = new System.Drawing.Size(206, 80);
-            this.btnPayChecks.TabIndex = 9;
-            this.btnPayChecks.Text = "Wypłaty";
-            this.btnPayChecks.UseVisualStyleBackColor = false;
-            // 
             // btnContracts
             // 
             this.btnContracts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnContracts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnContracts.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnContracts.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnContracts.FlatAppearance.BorderSize = 3;
+            this.btnContracts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnContracts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnContracts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnContracts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnContracts.Location = new System.Drawing.Point(946, 534);
+            this.btnContracts.Location = new System.Drawing.Point(946, 438);
             this.btnContracts.Margin = new System.Windows.Forms.Padding(0);
             this.btnContracts.Name = "btnContracts";
             this.btnContracts.Size = new System.Drawing.Size(206, 80);
@@ -233,29 +249,13 @@
             this.lbWarningsContracts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbWarningsContracts.FormattingEnabled = true;
             this.lbWarningsContracts.ItemHeight = 20;
-            this.lbWarningsContracts.Location = new System.Drawing.Point(11, 453);
-            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbWarningsContracts.Location = new System.Drawing.Point(21, 630);
+            this.lbWarningsContracts.Margin = new System.Windows.Forms.Padding(2);
             this.lbWarningsContracts.Name = "lbWarningsContracts";
             this.lbWarningsContracts.Size = new System.Drawing.Size(320, 24);
             this.lbWarningsContracts.TabIndex = 11;
             this.lbWarningsContracts.DoubleClick += new System.EventHandler(this.lbWarningsContracts_DoubleClick);
             // 
-            // btnAddContract
-            // 
-            this.btnAddContract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnAddContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnAddContract.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddContract.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContract.Image")));
-            this.btnAddContract.Location = new System.Drawing.Point(353, 534);
-            this.btnAddContract.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddContract.Name = "btnAddContract";
-            this.btnAddContract.Size = new System.Drawing.Size(291, 176);
-            this.btnAddContract.TabIndex = 12;
-            this.btnAddContract.Text = "Dodaj umowę";
-            this.btnAddContract.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddContract.UseVisualStyleBackColor = false;            // 
             // btnEducationLevel
             // 
             this.btnEducationLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
@@ -263,7 +263,7 @@
             this.btnEducationLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEducationLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnEducationLevel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEducationLevel.Location = new System.Drawing.Point(946, 630);
+            this.btnEducationLevel.Location = new System.Drawing.Point(946, 534);
             this.btnEducationLevel.Margin = new System.Windows.Forms.Padding(0);
             this.btnEducationLevel.Name = "btnEducationLevel";
             this.btnEducationLevel.Size = new System.Drawing.Size(206, 80);
@@ -276,6 +276,11 @@
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -294,6 +299,11 @@
             // 
             this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -310,14 +320,58 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(188, 534);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEdit.FlatAppearance.BorderSize = 3;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Location = new System.Drawing.Point(353, 535);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(72, 39);
+            this.btnEdit.Size = new System.Drawing.Size(286, 176);
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "Edytuj";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblEmployeeSearch
+            // 
+            this.lblEmployeeSearch.AutoSize = true;
+            this.lblEmployeeSearch.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEmployeeSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmployeeSearch.Location = new System.Drawing.Point(350, 57);
+            this.lblEmployeeSearch.Name = "lblEmployeeSearch";
+            this.lblEmployeeSearch.Size = new System.Drawing.Size(149, 17);
+            this.lblEmployeeSearch.TabIndex = 17;
+            this.lblEmployeeSearch.Text = "Wyszukaj po nazwisku";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefresh.Image = global::KWZP2019.Properties.Resources.refreshp;
+            this.btnRefresh.Location = new System.Drawing.Point(815, 9);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(116, 105);
+            this.btnRefresh.TabIndex = 17;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // HR
             // 
@@ -325,15 +379,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblEmployeeSearch);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnEducationLevel);
-            this.Controls.Add(this.btnAddContract);
             this.Controls.Add(this.lbWarningsContracts);
             this.Controls.Add(this.btnContracts);
-            this.Controls.Add(this.btnPayChecks);
             this.Controls.Add(this.btnAbsences);
             this.Controls.Add(this.btnTraining);
             this.Controls.Add(this.btnAddEmployee);
@@ -343,7 +397,7 @@
             this.Controls.Add(this.dgvEmloyees);
             this.Controls.Add(this.tbEmployeeSearching);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HR";
@@ -366,13 +420,13 @@
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Button btnTraining;
         private System.Windows.Forms.Button btnAbsences;
-        private System.Windows.Forms.Button btnPayChecks;
         private System.Windows.Forms.Button btnContracts;
         private System.Windows.Forms.ListBox lbWarningsContracts;
-        private System.Windows.Forms.Button btnAddContract;
         private System.Windows.Forms.Button btnEducationLevel;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label lblEmployeeSearch;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

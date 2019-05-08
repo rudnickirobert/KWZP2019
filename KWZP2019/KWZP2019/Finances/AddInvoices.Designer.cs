@@ -81,10 +81,12 @@
             // 
             // tbInvoiceValue
             // 
+            this.tbInvoiceValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbInvoiceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbInvoiceValue.Location = new System.Drawing.Point(671, 394);
+            this.tbInvoiceValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbInvoiceValue.Location = new System.Drawing.Point(685, 394);
             this.tbInvoiceValue.Name = "tbInvoiceValue";
-            this.tbInvoiceValue.Size = new System.Drawing.Size(165, 23);
+            this.tbInvoiceValue.Size = new System.Drawing.Size(151, 23);
             this.tbInvoiceValue.TabIndex = 18;
             this.tbInvoiceValue.Text = "0";
             this.tbInvoiceValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -92,7 +94,9 @@
             // lblPln
             // 
             this.lblPln.AutoSize = true;
+            this.lblPln.BackColor = System.Drawing.Color.Transparent;
             this.lblPln.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPln.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblPln.Location = new System.Drawing.Point(842, 400);
             this.lblPln.Name = "lblPln";
             this.lblPln.Size = new System.Drawing.Size(98, 17);
@@ -103,6 +107,10 @@
             // 
             this.btnAddNewInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAddNewInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddNewInvoice.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddNewInvoice.FlatAppearance.BorderSize = 3;
+            this.btnAddNewInvoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddNewInvoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAddNewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddNewInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -122,7 +130,7 @@
             this.btnAddNewCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAddNewCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAddNewCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddNewCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnAddNewCompany.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddNewCompany.Location = new System.Drawing.Point(745, 243);
             this.btnAddNewCompany.Margin = new System.Windows.Forms.Padding(0);
@@ -135,22 +143,22 @@
             // 
             // cbContractors
             // 
-            this.cbContractors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbContractors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbContractors.FormattingEnabled = true;
-            this.cbContractors.Location = new System.Drawing.Point(520, 243);
+            this.cbContractors.Location = new System.Drawing.Point(521, 247);
             this.cbContractors.Name = "cbContractors";
-            this.cbContractors.Size = new System.Drawing.Size(200, 28);
+            this.cbContractors.Size = new System.Drawing.Size(200, 24);
             this.cbContractors.TabIndex = 23;
             this.cbContractors.Text = "wybierz podmiot";
             this.cbContractors.Click += new System.EventHandler(this.cbContractors_Click);
             // 
             // cbInvoiceType
             // 
-            this.cbInvoiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbInvoiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbInvoiceType.FormattingEnabled = true;
             this.cbInvoiceType.Location = new System.Drawing.Point(520, 304);
             this.cbInvoiceType.Name = "cbInvoiceType";
-            this.cbInvoiceType.Size = new System.Drawing.Size(420, 28);
+            this.cbInvoiceType.Size = new System.Drawing.Size(420, 24);
             this.cbInvoiceType.TabIndex = 25;
             this.cbInvoiceType.Text = "wybierz typ faktury";
             // 
@@ -171,7 +179,7 @@
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(629, 132);
+            this.lblFormTitle.Location = new System.Drawing.Point(609, 135);
             this.lblFormTitle.Name = "lblFormTitle";
             this.lblFormTitle.Size = new System.Drawing.Size(248, 29);
             this.lblFormTitle.TabIndex = 27;
@@ -181,11 +189,15 @@
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(85, 120);
+            this.btnReturn.Location = new System.Drawing.Point(71, 120);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(247, 154);
@@ -199,11 +211,15 @@
             // 
             this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(85, 314);
+            this.btnReturnMain.Location = new System.Drawing.Point(71, 315);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(247, 154);

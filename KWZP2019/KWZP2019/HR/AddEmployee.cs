@@ -90,8 +90,7 @@ namespace KWZP2019
 
         private void AddEmployee_Load(object sender, EventArgs e)
         {
-            tbPESEL.MaxLength = 11;
-            tbPhoneNumber.MaxLength = 9;
+            clear();
         }
     }
 }

@@ -119,9 +119,9 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Absence AbsenceToRemove = new Absence {IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[0].Value.ToString())};
-            db.Absences.Attach(AbsenceToRemove);
-            db.Absences.Remove(AbsenceToRemove);
+            Absence absenceToRemove = new Absence {IdAbsence = int.Parse(dgvAbsences.SelectedRows[0].Cells[0].Value.ToString())};
+            db.Absences.Attach(absenceToRemove);
+            db.Absences.Remove(absenceToRemove);
             db.SaveChanges();
             if (tbSearchAbsence.Text.Trim() == "" || tbSearchName.Text.Trim() == "")
             {
@@ -141,6 +141,7 @@ namespace KWZP2019
                 ToList();
 
             dgvAbsences.Columns[0].Visible = false;
+            dgvAbsences.Columns[6].Visible = false;
 
             dgvAbsences.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvAbsences.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -157,9 +158,8 @@ namespace KWZP2019
 
         private void btnAddAbsenceType_Click(object sender, EventArgs e)
         {
-            AddAbsenceType addAbsenceType = new AddAbsenceType(db);
+            AddAbsenceType addAbsenceType = new AddAbsenceType(db, startForm, this);
             addAbsenceType.Show();
-            this.Close();
         }
     }
 }

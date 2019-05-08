@@ -106,7 +106,6 @@ namespace KWZP2019
         public virtual DbSet<vExpencesPayment> vExpencesPayments { get; set; }
         public virtual DbSet<vHR> vHRs { get; set; }
         public virtual DbSet<vHRContract> vHRContracts { get; set; }
-        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
         public virtual DbSet<ViewEntranceControlHistory> ViewEntranceControlHistories { get; set; }
         public virtual DbSet<ViewEntranceControlResultsBySfCode> ViewEntranceControlResultsBySfCodes { get; set; }
         public virtual DbSet<ViewMinAndMaxEntranceControlDate> ViewMinAndMaxEntranceControlDates { get; set; }
@@ -157,5 +156,6 @@ namespace KWZP2019
         public virtual DbSet<vMaintenanceEmployee> vMaintenanceEmployees { get; set; }
         public virtual DbSet<vMaintenanceEmployeesCalendar> vMaintenanceEmployeesCalendars { get; set; }
         public virtual DbSet<vNewFailure> vNewFailures { get; set; }
+        public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
     }
 }

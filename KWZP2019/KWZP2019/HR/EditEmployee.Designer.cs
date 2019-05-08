@@ -53,7 +53,9 @@
             this.pbAddEmployee = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblAdd = new System.Windows.Forms.Label();
+            this.pbEditEmployee = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -175,7 +177,9 @@
             // 
             // tbFirstName
             // 
+            this.tbFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbFirstName.Location = new System.Drawing.Point(685, 241);
             this.tbFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.tbFirstName.Name = "tbFirstName";
@@ -184,7 +188,9 @@
             // 
             // tbLastName
             // 
+            this.tbLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbLastName.Location = new System.Drawing.Point(685, 277);
             this.tbLastName.Margin = new System.Windows.Forms.Padding(2);
             this.tbLastName.Name = "tbLastName";
@@ -193,7 +199,9 @@
             // 
             // tbZipCode
             // 
+            this.tbZipCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbZipCode.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbZipCode.Location = new System.Drawing.Point(685, 485);
             this.tbZipCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbZipCode.Name = "tbZipCode";
@@ -202,7 +210,9 @@
             // 
             // tbCity
             // 
+            this.tbCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbCity.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbCity.Location = new System.Drawing.Point(941, 480);
             this.tbCity.Margin = new System.Windows.Forms.Padding(2);
             this.tbCity.Name = "tbCity";
@@ -211,7 +221,9 @@
             // 
             // tbStreet
             // 
+            this.tbStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbStreet.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbStreet.Location = new System.Drawing.Point(685, 403);
             this.tbStreet.Margin = new System.Windows.Forms.Padding(2);
             this.tbStreet.Name = "tbStreet";
@@ -220,7 +232,9 @@
             // 
             // tbHouseNumber
             // 
+            this.tbHouseNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbHouseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbHouseNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbHouseNumber.Location = new System.Drawing.Point(685, 440);
             this.tbHouseNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbHouseNumber.Name = "tbHouseNumber";
@@ -229,7 +243,9 @@
             // 
             // tbApartmentNumber
             // 
+            this.tbApartmentNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbApartmentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbApartmentNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbApartmentNumber.Location = new System.Drawing.Point(943, 440);
             this.tbApartmentNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbApartmentNumber.Name = "tbApartmentNumber";
@@ -238,7 +254,9 @@
             // 
             // tbPhoneNumber
             // 
+            this.tbPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbPhoneNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbPhoneNumber.Location = new System.Drawing.Point(685, 321);
             this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
@@ -247,7 +265,9 @@
             // 
             // tbPESEL
             // 
+            this.tbPESEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbPESEL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbPESEL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbPESEL.Location = new System.Drawing.Point(685, 362);
             this.tbPESEL.Margin = new System.Windows.Forms.Padding(2);
             this.tbPESEL.Name = "tbPESEL";
@@ -265,10 +285,11 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(712, 522);
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(694, 517);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(202, 150);
+            this.btnAdd.Size = new System.Drawing.Size(247, 154);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Dodaj ";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -286,6 +307,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.Location = new System.Drawing.Point(88, 517);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0);
             this.btnClear.Name = "btnClear";
@@ -308,6 +330,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.Location = new System.Drawing.Point(88, 326);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
@@ -316,6 +339,7 @@
             this.btnCancel.Text = "Menu główne";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pbAddEmployee
             // 
@@ -338,6 +362,7 @@
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.Location = new System.Drawing.Point(88, 135);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(247, 154);
@@ -353,13 +378,24 @@
             this.lblAdd.BackColor = System.Drawing.Color.Transparent;
             this.lblAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAdd.Location = new System.Drawing.Point(666, 145);
+            this.lblAdd.Location = new System.Drawing.Point(680, 146);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(299, 29);
+            this.lblAdd.Size = new System.Drawing.Size(268, 29);
             this.lblAdd.TabIndex = 22;
-            this.lblAdd.Text = "Dodaj nowego pracownika";
+            this.lblAdd.Text = "Edytuj dane pracownika";
             // 
-            // AddEmployee
+            // pbEditEmployee
+            // 
+            this.pbEditEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.pbEditEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEditEmployee.BackgroundImage")));
+            this.pbEditEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbEditEmployee.Location = new System.Drawing.Point(474, 19);
+            this.pbEditEmployee.Name = "pbEditEmployee";
+            this.pbEditEmployee.Size = new System.Drawing.Size(673, 716);
+            this.pbEditEmployee.TabIndex = 23;
+            this.pbEditEmployee.TabStop = false;
+            // 
+            // EditEmployee
             // 
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,14 +427,16 @@
             this.Controls.Add(this.lblZipCode);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
+            this.Controls.Add(this.pbEditEmployee);
             this.Controls.Add(this.pbAddEmployee);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AddEmployee";
+            this.Name = "EditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj Pracownika";
             this.Load += new System.EventHandler(this.AddEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbAddEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +468,6 @@
         private System.Windows.Forms.PictureBox pbAddEmployee;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label lblAdd;
+        private System.Windows.Forms.PictureBox pbEditEmployee;
     }
 }

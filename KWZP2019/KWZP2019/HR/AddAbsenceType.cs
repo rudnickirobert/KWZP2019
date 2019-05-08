@@ -13,10 +13,14 @@ namespace KWZP2019
     public partial class AddAbsenceType : Form
     {
         RoofingCompanyEntities db;
-        public AddAbsenceType(RoofingCompanyEntities db)
+        StartForm startForm;
+        Absences absences;
+        public AddAbsenceType(RoofingCompanyEntities db, StartForm startForm, Absences absences)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.absences = absences;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -34,7 +38,7 @@ namespace KWZP2019
                 }
                 else
                 {
-                    if (float.Parse(tbMultiplier.Text.Trim()) < 0 && float.Parse(tbMultiplier.Text.Trim()) > 1)
+                    if (float.Parse(tbMultiplier.Text.Trim()) < 0 || float.Parse(tbMultiplier.Text.Trim()) > 1)
                     {
                         MessageBox.Show("Współczynnik może przyjmować wartości od 0 do 1");
                     }
@@ -66,17 +70,20 @@ namespace KWZP2019
 
             dgvAbsencesTypes.DataSource = db.AbsenceTypes.ToList();
             dgvAbsencesTypes.Columns[0].Visible = false;
+            dgvAbsencesTypes.Columns[1].HeaderText = "Powód nieobecności";
+            dgvAbsencesTypes.Columns[2].HeaderText = "Współczynnik mnożenia pensji";
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            AbsenceType AbsenceTypeToRemove = new AbsenceType { IdAbsenceType = int.Parse(dgvAbsencesTypes.SelectedRows[0].Cells[0].Value.ToString()) };
-            db.AbsenceTypes.Attach(AbsenceTypeToRemove);
-            db.AbsenceTypes.Remove(AbsenceTypeToRemove);
-            db.SaveChanges();
-            dgvAbsencesTypes.DataSource = db.AbsenceTypes.ToList();
-            dgvAbsencesTypes.Columns[0].Visible = false;
-            MessageBox.Show("Rekord został usunięty");
+            this.absences.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

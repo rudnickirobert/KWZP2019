@@ -57,7 +57,8 @@ namespace KWZP2019
                 ToList();
 
             dgvEducation.Columns[0].Visible = false;
-
+            dgvEducation.Columns[7].Visible = false;
+            dgvEducation.Columns[4].HeaderText = "Stopień naukowy";
             dgvEducation.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEducation.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEducation.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;

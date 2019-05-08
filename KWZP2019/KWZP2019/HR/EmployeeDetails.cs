@@ -63,6 +63,7 @@ namespace KWZP2019
                 ToList();
 
             dgvAbsences.Columns[0].Visible = false;
+            dgvAbsences.Columns[6].Visible = false;
 
             dgvAbsences.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvAbsences.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -75,6 +76,7 @@ namespace KWZP2019
                 ToList();
 
             dgvTrainings.Columns[0].Visible = false;
+            dgvTrainings.Columns[7].Visible = false;
 
             dgvTrainings.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvTrainings.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;

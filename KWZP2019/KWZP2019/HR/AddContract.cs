@@ -61,6 +61,7 @@ namespace KWZP2019
                         db.Contracts.Add(newContract);
                         db.SaveChanges();
                         clear();
+                        MessageBox.Show("Poprawnie dodano umowę");
                     }
                 }
             }

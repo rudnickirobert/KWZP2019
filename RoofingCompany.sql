@@ -1053,17 +1053,17 @@ CREATE VIEW vHRContract
 AS
 SELECT IdContract
 FROM Contract
-WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE());
+WHERE (Contract.EndDate < DATEADD(month, 3, GETDATE())) and (Contract.EndDate > GETDATE());
 GO
 
 CREATE VIEW vHRExamination
 AS
-SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Position.Workplace, Position.VailidityOfMedicalExam, (ISNULL(MedicalExamination.Date, '2000-01-01')) as PreviousExamination, (ISNULL(DATEADD(day, VailidityOfMedicalExam, MedicalExamination.Date),CONVERT(date,GETDATE()))) as NextExamination
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Position.Workplace, Position.VailidityOfMedicalExam, (ISNULL(MedicalExamination.Date, '2000-01-01')) as PreviousExamination, (ISNULL(DATEADD(day, VailidityOfMedicalExam, MedicalExamination.Date),CONVERT(date,GETDATE()))) as NextExamination, MedicalExamination.IdMedicalExamination
 FROM Employee 
 inner JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 inner JOIN Position ON Contract.IdPosition = Position.IdPosition 
 left outer JOIN MedicalExamination ON Employee.IdEmployee = MedicalExamination.IdEmployee
-Where (Contract.EndDate > GETDATE()) AND (DATEADD(Day, VailidityOfMedicalExam,(ISNULL(MedicalExamination.Date,'2000-01-01')))) < GETDATE()+14
+Where (Contract.EndDate > GETDATE()) AND ((DATEADD(Day, VailidityOfMedicalExam,(ISNULL(MedicalExamination.Date,'2000-01-01')))) < GETDATE()+14)
 GO
 
 CREATE VIEW vAbsenceType

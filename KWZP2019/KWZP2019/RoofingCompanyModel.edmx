@@ -957,6 +957,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vHRExamination' does not have a
           <Property Name="VailidityOfMedicalExam" Type="int" />
           <Property Name="PreviousExamination" Type="date" Nullable="false" />
           <Property Name="NextExamination" Type="date" />
+          <Property Name="IdMedicalExamination" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewEntranceControlHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2774,7 +2775,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
     [vHRExamination].[Workplace] AS [Workplace], 
     [vHRExamination].[VailidityOfMedicalExam] AS [VailidityOfMedicalExam], 
     [vHRExamination].[PreviousExamination] AS [PreviousExamination], 
-    [vHRExamination].[NextExamination] AS [NextExamination]
+    [vHRExamination].[NextExamination] AS [NextExamination], 
+    [vHRExamination].[IdMedicalExamination] AS [IdMedicalExamination]
     FROM [dbo].[vHRExamination] AS [vHRExamination]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewEntranceControlHistory" EntityType="Self.ViewEntranceControlHistory" store:Type="Views" store:Schema="dbo">
@@ -4494,21 +4496,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           </Key>
           <Property Name="IdContract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="vHRExamination">
-          <Key>
-            <PropertyRef Name="IdEmployee" />
-            <PropertyRef Name="EmployeeName" />
-            <PropertyRef Name="PreviousExamination" />
-          </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
-          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VailidityOfMedicalExam" Type="Int32" />
-          <Property Name="PreviousExamination" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="NextExamination" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="ViewEntranceControlHistory">
           <Key>
             <PropertyRef Name="IdSfOrder" />
@@ -5924,7 +5911,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySet Name="vExpencesPayments" EntityType="Self.vExpencesPayment" />
           <EntitySet Name="vHRs" EntityType="Self.vHR" />
           <EntitySet Name="vHRContracts" EntityType="Self.vHRContract" />
-          <EntitySet Name="vHRExaminations" EntityType="Self.vHRExamination" />
           <EntitySet Name="ViewEntranceControlHistories" EntityType="Self.ViewEntranceControlHistory" />
           <EntitySet Name="ViewEntranceControlResultsBySfCodes" EntityType="Self.ViewEntranceControlResultsBySfCode" />
           <EntitySet Name="ViewMinAndMaxEntranceControlDates" EntityType="Self.ViewMinAndMaxEntranceControlDate" />
@@ -6227,6 +6213,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySet Name="vMaintenanceEmployees" EntityType="RoofingCompanyModel.vMaintenanceEmployee" />
           <EntitySet Name="vMaintenanceEmployeesCalendars" EntityType="RoofingCompanyModel.vMaintenanceEmployeesCalendar" />
           <EntitySet Name="vNewFailures" EntityType="RoofingCompanyModel.vNewFailure" />
+          <EntitySet Name="vHRExaminations" EntityType="RoofingCompanyModel.vHRExamination" />
         </EntityContainer>
         <EntityType Name="FEMAnalysis">
           <Key>
@@ -6337,6 +6324,22 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="Specification" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FailureDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vHRExamination">
+          <Key>
+            <PropertyRef Name="IdEmployee" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="PreviousExamination" />
+          </Key>
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Workplace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VailidityOfMedicalExam" Type="Int32" />
+          <Property Name="PreviousExamination" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NextExamination" Type="DateTime" Precision="0" />
+          <Property Name="IdMedicalExamination" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -7264,20 +7267,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vHRExaminations">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
-              <MappingFragment StoreEntitySet="vHRExamination">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
-                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
-                <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />
-                <ScalarProperty Name="PreviousExamination" ColumnName="PreviousExamination" />
-                <ScalarProperty Name="NextExamination" ColumnName="NextExamination" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ViewEntranceControlHistories">
             <EntityTypeMapping TypeName="RoofingCompanyModel.ViewEntranceControlHistory">
               <MappingFragment StoreEntitySet="ViewEntranceControlHistory">
@@ -7858,6 +7847,21 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vHRExaminations">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
+              <MappingFragment StoreEntitySet="vHRExamination">
+                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
+                <ScalarProperty Name="NextExamination" ColumnName="NextExamination" />
+                <ScalarProperty Name="PreviousExamination" ColumnName="PreviousExamination" />
+                <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />
+                <ScalarProperty Name="Workplace" ColumnName="Workplace" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -7872,7 +7876,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

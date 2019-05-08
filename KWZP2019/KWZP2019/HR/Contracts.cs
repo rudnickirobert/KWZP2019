@@ -34,7 +34,7 @@ namespace KWZP2019
             dgvContracts.DataSource = db.vContracts.
                 Where (contracts => contracts.Nazwisko.StartsWith(tbSearchContract.Text)
                                  && contracts.Imię.StartsWith(tbSearchContractName.Text)).
-                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Początek).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Koniec).
                 ToList();
         }
 
@@ -43,7 +43,7 @@ namespace KWZP2019
             dgvContracts.DataSource = db.vContracts.
                 Where(contracts => contracts.Nazwisko.StartsWith(tbSearchContract.Text)
                                 && contracts.Imię.StartsWith(tbSearchContractName.Text)).
-                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Początek).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Koniec).
                 ToList();
         }
 
@@ -86,11 +86,25 @@ namespace KWZP2019
         void display()
         {
             dgvContracts.DataSource = db.vContracts.
-                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Początek).
+                OrderByDescending(ContractsOrderBy => ContractsOrderBy.Koniec).
                 ToList();
 
             dgvContracts.Columns[0].Visible = false;
 
+            foreach (DataGridViewRow row in dgvContracts.Rows)
+            {
+                DateTime expirationDate = DateTime.Parse(row.Cells[5].Value.ToString());
+                DateTime now = DateTime.Now;
+                DateTime twoMonthsBefore = expirationDate.AddMonths(-3);
+                if (twoMonthsBefore < now && expirationDate > now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(102, 179, 255);
+                }
+                else if (expirationDate < now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(82, 82, 122);
+                }
+            }
             dgvContracts.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvContracts.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvContracts.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -98,6 +112,18 @@ namespace KWZP2019
             dgvContracts.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvContracts.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvContracts.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            if (tbSearchContract.Text.Trim() == "" || tbSearchContractName.Text.Trim() == "")
+            {
+                display();
+            }
+            else
+            {
+                tbSearchContract_TextChanged(sender, e);
+            }
         }
     }
 }
