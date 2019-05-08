@@ -37,7 +37,7 @@ namespace KWZP2019
             previousForm.Show();
             this.Close();
         }
-        private void txtBSerachOutsourcing_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtBSerachOutsourcing_TextChanged(object sender, EventArgs e)
         {
             if (txtBSerachOutsourcing.Text.Trim().Length < 1)
 
@@ -45,7 +45,9 @@ namespace KWZP2019
                 outsourcingTypeDgv.DataSource = db.vOutsourcingTypes.ToList();
                 outsourcingTypeDgv.Columns["Numer"].Visible = false;
                 nameOutsourcingDgv.DataSource = db.vOutsourcingCommitments.ToList();
+                nameOutsourcingDgv.Columns["Numer"].Visible = false;
                 detailsOutsourcingDgv.DataSource = db.vOutsourcings.ToList();
+                detailsOutsourcingDgv.Columns["Numer"].Visible = false;
             }
             else
             {
@@ -55,10 +57,12 @@ namespace KWZP2019
                                                  where
                                                  db.Nazwa.Contains(txtBSerachOutsourcing.Text.Trim())
                                                  select db).ToList();
+                nameOutsourcingDgv.Columns["Numer"].Visible = false;
                 detailsOutsourcingDgv.DataSource = (from db in db.vOutsourcings
                                                     where
                                                     db.Nazwa.Contains(txtBSerachOutsourcing.Text.Trim())
                                                     select db).ToList();
+                detailsOutsourcingDgv.Columns["Numer"].Visible = false;
             }
         }
 
@@ -69,10 +73,11 @@ namespace KWZP2019
             detailsOutsourcingDgv.DataSource = (from Outsourcing in db.vOutsourcings
                                                 where Outsourcing.Numer == id
                                                 select Outsourcing).ToList();
-            outsourcingTypeDgv.Columns["Numer"].Visible = false;
+            detailsOutsourcingDgv.Columns["Numer"].Visible = false;
             nameOutsourcingDgv.DataSource = (from OutsourcingCommitment in db.vOutsourcingCommitments
                                              where OutsourcingCommitment.Numer == id
                                              select OutsourcingCommitment).ToList();
+            nameOutsourcingDgv.Columns["Numer"].Visible = false;
         }
     }
 }

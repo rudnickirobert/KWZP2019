@@ -181,7 +181,7 @@
             this.txtBSerachOutsourcing.Name = "txtBSerachOutsourcing";
             this.txtBSerachOutsourcing.Size = new System.Drawing.Size(259, 30);
             this.txtBSerachOutsourcing.TabIndex = 16;
-            this.txtBSerachOutsourcing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBSerachOutsourcing_KeyPress);
+            this.txtBSerachOutsourcing.TextChanged += new System.EventHandler(this.txtBSerachOutsourcing_TextChanged);
             // 
             // nameOutsourcingLbl
             // 
