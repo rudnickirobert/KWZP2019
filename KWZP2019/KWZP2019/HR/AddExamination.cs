@@ -52,14 +52,12 @@ namespace KWZP2019
 
         private void AddExamination_Load(object sender, EventArgs e)
         {
-            List<vEmployeeList> employeeList = db.vEmployeeLists.
-                OrderBy(employeeListOrderBy => employeeListOrderBy.EmployeeSurname).ToList();
+            List<vEmployeeList> employeeList = db.vEmployeeLists.ToList();
             foreach (vEmployeeList employee in employeeList)
             {
                 cbEmployeeList.Items.Add(String.Format("{0, -20} {1, -20}",
                     employee.EmployeeSurname, employee.EmployeeName));
             }
-
             clear();
         }
 

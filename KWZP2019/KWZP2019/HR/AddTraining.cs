@@ -84,6 +84,7 @@ namespace KWZP2019
                 ToList();
 
             dgvTrainings.Columns[0].Visible = false;
+            dgvTrainings.Columns[7].Visible = false;
 
             dgvTrainings.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvTrainings.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -139,8 +140,7 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvTrainings.SelectedRows[0].Cells[0].Value.ToString());
-            Training TrainingToRemove = new Training { IdTraining  = int.Parse(dgvTrainings.SelectedRows[0].Cells[6].Value.ToString()) };
+            Training TrainingToRemove = new Training { IdTraining  = int.Parse(dgvTrainings.SelectedRows[0].Cells[0].Value.ToString()) };
             db.Trainings.Attach(TrainingToRemove);
             db.Trainings.Remove(TrainingToRemove);
             db.SaveChanges();

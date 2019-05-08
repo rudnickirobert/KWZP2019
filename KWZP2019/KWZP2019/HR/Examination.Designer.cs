@@ -42,6 +42,7 @@
             this.lblSearchEmployeeExamination = new System.Windows.Forms.Label();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamination)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,6 +219,23 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefresh.Location = new System.Drawing.Point(607, 213);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(53, 48);
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.Text = "Odśwież";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Examination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,6 +243,7 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.lblSearchEmployeeExamination);
@@ -259,5 +278,6 @@
         private System.Windows.Forms.Label lblSearchEmployeeExamination;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

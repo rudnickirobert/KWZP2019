@@ -61,6 +61,9 @@ namespace KWZP2019
                 ToList();
 
             dgvExamination.Columns[0].Visible = false;
+            dgvExamination.Columns[4].Visible = false;
+
+            dgvExamination.Columns[3].HeaderText = "Data_badania";
 
             dgvExamination.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvExamination.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -95,6 +98,18 @@ namespace KWZP2019
                 tbSearchEmployeeExamination_TextChanged(sender, e);
             }
             MessageBox.Show("Rekord został usunięty");
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            if (tbSearchEmployeeExamination.Text.Trim() == "" || tbSearchEmployeeExaminationName.Text.Trim() == "")
+            {
+                display();
+            }
+            else
+            {
+                tbSearchEmployeeExamination_TextChanged(sender, e);
+            }
         }
     }
 }

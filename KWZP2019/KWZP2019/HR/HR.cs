@@ -140,5 +140,24 @@ namespace KWZP2019
             editEmployee.Show();
             this.Hide();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            if (tbEmployeeSearching.Text.Trim() == "")
+            {
+                dgvEmloyees.DataSource = db.vHRs.
+                OrderBy(EmployeeOrderBy => EmployeeOrderBy.Nazwisko).
+                ToList();
+
+                dgvEmloyees.Columns[0].Visible = false;
+            }
+            else
+            {
+                dgvEmloyees.DataSource = db.vHRs.
+                Where(employees => employees.Nazwisko.StartsWith(tbEmployeeSearching.Text)).
+                OrderBy(EmployeeOrderBy => EmployeeOrderBy.Nazwisko).
+                ToList();
+            }
+        }
     }
 }
