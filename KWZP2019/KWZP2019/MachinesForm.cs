@@ -33,14 +33,13 @@ namespace KWZP2019
             this.Hide();
         }
 
-        void PopulateDataGridView()
+        void populateDataGridView()
         {
-            dgvMachine.DataSource = null;
             dgvMachine.AutoGenerateColumns = false;
             dgvMachine.DataSource = this.db.Machines.ToList<Machine>();
         }
 
-        void Clear()
+        void clear()
         {
             txtMachineName.Text = txtProducerMachine.Text = txtProductionYear.Text = txtPowerMachine.Text =
             txtWorkingArea.Text = txtCatalogMachineNr.Text = txtMetersPerHour.Text = "";
@@ -51,8 +50,8 @@ namespace KWZP2019
 
         private void MachinesForm_Load(object sender, EventArgs e)
         {
-            Clear();
-            PopulateDataGridView();
+            clear();
+            populateDataGridView();
             comMachineType.DataSource = this.db.MachineTypes.ToList<MachineType>();
             comMachineType.ValueMember = "IdMachineType";
             comMachineType.DisplayMember = "MachineTypeName";
@@ -86,8 +85,8 @@ namespace KWZP2019
 
                 var lista = this.db.Machines.ToList();
                 
-                PopulateDataGridView();
-                Clear();
+                populateDataGridView();
+                clear();
                 MessageBox.Show("Maszyna została dodana!");
             }
             catch (Exception ex)
@@ -105,15 +104,15 @@ namespace KWZP2019
                     this.db.Machines.Attach(machine);
                 this.db.Machines.Remove(machine);
                 this.db.SaveChanges();
-                PopulateDataGridView();
-                Clear();
+                populateDataGridView();
+                clear();
                 MessageBox.Show("Usunięto prawidłowo");
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Clear();
+            clear();
         }
 
         private void dgvMachine_DoubleClick(object sender, EventArgs e)

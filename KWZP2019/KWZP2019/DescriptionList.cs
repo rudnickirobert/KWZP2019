@@ -16,8 +16,8 @@ namespace KWZP2019
         RoofingCompanyEntities db;
         StartForm startForm;
         MaintenanceManagement maintenanceManagementForm;
-        MaintDescription maintDescription = new MaintDescription();
-        int nIdSelectedDescription = 0;
+        MaintDescription maintenanceDescription = new MaintDescription();
+        int idSelectedDescription = 0;
 
 
         public DescriptionList(RoofingCompanyEntities db, StartForm startForm, MaintenanceManagement maintenanceManagementForm)
@@ -28,7 +28,7 @@ namespace KWZP2019
             InitializeComponent();
         }
 
-        void PopulateDataGridView()
+        void populateDataGridView()
         {
             dgvDescription.AutoGenerateColumns = false;
             dgvDescription.DataSource = this.db.MaintDescriptions.ToList<MaintDescription>();
@@ -43,20 +43,20 @@ namespace KWZP2019
             }
             try
             {
-                this.maintDescription.MaintDescName = this.txtShortDescription.Text.TrimEnd();
-                this.maintDescription.MaintDescription1 = this.txtLongDescription.Text.TrimEnd();
+                this.maintenanceDescription.MaintDescName = this.txtShortDescription.Text.TrimEnd();
+                this.maintenanceDescription.MaintDescription1 = this.txtLongDescription.Text.TrimEnd();
 
-                if (maintDescription.IdMaintDesc == 0) //Instert
+                if (maintenanceDescription.IdMaintDesc == 0) //Instert
                 {
-                    this.db.MaintDescriptions.Add(maintDescription);
+                    this.db.MaintDescriptions.Add(maintenanceDescription);
                 }
                 else //update
-                    this.db.Entry(maintDescription).State = EntityState.Modified;
+                    this.db.Entry(maintenanceDescription).State = EntityState.Modified;
 
                 this.db.SaveChanges();
                 
-                PopulateDataGridView();
-                Clear();
+                populateDataGridView();
+                clear();
                 MessageBox.Show("Opis został dodany!");
             }
             catch (Exception ex)
@@ -64,26 +64,27 @@ namespace KWZP2019
                 MessageBox.Show(ex.Message);
             }
         }
-        void Clear()
+
+        void clear()
         {
             this.txtShortDescription.Text = this.txtLongDescription.Text =  "";
-            this.maintDescription = new MaintDescription();
+            this.maintenanceDescription = new MaintDescription();
         }
 
         private void dgvDescription_DoubleClick(object sender, EventArgs e)
         {
             if (dgvDescription.CurrentRow.Index != -1)
             {
-                this.nIdSelectedDescription = Convert.ToInt32(dgvDescription.CurrentRow.Cells["IdMaintDesc"].Value);
-                maintDescription = this.db.MaintDescriptions.Where(x => x.IdMaintDesc == this.nIdSelectedDescription).First();
-                if (this.maintDescription.MaintDescription1 == null)
+                this.idSelectedDescription = Convert.ToInt32(dgvDescription.CurrentRow.Cells["IdMaintDesc"].Value);
+                maintenanceDescription = this.db.MaintDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == this.idSelectedDescription).First();
+                if (this.maintenanceDescription.MaintDescription1 == null)
                     this.txtLongDescription.Text = "";
                 else
-                    this.txtLongDescription.Text = this.maintDescription.MaintDescription1.ToString();
-                if (this.maintDescription.MaintDescName == null)
+                    this.txtLongDescription.Text = this.maintenanceDescription.MaintDescription1.ToString();
+                if (this.maintenanceDescription.MaintDescName == null)
                     this.txtShortDescription.Text = "";
                 else
-                    this.txtShortDescription.Text = this.maintDescription.MaintDescName.ToString();
+                    this.txtShortDescription.Text = this.maintenanceDescription.MaintDescName.ToString();
                 btnSave.Text = "Aktualizuj";
                 btnDelete.Enabled = true;
             }
@@ -95,13 +96,13 @@ namespace KWZP2019
             {
                 if (MessageBox.Show("Czy na pewno chcesz usunąć tę pozycję?", "Usuwanie opisu", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    var entry = this.db.Entry(maintDescription);
+                    var entry = this.db.Entry(maintenanceDescription);
                     if (entry.State == EntityState.Detached)
-                        this.db.MaintDescriptions.Attach(maintDescription);
-                    this.db.MaintDescriptions.Remove(maintDescription);
+                        this.db.MaintDescriptions.Attach(maintenanceDescription);
+                    this.db.MaintDescriptions.Remove(maintenanceDescription);
                     this.db.SaveChanges();
-                    PopulateDataGridView();
-                    Clear();
+                    populateDataGridView();
+                    clear();
                     MessageBox.Show("Usunięto prawidłowo");
                 }
             }
@@ -119,8 +120,8 @@ namespace KWZP2019
 
         private void DescriptionList_Load(object sender, EventArgs e)
         {
-            Clear();
-            PopulateDataGridView();
+            clear();
+            populateDataGridView();
         }
     }
 }

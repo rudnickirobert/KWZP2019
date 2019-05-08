@@ -13,55 +13,14 @@ namespace KWZP2019
     public partial class MaintenanceDescriptionForm : Form
     {
         RoofingCompanyEntities db;
-        MaintDescription maintDescription;
-        int nMode = 0;
+        MaintDescription maintenanceDescription;
 
-
-        public MaintenanceDescriptionForm(RoofingCompanyEntities db, int tnIdMaintDescription, int tnMode)
-        {
-            try
-            {
-                this.db = db;
-                this.nMode = tnMode;
-                InitializeComponent();
-                switch (tnMode)
-                {
-                    case 1:
-                        {
-
-                        }
-                        break;
-                    case 2:
-                        {
-                            btnAccept.Text = "Aktualizuj";
-                        }
-                        break;
-                    default:
-                        {
-                            txtShortDescription.ReadOnly = true;
-                            txtDetailDescription.ReadOnly = true;
-                            btnAccept.Visible = false;
-                            btnAccept.Enabled = false;
-                        }
-                        break;
-                }
-                if (tnIdMaintDescription > 0)
-                {
-                    //using (db)
-                    //{
-                        this.maintDescription = db.MaintDescriptions.Where(x => x.IdMaintDesc == tnIdMaintDescription).First();
-                        this.txtShortDescription.Text = maintDescription.MaintDescName;
-                        this.txtDetailDescription.Text = maintDescription.MaintDescription1;
-                        tnIdMaintDescription = 0;
-                    //}
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            
+        public MaintenanceDescriptionForm(RoofingCompanyEntities db, int tIdMaintDescription)
+        {      
+            this.maintenanceDescription = db.MaintDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == tIdMaintDescription).First();
+            this.txtShortDescription.Text = maintenanceDescription.MaintDescName;
+            this.txtDetailDescription.Text = maintenanceDescription.MaintDescription1;
+            tIdMaintDescription = 0;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
