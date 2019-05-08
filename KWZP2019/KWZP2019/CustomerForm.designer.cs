@@ -57,6 +57,7 @@
             this.orderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderLbl = new System.Windows.Forms.Label();
             this.orderDetailLbl = new System.Windows.Forms.Label();
+            this.warehouseStateBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDgv)).BeginInit();
@@ -70,10 +71,10 @@
             this.addNewCustomerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.addNewCustomerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.addNewCustomerBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addNewCustomerBtn.Location = new System.Drawing.Point(1248, 34);
-            this.addNewCustomerBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addNewCustomerBtn.Location = new System.Drawing.Point(936, 28);
+            this.addNewCustomerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewCustomerBtn.Name = "addNewCustomerBtn";
-            this.addNewCustomerBtn.Size = new System.Drawing.Size(307, 68);
+            this.addNewCustomerBtn.Size = new System.Drawing.Size(230, 55);
             this.addNewCustomerBtn.TabIndex = 1;
             this.addNewCustomerBtn.Text = "Dodaj klienta";
             this.addNewCustomerBtn.UseVisualStyleBackColor = false;
@@ -84,10 +85,10 @@
             this.orderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.orderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.orderBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.orderBtn.Location = new System.Drawing.Point(21, 378);
-            this.orderBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.orderBtn.Location = new System.Drawing.Point(16, 307);
+            this.orderBtn.Margin = new System.Windows.Forms.Padding(2);
             this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(307, 68);
+            this.orderBtn.Size = new System.Drawing.Size(230, 55);
             this.orderBtn.TabIndex = 12;
             this.orderBtn.Text = "Dodaj zamówienie";
             this.orderBtn.UseVisualStyleBackColor = false;
@@ -123,8 +124,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.customersDgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.customersDgv.EnableHeadersVisualStyles = false;
-            this.customersDgv.Location = new System.Drawing.Point(19, 124);
-            this.customersDgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.customersDgv.Location = new System.Drawing.Point(14, 101);
+            this.customersDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customersDgv.Name = "customersDgv";
             this.customersDgv.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -136,7 +137,7 @@
             this.customersDgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.customersDgv.RowTemplate.Height = 24;
             this.customersDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customersDgv.Size = new System.Drawing.Size(1536, 198);
+            this.customersDgv.Size = new System.Drawing.Size(1152, 161);
             this.customersDgv.TabIndex = 15;
             this.customersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDgv_CellContentClick);
             // 
@@ -146,9 +147,10 @@
             this.nameLbl.BackColor = System.Drawing.Color.Transparent;
             this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.nameLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nameLbl.Location = new System.Drawing.Point(15, 49);
+            this.nameLbl.Location = new System.Drawing.Point(11, 40);
+            this.nameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(256, 36);
+            this.nameLbl.Size = new System.Drawing.Size(205, 29);
             this.nameLbl.TabIndex = 13;
             this.nameLbl.Text = "Szukaj po nazwie:";
             // 
@@ -157,10 +159,10 @@
             this.searchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.searchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.searchTxt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchTxt.Location = new System.Drawing.Point(277, 44);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchTxt.Location = new System.Drawing.Point(220, 37);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(2);
             this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(305, 41);
+            this.searchTxt.Size = new System.Drawing.Size(230, 35);
             this.searchTxt.TabIndex = 18;
             this.searchTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTxt_KeyPress);
             // 
@@ -171,10 +173,9 @@
             this.returnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.returnBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.returnBtn.Image = ((System.Drawing.Image)(resources.GetObject("returnBtn.Image")));
-            this.returnBtn.Location = new System.Drawing.Point(21, 759);
-            this.returnBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.returnBtn.Location = new System.Drawing.Point(16, 617);
             this.returnBtn.Name = "returnBtn";
-            this.returnBtn.Size = new System.Drawing.Size(267, 148);
+            this.returnBtn.Size = new System.Drawing.Size(200, 120);
             this.returnBtn.TabIndex = 19;
             this.returnBtn.Text = "Powrót";
             this.returnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -211,8 +212,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ordersDgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.ordersDgv.EnableHeadersVisualStyles = false;
-            this.ordersDgv.Location = new System.Drawing.Point(21, 538);
-            this.ordersDgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ordersDgv.Location = new System.Drawing.Point(16, 437);
+            this.ordersDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ordersDgv.Name = "ordersDgv";
             this.ordersDgv.RowHeadersVisible = false;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -223,7 +224,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.ordersDgv.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ordersDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ordersDgv.Size = new System.Drawing.Size(963, 155);
+            this.ordersDgv.Size = new System.Drawing.Size(722, 126);
             this.ordersDgv.TabIndex = 21;
             this.ordersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersDgv_CellContentClick);
             // 
@@ -232,10 +233,9 @@
             this.addNewOrderDetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.addNewOrderDetailBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.addNewOrderDetailBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(1175, 378);
-            this.addNewOrderDetailBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addNewOrderDetailBtn.Location = new System.Drawing.Point(881, 307);
             this.addNewOrderDetailBtn.Name = "addNewOrderDetailBtn";
-            this.addNewOrderDetailBtn.Size = new System.Drawing.Size(307, 68);
+            this.addNewOrderDetailBtn.Size = new System.Drawing.Size(230, 55);
             this.addNewOrderDetailBtn.TabIndex = 22;
             this.addNewOrderDetailBtn.Text = "Dodaj szczegół ";
             this.addNewOrderDetailBtn.UseVisualStyleBackColor = false;
@@ -271,8 +271,8 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.orderDetailsDgv.DefaultCellStyle = dataGridViewCellStyle11;
             this.orderDetailsDgv.EnableHeadersVisualStyles = false;
-            this.orderDetailsDgv.Location = new System.Drawing.Point(1002, 538);
-            this.orderDetailsDgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.orderDetailsDgv.Location = new System.Drawing.Point(752, 437);
+            this.orderDetailsDgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.orderDetailsDgv.Name = "orderDetailsDgv";
             this.orderDetailsDgv.RowHeadersVisible = false;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -283,7 +283,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.orderDetailsDgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.orderDetailsDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderDetailsDgv.Size = new System.Drawing.Size(553, 155);
+            this.orderDetailsDgv.Size = new System.Drawing.Size(415, 126);
             this.orderDetailsDgv.TabIndex = 23;
             // 
             // generateReportBtn
@@ -291,10 +291,9 @@
             this.generateReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.generateReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.generateReportBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.generateReportBtn.Location = new System.Drawing.Point(454, 759);
-            this.generateReportBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.generateReportBtn.Location = new System.Drawing.Point(340, 617);
             this.generateReportBtn.Name = "generateReportBtn";
-            this.generateReportBtn.Size = new System.Drawing.Size(307, 68);
+            this.generateReportBtn.Size = new System.Drawing.Size(230, 55);
             this.generateReportBtn.TabIndex = 24;
             this.generateReportBtn.Text = "Generuj raport";
             this.generateReportBtn.UseVisualStyleBackColor = false;
@@ -306,9 +305,10 @@
             this.orderLbl.BackColor = System.Drawing.Color.Transparent;
             this.orderLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.orderLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.orderLbl.Location = new System.Drawing.Point(15, 479);
+            this.orderLbl.Location = new System.Drawing.Point(11, 389);
+            this.orderLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderLbl.Name = "orderLbl";
-            this.orderLbl.Size = new System.Drawing.Size(276, 36);
+            this.orderLbl.Size = new System.Drawing.Size(227, 29);
             this.orderLbl.TabIndex = 25;
             this.orderLbl.Text = "Zamówienie klienta:";
             // 
@@ -318,19 +318,33 @@
             this.orderDetailLbl.BackColor = System.Drawing.Color.Transparent;
             this.orderDetailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.orderDetailLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.orderDetailLbl.Location = new System.Drawing.Point(996, 479);
+            this.orderDetailLbl.Location = new System.Drawing.Point(747, 389);
+            this.orderDetailLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderDetailLbl.Name = "orderDetailLbl";
-            this.orderDetailLbl.Size = new System.Drawing.Size(324, 36);
+            this.orderDetailLbl.Size = new System.Drawing.Size(265, 29);
             this.orderDetailLbl.TabIndex = 26;
             this.orderDetailLbl.Text = "Szczegóły zamówienia:";
             // 
+            // warehouseStateBtn
+            // 
+            this.warehouseStateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.warehouseStateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.warehouseStateBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.warehouseStateBtn.Location = new System.Drawing.Point(817, 605);
+            this.warehouseStateBtn.Name = "warehouseStateBtn";
+            this.warehouseStateBtn.Size = new System.Drawing.Size(294, 78);
+            this.warehouseStateBtn.TabIndex = 27;
+            this.warehouseStateBtn.Text = "Sprawdź stan magazynowy półfabrykatu";
+            this.warehouseStateBtn.UseVisualStyleBackColor = false;
+            // 
             // CustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 937);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.warehouseStateBtn);
             this.Controls.Add(this.orderDetailLbl);
             this.Controls.Add(this.orderLbl);
             this.Controls.Add(this.generateReportBtn);
@@ -343,7 +357,7 @@
             this.Controls.Add(this.customersDgv);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.addNewCustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Klient";
@@ -395,5 +409,6 @@
         private System.Windows.Forms.DataGridView orderDetailsDgv;
         private System.Windows.Forms.Label orderLbl;
         private System.Windows.Forms.Label orderDetailLbl;
+        private System.Windows.Forms.Button warehouseStateBtn;
     }
 }

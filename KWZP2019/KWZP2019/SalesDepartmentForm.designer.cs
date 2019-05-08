@@ -34,6 +34,7 @@
             this.suppliersBtn = new System.Windows.Forms.Button();
             this.outsourcingBtn = new System.Windows.Forms.Button();
             this.returnToMainBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // customerBtn
@@ -83,7 +84,7 @@
             this.suppliersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.suppliersBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.suppliersBtn.Image = ((System.Drawing.Image)(resources.GetObject("suppliersBtn.Image")));
-            this.suppliersBtn.Location = new System.Drawing.Point(613, 479);
+            this.suppliersBtn.Location = new System.Drawing.Point(452, 479);
             this.suppliersBtn.Margin = new System.Windows.Forms.Padding(2);
             this.suppliersBtn.Name = "suppliersBtn";
             this.suppliersBtn.Size = new System.Drawing.Size(290, 160);
@@ -102,7 +103,7 @@
             this.outsourcingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.outsourcingBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.outsourcingBtn.Image = ((System.Drawing.Image)(resources.GetObject("outsourcingBtn.Image")));
-            this.outsourcingBtn.Location = new System.Drawing.Point(235, 479);
+            this.outsourcingBtn.Location = new System.Drawing.Point(57, 479);
             this.outsourcingBtn.Margin = new System.Windows.Forms.Padding(2);
             this.outsourcingBtn.Name = "outsourcingBtn";
             this.outsourcingBtn.Size = new System.Drawing.Size(290, 160);
@@ -131,6 +132,24 @@
             this.returnToMainBtn.UseVisualStyleBackColor = false;
             this.returnToMainBtn.Click += new System.EventHandler(this.returnToMainBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(837, 479);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(290, 160);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Zamów części";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // SalesDepartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +157,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.returnToMainBtn);
             this.Controls.Add(this.outsourcingBtn);
             this.Controls.Add(this.suppliersBtn);
@@ -159,5 +179,6 @@
         private System.Windows.Forms.Button suppliersBtn;
         private System.Windows.Forms.Button outsourcingBtn;
         private System.Windows.Forms.Button returnToMainBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
