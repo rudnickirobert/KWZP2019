@@ -30,27 +30,27 @@ namespace KWZP2019
         {
             dgvInvoices.DataSource = db.vExpencesInvoices.ToList();
             this.dgvInvoices.Columns["IdInvoice"].Visible = false;
-            dgvInvoices.Columns[1].HeaderText = "Data wystawienia";
-            dgvInvoices.Columns[2].HeaderText = "Wartość faktury";
+            dgvInvoices.Columns[1].HeaderText = "Data";
+            dgvInvoices.Columns[2].HeaderText = "Koszt";
             dgvInvoices.Columns[3].HeaderText = "Nazwa podmiotu";
             dgvInvoices.Columns[4].HeaderText = "Typ faktury";
             dgvInvoices.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvOrders.DataSource = db.vExpencesOrders.ToList();
             this.dgvOrders.Columns["IdSfOrder"].Visible = false;
-            dgvOrders.Columns[1].HeaderText = "Wartość faktury";
-            dgvOrders.Columns[2].HeaderText = "Data wystawienia";
+            dgvOrders.Columns[1].HeaderText = "Koszt";
+            dgvOrders.Columns[2].HeaderText = "Data";
             dgvOrders.Columns[3].HeaderText = "Nazwa podmiotu";
             dgvOrders.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvOutsourcing.DataSource = db.vExpencesOutsourcings.ToList();
             this.dgvOutsourcing.Columns["IdOutsourcing"].Visible = false;
-            dgvOutsourcing.Columns[1].HeaderText = "Wartość";
+            dgvOutsourcing.Columns[1].HeaderText = "Koszt";
             dgvOutsourcing.Columns[2].HeaderText = "Data";
             dgvOutsourcing.Columns[3].HeaderText = "Nazwa podmiotu";
             dgvOutsourcing.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgvSalaries.DataSource = db.vExpencesPayments.ToList();
             this.dgvSalaries.Columns["IdPayment"].Visible = false;
-            dgvSalaries.Columns[1].HeaderText = "Podstawa wynagrodzenia";
-            dgvSalaries.Columns[2].HeaderText = "Data wypłaty";
+            dgvSalaries.Columns[1].HeaderText = "Wypłata";
+            dgvSalaries.Columns[2].HeaderText = "Data";
             dgvSalaries.Columns[3].HeaderText = "Premia";
             dgvSalaries.Columns[4].HeaderText = "Imię";
             dgvSalaries.Columns[5].HeaderText = "Nazwisko";
@@ -60,7 +60,7 @@ namespace KWZP2019
             this.dgvPartOrder.Columns["StatusPartOrder"].Visible = false;
             dgvPartOrder.Columns[1].HeaderText = "Nazwa dostawcy";
             dgvPartOrder.Columns[2].HeaderText = "Data dostawy";
-            dgvPartOrder.Columns[4].HeaderText = "Wartość zamówienia";
+            dgvPartOrder.Columns[4].HeaderText = "Koszt";
             dgvPartOrder.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         private void btSum_Click(object sender, EventArgs e)
