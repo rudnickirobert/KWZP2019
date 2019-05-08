@@ -18,11 +18,25 @@ namespace KWZP2019
         public MaintenanceDescriptionForm(RoofingCompanyEntities db, int tIdMaintDescription)
         {
             this.db = db;
-            this.maintenanceDescription = db.MaintenanceDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == tIdMaintDescription).First();
-            this.txtShortDescription.Text = maintenanceDescription.DescriptionShort;
-            this.txtDetailDescription.Text = maintenanceDescription.DescriptionLong;
-            tIdMaintDescription = 0;
-        }
+            InitializeComponent();
+            txtShortDescription.ReadOnly = true;
+            txtDetailDescription.ReadOnly = true;
+            try
+            {
+                if (tIdMaintDescription > 0)
+                {
+                    this.maintenanceDescription = db.MaintenanceDescriptions.Where(maintenanceDescription => maintenanceDescription.IdMaintDesc == tIdMaintDescription).First();
+                    this.txtShortDescription.Text = maintenanceDescription.DescriptionShort;
+                    this.txtDetailDescription.Text = maintenanceDescription.DescriptionLong;
+                    tIdMaintDescription = 0;
+                }
+            }                     
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+}
 
         private void btnClose_Click(object sender, EventArgs e)
         {
