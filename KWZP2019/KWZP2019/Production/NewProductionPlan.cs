@@ -42,8 +42,9 @@ namespace KWZP2019
                 Product product = db.Products.First(f => f.IdProduct == orderDetail.IdProduct);
                 if (plan != null)
                 {
+                    vComboBoxMachine selectedMachine = db.vComboBoxMachines.First(f => f.IdMachine == plan.IdMachine);
                     tBoxPlanNr.Text = Convert.ToString(plan.IdPlan);
-                    comboBoxMachine.Text = Convert.ToString(plan.IdMachine);
+                    comboBoxMachine.Text = Convert.ToString(selectedMachine.machineFullName);
                     order.IdDetail = plan.IdDetail;
                     order.Quantity = orderDetail.Quantity;
                     order.ProductCode = product.ProductCode;
