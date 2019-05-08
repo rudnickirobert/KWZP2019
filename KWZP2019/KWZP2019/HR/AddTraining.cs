@@ -140,9 +140,10 @@ namespace KWZP2019
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Training TrainingToRemove = new Training { IdTraining  = int.Parse(dgvTrainings.SelectedRows[0].Cells[0].Value.ToString()) };
-            db.Trainings.Attach(TrainingToRemove);
-            db.Trainings.Remove(TrainingToRemove);
+            Training trainingToRemove = new Training();
+           trainingToRemove.IdTraining = int.Parse(dgvTrainings.SelectedRows[0].Cells[0].Value.ToString());
+            db.Trainings.Attach(trainingToRemove);
+            db.Trainings.Remove(trainingToRemove);
             db.SaveChanges();
             if (tbSearchTraining.Text.Trim() == "" || tbSearchTrainingName.Text.Trim() == "")
             {

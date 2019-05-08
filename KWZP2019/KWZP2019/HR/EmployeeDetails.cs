@@ -39,6 +39,18 @@ namespace KWZP2019
 
             dgvEmployeeDetails.Columns[0].Visible = false;
 
+            dgvEmployeeDetails.Columns[3].HeaderText = "Kod pocztowy";
+            dgvEmployeeDetails.Columns[6].HeaderText = "Nr domu";
+            dgvEmployeeDetails.Columns[7].HeaderText = "Nr lokalu";
+            dgvEmployeeDetails.Columns[8].HeaderText = "Nr telefonu";
+            dgvEmployeeDetails.Columns[10].HeaderText = "Stopień wykształcenia";
+            dgvEmployeeDetails.Columns[11].HeaderText = "Tytuły naukowe";
+            dgvEmployeeDetails.Columns[12].HeaderText = "Data ukończenia studiów";
+            dgvEmployeeDetails.Columns[14].HeaderText = "Początek umowy";
+            dgvEmployeeDetails.Columns[15].HeaderText = "Koniec umowy";
+            dgvEmployeeDetails.Columns[17].HeaderText = "Szkolenie";
+            dgvEmployeeDetails.Columns[18].HeaderText = "Data badania lekarskiego";
+
             dgvEmployeeDetails.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmployeeDetails.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
