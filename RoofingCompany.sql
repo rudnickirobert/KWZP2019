@@ -1,6 +1,6 @@
 ﻿use master;
 go
-drop database RoofingCompany;
+drop database if exists RoofingCompany;
 create database RoofingCompany;
 go
 use RoofingCompany;
@@ -74,6 +74,7 @@ create table SemiFinished(
 	SfWeight float not null,
 	Color nvarchar(50) not null,
 	ChemicalComposition nvarchar(255) not null,
+	RollLength int not null -- wartość w metrach
 	);
 
 create table TechnicalProductData(
@@ -595,6 +596,82 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
 go
 
+-- ===BB===
+go
+create view ViewSemiFinishedOrder as
+select SfOrderDetail.IdSfOrder as [Nr_zamówienia], SemiFinished.SfCode as [Kod_półfabrykatu], Supplier.SupplierName as [Dostawca], SemiFinishedOrder.SfDeliveryDate as [Dostarczono]
+from
+	SfOrderDetail
+join
+	SemiFinishedOrder
+on SfOrderDetail.IdSfOrder = SemiFinishedOrder.IdSfOrder
+join
+	SemiFinished
+on
+	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+join
+	Supplier
+on
+	SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
+
+go
+create view ViewEntranceControlResultsBySfCode as
+select SemiFinished.SfCode, EntranceControl.ControlDate, EntranceControl.ControlStatus, EntranceControl.RealThickness, EntranceControl.RealWidth, EntranceControl.RealWeight
+from
+	EntranceControl
+join
+	SfOrderDetail
+on 
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
+join
+	SemiFinished
+on
+	SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished;
+	
+go
+create view ViewEntranceControlHistory as
+select SfOrderDetail.IdSfOrder, SfOrderDetail.IdSemiFinished, EntranceControl.IdEmployee, EntranceControl.RealThickness,
+EntranceControl.RealWidth, EntranceControl.RealWeight, EntranceControl.RealColor, EntranceControl.Quantity, EntranceControl.ControlStatus,
+EntranceControl.ChemicalComposition, EntranceControl.Comments
+from
+	EntranceControl
+join
+	SfOrderDetail
+on
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail;
+
+go
+create view ViewMinAndMaxEntranceControlDate as
+select SemiFinished.SfCode, min(EntranceControl.ControlDate) as [MinControlDate], max(EntranceControl.ControlDate) as[MaxControlDate]
+from
+	EntranceControl
+join
+	SfOrderDetail
+on
+	EntranceControl.IdSfDetail = SfOrderDetail.IdSfDetail
+join
+	SemiFinished
+on SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+group by SemiFinished.SfCode;
+
+go
+create view ViewSemiFinishedCode as
+select SfCode as [Kod_półfabrykatu]
+from
+	SemiFinished;
+
+go
+create view ViewQualityControlerList as
+select Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname
+from Employee
+join Contract
+on Employee.IdEmployee = Contract.IdEmployee
+join Position
+on Contract.IdPosition = Position.IdPosition
+where Position.IdPosition = 2 and Contract.EndDate > getdate();
+-- ===BB===
+
+go
 create view ViewOshTraining as
 select Department.DepartmentName as [Dział], Employee.PESEL as [PESEL], Employee.EmployeeName as [Imię], Employee.EmployeeSurname as [Nazwisko], (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate)) as [Data wygaśniecia szkolenia]
 from Employee
@@ -611,7 +688,7 @@ on Department.IdDepartment = Allocation.IdDepartment
 where Contract.EndDate > (GETDATE() + 45) and (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate) < (Getdate() + 45));
 GO 
 
-/*====SALES DEPARTMENT START==*/
+/*====SALES DEPARTMENT===*/
 
 CREATE VIEW vSupplierParts
 AS
@@ -644,7 +721,7 @@ JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
 GO
 
-CREATE VIEW vCustomer
+CREATE VIEW vIndividualCustomer
 AS
 SELECT IdCustomer as [Numer], CustomerName as [Nazwa], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy],  
 Street as [Ulica], HouseNumber as [Nr domu], ApartmentNumber as [Nr lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
@@ -716,11 +793,13 @@ FROM vTechnicalProductDataPerProcess, OutControl, vSuccesfullyProducedPerProcess
 WHERE  vTechnicalProductDataPerProcess.IdProcess = OutControl.IdProcess AND vTechnicalProductDataPerProcess.IdProcess = vSuccesfullyProducedPerProcess.IdProcess
 GO
 
+
 CREATE VIEW vInputMagazine
 AS
 SELECT IdEntranceControl as [Numer], SfCode as [Kod Produktu], Quantity as [Ilość], ControlDate as [Data przyjęcia na magazyn]
 FROM EntranceControl, SemiFinished;
 GO
+
 
 CREATE VIEW vPredictedPriceForCustomer
 AS
@@ -734,10 +813,13 @@ JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
 GO
 
+
 CREATE VIEW vOrderDetail 
 AS
 SELECT OrderCustomer.IdOrderCustomer as [Nr zamówienia], Product.ProductCode as [Kod produktu], OrderDetail.Quantity as [Ilość]
 FROM OrderCustomer
+JOIN Customer
+ON Customer.IdCustomer = OrderCustomer.IdCustomer
 JOIN OrderDetail
 ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product

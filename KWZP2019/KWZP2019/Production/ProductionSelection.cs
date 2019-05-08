@@ -22,20 +22,20 @@ namespace KWZP2019
 
         private void btnCurrentProduction_Click(object sender, EventArgs e)
         {
-            ProductionProcess ProductionProcessForm = new ProductionProcess(db);
-            ProductionProcessForm.Show();
+            ProductionProcess productionProcessForm = new ProductionProcess(db);
+            productionProcessForm.Show();
         }
 
         private void btnPlannedProduction_Click(object sender, EventArgs e)
         {
-            ProductionPlanned ProductionPlannedForm = new ProductionPlanned(db);
-            ProductionPlannedForm.Show();
+            ProductionPlanned productionPlannedForm = new ProductionPlanned(db);
+            productionPlannedForm.Show();
         }
 
         private void btnProductionHistory_Click(object sender, EventArgs e)
         {
-            ProductionHistory ProductionHistoryForm = new ProductionHistory(db);
-            ProductionHistoryForm.Show();
+            ProductionHistory productionHistoryForm = new ProductionHistory(db);
+            productionHistoryForm.Show();
         }
 
         private void btnProductionSelectionReturn_Click(object sender, EventArgs e)

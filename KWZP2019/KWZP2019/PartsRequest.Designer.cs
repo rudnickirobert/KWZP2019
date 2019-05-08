@@ -63,12 +63,12 @@
             this.btnRequestPart_Add = new System.Windows.Forms.Button();
             this.btnRequestPart_Accept = new System.Windows.Forms.Button();
             this.dataPartRequestView = new System.Windows.Forms.DataGridView();
-            this.vPartsRequestViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IdPartRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.partNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requestDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusPartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vPartsRequestViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelParts.SuspendLayout();
             this.panelRequestPart_Dates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDateRange)).BeginInit();
@@ -83,7 +83,7 @@
             // 
             // panelParts
             // 
-            this.panelParts.BackColor = System.Drawing.Color.Gray;
+            this.panelParts.BackColor = System.Drawing.Color.Transparent;
             this.panelParts.Controls.Add(this.labelHeaderParts);
             this.panelParts.Controls.Add(this.btnReturnPartsForm);
             this.panelParts.Dock = System.Windows.Forms.DockStyle.Top;
@@ -129,13 +129,15 @@
             this.btnRequestPart_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnRequestPart_History.FlatAppearance.BorderSize = 0;
             this.btnRequestPart_History.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnRequestPart_History.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRequestPart_History.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRequestPart_History.ForeColor = System.Drawing.Color.White;
-            this.btnRequestPart_History.Location = new System.Drawing.Point(12, 240);
+            this.btnRequestPart_History.Image = ((System.Drawing.Image)(resources.GetObject("btnRequestPart_History.Image")));
+            this.btnRequestPart_History.Location = new System.Drawing.Point(12, 268);
             this.btnRequestPart_History.Name = "btnRequestPart_History";
-            this.btnRequestPart_History.Size = new System.Drawing.Size(164, 65);
+            this.btnRequestPart_History.Size = new System.Drawing.Size(164, 99);
             this.btnRequestPart_History.TabIndex = 9;
             this.btnRequestPart_History.Text = "Historia";
+            this.btnRequestPart_History.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRequestPart_History.UseVisualStyleBackColor = false;
             this.btnRequestPart_History.Click += new System.EventHandler(this.btnRequestPart_History_Click);
             // 
@@ -144,13 +146,15 @@
             this.btnRequestPart_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnRequestPart_Delete.FlatAppearance.BorderSize = 0;
             this.btnRequestPart_Delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnRequestPart_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRequestPart_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRequestPart_Delete.ForeColor = System.Drawing.Color.White;
-            this.btnRequestPart_Delete.Location = new System.Drawing.Point(12, 159);
+            this.btnRequestPart_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btnRequestPart_Delete.Image")));
+            this.btnRequestPart_Delete.Location = new System.Drawing.Point(12, 180);
             this.btnRequestPart_Delete.Name = "btnRequestPart_Delete";
-            this.btnRequestPart_Delete.Size = new System.Drawing.Size(164, 60);
+            this.btnRequestPart_Delete.Size = new System.Drawing.Size(164, 82);
             this.btnRequestPart_Delete.TabIndex = 11;
             this.btnRequestPart_Delete.Text = "Usuń zapotrzebowanie";
+            this.btnRequestPart_Delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRequestPart_Delete.UseVisualStyleBackColor = false;
             this.btnRequestPart_Delete.Click += new System.EventHandler(this.btnRequestPart_Delete_Click);
             // 
@@ -341,13 +345,16 @@
             this.btnRequestPart_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnRequestPart_Add.FlatAppearance.BorderSize = 0;
             this.btnRequestPart_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnRequestPart_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRequestPart_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRequestPart_Add.ForeColor = System.Drawing.Color.White;
-            this.btnRequestPart_Add.Location = new System.Drawing.Point(12, 81);
+            this.btnRequestPart_Add.Image = ((System.Drawing.Image)(resources.GetObject("btnRequestPart_Add.Image")));
+            this.btnRequestPart_Add.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRequestPart_Add.Location = new System.Drawing.Point(12, 92);
             this.btnRequestPart_Add.Name = "btnRequestPart_Add";
-            this.btnRequestPart_Add.Size = new System.Drawing.Size(164, 60);
+            this.btnRequestPart_Add.Size = new System.Drawing.Size(164, 82);
             this.btnRequestPart_Add.TabIndex = 43;
             this.btnRequestPart_Add.Text = "Dodaj zapotrzebowanie";
+            this.btnRequestPart_Add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRequestPart_Add.UseVisualStyleBackColor = false;
             this.btnRequestPart_Add.Click += new System.EventHandler(this.btnRequestPart_Add_Click);
             // 
@@ -428,10 +435,6 @@
             this.dataPartRequestView.VirtualMode = true;
             this.dataPartRequestView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataPartRequestView_CellFormatting);
             // 
-            // vPartsRequestViewBindingSource
-            // 
-            this.vPartsRequestViewBindingSource.DataSource = typeof(KWZP2019.vPartsRequestView);
-            // 
             // IdPartRequest
             // 
             this.IdPartRequest.DataPropertyName = "IdPartRequest";
@@ -481,11 +484,16 @@
             this.statusPartDataGridViewTextBoxColumn.ReadOnly = true;
             this.statusPartDataGridViewTextBoxColumn.Width = 75;
             // 
+            // vPartsRequestViewBindingSource
+            // 
+            this.vPartsRequestViewBindingSource.DataSource = typeof(KWZP2019.vPartsRequestView);
+            // 
             // PartsRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.ClientSize = new System.Drawing.Size(944, 501);
             this.Controls.Add(this.btnRequestPart_Add);
             this.Controls.Add(this.btnRequestPart_Accept);

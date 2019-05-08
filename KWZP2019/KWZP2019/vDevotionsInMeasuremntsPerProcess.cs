@@ -17,8 +17,8 @@ namespace KWZP2019
         public int IdMeasurement { get; set; }
         public int IdProcess { get; set; }
         public int QuantityToBeProducted { get; set; }
-        public decimal LenghtDeviation { get; set; }
-        public decimal WidthDeviation { get; set; }
+        public Nullable<decimal> LenghtDeviation { get; set; }
+        public Nullable<decimal> WidthDeviation { get; set; }
         public double LenghtAcceptableDeviation { get; set; }
         public double WidthAcceptableDeviation { get; set; }
     }

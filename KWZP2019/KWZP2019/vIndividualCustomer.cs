@@ -12,7 +12,7 @@ namespace KWZP2019
     using System;
     using System.Collections.Generic;
     
-    public partial class vCustomer
+    public partial class vIndividualCustomer
     {
         public int Numer { get; set; }
         public string Nazwa { get; set; }

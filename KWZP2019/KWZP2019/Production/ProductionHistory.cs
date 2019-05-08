@@ -24,7 +24,7 @@ namespace KWZP2019
             dTPickerProductionHistoryFilterUpper.Value = DateTime.Today;
             dTPickerProductionHistoryFilterLower.Value = DateTime.Today.AddDays(-30);
 
-            ProductionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
+            productionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
                 Where(ProdHist => ProdHist.EndDate < DateTime.Now).ToList();
         }
 
@@ -34,7 +34,7 @@ namespace KWZP2019
             {
                 if (dTPickerProductionHistoryFilterLower.Value < dTPickerProductionHistoryFilterUpper.Value)
                 {
-                    ProductionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
+                    productionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
                     Where(ProdHist => ProdHist.EndDate < DateTime.Now && ProdHist.EndDate >= dTPickerProductionHistoryFilterLower.Value && ProdHist.EndDate <= dTPickerProductionHistoryFilterUpper.Value).ToList();
                 }
                 else
@@ -46,7 +46,7 @@ namespace KWZP2019
             {
                 if (dTPickerProductionHistoryFilterLower.Value < dTPickerProductionHistoryFilterUpper.Value)
                 {
-                    ProductionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
+                    productionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
                         Where(ProdProc => ProdProc.EndDate < DateTime.Now && ProdProc.StartDate >= dTPickerProductionHistoryFilterLower.Value && ProdProc.StartDate <= dTPickerProductionHistoryFilterUpper.Value).ToList();
                 }
                 else
@@ -58,7 +58,7 @@ namespace KWZP2019
 
         private void btnProductionHistoryFilterReset_Click(object sender, EventArgs e)
         {
-                ProductionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
+                productionHistoryGridView.DataSource = db.vProductionProcessFullDatas.
                 Where(ProdHist => ProdHist.EndDate < DateTime.Now).ToList();
         }
 
