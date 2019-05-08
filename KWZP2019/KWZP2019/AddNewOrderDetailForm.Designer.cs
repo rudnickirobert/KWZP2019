@@ -171,6 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.addNewOrderDetailsLbl);
             this.Controls.Add(this.detailAcceptBtn);
@@ -183,6 +184,7 @@
             this.Controls.Add(this.orderLbl);
             this.Controls.Add(this.pictureBoxForm);
             this.Name = "AddNewOrderDetailForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj szczegóły zamówienia";
             this.Load += new System.EventHandler(this.AddNewOrderDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).EndInit();

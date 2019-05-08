@@ -13,21 +13,32 @@ namespace KWZP2019
     public partial class MaintenanceEmployeeCalendarForm : Form
     {
         RoofingCompanyEntities db;
-        StartForm startForm;
-        MaintenanceManagement maintenanceManagementForm;
-
-        public MaintenanceEmployeeCalendarForm(RoofingCompanyEntities db, StartForm startForm, MaintenanceManagement maintenanceManagementForm)
+       
+        public MaintenanceEmployeeCalendarForm(RoofingCompanyEntities db)
         {
             this.db = db;
-            this.startForm = startForm;
-            this.maintenanceManagementForm = maintenanceManagementForm;
             InitializeComponent();
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)
         {
-            this.maintenanceManagementForm.Show();
             this.Hide();
+        }
+        private void populateDataGridView()
+        {
+            this.dgvEmployeeMaintenanceCalendar.AutoGenerateColumns = false;
+            this.dgvEmployeeMaintenanceCalendar.DataSource = this.db.vMaintenanceEmployeesCalendars.ToList<vMaintenanceEmployeesCalendar>();
+
+        }
+        private void clear()
+        {
+            this.txtSearch.Text = String.Empty;
+        }
+
+        private void MaintenanceEmployeeCalendarForm_Load(object sender, EventArgs e)
+        {
+            clear();
+            populateDataGridView();
         }
     }
 }

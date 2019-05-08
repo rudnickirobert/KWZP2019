@@ -1,6 +1,6 @@
 ﻿namespace KWZP2019
 {
-    partial class NewMaintenanceForm
+    partial class NewInspectionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnReturnMain = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtMachine = new System.Windows.Forms.TextBox();
             this.tpEndDate = new System.Windows.Forms.DateTimePicker();
             this.txtMaintenanceNr = new System.Windows.Forms.TextBox();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -40,12 +38,9 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblMachine = new System.Windows.Forms.Label();
-            this.comFailure = new System.Windows.Forms.ComboBox();
             this.lblMaintenanceNr = new System.Windows.Forms.Label();
-            this.lblFailure = new System.Windows.Forms.Label();
             this.tbcPartsEmployees = new System.Windows.Forms.TabControl();
             this.tbpPartsEmployees = new System.Windows.Forms.TabPage();
-            this.btnUpdateEmployee = new System.Windows.Forms.Button();
             this.lblMaintenanceEmployees = new System.Windows.Forms.Label();
             this.btnEmloyeeCalendar = new System.Windows.Forms.Button();
             this.lblEmployeeEndDate = new System.Windows.Forms.Label();
@@ -70,7 +65,6 @@
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnUpdatePart = new System.Windows.Forms.Button();
             this.btnWarehouse = new System.Windows.Forms.Button();
             this.lblPart = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -86,6 +80,12 @@
             this.PartQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantityWarehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReturnMain = new System.Windows.Forms.Button();
+            this.comMachine = new System.Windows.Forms.ComboBox();
+            this.lbxDescriptionShort = new System.Windows.Forms.ListBox();
+            this.lblDescriptionShort = new System.Windows.Forms.Label();
+            this.txtDescriptionLong = new System.Windows.Forms.TextBox();
+            this.lblDescriptionLong = new System.Windows.Forms.Label();
             this.tbcPartsEmployees.SuspendLayout();
             this.tbpPartsEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -94,167 +94,113 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnReturnMain
-            // 
-            this.btnReturnMain.AutoSize = true;
-            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnReturnMain.FlatAppearance.BorderSize = 3;
-            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturnMain.Image = global::KWZP2019.Properties.Resources.icons8_home_40;
-            this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(937, 483);
-            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(207, 170);
-            this.btnReturnMain.TabIndex = 5;
-            this.btnReturnMain.Text = "Zatwierdź i wróć";
-            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReturnMain.UseVisualStyleBackColor = false;
-            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(595, 190);
+            this.btnCancel.Location = new System.Drawing.Point(862, 179);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(133, 55);
-            this.btnCancel.TabIndex = 33;
+            this.btnCancel.TabIndex = 48;
             this.btnCancel.Text = "Anuluj";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(423, 190);
+            this.btnSave.Location = new System.Drawing.Point(690, 179);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 55);
-            this.btnSave.TabIndex = 32;
+            this.btnSave.TabIndex = 47;
             this.btnSave.Text = "Zapisz";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtMachine
-            // 
-            this.txtMachine.Location = new System.Drawing.Point(94, 210);
-            this.txtMachine.Name = "txtMachine";
-            this.txtMachine.ReadOnly = true;
-            this.txtMachine.Size = new System.Drawing.Size(177, 20);
-            this.txtMachine.TabIndex = 31;
-            // 
             // tpEndDate
             // 
-            this.tpEndDate.Location = new System.Drawing.Point(605, 132);
+            this.tpEndDate.Location = new System.Drawing.Point(872, 121);
             this.tpEndDate.Name = "tpEndDate";
             this.tpEndDate.Size = new System.Drawing.Size(134, 20);
-            this.tpEndDate.TabIndex = 30;
+            this.tpEndDate.TabIndex = 45;
             this.tpEndDate.Value = new System.DateTime(2019, 5, 7, 16, 0, 0, 0);
-            this.tpEndDate.Leave += new System.EventHandler(this.tpEndDate_Leave);
             // 
             // txtMaintenanceNr
             // 
-            this.txtMaintenanceNr.Location = new System.Drawing.Point(94, 59);
+            this.txtMaintenanceNr.Location = new System.Drawing.Point(507, 51);
             this.txtMaintenanceNr.Name = "txtMaintenanceNr";
             this.txtMaintenanceNr.Size = new System.Drawing.Size(152, 20);
-            this.txtMaintenanceNr.TabIndex = 29;
+            this.txtMaintenanceNr.TabIndex = 44;
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(423, 132);
+            this.dtpEndDate.Location = new System.Drawing.Point(690, 121);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(159, 20);
-            this.dtpEndDate.TabIndex = 26;
+            this.dtpEndDate.TabIndex = 41;
             this.dtpEndDate.Value = new System.DateTime(2019, 5, 5, 20, 52, 45, 0);
-            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(421, 104);
+            this.lblEndDate.Location = new System.Drawing.Point(688, 93);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(205, 13);
-            this.lblEndDate.TabIndex = 24;
+            this.lblEndDate.TabIndex = 39;
             this.lblEndDate.Text = "Data planowanego zakończenia zlecenia:";
             // 
             // tpStartDate
             // 
-            this.tpStartDate.Location = new System.Drawing.Point(605, 59);
+            this.tpStartDate.Location = new System.Drawing.Point(872, 48);
             this.tpStartDate.Name = "tpStartDate";
             this.tpStartDate.Size = new System.Drawing.Size(134, 20);
-            this.tpStartDate.TabIndex = 27;
+            this.tpStartDate.TabIndex = 42;
             this.tpStartDate.Value = new System.DateTime(2019, 5, 7, 8, 0, 0, 0);
-            this.tpStartDate.Leave += new System.EventHandler(this.tpStartDate_Leave);
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(423, 59);
+            this.dtpStartDate.Location = new System.Drawing.Point(690, 48);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(159, 20);
-            this.dtpStartDate.TabIndex = 28;
+            this.dtpStartDate.TabIndex = 43;
             this.dtpStartDate.Value = new System.DateTime(2019, 5, 5, 20, 52, 54, 0);
-            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(421, 31);
+            this.lblStartDate.Location = new System.Drawing.Point(688, 20);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(202, 13);
-            this.lblStartDate.TabIndex = 25;
+            this.lblStartDate.TabIndex = 40;
             this.lblStartDate.Text = "Data planowanego rozpoczęcia zlecenia:";
             // 
             // lblMachine
             // 
             this.lblMachine.AutoSize = true;
-            this.lblMachine.Location = new System.Drawing.Point(101, 177);
+            this.lblMachine.Location = new System.Drawing.Point(514, 94);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(52, 13);
-            this.lblMachine.TabIndex = 23;
+            this.lblMachine.TabIndex = 38;
             this.lblMachine.Text = "Maszyna:";
-            // 
-            // comFailure
-            // 
-            this.comFailure.FormattingEnabled = true;
-            this.comFailure.Location = new System.Drawing.Point(94, 131);
-            this.comFailure.Name = "comFailure";
-            this.comFailure.Size = new System.Drawing.Size(177, 21);
-            this.comFailure.TabIndex = 22;
-            this.comFailure.SelectedIndexChanged += new System.EventHandler(this.comFailure_SelectedIndexChanged);
             // 
             // lblMaintenanceNr
             // 
             this.lblMaintenanceNr.AutoSize = true;
-            this.lblMaintenanceNr.Location = new System.Drawing.Point(101, 31);
+            this.lblMaintenanceNr.Location = new System.Drawing.Point(514, 23);
             this.lblMaintenanceNr.Name = "lblMaintenanceNr";
-            this.lblMaintenanceNr.Size = new System.Drawing.Size(135, 13);
-            this.lblMaintenanceNr.TabIndex = 20;
-            this.lblMaintenanceNr.Text = "Wprowadź numer zlecenia:";
-            // 
-            // lblFailure
-            // 
-            this.lblFailure.AutoSize = true;
-            this.lblFailure.Location = new System.Drawing.Point(101, 104);
-            this.lblFailure.Name = "lblFailure";
-            this.lblFailure.Size = new System.Drawing.Size(82, 13);
-            this.lblFailure.TabIndex = 21;
-            this.lblFailure.Text = "Wybierz awarię:";
+            this.lblMaintenanceNr.Size = new System.Drawing.Size(83, 13);
+            this.lblMaintenanceNr.TabIndex = 35;
+            this.lblMaintenanceNr.Text = "Numer zlecenia:";
             // 
             // tbcPartsEmployees
             // 
             this.tbcPartsEmployees.Controls.Add(this.tbpPartsEmployees);
             this.tbcPartsEmployees.Controls.Add(this.tabPage2);
-            this.tbcPartsEmployees.Location = new System.Drawing.Point(34, 284);
+            this.tbcPartsEmployees.Location = new System.Drawing.Point(38, 269);
             this.tbcPartsEmployees.Name = "tbcPartsEmployees";
             this.tbcPartsEmployees.SelectedIndex = 0;
             this.tbcPartsEmployees.Size = new System.Drawing.Size(850, 369);
-            this.tbcPartsEmployees.TabIndex = 19;
+            this.tbcPartsEmployees.TabIndex = 34;
             // 
             // tbpPartsEmployees
             // 
-            this.tbpPartsEmployees.Controls.Add(this.btnUpdateEmployee);
             this.tbpPartsEmployees.Controls.Add(this.lblMaintenanceEmployees);
             this.tbpPartsEmployees.Controls.Add(this.btnEmloyeeCalendar);
             this.tbpPartsEmployees.Controls.Add(this.lblEmployeeEndDate);
@@ -275,16 +221,6 @@
             this.tbpPartsEmployees.TabIndex = 0;
             this.tbpPartsEmployees.Text = "Pracownicy";
             this.tbpPartsEmployees.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateEmployee
-            // 
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(353, 307);
-            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
-            this.btnUpdateEmployee.Size = new System.Drawing.Size(81, 22);
-            this.btnUpdateEmployee.TabIndex = 36;
-            this.btnUpdateEmployee.Text = "Aktualizuj";
-            this.btnUpdateEmployee.UseVisualStyleBackColor = true;
-            this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
             // 
             // lblMaintenanceEmployees
             // 
@@ -330,7 +266,6 @@
             this.tpEmployeeEndDate.Size = new System.Drawing.Size(134, 20);
             this.tpEmployeeEndDate.TabIndex = 32;
             this.tpEmployeeEndDate.Value = new System.DateTime(2019, 5, 7, 8, 0, 0, 0);
-            this.tpEmployeeEndDate.Leave += new System.EventHandler(this.tpEmployeeEndDate_Leave);
             // 
             // dtpEmployeeEndDate
             // 
@@ -339,7 +274,6 @@
             this.dtpEmployeeEndDate.Size = new System.Drawing.Size(159, 20);
             this.dtpEmployeeEndDate.TabIndex = 31;
             this.dtpEmployeeEndDate.Value = new System.DateTime(2019, 5, 5, 20, 52, 45, 0);
-            this.dtpEmployeeEndDate.ValueChanged += new System.EventHandler(this.dtpEmployeeEndDate_ValueChanged);
             // 
             // tpEmployeeStartDate
             // 
@@ -348,7 +282,6 @@
             this.tpEmployeeStartDate.Size = new System.Drawing.Size(134, 20);
             this.tpEmployeeStartDate.TabIndex = 29;
             this.tpEmployeeStartDate.Value = new System.DateTime(2019, 5, 7, 8, 0, 0, 0);
-            this.tpEmployeeStartDate.Leave += new System.EventHandler(this.tpEmployeeStartDate_Leave);
             // 
             // dtpEmployeeStartDate
             // 
@@ -357,7 +290,6 @@
             this.dtpEmployeeStartDate.Size = new System.Drawing.Size(159, 20);
             this.dtpEmployeeStartDate.TabIndex = 30;
             this.dtpEmployeeStartDate.Value = new System.DateTime(2019, 5, 5, 20, 52, 54, 0);
-            this.dtpEmployeeStartDate.ValueChanged += new System.EventHandler(this.dtpEmployeeStartDate_ValueChanged);
             // 
             // dgvEmployees
             // 
@@ -403,7 +335,6 @@
             this.btnCancelEmployee.TabIndex = 1;
             this.btnCancelEmployee.Text = "Anuluj";
             this.btnCancelEmployee.UseVisualStyleBackColor = true;
-            this.btnCancelEmployee.Click += new System.EventHandler(this.btnCancelEmployee_Click);
             // 
             // btnDeleteEmployee
             // 
@@ -413,7 +344,6 @@
             this.btnDeleteEmployee.TabIndex = 1;
             this.btnDeleteEmployee.Text = "Usuń";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
-            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnSaveEmployee
             // 
@@ -497,7 +427,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btnUpdatePart);
             this.tabPage2.Controls.Add(this.btnWarehouse);
             this.tabPage2.Controls.Add(this.lblPart);
             this.tabPage2.Controls.Add(this.txtQuantity);
@@ -514,15 +443,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Części";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdatePart
-            // 
-            this.btnUpdatePart.Location = new System.Drawing.Point(719, 283);
-            this.btnUpdatePart.Name = "btnUpdatePart";
-            this.btnUpdatePart.Size = new System.Drawing.Size(81, 22);
-            this.btnUpdatePart.TabIndex = 37;
-            this.btnUpdatePart.Text = "Aktualizuj";
-            this.btnUpdatePart.UseVisualStyleBackColor = true;
             // 
             // btnWarehouse
             // 
@@ -574,6 +494,7 @@
             this.btnCancelPart.TabIndex = 3;
             this.btnCancelPart.Text = "Anuluj";
             this.btnCancelPart.UseVisualStyleBackColor = true;
+            this.btnCancelPart.Click += new System.EventHandler(this.btnCancelPart_Click);
             // 
             // btnDeletePart
             // 
@@ -583,6 +504,7 @@
             this.btnDeletePart.TabIndex = 4;
             this.btnDeletePart.Text = "Usuń";
             this.btnDeletePart.UseVisualStyleBackColor = true;
+            this.btnDeletePart.Click += new System.EventHandler(this.btnDeletePart_Click);
             // 
             // btnAddPart
             // 
@@ -654,16 +576,85 @@
             this.UnitName.Name = "UnitName";
             this.UnitName.ReadOnly = true;
             // 
-            // NewMaintenanceForm
+            // btnReturnMain
+            // 
+            this.btnReturnMain.AutoSize = true;
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImage = global::KWZP2019.Properties.Resources.icons8_home_40;
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnReturnMain.Location = new System.Drawing.Point(937, 469);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturnMain.Name = "btnReturnMain";
+            this.btnReturnMain.Size = new System.Drawing.Size(203, 169);
+            this.btnReturnMain.TabIndex = 49;
+            this.btnReturnMain.Text = "Zatwierdź i wróć";
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
+            // 
+            // comMachine
+            // 
+            this.comMachine.FormattingEnabled = true;
+            this.comMachine.Location = new System.Drawing.Point(507, 123);
+            this.comMachine.Name = "comMachine";
+            this.comMachine.Size = new System.Drawing.Size(152, 21);
+            this.comMachine.TabIndex = 50;
+            // 
+            // lbxDescriptionShort
+            // 
+            this.lbxDescriptionShort.FormattingEnabled = true;
+            this.lbxDescriptionShort.Location = new System.Drawing.Point(38, 48);
+            this.lbxDescriptionShort.Name = "lbxDescriptionShort";
+            this.lbxDescriptionShort.Size = new System.Drawing.Size(190, 186);
+            this.lbxDescriptionShort.TabIndex = 51;
+            // 
+            // lblDescriptionShort
+            // 
+            this.lblDescriptionShort.AutoSize = true;
+            this.lblDescriptionShort.Location = new System.Drawing.Point(53, 19);
+            this.lblDescriptionShort.Name = "lblDescriptionShort";
+            this.lblDescriptionShort.Size = new System.Drawing.Size(70, 13);
+            this.lblDescriptionShort.TabIndex = 52;
+            this.lblDescriptionShort.Text = "Wybierz opis:";
+            // 
+            // txtDescriptionLong
+            // 
+            this.txtDescriptionLong.Location = new System.Drawing.Point(254, 48);
+            this.txtDescriptionLong.Multiline = true;
+            this.txtDescriptionLong.Name = "txtDescriptionLong";
+            this.txtDescriptionLong.ReadOnly = true;
+            this.txtDescriptionLong.Size = new System.Drawing.Size(225, 203);
+            this.txtDescriptionLong.TabIndex = 55;
+            // 
+            // lblDescriptionLong
+            // 
+            this.lblDescriptionLong.AutoSize = true;
+            this.lblDescriptionLong.Location = new System.Drawing.Point(251, 19);
+            this.lblDescriptionLong.Name = "lblDescriptionLong";
+            this.lblDescriptionLong.Size = new System.Drawing.Size(96, 13);
+            this.lblDescriptionLong.TabIndex = 52;
+            this.lblDescriptionLong.Text = "Opis szczegółowy:";
+            // 
+            // NewInspectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.Controls.Add(this.txtDescriptionLong);
+            this.Controls.Add(this.lblDescriptionLong);
+            this.Controls.Add(this.lblDescriptionShort);
+            this.Controls.Add(this.lbxDescriptionShort);
+            this.Controls.Add(this.comMachine);
+            this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtMachine);
             this.Controls.Add(this.tpEndDate);
             this.Controls.Add(this.txtMaintenanceNr);
             this.Controls.Add(this.dtpEndDate);
@@ -672,15 +663,11 @@
             this.Controls.Add(this.dtpStartDate);
             this.Controls.Add(this.lblStartDate);
             this.Controls.Add(this.lblMachine);
-            this.Controls.Add(this.comFailure);
             this.Controls.Add(this.lblMaintenanceNr);
-            this.Controls.Add(this.lblFailure);
             this.Controls.Add(this.tbcPartsEmployees);
-            this.Controls.Add(this.btnReturnMain);
-            this.Name = "NewMaintenanceForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dodawanie nowego zlecenia obsługi";
-            this.Load += new System.EventHandler(this.NewMaintenanceForm_Load);
+            this.Name = "NewInspectionForm";
+            this.Text = "Nowy przegląd";
+            this.Load += new System.EventHandler(this.NewInspectionForm_Load);
             this.tbcPartsEmployees.ResumeLayout(false);
             this.tbpPartsEmployees.ResumeLayout(false);
             this.tbpPartsEmployees.PerformLayout();
@@ -696,10 +683,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtMachine;
         private System.Windows.Forms.DateTimePicker tpEndDate;
         private System.Windows.Forms.TextBox txtMaintenanceNr;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
@@ -708,35 +693,25 @@
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblMachine;
-        private System.Windows.Forms.ComboBox comFailure;
         private System.Windows.Forms.Label lblMaintenanceNr;
-        private System.Windows.Forms.Label lblFailure;
         private System.Windows.Forms.TabControl tbcPartsEmployees;
         private System.Windows.Forms.TabPage tbpPartsEmployees;
-        private System.Windows.Forms.Button btnSaveEmployee;
-        private System.Windows.Forms.DataGridView dgvMaintenanceEmployees;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvPart;
-        private System.Windows.Forms.Button btnCancelEmployee;
-        private System.Windows.Forms.Button btnDeleteEmployee;
-        private System.Windows.Forms.ListBox lbxParts;
-        private System.Windows.Forms.Button btnCancelPart;
-        private System.Windows.Forms.Button btnDeletePart;
-        private System.Windows.Forms.Button btnAddPart;
-        private System.Windows.Forms.DataGridView dgvEmployees;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeSurname;
+        private System.Windows.Forms.Label lblMaintenanceEmployees;
+        private System.Windows.Forms.Button btnEmloyeeCalendar;
         private System.Windows.Forms.Label lblEmployeeEndDate;
         private System.Windows.Forms.Label lblEmployeeStartDate;
         private System.Windows.Forms.DateTimePicker tpEmployeeEndDate;
         private System.Windows.Forms.DateTimePicker dtpEmployeeEndDate;
         private System.Windows.Forms.DateTimePicker tpEmployeeStartDate;
         private System.Windows.Forms.DateTimePicker dtpEmployeeStartDate;
-        private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.Button btnEmloyeeCalendar;
-        private System.Windows.Forms.Label lblMaintenanceEmployees;
+        private System.Windows.Forms.DataGridView dgvEmployees;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeSurname;
+        private System.Windows.Forms.Button btnCancelEmployee;
+        private System.Windows.Forms.Button btnDeleteEmployee;
+        private System.Windows.Forms.Button btnSaveEmployee;
+        private System.Windows.Forms.DataGridView dgvMaintenanceEmployees;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployeePlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintenance1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployee1;
@@ -744,15 +719,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeSurname1;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnWarehouse;
         private System.Windows.Forms.Label lblPart;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.ListBox lbxParts;
+        private System.Windows.Forms.Button btnCancelPart;
+        private System.Windows.Forms.Button btnDeletePart;
+        private System.Windows.Forms.Button btnAddPart;
+        private System.Windows.Forms.DataGridView dgvPart;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintenance;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPart;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityWarehouse;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitName;
-        private System.Windows.Forms.Button btnUpdateEmployee;
-        private System.Windows.Forms.Button btnUpdatePart;
+        private System.Windows.Forms.Button btnReturnMain;
+        private System.Windows.Forms.ComboBox comMachine;
+        private System.Windows.Forms.ListBox lbxDescriptionShort;
+        private System.Windows.Forms.Label lblDescriptionShort;
+        private System.Windows.Forms.TextBox txtDescriptionLong;
+        private System.Windows.Forms.Label lblDescriptionLong;
     }
 }
