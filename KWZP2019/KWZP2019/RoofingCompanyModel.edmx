@@ -222,6 +222,7 @@
           <Property Name="WorkingArea" Type="varchar" MaxLength="50" />
           <Property Name="CatalogMachineNr" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MetersPerHour" Type="real" Nullable="false" />
+          <Property Name="InspectionTimeInterval" Type="real" Nullable="false" />
         </EntityType>
         <EntityType Name="MachineType">
           <Key>
@@ -237,7 +238,6 @@
           <Property Name="IdMaintDesc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaintDescName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MaintDescription" Type="varchar" MaxLength="50" />
-          <Property Name="InspectionTimeInterval" Type="real" Nullable="false" />
         </EntityType>
         <EntityType Name="Maintenance">
           <Key>
@@ -246,7 +246,7 @@
           <Property Name="IdMaintenance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdMachine" Type="int" Nullable="false" />
           <Property Name="IdMaintType" Type="int" Nullable="false" />
-          <Property Name="IdMaintDesc" Type="int" Nullable="false" />
+          <Property Name="IdMaintDesc" Type="int" />
           <Property Name="DateAcceptOrder" Type="datetime" Nullable="false" />
           <Property Name="StartDatePlan" Type="datetime" Nullable="false" />
           <Property Name="EndDatePlan" Type="datetime" Nullable="false" />
@@ -362,6 +362,7 @@
           <Property Name="Producer" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CatalogPartNr" Type="int" Nullable="false" />
           <Property Name="QuantityWarehouse" Type="int" Nullable="false" />
+          <Property Name="QuantityMinimum" Type="int" />
         </EntityType>
         <EntityType Name="PartOrder">
           <Key>
@@ -1902,7 +1903,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MainDescriptionMaintenance">
-          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="1" />
+          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="0..1" />
           <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MaintDescription">
@@ -3627,6 +3628,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <NavigationProperty Name="SkillsForMachines" Relationship="Self.FK__SkillsFor__IdMac__0D7A0286" FromRole="Machine" ToRole="SkillsForMachine" />
           <NavigationProperty Name="Maintenances" Relationship="Self.FK_MachineMaintenance" FromRole="Machine" ToRole="Maintenance" />
           <NavigationProperty Name="MachineType" Relationship="Self.FK_MachineTypeMachine" FromRole="Machine" ToRole="MachineType" />
+          <Property Name="InspectionTimeInterval" Type="Single" Nullable="false" />
         </EntityType>
         <EntityType Name="MachineType">
           <Key>
@@ -3643,7 +3645,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="IdMaintDesc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaintDescName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaintDescription1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="InspectionTimeInterval" Type="Single" Nullable="false" />
           <NavigationProperty Name="Maintenances" Relationship="Self.FK_MainDescriptionMaintenance" FromRole="MaintDescription" ToRole="Maintenance" />
         </EntityType>
         <EntityType Name="Maintenance">
@@ -3653,7 +3654,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="IdMaintenance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdMachine" Type="Int32" Nullable="false" />
           <Property Name="IdMaintType" Type="Int32" Nullable="false" />
-          <Property Name="IdMaintDesc" Type="Int32" Nullable="false" />
+          <Property Name="IdMaintDesc" Type="Int32" />
           <Property Name="DateAcceptOrder" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="StartDatePlan" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndDatePlan" Type="DateTime" Nullable="false" Precision="3" />
@@ -3798,6 +3799,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <NavigationProperty Name="PartOrderDetails" Relationship="Self.FK_PartRequestPartOrderDetail" FromRole="Part" ToRole="PartOrderDetail" />
           <NavigationProperty Name="PartType" Relationship="Self.FK_PartTypePart" FromRole="Part" ToRole="PartType" />
           <NavigationProperty Name="Unit" Relationship="Self.FK_UnitPart" FromRole="Part" ToRole="Unit" />
+          <Property Name="QuantityMinimum" Type="Int32" />
         </EntityType>
         <EntityType Name="PartOrder">
           <Key>
@@ -4792,7 +4794,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MainDescriptionMaintenance">
-          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="1" />
+          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="0..1" />
           <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MaintDescription">
@@ -6354,6 +6356,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySetMapping Name="Machines">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Machine">
               <MappingFragment StoreEntitySet="Machine">
+                <ScalarProperty Name="InspectionTimeInterval" ColumnName="InspectionTimeInterval" />
                 <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
                 <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
                 <ScalarProperty Name="MachineName" ColumnName="MachineName" />
@@ -6380,7 +6383,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
                 <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
                 <ScalarProperty Name="MaintDescName" ColumnName="MaintDescName" />
                 <ScalarProperty Name="MaintDescription1" ColumnName="MaintDescription" />
-                <ScalarProperty Name="InspectionTimeInterval" ColumnName="InspectionTimeInterval" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6510,6 +6512,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySetMapping Name="Parts">
             <EntityTypeMapping TypeName="RoofingCompanyModel.Part">
               <MappingFragment StoreEntitySet="Part">
+                <ScalarProperty Name="QuantityMinimum" ColumnName="QuantityMinimum" />
                 <ScalarProperty Name="IdPart" ColumnName="IdPart" />
                 <ScalarProperty Name="IdPartType" ColumnName="IdPartType" />
                 <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
