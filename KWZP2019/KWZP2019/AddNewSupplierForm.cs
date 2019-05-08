@@ -28,14 +28,26 @@ namespace KWZP2019
         }
         private void addNewSupplierBtn_Click(object sender, EventArgs e)
         {
-            if (nameTb.Text.Trim() == "")
+            Supplier newSupplier = new Supplier();
+            if (comboBoxSupplierType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Nie wybrano typu dostawcy");
+                comboBoxSupplierType.BackColor = Color.Red;
+                return;
+            }
+            else
+            {
+                foreach (SupplierType type in db.SupplierTypes.Where(type => type.SupplierNameType.Contains(comboBoxSupplierType.Text.ToString())))
+                {
+                    newSupplier.IdSupplierType = type.IdSupplierType;
+                }
+            }
+                if (nameTb.Text.Trim() == "")
             {
                 MessageBox.Show("Nazwa jest wymagana");
                 nameTb.BackColor = Color.Red;
                 return;
             }
-            Supplier newSupplier = new Supplier();
-            SupplierType newsupplierType = new SupplierType();
             newSupplier.SupplierName = nameTb.Text.Trim();
             bool phoneTextBox = int.TryParse(phoneTb.Text.Trim(), out int phoneTextbox);
             if (phoneTextBox)
@@ -92,10 +104,9 @@ namespace KWZP2019
                 krsTb.BackColor = Color.Red;
                 return;
             }
-            MessageBox.Show("Czy na pewno chcesz dodać nowego dostawcę?");
             db.Suppliers.Add(newSupplier);
-            db.SupplierTypes.Add(newsupplierType);
             db.SaveChanges();
+            MessageBox.Show("Dodano dostawcę");
         }
        
 
@@ -105,6 +116,10 @@ namespace KWZP2019
             comboBoxSupplierType.BeginUpdate();
             comboBoxSupplierType.Items.Add(typ);
             comboBoxSupplierType.EndUpdate();
+            SupplierType newsupplierType = new SupplierType();
+            newsupplierType.SupplierNameType = typ;
+            db.SupplierTypes.Add(newsupplierType);
+            db.SaveChanges();
         }
 
         private void AddNewSupplierForm_Load(object sender, EventArgs e)
