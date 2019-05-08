@@ -39,8 +39,8 @@
             this.lblBonus = new System.Windows.Forms.Label();
             this.lblCurrentDate = new System.Windows.Forms.Label();
             this.tbCurrentDate = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReturnMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalariesData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +50,11 @@
             this.dgvSalariesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullSalary,
             this.Bonus});
-            this.dgvSalariesData.Location = new System.Drawing.Point(232, 243);
-            this.dgvSalariesData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSalariesData.Location = new System.Drawing.Point(285, 241);
+            this.dgvSalariesData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalariesData.Name = "dgvSalariesData";
             this.dgvSalariesData.ReadOnly = true;
-            this.dgvSalariesData.Size = new System.Drawing.Size(1095, 313);
+            this.dgvSalariesData.Size = new System.Drawing.Size(1072, 313);
             this.dgvSalariesData.TabIndex = 0;
             // 
             // FullSalary
@@ -75,7 +75,7 @@
             // btnAcceptChangesAndSendToDatabase
             // 
             this.btnAcceptChangesAndSendToDatabase.Location = new System.Drawing.Point(676, 775);
-            this.btnAcceptChangesAndSendToDatabase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAcceptChangesAndSendToDatabase.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcceptChangesAndSendToDatabase.Name = "btnAcceptChangesAndSendToDatabase";
             this.btnAcceptChangesAndSendToDatabase.Size = new System.Drawing.Size(429, 28);
             this.btnAcceptChangesAndSendToDatabase.TabIndex = 1;
@@ -86,8 +86,8 @@
             // tbBonus
             // 
             this.tbBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbBonus.Location = new System.Drawing.Point(516, 99);
-            this.tbBonus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbBonus.Location = new System.Drawing.Point(569, 98);
+            this.tbBonus.Margin = new System.Windows.Forms.Padding(4);
             this.tbBonus.Name = "tbBonus";
             this.tbBonus.Size = new System.Drawing.Size(256, 23);
             this.tbBonus.TabIndex = 3;
@@ -98,7 +98,7 @@
             this.lblInstruction.BackColor = System.Drawing.Color.Transparent;
             this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblInstruction.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInstruction.Location = new System.Drawing.Point(229, 173);
+            this.lblInstruction.Location = new System.Drawing.Point(282, 198);
             this.lblInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInstruction.Name = "lblInstruction";
             this.lblInstruction.Size = new System.Drawing.Size(444, 18);
@@ -111,7 +111,7 @@
             this.lblBonus.BackColor = System.Drawing.Color.Transparent;
             this.lblBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblBonus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBonus.Location = new System.Drawing.Point(229, 102);
+            this.lblBonus.Location = new System.Drawing.Point(282, 101);
             this.lblBonus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBonus.Name = "lblBonus";
             this.lblBonus.Size = new System.Drawing.Size(189, 18);
@@ -124,7 +124,7 @@
             this.lblCurrentDate.BackColor = System.Drawing.Color.Transparent;
             this.lblCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblCurrentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCurrentDate.Location = new System.Drawing.Point(229, 75);
+            this.lblCurrentDate.Location = new System.Drawing.Point(282, 74);
             this.lblCurrentDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentDate.Name = "lblCurrentDate";
             this.lblCurrentDate.Size = new System.Drawing.Size(105, 18);
@@ -134,32 +134,54 @@
             // tbCurrentDate
             // 
             this.tbCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbCurrentDate.Location = new System.Drawing.Point(516, 72);
-            this.tbCurrentDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCurrentDate.Location = new System.Drawing.Point(569, 71);
+            this.tbCurrentDate.Margin = new System.Windows.Forms.Padding(4);
             this.tbCurrentDate.Name = "tbCurrentDate";
             this.tbCurrentDate.ReadOnly = true;
             this.tbCurrentDate.Size = new System.Drawing.Size(256, 23);
             this.tbCurrentDate.TabIndex = 7;
             // 
-            // button1
+            // btnReturn
             // 
-            this.button1.Location = new System.Drawing.Point(43, 75);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 103);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(8, 76);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
+            this.btnReturn.TabIndex = 29;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnReturnMain
             // 
-            this.button2.Location = new System.Drawing.Point(43, 218);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 101);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.Location = new System.Drawing.Point(9, 241);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturnMain.Name = "btnReturnMain";
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
+            this.btnReturnMain.TabIndex = 30;
+            this.btnReturnMain.Text = "Menu główne";
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
             // 
             // SalariesSummary
             // 
@@ -168,8 +190,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.tbCurrentDate);
             this.Controls.Add(this.lblCurrentDate);
             this.Controls.Add(this.lblBonus);
@@ -178,7 +200,7 @@
             this.Controls.Add(this.btnAcceptChangesAndSendToDatabase);
             this.Controls.Add(this.dgvSalariesData);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalariesSummary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Podlicz wypłaty";
@@ -200,7 +222,7 @@
         private System.Windows.Forms.TextBox tbCurrentDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullSalary;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bonus;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnReturnMain;
     }
 }
