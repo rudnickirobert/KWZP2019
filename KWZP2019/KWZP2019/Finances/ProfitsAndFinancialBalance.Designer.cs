@@ -501,11 +501,11 @@
             // 
             this.lblFormTitle.AutoSize = true;
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(665, 131);
+            this.lblFormTitle.Location = new System.Drawing.Point(685, 132);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(239, 36);
+            this.lblFormTitle.Size = new System.Drawing.Size(217, 31);
             this.lblFormTitle.TabIndex = 55;
             this.lblFormTitle.Text = "Bilans finansowy";
             // 

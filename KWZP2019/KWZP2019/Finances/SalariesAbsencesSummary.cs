@@ -15,12 +15,12 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private StartForm startForm;
-        private Finances Finances;
-        public SalariesSummary(RoofingCompanyEntities db, StartForm startForm, Finances Finances)
+        private Finances finances;
+        public SalariesSummary(RoofingCompanyEntities db, StartForm startForm, Finances finances)
         {
             this.db = db;
             this.startForm = startForm;
-            this.Finances = Finances;
+            this.finances = finances;
             InitializeComponent();
         }
         private void SalariesSummary_Load(object sender, EventArgs e)
@@ -62,6 +62,18 @@ namespace KWZP2019
             newPayment.Sum = Convert.ToDecimal(dgvSalariesData.CurrentRow.Cells[0].Value);
             db.Payments.Add(newPayment);
             db.SaveChanges();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.finances.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

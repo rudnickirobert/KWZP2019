@@ -29,35 +29,96 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalariesSummary));
             this.dgvSalariesData = new System.Windows.Forms.DataGridView();
+            this.FullSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bonus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAcceptChangesAndSendToDatabase = new System.Windows.Forms.Button();
             this.tbBonus = new System.Windows.Forms.TextBox();
             this.lblInstruction = new System.Windows.Forms.Label();
             this.lblBonus = new System.Windows.Forms.Label();
             this.lblCurrentDate = new System.Windows.Forms.Label();
             this.tbCurrentDate = new System.Windows.Forms.TextBox();
-            this.FullSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bonus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReturnMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalariesData)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSalariesData
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvSalariesData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSalariesData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvSalariesData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvSalariesData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalariesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalariesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalariesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullSalary,
             this.Bonus});
-            this.dgvSalariesData.Location = new System.Drawing.Point(12, 84);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalariesData.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSalariesData.EnableHeadersVisualStyles = false;
+            this.dgvSalariesData.Location = new System.Drawing.Point(285, 241);
+            this.dgvSalariesData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalariesData.Name = "dgvSalariesData";
             this.dgvSalariesData.ReadOnly = true;
-            this.dgvSalariesData.Size = new System.Drawing.Size(971, 254);
+            this.dgvSalariesData.RowHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvSalariesData.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvSalariesData.Size = new System.Drawing.Size(1054, 313);
             this.dgvSalariesData.TabIndex = 0;
+            // 
+            // FullSalary
+            // 
+            this.FullSalary.HeaderText = "Pensja z premią";
+            this.FullSalary.Name = "FullSalary";
+            this.FullSalary.ReadOnly = true;
+            this.FullSalary.Width = 135;
+            // 
+            // Bonus
+            // 
+            dataGridViewCellStyle3.NullValue = "0";
+            this.Bonus.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Bonus.HeaderText = "Premia";
+            this.Bonus.Name = "Bonus";
+            this.Bonus.ReadOnly = true;
+            this.Bonus.ToolTipText = "0";
+            this.Bonus.Width = 82;
             // 
             // btnAcceptChangesAndSendToDatabase
             // 
-            this.btnAcceptChangesAndSendToDatabase.Location = new System.Drawing.Point(12, 344);
+            this.btnAcceptChangesAndSendToDatabase.Location = new System.Drawing.Point(676, 775);
+            this.btnAcceptChangesAndSendToDatabase.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcceptChangesAndSendToDatabase.Name = "btnAcceptChangesAndSendToDatabase";
-            this.btnAcceptChangesAndSendToDatabase.Size = new System.Drawing.Size(322, 23);
+            this.btnAcceptChangesAndSendToDatabase.Size = new System.Drawing.Size(429, 28);
             this.btnAcceptChangesAndSendToDatabase.TabIndex = 1;
             this.btnAcceptChangesAndSendToDatabase.Text = "Zatwierdź zmiany i zapisz je do bazy";
             this.btnAcceptChangesAndSendToDatabase.UseVisualStyleBackColor = true;
@@ -65,66 +126,119 @@
             // 
             // tbBonus
             // 
-            this.tbBonus.Location = new System.Drawing.Point(141, 28);
+            this.tbBonus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbBonus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbBonus.Location = new System.Drawing.Point(498, 96);
+            this.tbBonus.Margin = new System.Windows.Forms.Padding(4);
             this.tbBonus.Name = "tbBonus";
-            this.tbBonus.Size = new System.Drawing.Size(193, 20);
+            this.tbBonus.Size = new System.Drawing.Size(256, 23);
             this.tbBonus.TabIndex = 3;
             // 
             // lblInstruction
             // 
             this.lblInstruction.AutoSize = true;
-            this.lblInstruction.Location = new System.Drawing.Point(12, 68);
+            this.lblInstruction.BackColor = System.Drawing.Color.Transparent;
+            this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblInstruction.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblInstruction.Location = new System.Drawing.Point(282, 198);
+            this.lblInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInstruction.Name = "lblInstruction";
-            this.lblInstruction.Size = new System.Drawing.Size(275, 13);
+            this.lblInstruction.Size = new System.Drawing.Size(444, 18);
             this.lblInstruction.TabIndex = 4;
             this.lblInstruction.Text = "Wybierz wiersz z pracownikiem, aby przyznać mu premię:";
             // 
             // lblBonus
             // 
             this.lblBonus.AutoSize = true;
-            this.lblBonus.Location = new System.Drawing.Point(12, 31);
+            this.lblBonus.BackColor = System.Drawing.Color.Transparent;
+            this.lblBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBonus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblBonus.Location = new System.Drawing.Point(282, 101);
+            this.lblBonus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBonus.Name = "lblBonus";
-            this.lblBonus.Size = new System.Drawing.Size(123, 13);
+            this.lblBonus.Size = new System.Drawing.Size(189, 18);
             this.lblBonus.TabIndex = 5;
-            this.lblBonus.Text = "Wprowadź kwotę premii:";
+            this.lblBonus.Text = "Wprowadź kwotę premii";
             // 
             // lblCurrentDate
             // 
             this.lblCurrentDate.AutoSize = true;
-            this.lblCurrentDate.Location = new System.Drawing.Point(12, 9);
+            this.lblCurrentDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblCurrentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCurrentDate.Location = new System.Drawing.Point(282, 74);
+            this.lblCurrentDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentDate.Name = "lblCurrentDate";
-            this.lblCurrentDate.Size = new System.Drawing.Size(72, 13);
+            this.lblCurrentDate.Size = new System.Drawing.Size(105, 18);
             this.lblCurrentDate.TabIndex = 6;
-            this.lblCurrentDate.Text = "Bieżąca data:";
+            this.lblCurrentDate.Text = "Bieżąca data";
             // 
             // tbCurrentDate
             // 
-            this.tbCurrentDate.Location = new System.Drawing.Point(141, 6);
+            this.tbCurrentDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbCurrentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbCurrentDate.Location = new System.Drawing.Point(498, 69);
+            this.tbCurrentDate.Margin = new System.Windows.Forms.Padding(4);
             this.tbCurrentDate.Name = "tbCurrentDate";
             this.tbCurrentDate.ReadOnly = true;
-            this.tbCurrentDate.Size = new System.Drawing.Size(193, 20);
+            this.tbCurrentDate.Size = new System.Drawing.Size(256, 23);
             this.tbCurrentDate.TabIndex = 7;
             // 
-            // FullSalary
+            // btnReturn
             // 
-            this.FullSalary.HeaderText = "Pensja z premią";
-            this.FullSalary.Name = "FullSalary";
-            this.FullSalary.ReadOnly = true;
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(8, 76);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
+            this.btnReturn.TabIndex = 29;
+            this.btnReturn.Text = "Powrót";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // Bonus
+            // btnReturnMain
             // 
-            dataGridViewCellStyle1.NullValue = "0";
-            this.Bonus.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Bonus.HeaderText = "Premia";
-            this.Bonus.Name = "Bonus";
-            this.Bonus.ReadOnly = true;
-            this.Bonus.ToolTipText = "0";
+            this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.Location = new System.Drawing.Point(9, 241);
+            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReturnMain.Name = "btnReturnMain";
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
+            this.btnReturnMain.TabIndex = 30;
+            this.btnReturnMain.Text = "Menu główne";
+            this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReturnMain.UseVisualStyleBackColor = false;
+            this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
             // SalariesSummary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 416);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.btnReturnMain);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.tbCurrentDate);
             this.Controls.Add(this.lblCurrentDate);
             this.Controls.Add(this.lblBonus);
@@ -132,7 +246,10 @@
             this.Controls.Add(this.tbBonus);
             this.Controls.Add(this.btnAcceptChangesAndSendToDatabase);
             this.Controls.Add(this.dgvSalariesData);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalariesSummary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Podlicz wypłaty";
             this.Load += new System.EventHandler(this.SalariesSummary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalariesData)).EndInit();
@@ -152,5 +269,7 @@
         private System.Windows.Forms.TextBox tbCurrentDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullSalary;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bonus;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnReturnMain;
     }
 }

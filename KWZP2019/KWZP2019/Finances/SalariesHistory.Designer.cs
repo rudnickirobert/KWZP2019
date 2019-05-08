@@ -67,6 +67,7 @@
             this.dgvHistory.Location = new System.Drawing.Point(521, 261);
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
@@ -79,19 +80,23 @@
             // 
             // tbSurname
             // 
-            this.tbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSurname.Location = new System.Drawing.Point(691, 229);
+            this.tbSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbSurname.Location = new System.Drawing.Point(691, 232);
             this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(376, 26);
+            this.tbSurname.Size = new System.Drawing.Size(382, 23);
             this.tbSurname.TabIndex = 4;
             this.tbSurname.TextChanged += new System.EventHandler(this.tbSurname_KeyUp);
             // 
             // lblSurnameSearched
             // 
             this.lblSurnameSearched.AutoSize = true;
-            this.lblSurnameSearched.Location = new System.Drawing.Point(565, 237);
+            this.lblSurnameSearched.BackColor = System.Drawing.Color.Transparent;
+            this.lblSurnameSearched.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSurnameSearched.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSurnameSearched.Location = new System.Drawing.Point(530, 238);
             this.lblSurnameSearched.Name = "lblSurnameSearched";
-            this.lblSurnameSearched.Size = new System.Drawing.Size(120, 13);
+            this.lblSurnameSearched.Size = new System.Drawing.Size(155, 17);
             this.lblSurnameSearched.TabIndex = 5;
             this.lblSurnameSearched.Text = "Poszukiwane nazwisko:";
             // 
@@ -153,11 +158,11 @@
             // 
             this.lblFormTitle.AutoSize = true;
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFormTitle.Location = new System.Drawing.Point(694, 135);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(209, 36);
+            this.lblFormTitle.Size = new System.Drawing.Size(192, 31);
             this.lblFormTitle.TabIndex = 9;
             this.lblFormTitle.Text = "Historia wypłat";
             // 
