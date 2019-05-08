@@ -20,11 +20,11 @@ namespace KWZP2019
         private bool doControlExist;
         private bool doResultsChecked;
         private bool wholeControlStatus;
-        private String selectedOrderId;
-        private String selectedSfId;
-
+        private Nullable<int> selectedOrderId;
+        private int selectedSfId;
+        private int idControler;
+        DataGridViewRow selectedRow;
         // ==================================================
-
         public EntranceControlForm(RoofingCompanyEntities db, StartForm startForm, QualityControl qualityControlForm)
         {
             this.db = db;
@@ -32,131 +32,189 @@ namespace KWZP2019
             this.qualityControlForm = qualityControlForm;
             InitializeComponent();
         }
-
         // ==================================================
-
         private void BtnReturnMain_Click(object sender, EventArgs e)
         {
             this.startForm.Show();
             this.qualityControlForm.Close();
             this.Close();
         }
-
         // ==================================================
-
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             this.qualityControlForm.Show();
             this.Hide();
         }
-
         // ==================================================
-
+        private void BtnStatistics_Click(object sender, EventArgs e)
+        {
+            EntranceControlStatisticsForm statisticsForm = new EntranceControlStatisticsForm(db, startForm, this);
+            statisticsForm.Show();
+            this.Hide();
+        }
+        // ==================================================
         private void EntranceControlForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.startForm.Show();
             this.qualityControlForm.Close();
         }
-
         // ==================================================
-
         private void EntranceControlForm_Load(object sender, EventArgs e)
         {
             datePickerSelectedControlsDate.Value = DateTime.Now;
             ShowControlsFromDate(DateTime.Now);
         }
-
         // ==================================================
-
-        private void BtnShowFromDate_Click(object sender, EventArgs e)
+        private void BtnShowFromToday_Click(object sender, EventArgs e)
+        {
+            datePickerSelectedControlsDate.Value = DateTime.Now;
+            ShowControlsFromDate(DateTime.Now);
+        }
+        // ==================================================
+        private void BtnShowFromDay_Click(object sender, EventArgs e)
         {
             ShowControlsFromDate(datePickerSelectedControlsDate.Value);
         }
-
         // ==================================================
-
-        private void BtnShow_Click(object sender, EventArgs e)
+        private void BtnShowFromMonth_Click(object sender, EventArgs e)
         {
-            // Polish names only for displaying into dataGridView in form
-            // var because it's an anonymouse type
-            var orders = db.SfOrderDetails
-                .Join(db.SemiFinishedOrders,
-                sfOrderDetail => sfOrderDetail.IdSfOrder,
-                sfOrder => sfOrder.IdSfOrder,
-                (sfOrderDetail, sfOrder) => new {
-                    ID_zamówienia = sfOrderDetail.IdSfOrder,
-                    ID_półfabrykatu = sfOrderDetail.IdSemiFinished,
-                    Data_dostarczenia = sfOrder.SfDeliveryDate
-                })
-                .OrderBy(orderBy =>
-                orderBy.Data_dostarczenia)
-                .ToList();
-            dataGVEntranceControl.DataSource = orders;
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value.Month, datePickerSelectedControlsDate.Value.Year);
         }
-
         // ==================================================
-        private void DataGVEntranceControl_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void BtnShowFromYear_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGVEntranceControl.SelectedRows[0];
-            selectedOrderId = selectedRow.Cells["ID_zamówienia"].Value.ToString();
-            lblOrderIdShow.Text = selectedOrderId;
-            selectedSfId = selectedRow.Cells["ID_półfabrykatu"].Value.ToString();
-            lblSfIdShow.Text = selectedSfId;
-            if (ChangeTextBoxesDependingOnExistedSelectedControl())
+            ShowControlsFromDate(datePickerSelectedControlsDate.Value.Year);
+        }
+        // ==================================================
+        private void BtnShowAll_Click(object sender, EventArgs e)
+        {
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+
+            dataGridViewEntranceControl.DataSource = orders;
+        }
+        // ==================================================
+        private void DataGVEntranceControl_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+			
+            selectedRow = dataGridViewEntranceControl.SelectedRows[0];
+            selectedOrderId = (int)selectedRow.Cells["Nr_zamówienia"].Value;
+            lblOrderIdShow.Text = selectedOrderId.ToString();
+			String selectedSfCode = selectedRow.Cells["Kod_półfabrykatu"].Value.ToString();
+			lblSfIdShow.Text = selectedSfCode;
+			
+			SemiFinished sfBySelectedCode = db.SemiFinisheds.Where(check => check.SfCode == selectedSfCode).First();
+
+            selectedSfId = sfBySelectedCode.IdSemiFinished;
+
+            if ((DateTime)selectedRow.Cells["Dostarczono"].Value < DateTime.Now)
             {
-                this.doControlExist = true;
-                lblDelayTime.Text = "";
+                btnApproval.Enabled = true;
+                btnCheck.Enabled = true;
+                btnDone.Enabled = true;
+                if (ChangeTextBoxesDependingOnExistedSelectedControl())
+                {
+                    this.doControlExist = true;
+                    lblDelayTime.Text = "";
+                }
+                else
+                {
+                    this.doResultsChecked = false;
+                    this.doResultsApproved = false;
+                    this.doControlExist = false;
+                    int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Dostarczono"].Value).TotalMinutes, 0);
+                    lblDelayTime.Text = minutesOfDelay > 0 ? $"{minutesOfDelay / 1440} dni, {(minutesOfDelay % 1440) / 60} godzin i {(minutesOfDelay % 1440) % 60} minut opóźnienia" : "";
+                }
             }
             else
             {
-                this.doResultsChecked = false;
-                this.doResultsApproved = false;
-                this.doControlExist = false;
-                int minutesOfDelay = (int)Math.Round((DateTime.Now - (DateTime)selectedRow.Cells["Data_dostarczenia"].Value).TotalMinutes, 0);
-                lblDelayTime.Text = $"{minutesOfDelay / 1440} dni, {(minutesOfDelay % 1440) / 60} godzin i {(minutesOfDelay % 1440) % 60} minut opóźnienia";
+                MessageBox.Show("Data dostarczenia jest wcześniejsza od chwili obecnej.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnApproval.Enabled = false;
+                btnCheck.Enabled = false;
+                btnDone.Enabled = false;
+                this.ResetAllCheckedPicBox();
+                textBoxEmployeePESEL.Text = "";
+                textBoxEmployeePESEL.Enabled = false;
+                txtboxThickness.Text = "";
+                txtboxThickness.Enabled = false;
+                txtboxWidth.Text = "";
+                txtboxWidth.Enabled = false;
+                txtboxMass.Text = "";
+                txtboxMass.Enabled = false;
+                txtBoxColor.Text = "";
+                txtBoxColor.Enabled = false;
+                txtBoxQuantity.Text = "";
+                txtBoxQuantity.Enabled = false;
+                checkBoxComposition.Checked = false;
+                checkBoxComposition.Enabled = false;
+                txtboxComment.Text = "";
+                txtboxComment.Enabled = false;
+                picBoxControlStatus.Image = Properties.Resources.new_80px;
             }
         }
-
         // ==================================================
-        private void TextBoxEmployeeId_TextChanged(object sender, EventArgs e)
+        private void TextBoxEmployeePESEL_TextChanged(object sender, EventArgs e)
         {
-            textBoxEmployeeId.BackColor = Color.White;
-
-            Employee employee = db.Employees
-                .FirstOrDefault(check => 
-                check.IdEmployee.ToString() == textBoxEmployeeId.Text);
-
-            lblEmployeeFullName.Text = employee != null ? 
-                $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" : 
-                "Brak pracownika z takim ID";
+            textBoxEmployeePESEL.BackColor = Color.White;
+            if(textBoxEmployeePESEL.Text.Length < 11)
+            {
+                lblEmployeeFullName.Text = "Za mało cyfr!";
+            }
+            else if(textBoxEmployeePESEL.Text.Length > 11)
+            {
+                lblEmployeeFullName.Text = "Za dużo cyfr!";
+            }
+            if(textBoxEmployeePESEL.Text.Length == 11)
+            {
+                Employee employee = db.Employees
+                .FirstOrDefault(check => check.PESEL == textBoxEmployeePESEL.Text);
+                if(employee == null)
+                {
+                    MessageBox.Show("Brak pracownika o takim numerze PESEL", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    idControler = employee.IdEmployee;
+                    ViewQualityControlerList qualityControler = db.ViewQualityControlerLists
+                    .FirstOrDefault(check => check.IdEmployee == idControler);
+                    if (qualityControler == null)
+                    {
+                        MessageBox.Show("Brak pracownika o takim numerze PESEL\nw dziale kontroli jakości", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        lblEmployeeFullName.Text = $"Kontrolował: {qualityControler.EmployeeName} {qualityControler.EmployeeSurname}";
+                        /*lblEmployeeFullName.Text = employee != null ?
+                        $"Kontrolował: {employee.EmployeeName} {employee.EmployeeSurname}" :
+                        "Brak pracownika z takim numerem PESEL";*/
+                    }
+                }
+            }
         }
-
         // ================================================== 
-
         private void BtnCheck_Click(object sender, EventArgs e)
         {
             CheckControl();
             this.doResultsChecked = true;
         }
-
         // ==================================================
-
         private void BtnApproval_Click(object sender, EventArgs e)
         {
             if (selectedOrderId == null)
             {
-                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wybierz zamówienie i półfabrykat!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (this.doControlExist)
             {
-                MessageBox.Show("Ta kontrola już istnieje w bazie!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ta kontrola już istnieje w bazie!", "Wiadomość", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (lblOrderIdShow.Text == "" || lblSfIdShow.Text == "" 
-                || textBoxEmployeeId.Text == "" || txtboxThickness.Text == ""
+                || textBoxEmployeePESEL.Text == "" || txtboxThickness.Text == ""
                 || txtboxWidth.Text == "" || txtboxMass.Text == ""
                 || txtBoxColor.Text == "" || txtBoxQuantity.Text == "")
             {
-                MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nie można zatwierdzić wyników!\nUzupełnij wszystkie pola!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (lblOrderIdShow.Text == "")
                 {
                     lblOrderIdShow.BackColor = Color.Red;
@@ -165,9 +223,9 @@ namespace KWZP2019
                 {
                     lblSfIdShow.BackColor = Color.Red;
                 }
-                if (textBoxEmployeeId.Text == "")
+                if (textBoxEmployeePESEL.Text == "")
                 {
-                    textBoxEmployeeId.BackColor = Color.Red;
+                    textBoxEmployeePESEL.BackColor = Color.Red;
                 }
                 if (txtboxThickness.Text == "")
                 {
@@ -190,6 +248,10 @@ namespace KWZP2019
                     txtBoxQuantity.BackColor = Color.Red;
                 }
             }
+            else if (lblEmployeeFullName.Text == "" || lblEmployeeFullName.Text == "Za mało cyfr!" || lblEmployeeFullName.Text == "Za dużo cyfr!")
+            {
+                MessageBox.Show("Nie można zatwierdzić wyników!\nZły pracownik!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else if(this.doResultsChecked)
             {
                 this.doResultsApproved = true;
@@ -200,25 +262,22 @@ namespace KWZP2019
                 MessageBox.Show("Najpierw sprawdź wyniki!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         // ==================================================
-
         private void BtnDone_Click(object sender, EventArgs e)
         {
             
             if(doResultsApproved)
             {
-                // var because it's anonymouse type
                 SfOrderDetail idSfDetail = db.SfOrderDetails
                     .Where(check =>
-                    check.IdSfOrder.ToString() == selectedOrderId
-                    && check.IdSemiFinished.ToString() == selectedSfId).First();
+                    check.IdSfOrder == selectedOrderId
+                    && check.IdSemiFinished == selectedSfId).First();
 
 
                 EntranceControl entranceControl = new EntranceControl();
 
                 entranceControl.IdSfDetail = idSfDetail.IdSfDetail;
-                entranceControl.IdEmployee = int.Parse(textBoxEmployeeId.Text);
+                entranceControl.IdEmployee = this.idControler;
                 entranceControl.ControlDate = datePickerSelectedControlsDate.Value;
                 entranceControl.Comments = txtboxComment.Text;
                 entranceControl.Quantity = int.Parse(txtBoxQuantity.Text);
@@ -238,18 +297,14 @@ namespace KWZP2019
                 MessageBox.Show("Proszę zatwierdzić wyniki!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         // ==================================================
-
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             (sender as TextBox).BackColor = Color.White;
             ResetAllCheckedPicBox();
             this.doResultsChecked = false;
         }
-
         // ==================================================
-
         private void ResetAllCheckedPicBox()
         {
             picBoxThicknessStatus.Image = Properties.Resources.help_40px;
@@ -258,42 +313,21 @@ namespace KWZP2019
             picBoxColorStatus.Image = Properties.Resources.help_40px;
             picBoxQuantityStatus.Image = Properties.Resources.help_40px;
         }
-
         // ==================================================
-
         private bool ChangeTextBoxesDependingOnExistedSelectedControl()
         {
-            // Changed text boxes style depending on if selected control exist in database and return true if exist and false if not
-            // var because it's anonymouse type
-            var selectedControl = db.EntranceControls
-                .Join(db.SfOrderDetails,
-                ec => ec.IdSfDetail,
-                order => order.IdSfDetail,
-                (ec, order) => new
-                {
-                    order.IdSfOrder,
-                    order.IdSemiFinished,
-                    ec.IdEmployee,
-                    ec.RealThickness,
-                    ec.RealWidth,
-                    ec.RealWeight,
-                    ec.RealColor,
-                    ec.Quantity,
-                    ec.ControlStatus,
-                    ec.ChemicalComposition,
-                    ec.Comments
-                })
+            ViewEntranceControlHistory selectedControl = db.ViewEntranceControlHistories
                 .Where(check => 
-                check.IdSfOrder.ToString() == selectedOrderId && 
-                check.IdSemiFinished.ToString() == selectedSfId)
+                check.IdSfOrder == selectedOrderId && 
+                check.IdSemiFinished == selectedSfId)
                 .FirstOrDefault();
 
             if (selectedControl == null)
             {
                 lblControlNotExist.Text = "Brak kontroli\nw bazie!";
                 this.ResetAllCheckedPicBox();
-                textBoxEmployeeId.Text = "";
-                textBoxEmployeeId.Enabled = true;
+                textBoxEmployeePESEL.Text = "";
+                textBoxEmployeePESEL.Enabled = true;
                 txtboxThickness.Text = "";
                 txtboxThickness.Enabled = true;
                 txtboxWidth.Text = "";
@@ -313,8 +347,9 @@ namespace KWZP2019
             }
             else
             {
+                Employee employee = db.Employees.First(check => check.IdEmployee == selectedControl.IdEmployee);
                 lblControlNotExist.Text = "";
-                textBoxEmployeeId.Text = selectedControl.IdEmployee.ToString();
+                textBoxEmployeePESEL.Text = employee.PESEL;
                 txtboxThickness.Text = selectedControl.RealThickness.ToString();
                 txtboxWidth.Text = selectedControl.RealWidth.ToString();
                 txtboxMass.Text = selectedControl.RealWeight.ToString();
@@ -325,7 +360,7 @@ namespace KWZP2019
 
                 CheckControl();
 
-                textBoxEmployeeId.Enabled = false;
+                textBoxEmployeePESEL.Enabled = false;
                 txtboxThickness.Enabled = false;
                 txtboxWidth.Enabled = false;
                 txtboxMass.Enabled = false;
@@ -340,9 +375,7 @@ namespace KWZP2019
                 return true;
             }
         }
-
         // ==================================================
-
         private void CheckControl()
         {
             if (lblOrderIdShow.Text == "")
@@ -351,7 +384,7 @@ namespace KWZP2019
             }
             else
             {
-                SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished.ToString() == selectedSfId);
+                SemiFinished semiFinished = db.SemiFinisheds.FirstOrDefault(sf => sf.IdSemiFinished == selectedSfId);
 
                 bool flagThickness = false;
                 bool flagWidth = false;
@@ -439,8 +472,8 @@ namespace KWZP2019
                 {
                     SfOrderDetail quantitySfOrder = db.SfOrderDetails
                         .Where(check =>
-                        check.IdSfOrder.ToString() == selectedOrderId
-                        && check.IdSemiFinished.ToString() == selectedSfId)
+                        check.IdSfOrder == selectedOrderId
+                        && check.IdSemiFinished == selectedSfId)
                         .FirstOrDefault();
 
                     if (int.TryParse(txtBoxQuantity.Text, out int quantity))
@@ -473,36 +506,41 @@ namespace KWZP2019
                 }
             }
         }
-
         // ==================================================
-
         private void ShowControlsFromDate(DateTime selectedDate)
         {
-            // var because it's an anonymouse type
-            var orders = db.SfOrderDetails
-                .Join(db.SemiFinishedOrders,
-                sfOrderDetail => sfOrderDetail.IdSfOrder,
-                sfOrder => sfOrder.IdSfOrder,
-                (sfOrderDetail, sfOrder) => new
-                {
-                    sfOrderDetail,
-                    sfOrder
-                })
-                .Where(check =>
-                check.sfOrder.SfDeliveryDate.Year == selectedDate.Year
-                && check.sfOrder.SfDeliveryDate.Month == selectedDate.Month
-                && check.sfOrder.SfDeliveryDate.Day == selectedDate.Day)
-                .Select(sfOrderDetailJoinSfOrder => new
-                {
-                    ID_zamówienia = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSfOrder,
-                    ID_półfabrykatu = sfOrderDetailJoinSfOrder.sfOrderDetail.IdSemiFinished,
-                    Data_dostarczenia = sfOrderDetailJoinSfOrder.sfOrder.SfDeliveryDate
-                })
-                .OrderBy(orderBy =>
-                orderBy.Data_dostarczenia)
-                .ToList();
-            // Polish names only for displaying into dataGridView in form
-            dataGVEntranceControl.DataSource = orders;
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
+				.Where(check =>
+				check.Dostarczono.Year == selectedDate.Year
+				&& check.Dostarczono.Month == selectedDate.Month
+				&& check.Dostarczono.Day == selectedDate.Day)
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+            
+            dataGridViewEntranceControl.DataSource = orders;
+        }
+        // ==================================================
+        private void ShowControlsFromDate(int month, int year)
+        {
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
+				.Where(check =>
+				check.Dostarczono.Year == year
+				&& check.Dostarczono.Month == month)
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+            
+            dataGridViewEntranceControl.DataSource = orders;
+        }
+        // ==================================================
+        private void ShowControlsFromDate(int year)
+        {
+            List<ViewSemiFinishedOrder> orders = db.ViewSemiFinishedOrders
+				.Where(check =>
+				check.Dostarczono.Year == year)
+				.OrderBy(orderBy => orderBy.Dostarczono)
+				.ToList();
+            
+            dataGridViewEntranceControl.DataSource = orders;
         }
     }
 }

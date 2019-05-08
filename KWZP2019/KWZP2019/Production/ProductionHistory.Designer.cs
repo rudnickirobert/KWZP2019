@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ProductionHistoryGridView = new System.Windows.Forms.DataGridView();
+            this.productionHistoryGridView = new System.Windows.Forms.DataGridView();
             this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +54,12 @@
             this.lblProductionHistoryFilterTo = new System.Windows.Forms.Label();
             this.lblProductionHistoryFilterSince = new System.Windows.Forms.Label();
             this.btnHistoryProductionBack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductionHistoryGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionHistoryGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).BeginInit();
             this.panelProductionhistoryRadioBtns.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ProductionHistoryGridView
+            // productionHistoryGridView
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -67,10 +67,10 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.ProductionHistoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ProductionHistoryGridView.AutoGenerateColumns = false;
-            this.ProductionHistoryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.ProductionHistoryGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.productionHistoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.productionHistoryGridView.AutoGenerateColumns = false;
+            this.productionHistoryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.productionHistoryGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -78,9 +78,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductionHistoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ProductionHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductionHistoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productionHistoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.productionHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productionHistoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProcesDataGridViewTextBoxColumn,
             this.idPlanDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
@@ -90,20 +90,20 @@
             this.employeeSurnameDataGridViewTextBoxColumn,
             this.machineNameDataGridViewTextBoxColumn,
             this.catalogMachineNrDataGridViewTextBoxColumn});
-            this.ProductionHistoryGridView.DataSource = this.vProductionProcessFullDataBindingSource;
-            this.ProductionHistoryGridView.EnableHeadersVisualStyles = false;
-            this.ProductionHistoryGridView.Location = new System.Drawing.Point(250, 130);
-            this.ProductionHistoryGridView.Name = "ProductionHistoryGridView";
-            this.ProductionHistoryGridView.RowHeadersVisible = false;
+            this.productionHistoryGridView.DataSource = this.vProductionProcessFullDataBindingSource;
+            this.productionHistoryGridView.EnableHeadersVisualStyles = false;
+            this.productionHistoryGridView.Location = new System.Drawing.Point(250, 130);
+            this.productionHistoryGridView.Name = "productionHistoryGridView";
+            this.productionHistoryGridView.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.ProductionHistoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.ProductionHistoryGridView.Size = new System.Drawing.Size(905, 580);
-            this.ProductionHistoryGridView.TabIndex = 0;
+            this.productionHistoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.productionHistoryGridView.Size = new System.Drawing.Size(905, 580);
+            this.productionHistoryGridView.TabIndex = 0;
             // 
             // idProcesDataGridViewTextBoxColumn
             // 
@@ -325,13 +325,13 @@
             this.Controls.Add(this.btnProdutionHistoryFilter);
             this.Controls.Add(this.dTPickerProductionHistoryFilterUpper);
             this.Controls.Add(this.dTPickerProductionHistoryFilterLower);
-            this.Controls.Add(this.ProductionHistoryGridView);
+            this.Controls.Add(this.productionHistoryGridView);
             this.MaximizeBox = false;
             this.Name = "ProductionHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rejestr produkcji";
             this.Load += new System.EventHandler(this.ProductionHistory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductionHistoryGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionHistoryGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).EndInit();
             this.panelProductionhistoryRadioBtns.ResumeLayout(false);
             this.panelProductionhistoryRadioBtns.PerformLayout();
@@ -342,7 +342,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ProductionHistoryGridView;
+        private System.Windows.Forms.DataGridView productionHistoryGridView;
         private System.Windows.Forms.BindingSource vProductionProcessFullDataBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProcesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPlanDataGridViewTextBoxColumn;

@@ -28,6 +28,7 @@ namespace KWZP2019
         public double SfWeight { get; set; }
         public string Color { get; set; }
         public string ChemicalComposition { get; set; }
+        public int RollLength { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
