@@ -383,7 +383,7 @@ namespace KWZP2019
                         ReloadData();
                         partsManagmentForm.ReloadData();
 
-                        MessageBox.Show("Edytowano prawidłowo", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Zapotrzebowanie zostało zaakceptowane", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

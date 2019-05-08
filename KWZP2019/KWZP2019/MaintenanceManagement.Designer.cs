@@ -51,7 +51,7 @@
             this.btnMachines.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnMachines.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnMachines.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnMachines.Location = new System.Drawing.Point(50, 100);
+            this.btnMachines.Location = new System.Drawing.Point(82, 232);
             this.btnMachines.Margin = new System.Windows.Forms.Padding(0);
             this.btnMachines.Name = "btnMachines";
             this.btnMachines.Size = new System.Drawing.Size(290, 160);
@@ -74,7 +74,7 @@
             this.btnParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnParts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnParts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnParts.Location = new System.Drawing.Point(450, 100);
+            this.btnParts.Location = new System.Drawing.Point(442, 232);
             this.btnParts.Margin = new System.Windows.Forms.Padding(0);
             this.btnParts.Name = "btnParts";
             this.btnParts.Size = new System.Drawing.Size(290, 160);
@@ -97,7 +97,7 @@
             this.btnNewMaintenance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnNewMaintenance.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNewMaintenance.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnNewMaintenance.Location = new System.Drawing.Point(850, 100);
+            this.btnNewMaintenance.Location = new System.Drawing.Point(807, 232);
             this.btnNewMaintenance.Margin = new System.Windows.Forms.Padding(0);
             this.btnNewMaintenance.Name = "btnNewMaintenance";
             this.btnNewMaintenance.Size = new System.Drawing.Size(290, 160);
@@ -120,7 +120,7 @@
             this.btnCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCalendar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCalendar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCalendar.Location = new System.Drawing.Point(450, 380);
+            this.btnCalendar.Location = new System.Drawing.Point(442, 433);
             this.btnCalendar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(290, 160);
@@ -139,14 +139,14 @@
             this.btnReturnMain.FlatAppearance.BorderSize = 3;
             this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturnMain.Image = global::KWZP2019.Properties.Resources.icons8_home_40;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(850, 380);
+            this.btnReturnMain.Location = new System.Drawing.Point(82, 25);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(290, 160);
+            this.btnReturnMain.Size = new System.Drawing.Size(205, 120);
             this.btnReturnMain.TabIndex = 11;
             this.btnReturnMain.Text = "Powrót do Menu";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -155,22 +155,40 @@
             // 
             // btnNewInspection
             // 
-            this.btnNewInspection.Location = new System.Drawing.Point(50, 296);
+            this.btnNewInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnNewInspection.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnNewInspection.FlatAppearance.BorderSize = 3;
+            this.btnNewInspection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnNewInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.btnNewInspection.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNewInspection.Image = ((System.Drawing.Image)(resources.GetObject("btnNewInspection.Image")));
+            this.btnNewInspection.Location = new System.Drawing.Point(807, 433);
             this.btnNewInspection.Name = "btnNewInspection";
-            this.btnNewInspection.Size = new System.Drawing.Size(290, 55);
+            this.btnNewInspection.Size = new System.Drawing.Size(290, 160);
             this.btnNewInspection.TabIndex = 12;
             this.btnNewInspection.Text = "Lista przeglądów";
-            this.btnNewInspection.UseVisualStyleBackColor = true;
+            this.btnNewInspection.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNewInspection.UseVisualStyleBackColor = false;
             this.btnNewInspection.Click += new System.EventHandler(this.btnNewInspection_Click);
             // 
             // btnDescList
             // 
-            this.btnDescList.Location = new System.Drawing.Point(50, 380);
+            this.btnDescList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnDescList.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDescList.FlatAppearance.BorderSize = 3;
+            this.btnDescList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnDescList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.btnDescList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDescList.Image = ((System.Drawing.Image)(resources.GetObject("btnDescList.Image")));
+            this.btnDescList.Location = new System.Drawing.Point(82, 433);
             this.btnDescList.Name = "btnDescList";
-            this.btnDescList.Size = new System.Drawing.Size(290, 42);
+            this.btnDescList.Size = new System.Drawing.Size(290, 160);
             this.btnDescList.TabIndex = 13;
             this.btnDescList.Text = "Lista opisów";
-            this.btnDescList.UseVisualStyleBackColor = true;
+            this.btnDescList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDescList.UseVisualStyleBackColor = false;
             this.btnDescList.Click += new System.EventHandler(this.btnDescList_Click);
             // 
             // MaintenanceManagement
@@ -179,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.ClientSize = new System.Drawing.Size(1184, 741);
             this.Controls.Add(this.btnDescList);
             this.Controls.Add(this.btnNewInspection);
             this.Controls.Add(this.btnReturnMain);
