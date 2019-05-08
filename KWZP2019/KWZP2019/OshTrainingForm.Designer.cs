@@ -42,6 +42,7 @@
             this.lblTrainingDate = new System.Windows.Forms.Label();
             this.datePickerControlDate = new System.Windows.Forms.DateTimePicker();
             this.btnShow = new System.Windows.Forms.Button();
+            this.btnNewTraining = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVOshTraining)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,10 +180,24 @@
             this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
+            // btnNewTraining
+            // 
+            this.btnNewTraining.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.btnNewTraining, "btnNewTraining");
+            this.btnNewTraining.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnNewTraining.FlatAppearance.BorderSize = 3;
+            this.btnNewTraining.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnNewTraining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnNewTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNewTraining.Name = "btnNewTraining";
+            this.btnNewTraining.UseVisualStyleBackColor = false;
+            this.btnNewTraining.Click += new System.EventHandler(this.btnNewTraining_Click);
+            // 
             // OshTrainingForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.btnNewTraining);
             this.Controls.Add(this.datePickerControlDate);
             this.Controls.Add(this.lblTrainingDate);
             this.Controls.Add(this.lblFormTitle);
@@ -217,5 +232,6 @@
         private System.Windows.Forms.Label lblTrainingDate;
         private System.Windows.Forms.DateTimePicker datePickerControlDate;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnNewTraining;
     }
 }

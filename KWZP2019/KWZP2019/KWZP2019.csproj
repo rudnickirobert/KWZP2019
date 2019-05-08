@@ -134,6 +134,12 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="OshTrainingNewEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OshTrainingNewEmployeeForm.Designer.cs">
+      <DependentUpon>OshTrainingNewEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production\EditTechnology.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -853,6 +859,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OshTrainingNewEmployeeForm.resx">
+      <DependentUpon>OshTrainingNewEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\EditTechnology.resx">
       <DependentUpon>EditTechnology.cs</DependentUpon>

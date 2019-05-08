@@ -102,5 +102,12 @@ namespace KWZP2019
         {
             doSelectedRow = false;
         }
+
+        private void btnNewTraining_Click(object sender, EventArgs e)
+        {
+            OshTrainingNewEmployeeForm oshTrainingNewEmployeeForm = new OshTrainingNewEmployeeForm(db, startForm, this);
+            oshTrainingNewEmployeeForm.Show();
+            this.Hide();
+        }
     }
 };
