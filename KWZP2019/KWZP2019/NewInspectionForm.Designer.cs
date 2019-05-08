@@ -81,7 +81,6 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lbxParts = new System.Windows.Forms.ListBox();
             this.btnCancelPart = new System.Windows.Forms.Button();
-            this.btnDeletePart = new System.Windows.Forms.Button();
             this.btnAddPart = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
             this.IdMaintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +97,7 @@
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnUpdateEmployee = new System.Windows.Forms.Button();
             this.tbcPartsEmployees.SuspendLayout();
             this.tbpPartsEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -248,6 +248,7 @@
             // tbpPartsEmployees
             // 
             this.tbpPartsEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbpPartsEmployees.Controls.Add(this.btnUpdateEmployee);
             this.tbpPartsEmployees.Controls.Add(this.lblMaintenanceEmployees);
             this.tbpPartsEmployees.Controls.Add(this.btnEmloyeeCalendar);
             this.tbpPartsEmployees.Controls.Add(this.lblEmployeeEndDate);
@@ -284,9 +285,9 @@
             this.btnEmloyeeCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnEmloyeeCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEmloyeeCalendar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEmloyeeCalendar.Location = new System.Drawing.Point(6, 307);
+            this.btnEmloyeeCalendar.Location = new System.Drawing.Point(6, 293);
             this.btnEmloyeeCalendar.Name = "btnEmloyeeCalendar";
-            this.btnEmloyeeCalendar.Size = new System.Drawing.Size(169, 30);
+            this.btnEmloyeeCalendar.Size = new System.Drawing.Size(182, 44);
             this.btnEmloyeeCalendar.TabIndex = 34;
             this.btnEmloyeeCalendar.Text = "Kalendarz pracowników";
             this.btnEmloyeeCalendar.UseVisualStyleBackColor = false;
@@ -416,6 +417,7 @@
             this.btnCancelEmployee.TabIndex = 1;
             this.btnCancelEmployee.Text = "Anuluj";
             this.btnCancelEmployee.UseVisualStyleBackColor = false;
+            this.btnCancelEmployee.Click += new System.EventHandler(this.btnCancelEmployee_Click);
             // 
             // btnDeleteEmployee
             // 
@@ -478,7 +480,7 @@
             this.dgvMaintenanceEmployees.Location = new System.Drawing.Point(6, 47);
             this.dgvMaintenanceEmployees.Name = "dgvMaintenanceEmployees";
             this.dgvMaintenanceEmployees.ReadOnly = true;
-            this.dgvMaintenanceEmployees.Size = new System.Drawing.Size(443, 254);
+            this.dgvMaintenanceEmployees.Size = new System.Drawing.Size(443, 240);
             this.dgvMaintenanceEmployees.TabIndex = 0;
             this.dgvMaintenanceEmployees.DoubleClick += new System.EventHandler(this.dgvMaintenanceEmployees_DoubleClick);
             // 
@@ -543,7 +545,6 @@
             this.tabPage2.Controls.Add(this.lblQuantity);
             this.tabPage2.Controls.Add(this.lbxParts);
             this.tabPage2.Controls.Add(this.btnCancelPart);
-            this.tabPage2.Controls.Add(this.btnDeletePart);
             this.tabPage2.Controls.Add(this.btnAddPart);
             this.tabPage2.Controls.Add(this.dgvPart);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -558,12 +559,13 @@
             this.btnWarehouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnWarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWarehouse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnWarehouse.Location = new System.Drawing.Point(662, 242);
+            this.btnWarehouse.Location = new System.Drawing.Point(581, 271);
             this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(163, 79);
+            this.btnWarehouse.Size = new System.Drawing.Size(163, 49);
             this.btnWarehouse.TabIndex = 10;
             this.btnWarehouse.Text = "Zarządzaj magazynem części";
             this.btnWarehouse.UseVisualStyleBackColor = false;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // lblPart
             // 
@@ -580,7 +582,7 @@
             // 
             this.txtQuantity.Location = new System.Drawing.Point(556, 245);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(100, 20);
+            this.txtQuantity.Size = new System.Drawing.Size(188, 20);
             this.txtQuantity.TabIndex = 8;
             // 
             // lblQuantity
@@ -607,26 +609,13 @@
             this.btnCancelPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnCancelPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCancelPart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelPart.Location = new System.Drawing.Point(719, 41);
+            this.btnCancelPart.Location = new System.Drawing.Point(657, 41);
             this.btnCancelPart.Name = "btnCancelPart";
-            this.btnCancelPart.Size = new System.Drawing.Size(106, 45);
+            this.btnCancelPart.Size = new System.Drawing.Size(168, 45);
             this.btnCancelPart.TabIndex = 3;
             this.btnCancelPart.Text = "Anuluj";
             this.btnCancelPart.UseVisualStyleBackColor = false;
             this.btnCancelPart.Click += new System.EventHandler(this.btnCancelPart_Click);
-            // 
-            // btnDeletePart
-            // 
-            this.btnDeletePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnDeletePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDeletePart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeletePart.Location = new System.Drawing.Point(606, 41);
-            this.btnDeletePart.Name = "btnDeletePart";
-            this.btnDeletePart.Size = new System.Drawing.Size(106, 45);
-            this.btnDeletePart.TabIndex = 4;
-            this.btnDeletePart.Text = "Usuń";
-            this.btnDeletePart.UseVisualStyleBackColor = false;
-            this.btnDeletePart.Click += new System.EventHandler(this.btnDeletePart_Click);
             // 
             // btnAddPart
             // 
@@ -635,7 +624,7 @@
             this.btnAddPart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddPart.Location = new System.Drawing.Point(494, 41);
             this.btnAddPart.Name = "btnAddPart";
-            this.btnAddPart.Size = new System.Drawing.Size(106, 45);
+            this.btnAddPart.Size = new System.Drawing.Size(157, 45);
             this.btnAddPart.TabIndex = 5;
             this.btnAddPart.Text = "Dodaj część";
             this.btnAddPart.UseVisualStyleBackColor = false;
@@ -786,10 +775,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(922, 527);
+            this.btnReturnMain.Location = new System.Drawing.Point(941, 518);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(170, 111);
+            this.btnReturnMain.Size = new System.Drawing.Size(177, 120);
             this.btnReturnMain.TabIndex = 49;
             this.btnReturnMain.Text = "Powrót";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -815,6 +804,19 @@
             this.pictureBox2.Size = new System.Drawing.Size(456, 253);
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
+            // 
+            // btnUpdateEmployee
+            // 
+            this.btnUpdateEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUpdateEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(283, 293);
+            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(166, 44);
+            this.btnUpdateEmployee.TabIndex = 37;
+            this.btnUpdateEmployee.Text = "Aktualizuj";
+            this.btnUpdateEmployee.UseVisualStyleBackColor = false;
+            this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
             // 
             // NewInspectionForm
             // 
@@ -903,7 +905,6 @@
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.ListBox lbxParts;
         private System.Windows.Forms.Button btnCancelPart;
-        private System.Windows.Forms.Button btnDeletePart;
         private System.Windows.Forms.Button btnAddPart;
         private System.Windows.Forms.DataGridView dgvPart;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintenance;
@@ -923,5 +924,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeSurname;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnUpdateEmployee;
     }
 }

@@ -16,6 +16,7 @@ namespace KWZP2019
         RoofingCompanyEntities db;
         StartForm startForm;
         InspectionListForm inspectionListForm;
+        MaintenanceManagement maintenanceManagement;
         EmployeePlan employeePlan = new EmployeePlan();
         MaintPart maintenancePart = new MaintPart();
         MaintenanceDescription maintenanceDescription = new MaintenanceDescription();
@@ -112,6 +113,7 @@ namespace KWZP2019
             this.comMachine.SelectedValue = 0;
             this.lbxDescriptionShort.SelectedValue = 0;
             this.txtMaintenanceNr.Text = string.Empty;
+            this.lblDescriptionLong.Text = string.Empty;
             this.dtpStartDate.Value = this.dtpEndDate.Value = DateTime.Now;
             this.tpStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             this.tpEndDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, 0, 0);
@@ -278,7 +280,7 @@ namespace KWZP2019
 
         private void btnAddPart_Click(object sender, EventArgs e)
         {
-            int lnIdPart = Convert.ToInt32(this.lbxParts.SelectedValue);
+            int idPart = Convert.ToInt32(this.lbxParts.SelectedValue);
             if (this.txtQuantity.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Wprowadź ilość!");
@@ -297,7 +299,7 @@ namespace KWZP2019
 
             foreach (DataGridViewRow row in this.dgvPart.Rows)
             {
-                if (int.Parse(row.Cells[1].Value.ToString()) == lnIdPart)
+                if (int.Parse(row.Cells[1].Value.ToString()) == idPart)
                 {
                     MessageBox.Show("Ta część już została dodana!");
                     return;
@@ -305,7 +307,7 @@ namespace KWZP2019
             }
             try
             {
-                this.maintenancePart.IdPart = lnIdPart;
+                this.maintenancePart.IdPart = idPart;
                 this.maintenancePart.IdMaintenance = this.maintenance.IdMaintenance;
                 this.maintenancePart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
                 if (this.maintenancePart.IdMaintPart == 0)//Instert
@@ -416,7 +418,7 @@ namespace KWZP2019
 
         private void btnCancelPart_Click(object sender, EventArgs e)
         {
-            clearEmployee();
+            clearPart();
         }
 
         private void dgvMaintenanceEmployees_DoubleClick(object sender, EventArgs e)
@@ -447,44 +449,50 @@ namespace KWZP2019
                     employeePlan.EndDate.Hour,
                     employeePlan.EndDate.Minute,
                     employeePlan.EndDate.Second);
-
-                this.btnSaveEmployee.Text = "Aktualizuj";
                 this.btnDeleteEmployee.Enabled = true;
             }
         }
 
-        private void btnSaveDescription_Click(object sender, EventArgs e)
+        private void btnWarehouse_Click(object sender, EventArgs e)
         {
-            int lnIdMaintDesc = Convert.ToInt32(this.lbxDescriptionShort.SelectedValue);          
-            if (this.maintenance.IdMaintenance == 0)
-            {
-                MessageBox.Show("Najpierw wprowadź zlecenie!");
-                return;
-            }
-            if (Convert.ToInt32(this.lbxDescriptionShort.SelectedValue) == 0)
-            {
-                MessageBox.Show("Najpierw wybierz opis!");
-                return;
-            }
+            PartsForm partsForm = new PartsForm(db, maintenanceManagement);
+            partsForm.Show();
+        }
 
+        private void btnCancelEmployee_Click(object sender, EventArgs e)
+        {
+            clearEmployee();
+        }
+
+        private void btnUpdateEmployee_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = this.dtpStartDate.Value.Date + this.tpStartDate.Value.TimeOfDay;
+            DateTime endDate = this.dtpEndDate.Value.Date + this.tpEndDate.Value.TimeOfDay;
+            DateTime employeeStartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
+            DateTime employeeEndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
+
+            if ((employeeStartDate < startDate) || (employeeEndDate > endDate))
+            {
+                MessageBox.Show("Pracownik musi mieć przydzielone daty w terminie zlecenia. " +
+                    "Popraw daty dla pracownika lub aktualizuj termin zlecenia");
+                return;
+            }
             try
             {
-                this.maintenanceDescription.IdMaintDesc = lnIdMaintDesc;
-                this.maintenancePart.IdMaintenance = this.maintenance.IdMaintenance;
-                this.maintenancePart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
-                if (this.maintenancePart.IdMaintPart == 0)//Instert
-                    this.db.MaintParts.Add(maintenancePart);
-                else //update
-                    this.db.Entry(maintenancePart).State = EntityState.Modified;
+                this.employeePlan.StartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
+                this.employeePlan.EndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
+
+                this.db.Entry(this.employeePlan).State = EntityState.Modified;
                 this.db.SaveChanges();
+
+                clearEmployee();
+                MessageBox.Show("Pracownik został zaktualizowany!");
+                populateDataGridView();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Nie udało się zaktualizować planu. Błąd: " + ex.Message);
             }
-            clearPart();
-            MessageBox.Show("Część została dodana!");
-            populateDataGridView();
         }
     }
 }

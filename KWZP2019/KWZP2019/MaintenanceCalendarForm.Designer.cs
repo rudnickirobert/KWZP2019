@@ -29,23 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceCalendarForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDescription = new System.Windows.Forms.Button();
             this.comType = new System.Windows.Forms.ComboBox();
             this.dgvMaintenance = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comMachine = new System.Windows.Forms.ComboBox();
-            this.btnFilterDate = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.IdMaintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateAcceptOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMaintType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +47,15 @@
             this.MachineName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comMachine = new System.Windows.Forms.ComboBox();
+            this.btnFilterDate = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(616, 375);
+            this.btnReturnMain.Location = new System.Drawing.Point(968, 519);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(194, 153);
@@ -102,7 +102,7 @@
             this.btnDescription.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDescription.Location = new System.Drawing.Point(476, 302);
+            this.btnDescription.Location = new System.Drawing.Point(69, 600);
             this.btnDescription.Name = "btnDescription";
             this.btnDescription.Size = new System.Drawing.Size(160, 40);
             this.btnDescription.TabIndex = 11;
@@ -121,20 +121,20 @@
             // 
             // dgvMaintenance
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Teal;
-            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Teal;
+            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMaintenance.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaintenance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaintenance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdMaintenance,
@@ -147,21 +147,96 @@
             this.MachineName,
             this.StartDatePlan,
             this.EndDatePlan});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(103)))), ((int)(((byte)(130)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMaintenance.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(103)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMaintenance.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMaintenance.EnableHeadersVisualStyles = false;
             this.dgvMaintenance.Location = new System.Drawing.Point(69, 34);
             this.dgvMaintenance.Name = "dgvMaintenance";
             this.dgvMaintenance.ReadOnly = true;
-            this.dgvMaintenance.Size = new System.Drawing.Size(343, 405);
+            this.dgvMaintenance.Size = new System.Drawing.Size(343, 534);
             this.dgvMaintenance.TabIndex = 8;
             this.dgvMaintenance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaintenance_CellClick);
+            // 
+            // IdMaintenance
+            // 
+            this.IdMaintenance.DataPropertyName = "IdMaintenance";
+            this.IdMaintenance.HeaderText = "IdMaintenance";
+            this.IdMaintenance.Name = "IdMaintenance";
+            this.IdMaintenance.ReadOnly = true;
+            this.IdMaintenance.Visible = false;
+            // 
+            // DateAcceptOrder
+            // 
+            this.DateAcceptOrder.DataPropertyName = "DateAcceptOrder";
+            this.DateAcceptOrder.HeaderText = "DateAcceptOrder";
+            this.DateAcceptOrder.Name = "DateAcceptOrder";
+            this.DateAcceptOrder.ReadOnly = true;
+            this.DateAcceptOrder.Visible = false;
+            // 
+            // IdMaintType
+            // 
+            this.IdMaintType.DataPropertyName = "IdMaintType";
+            this.IdMaintType.HeaderText = "IdMaintType";
+            this.IdMaintType.Name = "IdMaintType";
+            this.IdMaintType.ReadOnly = true;
+            this.IdMaintType.Visible = false;
+            // 
+            // IdMaintDesc
+            // 
+            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
+            this.IdMaintDesc.HeaderText = "IdMaintDesc";
+            this.IdMaintDesc.Name = "IdMaintDesc";
+            this.IdMaintDesc.ReadOnly = true;
+            this.IdMaintDesc.Visible = false;
+            // 
+            // MaintTypeName
+            // 
+            this.MaintTypeName.HeaderText = "Typ obsługi";
+            this.MaintTypeName.Name = "MaintTypeName";
+            this.MaintTypeName.ReadOnly = true;
+            this.MaintTypeName.Visible = false;
+            // 
+            // MaintenanceNr
+            // 
+            this.MaintenanceNr.DataPropertyName = "MaintenanceNr";
+            this.MaintenanceNr.HeaderText = "Numer obsługi";
+            this.MaintenanceNr.Name = "MaintenanceNr";
+            this.MaintenanceNr.ReadOnly = true;
+            // 
+            // IdMachine
+            // 
+            this.IdMachine.DataPropertyName = "IdMachine";
+            this.IdMachine.HeaderText = "IdMachine";
+            this.IdMachine.Name = "IdMachine";
+            this.IdMachine.ReadOnly = true;
+            this.IdMachine.Visible = false;
+            // 
+            // MachineName
+            // 
+            this.MachineName.HeaderText = "Nazwa maszyny";
+            this.MachineName.Name = "MachineName";
+            this.MachineName.ReadOnly = true;
+            this.MachineName.Visible = false;
+            // 
+            // StartDatePlan
+            // 
+            this.StartDatePlan.DataPropertyName = "StartDatePlan";
+            this.StartDatePlan.HeaderText = "Data rozpoczęcia";
+            this.StartDatePlan.Name = "StartDatePlan";
+            this.StartDatePlan.ReadOnly = true;
+            // 
+            // EndDatePlan
+            // 
+            this.EndDatePlan.DataPropertyName = "EndDatePlan";
+            this.EndDatePlan.HeaderText = "Data zakończenia";
+            this.EndDatePlan.Name = "EndDatePlan";
+            this.EndDatePlan.ReadOnly = true;
             // 
             // label2
             // 
@@ -241,7 +316,7 @@
             this.btnFilterDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnFilterDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnFilterDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnFilterDate.Location = new System.Drawing.Point(650, 302);
+            this.btnFilterDate.Location = new System.Drawing.Point(811, 152);
             this.btnFilterDate.Name = "btnFilterDate";
             this.btnFilterDate.Size = new System.Drawing.Size(160, 40);
             this.btnFilterDate.TabIndex = 23;
@@ -253,86 +328,11 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(476, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(476, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 240);
+            this.pictureBox1.Size = new System.Drawing.Size(524, 240);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
-            // 
-            // IdMaintenance
-            // 
-            this.IdMaintenance.DataPropertyName = "IdMaintenance";
-            this.IdMaintenance.HeaderText = "IdMaintenance";
-            this.IdMaintenance.Name = "IdMaintenance";
-            this.IdMaintenance.ReadOnly = true;
-            this.IdMaintenance.Visible = false;
-            // 
-            // DateAcceptOrder
-            // 
-            this.DateAcceptOrder.DataPropertyName = "DateAcceptOrder";
-            this.DateAcceptOrder.HeaderText = "DateAcceptOrder";
-            this.DateAcceptOrder.Name = "DateAcceptOrder";
-            this.DateAcceptOrder.ReadOnly = true;
-            this.DateAcceptOrder.Visible = false;
-            // 
-            // IdMaintType
-            // 
-            this.IdMaintType.DataPropertyName = "IdMaintType";
-            this.IdMaintType.HeaderText = "IdMaintType";
-            this.IdMaintType.Name = "IdMaintType";
-            this.IdMaintType.ReadOnly = true;
-            this.IdMaintType.Visible = false;
-            // 
-            // IdMaintDesc
-            // 
-            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
-            this.IdMaintDesc.HeaderText = "IdMaintDesc";
-            this.IdMaintDesc.Name = "IdMaintDesc";
-            this.IdMaintDesc.ReadOnly = true;
-            this.IdMaintDesc.Visible = false;
-            // 
-            // MaintTypeName
-            // 
-            this.MaintTypeName.HeaderText = "Typ obsługi";
-            this.MaintTypeName.Name = "MaintTypeName";
-            this.MaintTypeName.ReadOnly = true;
-            this.MaintTypeName.Visible = false;
-            // 
-            // MaintenanceNr
-            // 
-            this.MaintenanceNr.DataPropertyName = "MaintenanceNr";
-            this.MaintenanceNr.HeaderText = "Numer obsługi";
-            this.MaintenanceNr.Name = "MaintenanceNr";
-            this.MaintenanceNr.ReadOnly = true;
-            // 
-            // IdMachine
-            // 
-            this.IdMachine.DataPropertyName = "IdMachine";
-            this.IdMachine.HeaderText = "IdMachine";
-            this.IdMachine.Name = "IdMachine";
-            this.IdMachine.ReadOnly = true;
-            this.IdMachine.Visible = false;
-            // 
-            // MachineName
-            // 
-            this.MachineName.HeaderText = "Nazwa maszyny";
-            this.MachineName.Name = "MachineName";
-            this.MachineName.ReadOnly = true;
-            this.MachineName.Visible = false;
-            // 
-            // StartDatePlan
-            // 
-            this.StartDatePlan.DataPropertyName = "StartDatePlan";
-            this.StartDatePlan.HeaderText = "Data rozpoczęcia";
-            this.StartDatePlan.Name = "StartDatePlan";
-            this.StartDatePlan.ReadOnly = true;
-            // 
-            // EndDatePlan
-            // 
-            this.EndDatePlan.DataPropertyName = "EndDatePlan";
-            this.EndDatePlan.HeaderText = "Data zakończenia";
-            this.EndDatePlan.Name = "EndDatePlan";
-            this.EndDatePlan.ReadOnly = true;
             // 
             // MaintenanceCalendarForm
             // 
@@ -340,7 +340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(846, 532);
+            this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.btnFilterDate);
             this.Controls.Add(this.comMachine);
             this.Controls.Add(this.label5);

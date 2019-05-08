@@ -29,32 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceDescriptionForm));
-            this.btnAccept = new System.Windows.Forms.Button();
             this.txtDetailDescription = new System.Windows.Forms.TextBox();
             this.txtShortDescription = new System.Windows.Forms.TextBox();
             this.lblShortDescription = new System.Windows.Forms.Label();
             this.lblDetailDescription = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnAccept.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnAccept.FlatAppearance.BorderSize = 3;
-            this.btnAccept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAccept.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
-            this.btnAccept.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAccept.Location = new System.Drawing.Point(34, 369);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(161, 80);
-            this.btnAccept.TabIndex = 0;
-            this.btnAccept.Text = "Zapisz";
-            this.btnAccept.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAccept.UseVisualStyleBackColor = false;
             // 
             // txtDetailDescription
             // 
@@ -111,7 +91,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(161, 80);
             this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Powrót";
+            this.btnClose.Text = "Zamknij";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -127,7 +107,6 @@
             this.Controls.Add(this.txtShortDescription);
             this.Controls.Add(this.txtDetailDescription);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAccept);
             this.Name = "MaintenanceDescriptionForm";
             this.Text = "MaintenanceDescriptionForm";
             this.ResumeLayout(false);
@@ -136,8 +115,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.TextBox txtDetailDescription;
         private System.Windows.Forms.TextBox txtShortDescription;
         private System.Windows.Forms.Label lblShortDescription;

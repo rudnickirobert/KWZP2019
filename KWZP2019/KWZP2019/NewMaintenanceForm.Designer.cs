@@ -75,15 +75,20 @@
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnSaveEmployee = new System.Windows.Forms.Button();
             this.dgvMaintenanceEmployees = new System.Windows.Forms.DataGridView();
+            this.IdEmployeePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdMaintenance1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEmployee1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeSurname1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnUpdatePart = new System.Windows.Forms.Button();
             this.btnWarehouse = new System.Windows.Forms.Button();
             this.lblPart = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lbxParts = new System.Windows.Forms.ListBox();
             this.btnCancelPart = new System.Windows.Forms.Button();
-            this.btnDeletePart = new System.Windows.Forms.Button();
             this.btnAddPart = new System.Windows.Forms.Button();
             this.dgvPart = new System.Windows.Forms.DataGridView();
             this.IdMaintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,13 +99,6 @@
             this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.IdEmployeePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMaintenance1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEmployee1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeSurname1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcPartsEmployees.SuspendLayout();
             this.tbpPartsEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -330,9 +328,9 @@
             this.btnUpdateEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdateEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(351, 306);
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(282, 292);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
-            this.btnUpdateEmployee.Size = new System.Drawing.Size(101, 24);
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(184, 41);
             this.btnUpdateEmployee.TabIndex = 36;
             this.btnUpdateEmployee.Text = "Aktualizuj";
             this.btnUpdateEmployee.UseVisualStyleBackColor = false;
@@ -354,9 +352,9 @@
             this.btnEmloyeeCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnEmloyeeCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEmloyeeCalendar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEmloyeeCalendar.Location = new System.Drawing.Point(10, 307);
+            this.btnEmloyeeCalendar.Location = new System.Drawing.Point(6, 292);
             this.btnEmloyeeCalendar.Name = "btnEmloyeeCalendar";
-            this.btnEmloyeeCalendar.Size = new System.Drawing.Size(163, 23);
+            this.btnEmloyeeCalendar.Size = new System.Drawing.Size(203, 41);
             this.btnEmloyeeCalendar.TabIndex = 34;
             this.btnEmloyeeCalendar.Text = "Kalendarz pracowników";
             this.btnEmloyeeCalendar.UseVisualStyleBackColor = false;
@@ -587,21 +585,73 @@
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             this.dgvMaintenanceEmployees.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvMaintenanceEmployees.Size = new System.Drawing.Size(460, 254);
+            this.dgvMaintenanceEmployees.Size = new System.Drawing.Size(460, 240);
             this.dgvMaintenanceEmployees.TabIndex = 0;
             this.dgvMaintenanceEmployees.DoubleClick += new System.EventHandler(this.dgvMaintenanceEmployees_DoubleClick);
+            // 
+            // IdEmployeePlan
+            // 
+            this.IdEmployeePlan.DataPropertyName = "IdEmployeePlan";
+            this.IdEmployeePlan.HeaderText = "IdEmployeePlan";
+            this.IdEmployeePlan.Name = "IdEmployeePlan";
+            this.IdEmployeePlan.ReadOnly = true;
+            this.IdEmployeePlan.Visible = false;
+            // 
+            // IdMaintenance1
+            // 
+            this.IdMaintenance1.DataPropertyName = "IdMaintenance";
+            this.IdMaintenance1.HeaderText = "IdMaintenance1";
+            this.IdMaintenance1.Name = "IdMaintenance1";
+            this.IdMaintenance1.ReadOnly = true;
+            this.IdMaintenance1.Visible = false;
+            // 
+            // IdEmployee1
+            // 
+            this.IdEmployee1.DataPropertyName = "IdEmployee";
+            this.IdEmployee1.HeaderText = "IdEmployee1";
+            this.IdEmployee1.Name = "IdEmployee1";
+            this.IdEmployee1.ReadOnly = true;
+            this.IdEmployee1.Visible = false;
+            // 
+            // EmployeeName1
+            // 
+            this.EmployeeName1.DataPropertyName = "EmployeeName";
+            this.EmployeeName1.HeaderText = "Imię";
+            this.EmployeeName1.Name = "EmployeeName1";
+            this.EmployeeName1.ReadOnly = true;
+            this.EmployeeName1.Width = 90;
+            // 
+            // EmployeeSurname1
+            // 
+            this.EmployeeSurname1.DataPropertyName = "EmployeeSurname";
+            this.EmployeeSurname1.HeaderText = "Nazwisko";
+            this.EmployeeSurname1.Name = "EmployeeSurname1";
+            this.EmployeeSurname1.ReadOnly = true;
+            this.EmployeeSurname1.Width = 120;
+            // 
+            // StartDate
+            // 
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "Data od:";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.DataPropertyName = "EndDate";
+            this.EndDate.HeaderText = "Data do:";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.tabPage2.Controls.Add(this.btnUpdatePart);
             this.tabPage2.Controls.Add(this.btnWarehouse);
             this.tabPage2.Controls.Add(this.lblPart);
             this.tabPage2.Controls.Add(this.txtQuantity);
             this.tabPage2.Controls.Add(this.lblQuantity);
             this.tabPage2.Controls.Add(this.lbxParts);
             this.tabPage2.Controls.Add(this.btnCancelPart);
-            this.tabPage2.Controls.Add(this.btnDeletePart);
             this.tabPage2.Controls.Add(this.btnAddPart);
             this.tabPage2.Controls.Add(this.dgvPart);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -611,31 +661,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Części";
             // 
-            // btnUpdatePart
-            // 
-            this.btnUpdatePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnUpdatePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUpdatePart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdatePart.Location = new System.Drawing.Point(685, 265);
-            this.btnUpdatePart.Name = "btnUpdatePart";
-            this.btnUpdatePart.Size = new System.Drawing.Size(140, 56);
-            this.btnUpdatePart.TabIndex = 37;
-            this.btnUpdatePart.Text = "Aktualizuj";
-            this.btnUpdatePart.UseVisualStyleBackColor = false;
-            // 
             // btnWarehouse
             // 
             this.btnWarehouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnWarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.btnWarehouse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnWarehouse.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnWarehouse.Location = new System.Drawing.Point(494, 265);
+            this.btnWarehouse.Location = new System.Drawing.Point(546, 265);
             this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(185, 56);
+            this.btnWarehouse.Size = new System.Drawing.Size(213, 56);
             this.btnWarehouse.TabIndex = 10;
             this.btnWarehouse.Text = "Zarządzaj magazynem części";
             this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnWarehouse.UseVisualStyleBackColor = false;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
             // 
             // lblPart
             // 
@@ -652,7 +691,7 @@
             // 
             this.txtQuantity.Location = new System.Drawing.Point(546, 236);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(279, 20);
+            this.txtQuantity.Size = new System.Drawing.Size(213, 20);
             this.txtQuantity.TabIndex = 8;
             // 
             // lblQuantity
@@ -679,24 +718,13 @@
             this.btnCancelPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnCancelPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.btnCancelPart.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancelPart.Location = new System.Drawing.Point(719, 26);
+            this.btnCancelPart.Location = new System.Drawing.Point(667, 26);
             this.btnCancelPart.Name = "btnCancelPart";
-            this.btnCancelPart.Size = new System.Drawing.Size(106, 45);
+            this.btnCancelPart.Size = new System.Drawing.Size(158, 45);
             this.btnCancelPart.TabIndex = 3;
             this.btnCancelPart.Text = "Anuluj";
             this.btnCancelPart.UseVisualStyleBackColor = false;
-            // 
-            // btnDeletePart
-            // 
-            this.btnDeletePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnDeletePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
-            this.btnDeletePart.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDeletePart.Location = new System.Drawing.Point(607, 26);
-            this.btnDeletePart.Name = "btnDeletePart";
-            this.btnDeletePart.Size = new System.Drawing.Size(106, 45);
-            this.btnDeletePart.TabIndex = 4;
-            this.btnDeletePart.Text = "Usuń";
-            this.btnDeletePart.UseVisualStyleBackColor = false;
+            this.btnCancelPart.Click += new System.EventHandler(this.btnCancelPart_Click);
             // 
             // btnAddPart
             // 
@@ -705,7 +733,7 @@
             this.btnAddPart.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAddPart.Location = new System.Drawing.Point(494, 26);
             this.btnAddPart.Name = "btnAddPart";
-            this.btnAddPart.Size = new System.Drawing.Size(106, 45);
+            this.btnAddPart.Size = new System.Drawing.Size(167, 45);
             this.btnAddPart.TabIndex = 5;
             this.btnAddPart.Text = "Dodaj część";
             this.btnAddPart.UseVisualStyleBackColor = false;
@@ -814,60 +842,6 @@
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
             // 
-            // IdEmployeePlan
-            // 
-            this.IdEmployeePlan.DataPropertyName = "IdEmployeePlan";
-            this.IdEmployeePlan.HeaderText = "IdEmployeePlan";
-            this.IdEmployeePlan.Name = "IdEmployeePlan";
-            this.IdEmployeePlan.ReadOnly = true;
-            this.IdEmployeePlan.Visible = false;
-            // 
-            // IdMaintenance1
-            // 
-            this.IdMaintenance1.DataPropertyName = "IdMaintenance";
-            this.IdMaintenance1.HeaderText = "IdMaintenance1";
-            this.IdMaintenance1.Name = "IdMaintenance1";
-            this.IdMaintenance1.ReadOnly = true;
-            this.IdMaintenance1.Visible = false;
-            // 
-            // IdEmployee1
-            // 
-            this.IdEmployee1.DataPropertyName = "IdEmployee";
-            this.IdEmployee1.HeaderText = "IdEmployee1";
-            this.IdEmployee1.Name = "IdEmployee1";
-            this.IdEmployee1.ReadOnly = true;
-            this.IdEmployee1.Visible = false;
-            // 
-            // EmployeeName1
-            // 
-            this.EmployeeName1.DataPropertyName = "EmployeeName";
-            this.EmployeeName1.HeaderText = "Imię";
-            this.EmployeeName1.Name = "EmployeeName1";
-            this.EmployeeName1.ReadOnly = true;
-            this.EmployeeName1.Width = 90;
-            // 
-            // EmployeeSurname1
-            // 
-            this.EmployeeSurname1.DataPropertyName = "EmployeeSurname";
-            this.EmployeeSurname1.HeaderText = "Nazwisko";
-            this.EmployeeSurname1.Name = "EmployeeSurname1";
-            this.EmployeeSurname1.ReadOnly = true;
-            this.EmployeeSurname1.Width = 120;
-            // 
-            // StartDate
-            // 
-            this.StartDate.DataPropertyName = "StartDate";
-            this.StartDate.HeaderText = "Data od:";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // EndDate
-            // 
-            this.EndDate.DataPropertyName = "EndDate";
-            this.EndDate.HeaderText = "Data do:";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            // 
             // NewMaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -939,7 +913,6 @@
         private System.Windows.Forms.Button btnDeleteEmployee;
         private System.Windows.Forms.ListBox lbxParts;
         private System.Windows.Forms.Button btnCancelPart;
-        private System.Windows.Forms.Button btnDeletePart;
         private System.Windows.Forms.Button btnAddPart;
         private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.Label lblEmployeeEndDate;
@@ -961,7 +934,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityWarehouse;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitName;
         private System.Windows.Forms.Button btnUpdateEmployee;
-        private System.Windows.Forms.Button btnUpdatePart;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeSurname;
