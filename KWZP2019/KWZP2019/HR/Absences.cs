@@ -156,7 +156,7 @@ namespace KWZP2019
             MessageBox.Show(number.Substring(0, 41));
         }
 
-        private void btnAddAbsenceType_Click_1(object sender, EventArgs e)
+        private void btnAddAbsenceType_Click(object sender, EventArgs e)
         {
             AddAbsenceType addAbsenceType = new AddAbsenceType(db, startForm, this);
             addAbsenceType.Show();

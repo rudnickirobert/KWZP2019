@@ -56,18 +56,39 @@ namespace KWZP2019
 
         void display()
         {
-            dgvExamination.DataSource = db.vExaminations.
-                OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Data_badania_lekarskiego).
+            dgvExamination.DataSource = db.vHRExaminations.
+                OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.NextExamination).
                 ToList();
 
             dgvExamination.Columns[0].Visible = false;
             dgvExamination.Columns[4].Visible = false;
+            dgvExamination.Columns[5].Visible = false;
+            dgvExamination.Columns[6].Visible = false;
 
-            dgvExamination.Columns[3].HeaderText = "Data_badania";
+            dgvExamination.Columns[1].HeaderText = "Nazwisko";
+            dgvExamination.Columns[2].HeaderText = "Imię";
+            dgvExamination.Columns[2].HeaderText = "PESEL";
+            dgvExamination.Columns[7].HeaderText = "Ważność_badania";
 
             dgvExamination.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvExamination.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvExamination.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvExamination.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            foreach (DataGridViewRow row in dgvExamination.Rows)
+            {
+                DateTime expirationDate = DateTime.Parse(row.Cells[7].Value.ToString());
+                DateTime now = DateTime.Now;
+                DateTime twoWeeksBefore = expirationDate.AddDays(-14);
+                if (twoWeeksBefore < now && expirationDate > now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(102,179,255);
+                }
+                else if (expirationDate < now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(82, 82, 122);
+                }
+            }
         }
 
         private void btnReturnMain_Click(object sender, EventArgs e)

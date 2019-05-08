@@ -75,8 +75,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvContracts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContracts.EnableHeadersVisualStyles = false;
-            this.dgvContracts.Location = new System.Drawing.Point(279, 150);
-            this.dgvContracts.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvContracts.Location = new System.Drawing.Point(372, 185);
+            this.dgvContracts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvContracts.Name = "dgvContracts";
             this.dgvContracts.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -88,16 +88,16 @@
             this.dgvContracts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContracts.RowTemplate.Height = 24;
             this.dgvContracts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContracts.Size = new System.Drawing.Size(877, 561);
+            this.dgvContracts.Size = new System.Drawing.Size(1169, 690);
             this.dgvContracts.TabIndex = 0;
             // 
             // tbSearchContract
             // 
             this.tbSearchContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.tbSearchContract.Location = new System.Drawing.Point(446, 64);
-            this.tbSearchContract.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSearchContract.Location = new System.Drawing.Point(595, 79);
+            this.tbSearchContract.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSearchContract.Name = "tbSearchContract";
-            this.tbSearchContract.Size = new System.Drawing.Size(367, 24);
+            this.tbSearchContract.Size = new System.Drawing.Size(488, 28);
             this.tbSearchContract.TabIndex = 1;
             this.tbSearchContract.TextChanged += new System.EventHandler(this.tbSearchContract_TextChanged);
             // 
@@ -113,10 +113,10 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(9, 393);
+            this.btnDelete.Location = new System.Drawing.Point(12, 484);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(247, 154);
+            this.btnDelete.Size = new System.Drawing.Size(329, 190);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,10 +135,10 @@
             this.btnAddTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddTraining.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTraining.Image")));
-            this.btnAddTraining.Location = new System.Drawing.Point(9, 557);
+            this.btnAddTraining.Location = new System.Drawing.Point(12, 686);
             this.btnAddTraining.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddTraining.Name = "btnAddTraining";
-            this.btnAddTraining.Size = new System.Drawing.Size(247, 154);
+            this.btnAddTraining.Size = new System.Drawing.Size(329, 190);
             this.btnAddTraining.TabIndex = 3;
             this.btnAddTraining.Text = "Dodaj umowę";
             this.btnAddTraining.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -157,10 +157,10 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(9, 64);
+            this.btnReturn.Location = new System.Drawing.Point(12, 79);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(247, 154);
+            this.btnReturn.Size = new System.Drawing.Size(329, 190);
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -179,10 +179,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(9, 227);
+            this.btnReturnMain.Location = new System.Drawing.Point(12, 279);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
+            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
             this.btnReturnMain.TabIndex = 5;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -192,10 +192,10 @@
             // tbSearchContractName
             // 
             this.tbSearchContractName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.tbSearchContractName.Location = new System.Drawing.Point(446, 106);
-            this.tbSearchContractName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSearchContractName.Location = new System.Drawing.Point(595, 130);
+            this.tbSearchContractName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSearchContractName.Name = "tbSearchContractName";
-            this.tbSearchContractName.Size = new System.Drawing.Size(367, 24);
+            this.tbSearchContractName.Size = new System.Drawing.Size(488, 28);
             this.tbSearchContractName.TabIndex = 6;
             this.tbSearchContractName.TextChanged += new System.EventHandler(this.tbSearchContractName_TextChanged);
             // 
@@ -205,9 +205,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(276, 64);
+            this.label1.Location = new System.Drawing.Point(368, 79);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 17);
+            this.label1.Size = new System.Drawing.Size(178, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Wyszukaj po nazwisku";
             // 
@@ -217,9 +218,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(276, 115);
+            this.label2.Location = new System.Drawing.Point(368, 142);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 17);
+            this.label2.Size = new System.Drawing.Size(162, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Wyszukaj po imieniu";
             // 
@@ -230,23 +232,23 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRefresh.Location = new System.Drawing.Point(399, 185);
+            this.btnRefresh.Image = global::KWZP2019.Properties.Resources.refreshp;
+            this.btnRefresh.Location = new System.Drawing.Point(1477, 124);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(53, 48);
+            this.btnRefresh.Size = new System.Drawing.Size(64, 59);
             this.btnRefresh.TabIndex = 18;
-            this.btnRefresh.Text = "Odśwież";
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Contracts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.ClientSize = new System.Drawing.Size(1579, 922);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRefresh);
@@ -258,7 +260,7 @@
             this.Controls.Add(this.tbSearchContract);
             this.Controls.Add(this.dgvContracts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Contracts";

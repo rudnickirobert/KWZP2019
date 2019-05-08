@@ -74,17 +74,6 @@ namespace KWZP2019
             dgvAbsencesTypes.Columns[2].HeaderText = "Współczynnik mnożenia pensji";
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            AbsenceType absenceTypeToRemove = new AbsenceType { IdAbsenceType = int.Parse(dgvAbsencesTypes.SelectedRows[0].Cells[0].Value.ToString()) };
-            db.AbsenceTypes.Attach(absenceTypeToRemove);
-            db.AbsenceTypes.Remove(absenceTypeToRemove);
-            db.SaveChanges();
-            //dgvAbsencesTypes.DataSource = db.AbsenceTypes.ToList();
-            //dgvAbsencesTypes.Columns[0].Visible = false;
-            MessageBox.Show("Rekord został usunięty");
-        }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.absences.Show();
