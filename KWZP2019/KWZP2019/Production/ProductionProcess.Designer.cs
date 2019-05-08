@@ -34,16 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionProcess));
             this.ProductionProcessGridView = new System.Windows.Forms.DataGridView();
-            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catalogMachineNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vProductionProcessFullDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dTPickerProductionActualFilterLower = new System.Windows.Forms.DateTimePicker();
             this.dTPickerProductionActualFilterUpper = new System.Windows.Forms.DateTimePicker();
             this.btnProductionActualFilter = new System.Windows.Forms.Button();
@@ -55,9 +45,19 @@
             this.lblProductionActualFilterSince = new System.Windows.Forms.Label();
             this.lblProductionActualFilterTo = new System.Windows.Forms.Label();
             this.btnActualProductionBack = new System.Windows.Forms.Button();
+            this.vProductionProcessFullDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idProcesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catalogMachineNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ProductionProcessGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).BeginInit();
             this.panelActualProductionRadioBtns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductionProcessGridView
@@ -83,10 +83,10 @@
             this.ProductionProcessGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductionProcessGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProcesDataGridViewTextBoxColumn,
-            this.idPlanDataGridViewTextBoxColumn,
+            this.ProductCode,
+            this.Quantity,
             this.startDateDataGridViewTextBoxColumn,
             this.endDateDataGridViewTextBoxColumn,
-            this.idEmployeeDataGridViewTextBoxColumn,
             this.employeeNameDataGridViewTextBoxColumn,
             this.employeeSurnameDataGridViewTextBoxColumn,
             this.machineNameDataGridViewTextBoxColumn,
@@ -105,64 +105,6 @@
             this.ProductionProcessGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ProductionProcessGridView.Size = new System.Drawing.Size(905, 580);
             this.ProductionProcessGridView.TabIndex = 0;
-            // 
-            // idProcesDataGridViewTextBoxColumn
-            // 
-            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
-            this.idProcesDataGridViewTextBoxColumn.HeaderText = "Numer procesu";
-            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
-            // 
-            // idPlanDataGridViewTextBoxColumn
-            // 
-            this.idPlanDataGridViewTextBoxColumn.DataPropertyName = "IdPlan";
-            this.idPlanDataGridViewTextBoxColumn.HeaderText = "Numer planu";
-            this.idPlanDataGridViewTextBoxColumn.Name = "idPlanDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Czas rozpoczęcia";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Czas zakończenia";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // idEmployeeDataGridViewTextBoxColumn
-            // 
-            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IdEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "Numer pracownika";
-            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
-            // 
-            // employeeNameDataGridViewTextBoxColumn
-            // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "Imię pracownika";
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
-            // 
-            // employeeSurnameDataGridViewTextBoxColumn
-            // 
-            this.employeeSurnameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeSurname";
-            this.employeeSurnameDataGridViewTextBoxColumn.HeaderText = "Nazwisko pracownika";
-            this.employeeSurnameDataGridViewTextBoxColumn.Name = "employeeSurnameDataGridViewTextBoxColumn";
-            // 
-            // machineNameDataGridViewTextBoxColumn
-            // 
-            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "MachineName";
-            this.machineNameDataGridViewTextBoxColumn.HeaderText = "Nazwa maszyny";
-            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
-            // 
-            // catalogMachineNrDataGridViewTextBoxColumn
-            // 
-            this.catalogMachineNrDataGridViewTextBoxColumn.DataPropertyName = "CatalogMachineNr";
-            this.catalogMachineNrDataGridViewTextBoxColumn.HeaderText = "Numer katalogowy maszyny";
-            this.catalogMachineNrDataGridViewTextBoxColumn.Name = "catalogMachineNrDataGridViewTextBoxColumn";
-            // 
-            // vProductionProcessFullDataBindingSource
-            // 
-            this.vProductionProcessFullDataBindingSource.DataSource = typeof(KWZP2019.vProductionProcessFullData);
             // 
             // dTPickerProductionActualFilterLower
             // 
@@ -309,6 +251,64 @@
             this.btnActualProductionBack.UseVisualStyleBackColor = false;
             this.btnActualProductionBack.Click += new System.EventHandler(this.btnActualProductionBack_Click);
             // 
+            // vProductionProcessFullDataBindingSource
+            // 
+            this.vProductionProcessFullDataBindingSource.DataSource = typeof(KWZP2019.vProductionProcessFullData);
+            // 
+            // idProcesDataGridViewTextBoxColumn
+            // 
+            this.idProcesDataGridViewTextBoxColumn.DataPropertyName = "IdProces";
+            this.idProcesDataGridViewTextBoxColumn.HeaderText = "Numer procesu";
+            this.idProcesDataGridViewTextBoxColumn.Name = "idProcesDataGridViewTextBoxColumn";
+            // 
+            // ProductCode
+            // 
+            this.ProductCode.DataPropertyName = "ProductCode";
+            this.ProductCode.HeaderText = "Kod produktu";
+            this.ProductCode.Name = "ProductCode";
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Ilość";
+            this.Quantity.Name = "Quantity";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Czas rozpoczęcia";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Czas zakończenia";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "Imię pracownika";
+            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            // 
+            // employeeSurnameDataGridViewTextBoxColumn
+            // 
+            this.employeeSurnameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeSurname";
+            this.employeeSurnameDataGridViewTextBoxColumn.HeaderText = "Nazwisko pracownika";
+            this.employeeSurnameDataGridViewTextBoxColumn.Name = "employeeSurnameDataGridViewTextBoxColumn";
+            // 
+            // machineNameDataGridViewTextBoxColumn
+            // 
+            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "MachineName";
+            this.machineNameDataGridViewTextBoxColumn.HeaderText = "Nazwa maszyny";
+            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
+            // 
+            // catalogMachineNrDataGridViewTextBoxColumn
+            // 
+            this.catalogMachineNrDataGridViewTextBoxColumn.DataPropertyName = "CatalogMachineNr";
+            this.catalogMachineNrDataGridViewTextBoxColumn.HeaderText = "Numer katalogowy maszyny";
+            this.catalogMachineNrDataGridViewTextBoxColumn.Name = "catalogMachineNrDataGridViewTextBoxColumn";
+            // 
             // ProductionProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,9 +331,9 @@
             this.Text = "W produkcji";
             this.Load += new System.EventHandler(this.ProductionProcess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductionProcessGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).EndInit();
             this.panelActualProductionRadioBtns.ResumeLayout(false);
             this.panelActualProductionRadioBtns.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vProductionProcessFullDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,15 +342,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ProductionProcessGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProcesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPlanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmployeeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSurnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn machineNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn catalogMachineNrDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vProductionProcessFullDataBindingSource;
         private System.Windows.Forms.DateTimePicker dTPickerProductionActualFilterLower;
         private System.Windows.Forms.DateTimePicker dTPickerProductionActualFilterUpper;
@@ -363,5 +355,14 @@
         private System.Windows.Forms.Label lblProductionActualFilterSince;
         private System.Windows.Forms.Label lblProductionActualFilterTo;
         private System.Windows.Forms.Button btnActualProductionBack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProcesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeSurnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn catalogMachineNrDataGridViewTextBoxColumn;
     }
 }

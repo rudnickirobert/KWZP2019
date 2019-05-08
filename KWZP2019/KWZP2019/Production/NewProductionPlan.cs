@@ -42,8 +42,9 @@ namespace KWZP2019
                 Product product = db.Products.First(f => f.IdProduct == orderDetail.IdProduct);
                 if (plan != null)
                 {
+                    vComboBoxMachine selectedMachine = db.vComboBoxMachines.First(f => f.IdMachine == plan.IdMachine);
                     tBoxPlanNr.Text = Convert.ToString(plan.IdPlan);
-                    comboBoxMachine.Text = Convert.ToString(plan.IdMachine);
+                    comboBoxMachine.Text = Convert.ToString(selectedMachine.machineFullName);
                     order.IdDetail = plan.IdDetail;
                     order.Quantity = orderDetail.Quantity;
                     order.ProductCode = product.ProductCode;
@@ -231,6 +232,15 @@ namespace KWZP2019
                                           where PlannedProductionEmployeeDetail.IdProces == currentPlanNumber
                                           select PlannedProductionEmployeeDetail).ToList();
         }
+
+        private void viewProcessEmpl_SelectionChanged(object sender, EventArgs e)
+        {
+            int idEmployeeToShow = Convert.ToInt32(this.viewProcessEmpl.CurrentRow.Cells["dataGridViewTextBoxColumnEmployeeId"].Value);
+            Employee showEmployee = db.Employees.First(f => f.IdEmployee == idEmployeeToShow);
+            string infoAboutEmployee = Convert.ToString(showEmployee.EmployeeName) + " " + Convert.ToString(showEmployee.EmployeeSurname);
+            labelSelectedEmployee.Text = infoAboutEmployee;
+        }
+
         private void btnNewPlan_Click(object sender, EventArgs e)
         {
             if (db.vUnhandledOrderDetails.Any())

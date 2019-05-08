@@ -50,6 +50,7 @@
             this.cBoxIntoProduction = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.viewProcessEmpl = new System.Windows.Forms.DataGridView();
+            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblOperators = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,22 +62,23 @@
             this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.btnNewPlan = new System.Windows.Forms.Button();
             this.viewOrderDetail = new System.Windows.Forms.DataGridView();
-            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.btnEndDateCalculate = new System.Windows.Forms.Button();
-            this.vUnhandledOrderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.plannedProductionEmployeeDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vUnhandledOrderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.btnEndDateCalculate = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelSelectedEmployee = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumnEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddEmployee
@@ -88,10 +90,10 @@
             this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.ForeColor = System.Drawing.Color.White;
             this.btnAddEmployee.Image = global::KWZP2019.Properties.Resources.icons8_add_user_male_40;
-            this.btnAddEmployee.Location = new System.Drawing.Point(583, 17);
+            this.btnAddEmployee.Location = new System.Drawing.Point(584, 37);
             this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(91, 55);
+            this.btnAddEmployee.Size = new System.Drawing.Size(113, 77);
             this.btnAddEmployee.TabIndex = 0;
             this.btnAddEmployee.UseVisualStyleBackColor = false;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
@@ -144,7 +146,7 @@
             // tBoxPlanNr
             // 
             this.tBoxPlanNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tBoxPlanNr.Location = new System.Drawing.Point(271, 14);
+            this.tBoxPlanNr.Location = new System.Drawing.Point(427, 12);
             this.tBoxPlanNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tBoxPlanNr.Name = "tBoxPlanNr";
             this.tBoxPlanNr.Size = new System.Drawing.Size(135, 38);
@@ -271,7 +273,7 @@
             this.viewProcessEmpl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.viewProcessEmpl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewProcessEmpl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumnEmployeeId,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.IdDetail});
@@ -289,8 +291,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.viewProcessEmpl.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.viewProcessEmpl.RowTemplate.Height = 24;
-            this.viewProcessEmpl.Size = new System.Drawing.Size(697, 101);
+            this.viewProcessEmpl.Size = new System.Drawing.Size(648, 101);
             this.viewProcessEmpl.TabIndex = 17;
+            this.viewProcessEmpl.SelectionChanged += new System.EventHandler(this.viewProcessEmpl_SelectionChanged);
+            // 
+            // plannedProductionEmployeeDetailBindingSource
+            // 
+            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
             // 
             // lblOperators
             // 
@@ -320,7 +327,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(697, 138);
+            this.groupBox1.Size = new System.Drawing.Size(865, 138);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodawanie pracowników";
@@ -344,10 +351,10 @@
             this.btnRemoveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveEmployee.ForeColor = System.Drawing.Color.White;
             this.btnRemoveEmployee.Image = global::KWZP2019.Properties.Resources.icons8_denied_40;
-            this.btnRemoveEmployee.Location = new System.Drawing.Point(583, 75);
+            this.btnRemoveEmployee.Location = new System.Drawing.Point(736, 38);
             this.btnRemoveEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveEmployee.Name = "btnRemoveEmployee";
-            this.btnRemoveEmployee.Size = new System.Drawing.Size(91, 54);
+            this.btnRemoveEmployee.Size = new System.Drawing.Size(100, 76);
             this.btnRemoveEmployee.TabIndex = 24;
             this.btnRemoveEmployee.UseVisualStyleBackColor = false;
             this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
@@ -410,7 +417,7 @@
             this.btnNewPlan.ForeColor = System.Drawing.Color.White;
             this.btnNewPlan.Image = global::KWZP2019.Properties.Resources.icons8_add_new_80;
             this.btnNewPlan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNewPlan.Location = new System.Drawing.Point(504, 14);
+            this.btnNewPlan.Location = new System.Drawing.Point(639, 14);
             this.btnNewPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewPlan.Name = "btnNewPlan";
             this.btnNewPlan.Size = new System.Drawing.Size(168, 138);
@@ -463,42 +470,6 @@
             this.viewOrderDetail.TabIndex = 22;
             this.viewOrderDetail.SelectionChanged += new System.EventHandler(this.viewOrderDetail_SelectionChanged);
             // 
-            // entityCommand1
-            // 
-            this.entityCommand1.CommandTimeout = 0;
-            this.entityCommand1.CommandTree = null;
-            this.entityCommand1.Connection = null;
-            this.entityCommand1.EnablePlanCaching = true;
-            this.entityCommand1.Transaction = null;
-            // 
-            // btnEndDateCalculate
-            // 
-            this.btnEndDateCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEndDateCalculate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEndDateCalculate.FlatAppearance.BorderSize = 3;
-            this.btnEndDateCalculate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEndDateCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEndDateCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnEndDateCalculate.Image = global::KWZP2019.Properties.Resources.icons8_abacus_80;
-            this.btnEndDateCalculate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEndDateCalculate.Location = new System.Drawing.Point(341, 394);
-            this.btnEndDateCalculate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEndDateCalculate.Name = "btnEndDateCalculate";
-            this.btnEndDateCalculate.Size = new System.Drawing.Size(237, 140);
-            this.btnEndDateCalculate.TabIndex = 23;
-            this.btnEndDateCalculate.Text = "OSZACUJ DATĘ KOŃCOWĄ";
-            this.btnEndDateCalculate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEndDateCalculate.UseVisualStyleBackColor = false;
-            this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
-            // 
-            // vUnhandledOrderDetailBindingSource
-            // 
-            this.vUnhandledOrderDetailBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
-            // 
-            // plannedProductionEmployeeDetailBindingSource
-            // 
-            this.plannedProductionEmployeeDetailBindingSource.DataSource = typeof(KWZP2019.PlannedProductionEmployeeDetail);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -520,12 +491,69 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Kod produktu";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn6
+            // vUnhandledOrderDetailBindingSource
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdEmployee";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Numer pracownika";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.vUnhandledOrderDetailBindingSource.DataSource = typeof(KWZP2019.vUnhandledOrderDetail);
+            // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
+            // btnEndDateCalculate
+            // 
+            this.btnEndDateCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnEndDateCalculate.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEndDateCalculate.FlatAppearance.BorderSize = 3;
+            this.btnEndDateCalculate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnEndDateCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEndDateCalculate.ForeColor = System.Drawing.Color.White;
+            this.btnEndDateCalculate.Image = global::KWZP2019.Properties.Resources.icons8_abacus_80;
+            this.btnEndDateCalculate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEndDateCalculate.Location = new System.Drawing.Point(297, 394);
+            this.btnEndDateCalculate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEndDateCalculate.Name = "btnEndDateCalculate";
+            this.btnEndDateCalculate.Size = new System.Drawing.Size(281, 140);
+            this.btnEndDateCalculate.TabIndex = 23;
+            this.btnEndDateCalculate.Text = "OSZACUJ DATĘ KOŃCOWĄ";
+            this.btnEndDateCalculate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEndDateCalculate.UseVisualStyleBackColor = false;
+            this.btnEndDateCalculate.Click += new System.EventHandler(this.btnEndDateCalculate_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(1271, 156);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(190, 25);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Wybrany pracownik:";
+            // 
+            // labelSelectedEmployee
+            // 
+            this.labelSelectedEmployee.AutoSize = true;
+            this.labelSelectedEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.labelSelectedEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSelectedEmployee.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.labelSelectedEmployee.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.labelSelectedEmployee.Location = new System.Drawing.Point(1286, 199);
+            this.labelSelectedEmployee.Name = "labelSelectedEmployee";
+            this.labelSelectedEmployee.Size = new System.Drawing.Size(18, 25);
+            this.labelSelectedEmployee.TabIndex = 25;
+            this.labelSelectedEmployee.Text = ";";
+            // 
+            // dataGridViewTextBoxColumnEmployeeId
+            // 
+            this.dataGridViewTextBoxColumnEmployeeId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumnEmployeeId.DataPropertyName = "IdEmployee";
+            this.dataGridViewTextBoxColumnEmployeeId.HeaderText = "Numer pracownika";
+            this.dataGridViewTextBoxColumnEmployeeId.Name = "dataGridViewTextBoxColumnEmployeeId";
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -554,7 +582,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1347, 566);
+            this.ClientSize = new System.Drawing.Size(1576, 566);
+            this.Controls.Add(this.labelSelectedEmployee);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnEndDateCalculate);
             this.Controls.Add(this.viewOrderDetail);
             this.Controls.Add(this.btnNewPlan);
@@ -579,11 +609,11 @@
             this.Text = "NewProductionPlan";
             this.Load += new System.EventHandler(this.NewProductionPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProcessEmpl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewOrderDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vUnhandledOrderDetailBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plannedProductionEmployeeDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,12 +661,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn allocationDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vUnhandledOrderDetailBindingSource;
         private System.Windows.Forms.BindingSource plannedProductionEmployeeDetailBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelSelectedEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumnEmployeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetail;
     }
 }

@@ -157,5 +157,6 @@ namespace KWZP2019
         public virtual DbSet<vOrder> vOrders { get; set; }
         public virtual DbSet<vCustomer> vCustomers { get; set; }
         public virtual DbSet<MaintenanceDescription> MaintenanceDescriptions { get; set; }
+        public virtual DbSet<vProductionProduct> vProductionProducts { get; set; }
     }
 }
