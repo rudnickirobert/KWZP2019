@@ -13,12 +13,15 @@ namespace KWZP2019
     public partial class AddContract : Form
     {
         RoofingCompanyEntities db;
+        StartForm startForm;
+        Contracts contracts;
 
-        public AddContract(RoofingCompanyEntities db)
+        public AddContract(RoofingCompanyEntities db, StartForm startForm, Contracts contracts)
         {
             InitializeComponent();
             this.db = db;
-        }
+            this.startForm = startForm;
+            this.contracts = contracts;      }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -100,9 +103,16 @@ namespace KWZP2019
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            clear();
+            this.contracts.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

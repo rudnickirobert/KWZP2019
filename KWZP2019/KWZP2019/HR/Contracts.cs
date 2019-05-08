@@ -49,8 +49,9 @@ namespace KWZP2019
 
         private void btnAddTraining_Click(object sender, EventArgs e)
         {
-            AddContract addContract = new AddContract(db);
+            AddContract addContract = new AddContract(db, startForm, this);
             addContract.Show();
+            this.Hide();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

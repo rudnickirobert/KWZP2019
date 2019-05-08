@@ -32,15 +32,16 @@ create table FEMAnalysis(
 	IdFEMAnalysis int primary key identity (1,1) not null,
 	IdEmployee int not null,
 	NewPattern image not null,
-	AnalysisResults text not null
+	AnalysisResults text not null,
+	AnalysisDate DateTime not null
 	);
 
 create table OutControl(
 	IdProcess int primary key not null,
 	IdEmployee int not null,
 	StartControlDate DateTime not null,
-    EndControlDate DateTime not null,
-    WidthAcceptableDeviation float not null,
+   	EndControlDate DateTime,
+   	WidthAcceptableDeviation float not null,
 	LenghtAcceptableDeviation float not null
     );
 
@@ -386,6 +387,7 @@ EndDate date null,
 Salary money null,
 IdEmployee int Foreign Key references Employee(IdEmployee),
 IdPosition int not null Foreign Key references Position(IdPosition),
+HealTestDate date null,
 WorkplaceTrainingDate Date null
 );
 
@@ -590,8 +592,8 @@ alter table Realization add constraint FK_MaintenanceRealization foreign key (Id
 
 /*alter table PartsOrder add constraint FK_SupplierPartsOrder foreign key (IdSupplier) references Supplier(IdSupplier);*/
 /*alter table EployeePlan add constraint FK_EmployeeEmployeePlan foreign key (IdEmployee) references Employee(IdEmployee);*/
-
 go
+
 create view ViewOshTraining as
 select Department.DepartmentName as [Dział], Employee.PESEL as [PESEL], Employee.EmployeeName as [Imię], Employee.EmployeeSurname as [Nazwisko], (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate)) as [Data wygaśniecia szkolenia]
 from Employee
@@ -606,11 +608,10 @@ on Employee.IdEmployee = Allocation.IdEmployee
 join Department
 on Department.IdDepartment = Allocation.IdDepartment
 where Contract.EndDate > (GETDATE() + 45) and (Dateadd(Day, Position.ValidityOfOshTraining, SafetyTraining.TrainingDate) < (Getdate() + 45));
-
+GO 
 
 /*====SALES DEPARTMENT START==*/
 
-GO 
 CREATE VIEW vSupplierParts
 AS
 SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
@@ -619,8 +620,8 @@ FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (SupplierNameType = 'Części');
-
 GO
+
 CREATE VIEW vSupplierSemis
 AS
 SELECT SupplierNameType as [Typ], SupplierName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], ZipCode as [Kod pocztowy], 
@@ -629,8 +630,8 @@ FROM Supplier
 JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (SupplierNameType = 'Półfabrykaty');
-
 GO
+
 CREATE VIEW vOutsourcingWithType
 AS
 SELECT  OutsourcingType as [Typ], CompanyName as [Firma], PhoneNumber as [Telefon], Email as [E-mail], City [Miasto], ZipCode as [Kod pocztowy], 
@@ -638,31 +639,32 @@ Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], NI
 FROM Outsourcing
 JOIN OutsourcingType
 ON Outsourcing.IdOutsourcingType = OutsourcingType.IdOutsourcingType;
-
 GO
+
 CREATE VIEW vCustomer
 AS
 SELECT CustomerName as [Klient], PhoneNumber as [Telefon], Email as [E-mail], City as [Miasto], 
 ZipCode as [Kod pocztowy], Street as [Ulica], HouseNumber as [Numer], ApartmentNumber as [Numer lokalu], Pesel, NIP, KRS, CustomerDescription as [Opis]
 FROM Customer;
-GO
+GO 
+
 /*====SALES DEPARTMENT END===*/
-GO
-GO
+
 CREATE VIEW vTechnicalProductDataPerProcess
 AS
-SELECT E.IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
-FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, OutControl E, TechnicalProductData F
-WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and E.IdProcess = D.IdProces and F.IdProduct = B.IdProduct
-
+SELECT D.IdProces as IdProcess, B.ProductCode, B.IdProduct, F.Lenght, F.Width, A.Quantity
+FROM OrderDetail A, Product B, PlannedProduction C, ProductionProcess D, TechnicalProductData F
+WHERE A.IdProduct = B.IdProduct and C.IdDetail = A.IdDetail and D.IdPlan = C.IdPlan and F.IdProduct = B.IdProduct
 GO
+
 CREATE VIEW vDevotionsInMeasuremntsPerProcess
 AS
-SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, ((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100 as LenghtDeviation, ((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100 as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
+SELECT B.IdMeasurement, A.IdProcess, A.Quantity as QuantityToBeProducted, CAST(ROUND((((A.Lenght - B.MeasuredLenght)/B.MeasuredLenght)*100),2) AS NUMERIC (12,2)) as LenghtDeviation, 
+		CAST(ROUND((((A.Width - B.MeasuredWidth)/B.MeasuredWidth)*100),2) AS NUMERIC (12,2))  as WidthDeviation, C.LenghtAcceptableDeviation, C.WidthAcceptableDeviation
 FROM vTechnicalProductDataPerProcess A, OutputProductMeasurements B, OutControl C
 WHERE A.IdProcess = B.IdProcess and  B.IdProcess = C.IdProcess
-
 GO
+
 CREATE VIEW vSuccesfullyProducedPerProcess
 AS
 SELECT IdProcess, COUNT(IdMeasurement) as SuccesfullProduced, QuantityToBeProducted
@@ -671,43 +673,51 @@ WHERE ABS(LenghtDeviation)<= LenghtAcceptableDeviation And ABS(WidthDeviation)<=
 GROUP BY IdProcess, QuantityToBeProducted
 
 GO
+
+CREATE VIEW vTotalNumberOfMeasuresPerProcess
+AS
+SELECT IdProcess, COUNT(IdMeasurement) as Produced, QuantityToBeProducted
+FROM vDevotionsInMeasuremntsPerProcess
+GROUP BY IdProcess, QuantityToBeProducted
+GO
+
 CREATE VIEW vSuccesfullyProcess
 AS
 SELECT IdProcess
 FROM vSuccesfullyProducedPerProcess
 WHERE SuccesfullProduced >= QuantityToBeProducted
-
 GO
+
 CREATE VIEW vUnfinishedProcess
 AS
 SELECT IdProces
 FROM ProductionProcess, vSuccesfullyProcess
 WHERE IdProces != IdProcess
-
 GO
+
 CREATE VIEW SafetyControlHistoryView 
 AS
 SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
 FROM SafetyControl
 JOIN Employee
 ON SafetyControl.IdInspectedEmployee = Employee.IdEmployee;
+GO
 
 /*====SALES DEPARTMENT START===*/
 
-GO
 CREATE VIEW vOutputMagazine
 AS
-SELECT A.ProductCode as [Kod produktu], C.SuccesfullProduced as [Ilość], B.EndControlDate [Data przyjęcia na magazyn] 
+SELECT A.IdProcess as [Numer Procesu Produkcji], A.ProductCode as [Kod produktu], C.SuccesfullProduced as [Ilość], B.EndControlDate [Data przyjęcia na magazyn] 
 FROM vTechnicalProductDataPerProcess A, OutControl B, vSuccesfullyProducedPerProcess C
 WHERE  A.IdProcess = B.IdProcess AND A.IdProcess = C.IdProcess
-
 GO
+
 CREATE VIEW vInputMagazine
 AS
 SELECT SfCode as [Kod Produktu], Quantity as [Ilość], ControlDate as [Data przyjęcia na magazyn]
 FROM EntranceControl, SemiFinished;
-
 GO
+
 CREATE VIEW vPredictedPriceForCustomer
 AS
 SELECT DISTINCT OrderDetail.IdOrderCustomer, Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost, OrderCustomer.Markup
@@ -718,8 +728,8 @@ JOIN TechnicalProductData
 ON TechnicalProductData.IdProduct = OrderDetail.IdProduct
 JOIN Customer
 ON OrderCustomer.IdCustomer = Customer.IdCustomer;
-
 GO
+
 CREATE VIEW vOrderDetail 
 AS
 SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia], Product.ProductCode as [Kod produktu], OrderDetail.Quantity as [Ilość]
@@ -729,11 +739,11 @@ ON OrderCustomer.IdOrderCustomer = OrderDetail.IdOrderCustomer
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct;
 GO
+/*====SALES DEPARTMENT END===*/ 
 
 /*====PRODUCTION===*/
 
-GO
-GO
+
 CREATE VIEW vUnhandledOrderDetails
 AS
 SELECT OrderDetail.IdDetail, OrderDetail.Quantity, Product.ProductCode
@@ -741,8 +751,8 @@ FROM OrderDetail
 JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 WHERE NOT EXISTS (SELECT * FROM PlannedProduction WHERE PlannedProduction.IdDetail = OrderDetail.IdDetail )
-
 GO
+
 CREATE VIEW vSafetyControlHistoryView 
 AS
 SELECT SafetyControl.IdInspection, SafetyControl.CompanyName, SafetyControl.IdSafetyEmployee, SafetyControl.SaftyControlDate, Employee.EmployeeName + Employee.EmployeeSurname as "InspectedEmpolyee", SafetyControl.SafetyControlDescription
@@ -798,10 +808,10 @@ SELECT PartRequest.IdPartRequest, Part.PartName, PartRequest.RequestDate, PartRe
 FROM PartRequest
 JOIN Part
 ON Part.IdPart = PartRequest.IdPart
+GO
 
 /*====SALES DEPARTMENT START===*/
 
-GO
 CREATE VIEW vOrder
 AS
 SELECT Part.PartName as [Nazwa części], 
@@ -810,7 +820,9 @@ Unit.UnitName as [Jednostka],
 Part.QuantityWarehouse as [Stan magazynowy]
 FROM Unit INNER JOIN (PartType INNER JOIN Part ON PartType.IdPartType = Part.IdPartType) 
 ON Unit.IdUnit = Part.IdUnit
-go
+GO
+
+
 SELECT OrderCustomer.IdOrderCustomer as [Numer zamówienia] , OrderDate as [Data zamówienia], Cost as [Wycena],
 Markup as [Marża], EmployeeSurname as [Pracownik odpowiedzialny]
 FROM OrderCustomer
@@ -820,8 +832,8 @@ INNER JOIN Product
 ON OrderDetail.IdProduct = Product.IdProduct
 INNER JOIN Employee
 ON OrderCustomer.IdEmployee = Employee.IdEmployee;
-
 GO
+
 CREATE VIEW vEmployeeSalesDepartment
 AS
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko], ZipCode as [Kod pocztowy], City as [Miasto], Street as [Ulica], HouseNumber as [Numer], 
@@ -832,8 +844,8 @@ ON Allocation.IdEmployee = Employee.IdEmployee
 JOIN Department
 ON Allocation.IdDepartment = Department.IdDepartment
 WHERE (DepartmentName = 'Logistyka');
-
 GO 
+
 CREATE VIEW vEmployeeSD
 AS
 SELECT Maintenance.MaintenanceNr as [Nr Obsługi], Maintenance.DateAcceptOrder as [Data przyjęcia], 
@@ -842,7 +854,6 @@ FROM Unit INNER JOIN (Maintenance INNER JOIN (Part INNER JOIN MaintPart
 ON Part.IdPart = MaintPart.IdPart) 
 ON Maintenance.IdMaintenance = MaintPart.IdMaintenance) 
 ON Unit.IdUnit = Part.IdUnit
-
 GO
 
 SELECT EmployeeName as [Imię], EmployeeSurname as [Nazwisko] 
@@ -854,27 +865,27 @@ ON Allocation.IdDepartment = Department.IdDepartment
 WHERE (DepartmentName = 'Logistyka');
 GO
 
+-------- VIEWS HR
+
 CREATE VIEW vAbsences
 AS
 SELECT IdAbsence, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], AbscenceReason [Powód], StartOfAbsence as [Początek], EndOfAbsence [Koniec], Employee.IdEmployee
 FROM Absence
 INNER JOIN AbsenceType ON Absence.IdAbsenceType = AbsenceType.IdAbsenceType
 INNER JOIN Employee ON Absence.IdEmployee = Employee.IdEmployee;
-
 GO
+
 CREATE VIEW	vAddTraining
 AS
 SELECT IdTraining, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], TrainingName as [Nazwa], TrainingStartDate as [Początek], TrainingEndDate as [koniec], Cast(TrainingPrice as decimal(10,2)) as [Cena], Employee.IdEmployee
 FROM dbo.Employee 
 INNER JOIN Training ON Employee.IdEmployee = Training.IdEmployee;
-
 GO
 
 CREATE VIEW vEmployeeList
 AS
 SELECT Employee.IdEmployee, Employee.EmployeeSurname, Employee.EmployeeName 
 FROM Employee;
-
 GO
 
 CREATE VIEW vContracts
@@ -883,7 +894,6 @@ SELECT IdContract, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Workp
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
-
 GO 
 
 CREATE VIEW vEducationForm
@@ -892,7 +902,6 @@ SELECT IdEducation, EmployeeSurname as [Nazwisko], EmployeeName as [Imię], Educ
 FROM dbo.Employee
 INNER JOIN dbo.Education ON Employee.IdEmployee = Education.IdEmployee
 INNER JOIN dbo.EducationLevel ON Education.IdEducationLevel = EducationLevel.IdEducationLevel;
-
 GO
 
 CREATE VIEW vEmployeeDetails
@@ -914,7 +923,6 @@ SELECT IdMedicalExamination, EmployeeSurname as [Nazwisko], EmployeeName as [Imi
 FROM Employee
 INNER JOIN RoofingCompany.dbo.MedicalExamination
 ON RoofingCompany.dbo.Employee.IdEmployee = RoofingCompany.dbo.MedicalExamination.IdEmployee;
-
 GO
 
 CREATE VIEW vHR
@@ -923,8 +931,8 @@ SELECT Employee.IdEmployee, EmployeeSurname as [Nazwisko], EmployeeName as [Imi�
 FROM Employee
 INNER JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee
 INNER JOIN Position ON Contract.IdPosition = Position.IdPosition;
-
 GO
+
 CREATE VIEW vIncomesProfits
 AS
 SELECT Customer.IdCustomer,Customer.CustomerName, OrderCustomer.OrderDate, OrderCustomer.Cost
@@ -972,7 +980,6 @@ CREATE VIEW vInvoiceType
 as
 SELECT IdInvoiceType, Type
 FROM InvoiceType;
-
 GO
 
 CREATE VIEW vHRContract
@@ -980,7 +987,6 @@ AS
 SELECT IdContract
 FROM Contract
 WHERE  Contract.EndDate < DATEADD(month, 3, GETDATE());
-
 GO
 
 CREATE VIEW vHRExamination
@@ -1120,8 +1126,3 @@ JOIN Machine
 ON PlannedProduction.IdMachine = Machine.IdMachine
 GO
 
-CREATE VIEW vPositionExaminationValidity
-AS
-SELECT IdPosition, VailidityOfMedicalExam, Workplace
-FROM Position
-GO
