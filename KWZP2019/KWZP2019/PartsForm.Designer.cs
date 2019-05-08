@@ -46,7 +46,6 @@
             this.labelHeaderParts = new System.Windows.Forms.Label();
             this.panelPartsList = new System.Windows.Forms.Panel();
             this.dataPartsView = new System.Windows.Forms.DataGridView();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.panelAdd = new System.Windows.Forms.Panel();
             this.cbPartType = new System.Windows.Forms.ComboBox();
@@ -72,11 +71,9 @@
             this.btnPanelSearch = new System.Windows.Forms.Button();
             this.panelUpdate = new System.Windows.Forms.Panel();
             this.btnUpdatePart_Clear = new System.Windows.Forms.Button();
-            this.tbUpdateType = new System.Windows.Forms.TextBox();
             this.tbUpdateUnit = new System.Windows.Forms.TextBox();
             this.labelUpdateProd = new System.Windows.Forms.Label();
             this.labelUpdateType = new System.Windows.Forms.Label();
-            this.labelUpdateName = new System.Windows.Forms.Label();
             this.labelUpdateCatalNr = new System.Windows.Forms.Label();
             this.labelUpdateUnit = new System.Windows.Forms.Label();
             this.labelUpdateAmount = new System.Windows.Forms.Label();
@@ -99,6 +96,9 @@
             this.tbDeleteProducer = new System.Windows.Forms.TextBox();
             this.tbDeleteName = new System.Windows.Forms.TextBox();
             this.btnDeletePart_Delete = new System.Windows.Forms.Button();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbUpdateType = new System.Windows.Forms.TextBox();
+            this.labelPartName = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -332,26 +332,13 @@
             this.dataPartsView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPartsView_CellClick);
             this.dataPartsView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataPartsView_CellFormatting);
             // 
-            // status
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.status.DefaultCellStyle = dataGridViewCellStyle3;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.status.Width = 60;
-            // 
             // panelAdd
             // 
+            this.panelAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.panelAdd.Controls.Add(this.labelPartName);
             this.panelAdd.Controls.Add(this.cbPartType);
             this.panelAdd.Controls.Add(this.labelProducer);
             this.panelAdd.Controls.Add(this.labelType);
-            this.panelAdd.Controls.Add(this.labelName);
             this.panelAdd.Controls.Add(this.labelNumber);
             this.panelAdd.Controls.Add(this.labelUnit);
             this.panelAdd.Controls.Add(this.cbUnit);
@@ -362,9 +349,9 @@
             this.panelAdd.Controls.Add(this.tbName);
             this.panelAdd.Controls.Add(this.buttonAddPart_Add);
             this.panelAdd.Controls.Add(this.buttonAddPart_Clear);
-            this.panelAdd.Location = new System.Drawing.Point(63, 433);
+            this.panelAdd.Location = new System.Drawing.Point(192, 433);
             this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(1109, 236);
+            this.panelAdd.Size = new System.Drawing.Size(977, 193);
             this.panelAdd.TabIndex = 5;
             // 
             // cbPartType
@@ -372,63 +359,63 @@
             this.cbPartType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPartType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbPartType.FormattingEnabled = true;
-            this.cbPartType.Location = new System.Drawing.Point(356, 48);
+            this.cbPartType.Location = new System.Drawing.Point(273, 64);
             this.cbPartType.Name = "cbPartType";
-            this.cbPartType.Size = new System.Drawing.Size(157, 28);
+            this.cbPartType.Size = new System.Drawing.Size(181, 28);
             this.cbPartType.TabIndex = 18;
             // 
             // labelProducer
             // 
             this.labelProducer.AutoSize = true;
-            this.labelProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelProducer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelProducer.Location = new System.Drawing.Point(589, 21);
+            this.labelProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelProducer.ForeColor = System.Drawing.Color.White;
+            this.labelProducer.Location = new System.Drawing.Point(553, 35);
             this.labelProducer.Name = "labelProducer";
-            this.labelProducer.Size = new System.Drawing.Size(106, 24);
+            this.labelProducer.Size = new System.Drawing.Size(91, 20);
             this.labelProducer.TabIndex = 17;
             this.labelProducer.Text = "Producent";
             // 
             // labelType
             // 
             this.labelType.AutoSize = true;
-            this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelType.Location = new System.Drawing.Point(382, 21);
+            this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelType.ForeColor = System.Drawing.Color.White;
+            this.labelType.Location = new System.Drawing.Point(314, 35);
             this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(110, 24);
+            this.labelType.Size = new System.Drawing.Size(92, 20);
             this.labelType.TabIndex = 16;
             this.labelType.Text = "Typ części";
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelName.Location = new System.Drawing.Point(138, 21);
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelName.ForeColor = System.Drawing.Color.White;
+            this.labelName.Location = new System.Drawing.Point(72, 35);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(137, 24);
+            this.labelName.Size = new System.Drawing.Size(117, 20);
             this.labelName.TabIndex = 15;
             this.labelName.Text = "Nazwa części";
             // 
             // labelNumber
             // 
             this.labelNumber.AutoSize = true;
-            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelNumber.Location = new System.Drawing.Point(110, 103);
+            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNumber.ForeColor = System.Drawing.Color.White;
+            this.labelNumber.Location = new System.Drawing.Point(50, 116);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(185, 24);
+            this.labelNumber.Size = new System.Drawing.Size(157, 20);
             this.labelNumber.TabIndex = 14;
             this.labelNumber.Text = "Numer Katalogowy";
             // 
             // labelUnit
             // 
             this.labelUnit.AutoSize = true;
-            this.labelUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUnit.Location = new System.Drawing.Point(515, 103);
+            this.labelUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUnit.ForeColor = System.Drawing.Color.White;
+            this.labelUnit.Location = new System.Drawing.Point(459, 121);
             this.labelUnit.Name = "labelUnit";
-            this.labelUnit.Size = new System.Drawing.Size(110, 24);
+            this.labelUnit.Size = new System.Drawing.Size(97, 20);
             this.labelUnit.TabIndex = 12;
             this.labelUnit.Text = " Jednostka";
             // 
@@ -437,28 +424,28 @@
             this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbUnit.FormattingEnabled = true;
-            this.cbUnit.Location = new System.Drawing.Point(519, 128);
+            this.cbUnit.Location = new System.Drawing.Point(463, 144);
             this.cbUnit.Name = "cbUnit";
-            this.cbUnit.Size = new System.Drawing.Size(111, 28);
+            this.cbUnit.Size = new System.Drawing.Size(93, 28);
             this.cbUnit.TabIndex = 11;
             // 
             // labelAmount
             // 
             this.labelAmount.AutoSize = true;
-            this.labelAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelAmount.Location = new System.Drawing.Point(403, 103);
+            this.labelAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelAmount.ForeColor = System.Drawing.Color.White;
+            this.labelAmount.Location = new System.Drawing.Point(337, 121);
             this.labelAmount.Name = "labelAmount";
-            this.labelAmount.Size = new System.Drawing.Size(53, 24);
+            this.labelAmount.Size = new System.Drawing.Size(47, 20);
             this.labelAmount.TabIndex = 9;
             this.labelAmount.Text = "Ilość";
             // 
             // tbAmount
             // 
             this.tbAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbAmount.Location = new System.Drawing.Point(356, 130);
+            this.tbAmount.Location = new System.Drawing.Point(276, 144);
             this.tbAmount.Name = "tbAmount";
-            this.tbAmount.Size = new System.Drawing.Size(157, 26);
+            this.tbAmount.Size = new System.Drawing.Size(181, 26);
             this.tbAmount.TabIndex = 8;
             this.tbAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbAmount.TextChanged += new System.EventHandler(this.tbAmount_TextChanged);
@@ -466,7 +453,7 @@
             // tbCatalogNr
             // 
             this.tbCatalogNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbCatalogNr.Location = new System.Drawing.Point(114, 130);
+            this.tbCatalogNr.Location = new System.Drawing.Point(41, 144);
             this.tbCatalogNr.Name = "tbCatalogNr";
             this.tbCatalogNr.Size = new System.Drawing.Size(181, 26);
             this.tbCatalogNr.TabIndex = 6;
@@ -476,16 +463,16 @@
             // tbProducer
             // 
             this.tbProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbProducer.Location = new System.Drawing.Point(571, 48);
+            this.tbProducer.Location = new System.Drawing.Point(500, 64);
             this.tbProducer.Name = "tbProducer";
-            this.tbProducer.Size = new System.Drawing.Size(143, 26);
+            this.tbProducer.Size = new System.Drawing.Size(200, 26);
             this.tbProducer.TabIndex = 4;
             this.tbProducer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbName
             // 
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbName.Location = new System.Drawing.Point(114, 48);
+            this.tbName.Location = new System.Drawing.Point(41, 62);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(181, 26);
             this.tbName.TabIndex = 3;
@@ -494,14 +481,16 @@
             // 
             // buttonAddPart_Add
             // 
-            this.buttonAddPart_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.buttonAddPart_Add.FlatAppearance.BorderSize = 0;
+            this.buttonAddPart_Add.BackColor = System.Drawing.Color.Black;
+            this.buttonAddPart_Add.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.buttonAddPart_Add.FlatAppearance.BorderSize = 3;
             this.buttonAddPart_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonAddPart_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPart_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAddPart_Add.ForeColor = System.Drawing.Color.White;
-            this.buttonAddPart_Add.Location = new System.Drawing.Point(845, 75);
+            this.buttonAddPart_Add.Location = new System.Drawing.Point(736, 55);
             this.buttonAddPart_Add.Name = "buttonAddPart_Add";
-            this.buttonAddPart_Add.Size = new System.Drawing.Size(203, 40);
+            this.buttonAddPart_Add.Size = new System.Drawing.Size(226, 40);
             this.buttonAddPart_Add.TabIndex = 2;
             this.buttonAddPart_Add.Text = "Dodaj część";
             this.buttonAddPart_Add.UseVisualStyleBackColor = false;
@@ -509,14 +498,16 @@
             // 
             // buttonAddPart_Clear
             // 
-            this.buttonAddPart_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.buttonAddPart_Clear.FlatAppearance.BorderSize = 0;
+            this.buttonAddPart_Clear.BackColor = System.Drawing.Color.Black;
+            this.buttonAddPart_Clear.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.buttonAddPart_Clear.FlatAppearance.BorderSize = 3;
             this.buttonAddPart_Clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonAddPart_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPart_Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAddPart_Clear.ForeColor = System.Drawing.Color.White;
-            this.buttonAddPart_Clear.Location = new System.Drawing.Point(845, 180);
+            this.buttonAddPart_Clear.Location = new System.Drawing.Point(736, 130);
             this.buttonAddPart_Clear.Name = "buttonAddPart_Clear";
-            this.buttonAddPart_Clear.Size = new System.Drawing.Size(203, 40);
+            this.buttonAddPart_Clear.Size = new System.Drawing.Size(226, 40);
             this.buttonAddPart_Clear.TabIndex = 1;
             this.buttonAddPart_Clear.Text = "Wyczyść";
             this.buttonAddPart_Clear.UseVisualStyleBackColor = false;
@@ -524,7 +515,7 @@
             // 
             // panelSearch
             // 
-            this.panelSearch.BackColor = System.Drawing.Color.LightGray;
+            this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.panelSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSearch.Controls.Add(this.labelTypeSearch);
             this.panelSearch.Controls.Add(this.labelInsertSearch);
@@ -532,57 +523,59 @@
             this.panelSearch.Controls.Add(this.btnPanelSearchReset);
             this.panelSearch.Controls.Add(this.txtBoxSearch);
             this.panelSearch.Controls.Add(this.btnPanelSearch);
-            this.panelSearch.Location = new System.Drawing.Point(57, 433);
+            this.panelSearch.Location = new System.Drawing.Point(192, 433);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(1109, 236);
+            this.panelSearch.Size = new System.Drawing.Size(977, 193);
             this.panelSearch.TabIndex = 6;
             // 
             // labelTypeSearch
             // 
             this.labelTypeSearch.AutoSize = true;
-            this.labelTypeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTypeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelTypeSearch.Location = new System.Drawing.Point(597, 52);
+            this.labelTypeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTypeSearch.ForeColor = System.Drawing.Color.White;
+            this.labelTypeSearch.Location = new System.Drawing.Point(232, 110);
             this.labelTypeSearch.Name = "labelTypeSearch";
-            this.labelTypeSearch.Size = new System.Drawing.Size(130, 24);
+            this.labelTypeSearch.Size = new System.Drawing.Size(111, 20);
             this.labelTypeSearch.TabIndex = 5;
             this.labelTypeSearch.Text = "Wyszukaj wg";
             // 
             // labelInsertSearch
             // 
             this.labelInsertSearch.AutoSize = true;
-            this.labelInsertSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelInsertSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelInsertSearch.Location = new System.Drawing.Point(75, 52);
+            this.labelInsertSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelInsertSearch.ForeColor = System.Drawing.Color.White;
+            this.labelInsertSearch.Location = new System.Drawing.Point(47, 53);
             this.labelInsertSearch.Name = "labelInsertSearch";
-            this.labelInsertSearch.Size = new System.Drawing.Size(341, 24);
+            this.labelInsertSearch.Size = new System.Drawing.Size(296, 20);
             this.labelInsertSearch.TabIndex = 4;
             this.labelInsertSearch.Text = "Wpisz frazę, którą chcesz wyszukać";
             // 
             // cbSearch
             // 
             this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbSearch.FormattingEnabled = true;
             this.cbSearch.Items.AddRange(new object[] {
             "Nazwa części",
             "Typ części",
             "Producent"});
-            this.cbSearch.Location = new System.Drawing.Point(552, 83);
+            this.cbSearch.Location = new System.Drawing.Point(370, 104);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(219, 32);
+            this.cbSearch.Size = new System.Drawing.Size(219, 28);
             this.cbSearch.TabIndex = 3;
             // 
             // btnPanelSearchReset
             // 
-            this.btnPanelSearchReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnPanelSearchReset.FlatAppearance.BorderSize = 0;
+            this.btnPanelSearchReset.BackColor = System.Drawing.Color.Black;
+            this.btnPanelSearchReset.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPanelSearchReset.FlatAppearance.BorderSize = 3;
             this.btnPanelSearchReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnPanelSearchReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPanelSearchReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPanelSearchReset.ForeColor = System.Drawing.Color.White;
-            this.btnPanelSearchReset.Location = new System.Drawing.Point(854, 167);
+            this.btnPanelSearchReset.Location = new System.Drawing.Point(735, 109);
             this.btnPanelSearchReset.Name = "btnPanelSearchReset";
-            this.btnPanelSearchReset.Size = new System.Drawing.Size(203, 36);
+            this.btnPanelSearchReset.Size = new System.Drawing.Size(203, 41);
             this.btnPanelSearchReset.TabIndex = 2;
             this.btnPanelSearchReset.Text = "Resetuj";
             this.btnPanelSearchReset.UseVisualStyleBackColor = false;
@@ -590,20 +583,22 @@
             // 
             // txtBoxSearch
             // 
-            this.txtBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxSearch.Location = new System.Drawing.Point(40, 86);
+            this.txtBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxSearch.Location = new System.Drawing.Point(370, 50);
             this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Size = new System.Drawing.Size(414, 29);
+            this.txtBoxSearch.Size = new System.Drawing.Size(321, 26);
             this.txtBoxSearch.TabIndex = 1;
             // 
             // btnPanelSearch
             // 
-            this.btnPanelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnPanelSearch.FlatAppearance.BorderSize = 0;
+            this.btnPanelSearch.BackColor = System.Drawing.Color.Black;
+            this.btnPanelSearch.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPanelSearch.FlatAppearance.BorderSize = 3;
             this.btnPanelSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnPanelSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPanelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPanelSearch.ForeColor = System.Drawing.Color.White;
-            this.btnPanelSearch.Location = new System.Drawing.Point(854, 78);
+            this.btnPanelSearch.Location = new System.Drawing.Point(735, 45);
             this.btnPanelSearch.Name = "btnPanelSearch";
             this.btnPanelSearch.Size = new System.Drawing.Size(203, 40);
             this.btnPanelSearch.TabIndex = 0;
@@ -613,13 +608,13 @@
             // 
             // panelUpdate
             // 
-            this.panelUpdate.BackColor = System.Drawing.Color.LightGray;
+            this.panelUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.panelUpdate.Controls.Add(this.btnUpdatePart_Clear);
             this.panelUpdate.Controls.Add(this.tbUpdateType);
             this.panelUpdate.Controls.Add(this.tbUpdateUnit);
+            this.panelUpdate.Controls.Add(this.labelName);
             this.panelUpdate.Controls.Add(this.labelUpdateProd);
             this.panelUpdate.Controls.Add(this.labelUpdateType);
-            this.panelUpdate.Controls.Add(this.labelUpdateName);
             this.panelUpdate.Controls.Add(this.labelUpdateCatalNr);
             this.panelUpdate.Controls.Add(this.labelUpdateUnit);
             this.panelUpdate.Controls.Add(this.labelUpdateAmount);
@@ -628,109 +623,90 @@
             this.panelUpdate.Controls.Add(this.tbUpdateProd);
             this.panelUpdate.Controls.Add(this.tbUpdateName);
             this.panelUpdate.Controls.Add(this.btnUpdatePart_Update);
-            this.panelUpdate.Location = new System.Drawing.Point(60, 436);
+            this.panelUpdate.Location = new System.Drawing.Point(192, 433);
             this.panelUpdate.Name = "panelUpdate";
-            this.panelUpdate.Size = new System.Drawing.Size(1109, 236);
+            this.panelUpdate.Size = new System.Drawing.Size(977, 193);
             this.panelUpdate.TabIndex = 7;
             // 
             // btnUpdatePart_Clear
             // 
-            this.btnUpdatePart_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnUpdatePart_Clear.FlatAppearance.BorderSize = 0;
+            this.btnUpdatePart_Clear.BackColor = System.Drawing.Color.Black;
+            this.btnUpdatePart_Clear.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdatePart_Clear.FlatAppearance.BorderSize = 3;
             this.btnUpdatePart_Clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnUpdatePart_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePart_Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdatePart_Clear.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePart_Clear.Location = new System.Drawing.Point(845, 180);
+            this.btnUpdatePart_Clear.Location = new System.Drawing.Point(736, 130);
             this.btnUpdatePart_Clear.Name = "btnUpdatePart_Clear";
-            this.btnUpdatePart_Clear.Size = new System.Drawing.Size(203, 40);
+            this.btnUpdatePart_Clear.Size = new System.Drawing.Size(226, 40);
             this.btnUpdatePart_Clear.TabIndex = 20;
             this.btnUpdatePart_Clear.Text = "Wyczyść";
             this.btnUpdatePart_Clear.UseVisualStyleBackColor = false;
             this.btnUpdatePart_Clear.Click += new System.EventHandler(this.btnUpdatePart_Clear_Click);
             // 
-            // tbUpdateType
-            // 
-            this.tbUpdateType.Enabled = false;
-            this.tbUpdateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbUpdateType.Location = new System.Drawing.Point(356, 48);
-            this.tbUpdateType.Name = "tbUpdateType";
-            this.tbUpdateType.Size = new System.Drawing.Size(157, 26);
-            this.tbUpdateType.TabIndex = 19;
-            this.tbUpdateType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // tbUpdateUnit
             // 
             this.tbUpdateUnit.Enabled = false;
             this.tbUpdateUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbUpdateUnit.Location = new System.Drawing.Point(519, 130);
+            this.tbUpdateUnit.Location = new System.Drawing.Point(463, 144);
             this.tbUpdateUnit.Name = "tbUpdateUnit";
-            this.tbUpdateUnit.Size = new System.Drawing.Size(111, 26);
+            this.tbUpdateUnit.Size = new System.Drawing.Size(93, 26);
             this.tbUpdateUnit.TabIndex = 18;
             this.tbUpdateUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelUpdateProd
             // 
             this.labelUpdateProd.AutoSize = true;
-            this.labelUpdateProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUpdateProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUpdateProd.Location = new System.Drawing.Point(589, 21);
+            this.labelUpdateProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUpdateProd.ForeColor = System.Drawing.Color.White;
+            this.labelUpdateProd.Location = new System.Drawing.Point(553, 35);
             this.labelUpdateProd.Name = "labelUpdateProd";
-            this.labelUpdateProd.Size = new System.Drawing.Size(106, 24);
+            this.labelUpdateProd.Size = new System.Drawing.Size(91, 20);
             this.labelUpdateProd.TabIndex = 17;
             this.labelUpdateProd.Text = "Producent";
             // 
             // labelUpdateType
             // 
             this.labelUpdateType.AutoSize = true;
-            this.labelUpdateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUpdateType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUpdateType.Location = new System.Drawing.Point(382, 23);
+            this.labelUpdateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUpdateType.ForeColor = System.Drawing.Color.White;
+            this.labelUpdateType.Location = new System.Drawing.Point(314, 35);
             this.labelUpdateType.Name = "labelUpdateType";
-            this.labelUpdateType.Size = new System.Drawing.Size(110, 24);
+            this.labelUpdateType.Size = new System.Drawing.Size(92, 20);
             this.labelUpdateType.TabIndex = 16;
             this.labelUpdateType.Text = "Typ części";
-            // 
-            // labelUpdateName
-            // 
-            this.labelUpdateName.AutoSize = true;
-            this.labelUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUpdateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUpdateName.Location = new System.Drawing.Point(138, 21);
-            this.labelUpdateName.Name = "labelUpdateName";
-            this.labelUpdateName.Size = new System.Drawing.Size(137, 24);
-            this.labelUpdateName.TabIndex = 15;
-            this.labelUpdateName.Text = "Nazwa części";
             // 
             // labelUpdateCatalNr
             // 
             this.labelUpdateCatalNr.AutoSize = true;
-            this.labelUpdateCatalNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUpdateCatalNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUpdateCatalNr.Location = new System.Drawing.Point(110, 103);
+            this.labelUpdateCatalNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUpdateCatalNr.ForeColor = System.Drawing.Color.White;
+            this.labelUpdateCatalNr.Location = new System.Drawing.Point(50, 116);
             this.labelUpdateCatalNr.Name = "labelUpdateCatalNr";
-            this.labelUpdateCatalNr.Size = new System.Drawing.Size(185, 24);
+            this.labelUpdateCatalNr.Size = new System.Drawing.Size(157, 20);
             this.labelUpdateCatalNr.TabIndex = 14;
             this.labelUpdateCatalNr.Text = "Numer Katalogowy";
             // 
             // labelUpdateUnit
             // 
             this.labelUpdateUnit.AutoSize = true;
-            this.labelUpdateUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUpdateUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUpdateUnit.Location = new System.Drawing.Point(515, 103);
+            this.labelUpdateUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUpdateUnit.ForeColor = System.Drawing.Color.White;
+            this.labelUpdateUnit.Location = new System.Drawing.Point(459, 121);
             this.labelUpdateUnit.Name = "labelUpdateUnit";
-            this.labelUpdateUnit.Size = new System.Drawing.Size(110, 24);
+            this.labelUpdateUnit.Size = new System.Drawing.Size(97, 20);
             this.labelUpdateUnit.TabIndex = 12;
             this.labelUpdateUnit.Text = " Jednostka";
             // 
             // labelUpdateAmount
             // 
             this.labelUpdateAmount.AutoSize = true;
-            this.labelUpdateAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUpdateAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labelUpdateAmount.Location = new System.Drawing.Point(403, 103);
+            this.labelUpdateAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUpdateAmount.ForeColor = System.Drawing.Color.White;
+            this.labelUpdateAmount.Location = new System.Drawing.Point(337, 121);
             this.labelUpdateAmount.Name = "labelUpdateAmount";
-            this.labelUpdateAmount.Size = new System.Drawing.Size(53, 24);
+            this.labelUpdateAmount.Size = new System.Drawing.Size(47, 20);
             this.labelUpdateAmount.TabIndex = 9;
             this.labelUpdateAmount.Text = "Ilość";
             // 
@@ -738,9 +714,9 @@
             // 
             this.tbUpdateAmount.Enabled = false;
             this.tbUpdateAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbUpdateAmount.Location = new System.Drawing.Point(356, 130);
+            this.tbUpdateAmount.Location = new System.Drawing.Point(276, 144);
             this.tbUpdateAmount.Name = "tbUpdateAmount";
-            this.tbUpdateAmount.Size = new System.Drawing.Size(157, 26);
+            this.tbUpdateAmount.Size = new System.Drawing.Size(181, 26);
             this.tbUpdateAmount.TabIndex = 8;
             this.tbUpdateAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbUpdateAmount.TextChanged += new System.EventHandler(this.tbUpdateAmount_TextChanged);
@@ -749,7 +725,7 @@
             // 
             this.tbUpdateCatalNr.Enabled = false;
             this.tbUpdateCatalNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbUpdateCatalNr.Location = new System.Drawing.Point(114, 130);
+            this.tbUpdateCatalNr.Location = new System.Drawing.Point(41, 144);
             this.tbUpdateCatalNr.Name = "tbUpdateCatalNr";
             this.tbUpdateCatalNr.Size = new System.Drawing.Size(181, 26);
             this.tbUpdateCatalNr.TabIndex = 6;
@@ -760,9 +736,9 @@
             // 
             this.tbUpdateProd.Enabled = false;
             this.tbUpdateProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbUpdateProd.Location = new System.Drawing.Point(571, 48);
+            this.tbUpdateProd.Location = new System.Drawing.Point(500, 64);
             this.tbUpdateProd.Name = "tbUpdateProd";
-            this.tbUpdateProd.Size = new System.Drawing.Size(143, 26);
+            this.tbUpdateProd.Size = new System.Drawing.Size(200, 26);
             this.tbUpdateProd.TabIndex = 4;
             this.tbUpdateProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -770,7 +746,7 @@
             // 
             this.tbUpdateName.Enabled = false;
             this.tbUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbUpdateName.Location = new System.Drawing.Point(114, 48);
+            this.tbUpdateName.Location = new System.Drawing.Point(41, 62);
             this.tbUpdateName.Name = "tbUpdateName";
             this.tbUpdateName.Size = new System.Drawing.Size(181, 26);
             this.tbUpdateName.TabIndex = 3;
@@ -778,12 +754,14 @@
             // 
             // btnUpdatePart_Update
             // 
-            this.btnUpdatePart_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnUpdatePart_Update.FlatAppearance.BorderSize = 0;
+            this.btnUpdatePart_Update.BackColor = System.Drawing.Color.Black;
+            this.btnUpdatePart_Update.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdatePart_Update.FlatAppearance.BorderSize = 3;
             this.btnUpdatePart_Update.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnUpdatePart_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatePart_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdatePart_Update.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePart_Update.Location = new System.Drawing.Point(831, 83);
+            this.btnUpdatePart_Update.Location = new System.Drawing.Point(736, 55);
             this.btnUpdatePart_Update.Name = "btnUpdatePart_Update";
             this.btnUpdatePart_Update.Size = new System.Drawing.Size(226, 40);
             this.btnUpdatePart_Update.TabIndex = 2;
@@ -793,6 +771,7 @@
             // 
             // panelDelete
             // 
+            this.panelDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.panelDelete.Controls.Add(this.tbDeleteType);
             this.panelDelete.Controls.Add(this.tbDeleteUnit);
             this.panelDelete.Controls.Add(this.labDeleteProducer);
@@ -806,18 +785,18 @@
             this.panelDelete.Controls.Add(this.tbDeleteProducer);
             this.panelDelete.Controls.Add(this.tbDeleteName);
             this.panelDelete.Controls.Add(this.btnDeletePart_Delete);
-            this.panelDelete.Location = new System.Drawing.Point(63, 433);
+            this.panelDelete.Location = new System.Drawing.Point(192, 433);
             this.panelDelete.Name = "panelDelete";
-            this.panelDelete.Size = new System.Drawing.Size(1109, 236);
+            this.panelDelete.Size = new System.Drawing.Size(977, 193);
             this.panelDelete.TabIndex = 20;
             // 
             // tbDeleteType
             // 
             this.tbDeleteType.Enabled = false;
             this.tbDeleteType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbDeleteType.Location = new System.Drawing.Point(356, 48);
+            this.tbDeleteType.Location = new System.Drawing.Point(273, 64);
             this.tbDeleteType.Name = "tbDeleteType";
-            this.tbDeleteType.Size = new System.Drawing.Size(157, 26);
+            this.tbDeleteType.Size = new System.Drawing.Size(181, 26);
             this.tbDeleteType.TabIndex = 19;
             this.tbDeleteType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -825,75 +804,75 @@
             // 
             this.tbDeleteUnit.Enabled = false;
             this.tbDeleteUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbDeleteUnit.Location = new System.Drawing.Point(519, 130);
+            this.tbDeleteUnit.Location = new System.Drawing.Point(463, 144);
             this.tbDeleteUnit.Name = "tbDeleteUnit";
-            this.tbDeleteUnit.Size = new System.Drawing.Size(111, 26);
+            this.tbDeleteUnit.Size = new System.Drawing.Size(93, 26);
             this.tbDeleteUnit.TabIndex = 18;
             this.tbDeleteUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labDeleteProducer
             // 
             this.labDeleteProducer.AutoSize = true;
-            this.labDeleteProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labDeleteProducer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labDeleteProducer.Location = new System.Drawing.Point(589, 21);
+            this.labDeleteProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labDeleteProducer.ForeColor = System.Drawing.Color.White;
+            this.labDeleteProducer.Location = new System.Drawing.Point(553, 35);
             this.labDeleteProducer.Name = "labDeleteProducer";
-            this.labDeleteProducer.Size = new System.Drawing.Size(106, 24);
+            this.labDeleteProducer.Size = new System.Drawing.Size(91, 20);
             this.labDeleteProducer.TabIndex = 17;
             this.labDeleteProducer.Text = "Producent";
             // 
             // labDeleteType
             // 
             this.labDeleteType.AutoSize = true;
-            this.labDeleteType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labDeleteType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labDeleteType.Location = new System.Drawing.Point(382, 23);
+            this.labDeleteType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labDeleteType.ForeColor = System.Drawing.Color.White;
+            this.labDeleteType.Location = new System.Drawing.Point(314, 35);
             this.labDeleteType.Name = "labDeleteType";
-            this.labDeleteType.Size = new System.Drawing.Size(110, 24);
+            this.labDeleteType.Size = new System.Drawing.Size(92, 20);
             this.labDeleteType.TabIndex = 16;
             this.labDeleteType.Text = "Typ części";
             // 
             // labDeleteName
             // 
             this.labDeleteName.AutoSize = true;
-            this.labDeleteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labDeleteName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labDeleteName.Location = new System.Drawing.Point(138, 21);
+            this.labDeleteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labDeleteName.ForeColor = System.Drawing.Color.White;
+            this.labDeleteName.Location = new System.Drawing.Point(72, 35);
             this.labDeleteName.Name = "labDeleteName";
-            this.labDeleteName.Size = new System.Drawing.Size(137, 24);
+            this.labDeleteName.Size = new System.Drawing.Size(117, 20);
             this.labDeleteName.TabIndex = 15;
             this.labDeleteName.Text = "Nazwa części";
             // 
             // labDeleteCatNr
             // 
             this.labDeleteCatNr.AutoSize = true;
-            this.labDeleteCatNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labDeleteCatNr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labDeleteCatNr.Location = new System.Drawing.Point(110, 103);
+            this.labDeleteCatNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labDeleteCatNr.ForeColor = System.Drawing.Color.White;
+            this.labDeleteCatNr.Location = new System.Drawing.Point(50, 116);
             this.labDeleteCatNr.Name = "labDeleteCatNr";
-            this.labDeleteCatNr.Size = new System.Drawing.Size(185, 24);
+            this.labDeleteCatNr.Size = new System.Drawing.Size(157, 20);
             this.labDeleteCatNr.TabIndex = 14;
             this.labDeleteCatNr.Text = "Numer Katalogowy";
             // 
             // labDeleteUnit
             // 
             this.labDeleteUnit.AutoSize = true;
-            this.labDeleteUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labDeleteUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labDeleteUnit.Location = new System.Drawing.Point(515, 103);
+            this.labDeleteUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labDeleteUnit.ForeColor = System.Drawing.Color.White;
+            this.labDeleteUnit.Location = new System.Drawing.Point(459, 121);
             this.labDeleteUnit.Name = "labDeleteUnit";
-            this.labDeleteUnit.Size = new System.Drawing.Size(110, 24);
+            this.labDeleteUnit.Size = new System.Drawing.Size(97, 20);
             this.labDeleteUnit.TabIndex = 12;
             this.labDeleteUnit.Text = " Jednostka";
             // 
             // labDeleteAmount
             // 
             this.labDeleteAmount.AutoSize = true;
-            this.labDeleteAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labDeleteAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.labDeleteAmount.Location = new System.Drawing.Point(403, 103);
+            this.labDeleteAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labDeleteAmount.ForeColor = System.Drawing.Color.White;
+            this.labDeleteAmount.Location = new System.Drawing.Point(337, 121);
             this.labDeleteAmount.Name = "labDeleteAmount";
-            this.labDeleteAmount.Size = new System.Drawing.Size(53, 24);
+            this.labDeleteAmount.Size = new System.Drawing.Size(47, 20);
             this.labDeleteAmount.TabIndex = 9;
             this.labDeleteAmount.Text = "Ilość";
             // 
@@ -901,9 +880,9 @@
             // 
             this.tbDeleteAmount.Enabled = false;
             this.tbDeleteAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbDeleteAmount.Location = new System.Drawing.Point(356, 130);
+            this.tbDeleteAmount.Location = new System.Drawing.Point(276, 144);
             this.tbDeleteAmount.Name = "tbDeleteAmount";
-            this.tbDeleteAmount.Size = new System.Drawing.Size(157, 26);
+            this.tbDeleteAmount.Size = new System.Drawing.Size(181, 26);
             this.tbDeleteAmount.TabIndex = 8;
             this.tbDeleteAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -911,7 +890,7 @@
             // 
             this.tbDeleteCatNr.Enabled = false;
             this.tbDeleteCatNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbDeleteCatNr.Location = new System.Drawing.Point(114, 130);
+            this.tbDeleteCatNr.Location = new System.Drawing.Point(41, 144);
             this.tbDeleteCatNr.Name = "tbDeleteCatNr";
             this.tbDeleteCatNr.Size = new System.Drawing.Size(181, 26);
             this.tbDeleteCatNr.TabIndex = 6;
@@ -921,9 +900,9 @@
             // 
             this.tbDeleteProducer.Enabled = false;
             this.tbDeleteProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbDeleteProducer.Location = new System.Drawing.Point(571, 48);
+            this.tbDeleteProducer.Location = new System.Drawing.Point(500, 64);
             this.tbDeleteProducer.Name = "tbDeleteProducer";
-            this.tbDeleteProducer.Size = new System.Drawing.Size(143, 26);
+            this.tbDeleteProducer.Size = new System.Drawing.Size(200, 26);
             this.tbDeleteProducer.TabIndex = 4;
             this.tbDeleteProducer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -931,7 +910,7 @@
             // 
             this.tbDeleteName.Enabled = false;
             this.tbDeleteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbDeleteName.Location = new System.Drawing.Point(114, 48);
+            this.tbDeleteName.Location = new System.Drawing.Point(41, 62);
             this.tbDeleteName.Name = "tbDeleteName";
             this.tbDeleteName.Size = new System.Drawing.Size(181, 26);
             this.tbDeleteName.TabIndex = 3;
@@ -939,18 +918,55 @@
             // 
             // btnDeletePart_Delete
             // 
-            this.btnDeletePart_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnDeletePart_Delete.FlatAppearance.BorderSize = 0;
+            this.btnDeletePart_Delete.BackColor = System.Drawing.Color.Black;
+            this.btnDeletePart_Delete.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDeletePart_Delete.FlatAppearance.BorderSize = 3;
             this.btnDeletePart_Delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDeletePart_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletePart_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDeletePart_Delete.ForeColor = System.Drawing.Color.White;
-            this.btnDeletePart_Delete.Location = new System.Drawing.Point(842, 83);
+            this.btnDeletePart_Delete.Location = new System.Drawing.Point(793, 86);
             this.btnDeletePart_Delete.Name = "btnDeletePart_Delete";
             this.btnDeletePart_Delete.Size = new System.Drawing.Size(160, 40);
             this.btnDeletePart_Delete.TabIndex = 2;
             this.btnDeletePart_Delete.Text = "Usuń część";
             this.btnDeletePart_Delete.UseVisualStyleBackColor = false;
             this.btnDeletePart_Delete.Click += new System.EventHandler(this.btnDeletePart_Delete_Click);
+            // 
+            // status
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.status.DefaultCellStyle = dataGridViewCellStyle3;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.status.Width = 65;
+            // 
+            // tbUpdateType
+            // 
+            this.tbUpdateType.Enabled = false;
+            this.tbUpdateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbUpdateType.Location = new System.Drawing.Point(273, 64);
+            this.tbUpdateType.Name = "tbUpdateType";
+            this.tbUpdateType.Size = new System.Drawing.Size(181, 26);
+            this.tbUpdateType.TabIndex = 19;
+            this.tbUpdateType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelPartName
+            // 
+            this.labelPartName.AutoSize = true;
+            this.labelPartName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPartName.ForeColor = System.Drawing.Color.White;
+            this.labelPartName.Location = new System.Drawing.Point(72, 35);
+            this.labelPartName.Name = "labelPartName";
+            this.labelPartName.Size = new System.Drawing.Size(117, 20);
+            this.labelPartName.TabIndex = 19;
+            this.labelPartName.Text = "Nazwa części";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1011,19 +1027,19 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.ClientSize = new System.Drawing.Size(1184, 633);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelUpdate);
+            this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.buttonRequest);
             this.Controls.Add(this.btnUpdatePart);
             this.Controls.Add(this.btnDeletePart);
             this.Controls.Add(this.btnAddPart);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dataPartsView);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelUpdate);
-            this.Controls.Add(this.panelAdd);
-            this.Controls.Add(this.panelDelete);
             this.Controls.Add(this.panelPartsList);
             this.Controls.Add(this.panelParts);
+            this.Controls.Add(this.panelDelete);
             this.MaximizeBox = false;
             this.Name = "PartsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1081,7 +1097,6 @@
         private System.Windows.Forms.Panel panelUpdate;
         private System.Windows.Forms.Label labelUpdateProd;
         private System.Windows.Forms.Label labelUpdateType;
-        private System.Windows.Forms.Label labelUpdateName;
         private System.Windows.Forms.Label labelUpdateCatalNr;
         private System.Windows.Forms.Label labelUpdateUnit;
         private System.Windows.Forms.Label labelUpdateAmount;
@@ -1090,7 +1105,6 @@
         private System.Windows.Forms.TextBox tbUpdateProd;
         private System.Windows.Forms.TextBox tbUpdateName;
         private System.Windows.Forms.Button btnUpdatePart_Update;
-        private System.Windows.Forms.TextBox tbUpdateType;
         private System.Windows.Forms.TextBox tbUpdateUnit;
         private System.Windows.Forms.Panel panelDelete;
         private System.Windows.Forms.TextBox tbDeleteType;
@@ -1123,5 +1137,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Label labelPartName;
+        private System.Windows.Forms.TextBox tbUpdateType;
     }
 }
