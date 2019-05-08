@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MachinesForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.comMachineType = new System.Windows.Forms.ComboBox();
@@ -75,7 +74,7 @@
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.Image = global::KWZP2019.Properties.Resources.icons8_home_40;
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnReturnMain.Location = new System.Drawing.Point(950, 500);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
@@ -301,7 +300,7 @@
             this.IdMachine.HeaderText = "IdMachine";
             this.IdMachine.Name = "IdMachine";
             this.IdMachine.ReadOnly = true;
-            this.IdMachine.Width = 82;
+            this.IdMachine.Visible = false;
             // 
             // IdMachineType
             // 
@@ -312,7 +311,7 @@
             this.IdMachineType.ReadOnly = true;
             this.IdMachineType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.IdMachineType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.IdMachineType.Width = 87;
+            this.IdMachineType.Visible = false;
             // 
             // MachineTypeName
             // 
@@ -323,6 +322,7 @@
             this.MachineTypeName.ReadOnly = true;
             this.MachineTypeName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MachineTypeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MachineTypeName.Visible = false;
             // 
             // MachineName
             // 

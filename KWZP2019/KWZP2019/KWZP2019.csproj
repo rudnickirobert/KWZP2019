@@ -74,6 +74,18 @@
     <Compile Include="Accident.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DescriptionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DescriptionList.Designer.cs">
+      <DependentUpon>DescriptionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FailureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FailureListForm.Designer.cs">
+      <DependentUpon>FailureListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FEMAnalysis.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -133,6 +145,24 @@
     </Compile>
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InspectionListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectionListForm.Designer.cs">
+      <DependentUpon>InspectionListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceDescriptionForm.Designer.cs">
+      <DependentUpon>MaintenanceDescriptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewInspectionForm.Designer.cs">
+      <DependentUpon>NewInspectionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Production\EditTechnology.cs">
       <SubType>Form</SubType>
@@ -655,6 +685,9 @@
     <Compile Include="vComboBoxMachine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vComboboxNewFailure.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vContract.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -727,7 +760,25 @@
     <Compile Include="vL4.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vMachineFailure.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceAssignEmployee.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceAssignPart.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceEmployee.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vMaintenanceEmployeesCalendar.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vMaintPartsView.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vNewFailure.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vOD.cs">
@@ -845,6 +896,9 @@
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DescriptionList.resx">
+      <DependentUpon>DescriptionList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevelopmentForm.resx">
       <DependentUpon>DevelopmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -853,6 +907,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FailureListForm.resx">
+      <DependentUpon>FailureListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectionListForm.resx">
+      <DependentUpon>InspectionListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewInspectionForm.resx">
+      <DependentUpon>NewInspectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\EditTechnology.resx">
       <DependentUpon>EditTechnology.cs</DependentUpon>

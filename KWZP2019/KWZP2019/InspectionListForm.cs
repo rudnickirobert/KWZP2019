@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace KWZP2019
 {
-    public partial class MaintenanceCalendarForm : Form
+    public partial class InspectionListForm : Form
     {
         RoofingCompanyEntities db;
         StartForm startForm;
@@ -20,7 +20,7 @@ namespace KWZP2019
         int nIdSelectedMaintenance = 0;
         bool lIsLoading = true;
 
-        public MaintenanceCalendarForm(RoofingCompanyEntities db, StartForm startForm, MaintenanceManagement maintenanceManagementForm)
+        public InspectionListForm(RoofingCompanyEntities db, StartForm startForm, MaintenanceManagement maintenanceManagementForm)
         {
             this.db = db;
             this.startForm = startForm;
@@ -34,10 +34,17 @@ namespace KWZP2019
             this.Hide();
         }
 
+        private void btnNewInspection_Click(object sender, EventArgs e)
+        {
+            NewInspectionForm newInspectionForm = new NewInspectionForm(db, startForm, this);
+            this.Hide();
+            newInspectionForm.Show();
+        }
+
         void populateDataGridView()
         {
-            this.dgvMaintenance.AutoGenerateColumns = false;  
-            this.dgvMaintenance.DataSource = this.db.Maintenances.ToList<Maintenance>(); 
+            this.dgvMaintenance.AutoGenerateColumns = false;
+            this.dgvMaintenance.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMaintType == 2).ToList();
         }
 
         void clear()
@@ -45,20 +52,11 @@ namespace KWZP2019
             this.maintenance.IdMaintenance = 0;
         }
 
-        private void MaintenanceCalendarForm_Load(object sender, EventArgs e)
+        private void InspectionListForm_Load(object sender, EventArgs e)
         {
             clear();
-            populateDataGridView();          
-            List <MaintType> listType = db.MaintTypes.ToList<MaintType>();
-            MaintType recordType = new MaintType();
-            recordType.IdMaintenanceType = -1;
-            recordType.MaintenanceType = "Wszystkie";
-            listType.Add(recordType);
-            comType.DataSource = listType;
-            comType.ValueMember = "IdMaintenanceType";
-            comType.DisplayMember = "MaintenanceType";
-            comType.SelectedValue = -1;
-            List <Machine> listMachines = db.Machines.ToList<Machine>();
+            populateDataGridView();
+            List<Machine> listMachines = db.Machines.ToList<Machine>();
             Machine recordMachine = new Machine();
             recordMachine.IdMachine = -1;
             recordMachine.MachineName = "Wszystkie";
@@ -66,7 +64,7 @@ namespace KWZP2019
             comMachine.DataSource = listMachines;
             comMachine.ValueMember = "IdMachine";
             comMachine.DisplayMember = "MachineName";
-            comMachine.SelectedValue = -1;   
+            comMachine.SelectedValue = -1;
             this.lIsLoading = false;
             this.machineFilter();
         }
@@ -91,7 +89,7 @@ namespace KWZP2019
             if (this.nIdSelectedMaintenance == 0)
                 return;
             try
-            {               
+            {
                 maintenance = db.Maintenances.Where(maintenance => maintenance.IdMaintenance == this.nIdSelectedMaintenance).First();
                 MaintenanceDescriptionForm maintDescriptionForm = new MaintenanceDescriptionForm(this.db, maintenance.IdMaintDesc, 0);
                 maintDescriptionForm.Show();
@@ -99,29 +97,16 @@ namespace KWZP2019
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }                                
-        }
-
-        private void btnFilterDate_Click(object sender, EventArgs e)
-        {
-            if (this.dtpFromDate.Value > this.dtpToDate.Value)
-            {
-                MessageBox.Show("'Data od' musi być mniejsza od 'Data do'!");
-                return;
             }
-            else
-            {
-                this.dgvMaintenance.DataSource = db.Maintenances
-                .Where(maintenance => maintenance.StartDatePlan >= this.dtpFromDate.Value)
-                .Where(maintenance => maintenance.StartDatePlan <= this.dtpToDate.Value).ToList();
-            }                             
         }
 
         private void comMachine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lIsLoading)
-                return;
-            this.machineFilter();
+            {
+                if (lIsLoading)
+                    return;
+                this.machineFilter();
+            }
         }
 
         void machineFilter()
@@ -137,24 +122,26 @@ namespace KWZP2019
             }
         }
 
-        private void comType_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnFilterDate_Click(object sender, EventArgs e)
         {
-            if (lIsLoading)
-                return;
-            this.TypeFilter();
-        }
-
-        private void TypeFilter()
-        {
-            int lnSelectedType = Convert.ToInt32(this.comType.SelectedValue);
-            if (lnSelectedType == -1)
+            if (this.dtpFromDate.Value > this.dtpToDate.Value)
             {
-                populateDataGridView();
+                MessageBox.Show("'Data od' musi być mniejsza od 'Data do'!");
+                return;
             }
             else
             {
-                this.dgvMaintenance.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMaintType == lnSelectedType).ToList();
+                this.dgvMaintenance.DataSource = db.Maintenances
+                .Where(maintenance => maintenance.StartDatePlan >= this.dtpFromDate.Value)
+                .Where(maintenance => maintenance.StartDatePlan <= this.dtpToDate.Value).ToList();
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            clear();
+            populateDataGridView();
+        }
     }
+      
 }

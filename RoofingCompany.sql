@@ -1150,3 +1150,73 @@ JOIN SupplierType
 ON Supplier.IdSupplierType = SupplierType.IdSupplierType
 WHERE (SupplierNameType = 'Półfabrykaty');
 
+--UR
+GO
+CREATE VIEW vNewFailures
+AS
+SELECT Failure.IdFailure, Failure.Specification, Failure.FailureDate, Machine.MachineName
+FROM   Failure
+INNER JOIN ProductionProcess ON Failure.IdProces = ProductionProcess.IdProces 
+INNER JOIN PlannedProduction ON ProductionProcess.IdPlan = PlannedProduction.IdPlan 
+INNER JOIN Machine ON PlannedProduction.IdMachine = Machine.IdMachine
+WHERE        
+(NOT EXISTS (SELECT IdFailureMaint, IdFailure, IdMaintenance
+FROM FailureMaintenance AS FailureMaintenance_1
+WHERE (IdFailure = Failure.IdFailure)))
+GO
+
+CREATE VIEW vComboboxNewFailures
+AS
+SELECT IdFailure, Specification
+FROM Failure
+WHERE 
+(NOT EXISTS (SELECT IdFailureMaint, IdFailure, IdMaintenance
+FROM FailureMaintenance
+WHERE (IdFailure = Failure.IdFailure)))
+GO
+
+CREATE VIEW vMachineFailure
+AS
+SELECT Failure.IdFailure, Machine.IdMachine, Machine.MachineName
+FROM Failure 
+INNER JOIN ProductionProcess ON Failure.IdProces = ProductionProcess.IdProces 
+INNER JOIN PlannedProduction ON ProductionProcess.IdPlan = PlannedProduction.IdPlan 
+INNER JOIN Machine ON PlannedProduction.IdMachine = Machine.IdMachine
+GO
+
+CREATE VIEW vMaintenanceEmployees
+AS
+SELECT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname
+FROM Employee 
+INNER JOIN Allocation ON Employee.IdEmployee = Allocation.IdEmployee 
+INNER JOIN Department ON Allocation.IdDepartment = Department.IdDepartment
+WHERE (Department.DepartmentName = 'Utrzymanie ruchu')
+GO
+
+CREATE VIEW vMaintenanceAssignEmployees
+AS
+SELECT EmployeePlan.IdEmployeePlan, EmployeePlan.IdMaintenance, EmployeePlan.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, 
+EmployeePlan.StartDate, EmployeePlan.EndDate
+FROM Employee 
+INNER JOIN EmployeePlan ON Employee.IdEmployee = EmployeePlan.IdEmployee
+GO
+
+CREATE VIEW vMaintenanceEmployeesCalendar
+AS
+SELECT EmployeePlan.IdEmployee, EmployeePlan.IdMaintenance, Employee.EmployeeName, Employee.EmployeeSurname, 
+EmployeePlan.StartDate, EmployeePlan.EndDate, Maintenance.MaintenanceNr
+FROM Employee 
+INNER JOIN EmployeePlan ON Employee.IdEmployee = EmployeePlan.IdEmployee 
+INNER JOIN Maintenance ON EmployeePlan.IdMaintenance = Maintenance.IdMaintenance
+GO
+
+CREATE VIEW vMaintenanceAssignParts
+AS
+SELECT Maintenance.IdMaintenance, Part.IdPart, Part.PartName, MaintPart.PartQuantity, Part.QuantityWarehouse, Unit.UnitName
+FROM Maintenance 
+INNER JOIN MaintPart ON Maintenance.IdMaintenance = MaintPart.IdMaintenance 
+INNER JOIN Part ON MaintPart.IdPart = Part.IdPart 
+INNER JOIN Unit ON dbo.Part.IdUnit = Unit.IdUnit
+GO
+
+

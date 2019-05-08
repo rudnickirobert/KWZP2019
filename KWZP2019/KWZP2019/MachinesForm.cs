@@ -35,11 +35,9 @@ namespace KWZP2019
 
         void PopulateDataGridView()
         {
+            dgvMachine.DataSource = null;
             dgvMachine.AutoGenerateColumns = false;
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                dgvMachine.DataSource = db.Machines.ToList<Machine>();
-            }
+            dgvMachine.DataSource = this.db.Machines.ToList<Machine>();
         }
 
         void Clear()
@@ -48,19 +46,16 @@ namespace KWZP2019
             txtWorkingArea.Text = txtCatalogMachineNr.Text = txtMetersPerHour.Text = "";
             btnSave.Text = "Zapisz";
             btnDelete.Enabled = false;
-            machine.IdMachine = 0;
+            machine = new Machine();
         }
 
         private void MachinesForm_Load(object sender, EventArgs e)
         {
             Clear();
             PopulateDataGridView();
-            using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-            {
-                comMachineType.DataSource = db.MachineTypes.ToList<MachineType>();
-                comMachineType.ValueMember = "IdMachineType";
-                comMachineType.DisplayMember = "MachineTypeName";
-            }
+            comMachineType.DataSource = this.db.MachineTypes.ToList<MachineType>();
+            comMachineType.ValueMember = "IdMachineType";
+            comMachineType.DisplayMember = "MachineTypeName";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -80,21 +75,24 @@ namespace KWZP2019
                 machine.ProductionYear = Int32.Parse(txtProductionYear.Text.Trim());
                 machine.PowerMachine = float.Parse(txtPowerMachine.Text.Trim());
                 machine.MetersPerHour = float.Parse(txtMetersPerHour.Text.Trim());
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
+
+                if (machine.IdMachine == 0) //Instert
                 {
-                    if (machine.IdMachine == 0)//Instert
-                        db.Machines.Add(machine);
-                    else //update
-                        db.Entry(machine).State = EntityState.Modified;
-                    db.SaveChanges();
+                    this.db.Machines.Add(machine);
                 }
-                Clear();
+                else //update
+                    this.db.Entry(machine).State = EntityState.Modified;
+                this.db.SaveChanges();
+
+                var lista = this.db.Machines.ToList();
+                
                 PopulateDataGridView();
+                Clear();
                 MessageBox.Show("Maszyna została dodana!");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Wprowadź poprawną wartość!");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -102,17 +100,14 @@ namespace KWZP2019
         {
             if (MessageBox.Show("Czy na pewno chcesz usunąć tę pozycję?", "Usuwanie maszyny", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {
-                    var entry = db.Entry(machine);
-                    if (entry.State == EntityState.Detached)
-                        db.Machines.Attach(machine);
-                    db.Machines.Remove(machine);
-                    db.SaveChanges();
-                    PopulateDataGridView();
-                    Clear();
-                    MessageBox.Show("Usunięto prawidłowo");
-                }
+                var entry = this.db.Entry(machine);
+                if (entry.State == EntityState.Detached)
+                    this.db.Machines.Attach(machine);
+                this.db.Machines.Remove(machine);
+                this.db.SaveChanges();
+                PopulateDataGridView();
+                Clear();
+                MessageBox.Show("Usunięto prawidłowo");
             }
         }
 
@@ -126,17 +121,14 @@ namespace KWZP2019
             if (dgvMachine.CurrentRow.Index != -1)
             {
                 machine.IdMachine = Convert.ToInt32(dgvMachine.CurrentRow.Cells["IdMachine"].Value);
-                using (RoofingCompanyEntities db = new RoofingCompanyEntities())
-                {
-                    machine = db.Machines.Where(x => x.IdMachine == machine.IdMachine).First();
-                    txtMachineName.Text = machine.MachineName;
-                    txtProducerMachine.Text = machine.ProducerMachine;
-                    txtWorkingArea.Text = machine.WorkingArea;
-                    txtCatalogMachineNr.Text = machine.CatalogMachineNr;
-                    txtProductionYear.Text = machine.ProductionYear.ToString();
-                    txtPowerMachine.Text = machine.PowerMachine.ToString();
-                    txtMetersPerHour.Text = machine.MetersPerHour.ToString();
-                }
+                machine = this.db.Machines.Where(x => x.IdMachine == machine.IdMachine).First();
+                txtMachineName.Text = machine.MachineName;
+                txtProducerMachine.Text = machine.ProducerMachine;
+                txtWorkingArea.Text = machine.WorkingArea;
+                txtCatalogMachineNr.Text = machine.CatalogMachineNr;
+                txtProductionYear.Text = machine.ProductionYear.ToString();
+                txtPowerMachine.Text = machine.PowerMachine.ToString();
+                txtMetersPerHour.Text = machine.MetersPerHour.ToString();
                 btnSave.Text = "Aktualizuj";
                 btnDelete.Enabled = true;
             }
