@@ -22,5 +22,6 @@ namespace KWZP2019
         public Nullable<int> VailidityOfMedicalExam { get; set; }
         public System.DateTime PreviousExamination { get; set; }
         public Nullable<System.DateTime> NextExamination { get; set; }
+        public Nullable<int> IdMedicalExamination { get; set; }
     }
 }

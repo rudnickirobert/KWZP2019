@@ -976,6 +976,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vHRExamination' does not have a
           <Property Name="VailidityOfMedicalExam" Type="int" />
           <Property Name="PreviousExamination" Type="date" Nullable="false" />
           <Property Name="NextExamination" Type="date" />
+          <Property Name="IdMedicalExamination" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.ViewOshTraining' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2600,7 +2601,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
     [vHRExamination].[Workplace] AS [Workplace], 
     [vHRExamination].[VailidityOfMedicalExam] AS [VailidityOfMedicalExam], 
     [vHRExamination].[PreviousExamination] AS [PreviousExamination], 
-    [vHRExamination].[NextExamination] AS [NextExamination]
+    [vHRExamination].[NextExamination] AS [NextExamination], 
+    [vHRExamination].[IdMedicalExamination] AS [IdMedicalExamination]
     FROM [dbo].[vHRExamination] AS [vHRExamination]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewOshTraining" EntityType="Self.ViewOshTraining" store:Type="Views" store:Schema="dbo">
@@ -5859,6 +5861,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="VailidityOfMedicalExam" Type="Int32" />
           <Property Name="PreviousExamination" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NextExamination" Type="DateTime" Precision="0" />
+          <Property Name="IdMedicalExamination" Type="Int32" />
         </EntityType>
         <EntityType Name="vOutputMagazine">
           <Key>
@@ -7230,6 +7233,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySetMapping Name="vHRExaminations">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vHRExamination">
               <MappingFragment StoreEntitySet="vHRExamination">
+                <ScalarProperty Name="IdMedicalExamination" ColumnName="IdMedicalExamination" />
                 <ScalarProperty Name="NextExamination" ColumnName="NextExamination" />
                 <ScalarProperty Name="PreviousExamination" ColumnName="PreviousExamination" />
                 <ScalarProperty Name="VailidityOfMedicalExam" ColumnName="VailidityOfMedicalExam" />

@@ -976,7 +976,7 @@ GO
 
 CREATE VIEW vHRExamination
 AS
-SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Position.Workplace, Position.VailidityOfMedicalExam, (ISNULL(MedicalExamination.Date, '2000-01-01')) as PreviousExamination, (ISNULL(DATEADD(day, VailidityOfMedicalExam, MedicalExamination.Date),CONVERT(date,GETDATE()))) as NextExamination
+SELECT DISTINCT Employee.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Employee.PESEL, Position.Workplace, Position.VailidityOfMedicalExam, (ISNULL(MedicalExamination.Date, '2000-01-01')) as PreviousExamination, (ISNULL(DATEADD(day, VailidityOfMedicalExam, MedicalExamination.Date),CONVERT(date,GETDATE()))) as NextExamination, MedicalExamination.IdMedicalExamination
 FROM Employee 
 inner JOIN Contract ON Employee.IdEmployee = Contract.IdEmployee 
 inner JOIN Position ON Contract.IdPosition = Position.IdPosition 
