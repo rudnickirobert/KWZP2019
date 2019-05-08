@@ -61,6 +61,8 @@
             // 
             // tbPhone
             // 
+            this.tbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbPhone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbPhone.Location = new System.Drawing.Point(681, 252);
             this.tbPhone.MaxLength = 9;
             this.tbPhone.Name = "tbPhone";
@@ -69,6 +71,8 @@
             // 
             // tbEmail
             // 
+            this.tbEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbEmail.Location = new System.Drawing.Point(681, 285);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(162, 20);
@@ -76,6 +80,8 @@
             // 
             // tbHouseNumber
             // 
+            this.tbHouseNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbHouseNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbHouseNumber.Location = new System.Drawing.Point(681, 351);
             this.tbHouseNumber.Name = "tbHouseNumber";
             this.tbHouseNumber.Size = new System.Drawing.Size(162, 20);
@@ -83,6 +89,8 @@
             // 
             // tbPostalCode
             // 
+            this.tbPostalCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbPostalCode.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbPostalCode.Location = new System.Drawing.Point(681, 387);
             this.tbPostalCode.Name = "tbPostalCode";
             this.tbPostalCode.Size = new System.Drawing.Size(162, 20);
@@ -90,6 +98,8 @@
             // 
             // tbCity
             // 
+            this.tbCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbCity.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbCity.Location = new System.Drawing.Point(932, 389);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(140, 20);
@@ -181,6 +191,8 @@
             // 
             // tbStreet
             // 
+            this.tbStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbStreet.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbStreet.Location = new System.Drawing.Point(681, 318);
             this.tbStreet.Name = "tbStreet";
             this.tbStreet.Size = new System.Drawing.Size(162, 20);
@@ -222,6 +234,8 @@
             // 
             // tbLocalNumber
             // 
+            this.tbLocalNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbLocalNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbLocalNumber.Location = new System.Drawing.Point(990, 351);
             this.tbLocalNumber.Name = "tbLocalNumber";
             this.tbLocalNumber.Size = new System.Drawing.Size(82, 20);
@@ -229,6 +243,8 @@
             // 
             // tbNIP
             // 
+            this.tbNIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbNIP.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbNIP.Location = new System.Drawing.Point(681, 419);
             this.tbNIP.MaxLength = 10;
             this.tbNIP.Name = "tbNIP";
@@ -237,6 +253,8 @@
             // 
             // tbKRS
             // 
+            this.tbKRS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbKRS.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbKRS.Location = new System.Drawing.Point(681, 450);
             this.tbKRS.MaxLength = 9;
             this.tbKRS.Name = "tbKRS";
@@ -245,6 +263,8 @@
             // 
             // tbDescription
             // 
+            this.tbDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbDescription.Location = new System.Drawing.Point(681, 486);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(391, 20);
@@ -300,6 +320,8 @@
             // 
             // tbCompanyName
             // 
+            this.tbCompanyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.tbCompanyName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbCompanyName.Location = new System.Drawing.Point(718, 219);
             this.tbCompanyName.Name = "tbCompanyName";
             this.tbCompanyName.Size = new System.Drawing.Size(354, 20);

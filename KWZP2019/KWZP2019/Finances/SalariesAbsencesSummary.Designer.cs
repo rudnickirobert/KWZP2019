@@ -62,7 +62,7 @@
             this.dgvSalariesData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -81,7 +81,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSalariesData.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSalariesData.EnableHeadersVisualStyles = false;
-            this.dgvSalariesData.Location = new System.Drawing.Point(285, 241);
+            this.dgvSalariesData.Location = new System.Drawing.Point(40, 154);
             this.dgvSalariesData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalariesData.Name = "dgvSalariesData";
             this.dgvSalariesData.ReadOnly = true;
@@ -93,7 +93,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvSalariesData.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvSalariesData.Size = new System.Drawing.Size(1054, 313);
+            this.dgvSalariesData.Size = new System.Drawing.Size(1131, 363);
             this.dgvSalariesData.TabIndex = 0;
             // 
             // FullSalary
@@ -101,7 +101,7 @@
             this.FullSalary.HeaderText = "Pensja z premią";
             this.FullSalary.Name = "FullSalary";
             this.FullSalary.ReadOnly = true;
-            this.FullSalary.Width = 135;
+            this.FullSalary.Width = 122;
             // 
             // Bonus
             // 
@@ -111,17 +111,28 @@
             this.Bonus.Name = "Bonus";
             this.Bonus.ReadOnly = true;
             this.Bonus.ToolTipText = "0";
-            this.Bonus.Width = 82;
+            this.Bonus.Width = 76;
             // 
             // btnAcceptChangesAndSendToDatabase
             // 
-            this.btnAcceptChangesAndSendToDatabase.Location = new System.Drawing.Point(676, 775);
+            this.btnAcceptChangesAndSendToDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnAcceptChangesAndSendToDatabase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAcceptChangesAndSendToDatabase.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAcceptChangesAndSendToDatabase.FlatAppearance.BorderSize = 3;
+            this.btnAcceptChangesAndSendToDatabase.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAcceptChangesAndSendToDatabase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnAcceptChangesAndSendToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceptChangesAndSendToDatabase.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAcceptChangesAndSendToDatabase.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAcceptChangesAndSendToDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btnAcceptChangesAndSendToDatabase.Image")));
+            this.btnAcceptChangesAndSendToDatabase.Location = new System.Drawing.Point(924, 560);
             this.btnAcceptChangesAndSendToDatabase.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcceptChangesAndSendToDatabase.Name = "btnAcceptChangesAndSendToDatabase";
-            this.btnAcceptChangesAndSendToDatabase.Size = new System.Drawing.Size(429, 28);
+            this.btnAcceptChangesAndSendToDatabase.Size = new System.Drawing.Size(247, 154);
             this.btnAcceptChangesAndSendToDatabase.TabIndex = 1;
-            this.btnAcceptChangesAndSendToDatabase.Text = "Zatwierdź zmiany i zapisz je do bazy";
-            this.btnAcceptChangesAndSendToDatabase.UseVisualStyleBackColor = true;
+            this.btnAcceptChangesAndSendToDatabase.Text = "Zatwierdź zmiany";
+            this.btnAcceptChangesAndSendToDatabase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAcceptChangesAndSendToDatabase.UseVisualStyleBackColor = false;
             this.btnAcceptChangesAndSendToDatabase.Click += new System.EventHandler(this.btnAcceptChanges_Click);
             // 
             // tbBonus
@@ -129,7 +140,7 @@
             this.tbBonus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbBonus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbBonus.Location = new System.Drawing.Point(498, 96);
+            this.tbBonus.Location = new System.Drawing.Point(253, 62);
             this.tbBonus.Margin = new System.Windows.Forms.Padding(4);
             this.tbBonus.Name = "tbBonus";
             this.tbBonus.Size = new System.Drawing.Size(256, 23);
@@ -141,7 +152,7 @@
             this.lblInstruction.BackColor = System.Drawing.Color.Transparent;
             this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblInstruction.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInstruction.Location = new System.Drawing.Point(282, 198);
+            this.lblInstruction.Location = new System.Drawing.Point(37, 110);
             this.lblInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInstruction.Name = "lblInstruction";
             this.lblInstruction.Size = new System.Drawing.Size(444, 18);
@@ -154,7 +165,7 @@
             this.lblBonus.BackColor = System.Drawing.Color.Transparent;
             this.lblBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblBonus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBonus.Location = new System.Drawing.Point(282, 101);
+            this.lblBonus.Location = new System.Drawing.Point(37, 67);
             this.lblBonus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBonus.Name = "lblBonus";
             this.lblBonus.Size = new System.Drawing.Size(189, 18);
@@ -167,7 +178,7 @@
             this.lblCurrentDate.BackColor = System.Drawing.Color.Transparent;
             this.lblCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblCurrentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCurrentDate.Location = new System.Drawing.Point(282, 74);
+            this.lblCurrentDate.Location = new System.Drawing.Point(37, 40);
             this.lblCurrentDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentDate.Name = "lblCurrentDate";
             this.lblCurrentDate.Size = new System.Drawing.Size(105, 18);
@@ -179,7 +190,7 @@
             this.tbCurrentDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbCurrentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCurrentDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbCurrentDate.Location = new System.Drawing.Point(498, 69);
+            this.tbCurrentDate.Location = new System.Drawing.Point(253, 35);
             this.tbCurrentDate.Margin = new System.Windows.Forms.Padding(4);
             this.tbCurrentDate.Name = "tbCurrentDate";
             this.tbCurrentDate.ReadOnly = true;
@@ -198,7 +209,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(8, 76);
+            this.btnReturn.Location = new System.Drawing.Point(40, 560);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(247, 154);
@@ -220,7 +231,7 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(9, 241);
+            this.btnReturnMain.Location = new System.Drawing.Point(308, 560);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
@@ -236,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.tbCurrentDate);

@@ -82,6 +82,7 @@
             // 
             this.tbSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbSurname.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbSurname.Location = new System.Drawing.Point(691, 232);
             this.tbSurname.Name = "tbSurname";
             this.tbSurname.Size = new System.Drawing.Size(382, 23);

@@ -219,6 +219,7 @@
             // 
             this.tbEducationSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbEducationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbEducationSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbEducationSearch.Location = new System.Drawing.Point(177, 35);
             this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbEducationSearch.Name = "tbEducationSearch";

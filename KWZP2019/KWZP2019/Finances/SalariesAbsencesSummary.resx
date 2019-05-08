@@ -124,6 +124,17 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnAcceptChangesAndSendToDatabase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAARZJREFUeF7t0MFJBEEURdHJztTMzDBMwQjUTRX04s/gcKFb9Bx4u/5QfW8AXO/l
+        9e3rma0ztinSo60zth3m/ePz4QS8Q8BIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBI
+        wEjASMBIwEjASMBIwOjPBNwPvGpTtOOmmzO3Mt03HZ25Kdpx082ZW5nu2x9Oj//PEzBOwDgB4wSMEzBO
+        wDgB454OeNWmxx833Zy5lem+6ejMTdGOm27O3Mr0++wHTtGO+/U/chUBIwEjASMBIwEjASMBIwEjASMB
+        IwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjAaMd5qdbZ2xTpEdbZwBc5nb7BnQk1x0R4cOp
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnReturn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

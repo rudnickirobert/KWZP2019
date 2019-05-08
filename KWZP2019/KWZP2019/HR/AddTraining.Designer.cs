@@ -43,7 +43,6 @@
             this.dtpTrainingEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblTrainingEndDate = new System.Windows.Forms.Label();
             this.lblEmployeeLastName = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.tbTrainingPrice = new System.Windows.Forms.TextBox();
             this.lblTrainingPrice = new System.Windows.Forms.Label();
             this.tbSearchTraining = new System.Windows.Forms.TextBox();
@@ -89,8 +88,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTrainings.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTrainings.EnableHeadersVisualStyles = false;
-            this.dgvTrainings.Location = new System.Drawing.Point(28, 121);
-            this.dgvTrainings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTrainings.Location = new System.Drawing.Point(21, 98);
+            this.dgvTrainings.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTrainings.Name = "dgvTrainings";
             this.dgvTrainings.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -102,7 +101,7 @@
             this.dgvTrainings.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTrainings.RowTemplate.Height = 24;
             this.dgvTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrainings.Size = new System.Drawing.Size(708, 458);
+            this.dgvTrainings.Size = new System.Drawing.Size(531, 372);
             this.dgvTrainings.TabIndex = 0;
             // 
             // btnAdd
@@ -117,10 +116,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(1020, 624);
+            this.btnAdd.Location = new System.Drawing.Point(765, 507);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(329, 190);
+            this.btnAdd.Size = new System.Drawing.Size(247, 154);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -138,10 +137,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(28, 607);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Location = new System.Drawing.Point(21, 493);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(341, 70);
+            this.btnDelete.Size = new System.Drawing.Size(530, 57);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -153,19 +152,22 @@
             this.lblTrainingName.BackColor = System.Drawing.Color.Transparent;
             this.lblTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTrainingName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTrainingName.Location = new System.Drawing.Point(864, 288);
+            this.lblTrainingName.Location = new System.Drawing.Point(648, 234);
+            this.lblTrainingName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainingName.Name = "lblTrainingName";
-            this.lblTrainingName.Size = new System.Drawing.Size(174, 25);
+            this.lblTrainingName.Size = new System.Drawing.Size(142, 20);
             this.lblTrainingName.TabIndex = 3;
             this.lblTrainingName.Text = "Nazwa szkolenia";
             // 
             // tbTrainingName
             // 
+            this.tbTrainingName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbTrainingName.Location = new System.Drawing.Point(1128, 294);
-            this.tbTrainingName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbTrainingName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbTrainingName.Location = new System.Drawing.Point(846, 239);
+            this.tbTrainingName.Margin = new System.Windows.Forms.Padding(2);
             this.tbTrainingName.Name = "tbTrainingName";
-            this.tbTrainingName.Size = new System.Drawing.Size(333, 26);
+            this.tbTrainingName.Size = new System.Drawing.Size(251, 23);
             this.tbTrainingName.TabIndex = 4;
             // 
             // lblTrainingStartDate
@@ -174,28 +176,29 @@
             this.lblTrainingStartDate.BackColor = System.Drawing.Color.Transparent;
             this.lblTrainingStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTrainingStartDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTrainingStartDate.Location = new System.Drawing.Point(864, 348);
+            this.lblTrainingStartDate.Location = new System.Drawing.Point(648, 283);
+            this.lblTrainingStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainingStartDate.Name = "lblTrainingStartDate";
-            this.lblTrainingStartDate.Size = new System.Drawing.Size(198, 25);
+            this.lblTrainingStartDate.Size = new System.Drawing.Size(163, 20);
             this.lblTrainingStartDate.TabIndex = 5;
             this.lblTrainingStartDate.Text = "Początek szkolenia";
             // 
             // dtpTrainingStartDate
             // 
             this.dtpTrainingStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpTrainingStartDate.Location = new System.Drawing.Point(1128, 354);
-            this.dtpTrainingStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTrainingStartDate.Location = new System.Drawing.Point(846, 288);
+            this.dtpTrainingStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTrainingStartDate.Name = "dtpTrainingStartDate";
-            this.dtpTrainingStartDate.Size = new System.Drawing.Size(333, 26);
+            this.dtpTrainingStartDate.Size = new System.Drawing.Size(251, 23);
             this.dtpTrainingStartDate.TabIndex = 6;
             // 
             // dtpTrainingEndDate
             // 
             this.dtpTrainingEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpTrainingEndDate.Location = new System.Drawing.Point(1128, 412);
-            this.dtpTrainingEndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTrainingEndDate.Location = new System.Drawing.Point(846, 335);
+            this.dtpTrainingEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTrainingEndDate.Name = "dtpTrainingEndDate";
-            this.dtpTrainingEndDate.Size = new System.Drawing.Size(333, 26);
+            this.dtpTrainingEndDate.Size = new System.Drawing.Size(251, 23);
             this.dtpTrainingEndDate.TabIndex = 7;
             // 
             // lblTrainingEndDate
@@ -204,9 +207,10 @@
             this.lblTrainingEndDate.BackColor = System.Drawing.Color.Transparent;
             this.lblTrainingEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTrainingEndDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTrainingEndDate.Location = new System.Drawing.Point(864, 410);
+            this.lblTrainingEndDate.Location = new System.Drawing.Point(648, 333);
+            this.lblTrainingEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainingEndDate.Name = "lblTrainingEndDate";
-            this.lblTrainingEndDate.Size = new System.Drawing.Size(176, 25);
+            this.lblTrainingEndDate.Size = new System.Drawing.Size(143, 20);
             this.lblTrainingEndDate.TabIndex = 8;
             this.lblTrainingEndDate.Text = "Koniec szkolenia";
             // 
@@ -216,37 +220,22 @@
             this.lblEmployeeLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEmployeeLastName.Location = new System.Drawing.Point(864, 485);
+            this.lblEmployeeLastName.Location = new System.Drawing.Point(648, 394);
+            this.lblEmployeeLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeLastName.Name = "lblEmployeeLastName";
-            this.lblEmployeeLastName.Size = new System.Drawing.Size(111, 25);
+            this.lblEmployeeLastName.Size = new System.Drawing.Size(90, 20);
             this.lblEmployeeLastName.TabIndex = 12;
             this.lblEmployeeLastName.Text = "Pracownik";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.FlatAppearance.BorderSize = 3;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEdit.Location = new System.Drawing.Point(405, 607);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(329, 70);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Text = "Edytuj";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
             // tbTrainingPrice
             // 
+            this.tbTrainingPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbTrainingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbTrainingPrice.Location = new System.Drawing.Point(1128, 553);
-            this.tbTrainingPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbTrainingPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbTrainingPrice.Location = new System.Drawing.Point(846, 449);
+            this.tbTrainingPrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbTrainingPrice.Name = "tbTrainingPrice";
-            this.tbTrainingPrice.Size = new System.Drawing.Size(333, 26);
+            this.tbTrainingPrice.Size = new System.Drawing.Size(251, 23);
             this.tbTrainingPrice.TabIndex = 14;
             // 
             // lblTrainingPrice
@@ -255,9 +244,10 @@
             this.lblTrainingPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTrainingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTrainingPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTrainingPrice.Location = new System.Drawing.Point(864, 554);
+            this.lblTrainingPrice.Location = new System.Drawing.Point(648, 450);
+            this.lblTrainingPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainingPrice.Name = "lblTrainingPrice";
-            this.lblTrainingPrice.Size = new System.Drawing.Size(67, 25);
+            this.lblTrainingPrice.Size = new System.Drawing.Size(54, 20);
             this.lblTrainingPrice.TabIndex = 15;
             this.lblTrainingPrice.Text = "Koszt";
             // 
@@ -265,10 +255,11 @@
             // 
             this.tbSearchTraining.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbSearchTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbSearchTraining.Location = new System.Drawing.Point(139, 32);
-            this.tbSearchTraining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbSearchTraining.Location = new System.Drawing.Point(104, 26);
+            this.tbSearchTraining.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchTraining.Name = "tbSearchTraining";
-            this.tbSearchTraining.Size = new System.Drawing.Size(307, 26);
+            this.tbSearchTraining.Size = new System.Drawing.Size(231, 23);
             this.tbSearchTraining.TabIndex = 16;
             this.tbSearchTraining.TextChanged += new System.EventHandler(this.tbSearchTraining_TextChanged);
             // 
@@ -276,10 +267,11 @@
             // 
             this.tbSearchTrainingName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbSearchTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbSearchTrainingName.Location = new System.Drawing.Point(139, 71);
-            this.tbSearchTrainingName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchTrainingName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbSearchTrainingName.Location = new System.Drawing.Point(104, 58);
+            this.tbSearchTrainingName.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchTrainingName.Name = "tbSearchTrainingName";
-            this.tbSearchTrainingName.Size = new System.Drawing.Size(307, 26);
+            this.tbSearchTrainingName.Size = new System.Drawing.Size(231, 23);
             this.tbSearchTrainingName.TabIndex = 17;
             this.tbSearchTrainingName.TextChanged += new System.EventHandler(this.tbSearchTrainingName_TextChanged);
             // 
@@ -289,9 +281,10 @@
             this.lblSearchTrainingSurname.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchTrainingSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblSearchTrainingSurname.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchTrainingSurname.Location = new System.Drawing.Point(24, 39);
+            this.lblSearchTrainingSurname.Location = new System.Drawing.Point(18, 32);
+            this.lblSearchTrainingSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchTrainingSurname.Name = "lblSearchTrainingSurname";
-            this.lblSearchTrainingSurname.Size = new System.Drawing.Size(81, 20);
+            this.lblSearchTrainingSurname.Size = new System.Drawing.Size(67, 17);
             this.lblSearchTrainingSurname.TabIndex = 18;
             this.lblSearchTrainingSurname.Text = "Nazwisko";
             // 
@@ -301,9 +294,10 @@
             this.lblSearchTrainingName.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchTrainingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblSearchTrainingName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchTrainingName.Location = new System.Drawing.Point(24, 79);
+            this.lblSearchTrainingName.Location = new System.Drawing.Point(18, 64);
+            this.lblSearchTrainingName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchTrainingName.Name = "lblSearchTrainingName";
-            this.lblSearchTrainingName.Size = new System.Drawing.Size(40, 20);
+            this.lblSearchTrainingName.Size = new System.Drawing.Size(33, 17);
             this.lblSearchTrainingName.TabIndex = 19;
             this.lblSearchTrainingName.Text = "Imię";
             // 
@@ -312,10 +306,9 @@
             this.pbAddTraining.BackColor = System.Drawing.Color.Transparent;
             this.pbAddTraining.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAddTraining.BackgroundImage")));
             this.pbAddTraining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAddTraining.Location = new System.Drawing.Point(763, 15);
-            this.pbAddTraining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbAddTraining.Location = new System.Drawing.Point(572, 12);
             this.pbAddTraining.Name = "pbAddTraining";
-            this.pbAddTraining.Size = new System.Drawing.Size(775, 881);
+            this.pbAddTraining.Size = new System.Drawing.Size(581, 716);
             this.pbAddTraining.TabIndex = 20;
             this.pbAddTraining.TabStop = false;
             // 
@@ -325,10 +318,9 @@
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(992, 166);
-            this.lblFormTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFormTitle.Location = new System.Drawing.Point(744, 135);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(291, 36);
+            this.lblFormTitle.Size = new System.Drawing.Size(235, 29);
             this.lblFormTitle.TabIndex = 21;
             this.lblFormTitle.Text = "Wprowadź szkolenie";
             // 
@@ -344,10 +336,10 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(28, 709);
+            this.btnReturn.Location = new System.Drawing.Point(21, 576);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(341, 187);
+            this.btnReturn.Size = new System.Drawing.Size(256, 152);
             this.btnReturn.TabIndex = 24;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -366,10 +358,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(405, 706);
+            this.btnReturnMain.Location = new System.Drawing.Point(304, 574);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
             this.btnReturnMain.TabIndex = 25;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -382,19 +374,19 @@
             this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbEmployeeList.FormattingEnabled = true;
-            this.cbEmployeeList.Location = new System.Drawing.Point(1128, 480);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmployeeList.Location = new System.Drawing.Point(846, 390);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(333, 30);
+            this.cbEmployeeList.Size = new System.Drawing.Size(251, 26);
             this.cbEmployeeList.TabIndex = 37;
             // 
             // AddTraining
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
@@ -405,7 +397,6 @@
             this.Controls.Add(this.tbSearchTraining);
             this.Controls.Add(this.lblTrainingPrice);
             this.Controls.Add(this.tbTrainingPrice);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblEmployeeLastName);
             this.Controls.Add(this.lblTrainingEndDate);
             this.Controls.Add(this.dtpTrainingEndDate);
@@ -418,7 +409,7 @@
             this.Controls.Add(this.dgvTrainings);
             this.Controls.Add(this.pbAddTraining);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddTraining";
@@ -444,7 +435,6 @@
         private System.Windows.Forms.DateTimePicker dtpTrainingEndDate;
         private System.Windows.Forms.Label lblTrainingEndDate;
         private System.Windows.Forms.Label lblEmployeeLastName;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox tbTrainingPrice;
         private System.Windows.Forms.Label lblTrainingPrice;
         private System.Windows.Forms.TextBox tbSearchTraining;

@@ -81,7 +81,9 @@
             // 
             // tbInvoiceValue
             // 
+            this.tbInvoiceValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbInvoiceValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbInvoiceValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbInvoiceValue.Location = new System.Drawing.Point(685, 394);
             this.tbInvoiceValue.Name = "tbInvoiceValue";
             this.tbInvoiceValue.Size = new System.Drawing.Size(151, 23);

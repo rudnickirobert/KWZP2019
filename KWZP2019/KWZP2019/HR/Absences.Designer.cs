@@ -42,7 +42,6 @@
             this.lblFirstDay = new System.Windows.Forms.Label();
             this.dateTimePickerLastDay = new System.Windows.Forms.DateTimePicker();
             this.lblLastDay = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.lblLastName = new System.Windows.Forms.Label();
             this.tbSearchAbsence = new System.Windows.Forms.TextBox();
             this.lblSearchSurname = new System.Windows.Forms.Label();
@@ -88,8 +87,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAbsences.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAbsences.EnableHeadersVisualStyles = false;
-            this.dgvAbsences.Location = new System.Drawing.Point(13, 160);
-            this.dgvAbsences.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvAbsences.Location = new System.Drawing.Point(10, 130);
+            this.dgvAbsences.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAbsences.Name = "dgvAbsences";
             this.dgvAbsences.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -101,7 +100,7 @@
             this.dgvAbsences.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAbsences.RowTemplate.Height = 24;
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAbsences.Size = new System.Drawing.Size(687, 455);
+            this.dgvAbsences.Size = new System.Drawing.Size(515, 370);
             this.dgvAbsences.TabIndex = 0;
             // 
             // buttonAdd
@@ -116,10 +115,10 @@
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
-            this.buttonAdd.Location = new System.Drawing.Point(951, 607);
+            this.buttonAdd.Location = new System.Drawing.Point(713, 493);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(329, 190);
+            this.buttonAdd.Size = new System.Drawing.Size(247, 154);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "Dodaj";
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -137,10 +136,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(15, 636);
+            this.btnDelete.Location = new System.Drawing.Point(11, 517);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(329, 70);
+            this.btnDelete.Size = new System.Drawing.Size(514, 57);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -152,10 +151,10 @@
             this.cbAbsenceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbAbsenceType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbAbsenceType.FormattingEnabled = true;
-            this.cbAbsenceType.Location = new System.Drawing.Point(1079, 402);
-            this.cbAbsenceType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbAbsenceType.Location = new System.Drawing.Point(809, 327);
+            this.cbAbsenceType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbAbsenceType.Name = "cbAbsenceType";
-            this.cbAbsenceType.Size = new System.Drawing.Size(217, 30);
+            this.cbAbsenceType.Size = new System.Drawing.Size(164, 26);
             this.cbAbsenceType.TabIndex = 3;
             // 
             // lblAbsenceType
@@ -164,9 +163,10 @@
             this.lblAbsenceType.BackColor = System.Drawing.Color.Transparent;
             this.lblAbsenceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.lblAbsenceType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAbsenceType.Location = new System.Drawing.Point(869, 402);
+            this.lblAbsenceType.Location = new System.Drawing.Point(652, 327);
+            this.lblAbsenceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAbsenceType.Name = "lblAbsenceType";
-            this.lblAbsenceType.Size = new System.Drawing.Size(197, 25);
+            this.lblAbsenceType.Size = new System.Drawing.Size(155, 20);
             this.lblAbsenceType.TabIndex = 4;
             this.lblAbsenceType.Text = "Typ nieobecności";
             // 
@@ -174,10 +174,10 @@
             // 
             this.dateTimePickerFirstDay.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dateTimePickerFirstDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.dateTimePickerFirstDay.Location = new System.Drawing.Point(1079, 464);
-            this.dateTimePickerFirstDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerFirstDay.Location = new System.Drawing.Point(809, 377);
+            this.dateTimePickerFirstDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerFirstDay.Name = "dateTimePickerFirstDay";
-            this.dateTimePickerFirstDay.Size = new System.Drawing.Size(259, 28);
+            this.dateTimePickerFirstDay.Size = new System.Drawing.Size(195, 24);
             this.dateTimePickerFirstDay.TabIndex = 5;
             // 
             // lblFirstDay
@@ -186,9 +186,10 @@
             this.lblFirstDay.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.lblFirstDay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFirstDay.Location = new System.Drawing.Point(869, 464);
+            this.lblFirstDay.Location = new System.Drawing.Point(652, 377);
+            this.lblFirstDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstDay.Name = "lblFirstDay";
-            this.lblFirstDay.Size = new System.Drawing.Size(170, 25);
+            this.lblFirstDay.Size = new System.Drawing.Size(136, 20);
             this.lblFirstDay.TabIndex = 6;
             this.lblFirstDay.Text = "Pierwszy dzień";
             // 
@@ -196,10 +197,10 @@
             // 
             this.dateTimePickerLastDay.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dateTimePickerLastDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.dateTimePickerLastDay.Location = new System.Drawing.Point(1079, 521);
-            this.dateTimePickerLastDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerLastDay.Location = new System.Drawing.Point(809, 423);
+            this.dateTimePickerLastDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerLastDay.Name = "dateTimePickerLastDay";
-            this.dateTimePickerLastDay.Size = new System.Drawing.Size(259, 28);
+            this.dateTimePickerLastDay.Size = new System.Drawing.Size(195, 24);
             this.dateTimePickerLastDay.TabIndex = 7;
             // 
             // lblLastDay
@@ -208,31 +209,12 @@
             this.lblLastDay.BackColor = System.Drawing.Color.Transparent;
             this.lblLastDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.lblLastDay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLastDay.Location = new System.Drawing.Point(869, 524);
+            this.lblLastDay.Location = new System.Drawing.Point(652, 426);
+            this.lblLastDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLastDay.Name = "lblLastDay";
-            this.lblLastDay.Size = new System.Drawing.Size(151, 25);
+            this.lblLastDay.Size = new System.Drawing.Size(121, 20);
             this.lblLastDay.TabIndex = 8;
             this.lblLastDay.Text = "Ostatni dzień";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.FlatAppearance.BorderSize = 3;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEdit.Location = new System.Drawing.Point(371, 636);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(329, 70);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.Text = "Edytuj";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblLastName
             // 
@@ -240,9 +222,10 @@
             this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.lblLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLastName.Location = new System.Drawing.Point(869, 338);
+            this.lblLastName.Location = new System.Drawing.Point(652, 275);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(120, 25);
+            this.lblLastName.Size = new System.Drawing.Size(95, 20);
             this.lblLastName.TabIndex = 13;
             this.lblLastName.Text = "Pracownik";
             // 
@@ -251,10 +234,10 @@
             this.tbSearchAbsence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbSearchAbsence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbSearchAbsence.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbSearchAbsence.Location = new System.Drawing.Point(233, 46);
-            this.tbSearchAbsence.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchAbsence.Location = new System.Drawing.Point(175, 37);
+            this.tbSearchAbsence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSearchAbsence.Name = "tbSearchAbsence";
-            this.tbSearchAbsence.Size = new System.Drawing.Size(289, 26);
+            this.tbSearchAbsence.Size = new System.Drawing.Size(218, 23);
             this.tbSearchAbsence.TabIndex = 14;
             this.tbSearchAbsence.TextChanged += new System.EventHandler(this.tbSearchAbsence_TextChanged);
             // 
@@ -264,9 +247,10 @@
             this.lblSearchSurname.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblSearchSurname.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchSurname.Location = new System.Drawing.Point(15, 54);
+            this.lblSearchSurname.Location = new System.Drawing.Point(11, 44);
+            this.lblSearchSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchSurname.Name = "lblSearchSurname";
-            this.lblSearchSurname.Size = new System.Drawing.Size(178, 20);
+            this.lblSearchSurname.Size = new System.Drawing.Size(149, 17);
             this.lblSearchSurname.TabIndex = 15;
             this.lblSearchSurname.Text = "Wyszukaj po nazwisku";
             // 
@@ -276,9 +260,10 @@
             this.lblSearchName.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblSearchName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchName.Location = new System.Drawing.Point(15, 108);
+            this.lblSearchName.Location = new System.Drawing.Point(11, 88);
+            this.lblSearchName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(182, 24);
+            this.lblSearchName.Size = new System.Drawing.Size(144, 18);
             this.lblSearchName.TabIndex = 16;
             this.lblSearchName.Text = "Wyszukaj po imieniu";
             // 
@@ -287,10 +272,10 @@
             this.tbSearchName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbSearchName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbSearchName.Location = new System.Drawing.Point(233, 101);
-            this.tbSearchName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchName.Location = new System.Drawing.Point(175, 82);
+            this.tbSearchName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSearchName.Name = "tbSearchName";
-            this.tbSearchName.Size = new System.Drawing.Size(289, 26);
+            this.tbSearchName.Size = new System.Drawing.Size(218, 23);
             this.tbSearchName.TabIndex = 17;
             this.tbSearchName.TextChanged += new System.EventHandler(this.tbSearchName_TextChanged);
             // 
@@ -306,10 +291,10 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(15, 721);
+            this.btnReturn.Location = new System.Drawing.Point(11, 586);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(329, 190);
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
             this.btnReturn.TabIndex = 18;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -328,10 +313,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(371, 721);
+            this.btnReturnMain.Location = new System.Drawing.Point(278, 586);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
             this.btnReturnMain.TabIndex = 19;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -344,9 +329,10 @@
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(900, 201);
+            this.lblFormTitle.Location = new System.Drawing.Point(675, 163);
+            this.lblFormTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(390, 31);
+            this.lblFormTitle.Size = new System.Drawing.Size(313, 26);
             this.lblFormTitle.TabIndex = 34;
             this.lblFormTitle.Text = "Dodaj nieobecność pracownika";
             // 
@@ -355,10 +341,9 @@
             this.pbAbsence.BackColor = System.Drawing.Color.Transparent;
             this.pbAbsence.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAbsence.BackgroundImage")));
             this.pbAbsence.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAbsence.Location = new System.Drawing.Point(719, 54);
-            this.pbAbsence.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbAbsence.Location = new System.Drawing.Point(539, 44);
             this.pbAbsence.Name = "pbAbsence";
-            this.pbAbsence.Size = new System.Drawing.Size(783, 853);
+            this.pbAbsence.Size = new System.Drawing.Size(587, 693);
             this.pbAbsence.TabIndex = 35;
             this.pbAbsence.TabStop = false;
             // 
@@ -368,10 +353,10 @@
             this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbEmployeeList.FormattingEnabled = true;
-            this.cbEmployeeList.Location = new System.Drawing.Point(1079, 338);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmployeeList.Location = new System.Drawing.Point(809, 275);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(259, 30);
+            this.cbEmployeeList.Size = new System.Drawing.Size(195, 26);
             this.cbEmployeeList.TabIndex = 36;
             // 
             // btnAddAbsenceType
@@ -382,23 +367,22 @@
             this.btnAddAbsenceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAbsenceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnAddAbsenceType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddAbsenceType.Location = new System.Drawing.Point(1301, 402);
-            this.btnAddAbsenceType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddAbsenceType.Location = new System.Drawing.Point(991, 305);
+            this.btnAddAbsenceType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddAbsenceType.Name = "btnAddAbsenceType";
-            this.btnAddAbsenceType.Size = new System.Drawing.Size(37, 32);
+            this.btnAddAbsenceType.Size = new System.Drawing.Size(54, 48);
             this.btnAddAbsenceType.TabIndex = 37;
             this.btnAddAbsenceType.Text = "+";
-            this.btnAddAbsenceType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddAbsenceType.UseVisualStyleBackColor = false;
             this.btnAddAbsenceType.Click += new System.EventHandler(this.btnAddAbsenceType_Click);
             // 
             // Absences
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.btnAddAbsenceType);
             this.Controls.Add(this.cbEmployeeList);
             this.Controls.Add(this.lblFormTitle);
@@ -409,7 +393,6 @@
             this.Controls.Add(this.lblSearchSurname);
             this.Controls.Add(this.tbSearchAbsence);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblLastDay);
             this.Controls.Add(this.dateTimePickerLastDay);
             this.Controls.Add(this.lblFirstDay);
@@ -421,7 +404,7 @@
             this.Controls.Add(this.dgvAbsences);
             this.Controls.Add(this.pbAbsence);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Absences";
@@ -446,7 +429,6 @@
         private System.Windows.Forms.Label lblFirstDay;
         private System.Windows.Forms.DateTimePicker dateTimePickerLastDay;
         private System.Windows.Forms.Label lblLastDay;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox tbSearchAbsence;
         private System.Windows.Forms.Label lblSearchSurname;

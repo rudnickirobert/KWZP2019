@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Examination));
             this.dgvExamination = new System.Windows.Forms.DataGridView();
             this.tbSearchEmployeeExamination = new System.Windows.Forms.TextBox();
@@ -48,56 +48,56 @@
             // 
             // dgvExamination
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.dgvExamination.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.dgvExamination.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExamination.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvExamination.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dgvExamination.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExamination.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExamination.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvExamination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExamination.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExamination.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExamination.EnableHeadersVisualStyles = false;
-            this.dgvExamination.Location = new System.Drawing.Point(695, 213);
-            this.dgvExamination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvExamination.Location = new System.Drawing.Point(521, 173);
+            this.dgvExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvExamination.Name = "dgvExamination";
             this.dgvExamination.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvExamination.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvExamination.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvExamination.RowTemplate.Height = 24;
             this.dgvExamination.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExamination.Size = new System.Drawing.Size(679, 663);
+            this.dgvExamination.Size = new System.Drawing.Size(509, 539);
             this.dgvExamination.TabIndex = 0;
             // 
             // tbSearchEmployeeExamination
             // 
             this.tbSearchEmployeeExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbSearchEmployeeExamination.Location = new System.Drawing.Point(909, 92);
-            this.tbSearchEmployeeExamination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchEmployeeExamination.Location = new System.Drawing.Point(682, 75);
+            this.tbSearchEmployeeExamination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSearchEmployeeExamination.Name = "tbSearchEmployeeExamination";
-            this.tbSearchEmployeeExamination.Size = new System.Drawing.Size(273, 26);
+            this.tbSearchEmployeeExamination.Size = new System.Drawing.Size(206, 23);
             this.tbSearchEmployeeExamination.TabIndex = 1;
             this.tbSearchEmployeeExamination.TextChanged += new System.EventHandler(this.tbSearchEmployeeExamination_TextChanged);
             // 
@@ -113,10 +113,10 @@
             this.btnAddExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddExamination.Image = ((System.Drawing.Image)(resources.GetObject("btnAddExamination.Image")));
-            this.btnAddExamination.Location = new System.Drawing.Point(111, 494);
+            this.btnAddExamination.Location = new System.Drawing.Point(83, 401);
             this.btnAddExamination.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddExamination.Name = "btnAddExamination";
-            this.btnAddExamination.Size = new System.Drawing.Size(329, 190);
+            this.btnAddExamination.Size = new System.Drawing.Size(247, 154);
             this.btnAddExamination.TabIndex = 2;
             this.btnAddExamination.Text = "Dodaj badanie";
             this.btnAddExamination.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,10 +135,10 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(111, 703);
+            this.btnDelete.Location = new System.Drawing.Point(83, 571);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(329, 190);
+            this.btnDelete.Size = new System.Drawing.Size(247, 154);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -148,10 +148,10 @@
             // tbSearchEmployeeExaminationName
             // 
             this.tbSearchEmployeeExaminationName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbSearchEmployeeExaminationName.Location = new System.Drawing.Point(909, 149);
-            this.tbSearchEmployeeExaminationName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchEmployeeExaminationName.Location = new System.Drawing.Point(682, 121);
+            this.tbSearchEmployeeExaminationName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSearchEmployeeExaminationName.Name = "tbSearchEmployeeExaminationName";
-            this.tbSearchEmployeeExaminationName.Size = new System.Drawing.Size(273, 26);
+            this.tbSearchEmployeeExaminationName.Size = new System.Drawing.Size(206, 23);
             this.tbSearchEmployeeExaminationName.TabIndex = 4;
             this.tbSearchEmployeeExaminationName.TextChanged += new System.EventHandler(this.tbSearchEmployeeExaminationName_TextChanged);
             // 
@@ -161,9 +161,10 @@
             this.lblSearchEmployeeExaminationName.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchEmployeeExaminationName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblSearchEmployeeExaminationName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchEmployeeExaminationName.Location = new System.Drawing.Point(691, 156);
+            this.lblSearchEmployeeExaminationName.Location = new System.Drawing.Point(518, 127);
+            this.lblSearchEmployeeExaminationName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchEmployeeExaminationName.Name = "lblSearchEmployeeExaminationName";
-            this.lblSearchEmployeeExaminationName.Size = new System.Drawing.Size(162, 20);
+            this.lblSearchEmployeeExaminationName.Size = new System.Drawing.Size(136, 17);
             this.lblSearchEmployeeExaminationName.TabIndex = 5;
             this.lblSearchEmployeeExaminationName.Text = "Wyszukaj po imieniu";
             // 
@@ -173,9 +174,10 @@
             this.lblSearchEmployeeExamination.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchEmployeeExamination.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblSearchEmployeeExamination.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchEmployeeExamination.Location = new System.Drawing.Point(691, 100);
+            this.lblSearchEmployeeExamination.Location = new System.Drawing.Point(518, 81);
+            this.lblSearchEmployeeExamination.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchEmployeeExamination.Name = "lblSearchEmployeeExamination";
-            this.lblSearchEmployeeExamination.Size = new System.Drawing.Size(178, 20);
+            this.lblSearchEmployeeExamination.Size = new System.Drawing.Size(149, 17);
             this.lblSearchEmployeeExamination.TabIndex = 6;
             this.lblSearchEmployeeExamination.Text = "Wyszukaj po nazwisku";
             // 
@@ -191,10 +193,10 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(111, 284);
+            this.btnReturnMain.Location = new System.Drawing.Point(83, 231);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
             this.btnReturnMain.TabIndex = 7;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -213,10 +215,10 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(111, 75);
+            this.btnReturn.Location = new System.Drawing.Point(83, 61);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(329, 190);
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
             this.btnReturn.TabIndex = 8;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -231,10 +233,10 @@
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRefresh.Image = global::KWZP2019.Properties.Resources.refreshp;
-            this.btnRefresh.Location = new System.Drawing.Point(624, 213);
+            this.btnRefresh.Location = new System.Drawing.Point(916, 61);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(68, 65);
+            this.btnRefresh.Size = new System.Drawing.Size(114, 104);
             this.btnRefresh.TabIndex = 18;
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -242,11 +244,11 @@
             // 
             // Examination
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnReturnMain);
@@ -258,7 +260,7 @@
             this.Controls.Add(this.tbSearchEmployeeExamination);
             this.Controls.Add(this.dgvExamination);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Examination";

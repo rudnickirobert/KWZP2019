@@ -177,7 +177,9 @@
             // 
             // tbFirstName
             // 
+            this.tbFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbFirstName.Location = new System.Drawing.Point(685, 241);
             this.tbFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.tbFirstName.Name = "tbFirstName";
@@ -186,7 +188,9 @@
             // 
             // tbLastName
             // 
+            this.tbLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbLastName.Location = new System.Drawing.Point(685, 277);
             this.tbLastName.Margin = new System.Windows.Forms.Padding(2);
             this.tbLastName.Name = "tbLastName";
@@ -195,7 +199,9 @@
             // 
             // tbZipCode
             // 
+            this.tbZipCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbZipCode.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbZipCode.Location = new System.Drawing.Point(685, 485);
             this.tbZipCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbZipCode.Name = "tbZipCode";
@@ -204,7 +210,9 @@
             // 
             // tbCity
             // 
+            this.tbCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbCity.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbCity.Location = new System.Drawing.Point(941, 480);
             this.tbCity.Margin = new System.Windows.Forms.Padding(2);
             this.tbCity.Name = "tbCity";
@@ -213,7 +221,9 @@
             // 
             // tbStreet
             // 
+            this.tbStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbStreet.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbStreet.Location = new System.Drawing.Point(685, 403);
             this.tbStreet.Margin = new System.Windows.Forms.Padding(2);
             this.tbStreet.Name = "tbStreet";
@@ -222,7 +232,9 @@
             // 
             // tbHouseNumber
             // 
+            this.tbHouseNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbHouseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbHouseNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbHouseNumber.Location = new System.Drawing.Point(685, 440);
             this.tbHouseNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbHouseNumber.Name = "tbHouseNumber";
@@ -231,7 +243,9 @@
             // 
             // tbApartmentNumber
             // 
+            this.tbApartmentNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbApartmentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbApartmentNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbApartmentNumber.Location = new System.Drawing.Point(943, 440);
             this.tbApartmentNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbApartmentNumber.Name = "tbApartmentNumber";
@@ -240,7 +254,9 @@
             // 
             // tbPhoneNumber
             // 
+            this.tbPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbPhoneNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbPhoneNumber.Location = new System.Drawing.Point(685, 321);
             this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
@@ -249,7 +265,9 @@
             // 
             // tbPESEL
             // 
+            this.tbPESEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbPESEL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbPESEL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbPESEL.Location = new System.Drawing.Point(685, 362);
             this.tbPESEL.Margin = new System.Windows.Forms.Padding(2);
             this.tbPESEL.Name = "tbPESEL";
