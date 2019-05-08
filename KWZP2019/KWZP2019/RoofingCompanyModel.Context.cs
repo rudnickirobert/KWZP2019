@@ -157,5 +157,6 @@ namespace KWZP2019
         public virtual DbSet<vMaintenanceEmployeesCalendar> vMaintenanceEmployeesCalendars { get; set; }
         public virtual DbSet<vNewFailure> vNewFailures { get; set; }
         public virtual DbSet<vHRExamination> vHRExaminations { get; set; }
+        public virtual DbSet<vProductionProduct> vProductionProducts { get; set; }
     }
 }

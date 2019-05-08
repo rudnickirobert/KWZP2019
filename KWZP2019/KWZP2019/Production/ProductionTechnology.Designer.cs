@@ -35,17 +35,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionTechnology));
             this.dataGVtechnology = new System.Windows.Forms.DataGridView();
-            this.idTechnologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.technologyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timePermeterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speedFactorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.technologyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.productionTechnologyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idTechnologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.technologyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timePermeterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speedFactorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVtechnology)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.technologyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionTechnologyBindingSource)).BeginInit();
@@ -105,39 +105,6 @@
             this.dataGVtechnology.Size = new System.Drawing.Size(566, 363);
             this.dataGVtechnology.TabIndex = 0;
             this.dataGVtechnology.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGVtechnology_RowHeaderMouseClick);
-            // 
-            // idTechnologyDataGridViewTextBoxColumn
-            // 
-            this.idTechnologyDataGridViewTextBoxColumn.DataPropertyName = "IdTechnology";
-            this.idTechnologyDataGridViewTextBoxColumn.FillWeight = 90F;
-            this.idTechnologyDataGridViewTextBoxColumn.HeaderText = "IdTechnology";
-            this.idTechnologyDataGridViewTextBoxColumn.Name = "idTechnologyDataGridViewTextBoxColumn";
-            this.idTechnologyDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // technologyNameDataGridViewTextBoxColumn
-            // 
-            this.technologyNameDataGridViewTextBoxColumn.DataPropertyName = "TechnologyName";
-            this.technologyNameDataGridViewTextBoxColumn.HeaderText = "Nazwa technologii";
-            this.technologyNameDataGridViewTextBoxColumn.Name = "technologyNameDataGridViewTextBoxColumn";
-            // 
-            // timePermeterDataGridViewTextBoxColumn
-            // 
-            this.timePermeterDataGridViewTextBoxColumn.DataPropertyName = "TimePermeter";
-            this.timePermeterDataGridViewTextBoxColumn.HeaderText = "Czas produkcji";
-            this.timePermeterDataGridViewTextBoxColumn.Name = "timePermeterDataGridViewTextBoxColumn";
-            // 
-            // speedFactorDataGridViewTextBoxColumn
-            // 
-            this.speedFactorDataGridViewTextBoxColumn.DataPropertyName = "SpeedFactor";
-            this.speedFactorDataGridViewTextBoxColumn.HeaderText = "Współczynnik prędkości";
-            this.speedFactorDataGridViewTextBoxColumn.Name = "speedFactorDataGridViewTextBoxColumn";
-            // 
-            // productsDataGridViewTextBoxColumn
-            // 
-            this.productsDataGridViewTextBoxColumn.DataPropertyName = "Products";
-            this.productsDataGridViewTextBoxColumn.HeaderText = "Products";
-            this.productsDataGridViewTextBoxColumn.Name = "productsDataGridViewTextBoxColumn";
-            this.productsDataGridViewTextBoxColumn.Visible = false;
             // 
             // technologyBindingSource
             // 
@@ -229,6 +196,39 @@
             // 
             this.productionTechnologyBindingSource.DataSource = typeof(KWZP2019.ProductionTechnology);
             // 
+            // idTechnologyDataGridViewTextBoxColumn
+            // 
+            this.idTechnologyDataGridViewTextBoxColumn.DataPropertyName = "IdTechnology";
+            this.idTechnologyDataGridViewTextBoxColumn.FillWeight = 90F;
+            this.idTechnologyDataGridViewTextBoxColumn.HeaderText = "IdTechnology";
+            this.idTechnologyDataGridViewTextBoxColumn.Name = "idTechnologyDataGridViewTextBoxColumn";
+            this.idTechnologyDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // technologyNameDataGridViewTextBoxColumn
+            // 
+            this.technologyNameDataGridViewTextBoxColumn.DataPropertyName = "TechnologyName";
+            this.technologyNameDataGridViewTextBoxColumn.HeaderText = "Nazwa technologii";
+            this.technologyNameDataGridViewTextBoxColumn.Name = "technologyNameDataGridViewTextBoxColumn";
+            // 
+            // timePermeterDataGridViewTextBoxColumn
+            // 
+            this.timePermeterDataGridViewTextBoxColumn.DataPropertyName = "TimePermeter";
+            this.timePermeterDataGridViewTextBoxColumn.HeaderText = "Prędkość produkcji [m/h]";
+            this.timePermeterDataGridViewTextBoxColumn.Name = "timePermeterDataGridViewTextBoxColumn";
+            // 
+            // speedFactorDataGridViewTextBoxColumn
+            // 
+            this.speedFactorDataGridViewTextBoxColumn.DataPropertyName = "SpeedFactor";
+            this.speedFactorDataGridViewTextBoxColumn.HeaderText = "Współczynnik prędkości";
+            this.speedFactorDataGridViewTextBoxColumn.Name = "speedFactorDataGridViewTextBoxColumn";
+            // 
+            // productsDataGridViewTextBoxColumn
+            // 
+            this.productsDataGridViewTextBoxColumn.DataPropertyName = "Products";
+            this.productsDataGridViewTextBoxColumn.HeaderText = "Products";
+            this.productsDataGridViewTextBoxColumn.Name = "productsDataGridViewTextBoxColumn";
+            this.productsDataGridViewTextBoxColumn.Visible = false;
+            // 
             // ProductionTechnology
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,12 +261,12 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.BindingSource technologyBindingSource;
+        private System.Windows.Forms.BindingSource productionTechnologyBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTechnologyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn technologyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timePermeterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn speedFactorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource technologyBindingSource;
-        private System.Windows.Forms.BindingSource productionTechnologyBindingSource;
     }
 }

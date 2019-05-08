@@ -1181,7 +1181,7 @@ GO
 
 CREATE VIEW vProductionProcessFullData
 AS
-SELECT ProductionProcess.IdProces, ProductionProcess.IdPlan, ProductionProcess.StartDate, ProductionProcess.EndDate, PlannedProductionEmployeeDetails.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Machine.MachineName, Machine.CatalogMachineNr
+SELECT ProductionProcess.IdProces, Product.ProductCode, OrderDetail.Quantity, ProductionProcess.StartDate, ProductionProcess.EndDate, PlannedProductionEmployeeDetails.IdEmployee, Employee.EmployeeName, Employee.EmployeeSurname, Machine.MachineName, Machine.CatalogMachineNr
 FROM ProductionProcess
 JOIN PlannedProduction
 ON ProductionProcess.IdPlan = PlannedProduction.IdPlan
@@ -1191,6 +1191,10 @@ JOIN Employee
 ON PlannedProductionEmployeeDetails.IdEmployee = Employee.IdEmployee
 JOIN Machine
 ON PlannedProduction.IdMachine = Machine.IdMachine
+JOIN OrderDetail
+ON PlannedProduction.IdDetail = OrderDetail.IdDetail
+JOIN Product
+ON OrderDetail.IdProduct = Product.IdProduct
 GO
 
 GO
@@ -1299,6 +1303,16 @@ FROM Maintenance
 INNER JOIN MaintPart ON Maintenance.IdMaintenance = MaintPart.IdMaintenance 
 INNER JOIN Part ON MaintPart.IdPart = Part.IdPart 
 INNER JOIN Unit ON dbo.Part.IdUnit = Unit.IdUnit
+GO
+
+CREATE VIEW vProductionProducts
+AS
+SELECT Product.IdProduct, Product.ProductCode, SemiFinished.SfCode, Technology.TechnologyName, Product.InputDate
+FROM Product
+JOIN SemiFinished
+ON Product.IdSemiFinished = SemiFinished.IdSemiFinished
+JOIN Technology
+ON Product.IdTechnology = Technology.IdTechnology
 GO
 
 

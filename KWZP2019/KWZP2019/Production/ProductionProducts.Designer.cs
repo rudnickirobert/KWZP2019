@@ -37,14 +37,16 @@
             this.btDeleteProduct = new System.Windows.Forms.Button();
             this.btEnd = new System.Windows.Forms.Button();
             this.dataGridProducts = new System.Windows.Forms.DataGridView();
-            this.idProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSemiFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTechnologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inputDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btRefresh = new System.Windows.Forms.Button();
+            this.vProductionProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SfCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TechnologyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inputDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vProductionProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,11 +153,11 @@
             this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductDataGridViewTextBoxColumn,
-            this.idSemiFinishedDataGridViewTextBoxColumn,
             this.productCodeDataGridViewTextBoxColumn,
-            this.idTechnologyDataGridViewTextBoxColumn,
+            this.SfCode,
+            this.TechnologyName,
             this.inputDateDataGridViewTextBoxColumn});
-            this.dataGridProducts.DataSource = this.productBindingSource;
+            this.dataGridProducts.DataSource = this.vProductionProductBindingSource;
             this.dataGridProducts.EnableHeadersVisualStyles = false;
             this.dataGridProducts.Location = new System.Drawing.Point(12, 152);
             this.dataGridProducts.Name = "dataGridProducts";
@@ -167,50 +169,9 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridProducts.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridProducts.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Empty;
-            this.dataGridProducts.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Empty;
             this.dataGridProducts.Size = new System.Drawing.Size(776, 286);
             this.dataGridProducts.TabIndex = 4;
             this.dataGridProducts.SelectionChanged += new System.EventHandler(this.dataGridProducts_SelectionChanged);
-            // 
-            // idProductDataGridViewTextBoxColumn
-            // 
-            this.idProductDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idProductDataGridViewTextBoxColumn.DataPropertyName = "IdProduct";
-            this.idProductDataGridViewTextBoxColumn.HeaderText = "ID Produktu";
-            this.idProductDataGridViewTextBoxColumn.Name = "idProductDataGridViewTextBoxColumn";
-            // 
-            // idSemiFinishedDataGridViewTextBoxColumn
-            // 
-            this.idSemiFinishedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idSemiFinishedDataGridViewTextBoxColumn.DataPropertyName = "IdSemiFinished";
-            this.idSemiFinishedDataGridViewTextBoxColumn.HeaderText = "ID Półproduktu";
-            this.idSemiFinishedDataGridViewTextBoxColumn.Name = "idSemiFinishedDataGridViewTextBoxColumn";
-            // 
-            // productCodeDataGridViewTextBoxColumn
-            // 
-            this.productCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "ProductCode";
-            this.productCodeDataGridViewTextBoxColumn.HeaderText = "Kod produktu";
-            this.productCodeDataGridViewTextBoxColumn.Name = "productCodeDataGridViewTextBoxColumn";
-            // 
-            // idTechnologyDataGridViewTextBoxColumn
-            // 
-            this.idTechnologyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idTechnologyDataGridViewTextBoxColumn.DataPropertyName = "IdTechnology";
-            this.idTechnologyDataGridViewTextBoxColumn.HeaderText = "ID Technologii";
-            this.idTechnologyDataGridViewTextBoxColumn.Name = "idTechnologyDataGridViewTextBoxColumn";
-            // 
-            // inputDateDataGridViewTextBoxColumn
-            // 
-            this.inputDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.inputDateDataGridViewTextBoxColumn.DataPropertyName = "InputDate";
-            this.inputDateDataGridViewTextBoxColumn.HeaderText = "Data dodania";
-            this.inputDateDataGridViewTextBoxColumn.Name = "inputDateDataGridViewTextBoxColumn";
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
             // 
             // btRefresh
             // 
@@ -233,6 +194,47 @@
             this.btRefresh.UseVisualStyleBackColor = false;
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
+            // vProductionProductBindingSource
+            // 
+            this.vProductionProductBindingSource.DataSource = typeof(KWZP2019.vProductionProduct);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(KWZP2019.Product);
+            // 
+            // idProductDataGridViewTextBoxColumn
+            // 
+            this.idProductDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idProductDataGridViewTextBoxColumn.DataPropertyName = "IdProduct";
+            this.idProductDataGridViewTextBoxColumn.HeaderText = "Identyfikator produktu";
+            this.idProductDataGridViewTextBoxColumn.Name = "idProductDataGridViewTextBoxColumn";
+            // 
+            // productCodeDataGridViewTextBoxColumn
+            // 
+            this.productCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productCodeDataGridViewTextBoxColumn.DataPropertyName = "ProductCode";
+            this.productCodeDataGridViewTextBoxColumn.HeaderText = "Kod produktu";
+            this.productCodeDataGridViewTextBoxColumn.Name = "productCodeDataGridViewTextBoxColumn";
+            // 
+            // SfCode
+            // 
+            this.SfCode.DataPropertyName = "SfCode";
+            this.SfCode.HeaderText = "Kod półfabrykatu";
+            this.SfCode.Name = "SfCode";
+            // 
+            // TechnologyName
+            // 
+            this.TechnologyName.DataPropertyName = "TechnologyName";
+            this.TechnologyName.HeaderText = "Technologia";
+            this.TechnologyName.Name = "TechnologyName";
+            // 
+            // inputDateDataGridViewTextBoxColumn
+            // 
+            this.inputDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.inputDateDataGridViewTextBoxColumn.DataPropertyName = "InputDate";
+            this.inputDateDataGridViewTextBoxColumn.HeaderText = "Data dodania";
+            this.inputDateDataGridViewTextBoxColumn.Name = "inputDateDataGridViewTextBoxColumn";
+            // 
             // ProductionProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +251,7 @@
             this.Text = "Produkty";
             this.Load += new System.EventHandler(this.ProductionProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vProductionProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -263,10 +266,11 @@
         private System.Windows.Forms.DataGridView dataGridProducts;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.Button btRefresh;
+        private System.Windows.Forms.BindingSource vProductionProductBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProductDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSemiFinishedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTechnologyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SfCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TechnologyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn inputDateDataGridViewTextBoxColumn;
     }
 }
