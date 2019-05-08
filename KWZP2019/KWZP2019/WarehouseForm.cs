@@ -31,6 +31,13 @@ namespace KWZP2019
             previousForm.Show();
             this.Close();
         }
+        private void sfOrderBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrderNewSemiProductForm OrderNewSemiProductForm = new OrderNewSemiProductForm(db, previousForm);
+            OrderNewSemiProductForm.ShowDialog();
+            this.Close();
+        }
         private void semiFinishedCodeTb_TextChanged(object sender, EventArgs e)
         {
             if (semiFinishedCodeTb.Text.Trim() == "")
