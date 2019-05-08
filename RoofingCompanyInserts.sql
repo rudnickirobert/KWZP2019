@@ -432,11 +432,11 @@ insert into MaintType values ('Awaria');
 insert into MaintType values ('Przegląd');
 insert into MaintType values ('Konserwacja');
 
-insert into MaintDescription values ('Smarowanie łańcucha', null);
-insert into MaintDescription values ('Wymiana łożysk', null);
-insert into MaintDescription values ('Regulacja luzu napinacza', null);
-insert into MaintDescription values ('Pomiar zużycia kół zębatych', null);
-insert into MaintDescription values ('Wymiana pasa napędowego', null);
+insert into MaintenanceDescription values ('Smarowanie łańcucha', null);
+insert into MaintenanceDescription values ('Wymiana łożysk', null);
+insert into MaintenanceDescription values ('Regulacja luzu napinacza', null);
+insert into MaintenanceDescription values ('Pomiar zużycia kół zębatych', null);
+insert into MaintenanceDescription values ('Wymiana pasa napędowego', null);
 
 insert into PartType values ('Łożysko');
 insert into PartType values ('Pasek');

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvDescription = new System.Windows.Forms.DataGridView();
-            this.IdMaintDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaintDescName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaintDescription1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtShortDescription = new System.Windows.Forms.TextBox();
             this.txtLongDescription = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
+            this.IdMaintDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionShort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionLong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescription)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,32 +45,13 @@
             this.dgvDescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDescription.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdMaintDesc,
-            this.MaintDescName,
-            this.MaintDescription1});
-            this.dgvDescription.Location = new System.Drawing.Point(35, 42);
+            this.DescriptionShort,
+            this.DescriptionLong});
+            this.dgvDescription.Location = new System.Drawing.Point(35, 53);
             this.dgvDescription.Name = "dgvDescription";
             this.dgvDescription.Size = new System.Drawing.Size(324, 221);
             this.dgvDescription.TabIndex = 0;
             this.dgvDescription.DoubleClick += new System.EventHandler(this.dgvDescription_DoubleClick);
-            // 
-            // IdMaintDesc
-            // 
-            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
-            this.IdMaintDesc.HeaderText = "IdMaintDesc";
-            this.IdMaintDesc.Name = "IdMaintDesc";
-            this.IdMaintDesc.Visible = false;
-            // 
-            // MaintDescName
-            // 
-            this.MaintDescName.DataPropertyName = "MaintDescName";
-            this.MaintDescName.HeaderText = "Krótki opis";
-            this.MaintDescName.Name = "MaintDescName";
-            // 
-            // MaintDescription1
-            // 
-            this.MaintDescription1.DataPropertyName = "MaintDescription1";
-            this.MaintDescription1.HeaderText = "Opis";
-            this.MaintDescription1.Name = "MaintDescription1";
             // 
             // txtShortDescription
             // 
@@ -130,6 +111,25 @@
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
+            // IdMaintDesc
+            // 
+            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
+            this.IdMaintDesc.HeaderText = "IdMaintDesc";
+            this.IdMaintDesc.Name = "IdMaintDesc";
+            this.IdMaintDesc.Visible = false;
+            // 
+            // DescriptionShort
+            // 
+            this.DescriptionShort.DataPropertyName = "DescriptionShort";
+            this.DescriptionShort.HeaderText = "Krótki opis";
+            this.DescriptionShort.Name = "DescriptionShort";
+            // 
+            // DescriptionLong
+            // 
+            this.DescriptionLong.DataPropertyName = "DescriptionLong";
+            this.DescriptionLong.HeaderText = "Opis";
+            this.DescriptionLong.Name = "DescriptionLong";
+            // 
             // DescriptionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,7 +159,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintDesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaintDescName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaintDescription1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionShort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionLong;
     }
 }
