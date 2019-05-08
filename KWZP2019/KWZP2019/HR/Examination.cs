@@ -38,19 +38,19 @@ namespace KWZP2019
 
         private void tbSearchEmployeeExamination_TextChanged(object sender, EventArgs e)
         {
-            dgvExamination.DataSource = db.vExaminations.
-                Where (examination => examination.Nazwisko.StartsWith(tbSearchEmployeeExamination.Text)
-                                   && examination.Imię.StartsWith(tbSearchEmployeeExaminationName.Text)).
-                OrderByDescending (ExaminationOrderBy => ExaminationOrderBy.Data_badania_lekarskiego).
+            dgvExamination.DataSource = db.vHRExaminations.
+                Where (examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
+                                   && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
+                OrderByDescending (ExaminationOrderBy => ExaminationOrderBy.NextExamination).
                 ToList();
         }
 
         private void tbSearchEmployeeExaminationName_TextChanged(object sender, EventArgs e)
         {
-            dgvExamination.DataSource = db.vExaminations.
-                   Where (examination => examination.Nazwisko.StartsWith(tbSearchEmployeeExamination.Text)
-                                      && examination.Imię.StartsWith(tbSearchEmployeeExaminationName.Text)).
-                    OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.Data_badania_lekarskiego).
+            dgvExamination.DataSource = db.vHRExaminations.
+                   Where (examination => examination.EmployeeSurname.StartsWith(tbSearchEmployeeExamination.Text)
+                                      && examination.EmployeeName.StartsWith(tbSearchEmployeeExaminationName.Text)).
+                    OrderByDescending(ExaminationOrderBy => ExaminationOrderBy.NextExamination).
                     ToList();
         }
 
