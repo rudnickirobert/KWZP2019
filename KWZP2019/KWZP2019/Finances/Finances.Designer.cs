@@ -38,6 +38,10 @@
             // 
             this.btnPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnPayments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPayments.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPayments.FlatAppearance.BorderSize = 3;
+            this.btnPayments.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -56,6 +60,10 @@
             // 
             this.btnCountPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnCountPayments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCountPayments.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCountPayments.FlatAppearance.BorderSize = 3;
+            this.btnCountPayments.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCountPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnCountPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCountPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCountPayments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -74,6 +82,10 @@
             // 
             this.btnCosts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnCosts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCosts.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCosts.FlatAppearance.BorderSize = 3;
+            this.btnCosts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCosts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnCosts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnCosts.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -92,6 +104,10 @@
             // 
             this.btnEarnings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnEarnings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEarnings.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEarnings.FlatAppearance.BorderSize = 3;
+            this.btnEarnings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEarnings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnEarnings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEarnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnEarnings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -110,6 +126,10 @@
             // 
             this.btnFinancialStatement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnFinancialStatement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFinancialStatement.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnFinancialStatement.FlatAppearance.BorderSize = 3;
+            this.btnFinancialStatement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFinancialStatement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnFinancialStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinancialStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnFinancialStatement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -128,6 +148,10 @@
             // 
             this.btnAddInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAddInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddInvoice.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddInvoice.FlatAppearance.BorderSize = 3;
+            this.btnAddInvoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddInvoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAddInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -174,6 +198,10 @@
             // 
             this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -193,6 +221,10 @@
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;

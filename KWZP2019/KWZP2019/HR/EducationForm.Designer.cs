@@ -48,6 +48,7 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.lblFormTitle = new System.Windows.Forms.Label();
+            this.lblEducationSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEducationForm)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dgvEducation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEducation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEducation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvEducation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.dgvEducation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -81,8 +82,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEducation.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEducation.EnableHeadersVisualStyles = false;
-            this.dgvEducation.Location = new System.Drawing.Point(15, 135);
-            this.dgvEducation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEducation.Location = new System.Drawing.Point(11, 75);
+            this.dgvEducation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEducation.Name = "dgvEducation";
             this.dgvEducation.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -94,26 +95,26 @@
             this.dgvEducation.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEducation.RowTemplate.Height = 24;
             this.dgvEducation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEducation.Size = new System.Drawing.Size(788, 581);
+            this.dgvEducation.Size = new System.Drawing.Size(540, 417);
             this.dgvEducation.TabIndex = 0;
             // 
             // cbEducationLevel
             // 
             this.cbEducationLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbEducationLevel.FormattingEnabled = true;
-            this.cbEducationLevel.Location = new System.Drawing.Point(1171, 302);
-            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEducationLevel.Location = new System.Drawing.Point(848, 253);
+            this.cbEducationLevel.Margin = new System.Windows.Forms.Padding(2);
             this.cbEducationLevel.Name = "cbEducationLevel";
-            this.cbEducationLevel.Size = new System.Drawing.Size(332, 28);
+            this.cbEducationLevel.Size = new System.Drawing.Size(250, 24);
             this.cbEducationLevel.TabIndex = 4;
             // 
             // dtpGraduationDate
             // 
             this.dtpGraduationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpGraduationDate.Location = new System.Drawing.Point(1171, 350);
-            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpGraduationDate.Location = new System.Drawing.Point(848, 292);
+            this.dtpGraduationDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpGraduationDate.Name = "dtpGraduationDate";
-            this.dtpGraduationDate.Size = new System.Drawing.Size(332, 26);
+            this.dtpGraduationDate.Size = new System.Drawing.Size(250, 23);
             this.dtpGraduationDate.TabIndex = 8;
             // 
             // lblEmployeeName
@@ -122,9 +123,10 @@
             this.lblEmployeeName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEmployeeName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEmployeeName.Location = new System.Drawing.Point(883, 258);
+            this.lblEmployeeName.Location = new System.Drawing.Point(632, 218);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(111, 25);
+            this.lblEmployeeName.Size = new System.Drawing.Size(90, 20);
             this.lblEmployeeName.TabIndex = 9;
             this.lblEmployeeName.Text = "Pracownik";
             // 
@@ -134,9 +136,10 @@
             this.lblEducationLevel.BackColor = System.Drawing.Color.Transparent;
             this.lblEducationLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEducationLevel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEducationLevel.Location = new System.Drawing.Point(883, 306);
+            this.lblEducationLevel.Location = new System.Drawing.Point(632, 257);
+            this.lblEducationLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEducationLevel.Name = "lblEducationLevel";
-            this.lblEducationLevel.Size = new System.Drawing.Size(226, 25);
+            this.lblEducationLevel.Size = new System.Drawing.Size(187, 20);
             this.lblEducationLevel.TabIndex = 11;
             this.lblEducationLevel.Text = "Stopień wykształcenia";
             // 
@@ -146,9 +149,10 @@
             this.lblGraduationDate.BackColor = System.Drawing.Color.Transparent;
             this.lblGraduationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblGraduationDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblGraduationDate.Location = new System.Drawing.Point(883, 353);
+            this.lblGraduationDate.Location = new System.Drawing.Point(632, 295);
+            this.lblGraduationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGraduationDate.Name = "lblGraduationDate";
-            this.lblGraduationDate.Size = new System.Drawing.Size(252, 25);
+            this.lblGraduationDate.Size = new System.Drawing.Size(210, 20);
             this.lblGraduationDate.TabIndex = 12;
             this.lblGraduationDate.Text = "Data ukończenia studiów";
             // 
@@ -162,14 +166,12 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(835, 720);
+            this.btnClear.Location = new System.Drawing.Point(11, 509);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(329, 190);
+            this.btnClear.Size = new System.Drawing.Size(247, 57);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Wyczyść";
-            this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -184,10 +186,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(1068, 446);
+            this.btnAdd.Location = new System.Drawing.Point(771, 359);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(269, 185);
+            this.btnAdd.Size = new System.Drawing.Size(246, 154);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -204,26 +206,24 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(1244, 720);
+            this.btnDelete.Location = new System.Drawing.Point(295, 509);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(329, 190);
+            this.btnDelete.Size = new System.Drawing.Size(247, 57);
             this.btnDelete.TabIndex = 15;
-            this.btnDelete.Text = "Edytuj";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tbEducationSearch
             // 
+            this.tbEducationSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.tbEducationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbEducationSearch.Location = new System.Drawing.Point(15, 64);
-            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbEducationSearch.Location = new System.Drawing.Point(177, 35);
+            this.tbEducationSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbEducationSearch.Name = "tbEducationSearch";
-            this.tbEducationSearch.Size = new System.Drawing.Size(699, 26);
+            this.tbEducationSearch.Size = new System.Drawing.Size(365, 23);
             this.tbEducationSearch.TabIndex = 16;
-            this.tbEducationSearch.Text = "Wyszukaj po nazwisku";
             this.tbEducationSearch.TextChanged += new System.EventHandler(this.tbEducationSearch_TextChanged);
             // 
             // pbEducationForm
@@ -231,10 +231,9 @@
             this.pbEducationForm.BackColor = System.Drawing.Color.Transparent;
             this.pbEducationForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEducationForm.BackgroundImage")));
             this.pbEducationForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbEducationForm.Location = new System.Drawing.Point(809, 15);
-            this.pbEducationForm.Margin = new System.Windows.Forms.Padding(4);
+            this.pbEducationForm.Location = new System.Drawing.Point(572, 12);
             this.pbEducationForm.Name = "pbEducationForm";
-            this.pbEducationForm.Size = new System.Drawing.Size(764, 702);
+            this.pbEducationForm.Size = new System.Drawing.Size(587, 570);
             this.pbEducationForm.TabIndex = 17;
             this.pbEducationForm.TabStop = false;
             // 
@@ -246,10 +245,10 @@
             this.cbEmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbEmployeeList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbEmployeeList.FormattingEnabled = true;
-            this.cbEmployeeList.Location = new System.Drawing.Point(1068, 251);
-            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEmployeeList.Location = new System.Drawing.Point(771, 212);
+            this.cbEmployeeList.Margin = new System.Windows.Forms.Padding(2);
             this.cbEmployeeList.Name = "cbEmployeeList";
-            this.cbEmployeeList.Size = new System.Drawing.Size(435, 30);
+            this.cbEmployeeList.Size = new System.Drawing.Size(327, 26);
             this.cbEmployeeList.TabIndex = 37;
             // 
             // btnReturn
@@ -264,10 +263,9 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(425, 720);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturn.Location = new System.Drawing.Point(295, 585);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(329, 190);
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
             this.btnReturn.TabIndex = 38;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -285,10 +283,9 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(16, 720);
-            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturnMain.Location = new System.Drawing.Point(12, 585);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
             this.btnReturnMain.TabIndex = 39;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -301,20 +298,32 @@
             this.lblFormTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lblFormTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormTitle.Location = new System.Drawing.Point(987, 135);
-            this.lblFormTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFormTitle.Location = new System.Drawing.Point(709, 109);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(390, 36);
+            this.lblFormTitle.Size = new System.Drawing.Size(318, 29);
             this.lblFormTitle.TabIndex = 40;
             this.lblFormTitle.Text = "Dodaj stopień wykształcenia";
             // 
+            // lblEducationSearch
+            // 
+            this.lblEducationSearch.AutoSize = true;
+            this.lblEducationSearch.BackColor = System.Drawing.Color.Transparent;
+            this.lblEducationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEducationSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEducationSearch.Location = new System.Drawing.Point(12, 41);
+            this.lblEducationSearch.Name = "lblEducationSearch";
+            this.lblEducationSearch.Size = new System.Drawing.Size(149, 17);
+            this.lblEducationSearch.TabIndex = 41;
+            this.lblEducationSearch.Text = "Wyszukaj po nazwisku";
+            // 
             // EducationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblEducationSearch);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
@@ -331,7 +340,7 @@
             this.Controls.Add(this.dgvEducation);
             this.Controls.Add(this.pbEducationForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EducationForm";
@@ -362,5 +371,6 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Label lblFormTitle;
+        private System.Windows.Forms.Label lblEducationSearch;
     }
 }

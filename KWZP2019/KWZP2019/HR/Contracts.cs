@@ -26,6 +26,7 @@ namespace KWZP2019
 
         private void Contracts_Load(object sender, EventArgs e)
         {
+
             display();
         }
 

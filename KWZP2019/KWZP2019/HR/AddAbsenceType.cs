@@ -13,10 +13,14 @@ namespace KWZP2019
     public partial class AddAbsenceType : Form
     {
         RoofingCompanyEntities db;
-        public AddAbsenceType(RoofingCompanyEntities db)
+        StartForm startForm;
+        Absences absences;
+        public AddAbsenceType(RoofingCompanyEntities db, StartForm startForm, Absences absences)
         {
             InitializeComponent();
             this.db = db;
+            this.startForm = startForm;
+            this.absences = absences;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -77,6 +81,18 @@ namespace KWZP2019
             dgvAbsencesTypes.DataSource = db.AbsenceTypes.ToList();
             dgvAbsencesTypes.Columns[0].Visible = false;
             MessageBox.Show("Rekord został usunięty");
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.absences.Show();
+            this.Hide();
+        }
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
         }
     }
 }

@@ -40,6 +40,8 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.tbSearchContractName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,8 +74,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvContracts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContracts.EnableHeadersVisualStyles = false;
-            this.dgvContracts.Location = new System.Drawing.Point(341, 150);
-            this.dgvContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvContracts.Location = new System.Drawing.Point(279, 150);
+            this.dgvContracts.Margin = new System.Windows.Forms.Padding(2);
             this.dgvContracts.Name = "dgvContracts";
             this.dgvContracts.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -85,16 +87,16 @@
             this.dgvContracts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContracts.RowTemplate.Height = 24;
             this.dgvContracts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContracts.Size = new System.Drawing.Size(802, 561);
+            this.dgvContracts.Size = new System.Drawing.Size(877, 561);
             this.dgvContracts.TabIndex = 0;
             // 
             // tbSearchContract
             // 
-            this.tbSearchContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSearchContract.Location = new System.Drawing.Point(341, 64);
-            this.tbSearchContract.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSearchContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.tbSearchContract.Location = new System.Drawing.Point(446, 64);
+            this.tbSearchContract.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchContract.Name = "tbSearchContract";
-            this.tbSearchContract.Size = new System.Drawing.Size(367, 26);
+            this.tbSearchContract.Size = new System.Drawing.Size(367, 24);
             this.tbSearchContract.TabIndex = 1;
             this.tbSearchContract.TextChanged += new System.EventHandler(this.tbSearchContract_TextChanged);
             // 
@@ -102,16 +104,20 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDelete.FlatAppearance.BorderSize = 3;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(40, 392);
+            this.btnDelete.Location = new System.Drawing.Point(9, 393);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(247, 154);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Edytuj";
+            this.btnDelete.Text = "Usuń";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -120,11 +126,15 @@
             // 
             this.btnAddTraining.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnAddTraining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddTraining.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddTraining.FlatAppearance.BorderSize = 3;
+            this.btnAddTraining.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddTraining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAddTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAddTraining.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddTraining.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTraining.Image")));
-            this.btnAddTraining.Location = new System.Drawing.Point(40, 557);
+            this.btnAddTraining.Location = new System.Drawing.Point(9, 557);
             this.btnAddTraining.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddTraining.Name = "btnAddTraining";
             this.btnAddTraining.Size = new System.Drawing.Size(247, 154);
@@ -138,11 +148,15 @@
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturn.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturn.FlatAppearance.BorderSize = 3;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(40, 64);
+            this.btnReturn.Location = new System.Drawing.Point(9, 64);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(247, 154);
@@ -156,11 +170,15 @@
             // 
             this.btnReturnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btnReturnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReturnMain.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnReturnMain.FlatAppearance.BorderSize = 3;
+            this.btnReturnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnReturnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(40, 228);
+            this.btnReturnMain.Location = new System.Drawing.Point(9, 227);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
             this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
@@ -172,13 +190,37 @@
             // 
             // tbSearchContractName
             // 
-            this.tbSearchContractName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSearchContractName.Location = new System.Drawing.Point(728, 64);
-            this.tbSearchContractName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSearchContractName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.tbSearchContractName.Location = new System.Drawing.Point(446, 106);
+            this.tbSearchContractName.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchContractName.Name = "tbSearchContractName";
-            this.tbSearchContractName.Size = new System.Drawing.Size(367, 26);
+            this.tbSearchContractName.Size = new System.Drawing.Size(367, 24);
             this.tbSearchContractName.TabIndex = 6;
             this.tbSearchContractName.TextChanged += new System.EventHandler(this.tbSearchContractName_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(276, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Wyszukaj po nazwisku";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(276, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Wyszukaj po imieniu";
             // 
             // Contracts
             // 
@@ -187,6 +229,8 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSearchContractName);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
@@ -195,7 +239,7 @@
             this.Controls.Add(this.tbSearchContract);
             this.Controls.Add(this.dgvContracts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Contracts";
@@ -217,5 +261,7 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.TextBox tbSearchContractName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
