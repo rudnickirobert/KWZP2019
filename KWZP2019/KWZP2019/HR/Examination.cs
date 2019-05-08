@@ -64,6 +64,7 @@ namespace KWZP2019
             dgvExamination.Columns[4].Visible = false;
             dgvExamination.Columns[5].Visible = false;
             dgvExamination.Columns[6].Visible = false;
+            dgvExamination.Columns[8].Visible = false;
 
             dgvExamination.Columns[1].HeaderText = "Nazwisko";
             dgvExamination.Columns[2].HeaderText = "Imię";
