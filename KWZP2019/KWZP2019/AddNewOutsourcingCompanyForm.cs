@@ -31,6 +31,7 @@ namespace KWZP2019
             if (nameTb.Text.Trim() == "")
             {
                 MessageBox.Show("Nazwa jest wymagana");
+                nameTb.BackColor = Color.Red;
                 return;
             }
             Outsourcing newOutsourcing = new Outsourcing();
@@ -55,6 +56,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format numeru domu");
+                houseNumberTb.BackColor = Color.Red;
                 return;
             }
             bool apartmentNumberTextBox = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTextbox);
@@ -65,6 +67,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format numeru lokalu");
+                apartmentNumberTb.BackColor = Color.Red;
                 return;
             }
             bool nipTextBox = long.TryParse(nipTb.Text.Trim(), out long nipTextbox);
@@ -75,6 +78,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format NIP");
+                nipTb.BackColor = Color.Red;
                 return;
             }
             bool krsTextBox = long.TryParse(krsTb.Text.Trim(), out long krsTextbox);
@@ -85,6 +89,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format KRS");
+                krsTb.BackColor = Color.Red;
                 return;
             }
             MessageBox.Show("Czy na pewno chcesz dodać nową fimrę outsourcingową?");

@@ -47,8 +47,8 @@ namespace KWZP2019
             }
             else
             {
-                outsourcingTypeDgv.DataSource =  db.vOutsourcingTypes.
-                                          ToList();
+                outsourcingTypeDgv.DataSource =  db.vOutsourcingTypes.ToList();
+                outsourcingTypeDgv.Columns[0].Visible = false;
             }
         }
 
@@ -59,9 +59,11 @@ namespace KWZP2019
             detailsOutsourcingDgv.DataSource = (from Outsourcing in db.Outsourcings
                                                 where Outsourcing.IdOutsourcing == id
                                                 select Outsourcing).ToList();
+            detailsOutsourcingDgv.Columns[0].Visible = false;
             nameOutsourcingDgv.DataSource = (from OutsourcingCommitment in db.OutsourcingCommitments
                                              where OutsourcingCommitment.IdOutsourcing == id
                                              select OutsourcingCommitment).ToList();
+            nameOutsourcingDgv.Columns[0].Visible = false;
         }
     }
 }

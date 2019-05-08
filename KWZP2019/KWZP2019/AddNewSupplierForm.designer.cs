@@ -353,6 +353,7 @@
             this.addNewSupplierBtn.Text = "Zatwierdź";
             this.addNewSupplierBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.addNewSupplierBtn.UseVisualStyleBackColor = false;
+            this.addNewSupplierBtn.Click += new System.EventHandler(this.addNewSupplierBtn_Click);
             // 
             // returnBtn
             // 
@@ -398,10 +399,12 @@
             // comboBoxSupplierType
             // 
             this.comboBoxSupplierType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.comboBoxSupplierType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxSupplierType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.comboBoxSupplierType.FormattingEnabled = true;
             this.comboBoxSupplierType.Location = new System.Drawing.Point(192, 212);
             this.comboBoxSupplierType.Name = "comboBoxSupplierType";
-            this.comboBoxSupplierType.Size = new System.Drawing.Size(145, 21);
+            this.comboBoxSupplierType.Size = new System.Drawing.Size(145, 26);
             this.comboBoxSupplierType.TabIndex = 45;
             // 
             // buttonAddNewSupplier

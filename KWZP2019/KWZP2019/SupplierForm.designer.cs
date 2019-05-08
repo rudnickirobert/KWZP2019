@@ -49,14 +49,17 @@
             // sfSupplierRb
             // 
             this.sfSupplierRb.AutoSize = true;
+            this.sfSupplierRb.Checked = true;
             this.sfSupplierRb.Location = new System.Drawing.Point(4, 28);
             this.sfSupplierRb.Margin = new System.Windows.Forms.Padding(2);
             this.sfSupplierRb.Name = "sfSupplierRb";
             this.sfSupplierRb.Size = new System.Drawing.Size(218, 28);
             this.sfSupplierRb.TabIndex = 1;
+            this.sfSupplierRb.TabStop = true;
             this.sfSupplierRb.Text = "Dostawca półfabrykatu";
             this.sfSupplierRb.UseVisualStyleBackColor = true;
             this.sfSupplierRb.CheckedChanged += new System.EventHandler(this.sfSupplierRb_CheckedChanged_1);
+            this.sfSupplierRb.Enter += new System.EventHandler(this.sfSupplierRb_Enter);
             // 
             // partsSupplierRb
             // 

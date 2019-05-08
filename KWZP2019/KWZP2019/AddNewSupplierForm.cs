@@ -31,6 +31,7 @@ namespace KWZP2019
             if (nameTb.Text.Trim() == "")
             {
                 MessageBox.Show("Nazwa jest wymagana");
+                nameTb.BackColor = Color.Red;
                 return;
             }
             Supplier newSupplier = new Supplier();
@@ -45,6 +46,7 @@ namespace KWZP2019
             newSupplier.City = cityTb.Text.Trim();
             newSupplier.ZipCode = zipCodeTb.Text.Trim();
             newSupplier.Street = streetTb.Text.Trim();
+            newSupplier.SupplierDescription = descriptionTb.Text.Trim();
 
             bool houseNumberTextBox = int.TryParse(houseNumberTb.Text.Trim(), out int houseNumberTextbox);
             if (houseNumberTextBox)
@@ -54,6 +56,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format numeru domu");
+                houseNumberTb.BackColor = Color.Red;
                 return;
             }
             bool apartmentNumberTextBox = int.TryParse(apartmentNumberTb.Text.Trim(), out int apartmentNumberTextbox);
@@ -64,6 +67,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format numeru lokalu");
+                apartmentNumberTb.BackColor = Color.Red;
                 return;
             }
             bool nipTextBox = long.TryParse(nipTb.Text.Trim(), out long nipTextbox);
@@ -74,6 +78,7 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format NIP");
+                nipTb.BackColor = Color.Red;
                 return;
             }
             bool krsTextBox = long.TryParse(krsTb.Text.Trim(), out long krsTextbox);
@@ -84,9 +89,9 @@ namespace KWZP2019
             else
             {
                 MessageBox.Show("Niewłaściwy format KRS");
+                krsTb.BackColor = Color.Red;
                 return;
             }
-            newSupplier.SupplierDescription = descriptionTb.Text.Trim();
             MessageBox.Show("Czy na pewno chcesz dodać nowego dostawcę?");
             db.Suppliers.Add(newSupplier);
             db.SupplierTypes.Add(newsupplierType);
