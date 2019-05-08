@@ -17,12 +17,12 @@ namespace KWZP2019
         StartForm startForm;
         InspectionListForm inspectionListForm;
         EmployeePlan employeePlan = new EmployeePlan();
-        MaintPart maintPart = new MaintPart();
-        MaintDescription maintDescription = new MaintDescription();
+        MaintPart maintenancePart = new MaintPart();
+        MaintenanceDescription maintenanceDescription = new MaintenanceDescription();
         Maintenance maintenance = new Maintenance();
-        int nIdSelectedEmployee = 0;
-        int nIdSelectedDescription = 0;
-        bool lIsLoading = true;
+        int idSelectedEmployee = 0;
+        int idSelectedDescription = 0;
+        bool isLoading = true;
 
         public NewInspectionForm(RoofingCompanyEntities db, StartForm startForm, InspectionListForm inspectionListForm)
         {
@@ -72,24 +72,24 @@ namespace KWZP2019
             this.lbxParts.DataSource = partList;
             this.lbxParts.DisplayMember = "PartName";
             this.lbxParts.ValueMember = "IdPart";
-            List<MaintDescription> descriptionList = this.db.MaintDescriptions.ToList<MaintDescription>();
+            List<MaintenanceDescription> descriptionList = this.db.MaintenanceDescriptions.ToList<MaintenanceDescription>();
             this.lbxDescriptionShort.DataSource = descriptionList;
-            this.lbxDescriptionShort.DisplayMember = "MaintDescName";
+            this.lbxDescriptionShort.DisplayMember = "DescriptionShort";
             this.lbxDescriptionShort.ValueMember = "IdMaintDesc";
         }
 
         void populateTextBox()
         {
-            if (this.nIdSelectedDescription>0)
+            if (this.idSelectedDescription>0)
             {
-                this.maintDescription = this.db.MaintDescriptions.Where(maintDescription => maintDescription.IdMaintDesc == nIdSelectedDescription).First();
-                if (maintDescription.MaintDescription1 == null)
+                this.maintenanceDescription = this.db.MaintenanceDescriptions.Where(maintDescription => maintDescription.IdMaintDesc == idSelectedDescription).First();
+                if (maintenanceDescription.DescriptionLong == null)
                 {
                     this.txtDescriptionLong.Text = String.Empty;
                 }
                 else
                 {
-                    this.txtDescriptionLong.Text = this.maintDescription.MaintDescription1.ToString();
+                    this.txtDescriptionLong.Text = this.maintenanceDescription.DescriptionLong.ToString();
                 }           
             }           
         }
@@ -124,12 +124,12 @@ namespace KWZP2019
             this.tpEmployeeStartDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             this.tpEmployeeEndDate.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, 0, 0);
             this.employeePlan = new EmployeePlan();
-            this.nIdSelectedEmployee = 0;
+            this.idSelectedEmployee = 0;
         }
 
         void clearPart()
         {
-            this.maintPart = new MaintPart();
+            this.maintenancePart = new MaintPart();
             this.txtQuantity.Text = String.Empty;
         }
 
@@ -150,7 +150,7 @@ namespace KWZP2019
             this.tpEmployeeEndDate.ShowUpDown = true;
             this.tpEmployeeStartDate.Format = DateTimePickerFormat.Time;
             this.tpEmployeeStartDate.ShowUpDown = true;
-            this.lIsLoading = false;
+            this.isLoading = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -184,7 +184,7 @@ namespace KWZP2019
                 this.db.SaveChanges();
                 MessageBox.Show("Obsługa została dodana!");
                 this.btnSave.Text = "Aktualizuj";
-                nIdSelectedDescription = Convert.ToInt32(maintenance.IdMaintDesc);
+                idSelectedDescription = Convert.ToInt32(maintenance.IdMaintDesc);
                 populateTextBox();        
             }
             catch (Exception)
@@ -208,7 +208,7 @@ namespace KWZP2019
         {
             try
             {
-                this.nIdSelectedEmployee = Convert.ToInt32(this.dgvEmployees.CurrentRow.Cells["IdEmployee"].Value);
+                this.idSelectedEmployee = Convert.ToInt32(this.dgvEmployees.CurrentRow.Cells["IdEmployee"].Value);
             }
             catch (Exception ex)
             {
@@ -239,14 +239,14 @@ namespace KWZP2019
                 MessageBox.Show("Najpierw wprowadź zlecenie!");
                 return;
             }
-            if (this.nIdSelectedEmployee == 0)
+            if (this.idSelectedEmployee == 0)
             {
                 MessageBox.Show("Najpierw wybierz pracownika!");
                 return;
             }
             foreach (DataGridViewRow row in this.dgvMaintenanceEmployees.Rows)
             {
-                if (int.Parse(row.Cells[2].Value.ToString()) == this.nIdSelectedEmployee)
+                if (int.Parse(row.Cells[2].Value.ToString()) == this.idSelectedEmployee)
                 {
                     MessageBox.Show("Ten pracownik juz został dodany!");
                     return;
@@ -255,7 +255,7 @@ namespace KWZP2019
             }
             try
             {
-                this.employeePlan.IdEmployee = this.nIdSelectedEmployee;
+                this.employeePlan.IdEmployee = this.idSelectedEmployee;
                 this.employeePlan.IdMaintenance = this.maintenance.IdMaintenance;
                 this.employeePlan.StartDate = this.dtpEmployeeStartDate.Value.Date + this.tpEmployeeStartDate.Value.TimeOfDay;
                 this.employeePlan.EndDate = this.dtpEmployeeEndDate.Value.Date + this.tpEmployeeEndDate.Value.TimeOfDay;
@@ -305,13 +305,13 @@ namespace KWZP2019
             }
             try
             {
-                this.maintPart.IdPart = lnIdPart;
-                this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;
-                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
-                if (this.maintPart.IdMaintPart == 0)//Instert
-                    this.db.MaintParts.Add(maintPart);
+                this.maintenancePart.IdPart = lnIdPart;
+                this.maintenancePart.IdMaintenance = this.maintenance.IdMaintenance;
+                this.maintenancePart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
+                if (this.maintenancePart.IdMaintPart == 0)//Instert
+                    this.db.MaintParts.Add(maintenancePart);
                 else //update
-                    this.db.Entry(maintPart).State = EntityState.Modified;
+                    this.db.Entry(maintenancePart).State = EntityState.Modified;
                 this.db.SaveChanges();
             }
             catch (Exception ex)
@@ -469,13 +469,13 @@ namespace KWZP2019
 
             try
             {
-                this.maintDescription.IdMaintDesc = lnIdMaintDesc;
-                this.maintPart.IdMaintenance = this.maintenance.IdMaintenance;
-                this.maintPart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
-                if (this.maintPart.IdMaintPart == 0)//Instert
-                    this.db.MaintParts.Add(maintPart);
+                this.maintenanceDescription.IdMaintDesc = lnIdMaintDesc;
+                this.maintenancePart.IdMaintenance = this.maintenance.IdMaintenance;
+                this.maintenancePart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());
+                if (this.maintenancePart.IdMaintPart == 0)//Instert
+                    this.db.MaintParts.Add(maintenancePart);
                 else //update
-                    this.db.Entry(maintPart).State = EntityState.Modified;
+                    this.db.Entry(maintenancePart).State = EntityState.Modified;
                 this.db.SaveChanges();
             }
             catch (Exception ex)

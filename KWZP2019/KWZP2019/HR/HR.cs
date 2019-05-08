@@ -68,6 +68,8 @@ namespace KWZP2019
 
             dgvEmloyees.Columns[0].Visible = false;
 
+            dgvEmloyees.Columns[5].HeaderText = "Nr telefonu";
+
             dgvEmloyees.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmloyees.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmloyees.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;

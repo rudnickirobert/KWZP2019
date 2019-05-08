@@ -231,14 +231,6 @@
           <Property Name="IdMachineType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MachineTypeName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="MaintDescription">
-          <Key>
-            <PropertyRef Name="IdMaintDesc" />
-          </Key>
-          <Property Name="IdMaintDesc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MaintDescName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="MaintDescription" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Maintenance">
           <Key>
             <PropertyRef Name="IdMaintenance" />
@@ -251,6 +243,14 @@
           <Property Name="StartDatePlan" Type="datetime" Nullable="false" />
           <Property Name="EndDatePlan" Type="datetime" Nullable="false" />
           <Property Name="MaintenanceNr" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaintenanceDescription">
+          <Key>
+            <PropertyRef Name="IdMaintDesc" />
+          </Key>
+          <Property Name="IdMaintDesc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DescriptionShort" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DescriptionLong" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="MaintPart">
           <Key>
@@ -2004,10 +2004,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MainDescriptionMaintenance">
-          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="0..1" />
+          <End Role="MaintenanceDescription" Type="Self.MaintenanceDescription" Multiplicity="0..1" />
           <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MaintDescription">
+            <Principal Role="MaintenanceDescription">
               <PropertyRef Name="IdMaintDesc" />
             </Principal>
             <Dependent Role="Maintenance">
@@ -2517,8 +2517,8 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySet Name="InvoiceType" EntityType="Self.InvoiceType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Machine" EntityType="Self.Machine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MachineType" EntityType="Self.MachineType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MaintDescription" EntityType="Self.MaintDescription" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Maintenance" EntityType="Self.Maintenance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaintenanceDescription" EntityType="Self.MaintenanceDescription" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaintPart" EntityType="Self.MaintPart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaintType" EntityType="Self.MaintType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MedicalExamination" EntityType="Self.MedicalExamination" Schema="dbo" store:Type="Tables" />
@@ -3359,7 +3359,7 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
             <End Role="Machine" EntitySet="Machine" />
           </AssociationSet>
           <AssociationSet Name="FK_MainDescriptionMaintenance" Association="Self.FK_MainDescriptionMaintenance">
-            <End Role="MaintDescription" EntitySet="MaintDescription" />
+            <End Role="MaintenanceDescription" EntitySet="MaintenanceDescription" />
             <End Role="Maintenance" EntitySet="Maintenance" />
           </AssociationSet>
           <AssociationSet Name="FK_MaintenanceEmployee" Association="Self.FK_MaintenanceEmployee">
@@ -3792,15 +3792,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="MachineTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Machines" Relationship="Self.FK_MachineTypeMachine" FromRole="MachineType" ToRole="Machine" />
         </EntityType>
-        <EntityType Name="MaintDescription">
-          <Key>
-            <PropertyRef Name="IdMaintDesc" />
-          </Key>
-          <Property Name="IdMaintDesc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaintDescName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaintDescription1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Maintenances" Relationship="Self.FK_MainDescriptionMaintenance" FromRole="MaintDescription" ToRole="Maintenance" />
-        </EntityType>
         <EntityType Name="Maintenance">
           <Key>
             <PropertyRef Name="IdMaintenance" />
@@ -3816,10 +3807,10 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <NavigationProperty Name="EmployeePlans" Relationship="Self.FK_MaintenanceEmployee" FromRole="Maintenance" ToRole="EmployeePlan" />
           <NavigationProperty Name="FailureMaintenances" Relationship="Self.FK_MaintenanceFailureMaintenance" FromRole="Maintenance" ToRole="FailureMaintenance" />
           <NavigationProperty Name="Machine" Relationship="Self.FK_MachineMaintenance" FromRole="Maintenance" ToRole="Machine" />
-          <NavigationProperty Name="MaintDescription" Relationship="Self.FK_MainDescriptionMaintenance" FromRole="Maintenance" ToRole="MaintDescription" />
           <NavigationProperty Name="Realizations" Relationship="Self.FK_MaintenanceRealization" FromRole="Maintenance" ToRole="Realization" />
           <NavigationProperty Name="MaintType" Relationship="Self.FK_MaintTypeMaintenance" FromRole="Maintenance" ToRole="MaintType" />
           <NavigationProperty Name="PlannedProductions" Relationship="Self.FkMachine" FromRole="Maintenance" ToRole="PlannedProduction" />
+          <NavigationProperty Name="MaintenanceDescription" Relationship="RoofingCompanyModel.FK_MainDescriptionMaintenance1" FromRole="Maintenance" ToRole="MaintenanceDescription" />
         </EntityType>
         <EntityType Name="MaintPart">
           <Key>
@@ -5508,18 +5499,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MainDescriptionMaintenance">
-          <End Role="MaintDescription" Type="Self.MaintDescription" Multiplicity="0..1" />
-          <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MaintDescription">
-              <PropertyRef Name="IdMaintDesc" />
-            </Principal>
-            <Dependent Role="Maintenance">
-              <PropertyRef Name="IdMaintDesc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MaintenanceRealization">
           <End Role="Maintenance" Type="Self.Maintenance" Multiplicity="1" />
           <End Role="Realization" Type="Self.Realization" Multiplicity="*" />
@@ -5877,7 +5856,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySet Name="InvoiceTypes" EntityType="Self.InvoiceType" />
           <EntitySet Name="Machines" EntityType="Self.Machine" />
           <EntitySet Name="MachineTypes" EntityType="Self.MachineType" />
-          <EntitySet Name="MaintDescriptions" EntityType="Self.MaintDescription" />
           <EntitySet Name="Maintenances" EntityType="Self.Maintenance" />
           <EntitySet Name="MaintParts" EntityType="Self.MaintPart" />
           <EntitySet Name="MaintTypes" EntityType="Self.MaintType" />
@@ -6112,10 +6090,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
             <End Role="MachineType" EntitySet="MachineTypes" />
             <End Role="Machine" EntitySet="Machines" />
           </AssociationSet>
-          <AssociationSet Name="FK_MainDescriptionMaintenance" Association="Self.FK_MainDescriptionMaintenance">
-            <End Role="MaintDescription" EntitySet="MaintDescriptions" />
-            <End Role="Maintenance" EntitySet="Maintenances" />
-          </AssociationSet>
           <AssociationSet Name="FK_MaintenanceRealization" Association="Self.FK_MaintenanceRealization">
             <End Role="Maintenance" EntitySet="Maintenances" />
             <End Role="Realization" EntitySet="Realizations" />
@@ -6241,6 +6215,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySet Name="vMaintenanceEmployeesCalendars" EntityType="RoofingCompanyModel.vMaintenanceEmployeesCalendar" />
           <EntitySet Name="vNewFailures" EntityType="RoofingCompanyModel.vNewFailure" />
           <EntitySet Name="vHRExaminations" EntityType="RoofingCompanyModel.vHRExamination" />
+          <EntitySet Name="MaintenanceDescriptions" EntityType="RoofingCompanyModel.MaintenanceDescription" />
+          <AssociationSet Name="FK_MainDescriptionMaintenance1" Association="RoofingCompanyModel.FK_MainDescriptionMaintenance1">
+            <End Role="MaintenanceDescription" EntitySet="MaintenanceDescriptions" />
+            <End Role="Maintenance" EntitySet="Maintenances" />
+          </AssociationSet>
           <EntitySet Name="vProductionProducts" EntityType="RoofingCompanyModel.vProductionProduct" />
         </EntityContainer>
         <EntityType Name="FEMAnalysis">
@@ -6369,6 +6348,27 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="NextExamination" Type="DateTime" Precision="0" />
           <Property Name="IdMedicalExamination" Type="Int32" />
         </EntityType>
+        <EntityType Name="MaintenanceDescription">
+          <Key>
+            <PropertyRef Name="IdMaintDesc" />
+          </Key>
+          <Property Name="IdMaintDesc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescriptionShort" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DescriptionLong" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Maintenances" Relationship="RoofingCompanyModel.FK_MainDescriptionMaintenance1" FromRole="MaintenanceDescription" ToRole="Maintenance" />
+        </EntityType>
+        <Association Name="FK_MainDescriptionMaintenance1">
+          <End Type="RoofingCompanyModel.MaintenanceDescription" Role="MaintenanceDescription" Multiplicity="0..1" />
+          <End Type="RoofingCompanyModel.Maintenance" Role="Maintenance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaintenanceDescription">
+              <PropertyRef Name="IdMaintDesc" />
+            </Principal>
+            <Dependent Role="Maintenance">
+              <PropertyRef Name="IdMaintDesc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="vProductionProduct">
           <Key>
             <PropertyRef Name="IdProduct" />
@@ -6621,15 +6621,6 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
               <MappingFragment StoreEntitySet="MachineType">
                 <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
                 <ScalarProperty Name="MachineTypeName" ColumnName="MachineTypeName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MaintDescriptions">
-            <EntityTypeMapping TypeName="RoofingCompanyModel.MaintDescription">
-              <MappingFragment StoreEntitySet="MaintDescription">
-                <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
-                <ScalarProperty Name="MaintDescName" ColumnName="MaintDescName" />
-                <ScalarProperty Name="MaintDescription1" ColumnName="MaintDescription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -7901,6 +7892,15 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaintenanceDescriptions">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.MaintenanceDescription">
+              <MappingFragment StoreEntitySet="MaintenanceDescription">
+                <ScalarProperty Name="DescriptionLong" ColumnName="DescriptionLong" />
+                <ScalarProperty Name="DescriptionShort" ColumnName="DescriptionShort" />
+                <ScalarProperty Name="IdMaintDesc" ColumnName="IdMaintDesc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
