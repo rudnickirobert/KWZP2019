@@ -30,7 +30,6 @@ namespace KWZP2019
             this.dgvEmployeeMaintenanceCalendar.DataSource = this.db.vMaintenanceEmployeesCalendars.ToList<vMaintenanceEmployeesCalendar>();
 
         }
-
         private void clear()
         {
             this.txtSearch.Text = String.Empty;
