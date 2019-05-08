@@ -48,11 +48,11 @@ namespace KWZP2019
             OutsourcingForm outsourcingForm = new OutsourcingForm(db, this);
             outsourcingForm.ShowDialog();
         }
-        private void orderPartsBtn_Click(object sender, EventArgs e)
+        private void ordersSfBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderNewPartForm newOrderNewPartForm= new OrderNewPartForm(db, this);
-            newOrderNewPartForm.ShowDialog();
+            SfOrdersForm newSfOrdersForm= new SfOrdersForm(db, this);
+            newSfOrdersForm.ShowDialog();
         }
 
         private void returnToMainBtn_Click(object sender, EventArgs e)

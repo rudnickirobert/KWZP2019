@@ -32,7 +32,6 @@
             this.orderSemiProductLbl = new System.Windows.Forms.Label();
             this.quantityTb = new System.Windows.Forms.TextBox();
             this.quantityLbl = new System.Windows.Forms.Label();
-            this.generateReportBtn = new System.Windows.Forms.Button();
             this.acceptBtn = new System.Windows.Forms.Button();
             this.returnBtn = new System.Windows.Forms.Button();
             this.semiProductCodeLbl = new System.Windows.Forms.Label();
@@ -78,18 +77,6 @@
             this.quantityLbl.TabIndex = 115;
             this.quantityLbl.Text = "Ilość";
             // 
-            // generateReportBtn
-            // 
-            this.generateReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.generateReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.generateReportBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.generateReportBtn.Location = new System.Drawing.Point(584, 653);
-            this.generateReportBtn.Name = "generateReportBtn";
-            this.generateReportBtn.Size = new System.Drawing.Size(230, 55);
-            this.generateReportBtn.TabIndex = 123;
-            this.generateReportBtn.Text = "Generuj raport";
-            this.generateReportBtn.UseVisualStyleBackColor = false;
-            // 
             // acceptBtn
             // 
             this.acceptBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
@@ -104,6 +91,7 @@
             this.acceptBtn.Text = "Zrealizuj";
             this.acceptBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.acceptBtn.UseVisualStyleBackColor = false;
+            this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
             // returnBtn
             // 
@@ -119,6 +107,7 @@
             this.returnBtn.Text = "Powrót";
             this.returnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.returnBtn.UseVisualStyleBackColor = false;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // semiProductCodeLbl
             // 
@@ -166,7 +155,6 @@
             this.Controls.Add(this.semiProductCodeCb);
             this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.acceptBtn);
-            this.Controls.Add(this.generateReportBtn);
             this.Controls.Add(this.quantityTb);
             this.Controls.Add(this.quantityLbl);
             this.Controls.Add(this.semiProductCodeLbl);
@@ -186,7 +174,6 @@
         private System.Windows.Forms.Label orderSemiProductLbl;
         private System.Windows.Forms.TextBox quantityTb;
         private System.Windows.Forms.Label quantityLbl;
-        private System.Windows.Forms.Button generateReportBtn;
         private System.Windows.Forms.Button acceptBtn;
         private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.Label semiProductCodeLbl;

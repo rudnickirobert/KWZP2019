@@ -678,6 +678,12 @@
     <Compile Include="SfOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SfOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SfOrdersForm.Designer.cs">
+      <DependentUpon>SfOrdersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkillsForMachine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -1145,6 +1151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesDepartmentForm.resx">
       <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SfOrdersForm.resx">
+      <DependentUpon>SfOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
