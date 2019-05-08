@@ -35,6 +35,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_return = new System.Windows.Forms.Button();
             this.gridViewFailures = new System.Windows.Forms.DataGridView();
+            this.failureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productionFailuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_add = new System.Windows.Forms.Button();
+            this.button_Refresh = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,14 +46,10 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productionProcessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.failureBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.failureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productionFailuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button_add = new System.Windows.Forms.Button();
-            this.button_Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFailures)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionFailuresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_return
@@ -57,13 +57,13 @@
             this.btn_return.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.btn_return.BackgroundImage = global::KWZP2019.Properties.Resources.powrott;
             this.btn_return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_return.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_return.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_return.Location = new System.Drawing.Point(9, 297);
-            this.btn_return.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_return.Location = new System.Drawing.Point(12, 366);
+            this.btn_return.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_return.Name = "btn_return";
-            this.btn_return.Size = new System.Drawing.Size(162, 135);
+            this.btn_return.Size = new System.Drawing.Size(216, 166);
             this.btn_return.TabIndex = 0;
             this.btn_return.Text = "Powrót";
             this.btn_return.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -107,8 +107,8 @@
             this.gridViewFailures.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridViewFailures.EnableHeadersVisualStyles = false;
             this.gridViewFailures.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gridViewFailures.Location = new System.Drawing.Point(9, 10);
-            this.gridViewFailures.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridViewFailures.Location = new System.Drawing.Point(12, 12);
+            this.gridViewFailures.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridViewFailures.Name = "gridViewFailures";
             this.gridViewFailures.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
@@ -117,8 +117,44 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.gridViewFailures.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridViewFailures.RowTemplate.Height = 24;
-            this.gridViewFailures.Size = new System.Drawing.Size(529, 283);
+            this.gridViewFailures.Size = new System.Drawing.Size(705, 348);
             this.gridViewFailures.TabIndex = 4;
+            // 
+            // button_add
+            // 
+            this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.button_add.BackgroundImage = global::KWZP2019.Properties.Resources.addp;
+            this.button_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_add.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_add.Location = new System.Drawing.Point(501, 366);
+            this.button_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(216, 166);
+            this.button_add.TabIndex = 9;
+            this.button_add.Text = "Dodaj";
+            this.button_add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
+            // button_Refresh
+            // 
+            this.button_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.button_Refresh.BackgroundImage = global::KWZP2019.Properties.Resources.refreshp;
+            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Refresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_Refresh.Location = new System.Drawing.Point(261, 366);
+            this.button_Refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_Refresh.Name = "button_Refresh";
+            this.button_Refresh.Size = new System.Drawing.Size(216, 166);
+            this.button_Refresh.TabIndex = 10;
+            this.button_Refresh.Text = "Odśwież";
+            this.button_Refresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_Refresh.UseVisualStyleBackColor = false;
+            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -136,17 +172,19 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Specification";
             this.dataGridViewTextBoxColumn3.HeaderText = "Opis";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 73;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "FailureDate";
             this.dataGridViewTextBoxColumn4.HeaderText = "Data awarii";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 113;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -166,59 +204,24 @@
             // 
             this.failureBindingSource1.DataSource = typeof(KWZP2019.Failure);
             // 
-            // button_add
-            // 
-            this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.button_add.BackgroundImage = global::KWZP2019.Properties.Resources.addp;
-            this.button_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_add.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_add.Location = new System.Drawing.Point(376, 297);
-            this.button_add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(162, 135);
-            this.button_add.TabIndex = 9;
-            this.button_add.Text = "Dodaj";
-            this.button_add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_add.UseVisualStyleBackColor = false;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
-            // 
-            // button_Refresh
-            // 
-            this.button_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.button_Refresh.BackgroundImage = global::KWZP2019.Properties.Resources.refreshp;
-            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_Refresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_Refresh.Location = new System.Drawing.Point(196, 297);
-            this.button_Refresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.Size = new System.Drawing.Size(162, 135);
-            this.button_Refresh.TabIndex = 10;
-            this.button_Refresh.Text = "Odśwież";
-            this.button_Refresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_Refresh.UseVisualStyleBackColor = false;
-            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
-            // 
             // ProductionFailures
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
-            this.ClientSize = new System.Drawing.Size(543, 436);
+            this.ClientSize = new System.Drawing.Size(724, 537);
             this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.gridViewFailures);
             this.Controls.Add(this.btn_return);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductionFailures";
             this.Text = "Awarie";
             this.Load += new System.EventHandler(this.ProductionFailures_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFailures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionFailuresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.failureBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,12 +240,12 @@
         private System.Windows.Forms.BindingSource productionFailuresBindingSource;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.BindingSource failureBindingSource1;
+        private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionProcessDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button_Refresh;
     }
 }
