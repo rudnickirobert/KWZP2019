@@ -36,19 +36,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.menuParts = new System.Windows.Forms.Panel();
             this.buttonRequest = new System.Windows.Forms.Button();
             this.btnDeletePart = new System.Windows.Forms.Button();
             this.btnUpdatePart = new System.Windows.Forms.Button();
             this.btnAddPart = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textPartsMenu = new System.Windows.Forms.TextBox();
-            this.pictureMenu = new System.Windows.Forms.PictureBox();
             this.panelParts = new System.Windows.Forms.Panel();
-            this.labelHeaderParts = new System.Windows.Forms.Label();
             this.btnReturnMain = new System.Windows.Forms.Button();
+            this.labelHeaderParts = new System.Windows.Forms.Label();
             this.panelPartsList = new System.Windows.Forms.Panel();
             this.dataPartsView = new System.Windows.Forms.DataGridView();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.panelAdd = new System.Windows.Forms.Panel();
             this.cbPartType = new System.Windows.Forms.ComboBox();
@@ -101,18 +99,14 @@
             this.tbDeleteProducer = new System.Windows.Forms.TextBox();
             this.tbDeleteName = new System.Windows.Forms.TextBox();
             this.btnDeletePart_Delete = new System.Windows.Forms.Button();
-            this.vPartsViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuParts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMenu)).BeginInit();
+            this.vPartsViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelParts.SuspendLayout();
-            this.panelPartsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPartsView)).BeginInit();
             this.panelAdd.SuspendLayout();
             this.panelSearch.SuspendLayout();
@@ -121,163 +115,116 @@
             ((System.ComponentModel.ISupportInitialize)(this.vPartsViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuParts
-            // 
-            this.menuParts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.menuParts.Controls.Add(this.buttonRequest);
-            this.menuParts.Controls.Add(this.btnDeletePart);
-            this.menuParts.Controls.Add(this.btnUpdatePart);
-            this.menuParts.Controls.Add(this.btnAddPart);
-            this.menuParts.Controls.Add(this.btnSearch);
-            this.menuParts.Controls.Add(this.textPartsMenu);
-            this.menuParts.Controls.Add(this.pictureMenu);
-            this.menuParts.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuParts.Location = new System.Drawing.Point(0, 0);
-            this.menuParts.Name = "menuParts";
-            this.menuParts.Size = new System.Drawing.Size(57, 681);
-            this.menuParts.TabIndex = 1;
-            // 
             // buttonRequest
             // 
             this.buttonRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.buttonRequest.FlatAppearance.BorderSize = 0;
-            this.buttonRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonRequest.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.buttonRequest.FlatAppearance.BorderSize = 3;
+            this.buttonRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.buttonRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRequest.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.buttonRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonRequest.ForeColor = System.Drawing.Color.White;
             this.buttonRequest.Image = ((System.Drawing.Image)(resources.GetObject("buttonRequest.Image")));
-            this.buttonRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRequest.Location = new System.Drawing.Point(0, 382);
+            this.buttonRequest.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRequest.Location = new System.Drawing.Point(12, 336);
             this.buttonRequest.Name = "buttonRequest";
-            this.buttonRequest.Size = new System.Drawing.Size(277, 67);
+            this.buttonRequest.Size = new System.Drawing.Size(165, 84);
             this.buttonRequest.TabIndex = 7;
-            this.buttonRequest.Text = "           Zapotrzebowanie             na części";
+            this.buttonRequest.Text = "Zapotrzebowanie na części";
+            this.buttonRequest.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonRequest.UseVisualStyleBackColor = false;
             this.buttonRequest.Click += new System.EventHandler(this.buttonRequest_Click);
             // 
             // btnDeletePart
             // 
             this.btnDeletePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnDeletePart.FlatAppearance.BorderSize = 0;
-            this.btnDeletePart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDeletePart.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDeletePart.FlatAppearance.BorderSize = 3;
+            this.btnDeletePart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnDeletePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletePart.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnDeletePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDeletePart.ForeColor = System.Drawing.Color.White;
             this.btnDeletePart.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePart.Image")));
-            this.btnDeletePart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletePart.Location = new System.Drawing.Point(0, 236);
+            this.btnDeletePart.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeletePart.Location = new System.Drawing.Point(12, 174);
             this.btnDeletePart.Name = "btnDeletePart";
-            this.btnDeletePart.Size = new System.Drawing.Size(277, 67);
+            this.btnDeletePart.Size = new System.Drawing.Size(165, 75);
             this.btnDeletePart.TabIndex = 6;
-            this.btnDeletePart.Text = "             Usuń istniejącą              część";
+            this.btnDeletePart.Text = "Usuń istniejącą część";
+            this.btnDeletePart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeletePart.UseVisualStyleBackColor = false;
             this.btnDeletePart.Click += new System.EventHandler(this.btnDeletePart_Click);
             // 
             // btnUpdatePart
             // 
             this.btnUpdatePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnUpdatePart.FlatAppearance.BorderSize = 0;
-            this.btnUpdatePart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnUpdatePart.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdatePart.FlatAppearance.BorderSize = 3;
+            this.btnUpdatePart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnUpdatePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdatePart.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnUpdatePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdatePart.ForeColor = System.Drawing.Color.White;
             this.btnUpdatePart.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdatePart.Image")));
-            this.btnUpdatePart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePart.Location = new System.Drawing.Point(0, 309);
+            this.btnUpdatePart.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUpdatePart.Location = new System.Drawing.Point(12, 255);
             this.btnUpdatePart.Name = "btnUpdatePart";
-            this.btnUpdatePart.Size = new System.Drawing.Size(277, 67);
+            this.btnUpdatePart.Size = new System.Drawing.Size(165, 75);
             this.btnUpdatePart.TabIndex = 5;
-            this.btnUpdatePart.Text = "                    Edytuj                      istniejąca część";
+            this.btnUpdatePart.Text = "Edytuj istniejąca część";
+            this.btnUpdatePart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUpdatePart.UseVisualStyleBackColor = false;
             this.btnUpdatePart.Click += new System.EventHandler(this.btnUpdatePart_Click);
             // 
             // btnAddPart
             // 
             this.btnAddPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnAddPart.FlatAppearance.BorderSize = 0;
-            this.btnAddPart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAddPart.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAddPart.FlatAppearance.BorderSize = 3;
+            this.btnAddPart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnAddPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPart.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnAddPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddPart.ForeColor = System.Drawing.Color.White;
             this.btnAddPart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPart.Image")));
-            this.btnAddPart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddPart.Location = new System.Drawing.Point(0, 163);
+            this.btnAddPart.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddPart.Location = new System.Drawing.Point(12, 93);
             this.btnAddPart.Name = "btnAddPart";
-            this.btnAddPart.Size = new System.Drawing.Size(277, 67);
+            this.btnAddPart.Size = new System.Drawing.Size(165, 75);
             this.btnAddPart.TabIndex = 3;
-            this.btnAddPart.Text = "               Dodaj nową                 część";
+            this.btnAddPart.Text = "Dodaj nową część";
+            this.btnAddPart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddPart.UseVisualStyleBackColor = false;
             this.btnAddPart.Click += new System.EventHandler(this.btnAddPart_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnSearch.FlatAppearance.BorderSize = 3;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(0, 90);
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(12, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(277, 67);
+            this.btnSearch.Size = new System.Drawing.Size(165, 75);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "           Wyszukaj";
+            this.btnSearch.Text = "Wyszukaj";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // textPartsMenu
-            // 
-            this.textPartsMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.textPartsMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.textPartsMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPartsMenu.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textPartsMenu.ForeColor = System.Drawing.Color.White;
-            this.textPartsMenu.Location = new System.Drawing.Point(103, -3);
-            this.textPartsMenu.Name = "textPartsMenu";
-            this.textPartsMenu.ReadOnly = true;
-            this.textPartsMenu.Size = new System.Drawing.Size(139, 59);
-            this.textPartsMenu.TabIndex = 2;
-            this.textPartsMenu.TabStop = false;
-            this.textPartsMenu.Text = "MENU";
-            this.textPartsMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textPartsMenu.WordWrap = false;
-            // 
-            // pictureMenu
-            // 
-            this.pictureMenu.BackColor = System.Drawing.Color.Transparent;
-            this.pictureMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureMenu.Image")));
-            this.pictureMenu.Location = new System.Drawing.Point(3, 3);
-            this.pictureMenu.Name = "pictureMenu";
-            this.pictureMenu.Size = new System.Drawing.Size(54, 48);
-            this.pictureMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureMenu.TabIndex = 2;
-            this.pictureMenu.TabStop = false;
-            this.pictureMenu.Click += new System.EventHandler(this.pictureMenu_Click);
             // 
             // panelParts
             // 
             this.panelParts.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelParts.BackColor = System.Drawing.Color.Gray;
-            this.panelParts.Controls.Add(this.labelHeaderParts);
+            this.panelParts.BackColor = System.Drawing.Color.Transparent;
             this.panelParts.Controls.Add(this.btnReturnMain);
-            this.panelParts.Location = new System.Drawing.Point(57, 0);
+            this.panelParts.Controls.Add(this.labelHeaderParts);
+            this.panelParts.Location = new System.Drawing.Point(192, 0);
             this.panelParts.Name = "panelParts";
-            this.panelParts.Size = new System.Drawing.Size(1127, 59);
+            this.panelParts.Size = new System.Drawing.Size(992, 64);
             this.panelParts.TabIndex = 2;
-            // 
-            // labelHeaderParts
-            // 
-            this.labelHeaderParts.AutoSize = true;
-            this.labelHeaderParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.labelHeaderParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelHeaderParts.ForeColor = System.Drawing.Color.White;
-            this.labelHeaderParts.Location = new System.Drawing.Point(267, 3);
-            this.labelHeaderParts.Name = "labelHeaderParts";
-            this.labelHeaderParts.Size = new System.Drawing.Size(587, 51);
-            this.labelHeaderParts.TabIndex = 4;
-            this.labelHeaderParts.Text = "UR - Zarządzanie częściami";
             // 
             // btnReturnMain
             // 
@@ -291,21 +238,32 @@
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(1051, 0);
+            this.btnReturnMain.Location = new System.Drawing.Point(916, 0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(76, 59);
+            this.btnReturnMain.Size = new System.Drawing.Size(76, 64);
             this.btnReturnMain.TabIndex = 3;
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
             // 
+            // labelHeaderParts
+            // 
+            this.labelHeaderParts.AutoSize = true;
+            this.labelHeaderParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.labelHeaderParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelHeaderParts.ForeColor = System.Drawing.Color.White;
+            this.labelHeaderParts.Location = new System.Drawing.Point(267, 3);
+            this.labelHeaderParts.Name = "labelHeaderParts";
+            this.labelHeaderParts.Size = new System.Drawing.Size(484, 51);
+            this.labelHeaderParts.TabIndex = 4;
+            this.labelHeaderParts.Text = "Zarządzanie częściami";
+            // 
             // panelPartsList
             // 
             this.panelPartsList.BackColor = System.Drawing.Color.LightGray;
-            this.panelPartsList.Controls.Add(this.dataPartsView);
-            this.panelPartsList.Location = new System.Drawing.Point(63, 65);
+            this.panelPartsList.Location = new System.Drawing.Point(192, 65);
             this.panelPartsList.Name = "panelPartsList";
-            this.panelPartsList.Size = new System.Drawing.Size(1109, 362);
+            this.panelPartsList.Size = new System.Drawing.Size(970, 355);
             this.panelPartsList.TabIndex = 3;
             // 
             // dataPartsView
@@ -346,7 +304,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataPartsView.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataPartsView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataPartsView.Location = new System.Drawing.Point(19, 12);
+            this.dataPartsView.Location = new System.Drawing.Point(205, 70);
             this.dataPartsView.MultiSelect = false;
             this.dataPartsView.Name = "dataPartsView";
             this.dataPartsView.ReadOnly = true;
@@ -363,16 +321,25 @@
             this.dataPartsView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataPartsView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataPartsView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataPartsView.Size = new System.Drawing.Size(1071, 337);
+            this.dataPartsView.Size = new System.Drawing.Size(945, 337);
             this.dataPartsView.TabIndex = 0;
             this.dataPartsView.VirtualMode = true;
             this.dataPartsView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPartsView_CellClick);
             this.dataPartsView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataPartsView_CellFormatting);
             // 
-            // timerMenu
+            // status
             // 
-            this.timerMenu.Interval = 10;
-            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.status.DefaultCellStyle = dataGridViewCellStyle3;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.status.Width = 60;
             // 
             // panelAdd
             // 
@@ -552,13 +519,15 @@
             // 
             // panelSearch
             // 
+            this.panelSearch.BackColor = System.Drawing.Color.LightGray;
+            this.panelSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSearch.Controls.Add(this.labelTypeSearch);
             this.panelSearch.Controls.Add(this.labelInsertSearch);
             this.panelSearch.Controls.Add(this.cbSearch);
             this.panelSearch.Controls.Add(this.btnPanelSearchReset);
             this.panelSearch.Controls.Add(this.txtBoxSearch);
             this.panelSearch.Controls.Add(this.btnPanelSearch);
-            this.panelSearch.Location = new System.Drawing.Point(63, 433);
+            this.panelSearch.Location = new System.Drawing.Point(57, 433);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(1109, 236);
             this.panelSearch.TabIndex = 6;
@@ -639,6 +608,7 @@
             // 
             // panelUpdate
             // 
+            this.panelUpdate.BackColor = System.Drawing.Color.LightGray;
             this.panelUpdate.Controls.Add(this.btnUpdatePart_Clear);
             this.panelUpdate.Controls.Add(this.tbUpdateType);
             this.panelUpdate.Controls.Add(this.tbUpdateUnit);
@@ -653,7 +623,7 @@
             this.panelUpdate.Controls.Add(this.tbUpdateProd);
             this.panelUpdate.Controls.Add(this.tbUpdateName);
             this.panelUpdate.Controls.Add(this.btnUpdatePart_Update);
-            this.panelUpdate.Location = new System.Drawing.Point(63, 433);
+            this.panelUpdate.Location = new System.Drawing.Point(60, 436);
             this.panelUpdate.Name = "panelUpdate";
             this.panelUpdate.Size = new System.Drawing.Size(1109, 236);
             this.panelUpdate.TabIndex = 7;
@@ -977,41 +947,33 @@
             this.btnDeletePart_Delete.UseVisualStyleBackColor = false;
             this.btnDeletePart_Delete.Click += new System.EventHandler(this.btnDeletePart_Delete_Click);
             // 
-            // vPartsViewBindingSource
-            // 
-            this.vPartsViewBindingSource.DataSource = typeof(KWZP2019.vPartsView);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "PartName";
-            this.dataGridViewTextBoxColumn1.Frozen = true;
             this.dataGridViewTextBoxColumn1.HeaderText = "Nazwa części";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
+            this.dataGridViewTextBoxColumn1.Width = 160;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "partType";
-            this.dataGridViewTextBoxColumn2.Frozen = true;
             this.dataGridViewTextBoxColumn2.HeaderText = "Typ części";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 180;
+            this.dataGridViewTextBoxColumn2.Width = 140;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Producer";
-            this.dataGridViewTextBoxColumn3.Frozen = true;
             this.dataGridViewTextBoxColumn3.HeaderText = "Producent";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 190;
+            this.dataGridViewTextBoxColumn3.Width = 140;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CatalogPartNr";
-            this.dataGridViewTextBoxColumn4.Frozen = true;
             this.dataGridViewTextBoxColumn4.HeaderText = "Numer katalogowy";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -1020,7 +982,6 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "QuantityWarehouse";
-            this.dataGridViewTextBoxColumn6.Frozen = true;
             this.dataGridViewTextBoxColumn6.HeaderText = "Stan magazynowy";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -1029,36 +990,30 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "UnitName";
-            this.dataGridViewTextBoxColumn5.Frozen = true;
             this.dataGridViewTextBoxColumn5.HeaderText = "Jednostka";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 87;
             // 
-            // status
+            // vPartsViewBindingSource
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.status.DefaultCellStyle = dataGridViewCellStyle3;
-            this.status.Frozen = true;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.status.Width = 60;
+            this.vPartsViewBindingSource.DataSource = typeof(KWZP2019.vPartsView);
             // 
             // PartsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.Controls.Add(this.buttonRequest);
+            this.Controls.Add(this.btnUpdatePart);
+            this.Controls.Add(this.btnDeletePart);
+            this.Controls.Add(this.btnAddPart);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.dataPartsView);
             this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.menuParts);
             this.Controls.Add(this.panelUpdate);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panelDelete);
@@ -1070,12 +1025,8 @@
             this.Text = "Części";
             this.TransparencyKey = System.Drawing.Color.HotPink;
             this.Load += new System.EventHandler(this.PartsForm_Load);
-            this.menuParts.ResumeLayout(false);
-            this.menuParts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMenu)).EndInit();
             this.panelParts.ResumeLayout(false);
             this.panelParts.PerformLayout();
-            this.panelPartsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataPartsView)).EndInit();
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
@@ -1091,15 +1042,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel menuParts;
         private System.Windows.Forms.Button btnUpdatePart;
         private System.Windows.Forms.Button btnAddPart;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textPartsMenu;
-        private System.Windows.Forms.PictureBox pictureMenu;
         private System.Windows.Forms.Panel panelParts;
-        private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.Panel panelPartsList;
         private System.Windows.Forms.DataGridView dataPartsView;
         private System.Windows.Forms.Button btnDeletePart;
@@ -1164,6 +1110,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityWarehouseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vPartsViewBindingSource;
+        private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

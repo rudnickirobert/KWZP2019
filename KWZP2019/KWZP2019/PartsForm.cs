@@ -35,7 +35,6 @@ namespace KWZP2019
             panelAdd.Hide();
             panelDelete.Hide();
             panelUpdate.Hide();
-            menuParts.BringToFront();
         }
 
 
@@ -57,30 +56,6 @@ namespace KWZP2019
 
         // ==========================================
 
-        private void timerMenu_Tick(object sender, EventArgs e)
-        {
-            if (hidden)
-            {
-                menuParts.Width = menuParts.Width + 5;
-                if (menuParts.Width >= 277)
-                {
-                    timerMenu.Stop();
-                    hidden = false;
-                    this.Refresh();
-                }
-            }
-
-            else
-            {
-                menuParts.Width = menuParts.Width - 5;
-                if (menuParts.Width <= 57)
-                {
-                    timerMenu.Stop();
-                    hidden = true;
-                    this.Refresh();
-                }
-            }
-        }
 
         // ==========================================
 
