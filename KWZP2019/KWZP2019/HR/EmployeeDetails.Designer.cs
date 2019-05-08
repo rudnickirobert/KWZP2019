@@ -43,6 +43,9 @@
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.dgvTrainings = new System.Windows.Forms.DataGridView();
             this.dgvAbsences = new System.Windows.Forms.DataGridView();
+            this.lblEmployeeDetails = new System.Windows.Forms.Label();
+            this.lblTrainings = new System.Windows.Forms.Label();
+            this.lblAbsences = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).BeginInit();
@@ -69,8 +72,8 @@
             this.dgvEmployeeDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployeeDetails.EnableHeadersVisualStyles = false;
-            this.dgvEmployeeDetails.Location = new System.Drawing.Point(372, 75);
-            this.dgvEmployeeDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEmployeeDetails.Location = new System.Drawing.Point(262, 61);
+            this.dgvEmployeeDetails.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
             this.dgvEmployeeDetails.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -82,7 +85,7 @@
             this.dgvEmployeeDetails.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmployeeDetails.RowTemplate.Height = 24;
             this.dgvEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployeeDetails.Size = new System.Drawing.Size(1195, 180);
+            this.dgvEmployeeDetails.Size = new System.Drawing.Size(919, 146);
             this.dgvEmployeeDetails.TabIndex = 0;
             // 
             // btnReturn
@@ -96,10 +99,9 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(16, 75);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturn.Location = new System.Drawing.Point(12, 61);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(329, 190);
+            this.btnReturn.Size = new System.Drawing.Size(247, 154);
             this.btnReturn.TabIndex = 7;
             this.btnReturn.Text = "Powrót";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -117,10 +119,9 @@
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
-            this.btnReturnMain.Location = new System.Drawing.Point(16, 272);
-            this.btnReturnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturnMain.Location = new System.Drawing.Point(12, 221);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(329, 190);
+            this.btnReturnMain.Size = new System.Drawing.Size(247, 154);
             this.btnReturnMain.TabIndex = 8;
             this.btnReturnMain.Text = "Menu główne";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -148,8 +149,8 @@
             this.dgvTrainings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTrainings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrainings.EnableHeadersVisualStyles = false;
-            this.dgvTrainings.Location = new System.Drawing.Point(350, 307);
-            this.dgvTrainings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTrainings.Location = new System.Drawing.Point(262, 249);
+            this.dgvTrainings.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTrainings.Name = "dgvTrainings";
             this.dgvTrainings.RowHeadersVisible = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -161,7 +162,7 @@
             this.dgvTrainings.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTrainings.RowTemplate.Height = 24;
             this.dgvTrainings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrainings.Size = new System.Drawing.Size(656, 602);
+            this.dgvTrainings.Size = new System.Drawing.Size(492, 489);
             this.dgvTrainings.TabIndex = 9;
             // 
             // dgvAbsences
@@ -185,8 +186,8 @@
             this.dgvAbsences.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAbsences.EnableHeadersVisualStyles = false;
-            this.dgvAbsences.Location = new System.Drawing.Point(1012, 307);
-            this.dgvAbsences.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvAbsences.Location = new System.Drawing.Point(759, 249);
+            this.dgvAbsences.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAbsences.Name = "dgvAbsences";
             this.dgvAbsences.RowHeadersVisible = false;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -198,23 +199,62 @@
             this.dgvAbsences.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAbsences.RowTemplate.Height = 24;
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAbsences.Size = new System.Drawing.Size(562, 602);
+            this.dgvAbsences.Size = new System.Drawing.Size(422, 489);
             this.dgvAbsences.TabIndex = 10;
+            // 
+            // lblEmployeeDetails
+            // 
+            this.lblEmployeeDetails.AutoSize = true;
+            this.lblEmployeeDetails.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmployeeDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEmployeeDetails.Location = new System.Drawing.Point(644, 20);
+            this.lblEmployeeDetails.Name = "lblEmployeeDetails";
+            this.lblEmployeeDetails.Size = new System.Drawing.Size(242, 20);
+            this.lblEmployeeDetails.TabIndex = 11;
+            this.lblEmployeeDetails.Text = "SZCZEGÓŁOWE INFORMACJE";
+            // 
+            // lblTrainings
+            // 
+            this.lblTrainings.AutoSize = true;
+            this.lblTrainings.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrainings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblTrainings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTrainings.Location = new System.Drawing.Point(453, 221);
+            this.lblTrainings.Name = "lblTrainings";
+            this.lblTrainings.Size = new System.Drawing.Size(99, 20);
+            this.lblTrainings.TabIndex = 12;
+            this.lblTrainings.Text = "SZKOLENIA";
+            // 
+            // lblAbsences
+            // 
+            this.lblAbsences.AutoSize = true;
+            this.lblAbsences.BackColor = System.Drawing.Color.Transparent;
+            this.lblAbsences.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblAbsences.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAbsences.Location = new System.Drawing.Point(912, 221);
+            this.lblAbsences.Name = "lblAbsences";
+            this.lblAbsences.Size = new System.Drawing.Size(131, 20);
+            this.lblAbsences.TabIndex = 13;
+            this.lblAbsences.Text = "NIEOBECNOŚCI";
             // 
             // EmployeeDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1579, 922);
+            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblAbsences);
+            this.Controls.Add(this.lblTrainings);
+            this.Controls.Add(this.lblEmployeeDetails);
             this.Controls.Add(this.dgvAbsences);
             this.Controls.Add(this.dgvTrainings);
             this.Controls.Add(this.btnReturnMain);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dgvEmployeeDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EmployeeDetails";
@@ -225,6 +265,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrainings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -235,5 +276,8 @@
         private System.Windows.Forms.Button btnReturnMain;
         private System.Windows.Forms.DataGridView dgvTrainings;
         private System.Windows.Forms.DataGridView dgvAbsences;
+        private System.Windows.Forms.Label lblEmployeeDetails;
+        private System.Windows.Forms.Label lblTrainings;
+        private System.Windows.Forms.Label lblAbsences;
     }
 }

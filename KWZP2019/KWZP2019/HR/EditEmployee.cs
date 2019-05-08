@@ -120,5 +120,10 @@ namespace KWZP2019
             tbPESEL.Text = db.Employees.Where(editEmployeeWhere => editEmployeeWhere.IdEmployee.Equals(id)).Select(editEmployeeSelect => new { editEmployeeSelect.PESEL }).First().ToString().Substring(10, lenght9 -10);
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.startForm.Show();
+            this.Hide();
+        }
     }
 }

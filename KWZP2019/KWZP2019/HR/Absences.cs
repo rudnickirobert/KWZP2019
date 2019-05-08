@@ -158,7 +158,7 @@ namespace KWZP2019
 
         private void btnAddAbsenceType_Click_1(object sender, EventArgs e)
         {
-            AddAbsenceType addAbsenceType = new AddAbsenceType(db);
+            AddAbsenceType addAbsenceType = new AddAbsenceType(db, startForm, this);
             addAbsenceType.Show();
         }
     }
