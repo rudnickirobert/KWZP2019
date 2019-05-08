@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAccept = new System.Windows.Forms.Button();
             this.txtDetailDescription = new System.Windows.Forms.TextBox();
             this.txtShortDescription = new System.Windows.Forms.TextBox();
             this.lblShortDescription = new System.Windows.Forms.Label();
             this.lblDetailDescription = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.Location = new System.Drawing.Point(55, 383);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(161, 39);
-            this.btnAccept.TabIndex = 0;
-            this.btnAccept.Text = "Zapisz";
-            this.btnAccept.UseVisualStyleBackColor = true;
             // 
             // txtDetailDescription
             // 
@@ -99,7 +89,6 @@
             this.Controls.Add(this.txtShortDescription);
             this.Controls.Add(this.txtDetailDescription);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAccept);
             this.Name = "MaintenanceDescriptionForm";
             this.Text = "MaintenanceDescriptionForm";
             this.ResumeLayout(false);
@@ -108,8 +97,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.TextBox txtDetailDescription;
         private System.Windows.Forms.TextBox txtShortDescription;
         private System.Windows.Forms.Label lblShortDescription;

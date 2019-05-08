@@ -976,6 +976,9 @@
     <EmbeddedResource Include="InspectionListForm.resx">
       <DependentUpon>InspectionListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceDescriptionForm.resx">
+      <DependentUpon>MaintenanceDescriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewInspectionForm.resx">
       <DependentUpon>NewInspectionForm.cs</DependentUpon>
     </EmbeddedResource>
