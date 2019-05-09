@@ -40,6 +40,14 @@ namespace KWZP2019
             this.dgvMaintenance.DataSource = this.db.Maintenances.ToList<Maintenance>(); 
         }
 
+        void populateEmployeesPartsGridView()
+        {
+            this.dgvMaintenanceEmployees.DataSource = this.db.vMaintenanceAssignEmployees
+                .Where(employee => employee.IdMaintenance == idSelectedMaintenance).ToList<vMaintenanceAssignEmployee>();
+            this.dgvPart.DataSource = this.db.vMaintenanceAssignParts
+                .Where(part => part.IdMaintenance == idSelectedMaintenance).ToList<vMaintenanceAssignPart>();                  
+        }
+
         void clear()
         {
             this.maintenance.IdMaintenance = 0;
@@ -78,6 +86,7 @@ namespace KWZP2019
                 try
                 {
                     this.idSelectedMaintenance = Convert.ToInt32(this.dgvMaintenance.CurrentRow.Cells["IdMaintenance"].Value);
+                    populateEmployeesPartsGridView();
                 }
                 catch (Exception ex)
                 {
@@ -155,6 +164,12 @@ namespace KWZP2019
             {
                 this.dgvMaintenance.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMaintType == selectedType).ToList();
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            clear();
+            populateDataGridView();
         }
     }
 }

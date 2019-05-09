@@ -15,6 +15,7 @@ namespace KWZP2019
     {
         RoofingCompanyEntities db;
         Maintenance maintenance = new Maintenance();
+        MaintenanceManagement maintenanceManagement;
         StartForm startForm;
         FailureListForm failureListForm;
         FailureMaintenance failureMaintenance = new FailureMaintenance();
@@ -289,7 +290,12 @@ namespace KWZP2019
 
         private void btnAddPart_Click(object sender, EventArgs e)
         {
-            int lnIdPart = Convert.ToInt32(this.lbxParts.SelectedValue);
+            int idPart = Convert.ToInt32(this.lbxParts.SelectedValue);
+            if (this.txtQuantity.Text.Trim().Length < 0)
+            {
+                MessageBox.Show("Wprowadź poprawną wartość!");
+                return;
+            }
             if (this.txtQuantity.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Wprowadź ilość!");
@@ -308,7 +314,7 @@ namespace KWZP2019
 
             foreach (DataGridViewRow row in this.dgvPart.Rows)
             {
-                if (int.Parse(row.Cells[1].Value.ToString()) == lnIdPart)
+                if (int.Parse(row.Cells[1].Value.ToString()) == idPart)
                 {
                     MessageBox.Show("Ta część już została dodana!");
                     return;
@@ -316,7 +322,7 @@ namespace KWZP2019
             }
             try
             {
-                this.maintenancePart.IdPart = lnIdPart;
+                this.maintenancePart.IdPart = idPart;
                 this.maintenancePart.IdMaintenance = this.maintenance.IdMaintenance;               
                 this.maintenancePart.PartQuantity = Convert.ToInt32(this.txtQuantity.Text.Trim());               
                 if (this.maintenancePart.IdMaintPart == 0)//Instert
@@ -492,6 +498,17 @@ namespace KWZP2019
             {
                 MessageBox.Show("Nie udało się zaktualizować planu. Błąd: " + ex.Message);
             }          
+        }
+
+        private void btnWarehouse_Click(object sender, EventArgs e)
+        {
+            PartsForm partsForm = new PartsForm(db, maintenanceManagement);
+            partsForm.Show();
+        }
+
+        private void btnCancelPart_Click(object sender, EventArgs e)
+        {
+            clearPart();
         }
     }
 }

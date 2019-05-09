@@ -118,7 +118,9 @@ namespace KWZP2019
             }
             else
             {
-                this.dgvMaintenance.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMachine == selectedMachine).ToList();
+                this.dgvMaintenance.DataSource = db.Maintenances
+                    .Where(maintenance => maintenance.IdMachine == selectedMachine)
+                    .Where(maintenance => maintenance.IdMaintType == 2).ToList();
             }
         }
 
@@ -141,6 +143,22 @@ namespace KWZP2019
         {
             clear();
             populateDataGridView();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (this.dtpFromDate.Value > this.dtpToDate.Value)
+            {
+                MessageBox.Show("'Data od' musi być mniejsza od 'Data do'!");
+                return;
+            }
+            else
+            {
+                this.dgvMaintenance.DataSource = db.Maintenances
+                .Where(maintenance => maintenance.StartDatePlan >= this.dtpFromDate.Value)
+                .Where(maintenance => maintenance.StartDatePlan <= this.dtpToDate.Value)
+                .Where(maintenance => maintenance.IdMaintType == 2).ToList();
+            }
         }
     }
       

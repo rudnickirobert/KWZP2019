@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -6475,13 +6475,13 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
         </EntityType>
         <EntityType Name="vSF">
           <Key>
+            <PropertyRef Name="Nr_szczegółu" />
             <PropertyRef Name="Dostawca" />
             <PropertyRef Name="Kod_półfabrykatu" />
             <PropertyRef Name="Ilość" />
             <PropertyRef Name="Data_zamówienia" />
             <PropertyRef Name="Data_dostawy" />
             <PropertyRef Name="Cena" />
-            <PropertyRef Name="Nr_szczegółu" />
           </Key>
           <Property Name="Nr_szczegółu" Type="Int32" Nullable="false" />
           <Property Name="Dostawca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -6493,11 +6493,11 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
         </EntityType>
         <EntityType Name="vSFOrder">
           <Key>
+            <PropertyRef Name="Nr_zamówienia" />
             <PropertyRef Name="Dostawca" />
             <PropertyRef Name="Data_zamówienia" />
             <PropertyRef Name="Data_dostawy" />
             <PropertyRef Name="Cena" />
-            <PropertyRef Name="Nr_zamówienia" />
           </Key>
           <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
           <Property Name="Dostawca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -6507,9 +6507,9 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
         </EntityType>
         <EntityType Name="vSFOrderDetail">
           <Key>
+            <PropertyRef Name="Nr_szczegółu" />
             <PropertyRef Name="Kod_półfabrykatu" />
             <PropertyRef Name="Ilość" />
-            <PropertyRef Name="Nr_szczegółu" />
             <PropertyRef Name="Nr_zamówienia" />
           </Key>
           <Property Name="Nr_szczegółu" Type="Int32" Nullable="false" />
@@ -8080,9 +8080,9 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
             <EntityTypeMapping TypeName="RoofingCompanyModel.vSFOrderDetail">
               <MappingFragment StoreEntitySet="vSFOrderDetail">
                 <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
-                <ScalarProperty Name="Nr_szczegółu" ColumnName="Nr szczegółu" />
                 <ScalarProperty Name="Ilość" ColumnName="Ilość" />
                 <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod półfabrykatu" />
+                <ScalarProperty Name="Nr_szczegółu" ColumnName="Nr szczegółu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

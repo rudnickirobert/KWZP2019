@@ -40,5 +40,12 @@ namespace KWZP2019
             clear();
             populateDataGridView();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            String searchQuery = this.txtSearch.Text.Trim();
+            this.dgvEmployeeMaintenanceCalendar.DataSource = this.db.vMaintenanceEmployeesCalendars
+                .Where(employee => employee.EmployeeSurname.Contains(searchQuery)).ToList<vMaintenanceEmployeesCalendar>();
+        }
     }
 }

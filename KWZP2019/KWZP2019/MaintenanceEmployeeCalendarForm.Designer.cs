@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceEmployeeCalendarForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturnMain = new System.Windows.Forms.Button();
             this.dgvEmployeeMaintenanceCalendar = new System.Windows.Forms.DataGridView();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +57,13 @@
             this.btnReturnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnReturnMain.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReturnMain.Image = global::KWZP2019.Properties.Resources.icons8_home_40;
+            this.btnReturnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnMain.Image")));
+            this.btnReturnMain.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReturnMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnReturnMain.Location = new System.Drawing.Point(567, 9);
+            this.btnReturnMain.Location = new System.Drawing.Point(596, 283);
             this.btnReturnMain.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturnMain.Name = "btnReturnMain";
-            this.btnReturnMain.Size = new System.Drawing.Size(194, 153);
+            this.btnReturnMain.Size = new System.Drawing.Size(150, 85);
             this.btnReturnMain.TabIndex = 7;
             this.btnReturnMain.Text = "Powrót ";
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -67,6 +72,14 @@
             // 
             // dgvEmployeeMaintenanceCalendar
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployeeMaintenanceCalendar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmployeeMaintenanceCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployeeMaintenanceCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeName,
@@ -76,10 +89,27 @@
             this.StartDate,
             this.EndDate,
             this.MaintenanceNr});
-            this.dgvEmployeeMaintenanceCalendar.Location = new System.Drawing.Point(22, 165);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(82)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmployeeMaintenanceCalendar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEmployeeMaintenanceCalendar.EnableHeadersVisualStyles = false;
+            this.dgvEmployeeMaintenanceCalendar.Location = new System.Drawing.Point(22, 71);
             this.dgvEmployeeMaintenanceCalendar.Name = "dgvEmployeeMaintenanceCalendar";
             this.dgvEmployeeMaintenanceCalendar.ReadOnly = true;
-            this.dgvEmployeeMaintenanceCalendar.Size = new System.Drawing.Size(648, 297);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployeeMaintenanceCalendar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEmployeeMaintenanceCalendar.Size = new System.Drawing.Size(549, 297);
             this.dgvEmployeeMaintenanceCalendar.TabIndex = 8;
             // 
             // EmployeeName
@@ -136,18 +166,22 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(74, 37);
+            this.lblSearch.BackColor = System.Drawing.Color.Transparent;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSearch.Location = new System.Drawing.Point(28, 31);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(118, 13);
+            this.lblSearch.Size = new System.Drawing.Size(185, 18);
             this.lblSearch.TabIndex = 9;
             this.lblSearch.Text = "Wyszukaj po nazwisku:";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(77, 71);
+            this.txtSearch.Location = new System.Drawing.Point(219, 31);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(220, 20);
+            this.txtSearch.Size = new System.Drawing.Size(352, 20);
             this.txtSearch.TabIndex = 10;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // MaintenanceEmployeeCalendarForm
             // 
@@ -155,7 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(769, 386);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.dgvEmployeeMaintenanceCalendar);
