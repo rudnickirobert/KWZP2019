@@ -20,8 +20,10 @@ namespace KWZP2019
             this.db = db;
         }
         private void ProductionPlanned_Load(object sender, EventArgs e)
-        {
+        {          
             PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
+            PlannedProductionGridView.Columns["dataGridViewTextBoxColumnInProduction"].DefaultCellStyle.FormatProvider = new BoolFormatter();
+            PlannedProductionGridView.Columns["dataGridViewTextBoxColumnInProduction"].DefaultCellStyle.Format = "TakNie";
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -33,7 +35,6 @@ namespace KWZP2019
         }
         private void txtBoxPlanSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtBoxDetailSearch.Clear();
             if (isTxtBoxEmpty(txtBoxPlanSearch))
             {
                 PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
@@ -76,27 +77,12 @@ namespace KWZP2019
             NewProductionPlan NewProductionPlanForm = new NewProductionPlan(db, id);
             NewProductionPlanForm.Show();
         }
-
-        private void txtBoxDetailSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void PlannedProductionGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            txtBoxPlanSearch.Clear();
-            if (isTxtBoxEmpty(txtBoxDetailSearch))
+            if (e.CellStyle.FormatProvider is ICustomFormatter)
             {
-                PlannedProductionGridView.DataSource = db.PlannedProductions.ToList();
-            }
-            else
-            {
-                if (int.TryParse(txtBoxDetailSearch.Text.Trim(), out int planNumber))
-                {
-                    planNumber = Convert.ToInt32(txtBoxDetailSearch.Text.Trim());
-                    PlannedProductionGridView.DataSource = (from PlannedProduction in db.PlannedProductions
-                                                            where PlannedProduction.IdDetail == planNumber
-                                                            select PlannedProduction).ToList();
-                }
-                else
-                {
-                    MessageBox.Show("Proszę podać poprawny numer planu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                e.Value = (e.CellStyle.FormatProvider.GetFormat(typeof(ICustomFormatter)) as ICustomFormatter).Format(e.CellStyle.Format, e.Value, e.CellStyle.FormatProvider);
+                e.FormattingApplied = true;
             }
         }
     }

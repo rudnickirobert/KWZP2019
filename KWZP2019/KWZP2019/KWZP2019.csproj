@@ -142,6 +142,7 @@
     <Compile Include="FEMAnalysis.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewColumnFormatter.cs" />
     <Compile Include="HR\EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +214,12 @@
     </Compile>
     <Compile Include="OrderNewPartForm.designer.cs">
       <DependentUpon>OrderNewPartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderSfForm.designer.cs">
+      <DependentUpon>OrderSfForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderNewSemiProductForm.cs">
       <SubType>Form</SubType>
@@ -678,6 +685,12 @@
     <Compile Include="SfOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SfOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SfOrdersForm.Designer.cs">
+      <DependentUpon>SfOrdersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkillsForMachine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -994,6 +1007,9 @@
     <EmbeddedResource Include="OrderNewPartForm.resx">
       <DependentUpon>OrderNewPartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderSfForm.resx">
+      <DependentUpon>OrderSfForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderNewSemiProductForm.resx">
       <DependentUpon>OrderNewSemiProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1154,6 +1170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesDepartmentForm.resx">
       <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SfOrdersForm.resx">
+      <DependentUpon>SfOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>

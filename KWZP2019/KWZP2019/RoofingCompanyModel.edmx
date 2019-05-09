@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -8055,24 +8055,24 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <EntitySetMapping Name="vSFs">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vSF">
               <MappingFragment StoreEntitySet="vSF">
+                <ScalarProperty Name="Nr_szczegółu" ColumnName="Nr szczegółu" />
                 <ScalarProperty Name="Cena" ColumnName="Cena" />
                 <ScalarProperty Name="Data_dostawy" ColumnName="Data dostawy" />
                 <ScalarProperty Name="Data_zamówienia" ColumnName="Data zamówienia" />
                 <ScalarProperty Name="Ilość" ColumnName="Ilość" />
                 <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod półfabrykatu" />
                 <ScalarProperty Name="Dostawca" ColumnName="Dostawca" />
-                <ScalarProperty Name="Nr_szczegółu" ColumnName="Nr szczegółu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vSFOrders">
             <EntityTypeMapping TypeName="RoofingCompanyModel.vSFOrder">
               <MappingFragment StoreEntitySet="vSFOrder">
+                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
                 <ScalarProperty Name="Cena" ColumnName="Cena" />
                 <ScalarProperty Name="Data_dostawy" ColumnName="Data dostawy" />
                 <ScalarProperty Name="Data_zamówienia" ColumnName="Data zamówienia" />
                 <ScalarProperty Name="Dostawca" ColumnName="Dostawca" />
-                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

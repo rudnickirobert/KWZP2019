@@ -61,9 +61,8 @@ namespace KWZP2019
         private void warehouseBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WarehouseForm warehouseForm = new WarehouseForm(db, previousForm);
+            WarehouseForm warehouseForm = new WarehouseForm(db, previousForm, this);
             warehouseForm.ShowDialog();
-            this.Close();
         }
         private void deleteOrderDetailBtn_Click(object sender, EventArgs e)
         {

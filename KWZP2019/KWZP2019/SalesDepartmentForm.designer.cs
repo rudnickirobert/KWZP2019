@@ -34,9 +34,8 @@
             this.suppliersBtn = new System.Windows.Forms.Button();
             this.outsourcingBtn = new System.Windows.Forms.Button();
             this.returnToMainBtn = new System.Windows.Forms.Button();
-            this.orderPartsBtn = new System.Windows.Forms.Button();
+            this.orderSfBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-
             // 
             // customerBtn
             // 
@@ -133,24 +132,24 @@
             this.returnToMainBtn.UseVisualStyleBackColor = false;
             this.returnToMainBtn.Click += new System.EventHandler(this.returnToMainBtn_Click);
             // 
-            // orderPartsBtn
+            // orderSfBtn
             // 
-            this.orderPartsBtn.AutoSize = true;
-            this.orderPartsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.orderPartsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.orderPartsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderPartsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.orderPartsBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.orderPartsBtn.Image = ((System.Drawing.Image)(resources.GetObject("orderPartsBtn.Image")));
-            this.orderPartsBtn.Location = new System.Drawing.Point(837, 468);
-            this.orderPartsBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.orderPartsBtn.Name = "orderPartsBtn";
-            this.orderPartsBtn.Size = new System.Drawing.Size(290, 160);
-            this.orderPartsBtn.TabIndex = 3;
-            this.orderPartsBtn.Text = "Zamówienie części";
-            this.orderPartsBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.orderPartsBtn.UseVisualStyleBackColor = false;
-            this.orderPartsBtn.Click += new System.EventHandler(this.orderPartsBtn_Click);
+            this.orderSfBtn.AutoSize = true;
+            this.orderSfBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.orderSfBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.orderSfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderSfBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.orderSfBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.orderSfBtn.Image = ((System.Drawing.Image)(resources.GetObject("orderSfBtn.Image")));
+            this.orderSfBtn.Location = new System.Drawing.Point(837, 468);
+            this.orderSfBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.orderSfBtn.Name = "orderSfBtn";
+            this.orderSfBtn.Size = new System.Drawing.Size(298, 160);
+            this.orderSfBtn.TabIndex = 3;
+            this.orderSfBtn.Text = "Zamówienie Półfabrykatu";
+            this.orderSfBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.orderSfBtn.UseVisualStyleBackColor = false;
+            this.orderSfBtn.Click += new System.EventHandler(this.ordersSfBtn_Click);
             // 
             // SalesDepartmentForm
             // 
@@ -161,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.returnToMainBtn);
             this.Controls.Add(this.outsourcingBtn);
-            this.Controls.Add(this.orderPartsBtn);
+            this.Controls.Add(this.orderSfBtn);
             this.Controls.Add(this.suppliersBtn);
             this.Controls.Add(this.warehouseBtn);
             this.Controls.Add(this.customerBtn);
@@ -181,6 +180,6 @@
         private System.Windows.Forms.Button suppliersBtn;
         private System.Windows.Forms.Button outsourcingBtn;
         private System.Windows.Forms.Button returnToMainBtn;
-        private System.Windows.Forms.Button orderPartsBtn;
+        private System.Windows.Forms.Button orderSfBtn;
     }
 }

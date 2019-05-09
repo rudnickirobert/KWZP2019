@@ -45,7 +45,7 @@
             this.lblSpeedFactor.BackColor = System.Drawing.Color.Transparent;
             this.lblSpeedFactor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSpeedFactor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSpeedFactor.Location = new System.Drawing.Point(3, 180);
+            this.lblSpeedFactor.Location = new System.Drawing.Point(12, 180);
             this.lblSpeedFactor.Name = "lblSpeedFactor";
             this.lblSpeedFactor.Size = new System.Drawing.Size(157, 16);
             this.lblSpeedFactor.TabIndex = 7;
@@ -57,11 +57,11 @@
             this.lblTimePerMeter.BackColor = System.Drawing.Color.Transparent;
             this.lblTimePerMeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTimePerMeter.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTimePerMeter.Location = new System.Drawing.Point(9, 132);
+            this.lblTimePerMeter.Location = new System.Drawing.Point(3, 132);
             this.lblTimePerMeter.Name = "lblTimePerMeter";
-            this.lblTimePerMeter.Size = new System.Drawing.Size(157, 16);
+            this.lblTimePerMeter.Size = new System.Drawing.Size(171, 16);
             this.lblTimePerMeter.TabIndex = 8;
-            this.lblTimePerMeter.Text = "Prędkość produkcji [m/h]";
+            this.lblTimePerMeter.Text = "Prędkość produkcji [m/min]";
             // 
             // lblTechnologyName
             // 
@@ -69,29 +69,29 @@
             this.lblTechnologyName.BackColor = System.Drawing.Color.Transparent;
             this.lblTechnologyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTechnologyName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTechnologyName.Location = new System.Drawing.Point(41, 78);
+            this.lblTechnologyName.Location = new System.Drawing.Point(52, 78);
             this.lblTechnologyName.Name = "lblTechnologyName";
-            this.lblTechnologyName.Size = new System.Drawing.Size(114, 16);
+            this.lblTechnologyName.Size = new System.Drawing.Size(117, 16);
             this.lblTechnologyName.TabIndex = 9;
-            this.lblTechnologyName.Text = "Nazwa technologi";
+            this.lblTechnologyName.Text = "Nazwa technologii";
             // 
             // textBoxSpeedFactor
             // 
-            this.textBoxSpeedFactor.Location = new System.Drawing.Point(172, 179);
+            this.textBoxSpeedFactor.Location = new System.Drawing.Point(180, 179);
             this.textBoxSpeedFactor.Name = "textBoxSpeedFactor";
             this.textBoxSpeedFactor.Size = new System.Drawing.Size(137, 20);
             this.textBoxSpeedFactor.TabIndex = 4;
             // 
             // textBoxTimePerMeter
             // 
-            this.textBoxTimePerMeter.Location = new System.Drawing.Point(172, 128);
+            this.textBoxTimePerMeter.Location = new System.Drawing.Point(180, 128);
             this.textBoxTimePerMeter.Name = "textBoxTimePerMeter";
             this.textBoxTimePerMeter.Size = new System.Drawing.Size(137, 20);
             this.textBoxTimePerMeter.TabIndex = 5;
             // 
             // textBoxTechnologyName
             // 
-            this.textBoxTechnologyName.Location = new System.Drawing.Point(172, 78);
+            this.textBoxTechnologyName.Location = new System.Drawing.Point(180, 78);
             this.textBoxTechnologyName.Name = "textBoxTechnologyName";
             this.textBoxTechnologyName.Size = new System.Drawing.Size(137, 20);
             this.textBoxTechnologyName.TabIndex = 6;
@@ -108,7 +108,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(342, 47);
+            this.btnSave.Location = new System.Drawing.Point(351, 48);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(172, 98);
             this.btnSave.TabIndex = 19;
@@ -129,7 +129,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(342, 189);
+            this.btnReturn.Location = new System.Drawing.Point(351, 190);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(172, 98);
             this.btnReturn.TabIndex = 18;
@@ -143,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
-            this.ClientSize = new System.Drawing.Size(551, 331);
+            this.ClientSize = new System.Drawing.Size(560, 331);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblSpeedFactor);

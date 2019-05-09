@@ -32,12 +32,13 @@
             this.orderSemiProductLbl = new System.Windows.Forms.Label();
             this.quantityTb = new System.Windows.Forms.TextBox();
             this.quantityLbl = new System.Windows.Forms.Label();
-            this.generateReportBtn = new System.Windows.Forms.Button();
             this.acceptBtn = new System.Windows.Forms.Button();
             this.returnBtn = new System.Windows.Forms.Button();
             this.semiProductCodeLbl = new System.Windows.Forms.Label();
             this.pictureBoxForm = new System.Windows.Forms.PictureBox();
             this.semiProductCodeCb = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.idSfOrderTb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.quantityTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.quantityTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.quantityTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.quantityTb.Location = new System.Drawing.Point(687, 260);
+            this.quantityTb.Location = new System.Drawing.Point(691, 406);
             this.quantityTb.Margin = new System.Windows.Forms.Padding(2);
             this.quantityTb.Name = "quantityTb";
             this.quantityTb.Size = new System.Drawing.Size(197, 24);
@@ -71,24 +72,12 @@
             this.quantityLbl.BackColor = System.Drawing.Color.Transparent;
             this.quantityLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.quantityLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.quantityLbl.Location = new System.Drawing.Point(684, 214);
+            this.quantityLbl.Location = new System.Drawing.Point(763, 358);
             this.quantityLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantityLbl.Name = "quantityLbl";
             this.quantityLbl.Size = new System.Drawing.Size(44, 18);
             this.quantityLbl.TabIndex = 115;
             this.quantityLbl.Text = "Ilość";
-            // 
-            // generateReportBtn
-            // 
-            this.generateReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.generateReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.generateReportBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.generateReportBtn.Location = new System.Drawing.Point(584, 653);
-            this.generateReportBtn.Name = "generateReportBtn";
-            this.generateReportBtn.Size = new System.Drawing.Size(230, 55);
-            this.generateReportBtn.TabIndex = 123;
-            this.generateReportBtn.Text = "Generuj raport";
-            this.generateReportBtn.UseVisualStyleBackColor = false;
             // 
             // acceptBtn
             // 
@@ -104,6 +93,7 @@
             this.acceptBtn.Text = "Zrealizuj";
             this.acceptBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.acceptBtn.UseVisualStyleBackColor = false;
+            this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
             // returnBtn
             // 
@@ -119,6 +109,7 @@
             this.returnBtn.Text = "Powrót";
             this.returnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.returnBtn.UseVisualStyleBackColor = false;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // semiProductCodeLbl
             // 
@@ -126,7 +117,7 @@
             this.semiProductCodeLbl.BackColor = System.Drawing.Color.Transparent;
             this.semiProductCodeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.semiProductCodeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.semiProductCodeLbl.Location = new System.Drawing.Point(280, 214);
+            this.semiProductCodeLbl.Location = new System.Drawing.Point(339, 358);
             this.semiProductCodeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.semiProductCodeLbl.Name = "semiProductCodeLbl";
             this.semiProductCodeLbl.Size = new System.Drawing.Size(135, 18);
@@ -151,10 +142,35 @@
             this.semiProductCodeCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.semiProductCodeCb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.semiProductCodeCb.FormattingEnabled = true;
-            this.semiProductCodeCb.Location = new System.Drawing.Point(257, 260);
+            this.semiProductCodeCb.Location = new System.Drawing.Point(316, 404);
             this.semiProductCodeCb.Name = "semiProductCodeCb";
             this.semiProductCodeCb.Size = new System.Drawing.Size(197, 26);
             this.semiProductCodeCb.TabIndex = 128;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(560, 223);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 18);
+            this.label1.TabIndex = 115;
+            this.label1.Text = "Nr zamówienia";
+            // 
+            // idSfOrderTb
+            // 
+            this.idSfOrderTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.idSfOrderTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.idSfOrderTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.idSfOrderTb.Location = new System.Drawing.Point(529, 279);
+            this.idSfOrderTb.Margin = new System.Windows.Forms.Padding(2);
+            this.idSfOrderTb.Name = "idSfOrderTb";
+            this.idSfOrderTb.ReadOnly = true;
+            this.idSfOrderTb.Size = new System.Drawing.Size(197, 24);
+            this.idSfOrderTb.TabIndex = 120;
             // 
             // OrderNewSemiProductForm
             // 
@@ -166,8 +182,9 @@
             this.Controls.Add(this.semiProductCodeCb);
             this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.acceptBtn);
-            this.Controls.Add(this.generateReportBtn);
+            this.Controls.Add(this.idSfOrderTb);
             this.Controls.Add(this.quantityTb);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.quantityLbl);
             this.Controls.Add(this.semiProductCodeLbl);
             this.Controls.Add(this.orderSemiProductLbl);
@@ -186,11 +203,12 @@
         private System.Windows.Forms.Label orderSemiProductLbl;
         private System.Windows.Forms.TextBox quantityTb;
         private System.Windows.Forms.Label quantityLbl;
-        private System.Windows.Forms.Button generateReportBtn;
         private System.Windows.Forms.Button acceptBtn;
         private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.Label semiProductCodeLbl;
         private System.Windows.Forms.PictureBox pictureBoxForm;
         private System.Windows.Forms.ComboBox semiProductCodeCb;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox idSfOrderTb;
     }
 }

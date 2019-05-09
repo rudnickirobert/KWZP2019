@@ -46,6 +46,7 @@
             this.semiFinishedCodeTb = new System.Windows.Forms.TextBox();
             this.productCodeTb = new System.Windows.Forms.TextBox();
             this.sfOrderBtn = new System.Windows.Forms.Button();
+            this.orderReturnBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.entraceWarehouseDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outWarehouseDgv)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,7 @@
             this.entraceWarehouseDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.entraceWarehouseDgv.EnableHeadersVisualStyles = false;
             this.entraceWarehouseDgv.Location = new System.Drawing.Point(29, 155);
-            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.entraceWarehouseDgv.Margin = new System.Windows.Forms.Padding(2);
             this.entraceWarehouseDgv.MultiSelect = false;
             this.entraceWarehouseDgv.Name = "entraceWarehouseDgv";
             this.entraceWarehouseDgv.RowHeadersVisible = false;
@@ -118,7 +119,7 @@
             this.outWarehouseDgv.DefaultCellStyle = dataGridViewCellStyle6;
             this.outWarehouseDgv.EnableHeadersVisualStyles = false;
             this.outWarehouseDgv.Location = new System.Drawing.Point(644, 155);
-            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.outWarehouseDgv.Margin = new System.Windows.Forms.Padding(2);
             this.outWarehouseDgv.MultiSelect = false;
             this.outWarehouseDgv.Name = "outWarehouseDgv";
             this.outWarehouseDgv.RowHeadersVisible = false;
@@ -208,7 +209,7 @@
             this.semiFinishedCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.semiFinishedCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.semiFinishedCodeTb.Location = new System.Drawing.Point(192, 93);
-            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.semiFinishedCodeTb.Margin = new System.Windows.Forms.Padding(2);
             this.semiFinishedCodeTb.Name = "semiFinishedCodeTb";
             this.semiFinishedCodeTb.Size = new System.Drawing.Size(271, 24);
             this.semiFinishedCodeTb.TabIndex = 25;
@@ -220,7 +221,7 @@
             this.productCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.productCodeTb.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.productCodeTb.Location = new System.Drawing.Point(788, 93);
-            this.productCodeTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.productCodeTb.Margin = new System.Windows.Forms.Padding(2);
             this.productCodeTb.Name = "productCodeTb";
             this.productCodeTb.Size = new System.Drawing.Size(271, 24);
             this.productCodeTb.TabIndex = 26;
@@ -240,6 +241,22 @@
             this.sfOrderBtn.UseVisualStyleBackColor = false;
             this.sfOrderBtn.Click += new System.EventHandler(this.sfOrderBtn_Click);
             // 
+            // orderReturnBtn
+            // 
+            this.orderReturnBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.orderReturnBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.orderReturnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.orderReturnBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.orderReturnBtn.Image = ((System.Drawing.Image)(resources.GetObject("orderReturnBtn.Image")));
+            this.orderReturnBtn.Location = new System.Drawing.Point(927, 618);
+            this.orderReturnBtn.Name = "orderReturnBtn";
+            this.orderReturnBtn.Size = new System.Drawing.Size(223, 120);
+            this.orderReturnBtn.TabIndex = 20;
+            this.orderReturnBtn.Text = "Powrót do zamówień";
+            this.orderReturnBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.orderReturnBtn.UseVisualStyleBackColor = false;
+            this.orderReturnBtn.Click += new System.EventHandler(this.orderReturnBtn_Click);
+            // 
             // WarehouseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,10 +271,11 @@
             this.Controls.Add(this.outWarehouseLbl);
             this.Controls.Add(this.entraceWarehouseLbl);
             this.Controls.Add(this.sfOrderBtn);
+            this.Controls.Add(this.orderReturnBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.outWarehouseDgv);
             this.Controls.Add(this.entraceWarehouseDgv);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WarehouseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Magazyn";
@@ -281,5 +299,6 @@
         private System.Windows.Forms.TextBox semiFinishedCodeTb;
         private System.Windows.Forms.TextBox productCodeTb;
         private System.Windows.Forms.Button sfOrderBtn;
+        private System.Windows.Forms.Button orderReturnBtn;
     }
 }
