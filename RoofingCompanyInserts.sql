@@ -359,7 +359,8 @@ insert into SafetyTraining (IdEmployee, TrainingDate) values
 		(25, '2018-06-15 08:00:00'),
 		(26, '2018-03-22 08:00:00'),
 		(27, '2018-05-06 08:00:00'),
-		(28, '2018-06-13 08:00:00');
+		(28, '2018-06-13 08:00:00'),
+		(29, '2018-07-13 08:00:00');
 
 --SemiFinished
 /*grubości blachy u Pruszyńskiego: 0,5; 0,7, 1; 1,25
