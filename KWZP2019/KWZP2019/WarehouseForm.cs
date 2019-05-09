@@ -12,12 +12,23 @@ namespace KWZP2019
 {
     public partial class WarehouseForm : Form
     {
-        private SalesDepartmentForm previousForm;
+        private SalesDepartmentForm salesForm;
         private RoofingCompanyEntities db;
-        public WarehouseForm(RoofingCompanyEntities db, SalesDepartmentForm form)
+        private CustomerForm customerForm;
+        private bool isPreviousForm = false;
+        public WarehouseForm(RoofingCompanyEntities db, SalesDepartmentForm salesForm)
         {
             this.db = db;
-            this.previousForm = form;
+            this.salesForm= salesForm;
+            isPreviousForm = false;
+            InitializeComponent();
+        }
+        public WarehouseForm(RoofingCompanyEntities db, SalesDepartmentForm salesForm, CustomerForm previousForm)
+        {
+            this.db = db;
+            this.salesForm = salesForm;
+            this.customerForm = previousForm;
+            isPreviousForm = true;
             InitializeComponent();
         }
         private void WarehouseForm_Load(object sender, EventArgs e)
@@ -30,14 +41,28 @@ namespace KWZP2019
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            previousForm.Show();
+            salesForm.Show();
             this.Close();
+        }
+        private void orderReturnBtn_Click(object sender, EventArgs e)
+        {
+            if (isPreviousForm)
+            {
+                this.Hide();
+                customerForm.Show();
+                this.Close();
+            }
+            else
+            {
+                salesForm.Show();
+            }
+            
         }
         private void sfOrderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderNewSemiProductForm OrderNewSemiProductForm = new OrderNewSemiProductForm(db, previousForm);
-            OrderNewSemiProductForm.ShowDialog();
+            SfOrdersForm newSfOrdersForm = new SfOrdersForm(db, salesForm);
+            newSfOrdersForm.ShowDialog();
             this.Close();
         }
         private void semiFinishedCodeTb_TextChanged(object sender, EventArgs e)

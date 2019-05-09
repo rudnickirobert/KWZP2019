@@ -214,6 +214,12 @@
     <Compile Include="OrderNewPartForm.designer.cs">
       <DependentUpon>OrderNewPartForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderSfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderSfForm.designer.cs">
+      <DependentUpon>OrderSfForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderNewSemiProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -678,6 +684,12 @@
     <Compile Include="SfOrderDetail.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SfOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SfOrdersForm.Designer.cs">
+      <DependentUpon>SfOrdersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkillsForMachine.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -891,6 +903,15 @@
     <Compile Include="vSalariesSummary.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vSF.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSFOrder.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vSFOrderDetail.cs">
+      <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vSuccesfullyProcess.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
@@ -984,6 +1005,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderNewPartForm.resx">
       <DependentUpon>OrderNewPartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderSfForm.resx">
+      <DependentUpon>OrderSfForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderNewSemiProductForm.resx">
       <DependentUpon>OrderNewSemiProductForm.cs</DependentUpon>
@@ -1145,6 +1169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesDepartmentForm.resx">
       <DependentUpon>SalesDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SfOrdersForm.resx">
+      <DependentUpon>SfOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
