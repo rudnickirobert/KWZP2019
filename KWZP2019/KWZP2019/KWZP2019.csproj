@@ -1230,6 +1230,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\usun.png" />
     <Content Include="RoofingCompanyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RoofingCompanyModel.edmx</DependentUpon>
