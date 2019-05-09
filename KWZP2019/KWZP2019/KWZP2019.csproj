@@ -142,6 +142,7 @@
     <Compile Include="FEMAnalysis.cs">
       <DependentUpon>RoofingCompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewColumnFormatter.cs" />
     <Compile Include="HR\EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>

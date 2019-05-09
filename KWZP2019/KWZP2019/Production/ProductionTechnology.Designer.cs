@@ -213,7 +213,7 @@
             // timePermeterDataGridViewTextBoxColumn
             // 
             this.timePermeterDataGridViewTextBoxColumn.DataPropertyName = "TimePermeter";
-            this.timePermeterDataGridViewTextBoxColumn.HeaderText = "Prędkość produkcji [m/h]";
+            this.timePermeterDataGridViewTextBoxColumn.HeaderText = "Prędkość produkcji [m/min]";
             this.timePermeterDataGridViewTextBoxColumn.Name = "timePermeterDataGridViewTextBoxColumn";
             // 
             // speedFactorDataGridViewTextBoxColumn

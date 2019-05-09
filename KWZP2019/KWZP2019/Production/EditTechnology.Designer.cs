@@ -108,7 +108,7 @@
             this.lblSpeedFactor.BackColor = System.Drawing.Color.Transparent;
             this.lblSpeedFactor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSpeedFactor.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSpeedFactor.Location = new System.Drawing.Point(23, 147);
+            this.lblSpeedFactor.Location = new System.Drawing.Point(28, 147);
             this.lblSpeedFactor.Name = "lblSpeedFactor";
             this.lblSpeedFactor.Size = new System.Drawing.Size(157, 16);
             this.lblSpeedFactor.TabIndex = 18;
@@ -120,11 +120,11 @@
             this.lblTimePerMeter.BackColor = System.Drawing.Color.Transparent;
             this.lblTimePerMeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTimePerMeter.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTimePerMeter.Location = new System.Drawing.Point(23, 103);
+            this.lblTimePerMeter.Location = new System.Drawing.Point(14, 103);
             this.lblTimePerMeter.Name = "lblTimePerMeter";
-            this.lblTimePerMeter.Size = new System.Drawing.Size(157, 16);
+            this.lblTimePerMeter.Size = new System.Drawing.Size(171, 16);
             this.lblTimePerMeter.TabIndex = 19;
-            this.lblTimePerMeter.Text = "Prędkość produkcji [m/h]";
+            this.lblTimePerMeter.Text = "Prędkość produkcji [m/min]";
             // 
             // lblTechnologyName
             // 
@@ -132,11 +132,11 @@
             this.lblTechnologyName.BackColor = System.Drawing.Color.Transparent;
             this.lblTechnologyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTechnologyName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTechnologyName.Location = new System.Drawing.Point(61, 67);
+            this.lblTechnologyName.Location = new System.Drawing.Point(68, 67);
             this.lblTechnologyName.Name = "lblTechnologyName";
-            this.lblTechnologyName.Size = new System.Drawing.Size(114, 16);
+            this.lblTechnologyName.Size = new System.Drawing.Size(117, 16);
             this.lblTechnologyName.TabIndex = 20;
-            this.lblTechnologyName.Text = "Nazwa technologi";
+            this.lblTechnologyName.Text = "Nazwa technologii";
             // 
             // EditTechnology
             // 
