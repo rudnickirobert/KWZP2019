@@ -1318,5 +1318,39 @@ JOIN Technology
 ON Product.IdTechnology = Technology.IdTechnology
 GO
 
+CREATE VIEW vSF
+AS
+SELECT DISTINCT SfOrderDetail.IdSFDetail as [Nr szczegółu], Supplier.SupplierName as [Dostawca], SemiFinished.SfCode as [Kod półfabrykatu], SfOrderDetail.Quantity as [Ilość], SemiFinishedOrder.SfOrderDate as [Data zamówienia], 
+SemiFinishedOrder.SfDeliveryDate as [Data dostawy], SemiFinishedOrder.Cost as [Cena]
+FROM SfOrderDetail
+INNER JOIN SemiFinished
+ON SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+INNER JOIN SemiFinishedOrder
+ON SemiFinishedOrder.IdSfOrder = SfOrderDetail.IdSfOrder
+INNER JOIN Supplier
+ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
+
+GO
+CREATE VIEW vSFOrderDetail
+AS
+SELECT DISTINCT SfOrderDetail.IdSFDetail as [Nr szczegółu], SemiFinished.SfCode as [Kod półfabrykatu], SfOrderDetail.Quantity as [Ilość], SemiFinishedOrder.IdSfOrder as [Nr zamówienia]
+FROM SfOrderDetail
+INNER JOIN SemiFinished
+ON SfOrderDetail.IdSemiFinished = SemiFinished.IdSemiFinished
+INNER JOIN SemiFinishedOrder
+ON SfOrderDetail.IdSfOrder = SemiFinishedOrder.IdSfOrder;
+
+GO
+CREATE VIEW vSFOrder
+AS
+SELECT DISTINCT SemiFinishedOrder.IdSfOrder as [Nr zamówienia], Supplier.SupplierName as [Dostawca], SemiFinishedOrder.SfOrderDate as [Data zamówienia], SemiFinishedOrder.SfDeliveryDate as [Data dostawy],  
+SemiFinishedOrder.Cost as [Cena]
+FROM SemiFinishedOrder
+INNER JOIN Supplier
+ON SemiFinishedOrder.IdSupplier = Supplier.IdSupplier;
+
+/*====SALES DEPARTMENT END===*/
+
+
 
 

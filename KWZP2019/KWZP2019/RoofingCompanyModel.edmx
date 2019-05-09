@@ -1538,6 +1538,56 @@ warning 6002: The table/view 'RoofingCompany.dbo.vSalariesSummary' does not have
           <Property Name="TotalSalary" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSF">
+          <Key>
+            <PropertyRef Name="Nr szczegółu" />
+            <PropertyRef Name="Dostawca" />
+            <PropertyRef Name="Kod półfabrykatu" />
+            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Data zamówienia" />
+            <PropertyRef Name="Data dostawy" />
+            <PropertyRef Name="Cena" />
+          </Key>
+          <Property Name="Nr szczegółu" Type="int" Nullable="false" />
+          <Property Name="Dostawca" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Kod półfabrykatu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilość" Type="int" Nullable="false" />
+          <Property Name="Data zamówienia" Type="datetime" Nullable="false" />
+          <Property Name="Data dostawy" Type="datetime" Nullable="false" />
+          <Property Name="Cena" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSFOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSFOrder">
+          <Key>
+            <PropertyRef Name="Nr zamówienia" />
+            <PropertyRef Name="Dostawca" />
+            <PropertyRef Name="Data zamówienia" />
+            <PropertyRef Name="Data dostawy" />
+            <PropertyRef Name="Cena" />
+          </Key>
+          <Property Name="Nr zamówienia" Type="int" Nullable="false" />
+          <Property Name="Dostawca" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Data zamówienia" Type="datetime" Nullable="false" />
+          <Property Name="Data dostawy" Type="datetime" Nullable="false" />
+          <Property Name="Cena" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RoofingCompany.dbo.vSFOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vSFOrderDetail">
+          <Key>
+            <PropertyRef Name="Nr szczegółu" />
+            <PropertyRef Name="Kod półfabrykatu" />
+            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Nr zamówienia" />
+          </Key>
+          <Property Name="Nr szczegółu" Type="int" Nullable="false" />
+          <Property Name="Kod półfabrykatu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilość" Type="int" Nullable="false" />
+          <Property Name="Nr zamówienia" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RoofingCompany.dbo.vSuccesfullyProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vSuccesfullyProcess">
           <Key>
@@ -3154,6 +3204,34 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
     [vSalariesSummary].[ODPay] AS [ODPay], 
     [vSalariesSummary].[TotalSalary] AS [TotalSalary]
     FROM [dbo].[vSalariesSummary] AS [vSalariesSummary]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vSF" EntityType="Self.vSF" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSF].[Nr szczegółu] AS [Nr szczegółu], 
+    [vSF].[Dostawca] AS [Dostawca], 
+    [vSF].[Kod półfabrykatu] AS [Kod półfabrykatu], 
+    [vSF].[Ilość] AS [Ilość], 
+    [vSF].[Data zamówienia] AS [Data zamówienia], 
+    [vSF].[Data dostawy] AS [Data dostawy], 
+    [vSF].[Cena] AS [Cena]
+    FROM [dbo].[vSF] AS [vSF]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vSFOrder" EntityType="Self.vSFOrder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSFOrder].[Nr zamówienia] AS [Nr zamówienia], 
+    [vSFOrder].[Dostawca] AS [Dostawca], 
+    [vSFOrder].[Data zamówienia] AS [Data zamówienia], 
+    [vSFOrder].[Data dostawy] AS [Data dostawy], 
+    [vSFOrder].[Cena] AS [Cena]
+    FROM [dbo].[vSFOrder] AS [vSFOrder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vSFOrderDetail" EntityType="Self.vSFOrderDetail" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vSFOrderDetail].[Nr szczegółu] AS [Nr szczegółu], 
+    [vSFOrderDetail].[Kod półfabrykatu] AS [Kod półfabrykatu], 
+    [vSFOrderDetail].[Ilość] AS [Ilość], 
+    [vSFOrderDetail].[Nr zamówienia] AS [Nr zamówienia]
+    FROM [dbo].[vSFOrderDetail] AS [vSFOrderDetail]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vSuccesfullyProcess" EntityType="Self.vSuccesfullyProcess" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -6190,6 +6268,9 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
             <End Role="Maintenance" EntitySet="Maintenances" />
           </AssociationSet>
           <EntitySet Name="vProductionProducts" EntityType="RoofingCompanyModel.vProductionProduct" />
+          <EntitySet Name="vSFs" EntityType="RoofingCompanyModel.vSF" />
+          <EntitySet Name="vSFOrders" EntityType="RoofingCompanyModel.vSFOrder" />
+          <EntitySet Name="vSFOrderDetails" EntityType="RoofingCompanyModel.vSFOrderDetail" />
         </EntityContainer>
         <EntityType Name="FEMAnalysis">
           <Key>
@@ -6391,6 +6472,50 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
           <Property Name="SfCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="TechnologyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="InputDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="vSF">
+          <Key>
+            <PropertyRef Name="Nr_szczegółu" />
+            <PropertyRef Name="Dostawca" />
+            <PropertyRef Name="Kod_półfabrykatu" />
+            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Data_zamówienia" />
+            <PropertyRef Name="Data_dostawy" />
+            <PropertyRef Name="Cena" />
+          </Key>
+          <Property Name="Nr_szczegółu" Type="Int32" Nullable="false" />
+          <Property Name="Dostawca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Kod_półfabrykatu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="Data_zamówienia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_dostawy" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cena" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vSFOrder">
+          <Key>
+            <PropertyRef Name="Nr_zamówienia" />
+            <PropertyRef Name="Dostawca" />
+            <PropertyRef Name="Data_zamówienia" />
+            <PropertyRef Name="Data_dostawy" />
+            <PropertyRef Name="Cena" />
+          </Key>
+          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
+          <Property Name="Dostawca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Data_zamówienia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_dostawy" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cena" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vSFOrderDetail">
+          <Key>
+            <PropertyRef Name="Nr_szczegółu" />
+            <PropertyRef Name="Kod_półfabrykatu" />
+            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Nr_zamówienia" />
+          </Key>
+          <Property Name="Nr_szczegółu" Type="Int32" Nullable="false" />
+          <Property Name="Kod_półfabrykatu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="Nr_zamówienia" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -7924,6 +8049,40 @@ warning 6002: The table/view 'RoofingCompany.dbo.vUnpaidAbsence' does not have a
                 <ScalarProperty Name="SfCode" ColumnName="SfCode" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSFs">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSF">
+              <MappingFragment StoreEntitySet="vSF">
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Data_dostawy" ColumnName="Data dostawy" />
+                <ScalarProperty Name="Data_zamówienia" ColumnName="Data zamówienia" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod półfabrykatu" />
+                <ScalarProperty Name="Dostawca" ColumnName="Dostawca" />
+                <ScalarProperty Name="Nr_szczegółu" ColumnName="Nr szczegółu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSFOrders">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSFOrder">
+              <MappingFragment StoreEntitySet="vSFOrder">
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Data_dostawy" ColumnName="Data dostawy" />
+                <ScalarProperty Name="Data_zamówienia" ColumnName="Data zamówienia" />
+                <ScalarProperty Name="Dostawca" ColumnName="Dostawca" />
+                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vSFOrderDetails">
+            <EntityTypeMapping TypeName="RoofingCompanyModel.vSFOrderDetail">
+              <MappingFragment StoreEntitySet="vSFOrderDetail">
+                <ScalarProperty Name="Nr_zamówienia" ColumnName="Nr zamówienia" />
+                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Kod_półfabrykatu" ColumnName="Kod półfabrykatu" />
+                <ScalarProperty Name="Nr_szczegółu" ColumnName="Nr szczegółu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

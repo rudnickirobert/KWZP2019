@@ -201,6 +201,9 @@
         <EntityTypeShape EntityType="RoofingCompanyModel.MaintenanceDescription" Width="1.5" PointX="33.375" PointY="21.875" />
         <AssociationConnector Association="RoofingCompanyModel.FK_MainDescriptionMaintenance1" />
         <EntityTypeShape EntityType="RoofingCompanyModel.vProductionProduct" Width="1.5" PointX="10.375" PointY="5.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSF" Width="1.5" PointX="15.375" PointY="30.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSFOrder" Width="1.5" PointX="12.375" PointY="5.75" />
+        <EntityTypeShape EntityType="RoofingCompanyModel.vSFOrderDetail" Width="1.5" PointX="17.375" PointY="29.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
