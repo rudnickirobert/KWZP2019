@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SfOrdersForm));
             this.sfOrdersDgv = new System.Windows.Forms.DataGridView();
             this.sfOrderDetailsDgv = new System.Windows.Forms.DataGridView();
@@ -36,23 +38,49 @@
             this.returnBtn = new System.Windows.Forms.Button();
             this.sfOrderDetailBtn = new System.Windows.Forms.Button();
             this.sfOrderBtn = new System.Windows.Forms.Button();
+            this.deleteOrderDetailBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sfOrdersDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sfOrderDetailsDgv)).BeginInit();
             this.SuspendLayout();
             // 
             // sfOrdersDgv
             // 
+            this.sfOrdersDgv.AllowUserToAddRows = false;
+            this.sfOrdersDgv.AllowUserToDeleteRows = false;
+            this.sfOrdersDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.sfOrdersDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.sfOrdersDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.sfOrdersDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sfOrdersDgv.Location = new System.Drawing.Point(29, 112);
             this.sfOrdersDgv.Name = "sfOrdersDgv";
+            this.sfOrdersDgv.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.sfOrdersDgv.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.sfOrdersDgv.Size = new System.Drawing.Size(626, 360);
             this.sfOrdersDgv.TabIndex = 0;
+            this.sfOrdersDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sfOrdersDgv_CellContentClick);
             // 
             // sfOrderDetailsDgv
             // 
+            this.sfOrderDetailsDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.sfOrderDetailsDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.sfOrderDetailsDgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.sfOrderDetailsDgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.sfOrderDetailsDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sfOrderDetailsDgv.Location = new System.Drawing.Point(729, 112);
             this.sfOrderDetailsDgv.Name = "sfOrderDetailsDgv";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(86)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.sfOrderDetailsDgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.sfOrderDetailsDgv.Size = new System.Drawing.Size(412, 360);
             this.sfOrderDetailsDgv.TabIndex = 1;
             // 
@@ -126,6 +154,20 @@
             this.sfOrderBtn.UseVisualStyleBackColor = false;
             this.sfOrderBtn.Click += new System.EventHandler(this.sfOrderBtn_Click);
             // 
+            // deleteOrderDetailBtn
+            // 
+            this.deleteOrderDetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.deleteOrderDetailBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.deleteOrderDetailBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.deleteOrderDetailBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.deleteOrderDetailBtn.Location = new System.Drawing.Point(729, 632);
+            this.deleteOrderDetailBtn.Name = "deleteOrderDetailBtn";
+            this.deleteOrderDetailBtn.Size = new System.Drawing.Size(412, 70);
+            this.deleteOrderDetailBtn.TabIndex = 21;
+            this.deleteOrderDetailBtn.Text = "Usuń szczegół zamówienia";
+            this.deleteOrderDetailBtn.UseVisualStyleBackColor = false;
+            this.deleteOrderDetailBtn.Click += new System.EventHandler(this.deleteOrderDetailBtn_Click);
+            // 
             // SfOrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +175,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.sfOrderBtn);
+            this.Controls.Add(this.deleteOrderDetailBtn);
             this.Controls.Add(this.sfOrderDetailBtn);
             this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.sfOrderDetailsLbl);
@@ -158,5 +201,6 @@
         private System.Windows.Forms.Button returnBtn;
         private System.Windows.Forms.Button sfOrderDetailBtn;
         private System.Windows.Forms.Button sfOrderBtn;
+        private System.Windows.Forms.Button deleteOrderDetailBtn;
     }
 }

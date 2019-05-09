@@ -61,8 +61,8 @@ namespace KWZP2019
         private void sfOrderBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OrderNewSemiProductForm OrderNewSemiProductForm = new OrderNewSemiProductForm(db, salesForm);
-            OrderNewSemiProductForm.ShowDialog();
+            SfOrdersForm newSfOrdersForm = new SfOrdersForm(db, salesForm);
+            newSfOrdersForm.ShowDialog();
             this.Close();
         }
         private void semiFinishedCodeTb_TextChanged(object sender, EventArgs e)

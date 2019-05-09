@@ -14,11 +14,14 @@ namespace KWZP2019
     {
         private RoofingCompanyEntities db;
         private SalesDepartmentForm salesForm;
-        public OrderNewSemiProductForm(RoofingCompanyEntities db, SalesDepartmentForm salesForm)
+        private int idSfOrder;
+        public OrderNewSemiProductForm(RoofingCompanyEntities db, object idSfOrder, SalesDepartmentForm salesForm)
         {
             InitializeComponent();
             this.db = db;
             this.salesForm = salesForm;
+            this.idSfOrder = Convert.ToInt32(idSfOrder);
+            idSfOrderTb.Text = idSfOrder.ToString();
         }
         private void OrderNewSemiProductForm_Load(object sender, EventArgs e)
         {
@@ -32,14 +35,19 @@ namespace KWZP2019
         }
         private void acceptBtn_Click(object sender, EventArgs e)
         {
-            SfOrderDetail newsfOrderDetail = new SfOrderDetail();
-            foreach (SemiFinished sf in db.SemiFinisheds.Where(sf => sf.SfCode == semiProductCodeCb.SelectedValue.ToString()))
+            SfOrderDetail newSfOrderDetail = new SfOrderDetail();
+            newSfOrderDetail.IdSfOrder = idSfOrder;
+            foreach (SemiFinished sf in db.SemiFinisheds.Where(sf => sf.SfCode.Contains(semiProductCodeCb.Text.ToString())))
             {
-                newsfOrderDetail.IdSemiFinished = sf.IdSemiFinished;
+                    newSfOrderDetail.IdSemiFinished = sf.IdSemiFinished;
             }
-
-            newsfOrderDetail.IdSfOrder = 1;
-            newsfOrderDetail.Quantity = Convert.ToInt32(quantityTb.Text.Trim());
+            newSfOrderDetail.Quantity = Convert.ToInt32(quantityTb.Text.Trim());
+            db.SfOrderDetails.Add(newSfOrderDetail);
+            db.SaveChanges();
+            MessageBox.Show("Dodano szczegół zamówienia");
+            this.Hide();
+            salesForm.Show();
+            this.Close();
         }
         private void returnBtn_Click(object sender, EventArgs e)
         {

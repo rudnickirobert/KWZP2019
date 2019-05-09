@@ -22,24 +22,60 @@ namespace KWZP2019
         }
         private void SfOrdersForm_Load(object sender, EventArgs e)
         {
-
+            sfOrdersDgv.DataSource = db.vSFOrders.ToList();
+            sfOrderDetailsDgv.DataSource = db.vSFOrderDetails.ToList();
+            sfOrderDetailsDgv.Columns["Nr_zamówienia"].Visible = false;
+        }
+        private void deleteOrderDetailBtn_Click(object sender, EventArgs e)
+        {
+            int idDetailToRemove = Convert.ToInt32(this.sfOrderDetailsDgv.CurrentRow.Cells["Nr_szczegółu"].Value);
+            string messageDuringRemovingDetail = "Usunięto szczegół o numerze: " + Convert.ToString(idDetailToRemove);
+            MessageBox.Show(messageDuringRemovingDetail, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SfOrderDetail detailToRemove = db.SfOrderDetails.First(f => f.IdSfDetail == idDetailToRemove);
+            db.SfOrderDetails.Remove(detailToRemove);
+            db.SaveChanges();
+            int id = Convert.ToInt32(this.sfOrdersDgv.CurrentRow.Cells["Nr_zamówienia"].Value);
+            sfOrderDetailsDgv.DataSource = (from sfOrders in db.vSFOrderDetails
+                                            where sfOrders.Nr_zamówienia == id
+                                            select sfOrders).ToList();
+            sfOrderDetailsDgv.Columns["Nr_zamówienia"].Visible = false;
+            sfOrderDetailsLbl.Text = "Szczegół zamówienia nr: " + sfOrdersDgv.CurrentRow.Cells["Nr_zamówienia"].Value.ToString();
+            salesForm.Show();
         }
         private void sfOrderDetailBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            OrderNewSemiProductForm OrderNewSemiProductForm = new OrderNewSemiProductForm(db, salesForm);
-            OrderNewSemiProductForm.ShowDialog();
-            this.Close();
+            //EXCEPTION PROTECTION
+            if (sfOrdersDgv.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Wybierz zamówienie");
+            }
+            else
+            {
+                this.Hide();
+                OrderNewSemiProductForm OrderNewSemiProductForm = new OrderNewSemiProductForm(db, sfOrdersDgv.CurrentRow.Cells["Nr_zamówienia"].Value, salesForm);
+                OrderNewSemiProductForm.ShowDialog();
+            }
         }
         private void sfOrderBtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            OrderSfForm newOrderSfForm = new OrderSfForm(db, salesForm);
+            newOrderSfForm.ShowDialog();
         }
         private void returnBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             salesForm.Show();
             this.Close();
+        }
+        private void sfOrdersDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(this.sfOrdersDgv.CurrentRow.Cells["Nr_zamówienia"].Value);
+            sfOrderDetailsDgv.DataSource = (from sfOrders in db.vSFOrderDetails
+                                    where sfOrders.Nr_zamówienia == id
+                                    select sfOrders).ToList();
+            sfOrderDetailsDgv.Columns["Nr_zamówienia"].Visible = false;
+            sfOrderDetailsLbl.Text = "Szczegół zamówienia nr: " + sfOrdersDgv.CurrentRow.Cells["Nr_zamówienia"].Value.ToString();
         }
     }
 }
