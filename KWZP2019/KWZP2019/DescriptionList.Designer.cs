@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvDescription = new System.Windows.Forms.DataGridView();
+            this.IdMaintDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionShort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionLong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtShortDescription = new System.Windows.Forms.TextBox();
             this.txtLongDescription = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReturnMain = new System.Windows.Forms.Button();
-            this.IdMaintDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionShort = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionLong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescription)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,9 +49,32 @@
             this.DescriptionLong});
             this.dgvDescription.Location = new System.Drawing.Point(35, 53);
             this.dgvDescription.Name = "dgvDescription";
+            this.dgvDescription.ReadOnly = true;
             this.dgvDescription.Size = new System.Drawing.Size(324, 221);
             this.dgvDescription.TabIndex = 0;
             this.dgvDescription.DoubleClick += new System.EventHandler(this.dgvDescription_DoubleClick);
+            // 
+            // IdMaintDesc
+            // 
+            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
+            this.IdMaintDesc.HeaderText = "IdMaintDesc";
+            this.IdMaintDesc.Name = "IdMaintDesc";
+            this.IdMaintDesc.ReadOnly = true;
+            this.IdMaintDesc.Visible = false;
+            // 
+            // DescriptionShort
+            // 
+            this.DescriptionShort.DataPropertyName = "DescriptionShort";
+            this.DescriptionShort.HeaderText = "Krótki opis";
+            this.DescriptionShort.Name = "DescriptionShort";
+            this.DescriptionShort.ReadOnly = true;
+            // 
+            // DescriptionLong
+            // 
+            this.DescriptionLong.DataPropertyName = "DescriptionLong";
+            this.DescriptionLong.HeaderText = "Opis";
+            this.DescriptionLong.Name = "DescriptionLong";
+            this.DescriptionLong.ReadOnly = true;
             // 
             // txtShortDescription
             // 
@@ -110,25 +133,6 @@
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
-            // 
-            // IdMaintDesc
-            // 
-            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
-            this.IdMaintDesc.HeaderText = "IdMaintDesc";
-            this.IdMaintDesc.Name = "IdMaintDesc";
-            this.IdMaintDesc.Visible = false;
-            // 
-            // DescriptionShort
-            // 
-            this.DescriptionShort.DataPropertyName = "DescriptionShort";
-            this.DescriptionShort.HeaderText = "Krótki opis";
-            this.DescriptionShort.Name = "DescriptionShort";
-            // 
-            // DescriptionLong
-            // 
-            this.DescriptionLong.DataPropertyName = "DescriptionLong";
-            this.DescriptionLong.HeaderText = "Opis";
-            this.DescriptionLong.Name = "DescriptionLong";
             // 
             // DescriptionList
             // 

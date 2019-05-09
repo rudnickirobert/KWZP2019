@@ -37,16 +37,6 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lblInspections = new System.Windows.Forms.Label();
             this.dgvMaintenance = new System.Windows.Forms.DataGridView();
-            this.btnFilterDate = new System.Windows.Forms.Button();
-            this.comMachine = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDescription = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.IdMaintenance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateAcceptOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMaintType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +45,17 @@
             this.IdMachine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFilterDate = new System.Windows.Forms.Button();
+            this.comMachine = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.btnDescription = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -176,6 +176,70 @@
             this.dgvMaintenance.TabIndex = 16;
             this.dgvMaintenance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaintenance_CellClick);
             // 
+            // IdMaintenance
+            // 
+            this.IdMaintenance.DataPropertyName = "IdMaintenance";
+            this.IdMaintenance.HeaderText = "IdMaintenance";
+            this.IdMaintenance.Name = "IdMaintenance";
+            this.IdMaintenance.ReadOnly = true;
+            this.IdMaintenance.Visible = false;
+            // 
+            // DateAcceptOrder
+            // 
+            this.DateAcceptOrder.DataPropertyName = "DateAcceptOrder";
+            this.DateAcceptOrder.HeaderText = "DateAcceptOrder";
+            this.DateAcceptOrder.Name = "DateAcceptOrder";
+            this.DateAcceptOrder.ReadOnly = true;
+            this.DateAcceptOrder.Visible = false;
+            // 
+            // IdMaintType
+            // 
+            this.IdMaintType.DataPropertyName = "IdMaintType";
+            this.IdMaintType.HeaderText = "IdMaintType";
+            this.IdMaintType.Name = "IdMaintType";
+            this.IdMaintType.ReadOnly = true;
+            this.IdMaintType.Visible = false;
+            // 
+            // IdMaintDesc
+            // 
+            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
+            this.IdMaintDesc.HeaderText = "IdMaintDesc";
+            this.IdMaintDesc.Name = "IdMaintDesc";
+            this.IdMaintDesc.ReadOnly = true;
+            this.IdMaintDesc.Visible = false;
+            // 
+            // MaintenanceNr
+            // 
+            this.MaintenanceNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaintenanceNr.DataPropertyName = "MaintenanceNr";
+            this.MaintenanceNr.HeaderText = "Numer obsługi";
+            this.MaintenanceNr.Name = "MaintenanceNr";
+            this.MaintenanceNr.ReadOnly = true;
+            // 
+            // IdMachine
+            // 
+            this.IdMachine.DataPropertyName = "IdMachine";
+            this.IdMachine.HeaderText = "IdMachine";
+            this.IdMachine.Name = "IdMachine";
+            this.IdMachine.ReadOnly = true;
+            this.IdMachine.Visible = false;
+            // 
+            // StartDatePlan
+            // 
+            this.StartDatePlan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StartDatePlan.DataPropertyName = "StartDatePlan";
+            this.StartDatePlan.HeaderText = "Data rozpoczęcia";
+            this.StartDatePlan.Name = "StartDatePlan";
+            this.StartDatePlan.ReadOnly = true;
+            // 
+            // EndDatePlan
+            // 
+            this.EndDatePlan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EndDatePlan.DataPropertyName = "EndDatePlan";
+            this.EndDatePlan.HeaderText = "Data zakończenia";
+            this.EndDatePlan.Name = "EndDatePlan";
+            this.EndDatePlan.ReadOnly = true;
+            // 
             // btnFilterDate
             // 
             this.btnFilterDate.Location = new System.Drawing.Point(1077, 98);
@@ -245,17 +309,17 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Data od:";
             // 
-            // label2
+            // lblFilter
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(656, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Filtruj według:";
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFilter.Location = new System.Drawing.Point(656, 90);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(146, 24);
+            this.lblFilter.TabIndex = 24;
+            this.lblFilter.Text = "Filtruj według:";
             // 
             // btnDescription
             // 
@@ -284,83 +348,20 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
-            // IdMaintenance
+            // btnFilter
             // 
-            this.IdMaintenance.DataPropertyName = "IdMaintenance";
-            this.IdMaintenance.HeaderText = "IdMaintenance";
-            this.IdMaintenance.Name = "IdMaintenance";
-            this.IdMaintenance.ReadOnly = true;
-            this.IdMaintenance.Visible = false;
-            // 
-            // DateAcceptOrder
-            // 
-            this.DateAcceptOrder.DataPropertyName = "DateAcceptOrder";
-            this.DateAcceptOrder.HeaderText = "DateAcceptOrder";
-            this.DateAcceptOrder.Name = "DateAcceptOrder";
-            this.DateAcceptOrder.ReadOnly = true;
-            this.DateAcceptOrder.Visible = false;
-            // 
-            // IdMaintType
-            // 
-            this.IdMaintType.DataPropertyName = "IdMaintType";
-            this.IdMaintType.HeaderText = "IdMaintType";
-            this.IdMaintType.Name = "IdMaintType";
-            this.IdMaintType.ReadOnly = true;
-            this.IdMaintType.Visible = false;
-            // 
-            // IdMaintDesc
-            // 
-            this.IdMaintDesc.DataPropertyName = "IdMaintDesc";
-            this.IdMaintDesc.HeaderText = "IdMaintDesc";
-            this.IdMaintDesc.Name = "IdMaintDesc";
-            this.IdMaintDesc.ReadOnly = true;
-            this.IdMaintDesc.Visible = false;
-            // 
-            // MaintenanceNr
-            // 
-            this.MaintenanceNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaintenanceNr.DataPropertyName = "MaintenanceNr";
-            this.MaintenanceNr.HeaderText = "Numer obsługi";
-            this.MaintenanceNr.Name = "MaintenanceNr";
-            this.MaintenanceNr.ReadOnly = true;
-            // 
-            // IdMachine
-            // 
-            this.IdMachine.DataPropertyName = "IdMachine";
-            this.IdMachine.HeaderText = "IdMachine";
-            this.IdMachine.Name = "IdMachine";
-            this.IdMachine.ReadOnly = true;
-            this.IdMachine.Visible = false;
-            // 
-            // StartDatePlan
-            // 
-            this.StartDatePlan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StartDatePlan.DataPropertyName = "StartDatePlan";
-            this.StartDatePlan.HeaderText = "Data rozpoczęcia";
-            this.StartDatePlan.Name = "StartDatePlan";
-            this.StartDatePlan.ReadOnly = true;
-            // 
-            // EndDatePlan
-            // 
-            this.EndDatePlan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EndDatePlan.DataPropertyName = "EndDatePlan";
-            this.EndDatePlan.HeaderText = "Data zakończenia";
-            this.EndDatePlan.Name = "EndDatePlan";
-            this.EndDatePlan.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(823, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 39);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Filtruj";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFilter.Location = new System.Drawing.Point(823, 160);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(110, 39);
+            this.btnFilter.TabIndex = 34;
+            this.btnFilter.Text = "Filtruj";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // InspectionListForm
             // 
@@ -369,7 +370,7 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(970, 568);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnDescription);
             this.Controls.Add(this.btnFilterDate);
             this.Controls.Add(this.comMachine);
@@ -378,7 +379,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.dgvMaintenance);
             this.Controls.Add(this.lblInspections);
             this.Controls.Add(this.btnRefresh);
@@ -410,7 +411,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.Button btnDescription;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMaintenance;
@@ -421,6 +422,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMachine;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDatePlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDatePlan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

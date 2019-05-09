@@ -42,7 +42,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturnMain = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtMachine = new System.Windows.Forms.TextBox();
             this.tpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -131,22 +130,6 @@
             this.btnReturnMain.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturnMain.UseVisualStyleBackColor = false;
             this.btnReturnMain.Click += new System.EventHandler(this.btnReturnMain_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.FlatAppearance.BorderSize = 3;
-            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(144)))), ((int)(((byte)(175)))));
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(595, 178);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 33;
-            this.btnCancel.Text = "Anuluj";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -849,7 +832,6 @@
             this.BackgroundImage = global::KWZP2019.Properties.Resources._53062472_302328053765523_8291849142804676608_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 741);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtMachine);
             this.Controls.Add(this.tpEndDate);
@@ -889,7 +871,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnReturnMain;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtMachine;
         private System.Windows.Forms.DateTimePicker tpEndDate;

@@ -42,29 +42,10 @@ namespace KWZP2019
 
         void populateEmployeesPartsGridView()
         {
-            this.dgvMaintenanceEmployees.DataSource = (from employeeview in this.db.vMaintenanceAssignEmployees
-                                                       where employeeview.IdMaintenance == idSelectedMaintenance
-                                                       select new
-                                                       {
-                                                           employeeview.IdEmployeePlan,
-                                                           employeeview.IdMaintenance,
-                                                           employeeview.IdEmployee,
-                                                           employeeview.EmployeeName,
-                                                           employeeview.EmployeeSurname,
-                                                           employeeview.StartDate,
-                                                           employeeview.EndDate
-                                                       }).ToList();
-            this.dgvPart.DataSource = (from partview in this.db.vMaintenanceAssignParts
-                                       where partview.IdMaintenance == idSelectedMaintenance
-                                       select new
-                                       {
-                                           partview.IdMaintenance,
-                                           partview.IdPart,
-                                           partview.PartName,
-                                           partview.PartQuantity,
-                                           partview.QuantityWarehouse,
-                                           partview.UnitName
-                                       }).ToList();
+            this.dgvMaintenanceEmployees.DataSource = this.db.vMaintenanceAssignEmployees
+                .Where(employee => employee.IdMaintenance == idSelectedMaintenance).ToList<vMaintenanceAssignEmployee>();
+            this.dgvPart.DataSource = this.db.vMaintenanceAssignParts
+                .Where(part => part.IdMaintenance == idSelectedMaintenance).ToList<vMaintenanceAssignPart>();                  
         }
 
         void clear()

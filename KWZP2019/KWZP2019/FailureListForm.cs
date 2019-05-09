@@ -95,7 +95,9 @@ namespace KWZP2019
             }
             else
             {
-                this.dgvMaintenances.DataSource = db.Maintenances.Where(maintenance => maintenance.IdMachine == selectedMachine).ToList();
+                this.dgvMaintenances.DataSource = db.Maintenances
+                    .Where(maintenance => maintenance.IdMachine == selectedMachine)
+                    .Where(maintenance => maintenance.IdMaintType == 1).ToList();
             }
         }
 
@@ -110,7 +112,8 @@ namespace KWZP2019
             {
                 this.dgvMaintenances.DataSource = db.Maintenances
                 .Where(maintenance => maintenance.StartDatePlan >= this.dtpFromDate.Value)
-                .Where(maintenance => maintenance.StartDatePlan <= this.dtpToDate.Value).ToList();
+                .Where(maintenance => maintenance.StartDatePlan <= this.dtpToDate.Value)
+                .Where(maintenance => maintenance.IdMaintType == 1).ToList();
             }
         }
     }
