@@ -79,13 +79,12 @@ namespace KWZP2019
         }
 
         private void comMachine_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            {
-                if (isLoading)
-                    return;
-                this.machineFilter();
-            }
+        {           
+            if (isLoading)
+                return;
+            this.machineFilter();           
         }
+
         void machineFilter()
         {
             int selectedMachine = Convert.ToInt32(this.comMachine.SelectedValue);
